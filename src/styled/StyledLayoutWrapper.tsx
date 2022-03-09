@@ -1,6 +1,5 @@
 import React, { ReactNode } from "react"
 import { ThemeProvider } from "styled-components"
-import { GlobalStyle } from "./Global.styled"
 import { theme } from "./theme"
 
 export type StyledTypes = {
@@ -12,7 +11,7 @@ export function StyledLayoutWrapper(props: StyledTypes) {
   // console.log({ theme })
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
+      {/* <GlobalStyle /> */}
       {children}
     </ThemeProvider>
   )
