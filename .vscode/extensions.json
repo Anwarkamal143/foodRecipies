@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    // "jpoissonnier.vscode-styled-components",
+    "aaron-bond.better-comments",
+    "esbenp.prettier-vscode",
+    "PKief.material-icon-theme",
+    "liviuschera.noctis",
+    "steoates.autoimport",
+    "formulahendry.auto-rename-tag",
+    "formulahendry.auto-close-tag",
+    "bradlc.vscode-tailwindcss"
+  ]
+}
