@@ -1007,6 +1007,41 @@ export function ProfileTogglerIcon(props: IconType) {
     </svg>
   )
 }
+export function VerticalDots(props: IconType) {
+  const { width = 3, height = 15, fill = "#7474A9", ...rest } = props
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 3 15"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...rest}
+    >
+      <circle
+        cx="1.5"
+        cy="1.5"
+        r="1.5"
+        transform="rotate(90 1.5 1.5)"
+        fill={fill}
+      />
+      <circle
+        cx="1.5"
+        cy="7.5"
+        r="1.5"
+        transform="rotate(90 1.5 7.5)"
+        fill={fill}
+      />
+      <circle
+        cx="1.5"
+        cy="13.5"
+        r="1.5"
+        transform="rotate(90 1.5 13.5)"
+        fill={fill}
+      />
+    </svg>
+  )
+}
 type ImageProps = DetailedHTMLProps<
   ImgHTMLAttributes<HTMLImageElement>,
   HTMLImageElement

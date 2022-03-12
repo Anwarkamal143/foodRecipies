@@ -1,4 +1,4 @@
-import { Checkbox, Select } from "@Components"
+import { Button, Checkbox, Select } from "@Components"
 import { StarFillIcon } from "@Icons"
 import styled from "styled-components"
 
@@ -12,7 +12,7 @@ const DeficultySection = ({
   return (
     <div className={className}>
       <Checkbox width={16} height={16} />{" "}
-      <span>
+      <span className="icons">
         {[...new Array(stars)].map(a => (
           <StarFillIcon key={a} className="star-icon" />
         ))}
@@ -21,6 +21,11 @@ const DeficultySection = ({
   )
 }
 const Selection = styled(DeficultySection)`
+  display: flex;
+  align-items: center;
+  .icons {
+    display: flex;
+  }
   .star-icon {
     &:not(:last-child) {
       margin-right: 0.5rem;
@@ -64,6 +69,11 @@ function PostsFilerForm(props: IFilterFormProps) {
           <Selection stars={2} />
         </div>
         <Selection stars={3} />
+      </div>
+      <div className="option-type">
+        <Button shape="circle" size="small">
+          Apply Filters
+        </Button>
       </div>
     </div>
   )
