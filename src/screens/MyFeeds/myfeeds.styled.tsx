@@ -47,3 +47,7 @@ export const FilterSection = styled.div`
     }
   }
 `
+export const SuggestedCooksSection = styled.div``
+export const HeaderCooks = styled.div``
+export const HeaderTitle = styled.h2``
+export const HeaderRightSide = styled.span``

@@ -3,7 +3,6 @@ import {
   cloneElement,
   DetailedHTMLProps,
   HtmlHTMLAttributes,
-  isValidElement,
   useState,
 } from "react"
 import { useLayer } from "react-laag"
@@ -37,7 +36,6 @@ export default function Filters(props: IFiltersProps) {
     containerOffset: 16, // give the menu some room to breath relative to the container
     arrowOffset: 16, // let the arrow have some room to breath also
   })
-  console.log(isValidElement(children))
   // Again, we're using framer-motion for the transition effect
   return (
     <>
