@@ -30,16 +30,16 @@ const Item = (props: INavItemProps) => {
   const { isActive } = useMathPath(props)
 
   return rest?.meta?.divider ? (
-    <li className={`relative text-gray-500  item-${name} ${itemClass}`}>
+    <li className={`sidebarListTitle item-${name} ${itemClass}`}>
       {Icon && (
         <div
-          className={`absolute inset-y-0 left-0 flex items-center  pointer-events-none icon-${name} ${iconClass}`}
+          className={`sidebarListIcon icon-${name} ${iconClass}`}
         >
           {Icon}
         </div>
       )}
       <span
-        className={`inline-block w-full py-2  pr-4 text-xs rounded   link-${name} ${anchorClass}`}
+        className={`link-${name} ${anchorClass}`}
       >
         {name}
       </span>
@@ -49,25 +49,18 @@ const Item = (props: INavItemProps) => {
       <NavLink
         href={route}
         {...rest}
-        className={`relative text-gray-500 cursor-pointer hover:text-white focus-within:text-white item-${name} ${itemClass}
-        
-        ${isActive ? "text-white" : ""}
-        `}
+        className={`item-${name} ${itemClass}`}
       >
         <>
           {Icon && (
             <div
-              className={`absolute inset-y-0 left-0 flex items-center pl-2 pointer-events-none icon-${name} ${iconClass}`}
+              className={`sidebarListIcon icon-${name} ${iconClass}`}
             >
               {Icon}
             </div>
           )}
           <span
-            className={`inline-block w-full py-2 ${
-              isNested ? "pl-2" : "pl-8"
-            } ${
-              isActive ? "bg-gray-800 text-white" : ""
-            } pr-4 text-xs rounded hover:bg-gray-800 focus:outline-none focus:ring-1 focus:ring-gray-500 focus:bg-gray-800 link-${name} ${anchorClass}`}
+            className={`link-${name} ${anchorClass}`}
           >
             {name}
           </span>
@@ -108,31 +101,28 @@ export const NestedItems = (
         }}
       >
         <div
-          className={`relative flex justify-between w-full text-gray-500 cursor-pointer hover:text-white  focus-within:text-white
-          
-          ${isActive ? "text-white" : ""}
-          `}
+          className={``}
         >
           <div className="flex items-center w-full">
             {Icon && (
-              <div className="absolute inset-y-0 left-0 flex items-center pl-2 pointer-events-none">
+              <div className="sidebarListIcon">
                 {Icon}
               </div>
             )}
             <span
-              className={`inline-block w-full py-2 ${
-                isNestedChild ? "pl-2" : "pl-8"
+              className={` ${
+                isNestedChild ? "" : ""
               } ${
-                isActive ? "bg-gray-800 text-white" : ""
-              } pr-4 text-xs rounded hover:bg-gray-800 focus:outline-none focus:ring-1 focus:ring-gray-500 focus:bg-gray-800`}
+                isActive ? "" : ""
+              } `}
             >
               {name}
             </span>
           </div>
           <button
             type="button"
-            className={`absolute right-0 flex items-center p-1 ${
-              isActive ? "text-white" : ""
+            className={`sidebarListOpener ${
+              isActive ? "" : ""
             }`}
             tabIndex={-1}
           >
@@ -142,7 +132,7 @@ export const NestedItems = (
       </NavLink>
       {isOpen && (
         // <div className="">
-        <ul className="flex flex-col pt-2 pl-4 space-y-1 text-gray-500 border-l border-gray-700">
+        <ul className="sidebarListNasted">
           {routes?.map(r => {
             let Icon: any = r.icon
             const {

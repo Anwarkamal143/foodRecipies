@@ -7,13 +7,16 @@ export const FeedsContainer = styled.div`
 
 export const LeftContainer = styled.div`
   /* background: #6e6c6c; */
-  width: 70%;
-  padding: 0px 2rem;
+  /* width: 70%; */
+  padding: 0 30px 0 10px;
+  width: calc(100% - 297px);
 `
 export const RightContainer = styled.div`
   /* background: lightgray; */
-  width: 30%;
+  /* width: 30%; */
   /* height: 100%; */
+  width: 297px;
+  min-width: 297px;
 `
 export const StoriesWrapper = styled.div``
 

@@ -10,7 +10,7 @@ type INavListProps = {
 const NavList = (props: INavListProps) => {
   const { className, routes = ROUTES } = props
   return (
-    <ul className={`flex flex-col space-y-2 ${className}`}>
+    <ul className={`sidebarList ${className}`}>
       {routes?.map(r => {
         let Icon: any = r.icon
         const {

@@ -33,15 +33,15 @@ const Header = ({
           <NavHeaderBtnSVG className="w-5 h-5 text-white stroke-current" />
         </a>
       </Link> */}
-      <div className="flex items-center justify-between w-full p-3 border-2 rounded-lg">
-        <div className="flex items-center">
-          <CircleImage
+      <div className="userWidget">
+        <div className="userWidgetWrap">
+          <CircleImage className="userWidgetImage"
             src="/images/profile-img.png"
             alt="default profile imag"
           />
-          <div className="pl-2">
-            <p>Omer E</p>
-            <span>Founder Cook</span>
+          <div className="userWidgetText">
+            <p className="userWidgetName">Omer E</p>
+            <span className="userWidgetDesignation">Founder Cook</span>
           </div>
         </div>
         <div className="ml-auto">

@@ -27,8 +27,9 @@ export const PageLayoutWrapper = styled.div<{ variant?: string }>`
     }
     return
   }} */
-  padding: 0.5rem 0.5rem 0 0.5rem;
+  padding: 20px;
   height: 100%;
+  width: calc(100% - 250px);
 `
 
 export function Page(props: PageLayoutType) {

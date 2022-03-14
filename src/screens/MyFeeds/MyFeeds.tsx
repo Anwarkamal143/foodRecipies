@@ -15,7 +15,7 @@ import {
   LeftContainer,
   RightContainer,
   SlidertWrapper,
-  SuggestedCooksSection,
+  SuggestedCooksSection
 } from "./myfeeds.styled"
 import { Post } from "./posts"
 const Users = [
@@ -135,9 +135,9 @@ function MyFeeds(props: IMyFeedProps) {
           <SuggestedCooksSection>
             <Card>
               <Card.Body>
-                <HeaderCooks>
+                <HeaderCooks className="feedsWidgetHeader">
                   <HeaderTitle>Suggested Cooks</HeaderTitle>
-                  <HeaderRightSide>
+                  <HeaderRightSide className="feedsWidgetSeeAll">
                     <span>See All</span>
                   </HeaderRightSide>
                 </HeaderCooks>
@@ -149,9 +149,9 @@ function MyFeeds(props: IMyFeedProps) {
           <SuggestedCooksSection>
             <Card>
               <Card.Body>
-                <HeaderCooks>
+                <HeaderCooks className="feedsWidgetHeader">
                   <HeaderTitle>My Cooks</HeaderTitle>
-                  <HeaderRightSide>
+                  <HeaderRightSide className="feedsWidgetCount">
                     <span>60</span>
                   </HeaderRightSide>
                 </HeaderCooks>

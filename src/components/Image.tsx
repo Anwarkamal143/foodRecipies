@@ -4,7 +4,7 @@ import {
   useCallback,
   useEffect,
   useRef,
-  useState,
+  useState
 } from "react"
 import styled from "styled-components"
 export type ImageType = DetailedHTMLProps<
@@ -45,7 +45,7 @@ export const Image = (props: ImageType) => {
   return (
     <ImageWrapper
       isloading={loading}
-      className={`image-comp ${loading ? "loading" : "loaded"}`}
+      className={`image-comp userProfileImageWrap ${loading ? "loading" : "loaded"}`}
     >
       <img
         ref={imageRef}
