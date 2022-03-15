@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { UnstyledLink } from "@Components"
+import { UnstyledLink } from "@components"
 import React from "react"
 import {
   ByCookingTime,
@@ -14,10 +14,10 @@ import { useMobileRecipiesMenu } from "./MobileRecipiesMenuContext"
 function AllMealTypeCategories() {
   const { setMobileRecipiesOpenState } = useMobileRecipiesMenu()
   return (
-    <div className=" flex h-full w-full flex-col bg-white">
-      <div className=" w-full overflow-y-scroll px-4">
-        <div className=" flex flex-col gap-4 py-6 text-left">
-          <UnstyledLink href="/" className=" text-sm font-medium text-gray-900">
+    <div className="flex flex-col w-full h-full bg-white ">
+      <div className="w-full px-4 overflow-y-scroll ">
+        <div className="flex flex-col gap-4 py-6 text-left ">
+          <UnstyledLink href="/" className="text-sm font-medium text-gray-900 ">
             By Meal Type
           </UnstyledLink>
           {ByMealTypes.length
@@ -25,9 +25,9 @@ function AllMealTypeCategories() {
                 <div key={item.id}>
                   <UnstyledLink
                     href={item.href}
-                    className="  flex items-center justify-between rounded-md  text-xs font-medium text-gray-500"
+                    className="flex items-center justify-between text-xs font-medium text-gray-500 rounded-md "
                   >
-                    <div className=" flex items-center gap-2">
+                    <div className="flex items-center gap-2 ">
                       <img
                         src={item.thumbnail}
                         alt={item.title}
@@ -41,8 +41,8 @@ function AllMealTypeCategories() {
             : null}
         </div>
 
-        <div className=" flex flex-col gap-4 py-6 text-left">
-          <UnstyledLink href="/" className=" text-sm font-medium text-gray-900">
+        <div className="flex flex-col gap-4 py-6 text-left ">
+          <UnstyledLink href="/" className="text-sm font-medium text-gray-900 ">
             By Infredient
           </UnstyledLink>
           {ByIngredient.length
@@ -50,9 +50,9 @@ function AllMealTypeCategories() {
                 <div key={item.id}>
                   <UnstyledLink
                     href={item.href}
-                    className="  flex items-center justify-between rounded-md  text-xs font-medium text-gray-500"
+                    className="flex items-center justify-between text-xs font-medium text-gray-500 rounded-md "
                   >
-                    <div className=" flex items-center gap-2">
+                    <div className="flex items-center gap-2 ">
                       <img
                         src={item.thumbnail}
                         alt={item.title}
@@ -66,8 +66,8 @@ function AllMealTypeCategories() {
             : null}
         </div>
 
-        <div className=" flex flex-col gap-4 py-6 text-left">
-          <UnstyledLink href="/" className=" text-sm font-medium text-gray-900">
+        <div className="flex flex-col gap-4 py-6 text-left ">
+          <UnstyledLink href="/" className="text-sm font-medium text-gray-900 ">
             By Nutrition
           </UnstyledLink>
           {ByNutrition.length
@@ -75,9 +75,9 @@ function AllMealTypeCategories() {
                 <div key={item.id}>
                   <UnstyledLink
                     href={item.href}
-                    className="  flex items-center justify-between rounded-md  text-xs font-medium text-gray-500"
+                    className="flex items-center justify-between text-xs font-medium text-gray-500 rounded-md "
                   >
-                    <div className=" flex items-center gap-2">
+                    <div className="flex items-center gap-2 ">
                       <img
                         src={item.thumbnail}
                         alt={item.title}
@@ -91,8 +91,8 @@ function AllMealTypeCategories() {
             : null}
         </div>
 
-        <div className=" flex flex-col gap-4 py-6 text-left">
-          <UnstyledLink href="/" className=" text-sm font-medium text-gray-900">
+        <div className="flex flex-col gap-4 py-6 text-left ">
+          <UnstyledLink href="/" className="text-sm font-medium text-gray-900 ">
             By World Cuisine
           </UnstyledLink>
           {ByWorld.length
@@ -100,9 +100,9 @@ function AllMealTypeCategories() {
                 <div key={item.id}>
                   <UnstyledLink
                     href={item.href}
-                    className="  flex items-center justify-between rounded-md  text-xs font-medium text-gray-500"
+                    className="flex items-center justify-between text-xs font-medium text-gray-500 rounded-md "
                   >
-                    <div className=" flex items-center gap-2">
+                    <div className="flex items-center gap-2 ">
                       <img
                         src={item.thumbnail}
                         alt={item.title}
@@ -116,8 +116,8 @@ function AllMealTypeCategories() {
             : null}
         </div>
 
-        <div className=" flex flex-col gap-4 py-6 text-left">
-          <UnstyledLink href="/" className=" text-sm font-medium text-gray-900">
+        <div className="flex flex-col gap-4 py-6 text-left ">
+          <UnstyledLink href="/" className="text-sm font-medium text-gray-900 ">
             By Cooking Time
           </UnstyledLink>
           {ByCookingTime.length
@@ -125,9 +125,9 @@ function AllMealTypeCategories() {
                 <div key={item.id}>
                   <UnstyledLink
                     href={item.href}
-                    className="  flex items-center justify-between rounded-md  text-xs font-medium text-gray-500"
+                    className="flex items-center justify-between text-xs font-medium text-gray-500 rounded-md "
                   >
-                    <div className=" flex items-center gap-2">
+                    <div className="flex items-center gap-2 ">
                       <img
                         src={item.thumbnail}
                         alt={item.title}
@@ -141,10 +141,10 @@ function AllMealTypeCategories() {
             : null}
         </div>
 
-        <div className=" flex flex-col gap-4 py-6 text-left">
+        <div className="flex flex-col gap-4 py-6 text-left ">
           <UnstyledLink
             href="/"
-            className="  text-sm font-medium text-gray-900"
+            className="text-sm font-medium text-gray-900 "
           >
             By Ranking
           </UnstyledLink>
@@ -153,9 +153,9 @@ function AllMealTypeCategories() {
                 <div key={item.id}>
                   <UnstyledLink
                     href={item.href}
-                    className="  flex items-center justify-between rounded-md  text-xs font-medium text-gray-500"
+                    className="flex items-center justify-between text-xs font-medium text-gray-500 rounded-md "
                   >
-                    <div className=" flex items-center gap-2">
+                    <div className="flex items-center gap-2 ">
                       <img
                         src={item.thumbnail}
                         alt={item.title}

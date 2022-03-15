@@ -1,4 +1,4 @@
-import { Card } from "@Components"
+import { Card } from "@components"
 import { useFormik } from "formik"
 import PostBody from "./PostBody"
 import PostFooter from "./PostFooter"

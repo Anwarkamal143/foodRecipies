@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import clsxm from "@Lib/clsxm"
+import clsxm from "@lib/clsxm"
 import React from "react"
 
 function CrclImage({ src = "", alt = "", className = "" }) {

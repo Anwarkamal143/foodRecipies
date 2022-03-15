@@ -1,13 +1,8 @@
-import { Button } from "@Components"
 import { useSession } from "next-auth/react"
-import { useAppDispatch, useAppSelector } from "src/app/hooks"
-import { decrement, increment } from "src/app/reducers/Counter"
+
 // import Layout from "../components/layout"
 
 export default function Page({ context }: { context: any }) {
-  const state = useAppSelector(state => state.counter)
-  const dispatch = useAppDispatch()
-
   // As this page uses Server Side Rendering, the `session` will be already
   // populated on render without needing to go through a loading stage.
   // This is possible because of the shared context configured in `_app.js` that
@@ -17,9 +12,6 @@ export default function Page({ context }: { context: any }) {
   console.log({ state })
   return (
     <div>
-      {JSON.stringify(state)}
-      <Button onClick={() => dispatch(increment())}>Add</Button>
-      <Button onClick={() => dispatch(decrement())}>dec</Button>
       <h1>Server Side Rendering</h1>
 
       <p>

@@ -1,13 +1,17 @@
-import { Slicklider } from "@Components"
-import { AppleIcon, FacebookIcon, GoogleIcon, LinkedInIcon } from "@Icons"
+import { useAppDispatch } from "@hooks"
+import { setUser } from "@redux/reducers"
+import { removeLocalStorage } from "@utils"
+import { Time } from "@utils/enums"
+import request from "@utils/request"
+import { useRouter } from "next/router"
 import React, {
-  cloneElement,
-  isValidElement,
   ReactChild,
   ReactChildren,
   ReactElement,
   ReactNode,
+  useEffect,
 } from "react"
+import { Cookies } from "react-cookie"
 import styled from "styled-components"
 import { AuthContainer } from "./authlayout.styled"
 
@@ -22,52 +26,57 @@ type IAuthProps = {
     | ReactNode[]
   className?: string
 }
+const cookies = new Cookies()
 function AuthL(props: IAuthProps) {
   const { children, className = "" } = props
-  const getIcon = (title: string) => {
-    switch (title) {
-      case "google":
-        return <GoogleIcon />
-      case "linkedin":
-        return <LinkedInIcon />
-      case "apple":
-        return <AppleIcon />
+  const dispatch = useAppDispatch()
+  const router = useRouter()
 
-      case "facebook":
-        return <FacebookIcon />
-      default:
-        break
+  async function loadUserFromCookies() {
+    const token = cookies.get("token")
+    console.log({ token })
+    if (token) {
+      console.log("Got a token in the cookies, let's see if it is valid")
+      // api.defaults.headers.Authorization = `Bearer ${token}`
+      const { data: user } = await request("/user")
+      if (user) dispatch(setUser(user))
+    } else {
+      login("omer", "123456")
+    }
+    // setLoading(false)
+  }
+  useEffect(() => {
+    loadUserFromCookies()
+  }, [])
+  const login = async (email: string, password: string) => {
+    const { data: token } = await request("/auth/login", {
+      data: {
+        email,
+        password,
+      },
+    })
+    console.log({ token })
+    if (token) {
+      console.log("Got token")
+      cookies.set("token", token, {
+        path: "/",
+        maxAge: 68 * Time.YEARS,
+        sameSite: "lax",
+      })
+      loadUserFromCookies()
     }
   }
 
-  // console.log(isValidElement(children))
-  // console.log({ children, child: React.Children })
+  const logout = () => {
+    removeLocalStorage("user")
+    cookies.remove("token", { path: "/" })
 
-  // return <p>hello theere</p>
+    router.push("/login")
+  }
+
   return (
     <AuthContainer className={`${className} auth_layout`}>
-      <div className="react-slick">
-        <Slicklider />
-      </div>
-      {children
-        ? React.Children.map(children, (ch, i) => {
-            if (isValidElement(ch)) {
-              return cloneElement(ch as any, {
-                key: i,
-                // loading,
-                // isLoading: loading,
-                // files: acceptedFiles,
-              })
-            }
-
-            return null
-          })
-        : null}
-      {/* {cloneElement(children as any, {
-        // loading,
-        // isLoading: loading,
-        // files: acceptedFiles,
-      })} */}
+      {children}
     </AuthContainer>
   )
 }

@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-import { CircleImage, UnderlineLink } from "@Components"
+import { CircleImage, UnderlineLink } from "@components"
 import { Menu, Transition } from "@headlessui/react"
-import clsxm from "@Lib/clsxm"
+import clsxm from "@lib/clsxm"
 import parse from "html-react-parser"
 import React, { Fragment } from "react"
 import { BiBell } from "react-icons/bi"
@@ -21,7 +21,7 @@ function WishListDropDown() {
               aria-hidden="true"
               className="animate-shake"
             />
-            <span className=" absolute -top-1 -right-1 flex h-3 w-3 items-center justify-center rounded-full bg-primary-50 p-1 text-xs text-white">
+            <span className="absolute flex items-center justify-center w-3 h-3 p-1 text-xs text-white rounded-full -top-1 -right-1 bg-primary-50">
               4
             </span>
             {/* </button> */}
@@ -36,14 +36,14 @@ function WishListDropDown() {
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95"
         >
-          <Menu.Items className="absolute -right-7 mt-6 w-60 origin-top-right rounded-xl bg-white py-4 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-            {/* <span className='customArrow block after:right-7 after:left-auto'></span> */}
+          <Menu.Items className="absolute py-4 mt-6 origin-top-right bg-white shadow-lg -right-7 w-60 rounded-xl ring-1 ring-black ring-opacity-5 focus:outline-none">
+            {/* <span className='block customArrow after:right-7 after:left-auto'></span> */}
             {/* Notification settings */}
-            <div className=" mb-4 flex cursor-default items-center justify-between px-4">
-              <p className=" text-sm font-bold text-dark">Notifications</p>
+            <div className="flex items-center justify-between px-4 mb-4 cursor-default ">
+              <p className="text-sm font-bold text-dark">Notifications</p>
               <IoSettingsOutline
                 size="1rem"
-                className=" cursor-pointer text-dark"
+                className="cursor-pointer text-dark"
               />
             </div>
 
@@ -59,13 +59,13 @@ function WishListDropDown() {
                       "block cursor-default px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     )}
                   >
-                    <div className=" flex justify-between gap-4">
-                      <CircleImage src={item.thumbnail} className=" mt-2" />
-                      <div className=" flex flex-col justify-start gap-1">
-                        <p className=" text-left text-xs font-normal text-gray-600">
+                    <div className="flex justify-between gap-4 ">
+                      <CircleImage src={item.thumbnail} className="mt-2 " />
+                      <div className="flex flex-col justify-start gap-1 ">
+                        <p className="text-xs font-normal text-left text-gray-600 ">
                           {parse(item.title)}
                         </p>
-                        <small className=" text-left">{item.time} ago</small>
+                        <small className="text-left ">{item.time} ago</small>
                       </div>
                     </div>
                   </div>
@@ -73,7 +73,7 @@ function WishListDropDown() {
                   // </Menu.Item>
                 ))
               : null}
-            <div className=" mt-2">
+            <div className="mt-2 ">
               <Menu.Item>
                 {({ active }) => (
                   <UnderlineLink

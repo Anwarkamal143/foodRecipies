@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { UnstyledLink } from "@Components"
+import { UnstyledLink } from "@components"
 import React, { useContext, useState } from "react"
 import { FiChevronRight } from "react-icons/fi"
 
@@ -26,7 +26,7 @@ export function MobileMenuItems() {
         <li>
           <UnstyledLink
             href="/"
-            className="flex items-center justify-between font-medium text-gray-500  hover:text-primary-50"
+            className="flex items-center justify-between font-medium text-gray-500 hover:text-primary-50"
           >
             <div className="flex items-center gap-4 ">
               <img src="/svg/RecipiesOfTheDay.svg" alt="home" className="w-6" />
@@ -39,7 +39,7 @@ export function MobileMenuItems() {
         <li>
           <UnstyledLink
             href="/"
-            className="flex items-center justify-between font-medium text-gray-500  hover:text-primary-50"
+            className="flex items-center justify-between font-medium text-gray-500 hover:text-primary-50"
             onClick={handleState}
             id="recipies"
           >
@@ -59,7 +59,7 @@ export function MobileMenuItems() {
         <li>
           <UnstyledLink
             href="/"
-            className="flex items-center justify-between font-medium text-gray-500  hover:text-primary-50"
+            className="flex items-center justify-between font-medium text-gray-500 hover:text-primary-50"
             onClick={handleState}
             id="cooks"
           >
@@ -78,7 +78,7 @@ export function MobileMenuItems() {
         <li>
           <UnstyledLink
             href="/"
-            className="flex items-center justify-between font-medium text-gray-500  hover:text-primary-50"
+            className="flex items-center justify-between font-medium text-gray-500 hover:text-primary-50"
             onClick={handleState}
             id="community"
           >
@@ -95,7 +95,7 @@ export function MobileMenuItems() {
         <li>
           <UnstyledLink
             href="/"
-            className="flex items-center justify-between font-medium text-gray-500  hover:text-primary-50"
+            className="flex items-center justify-between font-medium text-gray-500 hover:text-primary-50"
             onClick={handleState}
             id="shoppingLists"
           >
@@ -113,7 +113,7 @@ export function MobileMenuItems() {
         <li>
           <UnstyledLink
             href="/"
-            className="flex items-center justify-between font-medium text-gray-500  hover:text-primary-50"
+            className="flex items-center justify-between font-medium text-gray-500 hover:text-primary-50"
             onClick={handleState}
             id="savedRecipes"
           >

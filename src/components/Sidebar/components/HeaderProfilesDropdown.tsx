@@ -1,6 +1,6 @@
-import { UnstyledLink } from "@Components"
+import { UnstyledLink } from "@components"
 import { Menu, Transition } from "@headlessui/react"
-import { classNames } from "@Utils"
+import { classNames } from "@utils"
 import React, { Fragment, ReactNode } from "react"
 
 const myMenus = [
@@ -41,6 +41,7 @@ function ProfileDropDown(props: IprofileDropDownTypes) {
                 <Menu.Item key={item.id}>
                   {({ active }) => (
                     <UnstyledLink
+                      onClick={e => console.log({ e })}
                       href={item.href}
                       className={classNames(
                         active ? "bg-gray-100" : "",

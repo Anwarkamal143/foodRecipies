@@ -1,5 +1,5 @@
-import { Button, Icon, Image } from "@Components"
-import { FacebookIcon, InstagramIcon, TwitterIcon, YoutubeIcon } from "@Icons"
+import { Button, Icon, Image } from "@components"
+import { FacebookIcon, InstagramIcon, TwitterIcon, YoutubeIcon } from "@icons"
 import dayjs from "dayjs"
 import relativeTime from "dayjs/plugin/relativeTime"
 import styled from "styled-components"

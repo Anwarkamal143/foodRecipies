@@ -1,5 +1,5 @@
-import { Icon, Image, Scrollbar } from "@Components"
-import { HeartIcon } from "@Icons"
+import { Icon, Image, Scrollbar } from "@components"
+import { HeartIcon } from "@icons"
 import styled from "styled-components"
 
 type IMyFeedProps = {

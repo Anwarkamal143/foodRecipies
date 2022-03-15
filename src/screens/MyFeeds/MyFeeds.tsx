@@ -1,6 +1,6 @@
-import { Button, Card, DropDown, PopOver, Profile } from "@Components"
-import { AddIcon, DownArrowIcon, FilterIcon } from "@Icons"
-import { Page } from "@Layouts"
+import { Button, Card, DropDown, PopOver, ProfileItem } from "@components"
+import { AddIcon, DownArrowIcon, FilterIcon } from "@icons"
+import { Page } from "@layouts"
 import { useFormik } from "formik"
 import NoSSR from "react-no-ssr"
 import { FeedsSlider } from "./components"
@@ -141,7 +141,7 @@ function MyFeeds(props: IMyFeedProps) {
                     <span>See All</span>
                   </HeaderRightSide>
                 </HeaderCooks>
-                <Profile data={Users} />
+                <ProfileItem data={Users} />
               </Card.Body>
             </Card>
           </SuggestedCooksSection>
@@ -155,7 +155,7 @@ function MyFeeds(props: IMyFeedProps) {
                     <span>60</span>
                   </HeaderRightSide>
                 </HeaderCooks>
-                <Profile data={Users} />
+                <ProfileItem data={Users} />
               </Card.Body>
             </Card>
           </SuggestedCooksSection>

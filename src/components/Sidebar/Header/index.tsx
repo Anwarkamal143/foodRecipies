@@ -1,7 +1,12 @@
-import { ProfileTogglerIcon } from "@Icons"
+import { useAppDispatch } from "@hooks"
+import { ProfileTogglerIcon } from "@icons"
+import { useAppSelector } from "@redux/hooks"
+import { setUser } from "@redux/reducers"
 import { useEffect, useState } from "react"
 import { CircleImage } from "src/components/common"
-import ProfileDropDown from "../components/HeaderProfilesDropdown"
+import { DropDown } from "src/components/DropDown"
+import styled from "styled-components"
+import { DropDownItem } from "./header.styled"
 export type ISidebarHeaderProps = {
   className?: string
   onSideBarToggle?: (isClosed: boolean) => void
@@ -15,6 +20,10 @@ const Header = ({
   isSidebarOpen = false,
 }: ISidebarHeaderProps) => {
   const [sideBarToggler, setSideBarToggler] = useState(isSidebarOpen)
+  const dispatch = useAppDispatch()
+
+  const user = useAppSelector(state => state.user)
+  console.log({ user })
   const handleToggle = () => {
     setSideBarToggler(!sideBarToggler)
     onSideBarToggle?.(!sideBarToggler)
@@ -35,19 +44,41 @@ const Header = ({
       </Link> */}
       <div className="userWidget">
         <div className="userWidgetWrap">
-          <CircleImage className="userWidgetImage"
+          <CircleImage
+            className="userWidgetImage"
             src="/images/profile-img.png"
             alt="default profile imag"
           />
           <div className="userWidgetText">
-            <p className="userWidgetName">Omer E</p>
-            <span className="userWidgetDesignation">Founder Cook</span>
+            <p className="userWidgetName">{user.name || "Omer E"}</p>
+            <span className="userWidgetDesignation">
+              {user.status || "Founder Cook"}
+            </span>
           </div>
         </div>
         <div className="ml-auto">
-          <ProfileDropDown>
-            <ProfileTogglerIcon />
-          </ProfileDropDown>
+          <DropDown
+            items={[
+              { id: 1, name: "Omer E", status: "Founder Cook", role: "cook" },
+              { id: 1, name: "Javed M", status: "Admin Cook", role: "admin" },
+            ]}
+            renderItem={({ item, isActive, onClick }) => {
+              return (
+                <DropDownItem
+                  className={`${isActive} item`}
+                  onClick={() => {
+                    console.log({ item })
+                    dispatch(setUser({ ...item }))
+                  }}
+                >
+                  {item.name}
+                </DropDownItem>
+              )
+            }}
+            button={() => {
+              return <ProfileTogglerIcon />
+            }}
+          />
         </div>
       </div>
       {/* <button
@@ -68,4 +99,4 @@ const Header = ({
   )
 }
 
-export default Header
+export default styled(Header)``

@@ -1,5 +1,5 @@
-import { Button, Checkbox, Select } from "@Components"
-import { StarFillIcon } from "@Icons"
+import { Button, Checkbox, Select } from "@components"
+import { StarFillIcon } from "@icons"
 import styled from "styled-components"
 
 const DeficultySection = ({

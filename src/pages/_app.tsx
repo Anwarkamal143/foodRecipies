@@ -1,16 +1,16 @@
-import { Navbar, Sidebar } from "@Components"
-import { AppLayout } from "@Layouts"
+import { Navbar, Sidebar } from "@components"
+import { AppLayout, AuthLayout } from "@layouts"
 import {
   AppLayoutWrapper,
   MainContainer,
   MainContentSectionWrapper,
-} from "@Layouts/applayout.styled"
-import "@Styles/globals.scss"
-import { SessionProvider } from "next-auth/react"
+} from "@layouts/applayout.styled"
+import { store } from "@redux"
+import "@styles/globals.scss"
 import type { AppProps } from "next/app"
 import { useMemo } from "react"
+import { CookiesProvider } from "react-cookie"
 import { Provider } from "react-redux"
-import store from "src/app/store1"
 
 function MyApp({ Component, pageProps }: AppProps) {
   const MemoFunction = useMemo(
@@ -31,13 +31,17 @@ function MyApp({ Component, pageProps }: AppProps) {
   )
   console.log("console log", typeof window == "undefined")
   return (
-    <SessionProvider
-      // Provider options are not required but can be useful in situations where
-      // you have a short session maxAge time. Shown here with default values.
-      session={pageProps.session}
-    >
-      <Provider store={store}>{MemoFunction}</Provider>
-    </SessionProvider>
+    // <SessionProvider
+    //   // Provider options are not required but can be useful in situations where
+    //   // you have a short session maxAge time. Shown here with default values.
+    //   session={pageProps.session}
+    // >
+    <CookiesProvider>
+      <Provider store={store}>
+        <AuthLayout>{MemoFunction}</AuthLayout>
+      </Provider>
+    </CookiesProvider>
+    // </SessionProvider>
   )
 }
 // export default wrapper.withRedux(MyApp)

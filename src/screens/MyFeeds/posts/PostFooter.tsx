@@ -1,5 +1,5 @@
-import { Icon } from "@Components"
-import { DisLikeIcon, ExportIcon, HeartIcon, LikeIcon } from "@Icons"
+import { Icon } from "@components"
+import { DisLikeIcon, ExportIcon, HeartIcon, LikeIcon } from "@icons"
 import styled from "styled-components"
 
 type IPostFooterProps = {

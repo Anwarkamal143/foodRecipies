@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { Menu, Transition } from "@headlessui/react"
-import clsxm from "@Lib/clsxm"
+import clsxm from "@lib/clsxm"
 import React, { Fragment } from "react"
 
 const translationLanguage = [

@@ -1,26 +1,26 @@
-import { CircleImage, UnstyledLink } from "@Components"
+import { CircleImage, UnstyledLink } from "@components"
 import React from "react"
 import { TopCooksOfWeek } from "../../DesktopMenu/MenuData/MenuData"
 
 function TopRankedCooks() {
   return (
-    <div className=" flex h-full w-full flex-col gap-4 bg-white px-4 py-4">
-      <p className=" text-sm font-bold text-gray-900">Top cooks this week</p>
+    <div className="flex flex-col w-full h-full gap-4 px-4 py-4 bg-white ">
+      <p className="text-sm font-bold text-gray-900 ">Top cooks this week</p>
 
-      <ul className=" flex list-decimal flex-col gap-4 pl-6 text-xs text-gray-500 overflow-y-scroll">
+      <ul className="flex flex-col gap-4 pl-6 overflow-y-scroll text-xs text-gray-500 list-decimal ">
         {TopCooksOfWeek.length
           ? TopCooksOfWeek.map(item => (
               <li key={item.id}>
                 <UnstyledLink
                   href={item.href}
-                  className=" ml-2  flex items-center justify-between rounded-md  text-xs font-medium text-gray-500"
+                  className="flex items-center justify-between ml-2 text-xs font-medium text-gray-500 rounded-md "
                 >
-                  <div className=" flex items-center gap-2">
-                    {/* <div className=' flex items-center gap-2'> */}
+                  <div className="flex items-center gap-2 ">
+                    {/* <div className='flex items-center gap-2 '> */}
                     <CircleImage
                       src={item.thumbnail}
                       alt={item.title}
-                      className="h-5 w-5 border-none"
+                      className="w-5 h-5 border-none"
                     />
                     <p>{item.title}</p>
                     {/* </div> */}

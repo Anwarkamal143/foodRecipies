@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { UnstyledLink } from "@Components"
+import { UnstyledLink } from "@components"
 import React, { useContext, useState } from "react"
 import { FiChevronRight } from "react-icons/fi"
 import { recipies } from "../../DesktopMenu/MenuData/MenuData"
@@ -35,11 +35,11 @@ export function MobileRecipiesMenuItems() {
               <div key={item.id}>
                 <UnstyledLink
                   href={item.href}
-                  className=" flex items-center justify-between rounded-md p-4  text-sm font-medium text-gray-900 hover:bg-blue-50"
+                  className="flex items-center justify-between p-4 text-sm font-medium text-gray-900 rounded-md  hover:bg-blue-50"
                   onClick={handleState}
                   id={item.title.split(" ").join("_")}
                 >
-                  <div className=" flex items-center gap-4">
+                  <div className="flex items-center gap-4 ">
                     <img
                       src={item.thumbnail}
                       alt={item.title}
@@ -47,7 +47,7 @@ export function MobileRecipiesMenuItems() {
                     />
                     {item.title}
                   </div>
-                  <FiChevronRight size="0.8rem " className=" mr-2" />
+                  <FiChevronRight size="0.8rem " className="mr-2 " />
                 </UnstyledLink>
               </div>
             ))

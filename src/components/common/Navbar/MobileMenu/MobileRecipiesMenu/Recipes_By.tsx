@@ -1,4 +1,4 @@
-import { UnstyledLink } from "@Components"
+import { UnstyledLink } from "@components"
 import React, { useEffect, useState } from "react"
 import {
   ByCookingTime,
@@ -33,8 +33,8 @@ function SelectedRecipesType() {
 
   return (
     <>
-      <div className=" flex flex-col gap-4 py-6 mb-6 text-left">
-        <p className=" text-sm font-medium text-gray-900">
+      <div className="flex flex-col gap-4 py-6 mb-6 text-left ">
+        <p className="text-sm font-medium text-gray-900 ">
           By {mobileRecipiesOpenState.split("_").slice(1).join(" ")}
         </p>
         {meal.length
@@ -42,9 +42,9 @@ function SelectedRecipesType() {
               <div key={item.id}>
                 <UnstyledLink
                   href={item.href}
-                  className="  flex items-center justify-between rounded-md  text-xs font-medium text-gray-500"
+                  className="flex items-center justify-between text-xs font-medium text-gray-500 rounded-md "
                 >
-                  <div className=" flex items-center gap-2">
+                  <div className="flex items-center gap-2 ">
                     <img
                       src={item.thumbnail}
                       alt={item.title}
@@ -65,11 +65,11 @@ function Recipes_By() {
   const { setMobileRecipiesOpenState } = useMobileRecipiesMenu()
 
   return (
-    <div className=" w-full overflow-y-scroll px-4">
+    <div className="w-full px-4 overflow-y-scroll ">
       <SelectedRecipesType />
       <div
         onClick={() => setMobileRecipiesOpenState("Recipes_By_All_Type")}
-        className=" p-2 bg-gray-100 text-gray-600 font-bold flex justify-center items-center rounded-full"
+        className="flex items-center justify-center p-2 font-bold text-gray-600 bg-gray-100 rounded-full "
       >
         <span>See All Meal Type Categories</span>
       </div>

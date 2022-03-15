@@ -12,7 +12,8 @@ import {
   ReserveIcon,
   SettingsIcon,
   UserTick,
-} from "@Icons"
+} from "@icons"
+import { UserTypes } from "@utils/enums"
 
 export type INavItem = {
   name: string
@@ -20,6 +21,7 @@ export type INavItem = {
   icon?: ReactNode
   exact?: boolean
   meta: {
+    roles?: UserTypes[]
     hasNotifications?: boolean
     divider?: boolean
     hasChilds: boolean
@@ -31,7 +33,7 @@ export type INavItem = {
   }
 }
 
-export const ROUTES: INavItem[] = [
+export const ADMINROUTES: INavItem[] = [
   {
     name: "Main",
     icon: null,
@@ -47,6 +49,7 @@ export const ROUTES: INavItem[] = [
     exact: true,
     meta: {
       hasChilds: false,
+      roles: [UserTypes.admin],
     },
   },
   {
@@ -56,6 +59,7 @@ export const ROUTES: INavItem[] = [
     exact: true,
     meta: {
       hasChilds: false,
+      roles: [UserTypes.admin],
     },
   },
   {
@@ -177,6 +181,108 @@ export const ROUTES: INavItem[] = [
     name: "Connections",
     icon: PeoplesIcon,
     route: "/connections",
+    exact: true,
+    meta: {
+      hasChilds: false,
+    },
+  },
+  {
+    name: "Settings",
+    icon: SettingsIcon,
+    route: "/settings",
+    exact: true,
+    meta: {
+      hasChilds: false,
+    },
+  },
+  {
+    name: "Logout",
+    icon: LogoutIcon,
+    route: "/logout",
+    exact: true,
+    meta: {
+      hasChilds: false,
+    },
+  },
+]
+export const PERSONALROUTES: INavItem[] = [
+  {
+    name: "Personal dashboard",
+    icon: null,
+    meta: {
+      divider: true,
+      hasChilds: false,
+    },
+  },
+  {
+    name: "My Food Feed",
+    icon: DashboardIcon,
+    route: "/",
+    exact: true,
+    meta: {
+      hasChilds: false,
+      roles: [UserTypes.cook],
+    },
+  },
+
+  {
+    name: "My Content",
+    icon: null,
+    meta: {
+      divider: true,
+      hasChilds: false,
+    },
+  },
+
+  {
+    name: "Favorite recipes",
+    icon: RecipesIcon,
+    route: "/favorite-recipies",
+    exact: false,
+    meta: {
+      hasChilds: false,
+    },
+  },
+  {
+    name: "Favorite cooks",
+    icon: HeartIcon,
+    route: "/favorite-cooks",
+    exact: false,
+    meta: {
+      hasChilds: false,
+    },
+  },
+  {
+    name: "Shopping lists",
+    icon: UserTick,
+    route: "/shoppint-list",
+    exact: true,
+    meta: {
+      hasChilds: false,
+    },
+  },
+
+  {
+    name: "Customizations",
+    icon: null,
+    meta: {
+      divider: true,
+      hasChilds: false,
+    },
+  },
+  {
+    name: "Notifications",
+    icon: ProfileCircleIcon,
+    route: "/notifications",
+    exact: true,
+    meta: {
+      hasChilds: false,
+    },
+  },
+  {
+    name: "Preferences ",
+    icon: PeoplesIcon,
+    route: "/preferences",
     exact: true,
     meta: {
       hasChilds: false,
