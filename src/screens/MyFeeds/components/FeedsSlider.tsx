@@ -12,9 +12,9 @@ interface ISliderProps extends Settings {
 function Sliderr(props: ISliderProps) {
   const settings: Settings = {
     // dots: true,
-    infinite: false,
+    infinite: true,
     speed: 500,
-    slidesToShow: 6,
+    slidesToShow: 1,
     slidesToScroll: 1,
     className: "slider",
 
@@ -24,10 +24,11 @@ function Sliderr(props: ISliderProps) {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 5,
+          slidesToShow: 1,
           slidesToScroll: 1,
-          infinite: false,
+          infinite: true,
           dots: false,
+          variableWidth: true,
         },
       },
       {
@@ -130,13 +131,21 @@ function Sliderr(props: ISliderProps) {
 }
 
 export const FeedsSlider = styled(Sliderr)`
-  /* width: calc(100% - 28px); */
-  width: 900px;
+  width: calc(100% - 127px);
+
   @media (max-width: 600px) {
     width: 280px;
   }
+
+  .slick-slider {
+    flex-grow: 0;
+    flex-basis: inherit;
+    width: 100%;
+  }
+
   .slick-slide {
-    padding: 0.5rem;
+    width: 134px;
+    padding: 0 7px;
     /* width: 135px !important; */
   }
 `

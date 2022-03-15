@@ -28,7 +28,7 @@ function Posts(props: IMyFeedProps) {
   })
 
   return (
-    <Card>
+    <Card className="postFeed">
       <Card.Header>
         <PostHeader />
       </Card.Header>

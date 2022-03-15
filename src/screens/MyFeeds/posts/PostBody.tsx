@@ -92,7 +92,53 @@ function PostBody(props: IMyFeedProps) {
   )
 }
 export default styled(PostBody)`
+.post-text {
+  font-size: 12px;
+  line-height: 20px;
+  color: #1e1e2d;
+  margin: 0 0 24px;
+}
+
+.main-img {
+  overflow: hidden;
+
+  .image-comp {
+    overflow: hidden;
+    border-radius: 15px;
+  }
+
   img {
     width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 15px;
   }
+
+  .heartIcon {
+    width: 42px;
+    height: 42px;
+    padding: 7px 5px 0;
+  }
+}
+
+.scrollslides {
+  .image-comp {
+    height: calc(33.333% - 14px);
+    max-height: 140px;
+    margin: 0 0 14px;
+    overflow: hidden;
+    border-radius: 15px;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 15px;
+    }
+  }
+}
 `

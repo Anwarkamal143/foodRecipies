@@ -22,8 +22,8 @@ function IconComp(props: IIconProps) {
 export const Icon = styled(IconComp)`
   border: 1px solid lightgray;
   border-radius: 100%;
-  width: 2.5em;
-  height: 2.5em;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,8 +32,9 @@ export const Icon = styled(IconComp)`
   &:not(:last-child) {
     margin-right: 0.5em;
   }
+
   svg {
-    width: 2em;
-    height: 2em;
+    width: 16px;
+    height: 16px;
   }
 `

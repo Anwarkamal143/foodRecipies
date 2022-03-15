@@ -52,11 +52,21 @@ export default styled(Sidebar)`
   align-items: center;
   padding: 18px 20px;
 
+  @media (max-width: 1199px) {
+    padding: 12px 10px;
+    margin: 0 -5px;
+    width: calc(100% + 10px);
+  }
+
   .userWidgetWrap {
     width: 100%;
     display: flex;
     align-items: center;
     padding-right: 15px;
+
+    @media (max-width: 1199px) {
+      padding-right: 10px;
+    }
   }
 
   .userWidgetImage {
@@ -64,6 +74,10 @@ export default styled(Sidebar)`
     height: 34px !important;
     border: 0 !important;
     margin: 0 20px 0 0;
+
+    @media (max-width: 1199px) {
+      margin: 0 10px 0 0;
+    }
   }
 
   .userWidgetText {
@@ -92,6 +106,10 @@ export default styled(Sidebar)`
 
 .sidebarList {
   overflow: hidden;
+
+  @media (max-width: 1199px) {
+    margin: 0 -5px;
+  }
 
   .sidebarListTitle {
     text-transform: uppercase;
@@ -129,6 +147,10 @@ export default styled(Sidebar)`
         line-height: 18px;
         width: 100%;
         padding: 8px 15px 10px 34px;
+
+        @media (max-width: 1199px) {
+          padding: 8px 15px 10px 28px;
+        }
       }
 
       .sidebarListIcon {
@@ -230,6 +252,10 @@ export default styled(Sidebar)`
         font-size: 12px;
         line-height: 16px;
         padding: 10px 15px 10px 34px;
+
+        @media (max-width: 1199px) {
+          padding: 10px 15px 10px 28px;
+        }
       }
     }
   }

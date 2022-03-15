@@ -1,16 +1,16 @@
 // import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons"
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import classNames from "classnames"
-import React, { CSSProperties } from "react"
+import classNames from "classnames";
+import React, { CSSProperties } from "react";
 import SelectComponent, {
   ActionMeta,
   GroupedOptionsType,
   NamedProps,
   OptionsType,
   OptionTypeBase,
-  ValueType,
-} from "react-select"
-import styled from "styled-components"
+  ValueType
+} from "react-select";
+import styled from "styled-components";
 
 export interface SelectProps<
   OptionType extends OptionTypeBase = { label: string; value: string },
@@ -193,17 +193,17 @@ export const Select = styled(RSelect)`
   }
 
   .react-select__control {
-    border: 1px solid #d8d8d8;
+    border: 1px solid #e5e8ef;
     border-radius: 3px;
-    font-size: 15px;
+    font-size: 12px;
     line-height: 18px;
-    color: #000;
+    color: #7474a9;
     min-height: 40px;
     box-shadow: none !important;
     outline: none !important;
 
     &:hover {
-      border: 1px solid #d8d8d8;
+      border: 1px solid #e5e8ef;
     }
 
     .react-select__indicators {
@@ -211,10 +211,14 @@ export const Select = styled(RSelect)`
       height: 38px;
       position: relative;
       justify-content: center;
+
+      svg {
+        padding: 2px;
+      }
     }
 
     .react-select__indicator {
-      color: #72777d;
+      color: #7474a9;
     }
 
     .react-select__indicator-separator {
@@ -224,6 +228,7 @@ export const Select = styled(RSelect)`
       left: 0;
       top: 0;
       bottom: 0;
+      background: #e5e8ef;
     }
   }
 `
