@@ -16,7 +16,9 @@ import {
   YAxis,
 } from "recharts"
 import styled from "styled-components"
+import { chartData, data, LineChartData } from "../../../data"
 import { CardHeader, PerformanceBar, StatisticsItem } from "./components"
+import RecipiesTable from "./components/RecipiesTable"
 import {
   LeftMyRecipiesSection,
   LeftPerformanceSection,
@@ -27,104 +29,6 @@ import {
   StatisticsWrapper,
 } from "./dashboard.styed"
 
-const data = [
-  {
-    title: "Recipe Views",
-    count: FormatNumber(1200),
-    status: "up",
-    trandingCount: 28,
-    reviewTime: "Views (7 days)",
-  },
-  {
-    title: "Recipe Saves",
-    count: FormatNumber(1100000),
-    status: "down",
-    trandingCount: 36,
-    reviewTime: "Saves ( 7 days )",
-  },
-  {
-    title: "Recipe Reviews",
-    count: FormatNumber(1100),
-    status: "up",
-    trandingCount: 23,
-    reviewTime: "Views (7 days)",
-  },
-  {
-    title: "Profile Visits",
-    count: FormatNumber(11500000),
-    status: "up",
-    trandingCount: 23,
-    reviewTime: "Visits ( 30 days )",
-  },
-]
-const LineChartData = [
-  {
-    month: "2021-03-09",
-    // price: FormatNumber(4000),
-    price: 0,
-  },
-  {
-    month: "2021-03-10",
-    price: 3000,
-  },
-  {
-    month: "2021-03-11",
-    price: 2000,
-  },
-  {
-    month: "2021-03-12",
-    price: 2780,
-  },
-  {
-    month: "2021-03-13",
-    price: 1890,
-  },
-  {
-    month: "2021-03-14",
-    price: 2390,
-  },
-  {
-    month: "2021-03-15",
-    price: 3490,
-  },
-]
-const chartData = [
-  {
-    day: "M",
-
-    count: "50",
-  },
-  {
-    day: "T",
-
-    count: "60",
-  },
-  {
-    day: "W",
-
-    count: "70",
-  },
-  {
-    day: "T",
-
-    count: "1000",
-  },
-  {
-    day: "F",
-
-    count: "70",
-  },
-  {
-    day: "S",
-
-    count: "60",
-  },
-  {
-    day: "S",
-
-    count: "50",
-  },
-]
 const dateFormatter = (item: Date) => dayjs(item).format("MMM YY")
 const DashBoard = ({ className }: { className?: string }) => {
   return (
@@ -247,6 +151,7 @@ const DashBoard = ({ className }: { className?: string }) => {
               </LineChart>
             </ResponsiveContainer>
           </LeftPerformanceSection>
+          <RecipiesTable />
           <RightPerformanceSection className="right-section">
             <Card>
               <Card.Header>

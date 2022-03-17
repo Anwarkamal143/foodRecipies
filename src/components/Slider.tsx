@@ -1,13 +1,13 @@
 import { useAppDispatch, useAppSelector } from "@hooks"
 import { LeftSliderArrow, RightSliderArrow } from "@icons"
 import { setSliderAttachments, toggleSlider } from "@reducers"
-import attrAccept from "attr-accept"
 import React, { useEffect, useState } from "react"
+import Stories from "react-insta-stories"
 import Slider from "react-slick"
 // import "slick-carousel/slick/slick-theme.css"
 // import "slick-carousel/slick/slick.css"
 import styled from "styled-components"
-import { Image, Modal, VideoPlayer } from "."
+import { Modal } from "."
 
 interface Props {
   className?: string
@@ -17,6 +17,7 @@ const AttachmentsPreviewModel: React.FC<Props> = props => {
   const { className } = props
   const dispatch = useAppDispatch()
   const [activeSlide, setActiveSlide] = useState(0)
+  const [endStories, setEndStories] = useState(false)
   const {
     isOpen,
     attachments: { items = [], active = null },
@@ -50,44 +51,54 @@ const AttachmentsPreviewModel: React.FC<Props> = props => {
 
   const renderAttachments = () => {
     return items?.map((file: any, index) => {
-      if (attrAccept(file, "video/*")) {
-        return (
-          <div
-            className={`slider_item video ${
-              activeSlide === index ? " active_video" : ""
-            }`}
-            key={file.path || file?.url}
-          >
-            <VideoPlayer
-              playing={activeSlide === index}
-              controls={activeSlide === index}
-              url={file?.path || file?.url}
-              config={{ file: { attributes: { poster: file?.thumbnail } } }}
-            />
-            {/* <video
-              width="100%"
-              height="100%"
-              controls
-
-              onPlay={(e) => console.log('playing')}
-            >
-              <source src={file.path} />
-            </video> */}
-          </div>
-        )
-      } else if (attrAccept(file, "image/*")) {
-        return (
-          <div className="slider_item image" key={file?.path || file?.url}>
-            {/* <ImgX src={`${file?.path || file?.url}`} width={"100%"} />; */}
-            <Image
-              src={`${file?.path || file?.url}`}
-              alt="alt"
-              key={file?.path || file?.url}
-            />
-          </div>
-        )
-      }
-
+      return (
+        <>
+          <Stories
+            stories={file?.stories}
+            isPaused={false}
+            keyboardNavigation
+            defaultInterval={30000}
+            height={508}
+            onAllStoriesEnd={() => handleClose()}
+          />
+        </>
+      )
+      // if (attrAccept(file, "video/*")) {
+      //   return (
+      //     <div
+      //       className={`slider_item video ${
+      //         activeSlide === index ? " active_video" : ""
+      //       }`}
+      //       key={file.path || file?.url}
+      //     >
+      //       <VideoPlayer
+      //         playing={activeSlide === index}
+      //         controls={activeSlide === index}
+      //         url={file?.path || file?.url}
+      //         config={{ file: { attributes: { poster: file?.thumbnail } } }}
+      //       />
+      //       {/* <video
+      //         width="100%"
+      //         height="100%"
+      //         controls
+      //         onPlay={(e) => console.log('playing')}
+      //       >
+      //         <source src={file.path} />
+      //       </video> */}
+      //     </div>
+      //   )
+      // } else if (attrAccept(file, "image/*")) {
+      //   return (
+      //     <div className="slider_item image" key={file?.path || file?.url}>
+      //       {/* <ImgX src={`${file?.path || file?.url}`} width={"100%"} />; */}
+      //       <Image
+      //         src={`${file?.path || file?.url}`}
+      //         alt="alt"
+      //         key={file?.path || file?.url}
+      //       />
+      //     </div>
+      //   )
+      // }
       // else {
       //   return (
       //     <div className="ctn">
@@ -116,6 +127,8 @@ const AttachmentsPreviewModel: React.FC<Props> = props => {
       isOpen={isOpen}
       onClose={handleClose}
       showFooter={false}
+      showHeader={true}
+      title={"asdsadsdsd asd "}
       className={`${className}`}
     >
       <div className="slider_container">
@@ -133,7 +146,9 @@ const AttachmentsPreviewModel: React.FC<Props> = props => {
                 ?.getElementsByTagName("audio")[0]
 
               item?.pause()
-            } catch (error) {}
+            } catch (error) {
+              console.log(error)
+            }
           }}
           afterChange={crslide => setActiveSlide(crslide)}
         >

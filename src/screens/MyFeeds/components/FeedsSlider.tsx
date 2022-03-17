@@ -17,30 +17,56 @@ const Images = [
     type: "image",
     profileImage: "/images/mock/slider1profile.png",
     name: "Samira Brown",
+    stories: ["/images/mock/slider1.png", "/images/mock/slider1profile.png"],
   },
   {
     path: "/images/mock/slider2.png",
     type: "image",
     profileImage: "/images/mock/slider2profile.png",
     name: "Samira Brown",
+    stories: [
+      "/images/mock/slider1.png",
+      "/images/mock/slider1profile.png",
+      "/images/mock/slider1.png",
+      "/images/mock/slider1profile.png",
+      "/images/mock/slider1.png",
+      "/images/mock/slider1profile.png",
+      "/images/mock/slider1.png",
+      "/images/mock/slider1profile.png",
+    ],
   },
   {
     path: "/images/mock/slider3.png",
     type: "image",
     profileImage: "/images/mock/slider3profile.png",
     name: "Samira Brown",
+    stories: [
+      "/images/mock/slider1.png",
+      "/images/mock/slider1.png",
+      "/images/mock/slider1profile.png",
+    ],
   },
   {
     path: "/images/mock/slider4.png",
     type: "image",
     profileImage: "/images/mock/slider4profile.png",
     name: "Samira Brown",
+    stories: [
+      "/images/mock/slider1.png",
+      "/images/mock/slider1.png",
+      "/images/mock/slider1profile.png",
+    ],
   },
   {
     path: "/images/mock/slider5.png",
     type: "image",
     profileImage: "/images/mock/slider5profile.png",
     name: "Samira Brown",
+    stories: [
+      "/images/mock/slider1.png",
+      "/images/mock/slider1.png",
+      "/images/mock/slider1profile.png",
+    ],
   },
 ]
 
