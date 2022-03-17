@@ -1,4 +1,9 @@
-import { DetailedHTMLProps, ImgHTMLAttributes, SVGProps } from "react"
+import {
+  DetailedHTMLProps,
+  forwardRef,
+  ImgHTMLAttributes,
+  SVGProps
+} from "react"
 export type IconType = SVGProps<SVGSVGElement>
 // import Profile from "../images/profile.jpg"
 
@@ -1008,10 +1013,11 @@ export function ProfileTogglerIcon(props: IconType) {
     </svg>
   )
 }
-export function VerticalDots(props: IconType) {
+export const VerticalDots = forwardRef((props: IconType, ref) => {
   const { width = 3, height = 15, fill = "#7474A9", ...rest } = props
   return (
     <svg
+      ref={ref as any}
       width={width}
       height={height}
       viewBox="0 0 3 15"
@@ -1042,7 +1048,7 @@ export function VerticalDots(props: IconType) {
       />
     </svg>
   )
-}
+})
 export function ProgressArrowUp(props: IconType) {
   const { width = 5, height = 5, stroke = "#0E8521", ...rest } = props
   return (
