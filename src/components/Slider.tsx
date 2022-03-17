@@ -111,9 +111,10 @@ const AttachmentsPreviewModel: React.FC<Props> = props => {
             height={508}
             onAllStoriesEnd={() => {
               console.log({ index })
-              if (index < items?.length - 1) {
-                setActiveSlide(index + 1)
-                console.log((sliderRef.current as any).slickNext())
+              if (activeSlide < items?.length - 1) {
+                sliderRef.current.slickNext()
+                setActiveSlide(activeSlide + 1)
+                // console.log((sliderRef.current as any).slickNext())
                 // nextRef?.current?.click()
               } else {
                 handleClose()
