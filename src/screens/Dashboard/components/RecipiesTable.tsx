@@ -1,5 +1,6 @@
 import React from "react"
-export const tableData = [
+import styled from "styled-components"
+const tableData = [
   {
     id: "#89325",
     status: "live",
@@ -69,7 +70,7 @@ function RecipiesTable() {
               <tr key={index}>
                 <td>{items.id}</td>
                 <td>{items.name}</td>
-                <td>{items.status}</td>
+                <td className={items.status}>{items.status}</td>
                 {items?.view?.map(m => {
                   return (
                     <>
@@ -90,4 +91,4 @@ function RecipiesTable() {
   )
 }
 
-export default RecipiesTable
+export default styled(RecipiesTable)``
