@@ -29,7 +29,7 @@ const Sidebar = ({ className }: { className?: string }) => {
         <SectionWrapper
           // className=" max-h-[78vh]  overflow-y-scroll"
           // className="overflow-y-scroll h-[75vh]"
-          className="flex-1 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-100 pt-0"
+          className="flex-1 pt-0 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-100"
         >
           {/* <Main className="h-[73vh]" /> */}
           <Main />
@@ -51,55 +51,59 @@ export default styled(Sidebar)`
     display: flex;
     align-items: center;
     padding: 18px 20px;
-
+    @media (max-width: 1199px) {
+      padding: 12px 10px;
+      margin: 0 -5px;
+      width: calc(100% + 10px);
+    }
     .userWidgetWrap {
       width: 100%;
       display: flex;
       align-items: center;
       padding-right: 15px;
+      @media (max-width: 1199px) {
+        padding-right: 10px;
+      }
     }
-
     .userWidgetImage {
       width: 34px !important;
       height: 34px !important;
       border: 0 !important;
       margin: 0 20px 0 0;
+      @media (max-width: 1199px) {
+        margin: 0 10px 0 0;
+      }
     }
-
     .userWidgetText {
       flex-grow: 1;
       flex-basis: 0;
     }
-
     .userWidgetName {
       font-size: 14px;
       line-height: 18px;
       color: #1e1e2d;
       display: block;
     }
-
     .userWidgetDesignation {
       font-size: 10px;
       line-height: 14px;
       color: #1e1e2d;
       display: block;
     }
-
     .userWidgetDropdown {
       right: -20px;
     }
   }
-
   .sidebarList {
     overflow: hidden;
-
+    @media (max-width: 1199px) {
+      margin: 0 -5px;
+    }
     .sidebarListTitle {
       text-transform: uppercase;
     }
-
     .sidebarListTitle {
       padding-top: 5px;
-
       &:first-child {
         padding-top: 0;
       }
@@ -111,7 +115,6 @@ export default styled(Sidebar)`
         font-weight: 600;
       }
     }
-
     li {
       + li {
         margin-top: 8px;
@@ -122,31 +125,29 @@ export default styled(Sidebar)`
         align-items: center;
         position: relative;
         color: #7474a9;
-
         span {
           display: block;
           font-size: 14px;
           line-height: 18px;
           width: 100%;
           padding: 8px 15px 10px 34px;
+          @media (max-width: 1199px) {
+            padding: 8px 15px 10px 28px;
+          }
         }
-
         .sidebarListIcon {
           position: absolute;
           left: 0;
           top: 50%;
           transform: translateY(-50%);
         }
-
         svg {
           width: 18px;
           height: 18px;
         }
-
         &:hover,
         &.active {
           color: #e0464d;
-
           svg {
             path {
               stroke: #e0464d;
@@ -154,13 +155,11 @@ export default styled(Sidebar)`
           }
         }
       }
-
       .sidebarListOpener {
         position: absolute;
         right: 0;
         top: 50%;
         transform: translateY(-50%);
-
         svg {
           width: 22px;
           height: 22px;
@@ -168,19 +167,15 @@ export default styled(Sidebar)`
       }
     }
   }
-
   .sidebarListNasted {
     border: 0;
     margin-top: 8px;
     position: relative;
-
     li {
       position: relative;
-
       + li {
         margin-top: 0;
       }
-
       &:before {
         width: 1px;
         position: absolute;
@@ -190,7 +185,6 @@ export default styled(Sidebar)`
         background: #7474a9;
         content: "";
       }
-
       &:after {
         position: absolute;
         top: 16px;
@@ -202,34 +196,32 @@ export default styled(Sidebar)`
         background: #7474a9;
         display: none;
       }
-
       &:first-child {
         &:before {
           top: 18px;
         }
-
         &:after {
           display: block;
         }
       }
-
       &:last-child {
         &:before {
           bottom: 14px;
         }
-
         &:after {
           top: auto;
           bottom: 12px;
           display: block;
         }
       }
-
       a {
         span {
           font-size: 12px;
           line-height: 16px;
           padding: 10px 15px 10px 34px;
+          @media (max-width: 1199px) {
+            padding: 10px 15px 10px 28px;
+          }
         }
       }
     }

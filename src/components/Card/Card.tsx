@@ -68,6 +68,10 @@ export default styled(Card)`
   color: #525367;
   margin: 0 0 20px;
 
+  @media (max-width: 1199px) {
+    padding: 15px;
+  }
+
   .feedsWidgetHeader {
     display: flex;
     align-items: center;

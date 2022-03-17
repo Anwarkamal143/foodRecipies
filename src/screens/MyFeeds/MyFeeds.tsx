@@ -90,7 +90,7 @@ function MyFeeds(props: IMyFeedProps) {
                   shape="circle"
                   iconLeft={<FilterIcon />}
                   iconRight={<DownArrowIcon />}
-                  className="custom-button"
+                  className="custom-button buttonFilter"
                   size="small"
                 >
                   Filter
@@ -101,13 +101,14 @@ function MyFeeds(props: IMyFeedProps) {
             </PopOver>
             {/* <Filters></Filters> */}
 
-            <span className="sortBy">
-              <span>Sort by</span>
+            <span className="sortBy sortByFilter">
+              <span className="sortByFilterlbl">Sort by</span>
               <DropDown
                 button={selected => (
                   <Button
                     shape="circle"
                     iconRight={<DownArrowIcon />}
+                    className="buttonFilter"
                     size="small"
                   >
                     {selected}
@@ -131,8 +132,8 @@ function MyFeeds(props: IMyFeedProps) {
           <Post />
           <Post />
         </LeftContainer>
-        <RightContainer>
-          <SuggestedCooksSection>
+        <RightContainer className="feedsMainColumn">
+          <SuggestedCooksSection className="feedsColumn">
             <Card>
               <Card.Body>
                 <HeaderCooks className="feedsWidgetHeader">
@@ -146,7 +147,7 @@ function MyFeeds(props: IMyFeedProps) {
             </Card>
           </SuggestedCooksSection>
 
-          <SuggestedCooksSection>
+          <SuggestedCooksSection className="feedsColumn">
             <Card>
               <Card.Body>
                 <HeaderCooks className="feedsWidgetHeader">

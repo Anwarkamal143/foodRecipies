@@ -65,10 +65,10 @@ function PostsFilerForm(props: IFilterFormProps) {
       <div className="option-type">
         <label>Difficulty Selection</label>
         <div className="form-control">
-          <Selection stars={1} />
-          <Selection stars={2} />
+          <Selection className="itemStars" stars={1} />
+          <Selection className="itemStars" stars={2} />
+          <Selection className="itemStars" stars={3} />
         </div>
-        <Selection stars={3} />
       </div>
       <div className="option-type">
         <Button shape="circle" size="small">
@@ -80,17 +80,40 @@ function PostsFilerForm(props: IFilterFormProps) {
 }
 export default styled(PostsFilerForm)`
   width: 20rem;
-  padding: 1rem;
+  padding: 15px 20px 20px;
   border-radius: 10px;
-  border: 1px solid lightgray;
+  border: 1px solid #e5e8ef;
+  background: #fff;
 
-  background: white;
   .option-type {
-    padding: 0.5rem 0;
+    + .option-type {
+      padding-top: 12px;
+    }
+
+    label {
+      display: block;
+      font-size: 12px;
+      line-height: 20px;
+      color: #7474a9;
+      margin: 0 0 7px;
+    }
   }
+  
   .form-control {
+    padding: 0 0 5px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
   }
+
+  .itemStars {
+    display: flex;
+    align-items: center;
+
+    label {
+      margin: 0;
+    }
+  }
+
   /* height: 30rem; */
 `

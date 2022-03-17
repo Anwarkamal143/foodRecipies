@@ -14,4 +14,5 @@ export const MainContentSectionWrapper = styled.div`
   margin-top: 4rem;
   display: flex;
   width: 100%;
+  overflow: hidden;
 `

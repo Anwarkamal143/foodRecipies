@@ -27,9 +27,69 @@ export const PageLayoutWrapper = styled.div<{ variant?: string }>`
     }
     return
   }} */
-  padding: 20px;
+  padding: 20px 20px 20px 270px;
   height: 100%;
-  width: calc(100% - 250px);
+  width: 100%;
+
+  @media (max-width: 1199px) {
+    padding: 20px 20px 20px 220px;
+  }
+
+  .button.button-sm.buttonFilter {
+    background: #fff;
+    border-color: #e5e8ef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 107px;
+
+    svg {
+      margin: 0;
+    }
+
+    .text-button {
+      padding: 0 5px;
+      color: #7474a9;
+
+      + svg {
+        margin-top: 2px;
+      }
+    }
+
+    &:hover {
+      background: #e5e8ef;
+    }
+  }
+
+  .sortByFilter {
+    .sortByFilterlbl {
+      font-size: 12px;
+      color: #7474a9;
+      line-height: 20px;
+    }
+
+    .sortByFilterDrop {
+      margin-top: 0 !important;
+
+      .item {
+        padding: 5px 20px;
+        font-size: 12px;
+        line-height: 20px;
+        color: #7474a9;
+        cursor: pointer;
+        transition: all 0.4s ease;
+
+        &:hover {
+          background: #e5e8ef;
+        }
+      }
+    }
+  }
+  
+  .postFeed.feedsWidget {
+    border-radius: 20px;
+    border-color: #f2f3f5;
+  }
 `
 
 export function Page(props: PageLayoutType) {

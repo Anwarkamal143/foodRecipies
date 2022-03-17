@@ -1,5 +1,5 @@
-import { Menu, Transition } from "@headlessui/react"
-import { ReactElement, ReactNode, useState } from "react"
+import { Menu, Transition } from "@headlessui/react";
+import { ReactElement, ReactNode, useState } from "react";
 type ItemProps = { item: any; isActive: boolean; onClick?: any }
 type IDropDownProps = {
   renderItem?: (props: ItemProps) => ReactElement | ReactNode
@@ -24,7 +24,7 @@ export function DropDown(props: IDropDownProps) {
         leaveFrom="transform scale-100 opacity-100"
         leaveTo="transform scale-95 opacity-0"
       >
-        <Menu.Items className="absolute z-10 py-4 mt-6 origin-top-right bg-white shadow-lg -right-3 w-52 rounded-xl ring-1 ring-black ring-opacity-5 focus:outline-none md:right-0">
+        <Menu.Items className="absolute z-10 py-4 mt-6 origin-top-right bg-white shadow-lg -right-3 w-52 rounded-xl ring-1 ring-black ring-opacity-5 focus:outline-none md:right-0 sortByFilterDrop">
           {items.map((item, i) => {
             return (
               <Menu.Item key={i}>
