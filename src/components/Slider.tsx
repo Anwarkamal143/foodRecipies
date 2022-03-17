@@ -1,13 +1,14 @@
 import { useAppDispatch, useAppSelector } from "@hooks"
 import { LeftSliderArrow, RightSliderArrow } from "@icons"
 import { setSliderAttachments, toggleSlider } from "@reducers"
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import Stories from "react-insta-stories"
 import Slider from "react-slick"
-// import "slick-carousel/slick/slick-theme.css"
-// import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+import "slick-carousel/slick/slick.css"
 import styled from "styled-components"
 import { Modal } from "."
+import { Image } from "./Image"
 
 interface Props {
   className?: string
@@ -18,6 +19,8 @@ const AttachmentsPreviewModel: React.FC<Props> = props => {
   const dispatch = useAppDispatch()
   const [activeSlide, setActiveSlide] = useState(0)
   const [endStories, setEndStories] = useState(false)
+  const sliderRef = useRef(null)
+
   const {
     isOpen,
     attachments: { items = [], active = null },
@@ -34,32 +37,88 @@ const AttachmentsPreviewModel: React.FC<Props> = props => {
   }, [active])
 
   const settingsMain = {
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    fade: true,
+    // slidesToShow: 3,
+    slidesToScroll: 1,
+    // fade: true,
     // variableWidth: true,
     // dots: true,
     // asNavFor: ".slider-nav",
     centerMode: true,
-    infinite: true,
+    variableWidth: true,
+    infinite: false,
     className: "center",
     centerPadding: "60px",
     // adaptiveHeight: true,
     nextArrow: <RightSliderArrow />,
     prevArrow: <LeftSliderArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: false,
+          dots: false,
+          variableWidth: true,
+          centerMode: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          initialSlide: 0,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: false,
+        },
+      },
+    ],
+
+    ...props,
   }
 
   const renderAttachments = () => {
     return items?.map((file: any, index) => {
+      console.log({ file })
+      console.log(index !== activeSlide)
+      if (activeSlide !== index) {
+        return (
+          <div className="slider_item image" key={file?.path || file?.url}>
+            {/* <ImgX src={`${file?.path || file?.url}`} width={"100%"} />; */}
+            <Image
+              src={`${file?.path || file?.url}`}
+              alt="alt"
+              key={file?.path || file?.url}
+            />
+          </div>
+        )
+      }
       return (
         <>
           <Stories
+            key={file.path}
             stories={file?.stories}
-            isPaused={false}
+            isPaused={index !== activeSlide}
             keyboardNavigation
-            defaultInterval={30000}
+            defaultInterval={3000}
             height={508}
-            onAllStoriesEnd={() => handleClose()}
+            onAllStoriesEnd={() => {
+              console.log({ index })
+              if (index < items?.length - 1) {
+                // setActiveSlide(index + 1)
+                console.log((sliderRef.current as any).slickNext())
+                // nextRef?.current?.click()
+              } else {
+                handleClose()
+              }
+            }}
           />
         </>
       )
@@ -136,9 +195,10 @@ const AttachmentsPreviewModel: React.FC<Props> = props => {
         <Slider
           {...settingsMain}
           // className="my own class"
-          dotsClass="dosts class"
+          // dotsClass="dosts class"
           initialSlide={activeSlide}
           draggable
+          ref={sliderRef}
           beforeChange={() => {
             try {
               const item = document
@@ -153,6 +213,15 @@ const AttachmentsPreviewModel: React.FC<Props> = props => {
           afterChange={crslide => setActiveSlide(crslide)}
         >
           {renderAttachments()}
+          {/* <Stories
+            stories={(items[0] as any)?.stories}
+            isPaused={false}
+            keyboardNavigation
+            defaultInterval={3000}
+            height={508}
+            loop={true}
+            onAllStoriesEnd={() => handleClose()}
+          /> */}
         </Slider>
       </div>
     </Modal>
@@ -160,7 +229,27 @@ const AttachmentsPreviewModel: React.FC<Props> = props => {
 }
 
 export const PreviewSlider = styled(AttachmentsPreviewModel)`
+  .slick-prev,
+  .slick-next {
+    color: white;
+    z-index: 999;
+    width: 100px;
+  }
+  /* width: calc(100% - 127px); */
+
+  /* @media (max-width: 600px) {
+    width: 1480px;
+  } */
+
+  .slick-slider {
+    flex-grow: 0;
+    flex-basis: inherit;
+    width: 100%;
+  }
+
   .slick-slide {
-    /* width: 300px !important; */
+    width: 300px;
+    padding: 0 7px;
+    /* width: 135px !important; */
   }
 `

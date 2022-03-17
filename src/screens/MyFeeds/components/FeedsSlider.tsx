@@ -17,7 +17,7 @@ const Images = [
     type: "image",
     profileImage: "/images/mock/slider1profile.png",
     name: "Samira Brown",
-    stories: ["/images/mock/slider1.png", "/images/mock/slider1profile.png"],
+    stories: ["/images/mock/slider1.png", "/images/mock/slider2.png"],
   },
   {
     path: "/images/mock/slider2.png",
@@ -26,13 +26,13 @@ const Images = [
     name: "Samira Brown",
     stories: [
       "/images/mock/slider1.png",
-      "/images/mock/slider1profile.png",
-      "/images/mock/slider1.png",
-      "/images/mock/slider1profile.png",
-      "/images/mock/slider1.png",
-      "/images/mock/slider1profile.png",
-      "/images/mock/slider1.png",
-      "/images/mock/slider1profile.png",
+      // "/images/mock/slider1profile.png",
+      "/images/mock/slider2.png",
+      // "/images/mock/slider2profile.png",
+      "/images/mock/slider3.png",
+      // "/images/mock/slider3profile.png",
+      "/images/mock/slider4.png",
+      // "/images/mock/slider4profile.png",
     ],
   },
   {
@@ -40,33 +40,21 @@ const Images = [
     type: "image",
     profileImage: "/images/mock/slider3profile.png",
     name: "Samira Brown",
-    stories: [
-      "/images/mock/slider1.png",
-      "/images/mock/slider1.png",
-      "/images/mock/slider1profile.png",
-    ],
+    stories: ["/images/mock/slider5.png", "/images/mock/slider1.png"],
   },
   {
     path: "/images/mock/slider4.png",
     type: "image",
     profileImage: "/images/mock/slider4profile.png",
     name: "Samira Brown",
-    stories: [
-      "/images/mock/slider1.png",
-      "/images/mock/slider1.png",
-      "/images/mock/slider1profile.png",
-    ],
+    stories: ["/images/mock/slider1.png", "/images/mock/slider3.png"],
   },
   {
     path: "/images/mock/slider5.png",
     type: "image",
     profileImage: "/images/mock/slider5profile.png",
     name: "Samira Brown",
-    stories: [
-      "/images/mock/slider1.png",
-      "/images/mock/slider1.png",
-      "/images/mock/slider1profile.png",
-    ],
+    stories: ["/images/mock/slider4.png", "/images/mock/slider2.png"],
   },
 ]
 

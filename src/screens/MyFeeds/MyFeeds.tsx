@@ -1,4 +1,11 @@
-import { Button, Card, DropDown, PopOver, ProfileItem } from "@components"
+import {
+  Button,
+  Card,
+  DropDown,
+  PopOver,
+  PreviewSlider,
+  ProfileItem,
+} from "@components"
 import { AddIcon, DownArrowIcon, FilterIcon } from "@icons"
 import { Page } from "@layouts"
 import { useFormik } from "formik"
@@ -15,7 +22,7 @@ import {
   LeftContainer,
   RightContainer,
   SlidertWrapper,
-  SuggestedCooksSection
+  SuggestedCooksSection,
 } from "./myfeeds.styled"
 import { Post } from "./posts"
 const Users = [
@@ -162,6 +169,9 @@ function MyFeeds(props: IMyFeedProps) {
           </SuggestedCooksSection>
         </RightContainer>
       </FeedsContainer>
+      <NoSSR>
+        <PreviewSlider />
+      </NoSSR>
     </Page>
   )
 }
