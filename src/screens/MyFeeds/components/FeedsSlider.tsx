@@ -1,3 +1,6 @@
+import { Image } from "@components"
+import { useAppDispatch } from "@hooks"
+import { setSliderAttachments, toggleSlider } from "@reducers"
 import React from "react"
 import Slider, { Settings } from "react-slick"
 import "slick-carousel/slick/slick-theme.css"
@@ -8,8 +11,41 @@ import { SliderItem, SliderItemContentWrapper } from "./slider.styled"
 interface ISliderProps extends Settings {
   className?: string
 }
+const Images = [
+  {
+    path: "/images/mock/slider1.png",
+    type: "image",
+    profileImage: "/images/mock/slider1profile.png",
+    name: "Samira Brown",
+  },
+  {
+    path: "/images/mock/slider2.png",
+    type: "image",
+    profileImage: "/images/mock/slider2profile.png",
+    name: "Samira Brown",
+  },
+  {
+    path: "/images/mock/slider3.png",
+    type: "image",
+    profileImage: "/images/mock/slider3profile.png",
+    name: "Samira Brown",
+  },
+  {
+    path: "/images/mock/slider4.png",
+    type: "image",
+    profileImage: "/images/mock/slider4profile.png",
+    name: "Samira Brown",
+  },
+  {
+    path: "/images/mock/slider5.png",
+    type: "image",
+    profileImage: "/images/mock/slider5profile.png",
+    name: "Samira Brown",
+  },
+]
 
 function Sliderr(props: ISliderProps) {
+  const dispatch = useAppDispatch()
   const settings: Settings = {
     // dots: true,
     infinite: true,
@@ -54,7 +90,27 @@ function Sliderr(props: ISliderProps) {
   return (
     <div className={props.className}>
       <Slider {...settings}>
-        <SliderItem>
+        {Images.map(i => (
+          <SliderItem
+            key={i.path}
+            onClick={() => {
+              dispatch(
+                setSliderAttachments({
+                  items: Images || [],
+                  active: i,
+                })
+              )
+              dispatch(toggleSlider(true))
+            }}
+          >
+            <Image src={i.path} alt="slider one profile" />
+            <SliderItemContentWrapper>
+              <Image src={i.profileImage} alt="slider one profile" />
+              <span>{i.name}</span>
+            </SliderItemContentWrapper>
+          </SliderItem>
+        ))}
+        {/* <SliderItem>
           <img src="/images/mock/slider1.png" />
           <SliderItemContentWrapper>
             <img
@@ -124,7 +180,7 @@ function Sliderr(props: ISliderProps) {
             />
             <span>Samira Brown</span>
           </SliderItemContentWrapper>
-        </SliderItem>
+        </SliderItem> */}
       </Slider>
     </div>
   )

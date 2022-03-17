@@ -1,12 +1,12 @@
 import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit"
-import { UserSlice } from "./reducers"
+import { UserSlice, Slider } from "./reducers"
 
 const initialState = {}
 // eslint-disable-next-line
 let _store: any
 const createStore = (preloadedState: any = initialState) => {
   return configureStore({
-    reducer: { user: UserSlice },
+    reducer: { user: UserSlice, slider: Slider },
     preloadedState,
   })
 }

@@ -22,21 +22,21 @@ function ProfileComponent(props: IProfileProps) {
   const { data = [] } = props
 
   return (
-    <div>
+    <div className="userProfileWrapper">
       {data.map((u: any, i: number) => {
         return (
-          <ProfileWrapper key={i}>
-            <ProfileDetailsWrapper>
-              <Image src={u.src} alt={u.name} />
-              <ProfileDetails>
-                <ProfileName>{u.name}</ProfileName>
-                <ProfileUserName>
+          <ProfileWrapper className="userProfile" key={i}>
+            <ProfileDetailsWrapper className="userProfileHolder">
+              <Image className="userProfileImage" src={u.src} alt={u.name} />
+              <ProfileDetails className="userProfileDetails">
+                <ProfileName className="userProfileName">{u.name}</ProfileName>
+                <ProfileUserName className="userProfileStatus">
                   {u.username}{" "}
                   {u.status && <ProfileStatus>{u.status}</ProfileStatus>}
                 </ProfileUserName>
               </ProfileDetails>
             </ProfileDetailsWrapper>
-            <ProfileActionWrapper>
+            <ProfileActionWrapper className="userProfileAction">
               <ProfileDropDown
                 menuItems={[
                   {

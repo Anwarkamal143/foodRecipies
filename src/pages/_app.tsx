@@ -1,4 +1,4 @@
-import { Navbar, Sidebar } from "@components"
+import { Navbar, PreviewSlider, Sidebar } from "@components"
 import { AppLayout, AuthLayout } from "@layouts"
 import {
   AppLayoutWrapper,
@@ -10,6 +10,7 @@ import "@styles/globals.scss"
 import type { AppProps } from "next/app"
 import { useMemo } from "react"
 import { CookiesProvider } from "react-cookie"
+import NoSSR from "react-no-ssr"
 import { Provider } from "react-redux"
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -39,6 +40,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     <CookiesProvider>
       <Provider store={store}>
         <AuthLayout>{MemoFunction}</AuthLayout>
+        <NoSSR>
+          <PreviewSlider />
+        </NoSSR>
       </Provider>
     </CookiesProvider>
     // </SessionProvider>
