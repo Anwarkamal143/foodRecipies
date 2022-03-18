@@ -11,11 +11,11 @@ type IMyFeedProps = {
   //   title?: ReactChild | ReactChildren | ReactNode | ReactElement | HTMLElement
   //   subTitle?: ReactChild | ReactChildren | ReactNode | ReactElement | HTMLElement
   onSubmit?: (...args: any[]) => void
-  onSocialItemClick?: (...args: any[]) => void
+
   post: IPostType
 }
 function PostHeader(props: IMyFeedProps) {
-  const { className, onSubmit, post, onSocialItemClick } = props
+  const { className, onSubmit, post } = props
   const { person, createdAt } = post
   return (
     <div className={className}>
@@ -48,16 +48,16 @@ function PostHeader(props: IMyFeedProps) {
         </Button>
       </div>
       <div className="socialIcons">
-        <Icon className="socialIconsItem" onClick={onSocialItemClick}>
+        <Icon className="socialIconsItem">
           <FacebookIcon />
         </Icon>
-        <Icon className="socialIconsItem" onClick={onSocialItemClick}>
+        <Icon className="socialIconsItem">
           <YoutubeIcon />
         </Icon>
-        <Icon className="socialIconsItem" onClick={onSocialItemClick}>
+        <Icon className="socialIconsItem">
           <TwitterIcon />
         </Icon>
-        <Icon className="socialIconsItem" onClick={onSocialItemClick}>
+        <Icon className="socialIconsItem">
           <InstagramIcon />
         </Icon>
       </div>

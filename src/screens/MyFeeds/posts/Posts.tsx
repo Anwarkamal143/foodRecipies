@@ -33,17 +33,17 @@ function Posts(props: IMyFeedProps) {
     <>
       <Card className="postFeed">
         <Card.Header>
-          <PostHeader
-            post={post}
-            onSubmit={onSubmit}
-            onSocialItemClick={onOpenModel}
-          />
+          <PostHeader post={post} onSubmit={onSubmit} />
         </Card.Header>
         <Card.Body>
           <PostBody post={post} onSubmit={onSubmit} />
         </Card.Body>
         <Card.Footer>
-          <PostFooter post={post} onSubmit={onSubmit} />
+          <PostFooter
+            post={post}
+            onSubmit={onSubmit}
+            onSocialItemClick={onOpenModel}
+          />
         </Card.Footer>
       </Card>
       <ShareSocialLinks isOpen={isOpenModel} onCancel={onCloseModel} />

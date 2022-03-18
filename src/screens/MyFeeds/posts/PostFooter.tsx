@@ -10,10 +10,11 @@ type IPostFooterProps = {
   //   subTitle?: ReactChild | ReactChildren | ReactNode | ReactElement | HTMLElement
   onSubmit?: (...args: any[]) => void
   post: IPostType
+  onSocialItemClick?: (...args: any[]) => void
 }
 
 function PostFooter(props: IPostFooterProps) {
-  const { className, onSubmit, post } = props
+  const { className, onSubmit, post, onSocialItemClick } = props
 
   return (
     <div className={className}>
@@ -36,7 +37,7 @@ function PostFooter(props: IPostFooterProps) {
           {" "}
           {FormatNumber(post.likes)} Like
         </span>
-        <Icon className="iconSize">
+        <Icon className="iconSize" onClick={onSocialItemClick}>
           <ExportIcon />
         </Icon>
       </div>
