@@ -1,4 +1,33 @@
 import { FormatNumber } from "@utils"
+export const Users = [
+  {
+    src: "/images/mock/slider1profile.png",
+    name: "Amanda Miles",
+    username: "@florinpop17",
+    status: "tranding",
+  },
+  {
+    src: "/images/mock/slider2profile.png",
+    name: "Amanda Miles",
+    username: "@florinpop17",
+    status: "tranding",
+  },
+  {
+    src: "/images/mock/slider3profile.png",
+    name: "Amanda Miles",
+    username: "@florinpop17",
+  },
+  {
+    src: "/images/mock/slider4profile.png",
+    name: "Amanda Miles",
+    username: "@florinpop17",
+  },
+  {
+    src: "/images/mock/slider5profile.png",
+    name: "Amanda Miles",
+    username: "@florinpop17",
+  },
+]
 export const tableData = [
   {
     id: "#89325",

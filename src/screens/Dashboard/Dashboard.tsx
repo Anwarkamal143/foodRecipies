@@ -1,4 +1,4 @@
-import { Button, Card, DropDown, Image } from "@components"
+import { Button, Card, DropDown, Image, ProfileItem } from "@components"
 import { AddCircleIcon, CalendarIcon, DownArrowIcon, EyeIcon } from "@icons"
 import { DashboardLayout } from "@layouts/Dashboard/DashboardLayout"
 import { FormatNumber } from "@utils"
@@ -13,10 +13,17 @@ import {
   ResponsiveContainer,
   Tooltip,
   XAxis,
-  YAxis
+  YAxis,
 } from "recharts"
 import styled from "styled-components"
-import { chartData, data, LineChartData } from "../../../data"
+import { chartData, data, LineChartData, Users } from "../../../data"
+import {
+  HeaderCooks,
+  HeaderRightSide,
+  HeaderTitle,
+  RightContainer,
+  SuggestedCooksSection,
+} from "../MyFeeds/myfeeds.styled"
 import { CardHeader, PerformanceBar, StatisticsItem } from "./components"
 import RecipiesTable from "./components/RecipiesTable"
 import {
@@ -26,7 +33,7 @@ import {
   ProfileperformanceWrapper,
   RightMyRecipiesSection,
   RightPerformanceSection,
-  StatisticsWrapper
+  StatisticsWrapper,
 } from "./dashboard.styed"
 
 const dateFormatter = (item: Date) => dayjs(item).format("MMM YY")
@@ -200,6 +207,35 @@ const DashBoard = ({ className }: { className?: string }) => {
               <Card.Body></Card.Body>
             </Card>
           </RightMyRecipiesSection>
+          <RightContainer className="feedsMainColumn">
+            <SuggestedCooksSection className="feedsColumn">
+              <Card>
+                <Card.Body>
+                  <HeaderCooks className="feedsWidgetHeader">
+                    <HeaderTitle>Suggested Cooks</HeaderTitle>
+                    <HeaderRightSide className="feedsWidgetSeeAll">
+                      <span>See All</span>
+                    </HeaderRightSide>
+                  </HeaderCooks>
+                  <ProfileItem data={Users} />
+                </Card.Body>
+              </Card>
+            </SuggestedCooksSection>
+
+            <SuggestedCooksSection className="feedsColumn">
+              <Card>
+                <Card.Body>
+                  <HeaderCooks className="feedsWidgetHeader">
+                    <HeaderTitle>My Cooks</HeaderTitle>
+                    <HeaderRightSide className="feedsWidgetCount">
+                      <span>60</span>
+                    </HeaderRightSide>
+                  </HeaderCooks>
+                  <ProfileItem data={Users} />
+                </Card.Body>
+              </Card>
+            </SuggestedCooksSection>
+          </RightContainer>
         </MyRecipiesWrapper>
       </div>
     </DashboardLayout>

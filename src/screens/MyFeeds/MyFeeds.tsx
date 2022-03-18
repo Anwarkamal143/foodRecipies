@@ -11,6 +11,7 @@ import { Page } from "@layouts"
 import { useFormik } from "formik"
 import { useState } from "react"
 import NoSSR from "react-no-ssr"
+import { Users } from "../../../data"
 import { POSTSDATA } from "../data"
 import { FeedsSlider } from "./components"
 import PostSliderForm from "./components/PostsFilters/PostSliderForm"
@@ -27,35 +28,7 @@ import {
   SuggestedCooksSection,
 } from "./myfeeds.styled"
 import { Post } from "./posts"
-const Users = [
-  {
-    src: "/images/mock/slider1profile.png",
-    name: "Amanda Miles",
-    username: "@florinpop17",
-    status: "tranding",
-  },
-  {
-    src: "/images/mock/slider2profile.png",
-    name: "Amanda Miles",
-    username: "@florinpop17",
-    status: "tranding",
-  },
-  {
-    src: "/images/mock/slider3profile.png",
-    name: "Amanda Miles",
-    username: "@florinpop17",
-  },
-  {
-    src: "/images/mock/slider4profile.png",
-    name: "Amanda Miles",
-    username: "@florinpop17",
-  },
-  {
-    src: "/images/mock/slider5profile.png",
-    name: "Amanda Miles",
-    username: "@florinpop17",
-  },
-]
+
 type IMyFeedProps = {
   className?: string
   //   title?: ReactChild | ReactChildren | ReactNode | ReactElement | HTMLElement
