@@ -9,7 +9,9 @@ import {
 import { AddIcon, DownArrowIcon, FilterIcon } from "@icons"
 import { Page } from "@layouts"
 import { useFormik } from "formik"
+import { useState } from "react"
 import NoSSR from "react-no-ssr"
+import { POSTSDATA } from "../data"
 import { FeedsSlider } from "./components"
 import PostSliderForm from "./components/PostsFilters/PostSliderForm"
 import {
@@ -62,6 +64,7 @@ type IMyFeedProps = {
 }
 function MyFeeds(props: IMyFeedProps) {
   const { className, onSubmit } = props
+  const [posts, setPosts] = useState([...POSTSDATA])
   const {
     values,
     handleSubmit,
@@ -135,9 +138,20 @@ function MyFeeds(props: IMyFeedProps) {
               />
             </span>
           </FilterSection>
-
-          <Post />
-          <Post />
+          {posts.map((post, i) => (
+            <Post
+              key={i}
+              post={post}
+              onSubmit={post => {
+                const newPosts = [...posts]
+                const index = newPosts.findIndex(p => p._id === post._id)
+                if (index !== -1) {
+                  newPosts[index] = post
+                  setPosts(posts => newPosts)
+                }
+              }}
+            />
+          ))}
         </LeftContainer>
         <RightContainer className="feedsMainColumn">
           <SuggestedCooksSection className="feedsColumn">

@@ -26,7 +26,6 @@ const NavLink: FC<INavLinkPorps> = (props: INavLinkPorps) => {
   } = props
 
   const { pathname, query } = useRouter()
-  console.log({ query, pathname })
   if (href && typeof href === "string") {
     let isActive = false
     if (exact) {

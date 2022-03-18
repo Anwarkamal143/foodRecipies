@@ -6,7 +6,6 @@ export const useMatchPath = (route: INavItem) => {
   const [path, setPath] = useState({ isActive: false })
   const { pathname, query } = useRouter()
   useEffect(() => {
-    console.log({ query, pathname, route })
     if (route.route && typeof route.route === "string") {
       let isActive = false
 
