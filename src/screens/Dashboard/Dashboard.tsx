@@ -13,7 +13,7 @@ import {
   ResponsiveContainer,
   Tooltip,
   XAxis,
-  YAxis,
+  YAxis
 } from "recharts"
 import styled from "styled-components"
 import { chartData, data, LineChartData, Users } from "../../../data"
@@ -22,7 +22,7 @@ import {
   HeaderRightSide,
   HeaderTitle,
   RightContainer,
-  SuggestedCooksSection,
+  SuggestedCooksSection
 } from "../MyFeeds/myfeeds.styled"
 import { CardHeader, PerformanceBar, StatisticsItem } from "./components"
 import RecipiesTable from "./components/RecipiesTable"
@@ -33,7 +33,7 @@ import {
   ProfileperformanceWrapper,
   RightMyRecipiesSection,
   RightPerformanceSection,
-  StatisticsWrapper,
+  StatisticsWrapper
 } from "./dashboard.styed"
 
 const dateFormatter = (item: Date) => dayjs(item).format("MMM YY")
@@ -158,7 +158,6 @@ const DashBoard = ({ className }: { className?: string }) => {
               </LineChart>
             </ResponsiveContainer>
           </LeftPerformanceSection>
-          <RecipiesTable />
           <RightPerformanceSection className="right-section">
             <Card>
               <Card.Header>
@@ -186,6 +185,7 @@ const DashBoard = ({ className }: { className?: string }) => {
                 <AddCircleIcon />
               </div>
               <Button> View All My Recipes</Button>
+              <RecipiesTable />
             </div>
           </LeftMyRecipiesSection>
           <RightMyRecipiesSection>

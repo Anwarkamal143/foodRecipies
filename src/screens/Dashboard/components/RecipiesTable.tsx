@@ -58,8 +58,8 @@ function RecipiesTable() {
         <thead>
           <tr>
             <th>Id</th>
-            <th>name</th>
             <th>Status</th>
+            <th>name</th>
             <th>View</th>
             <th>Date</th>
           </tr>
@@ -69,8 +69,8 @@ function RecipiesTable() {
             return (
               <tr key={index}>
                 <td>{items.id}</td>
-                <td>{items.name}</td>
                 <td className={items.status}>{items.status}</td>
+                <td>{items.name}</td>
                 {items?.view?.map(m => {
                   return (
                     <>
