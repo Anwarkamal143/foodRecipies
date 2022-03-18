@@ -1,14 +1,14 @@
-import { ROUTES } from "@Routes/routes"
+import { ADMINROUTES, INavItem } from "@routes/routes"
 import { isValidElement } from "react"
 import styled from "styled-components"
 import { Item, NestedItems } from "./Item"
 
 type INavListProps = {
-  routes?: []
+  routes?: INavItem[]
   className?: string
 }
 const NavList = (props: INavListProps) => {
-  const { className, routes = ROUTES } = props
+  const { className, routes = ADMINROUTES } = props
   return (
     <ul className={`sidebarList ${className}`}>
       {routes?.map(r => {

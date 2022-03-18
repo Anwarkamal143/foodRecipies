@@ -1,24 +1,43 @@
-import { Icon } from "@Components"
-import { DisLikeIcon, ExportIcon, HeartIcon, LikeIcon } from "@Icons"
+import { Icon } from "@components"
+import { DisLikeIcon, ExportIcon, HeartIcon, LikeIcon } from "@icons"
+import { FormatNumber } from "@utils"
 import styled from "styled-components"
+import { IPostType } from "./Posts"
 
 type IPostFooterProps = {
   className?: string
   //   title?: ReactChild | ReactChildren | ReactNode | ReactElement | HTMLElement
   //   subTitle?: ReactChild | ReactChildren | ReactNode | ReactElement | HTMLElement
   onSubmit?: (...args: any[]) => void
+  post: IPostType
+  onSocialItemClick?: (...args: any[]) => void
 }
 
 function PostFooter(props: IPostFooterProps) {
-  const { className, onSubmit } = props
+  const { className, onSubmit, post, onSocialItemClick } = props
 
   return (
     <div className={className}>
       <div className="likeDetails">
-        <HeartIcon fill="red" stroke="red" />
+        <HeartIcon
+          fill={post.liked ? "red" : "none"}
+          {...(post.liked ? { stroke: "red" } : {})}
+          // stroke={post.liked ? "red" : "lightgray"}
+          onClick={() => {
+            const newPost: IPostType = {
+              ...post,
+              likes: post.liked ? post.likes - 1 : post.likes + 1,
+              liked: !post.liked,
+            }
+            onSubmit?.(newPost)
+          }}
+        />
 
-        <span className="likeDetailsText">28.5k Like</span>
-        <Icon className="iconSize">
+        <span className="likeDetailsText">
+          {" "}
+          {FormatNumber(post.likes)} Like
+        </span>
+        <Icon className="iconSize" onClick={onSocialItemClick}>
           <ExportIcon />
         </Icon>
       </div>
@@ -59,10 +78,10 @@ export default styled(PostFooter)`
       font-weight: 700px;
     }
   }
-  
+
   .like-actions {
     display: flex;
-    
+
     span:not(:last-child) {
       margin-right: 25px;
     }

@@ -1,142 +1,348 @@
-import styled, { css } from "styled-components"
-export const InputContainer = styled.div`
-  .right {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  &.rightIcon {
-    input {
-      padding-right: 3rem;
-    }
-  }
-  &.leftIcon {
-    input {
-      padding-left: 1.2rem;
-    }
-  }
-  .left {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-`
-export const ErrorWrapper = styled.p`
-  color: ${({ theme }) => theme.colors.red};
-`
-export const InputWrapper = styled.div<{
-  width?: string | number
-  type?: string
-}>`
-  border-radius: 5px;
-  position: relative;
-  border: 1px solid gray;
-  /* border: 1px solid gray; */
-  /* padding: 1rem; */
-  /* display: flex; */
-  /* align-items: center; */
-  font-size: 1.2rem;
-  ${({ width }) => {
-    if (typeof width === "string") {
-      return css`
-        width: ${width};
-      `
-    }
-    if (typeof width === "number") {
-      return css`
-        width: ${width}px;
-      `
-    }
-  }}
-  &.w-5 {
-    width: 5%;
-  }
-  &.w-10 {
-    width: 10%;
-  }
-  &.w-15 {
-    width: 15%;
-  }
-  &.w20 {
-    width: 20%;
-  }
-  &.w-25 {
-    width: 25%;
-  }
-  &.w-30 {
-    width: 30%;
-  }
-  &.w-35 {
-    width: 35%;
-  }
-  &.w-40 {
-    width: 40%;
-  }
-  &.w-45 {
-    width: 45%;
-  }
-  &.w-50 {
-    width: 50%;
-  }
-  &.w-55 {
-    width: 55%;
-  }
-  &.w-60 {
-    width: 60%;
-  }
-  &.w-65 {
-    width: 65%;
-  }
-  &.w-70 {
-    width: 70%;
-  }
-  &.w-75 {
-    width: 75%;
-  }
-  &.w-80 {
-    width: 80%;
-  }
-  &.w-85 {
-    width: 85%;
-  }
-  &.w-90 {
-    width: 90%;
-  }
-  &.w-95 {
-    width: 95%;
-  }
-  &.w-100 {
+import styled from "styled-components"
+export const InputWrapper = styled.div`
+  .select-wrap {
     width: 100%;
+    margin: 0 0 14px;
   }
-  i.left,
-  svg.left {
-    /* margin-right: 0.5rem; */
-    width: 2rem;
+
+  .select-wrap.sm {
+    max-width: 442px;
+    margin-left: auto;
+    margin-right: auto;
   }
-  i.right,
-  svg.right {
-    width: 2rem;
-    margin-right: 3px;
-    /* margin-left: 0.5rem; */
+
+  .input-wrap {
+    width: 100%;
+    margin: 0 0 14px;
+  }
+
+  .input-wrap .error-msg {
+    display: block;
+    text-align: right;
+    font-size: 14px;
+    font-weight: 400;
+    color: #f00;
+    display: none;
+    /* margin-top: -15px; */
+  }
+
+  .input-wrap.sm {
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .input-wrap.md {
+    max-width: 526px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .input-wrap.error .form-control {
+    color: #f00;
+    border-width: 1px;
+    border-color: #e5d804 !important;
+  }
+
+  .input-wrap.error .error-msg {
+    display: block;
+  }
+
+  .form-control {
+    line-height: 1.5;
+    font-weight: 400;
+    color: #000;
+    font-family: "Roboto", sans-serif;
+    padding: 18px 17px 4px;
+  }
+
+  .form-control:focus {
+    border-width: 1px !important;
+  }
+
+  .no-label .form-control {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  textarea.form-control {
+    resize: none;
+  }
+
+  .text-input {
+    position: relative;
+  }
+
+  .text-input label {
+    -webkit-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+    line-height: 24px;
+    color: #000;
+    opacity: 0.7;
+    margin: 0;
+    position: absolute;
+    left: 18px;
+    top: 18px;
+    pointer-events: none;
+    font-weight: 300;
+    transform: translateY(-10%);
+  }
+
+  .text-input .icon {
+    font-size: 24px;
+    line-height: 1;
+    color: #6a6969;
+    width: 30px;
+    text-align: center;
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    display: none;
+  }
+
+  .text-input.input-active label {
+    font-size: 14px;
+    line-height: 16px;
+    top: 10px;
+    opacity: 0.7;
+  }
+
+  .text-input .word-count {
+    text-align: right;
+    color: #67616d;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 5px 0 0;
+  }
+
+  .text-input.ico-input {
+    position: relative;
+    font-family: "Roboto", sans-serif !important;
+  }
+
+  .text-input.ico-input .icon {
+    display: block;
+  }
+
+  .text-input.ico-input label {
+    left: 52px;
+  }
+
+  .text-input.ico-input .form-control {
+    padding-left: 50px;
+  }
+
+  .text-input.ico-input .form-control:focus {
+    padding-left: 50px;
+  }
+
+  .text-input.ico-input.icon-right .form-control {
+    padding-left: 17px;
+    padding-right: 50px;
+  }
+
+  .text-input.ico-input.icon-right .form-control:focus {
+    padding-left: 17px;
+    padding-right: 50px;
+  }
+
+  .text-input.ico-input.icon-right label {
+    left: 17px;
+  }
+
+  .text-input.ico-input.icon-right .icon {
+    left: auto;
+    right: 17px;
+  }
+
+  textarea.form-control {
+    padding-top: 21px;
+  }
+
+  .input-focus {
+    border-color: #e51075 !important;
+  }
+
+  .was-validated .form-control:valid,
+  .form-control.is-valid {
+    border-color: #adaaaa;
+  }
+
+  .was-validated .form-control:valid:focus,
+  .form-control.is-valid:focus {
+    box-shadow: none;
+    border-color: #255b87;
+  }
+
+  .field-amount .text-input.ico-input .icon {
+    top: 15px;
+    transform: none;
+  }
+
+  @media (max-width: 767px) {
+    textarea.form-control {
+      height: 180px;
+    }
+
+    .input-wrap.lbl-space .text-input label {
+      transform: none;
+      top: 5px;
+      line-height: 24px;
+    }
+  }
+
+  /* Material Design Input */
+
+  .materialized-input .form-control,
+  .date-area .rc-date__picker {
+    height: 40px;
+    padding: 10px 17px;
+    border-color: #d7b3e3;
+    font-size: 15px;
+    line-height: 18px;
+    color: #000;
+  }
+
+  .date-area .rc-date__picker {
+    border: 1px solid #d7b3e3;
+    border-radius: 5px;
+    width: 100%;
+    outline: none;
+  }
+
+  .date-area .rc-date__picker:focus {
+    border-color: #9fa8da;
+    outline: none;
+  }
+
+  .materialized-input .form-control:focus {
+    border-color: #9fa8da;
+  }
+
+  .materialized-input .form-control:focus + label {
+    color: #9fa8da;
+  }
+
+  .materialized-input textarea.form-control {
+    height: auto;
+  }
+
+  .materialized-input .form-control::placeholder {
+    color: #898d92;
+  }
+
+  .materialized-input .form-control::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #898d92;
+    opacity: 1; /* Firefox */
+  }
+
+  .materialized-input .form-control:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #898d92;
+  }
+
+  .materialized-input .form-control::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #898d92;
+  }
+
+  .materialized-input.text-input label {
+    font-size: 15px;
+    line-height: 18px;
+    top: 13px;
+    left: 8px;
+    padding: 0 10px;
+    background: #fff;
+    color: #898d92;
+    opacity: 1;
+  }
+
+  .materialized-input.text-input.prefix-element.materialized-input.ico-input
+    label {
+    left: 40px;
+  }
+
+  .materialized-input.text-input.input-active label {
+    top: -5px;
+    opacity: 1;
+    font-size: 13px;
+  }
+
+  .materialized-input.text-input.ico-input .form-control {
+    padding-left: 17px !important;
+    padding-right: 50px !important;
+  }
+
+  .materialized-input.text-input.prefix-element .form-control {
+    padding-left: 50px !important;
+    padding-right: 17px !important;
+  }
+
+  .materialized-input.text-input.ico-input label {
+    left: 8px;
+  }
+
+  .materialized-input.text-input.prefix-element label {
+    left: 40px;
+  }
+
+  .materialized-input.text-input .icon {
+    font-size: 17px;
+    left: auto;
+    right: 10px;
+    color: #9c9c9c;
+    max-width: 30px;
+    z-index: 3;
+    top: 20px;
+  }
+
+  .materialized-input.text-input .pre-fix {
+    left: 10px;
+    top: 5px;
+    position: absolute;
+    /*-webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);*/
+    color: #9c9c9c;
+    max-width: 30px;
+  }
+
+  .materialized-input.text-input .icon svg,
+  .materialized-input.text-input .pre-fix svg {
+    width: 100%;
+    height: auto;
+    vertical-align: top;
+  }
+  .text-input label.label-alt {
+    top: auto;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 300;
+    bottom: 50%;
+    padding: 0 7px 0 0;
+    transform: translate(0, 50%);
+  }
+
+  .text-input label.label-alt + input {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .text-input.input-active label.label-alt {
+    left: 0;
+    margin: 0 0 10px;
+    bottom: 100%;
+    top: auto;
+    transform: none;
+    padding: 0;
+  }
+  @media (max-width: 480px) {
+    .materialized-input.text-input.ico-input .form-control {
+      padding-right: 40px !important;
+    }
   }
 `
-export const InputElWrapper = styled.div`
-  width: 100%;
-`
-export const InputEl = styled.input`
-  border-radius: 5px;
-  border: none;
-  outline: none;
-  width: 100%;
-  color: currentColor;
-  color: inherit;
-  padding: 1rem;
-  padding-right: 3px;
-  /* padding-left: 0.5rem;
-    padding-right: 0.5rem; */
-  font-size: inherit;
-`
-export const TextAreaContainer = styled.div``
-export const TextAreaWrapper = styled.div``

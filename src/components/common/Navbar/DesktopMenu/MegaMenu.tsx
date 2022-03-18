@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // import { Popover, Transition } from '@headlessui/react';
-import clsxm from "@Lib/clsxm"
+import clsxm from "@lib/clsxm"
 import React, {
   // Fragment,
   useContext,
@@ -63,7 +63,7 @@ function MegaMenu({ children, ...props }: any) {
   // const contextValue = { buttonRef, handleClick, onHover };
   return (
     <>
-      <div className="group relative">
+      <div className="relative group">
         {/* {({ open }) => ( */}
         <MegaMenuContext.Provider
           // value={{ ...contextValue, ...{ open } }}

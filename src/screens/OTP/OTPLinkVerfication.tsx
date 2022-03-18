@@ -1,4 +1,4 @@
-import { Spinner } from "@Icons"
+import { Spinner } from "@icons"
 import { useFormik } from "formik"
 import { ReactChild, ReactChildren, ReactElement, ReactNode } from "react"
 import styled from "styled-components"

@@ -45,6 +45,7 @@ module.exports = {
     "react/display-name": "off",
     "jsx-a11y/click-events-have-key-events": "off",
     "jsx-a11y/no-static-element-interactions": "off",
+    "no-extra-boolean-cast": "off",
     "simple-import-sort/imports": "error",
     "import/no-duplicates": "error",
     "jsx-a11y/anchor-is-valid": [

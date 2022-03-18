@@ -1,32 +1,44 @@
-import { Icon, Image, Scrollbar } from "@Components"
-import { HeartIcon } from "@Icons"
+import { Icon, Image, Scrollbar } from "@components"
+import { HeartIcon } from "@icons"
+import { useState } from "react"
 import styled from "styled-components"
+import { IPostType } from "./Posts"
 
 type IMyFeedProps = {
   className?: string
   //   title?: ReactChild | ReactChildren | ReactNode | ReactElement | HTMLElement
   //   subTitle?: ReactChild | ReactChildren | ReactNode | ReactElement | HTMLElement
   onSubmit?: (...args: any[]) => void
+  post: IPostType
 }
-const images = [
-  "/images/mock/post1.png",
-  "/images/mock/post2.png",
-  "/images/mock/post3.png",
-  "/images/mock/post1.png",
-  "/images/mock/post2.png",
-]
+
 type ImagesProps = {
   images: string[]
   className?: string
+  post: IPostType
+  onSubmit?: (...args: any[]) => void
 }
 const ImagesSlider = (props: ImagesProps) => {
-  const { images, className } = props
+  const { images, className, post, onSubmit } = props
+  const [like, setLike] = useState(false)
   return (
     <div className={className}>
       <div className="main-img">
         <Image className="postbody-img" src={images[0]} alt={images[0]} />
         <Icon className="heartIcon">
-          <HeartIcon />
+          <HeartIcon
+            fill={post.liked ? "red" : "none"}
+            {...(post.liked ? { stroke: "red" } : {})}
+            // stroke={post.liked ? "red" : "lightgray"}
+            onClick={() => {
+              const newPost: IPostType = {
+                ...post,
+                likes: post.likes - 1 < 0 ? 0 : post.likes - 1,
+                liked: post.likes - 1 < 0 ? post.liked : !post.liked,
+              }
+              onSubmit?.(newPost)
+            }}
+          />
         </Icon>
       </div>
       <div className="scrollslides">
@@ -70,66 +82,38 @@ const ImgSlides = styled(ImagesSlider)`
 `
 
 function PostBody(props: IMyFeedProps) {
-  const { className, onSubmit } = props
+  const { className, onSubmit, post } = props
 
   return (
     <div className={className}>
-      <p className="post-text">
-        Credibly reinvent resource maximizing systems vis-a-vis value-added
-        customer service. Authoritatively seize turnkey platforms without 24/365
-        services. Enthusiastically fashion cross functional metrics via vertical
-        ideas. Uniquely leverage existing enabled e-business whereas
-        bleeding-edge content. Seamlessly incentivize optimal markets through
-        scalable leadership.
-      </p>
-
-      {images?.length > 1 ? (
-        <ImgSlides images={images} />
-      ) : (
-        <Image key={images[0]} src={images[0]} alt={images[0]} />
+      <p className="post-text">{post.description}</p>
+      {post?.images?.length && (
+        <>
+          {post.images?.length > 1 ? (
+            <ImgSlides images={post.images} post={post} onSubmit={onSubmit} />
+          ) : (
+            <Image key={post._id} src={post.images[0]} alt={post.images[0]} />
+          )}
+        </>
       )}
     </div>
   )
 }
 export default styled(PostBody)`
-.post-text {
-  font-size: 12px;
-  line-height: 20px;
-  color: #1e1e2d;
-  margin: 0 0 24px;
-}
+  .post-text {
+    font-size: 12px;
+    line-height: 20px;
+    color: #1e1e2d;
+    margin: 0 0 24px;
+  }
 
-.main-img {
-  overflow: hidden;
-
-  .image-comp {
+  .main-img {
     overflow: hidden;
-    border-radius: 15px;
-  }
 
-  img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 15px;
-  }
-
-  .heartIcon {
-    width: 42px;
-    height: 42px;
-    padding: 7px 5px 0;
-  }
-}
-
-.scrollslides {
-  .image-comp {
-    height: calc(33.333% - 14px);
-    max-height: 140px;
-    margin: 0 0 14px;
-    overflow: hidden;
-    border-radius: 15px;
+    .image-comp {
+      overflow: hidden;
+      border-radius: 15px;
+    }
 
     img {
       width: 100%;
@@ -139,6 +123,30 @@ export default styled(PostBody)`
       object-position: center;
       border-radius: 15px;
     }
+
+    .heartIcon {
+      width: 42px;
+      height: 42px;
+      padding: 7px 5px 0;
+    }
   }
-}
+
+  .scrollslides {
+    .image-comp {
+      height: calc(33.333% - 14px);
+      max-height: 140px;
+      margin: 0 0 14px;
+      overflow: hidden;
+      border-radius: 15px;
+
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 15px;
+      }
+    }
+  }
 `

@@ -1,4 +1,4 @@
-import clsxm from "@Lib/clsxm"
+import clsxm from "@lib/clsxm"
 import Link, { LinkProps } from "next/link"
 import * as React from "react"
 

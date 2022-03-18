@@ -1,4 +1,4 @@
-import clsxm from "@Lib/clsxm"
+import clsxm from "@lib/clsxm"
 import * as React from "react"
 import { UnstyledLink, UnstyledLinkProps } from "./UnstyledLink"
 

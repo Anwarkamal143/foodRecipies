@@ -1,8 +1,9 @@
-import { Button, Icon, Image } from "@Components"
-import { FacebookIcon, InstagramIcon, TwitterIcon, YoutubeIcon } from "@Icons"
+import { Button, Icon, Image } from "@components"
+import { FacebookIcon, InstagramIcon, TwitterIcon, YoutubeIcon } from "@icons"
 import dayjs from "dayjs"
 import relativeTime from "dayjs/plugin/relativeTime"
 import styled from "styled-components"
+import { IPostType } from "./Posts"
 
 dayjs.extend(relativeTime)
 type IMyFeedProps = {
@@ -10,25 +11,40 @@ type IMyFeedProps = {
   //   title?: ReactChild | ReactChildren | ReactNode | ReactElement | HTMLElement
   //   subTitle?: ReactChild | ReactChildren | ReactNode | ReactElement | HTMLElement
   onSubmit?: (...args: any[]) => void
+
+  post: IPostType
 }
 function PostHeader(props: IMyFeedProps) {
-  const { className, onSubmit } = props
-
+  const { className, onSubmit, post } = props
+  const { person, createdAt } = post
   return (
     <div className={className}>
       <div className="person-details">
         <Image
           className="post-headerimg userProfileImage"
-          src="/images/mock/slider1profile.png"
+          src={person.profileImage}
         />
         <div className="userProfileDetails">
           <p className="userProfileName">
-            <strong>Amanda Miles</strong>
+            <strong>{person.name}</strong>
           </p>
-          <span className="userProfileTime">{dayjs().subtract(12, "hours").fromNow()}</span>
+          <span className="userProfileTime">
+            {dayjs(createdAt).subtract(12, "hours").fromNow()}
+          </span>
         </div>
-        <Button className="buttonFollow" shape="circle" size="small">
-          Follow
+        <Button
+          className="buttonFollow"
+          shape="circle"
+          size="small"
+          onClick={() => {
+            const newPost = {
+              ...post,
+              person: { ...person, followed: !person.followed },
+            }
+            onSubmit?.(newPost)
+          }}
+        >
+          {person.followed ? "Unfollow" : "Follow"}
         </Button>
       </div>
       <div className="socialIcons">
@@ -54,7 +70,7 @@ export default styled(PostHeader)`
   font-size: 12px;
   line-height: 16px;
   margin: 0 0 15px;
-  
+
   .person-details {
     display: flex;
     align-items: center;
@@ -62,7 +78,7 @@ export default styled(PostHeader)`
   .post-headerimg {
     height: 3em;
   }
-  
+
   .socialIcons {
     display: flex;
 

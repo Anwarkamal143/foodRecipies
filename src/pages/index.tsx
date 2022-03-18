@@ -1,5 +1,7 @@
-import { MyFeedsScreen } from "@Screens"
+import { useAppSelector } from "@hooks"
+import { Dashboard, MyFeedsScreen } from "@screens"
 
 export default function MyFeeds() {
-  return <MyFeedsScreen />
+  const { role } = useAppSelector(state => state.user)
+  return role === "admin" ? <Dashboard /> : <MyFeedsScreen />
 }

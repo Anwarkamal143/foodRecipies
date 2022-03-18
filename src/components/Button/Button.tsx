@@ -1,5 +1,5 @@
-import { Loading } from "@Assets/icons"
-import { omit } from "@Utils/index"
+import { Loading } from "@assets/icons"
+import { omit } from "@utils/index"
 import classNames from "classnames"
 import React, { forwardRef } from "react"
 import Skeleton from "react-loading-skeleton"

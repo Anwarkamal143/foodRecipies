@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import { ButtonLink, UnstyledLink } from "@Components"
-import clsxm from "@Lib/clsxm"
+import { ButtonLink, UnstyledLink } from "@components"
+import clsxm from "@lib/clsxm"
 import React from "react"
 import { FiChevronDown } from "react-icons/fi"
 import MegaMenu, { MegaMenuButton, MegaMenuPanel } from "./MegaMenu"
@@ -32,28 +32,28 @@ function CommunityMegaMenu() {
           Community
           <FiChevronDown
             size="0.8rem"
-            className=" mt-1 transform transition-all group-hover:rotate-180"
+            className="mt-1 transition-all transform  group-hover:rotate-180"
           />
         </button>
       </MegaMenuButton>
       <MegaMenuPanel className=" -left-60 w-full overflow-hidden lg:w-[50vw] xl:w-[43vw] 2xl:max-w-screen-sm">
-        {/* <span className='customArrow block drop-shadow-md after:left-10 after:-top-3  '></span> */}
+        {/* <span className='block customArrow drop-shadow-md after:left-10 after:-top-3 '></span> */}
 
-        <div className=" w-full p-4">
-          <p className=" mb-4 pl-4 text-sm font-medium text-gray-900">
+        <div className="w-full p-4 ">
+          <p className="pl-4 mb-4 text-sm font-medium text-gray-900 ">
             Online Community
           </p>
           {/*  Quick Access Recipies */}
-          {/* <div className=' flex w-7/12 flex-col gap-6 border-r p-6 pr-4 text-left'> */}
+          {/* <div className='flex flex-col w-7/12 gap-6 p-6 pr-4 text-left border-r '> */}
           <div className="grid grid-cols-1 gap-4 xl:grid-cols-2">
             {communites.length
               ? communites.map(item => (
                   <div key={item.id}>
                     <UnstyledLink
                       href={item.href}
-                      className=" flex items-center justify-between rounded-md p-4  text-sm font-medium text-gray-900 hover:bg-blue-50"
+                      className="flex items-center justify-between p-4 text-sm font-medium text-gray-900 rounded-md  hover:bg-blue-50"
                     >
-                      <div className=" flex items-center gap-4">
+                      <div className="flex items-center gap-4 ">
                         <img
                           src={item.thumbnail}
                           alt={item.title}
@@ -61,7 +61,7 @@ function CommunityMegaMenu() {
                         />
                         <div>
                           <p>{item.title}</p>
-                          <small className=" text-xs text-gray-400">
+                          <small className="text-xs text-gray-400 ">
                             {item.subtitle}
                           </small>
                         </div>
@@ -73,17 +73,17 @@ function CommunityMegaMenu() {
           </div>
           {/* </div> */}
         </div>
-        <div className=" flex items-center justify-between bg-gray-100 p-4 pl-8">
+        <div className="flex items-center justify-between p-4 pl-8 bg-gray-100 ">
           <div>
             <p className="text-sm font-medium text-gray-900">
               Food Feed (Beta Mode)🔥
             </p>
-            <small className=" text-gray-500">
+            <small className="text-gray-500 ">
               A recipe is a set of instructions that how to prepare or make.
             </small>
           </div>
           <ButtonLink href="/" variant="light">
-            <p className=" text-sm text-blue-400">Learn More</p>
+            <p className="text-sm text-blue-400 ">Learn More</p>
           </ButtonLink>
         </div>
       </MegaMenuPanel>

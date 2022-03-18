@@ -1,6 +1,6 @@
-import { CircleImage, UnderlineLink, UnstyledLink } from "@Components"
+import { CircleImage, UnderlineLink, UnstyledLink } from "@components"
 import { Menu, Transition } from "@headlessui/react"
-import { classNames } from "@Utils"
+import { classNames } from "@utils"
 import React, { Fragment } from "react"
 import { FiChevronDown, FiChevronUp } from "react-icons/fi"
 
@@ -21,11 +21,11 @@ function ProfileDropDown() {
   return (
     <Menu as="div" className="relative">
       <div>
-        <Menu.Button className="relative flex items-center gap-2 rounded-full text-sm font-medium text-white focus:outline-none">
+        <Menu.Button className="relative flex items-center gap-2 text-sm font-medium text-white rounded-full focus:outline-none">
           <span className="sr-only">Open user menu</span>
           <CircleImage
             src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-            className="h-6 w-6"
+            className="w-6 h-6"
           />
           <p className="hidden md:block">Admin</p>
           <FiChevronDown size="0.8rem" className="hidden md:block" />
@@ -40,7 +40,7 @@ function ProfileDropDown() {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute -right-3 z-10 mt-6 w-52 origin-top-right rounded-xl bg-white py-4 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none md:right-0">
+        <Menu.Items className="absolute z-10 py-4 mt-6 origin-top-right bg-white shadow-lg -right-3 w-52 rounded-xl ring-1 ring-black ring-opacity-5 focus:outline-none md:right-0">
           {/* <span className='customArrow block after:left-[83%] md:after:left-3/4'></span> */}
           <Menu.Item>
             {({ active }) => (
@@ -53,15 +53,15 @@ function ProfileDropDown() {
                   "mx-4 mb-2 block rounded-md border bg-gray-50 p-3"
                 )}
               >
-                <div className=" flex items-center justify-between">
+                <div className="flex items-center justify-between ">
                   <CircleImage src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" />
-                  <div className=" flex flex-col">
+                  <div className="flex flex-col ">
                     <p className="m-0 text-sm font-medium text-dark">Admin</p>
-                    <small className=" m-0 text-xs text-gray-500">
+                    <small className="m-0 text-xs text-gray-500 ">
                       Premium user
                     </small>
                   </div>
-                  <div className=" flex flex-col text-gray-500">
+                  <div className="flex flex-col text-gray-500 ">
                     <FiChevronUp size="0.8rem" />
                     <FiChevronDown size="0.8rem" />
                   </div>
@@ -69,7 +69,7 @@ function ProfileDropDown() {
               </UnstyledLink>
             )}
           </Menu.Item>
-          {/* <hr className=' mb-2' /> */}
+          {/* <hr className='mb-2 ' /> */}
           {myMenus.length
             ? myMenus.map(item => (
                 <Menu.Item key={item.id}>
@@ -88,7 +88,7 @@ function ProfileDropDown() {
               ))
             : null}
 
-          <hr className=" my-2" />
+          <hr className="my-2 " />
           {otherMenus.length
             ? otherMenus.map(item => (
                 <Menu.Item key={item.id}>
@@ -107,7 +107,7 @@ function ProfileDropDown() {
               ))
             : null}
 
-          <hr className=" my-2" />
+          <hr className="my-2 " />
           <Menu.Item>
             {({ active }) => (
               <UnstyledLink
@@ -121,8 +121,8 @@ function ProfileDropDown() {
               </UnstyledLink>
             )}
           </Menu.Item>
-          <hr className=" my-2" />
-          <div className=" flex items-center gap-2 px-4">
+          <hr className="my-2 " />
+          <div className="flex items-center gap-2 px-4 ">
             <Menu.Item>
               {({ active }) => (
                 <UnderlineLink

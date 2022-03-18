@@ -4,6 +4,7 @@ export const MainContainer = styled.div`
   display: flex;
   /* height: calc(100vh - 4rem); */
   height: 100%;
+  width: 100%;
 `
 export const MainContentWrapper = styled.div`
   /* flex: 1; */
@@ -12,5 +13,6 @@ export const MainContentWrapper = styled.div`
 export const MainContentSectionWrapper = styled.div`
   margin-top: 4rem;
   display: flex;
+  width: 100%;
   overflow: hidden;
 `

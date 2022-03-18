@@ -1,0 +1,23 @@
+.loader-circule {
+  border: 1px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 1px solid transparent;
+  width: 15px;
+  height: 15px;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 0.4s linear infinite;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  margin: -7px 0px;
+}
+
+@media (max-width: 767px) {
+  .loader-circule {
+    width: 14px;
+    height: 14px;
+    top: 50%;
+    left: 10px;
+    margin: -7px 0px;
+  }
+}

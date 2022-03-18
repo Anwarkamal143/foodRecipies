@@ -1,8 +1,18 @@
-import { Button, Card, DropDown, PopOver, Profile } from "@Components"
-import { AddIcon, DownArrowIcon, FilterIcon } from "@Icons"
-import { Page } from "@Layouts"
+import {
+  Button,
+  Card,
+  DropDown,
+  PopOver,
+  PreviewSlider,
+  ProfileItem,
+} from "@components"
+import { AddIcon, DownArrowIcon, FilterIcon } from "@icons"
+import { Page } from "@layouts"
 import { useFormik } from "formik"
+import { useState } from "react"
 import NoSSR from "react-no-ssr"
+import { Users } from "../../../data"
+import { POSTSDATA } from "../data"
 import { FeedsSlider } from "./components"
 import PostSliderForm from "./components/PostsFilters/PostSliderForm"
 import {
@@ -15,38 +25,10 @@ import {
   LeftContainer,
   RightContainer,
   SlidertWrapper,
-  SuggestedCooksSection
+  SuggestedCooksSection,
 } from "./myfeeds.styled"
 import { Post } from "./posts"
-const Users = [
-  {
-    src: "/images/mock/slider1profile.png",
-    name: "Amanda Miles",
-    username: "@florinpop17",
-    status: "tranding",
-  },
-  {
-    src: "/images/mock/slider2profile.png",
-    name: "Amanda Miles",
-    username: "@florinpop17",
-    status: "tranding",
-  },
-  {
-    src: "/images/mock/slider3profile.png",
-    name: "Amanda Miles",
-    username: "@florinpop17",
-  },
-  {
-    src: "/images/mock/slider4profile.png",
-    name: "Amanda Miles",
-    username: "@florinpop17",
-  },
-  {
-    src: "/images/mock/slider5profile.png",
-    name: "Amanda Miles",
-    username: "@florinpop17",
-  },
-]
+
 type IMyFeedProps = {
   className?: string
   //   title?: ReactChild | ReactChildren | ReactNode | ReactElement | HTMLElement
@@ -55,6 +37,7 @@ type IMyFeedProps = {
 }
 function MyFeeds(props: IMyFeedProps) {
   const { className, onSubmit } = props
+  const [posts, setPosts] = useState([...POSTSDATA])
   const {
     values,
     handleSubmit,
@@ -128,9 +111,20 @@ function MyFeeds(props: IMyFeedProps) {
               />
             </span>
           </FilterSection>
-
-          <Post />
-          <Post />
+          {posts.map((post, i) => (
+            <Post
+              key={i}
+              post={post}
+              onSubmit={post => {
+                const newPosts = [...posts]
+                const index = newPosts.findIndex(p => p._id === post._id)
+                if (index !== -1) {
+                  newPosts[index] = post
+                  setPosts(posts => newPosts)
+                }
+              }}
+            />
+          ))}
         </LeftContainer>
         <RightContainer className="feedsMainColumn">
           <SuggestedCooksSection className="feedsColumn">
@@ -142,7 +136,7 @@ function MyFeeds(props: IMyFeedProps) {
                     <span>See All</span>
                   </HeaderRightSide>
                 </HeaderCooks>
-                <Profile data={Users} />
+                <ProfileItem data={Users} />
               </Card.Body>
             </Card>
           </SuggestedCooksSection>
@@ -156,12 +150,15 @@ function MyFeeds(props: IMyFeedProps) {
                     <span>60</span>
                   </HeaderRightSide>
                 </HeaderCooks>
-                <Profile data={Users} />
+                <ProfileItem data={Users} />
               </Card.Body>
             </Card>
           </SuggestedCooksSection>
         </RightContainer>
       </FeedsContainer>
+      <NoSSR>
+        <PreviewSlider />
+      </NoSSR>
     </Page>
   )
 }

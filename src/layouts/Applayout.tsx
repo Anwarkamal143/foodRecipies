@@ -1,5 +1,5 @@
 // import { Header, Sidebar } from "@Components"
-import { StyledLayoutWrapper } from "@Styled"
+import { StyledLayoutWrapper } from "@styled"
 import { MainContentWrapper } from "./applayout.styled"
 
 export type LayoutType = {
@@ -11,6 +11,7 @@ export type LayoutType = {
 
 export function AppLayout(props: LayoutType) {
   const { otherProps, children, styles } = props
+
   return (
     <StyledLayoutWrapper>
       {/* <AppLayoutWrapper style={styles} {...otherProps}>

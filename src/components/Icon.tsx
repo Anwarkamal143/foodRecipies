@@ -11,9 +11,9 @@ export type IIconProps = DetailedHTMLProps<
   className?: string
 }
 function IconComp(props: IIconProps) {
-  const { otherProps, children, styles, className } = props
+  const { otherProps, children, styles, className, ...rest } = props
   return (
-    <span className={className} {...otherProps} style={styles}>
+    <span className={className} {...otherProps} style={styles} {...rest}>
       {cloneElement(children as any, {})}
     </span>
   )

@@ -1,8 +1,8 @@
-import { ChevronDownSVG } from "@Icons"
-import { INavItem } from "@Routes/routes"
+import { useMatchPath } from "@hooks"
+import { ChevronDownSVG } from "@icons"
+import { INavItem } from "@routes/routes"
 import { isValidElement, useEffect, useState } from "react"
 import { NavLink } from "src/components/NavLink"
-import { useMathPath } from "src/hooks/useMathPath"
 import styled from "styled-components"
 type INavItemProps = INavItem & {
   className?: string
@@ -27,7 +27,7 @@ const Item = (props: INavItemProps) => {
 
     ...rest
   } = props
-  const { isActive } = useMathPath(props)
+  const { isActive } = useMatchPath(props)
 
   return rest?.meta?.divider ? (
     <li className={`sidebarListTitle item-${name} ${itemClass}`}>
@@ -75,7 +75,7 @@ export const NestedItems = (
 ) => {
   const [isOpen, setIsOpen] = useState(false)
 
-  const { isActive } = useMathPath(props)
+  const { isActive } = useMatchPath(props)
   const {
     route = "",
     icon: Icon,
