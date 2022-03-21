@@ -7,12 +7,13 @@ type Iheaderprops<T> = {
   renderItem?: (props: any) => ReactElement | ReactNode
   triggerItem?: (props: any) => ReactElement | ReactNode
   title?: string
+  className?: string
 }
 
 export function CardHeader<T>(props: Iheaderprops<T>) {
-  const { renderItem, triggerItem, title, items } = props
+  const { renderItem, triggerItem, title, items, className } = props
   return (
-    <div>
+    <div className={className}>
       {title && <p>{title} </p>}
       <StikcyDropDown
         button={props =>

@@ -1,4 +1,4 @@
-import { Button, Card, DropDown, Image, ProfileItem } from "@components"
+import { Button, Card, DropDown, Image } from "@components"
 import { AddCircleIcon, CalendarIcon, DownArrowIcon, EyeIcon } from "@icons"
 import { DashboardLayout } from "@layouts/Dashboard/DashboardLayout"
 import { FormatNumber } from "@utils"
@@ -16,15 +16,10 @@ import {
   YAxis,
 } from "recharts"
 import styled from "styled-components"
-import { chartData, data, LineChartData, Users } from "../../../data"
-import {
-  HeaderCooks,
-  HeaderRightSide,
-  HeaderTitle,
-  RightContainer,
-  SuggestedCooksSection,
-} from "../MyFeeds/myfeeds.styled"
+import { chartData, data, LineChartData } from "../../../data"
+import { RECEPESITEMS } from "../data"
 import { CardHeader, PerformanceBar, StatisticsItem } from "./components"
+import { PerformingRecipe } from "./components/Recipies"
 import RecipiesTable from "./components/RecipiesTable"
 import {
   LeftMyRecipiesSection,
@@ -162,9 +157,18 @@ const DashBoard = ({ className }: { className?: string }) => {
           <RightPerformanceSection className="right-section">
             <Card>
               <Card.Header>
-                <div>
-                  <p></p>
-                </div>
+                <CardHeader
+                  title="Cook Weekly Performance"
+                  items={[{ name: "action 1" }, { name: "action 2" }]}
+                  renderItem={({ item, handleToggle }) => {
+                    console.log({ item })
+                    return (
+                      <div onClick={handleToggle} className="item recipe-item">
+                        {item.name}
+                      </div>
+                    )
+                  }}
+                />
               </Card.Header>
               <Card.Body>
                 <PerformanceBar remaining={20} totalInteractions={60} />
@@ -204,38 +208,11 @@ const DashBoard = ({ className }: { className?: string }) => {
                   }}
                 />
               </Card.Header>
-              <Card.Body></Card.Body>
+              <Card.Body>
+                <PerformingRecipe data={RECEPESITEMS} />
+              </Card.Body>
             </Card>
           </RightMyRecipiesSection>
-          <RightContainer className="feedsMainColumn">
-            <SuggestedCooksSection className="feedsColumn">
-              <Card>
-                <Card.Body>
-                  <HeaderCooks className="feedsWidgetHeader">
-                    <HeaderTitle>Suggested Cooks</HeaderTitle>
-                    <HeaderRightSide className="feedsWidgetSeeAll">
-                      <span>See All</span>
-                    </HeaderRightSide>
-                  </HeaderCooks>
-                  <ProfileItem data={Users} />
-                </Card.Body>
-              </Card>
-            </SuggestedCooksSection>
-
-            <SuggestedCooksSection className="feedsColumn">
-              <Card>
-                <Card.Body>
-                  <HeaderCooks className="feedsWidgetHeader">
-                    <HeaderTitle>My Cooks</HeaderTitle>
-                    <HeaderRightSide className="feedsWidgetCount">
-                      <span>60</span>
-                    </HeaderRightSide>
-                  </HeaderCooks>
-                  <ProfileItem data={Users} />
-                </Card.Body>
-              </Card>
-            </SuggestedCooksSection>
-          </RightContainer>
         </MyRecipiesWrapper>
       </div>
     </DashboardLayout>

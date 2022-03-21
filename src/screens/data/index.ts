@@ -48,3 +48,45 @@ export const POSTSDATA = [
     images: ["/images/mock/post1.png"],
   },
 ]
+export const RECEPESITEMS = [
+  {
+    _id: setItemId(),
+    image: "/images/mock/post1.png",
+    name: "Greek salad",
+    rating: 4.5,
+    views: 380,
+    status: "up",
+  },
+  {
+    _id: setItemId(),
+    image: "/images/mock/post1.png",
+    name: "Greek salad",
+    rating: 4.5,
+    views: 380,
+    status: "up",
+  },
+  {
+    _id: setItemId(),
+    image: "/images/mock/post1.png",
+    name: "Greek salad",
+    rating: 4.5,
+    views: 380,
+    status: "up",
+  },
+  {
+    _id: setItemId(),
+    image: "/images/mock/post1.png",
+    name: "Greek salad",
+    rating: 4.5,
+    views: 380,
+    status: "up",
+  },
+  {
+    _id: setItemId(),
+    image: "/images/mock/post1.png",
+    name: "Greek salad",
+    rating: 4.5,
+    views: 380,
+    status: "up",
+  },
+]
