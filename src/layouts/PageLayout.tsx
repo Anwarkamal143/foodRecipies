@@ -113,6 +113,10 @@ export const PageLayoutWrapper = styled.div<{ variant?: string }>`
   .postFeed.feedsWidget {
     border-radius: 20px;
     border-color: #f2f3f5;
+
+    @media (max-width: 767px) {
+      padding: 10px;
+    }
   }
 `
 

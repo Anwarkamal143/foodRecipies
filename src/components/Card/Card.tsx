@@ -72,6 +72,10 @@ export default styled(Card)`
     padding: 15px;
   }
 
+  @media (max-width: 767px) {
+    padding: 10px;
+  }
+
   .feedsWidgetHeader {
     display: flex;
     align-items: center;

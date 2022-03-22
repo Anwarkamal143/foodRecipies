@@ -76,6 +76,10 @@ export default styled(PostFooter)`
       line-heoght: 20px;
       color: #1e1e2d;
       font-weight: 700px;
+
+      @media (max-width: 767px) {
+        padding: 0 10px;
+      }
     }
 
     .iconShare {
@@ -90,8 +94,16 @@ export default styled(PostFooter)`
   .like-actions {
     display: flex;
 
+    @media (max-width: 767px) {
+      margin-top: -8px;
+    }
+
     span:not(:last-child) {
       margin-right: 25px;
+
+      @media (max-width: 767px) {
+        margin-right: 10px;
+      }
     }
 
     .iconLike {

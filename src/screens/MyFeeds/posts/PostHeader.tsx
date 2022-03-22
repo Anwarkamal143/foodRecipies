@@ -71,16 +71,30 @@ export default styled(PostHeader)`
   line-height: 16px;
   margin: 0 0 15px;
 
+  @media (max-width: 767px) {
+    flex-flow row wrap;
+  }
+
   .person-details {
     display: flex;
     align-items: center;
+
+    @media (max-width: 767px) {
+      width: 100%;
+      margin: 0 0 20px;
+    }
   }
+
   .post-headerimg {
     height: 3em;
   }
 
   .socialIcons {
     display: flex;
+
+    @media (max-width: 767px) {
+      width: 100%;
+    }
 
     .socialIconsItem {
       &:hover {
@@ -117,6 +131,10 @@ export default styled(PostHeader)`
   .userProfileDetails {
     overflow: hidden;
     padding: 0 35px 0 20px;
+
+    @media (max-width: 767px) {
+      padding: 0 10px;
+    }
   }
 
   .userProfileName {
@@ -148,6 +166,10 @@ export default styled(PostHeader)`
     align-items: center;
     justify-content: center;
     padding: 6px 10px;
+
+    @media (max-width: 767px) {
+      margin-left: auto;
+    }
 
     &:hover {
       background: #f93e46;

@@ -54,10 +54,21 @@ const ImagesSlider = (props: ImagesProps) => {
 const ImgSlides = styled(ImagesSlider)`
   display: flex;
   font-size: 1rem;
+
+  @media (max-width: 767px) {
+    flex-flow: row wrap;
+  }
+
   .main-img {
     position: relative;
     width: 80%;
     padding: 0 1em 0 0;
+
+    @media (max-width: 767px) {
+      width: 100%;
+      padding: 0;
+    }
+
     .heartIcon {
       position: absolute;
       display: block;
@@ -75,8 +86,38 @@ const ImgSlides = styled(ImagesSlider)`
 
   .scrollslides {
     width: 20%;
+
+    @media (max-width: 767px) {
+      width: 100%;
+      height: 60px;
+      max-height: 60px;
+      margin-top: 2px;
+    }
+
     .image-comp {
       width: 100%;
+
+      @media (max-width: 767px) {
+        height: 60px !important;
+        margin: 0 5px 0 0 !important;
+        border-radius: 5px !important;
+      }
+
+      img {
+        @media (max-width: 767px) {
+          border-radius: 5px !important;
+          width: 100%;
+          height: 100% !important;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+    }
+
+    .rc-scollbar {
+      @media (max-width: 767px) {
+        display: flex;
+      }
     }
   }
 `
