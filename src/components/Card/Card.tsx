@@ -88,6 +88,11 @@ export default styled(Card)`
       font-size: 14px;
       line-height: 18px;
       color: #e0464d;
+      cursor: pointer;
+
+      &:hover {
+        color: #b80a12;
+      }
     }
 
     .feedsWidgetCount {

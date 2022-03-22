@@ -8,7 +8,7 @@ import {
   MessageIcon,
   PhoneIcon,
   TelegramIcon,
-  TwitterIcon,
+  TwitterIcon
 } from "@icons"
 import { ReactElement, useEffect, useState } from "react"
 import styled from "styled-components"
@@ -72,63 +72,63 @@ function SocialShareLinks({
       onClose={handleClose}
     >
       <Card>
-        <div>
+        <div className="inviteModal">
           <Input
             onChange={e => {
               setEmail(e.target.value)
             }}
             error={error}
             label="Invite by email"
-            inputClasses="mb-25"
+            inputClasses="spacer"
             name="email"
             value={email}
             icon={<PlusCircleIcon />}
             // materialDesign
           />
-          <div className="Social_icons">
-            <span>
-              <Icon>
+          <ul className="Social_icons">
+            <li>
+              <Icon className="icon icon-link">
                 <AttachmentIcon />
               </Icon>
               Copy Link
-            </span>
-            <span>
-              <Icon>
+            </li>
+            <li>
+              <Icon className="icon icon-sms">
                 <MessageIcon />
               </Icon>
               SMS
-            </span>
-            <span>
-              <Icon>
+            </li>
+            <li>
+              <Icon className="icon icon-facebook">
                 <FacebookIcon />
               </Icon>
               Facebook
-            </span>
-            <span>
-              <Icon>
+            </li>
+            <li>
+              <Icon className="icon icon-twitter">
                 <TwitterIcon />
               </Icon>
               Twitter
-            </span>
-            <span>
-              <Icon>
+            </li>
+            <li>
+              <Icon className="icon icon-whatsapp">
                 <PhoneIcon />
               </Icon>
               whatsapp
-            </span>
-            <span>
-              <Icon>
+            </li>
+            <li>
+              <Icon className="icon icon-telegram">
                 <TelegramIcon />
               </Icon>
               Telegram
-            </span>
-            <span>
-              <Icon>
+            </li>
+            <li>
+              <Icon className="icon icon-more">
                 <HorizontalDotsIcon />
               </Icon>
               More
-            </span>
-          </div>
+            </li>
+          </ul>
         </div>
       </Card>
     </Modal>

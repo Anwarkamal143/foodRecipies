@@ -37,7 +37,7 @@ function PostFooter(props: IPostFooterProps) {
           {" "}
           {FormatNumber(post.likes)} Like
         </span>
-        <Icon className="iconSize" onClick={onSocialItemClick}>
+        <Icon className="iconSize iconShare" onClick={onSocialItemClick}>
           <ExportIcon />
         </Icon>
       </div>
@@ -77,6 +77,14 @@ export default styled(PostFooter)`
       color: #1e1e2d;
       font-weight: 700px;
     }
+
+    .iconShare {
+      transition: all 0.25s ease-in-out;
+      
+      &:hover {
+        background: lightgray;
+      }
+    }
   }
 
   .like-actions {
@@ -88,10 +96,20 @@ export default styled(PostFooter)`
 
     .iconLike {
       border-color: #c2ffe6;
+      transition: all 0.25s ease-in-out;
+      
+      &:hover {
+        background: #c2ffe6;
+      }
     }
 
     .iconDislike {
       border-color: #ffc4c6;
+      transition: all 0.25s ease-in-out;
+      
+      &:hover {
+        background: #ffc4c6;
+      }
     }
   }
 `

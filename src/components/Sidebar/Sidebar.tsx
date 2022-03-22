@@ -44,6 +44,12 @@ const Sidebar = ({ className }: { className?: string }) => {
 }
 
 export default styled(Sidebar)`
+  .px-5.py-5.undefined {
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
   .userWidget {
     width: 100%;
     border: 1px solid #f2f3f5;
@@ -51,59 +57,98 @@ export default styled(Sidebar)`
     display: flex;
     align-items: center;
     padding: 18px 20px;
+
     @media (max-width: 1199px) {
       padding: 12px 10px;
       margin: 0 -5px;
       width: calc(100% + 10px);
     }
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+
+    .sortByFilterDrop {
+      right: -20px !important;
+
+      .item {
+        font-size: 14px;
+      }
+    }
+
     .userWidgetWrap {
       width: 100%;
       display: flex;
       align-items: center;
       padding-right: 15px;
+
       @media (max-width: 1199px) {
         padding-right: 10px;
       }
     }
     .userWidgetImage {
       width: 34px !important;
+      min-width: 34px;
       height: 34px !important;
       border: 0 !important;
       margin: 0 20px 0 0;
+
       @media (max-width: 1199px) {
         margin: 0 10px 0 0;
       }
     }
+
     .userWidgetText {
       flex-grow: 1;
       flex-basis: 0;
+
+      @media (max-width: 767px) {
+        display: none;
+      }
     }
+
     .userWidgetName {
       font-size: 14px;
       line-height: 18px;
       color: #1e1e2d;
       display: block;
     }
+
     .userWidgetDesignation {
       font-size: 10px;
       line-height: 14px;
       color: #1e1e2d;
       display: block;
     }
+
     .userWidgetDropdown {
       right: -20px;
     }
   }
+
   .sidebarList {
     overflow: hidden;
+
     @media (max-width: 1199px) {
       margin: 0 -5px;
     }
+
+    @media (max-width: 767px) {
+      display: flex;
+      margin: 0;
+    }
+
     .sidebarListTitle {
       text-transform: uppercase;
     }
+
     .sidebarListTitle {
       padding-top: 5px;
+
+      @media (max-width: 767px) {
+        display: none;
+      }
+
       &:first-child {
         padding-top: 0;
       }
@@ -115,9 +160,14 @@ export default styled(Sidebar)`
         font-weight: 600;
       }
     }
+
     li {
       + li {
         margin-top: 8px;
+
+        @media (max-width: 767px) {
+          margin-top: 0;
+        }
       }
 
       a {
@@ -125,29 +175,73 @@ export default styled(Sidebar)`
         align-items: center;
         position: relative;
         color: #7474a9;
+
+        @media (max-width: 767px) {
+          width: 60px;
+          height: 55px;
+          justify-content: center;
+        }
+
         span {
           display: block;
           font-size: 14px;
           line-height: 18px;
           width: 100%;
           padding: 8px 15px 10px 34px;
+          
           @media (max-width: 1199px) {
             padding: 8px 15px 10px 28px;
           }
+
+          @media (max-width: 767px) {
+            display: none;
+          }
         }
+
         .sidebarListIcon {
           position: absolute;
           left: 0;
           top: 50%;
           transform: translateY(-50%);
+
+          @media (max-width: 767px) {
+            position: static;
+            transform: none;
+          }
+
+          &.cooks {
+            margin: 0 -3px;
+
+            @media (max-width: 767px) {
+              margin: 7px 0 0;
+            }
+            
+            svg {
+              width: 22px;
+              height: 22px;
+
+              @media (max-width: 767px) {
+                width: 28px;
+                height: 28px;
+              }
+            }
+          }
         }
+
         svg {
           width: 18px;
           height: 18px;
+
+          @media (max-width: 767px) {
+            width: 24px;
+            height: 24px;
+          }
         }
+
         &:hover,
         &.active {
           color: #e0464d;
+
           svg {
             path {
               stroke: #e0464d;
@@ -160,6 +254,7 @@ export default styled(Sidebar)`
         right: 0;
         top: 50%;
         transform: translateY(-50%);
+
         svg {
           width: 22px;
           height: 22px;
@@ -171,11 +266,14 @@ export default styled(Sidebar)`
     border: 0;
     margin-top: 8px;
     position: relative;
+
     li {
       position: relative;
+
       + li {
         margin-top: 0;
       }
+
       &:before {
         width: 1px;
         position: absolute;
@@ -185,6 +283,7 @@ export default styled(Sidebar)`
         background: #7474a9;
         content: "";
       }
+
       &:after {
         position: absolute;
         top: 16px;
@@ -196,24 +295,29 @@ export default styled(Sidebar)`
         background: #7474a9;
         display: none;
       }
+
       &:first-child {
         &:before {
           top: 18px;
         }
+
         &:after {
           display: block;
         }
       }
+
       &:last-child {
         &:before {
           bottom: 14px;
         }
+
         &:after {
           top: auto;
           bottom: 12px;
           display: block;
         }
       }
+      
       a {
         span {
           font-size: 12px;

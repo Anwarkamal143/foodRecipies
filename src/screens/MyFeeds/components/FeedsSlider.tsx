@@ -84,17 +84,20 @@ function Sliderr(props: ISliderProps) {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
           initialSlide: 0,
+          infinite: true,
+          variableWidth: true,
         },
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
-          infinite: false,
+          infinite: true,
+          variableWidth: true,
         },
       },
     ],
@@ -202,10 +205,6 @@ function Sliderr(props: ISliderProps) {
 
 export const FeedsSlider = styled(Sliderr)`
   width: calc(100% - 127px);
-
-  @media (max-width: 600px) {
-    width: 280px;
-  }
 
   .slick-slider {
     flex-grow: 0;

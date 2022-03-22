@@ -39,6 +39,10 @@ export const RightContainer = styled.div`
     display: flex;
     justify-content: space-between;
   }
+
+  @media (max-width: 767px) {
+    flex-flow: row wrap;
+  }
 `
 export const StoriesWrapper = styled.div``
 
@@ -48,6 +52,7 @@ export const SlidertWrapper = styled.div`
 `
 export const AddStorie = styled.div`
   width: 120px;
+  min-width: 120px;
   /* height: 100%; */
   display: flex;
   flex-direction: column;
@@ -83,12 +88,33 @@ export const FilterSection = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   @media (max-width: 1023px) {
     padding: 35px 0 25px;
   }
+
+  @media (max-width: 767px) {
+    flex-flow: row wrap;
+  }
+
+  > div {
+    @media (max-width: 767px) {
+      width: 100%;
+      order: 2;
+    }
+
+    button {
+      @media (max-width: 767px) {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+
   .sortBy {
     display: flex;
     align-items: center;
+
     span {
       margin-right: 1rem;
     }
@@ -96,8 +122,13 @@ export const FilterSection = styled.div`
 `
 export const SuggestedCooksSection = styled.div`
   width: 100%;
+
   @media (max-width: 1023px) {
     width: 48.5%;
+  }
+
+  @media (max-width: 767px) {
+    width: 100%;
   }
 `
 export const HeaderCooks = styled.div``

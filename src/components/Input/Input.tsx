@@ -8,7 +8,7 @@ import React, {
   Ref,
   TextareaHTMLAttributes,
   useEffect,
-  useState,
+  useState
 } from "react"
 import { InputWrapper } from "./Input.styled"
 interface inputProfile

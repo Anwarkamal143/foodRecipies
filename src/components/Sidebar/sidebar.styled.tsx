@@ -21,4 +21,29 @@ export const SidebarContainer = styled.div`
     width: 200px;
     min-width: 200px;
   }
+
+  @media (max-width: 767px) {
+    top: auto;
+    height: 60px !important;
+    width: 100%;
+    min-width: inherit;
+    right: 0;
+    background: #fff;
+    border-radius: 15px 15px 0 0;
+    border: 1px solid #f2f3f5;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    z-index: 49;
+  }
+
+  .rc-scollbar {
+    @media (max-width: 767px) {
+      display: flex;
+    }
+
+    .scrollbar-thin {
+      @media (max-width: 767px) {
+        padding: 0 !important;
+      }
+    }
+  }
 `

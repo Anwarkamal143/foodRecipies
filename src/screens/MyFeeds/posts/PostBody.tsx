@@ -128,6 +128,11 @@ export default styled(PostBody)`
       width: 42px;
       height: 42px;
       padding: 7px 5px 0;
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
     }
   }
 

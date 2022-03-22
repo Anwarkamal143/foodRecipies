@@ -65,11 +65,11 @@ const Model = ({
       isOpen={isOpen}
       shouldCloseOnOverlayClick={true}
       onRequestClose={onClose}
-      className={classNames(className, "modal-dialog")}
+      className={classNames(className, "modal-dialog modal-dialog-centered")}
       style={{
         content: { ...modelStyle },
         overlay: {
-          zIndex: 10,
+          zIndex: 50,
           backgroundColor: "rgba(0,0,0,0.6)",
           ...overlayStyle,
         },
@@ -125,6 +125,10 @@ const Model = ({
 }
 
 export default styled(Model)`
+  @media (min-width: 576px) {
+    max-width: 405px;
+  }
+
   /* we can remove this styles if we have to revert back to default buttons tyles */
   .modal-footer {
     border: none;
@@ -161,6 +165,235 @@ export default styled(Model)`
 
         &:hover {
           color: #fff;
+        }
+      }
+    }
+  }
+
+  .modal-header,
+  .modal-body,
+  .modal-footer {
+    border: 0;
+    padding: 0;
+  }
+
+  .modal-header {
+    margin: 0 0 25px;
+
+    @media (max-width: 430px) {
+      margin: 0 0 15px;
+    }
+    
+    .close {
+      font-size: 25px;
+    }
+  }
+
+  .modal-title {
+    display: block;
+    font-weight: 700;
+    color: #1E1E2D;
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  .modal-content {
+    border-radius: 15px;
+    padding: 25px 40px;
+
+    @media (max-width: 430px) {
+      padding: 15px;
+    }
+
+    .feedsWidget {
+      padding: 0;
+      border: 0;
+      margin: 0;
+      box-shadow: none;
+    }
+  }
+
+  .inviteModal {
+    width: 100%;
+
+    .text-input {
+      .icon {
+        width: 26px;
+        font-size: 26px;
+        left: 4px;
+        color: #E0464D;
+      }
+
+      label {
+        font-size: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &.input-active {
+        label {
+          display: none;
+        }
+      }
+
+      &.ico-input {
+        label {
+          left: 36px;
+        }
+        
+        .form-control {
+          padding-left: 36px;
+        }
+      }
+
+      &.spacer {
+        margin: 0 0 20px;
+      }
+    }
+
+    .form-control {
+      width: 100%;
+      height: 32px;
+      border: 1px solid #E0464D;
+      border-radius: 20px;
+      outline: none;
+      font-size: 10px;
+      line-height: 14px;
+      color: #1E1E2D;
+      padding: 8px 10px;
+
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .Social_icons {
+    list-style: none;
+    padding: 0;
+    margin: -12px -9px -7px;
+    display: flex;
+    flex-flow: row wrap;
+    font-size: 10px;
+    text-align: center;
+    color: #1E1E2D;
+
+    li {
+      padding: 12px 9px;
+    }
+
+    .icon {
+      width: 50px;
+      height: 50px;
+      margin: 0 0 3px;
+      border-radius: 100%;
+      border-color: #E5E8EF;
+      transition: all 0.25s ease-in-out;
+
+      &.icon-link {
+        background: #C3C3D7;
+        border-color: #C3C3D7;
+
+        svg {
+          width: 18px;
+          height: 18px;
+        }
+
+        &:hover {
+          background: #adaddb;
+          border-color: #adaddb;
+        }
+      }
+
+      &.icon-sms {
+        background: #1E1E2D;
+        border-color: #1E1E2D;
+
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+
+        &:hover {
+          background: #000;
+          border-color: #000;
+        }
+      }
+
+      &.icon-facebook {
+        background: #425A94;
+        border-color: #425A94;
+
+        svg {
+          width: 22px;
+          height: 22px;
+
+          path {
+            fill: #fff;
+          }
+        }
+
+        &:hover {
+          background: #2d4a8f;
+          border-color: #2d4a8f;
+        }
+      }
+
+      &.icon-twitter {
+        background: #57C0FA;
+        border-color: #57C0FA;
+
+        svg {
+          width: 22px;
+          height: 22px;
+
+          path {
+            fill: #fff;
+          }
+        }
+
+        &:hover {
+          background: #2ab2fd;
+          border-color: #2ab2fd;
+        }
+      }
+
+      &.icon-whatsapp {
+        background: #66CF72;
+        border-color: #66CF72;
+
+        svg {
+          width: 22px;
+          height: 22px;
+
+          path {
+            fill: #fff;
+          }
+        }
+
+        &:hover {
+          background: #27ce3a;
+          border-color: #27ce3a;
+        }
+      }
+
+      &.icon-telegram {
+        background: #59AAE2;
+        border-color: #59AAE2;
+
+        svg {
+          width: 22px;
+          height: 22px;
+
+          path {
+            fill: #fff;
+          }
+        }
+
+        &:hover {
+          background: #2e91d6;
+          border-color: #2e91d6;
         }
       }
     }

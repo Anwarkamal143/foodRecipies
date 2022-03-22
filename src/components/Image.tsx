@@ -106,6 +106,9 @@ const ImageWrapper = styled.div<{
   }
 
   img {
-    max-width: 100%;
+    // max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
   }
 `

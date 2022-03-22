@@ -35,6 +35,10 @@ export const PageLayoutWrapper = styled.div<{ variant?: string }>`
     padding: 20px 20px 20px 220px;
   }
 
+  @media (max-width: 767px) {
+    padding: 15px;
+  }
+
   .button.button-sm.buttonFilter {
     background: #fff;
     border-color: #e5e8ef;
@@ -62,10 +66,30 @@ export const PageLayoutWrapper = styled.div<{ variant?: string }>`
   }
 
   .sortByFilter {
+    @media (max-width: 767px) {
+      order: 1;
+      display: block !important;
+      width: 100%;
+      margin: 0 0 10px;
+    }
+    
     .sortByFilterlbl {
       font-size: 12px;
       color: #7474a9;
       line-height: 20px;
+
+      @media (max-width: 767px) {
+        display: block;
+        width: 100%;
+        margin: 0 0 10px;
+      }
+    }
+
+    button {
+      @media (max-width: 767px) {
+        display: block;
+        width: 100%;
+      }
     }
 
     .sortByFilterDrop {
