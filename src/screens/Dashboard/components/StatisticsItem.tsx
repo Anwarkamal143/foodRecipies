@@ -13,16 +13,16 @@ type IStatisticsItemProps = {
 const StatisticsIte = (props: IStatisticsItemProps) => {
   const { title, count, trandingCount = 0, tranding, reviewTime } = props
   return (
-    <div>
+    <div className="dashboardStatisticsColumn down">
       <h3>{title}</h3>
-      <p>
+      <p className="dashboardStatisticsInfo">
         <strong>{count} </strong>
         <span>
           {trandingCount}
           {tranding === "up" ? <ProgressArrowUp /> : <ProgressArrowDown />}
         </span>
-        <p>{reviewTime}</p>
       </p>
+      <p className="dashboardStatisticsTime">{reviewTime}</p>
     </div>
   )
 }

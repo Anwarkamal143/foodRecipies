@@ -13,7 +13,7 @@ import {
   ResponsiveContainer,
   Tooltip,
   XAxis,
-  YAxis,
+  YAxis
 } from "recharts"
 import styled from "styled-components"
 import { chartData, data, LineChartData } from "../../../data"
@@ -28,15 +28,15 @@ import {
   ProfileperformanceWrapper,
   RightMyRecipiesSection,
   RightPerformanceSection,
-  StatisticsWrapper,
+  StatisticsWrapper
 } from "./dashboard.styed"
 
 const dateFormatter = (item: Date) => dayjs(item).format("MMM YY")
 const DashBoard = ({ className }: { className?: string }) => {
   return (
     <DashboardLayout className={`${className} items`}>
-      <div>
-        <StatisticsWrapper>
+      <div className="dashboardDataContent">
+        <StatisticsWrapper className="dashboardStatistics">
           {data.map(item => (
             <StatisticsItem
               key={item.title}
@@ -46,7 +46,8 @@ const DashBoard = ({ className }: { className?: string }) => {
               trandingCount={item.trandingCount}
             />
           ))}
-          <ResponsiveContainer width="100%" height={300}>
+          <ResponsiveContainer width="100%" height={75}
+              className="dashboardStatisticsGraph">
             <BarChart data={chartData}>
               <XAxis dataKey="day" strokeOpacity={0} />
               {/* <YAxis /> */}
@@ -55,7 +56,7 @@ const DashBoard = ({ className }: { className?: string }) => {
             </BarChart>
           </ResponsiveContainer>
         </StatisticsWrapper>
-        <ProfileperformanceWrapper>
+        <ProfileperformanceWrapper className="dashboardPerformance">
           <LeftPerformanceSection>
             <div className="sectionheader">
               <p>Profile Performance</p>
@@ -182,7 +183,7 @@ const DashBoard = ({ className }: { className?: string }) => {
             </Card>
           </RightPerformanceSection>
         </ProfileperformanceWrapper>
-        <MyRecipiesWrapper>
+        <MyRecipiesWrapper className="dashboardMyRecipies">
           <LeftMyRecipiesSection>
             <div className="sectionheader">
               <div>
@@ -218,4 +219,104 @@ const DashBoard = ({ className }: { className?: string }) => {
     </DashboardLayout>
   )
 }
-export const Dashboard = styled(DashBoard)``
+export const Dashboard = styled(DashBoard)`
+.dashboardStatistics {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #f2f3f5;
+  border-bottom: 1px solid #f2f3f5;
+  padding: 18px 0;
+
+  .dashboardStatisticsColumn {
+    width: 20%;
+    padding: 0 20px;
+
+    + .dashboardStatisticsColumn {
+      border-left: 1px solid #F2F3F5;
+    }
+
+    h3 {
+      font-size: 12px;
+      line-height: 20px;
+      color: #1d2129;
+      font-weight: 400;
+      margin: 0 0 4px;
+    }
+
+    .dashboardStatisticsInfo {
+      display: flex;
+      align-items: center;
+      margin: 0 0 5px;
+      
+      strong {
+        font-size: 22px;
+        color: #1d2129;
+      }
+
+      span {
+        display: inline-flex;
+        align-items: center;
+        border-radius: 15px;
+        font-size: 8px;
+        line-height: 10px;
+        background: #fff;
+        padding: 3px 5px;
+        text-align: center;
+        margin: 0 0 0 4px;
+
+        svg {
+          margin: 0 0 0 2px;
+        }
+      }
+    }
+
+    .dashboardStatisticsTime {
+      font-size: 10px;
+      line-height: 13px;
+      color: #7474A9;
+    }
+
+    &.down {
+      p {
+        span {
+          background: #fad9d9;
+          color: #BD0F2E;
+        }
+      }
+    }
+
+    &.up {
+      p {
+        span {
+          background: #D9FADD;
+          color: #0E8521;
+
+          svg {
+            transform: scale(-1) rotate(90deg);
+            
+            path {
+              stroke: #0E8521;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .dashboardStatisticsGraph {
+    width: 20% !important;
+    height: auto !important;
+
+    .recharts-wrapper {
+      width: 135px !important;
+      height: 75px !important;
+
+      .recharts-surface {
+        width: 135px !important;
+        height: 75px !important;
+      }
+    }
+  }
+}
+`

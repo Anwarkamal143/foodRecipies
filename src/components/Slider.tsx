@@ -230,6 +230,57 @@ const AttachmentsPreviewModel: React.FC<Props> = props => {
 }
 
 export const PreviewSlider = styled(AttachmentsPreviewModel)`
+  width: 100%;
+  max-width: inherit !important;
+  margin: 0;
+  background: #1a1a1a;
+
+  .modal-content {
+    border-radius: 0;
+    background: none;
+    padding: 0;
+  }
+
+  .modal-header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+
+    .modal-title {
+      color: #fff;
+    }
+
+    .close {
+      color: #fff;
+    }
+  }
+
+  .modal-body {
+    height: 100vh;
+  }
+
+  .slider_container {
+    height: 100%;
+  }
+
+  .slick-track {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+
+    .slick-slide {
+      width: 250px;
+      height: auto;
+      transition: all 300ms ease;
+
+      &.slick-current {
+        width: 375px;
+        transform: scale(1.5);
+      }
+    }
+  }
+  
   .slick-prev,
   .slick-next {
     color: white;

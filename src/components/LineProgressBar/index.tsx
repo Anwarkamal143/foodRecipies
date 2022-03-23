@@ -9,11 +9,10 @@ const ProgressBarr = (props: IProgressBarprops) => {
   const { bgColor, progresspercent, showPrgress = true } = props
 
   const containerStyles = {
-    height: 20,
+    height: 7,
     width: "100%",
-    backgroundColor: "#e0e0de",
-    borderRadius: 50,
-    margin: 50,
+    backgroundColor: "#e5e8ef",
+    borderRadius: 7,
   }
 
   const fillerStyles = {
