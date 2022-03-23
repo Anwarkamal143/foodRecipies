@@ -5,7 +5,7 @@ import {
   RecipeName,
   RecipesDetails,
   RecipesDetailsWrapper,
-  RecipesWrapper,
+  RecipesWrapper
 } from "./recipes.styled"
 
 interface IRecipeProps {
@@ -23,11 +23,11 @@ function PerformingRecipes(props: IRecipeProps) {
           <RecipesWrapper className="receipeDetails" key={i}>
             <RecipesDetailsWrapper className="recipeholder">
               <Image className="recipeImage" src={u.image} alt={u.name} />
-              <RecipesDetails className="receipedetails">
+              <RecipesDetails className="receipeTextbox">
                 <RecipeName className="recipename">{u.name}</RecipeName>
                 <div className="recipemeta">
-                  <div>{u.rating}</div>
-                  <div>
+                  <div className="receipeRatings">{u.rating}</div>
+                  <div className="receipeStatus">
                     {u.views} <span>{u.status}</span>
                   </div>
                 </div>

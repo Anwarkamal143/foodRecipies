@@ -32,19 +32,19 @@ const CircularProgressBar = (props: IPerformanceProps) => {
             className="childprogess"
             strokeWidth={10}
             styles={buildStyles({
-              pathColor: "#f00",
+              pathColor: "#E0464D",
               trailColor: "transparent",
               strokeLinecap: "butt",
               rotation: 1 / -4,
             })}
           />
           <div className="text-children">
-            <p>Interactions</p>
-            <p>
+            <p className="textSubtitle">Interactions</p>
+            <p className="textStatus">
               <strong>{FormatNumber(1370000)} </strong>{" "}
               <span>Of {FormatNumber(2000000)}</span>
             </p>
-            <p>{FormatNumber(6300000)} Remaining</p>
+            <p className="textRamaining">{FormatNumber(6300000)} Remaining</p>
           </div>
         </>
         {/* Foreground path */}

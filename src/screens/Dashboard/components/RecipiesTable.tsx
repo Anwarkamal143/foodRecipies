@@ -53,12 +53,12 @@ const tableData = [
 
 function RecipiesTable() {
   return (
-    <div>
-      <table className="table">
+    <div className="recipiesTableParent">
+      <table className="table recipiesTable">
         <thead>
           <tr>
-            <th>Id</th>
-            <th>name</th>
+            <th>ID</th>
+            <th>Name</th>
             <th>Status</th>
             <th>View</th>
             <th>Date</th>
@@ -70,18 +70,18 @@ function RecipiesTable() {
               <tr key={index}>
                 <td>{items.id}</td>
                 <td>{items.name}</td>
-                <td className={items.status}>{items.status}</td>
+                <td className={items.status}><span className="statusText">{items.status}</span></td>
                 {items?.view?.map(m => {
                   return (
                     <>
-                      <td>
-                        <span>{m.rateing}</span>
-                        <span>{m.downrate}</span>
+                      <td className="view">
+                        <span className="ratings">{m.rateing}</span>
+                        <span  className="ratingsStatus">{m.downrate}</span>
                       </td>
                     </>
                   )
                 })}
-                <td>{items.date}</td>
+                <td className="date">{items.date}</td>
               </tr>
             )
           })}
