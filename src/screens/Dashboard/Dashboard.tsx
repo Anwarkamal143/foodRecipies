@@ -230,9 +230,32 @@ export const Dashboard = styled(DashBoard)`
   border-bottom: 1px solid #f2f3f5;
   padding: 18px 0;
 
+  @media (max-width: 1023px) {
+    flex-flow: row wrap;
+  }
+
   .dashboardStatisticsColumn {
     width: 21.25%;
     padding: 0 20px;
+
+    @media (max-width: 1439px) {
+      width: 20%;
+    }
+
+    @media (max-width: 1199px) {
+      padding: 0 10px 0 15px;
+    }
+
+    @media (max-width: 1023px) {
+      width: 25%;
+      text-align: center;
+      padding: 0 15px;
+      margin: 0 0 30px;
+    }
+
+    @media (max-width: 767px) {
+      width: 50%;
+    }
 
     + .dashboardStatisticsColumn {
       border-left: 1px solid #F2F3F5;
@@ -250,10 +273,18 @@ export const Dashboard = styled(DashBoard)`
       display: flex;
       align-items: center;
       margin: 0 0 8px;
+
+      @media (max-width: 1023px) {
+        justify-content: center;
+      }
       
       strong {
         font-size: 22px;
         color: #1d2129;
+
+        @media (max-width: 1199px) {
+          font-size: 18px;
+        }
       }
 
       span {
@@ -310,15 +341,53 @@ export const Dashboard = styled(DashBoard)`
     width: 15% !important;
     height: auto !important;
 
+    @media (max-width: 1439px) {
+      width: 20% !important;
+    }
+
+    @media (max-width: 1023px) {
+      width: 100% !important;
+      height: 100px !important;
+    }
+
     .recharts-wrapper {
       width: 200px !important;
       height: 100px !important;
       margin-left: auto;
       margin-bottom: -34px;
 
+      @media (max-width: 1439px) {
+        width: 175px !important;
+      }
+
+      @media (max-width: 1199px) {
+        width: 150px !important;
+        height: 80px !important;
+      }
+
+      @media (max-width: 1023px) {
+        margin: 0 auto;
+        width: 80% !important;;
+        height: 150px !important;
+      }
+
       .recharts-surface {
         width: 200px !important;
         height: 100px !important;
+
+        @media (max-width: 1439px) {
+          width: 175px !important;
+        }
+
+        @media (max-width: 1199px) {
+          width: 150px !important;
+          height: 80px !important;
+        }
+
+        @media (max-width: 1023px) {
+          width: 100% !important;;
+          height: 150px !important;
+        }
       }
     }
   }
@@ -328,11 +397,29 @@ export const Dashboard = styled(DashBoard)`
   display: flex;
   justify-content: space-between;
   padding: 25px 0;
+
+  @media (max-width: 1023px) {
+    flex-flow: row wrap;
+  }
   
   .dashboardPerformanceGraph {
     width: calc(100% - 295px);
     flex: inherit;
     padding: 15px 25px 0 0;
+
+    @media (max-width: 1439px) {
+      padding-right: 15px;
+    }
+
+    @media (max-width: 1199px) {
+      width: calc(100% - 240px);
+    }
+
+    @media (max-width: 1023px) {
+      width: 100%;
+      margin: 0 0 35px;
+      padding: 0;
+    }
     
     .sectionheader {
       display: flex;
@@ -340,22 +427,46 @@ export const Dashboard = styled(DashBoard)`
       justify-content: space-between;
       margin: 0 0 35px;
 
+      @media (max-width: 1199px) {
+        display: block;
+        margin: 0 0 20px;
+      }
+
       .subtitle {
         font-weight: 700;
         font-size: 16px;
         line-height: 21px;
         display: block;
         color: #1E1E2D;
+
+        @media (max-width: 1199px) {
+          margin: 0 0 20px;
+        }
       }
 
       .sortBy {
         display: flex;
         align-items: center;
 
+        @media (max-width: 767px) {
+          flex-flow: row wrap;
+          margin: 0 -5px;
+        }
+
         .label {
           font-size: 12px;
           line-height: 20px;
           color: #7474A9;
+
+          @media (max-width: 1199px) {
+            margin-left: 0;
+          }
+
+          @media (max-width: 767px) {
+            width: 100%;
+            margin: 0 0 15px;
+            padding: 0 5px;
+          }
         }
 
         > div {
@@ -375,6 +486,12 @@ export const Dashboard = styled(DashBoard)`
             background: #E5E8EF;
           }
 
+          .text-button {
+            @media (max-width: 767px) {
+              margin-right: 6px;
+            }
+          }
+
           svg {
             margin: 0 5px 0 0;
             max-width: 16px;
@@ -383,15 +500,19 @@ export const Dashboard = styled(DashBoard)`
         }
 
         .sortByFilterDrop {
+          border: 1px solid #E5E8EF;
+          box-shadow: 0 10px 40px #E8E8FF;
+          border-radius: 15px;
+
           .item {
-            font-size: 14px;
-            line-height: 20px;
-            color: #1E1E2D;
+            font-size: 10px;
+            line-height: 16px;
+            color: #7474A9;
             padding: 5px 15px;
             cursor: pointer;
 
             &:hover {
-              background: #fafafa;
+              color: #E0464D;
             }
           }
         }
@@ -435,6 +556,17 @@ export const Dashboard = styled(DashBoard)`
   .right-section {
     width: 295px;
     min-width: 295px;
+
+    @media (max-width: 1199px) {
+      width: 240px;
+      min-width: 240px;
+    }
+
+    @media (max-width: 1023px) {
+      width: 100%;
+      min-width: 240px;
+      margin: 0 auto;
+    }
 
     .text {
       .userProfileImageWrap {
@@ -495,6 +627,10 @@ export const Dashboard = styled(DashBoard)`
         font-size: 12px;
         line-height: 20px;
         padding: 2px 15px;
+
+        @media (max-width: 1199px) {
+          padding: 2px 10px;
+        }
       }
     }
 
@@ -504,6 +640,14 @@ export const Dashboard = styled(DashBoard)`
       line-height: 16px;
       text-align: center;
       margin: 0 0 30px;
+
+      @media (max-width: 1023px) {
+        margin-top: -50%;
+      }
+
+      @media (max-width: 767px) {
+        margin: -40% 0 20px;
+      }
     }
 
     .buttonDashboard {
@@ -529,11 +673,27 @@ export const Dashboard = styled(DashBoard)`
 
 .dashboardMyRecipies {
   overflow: hidden;
+  display: flex;
+
+  @media (max-width: 1023px) {
+    flex-flow: row wrap;
+  }
   
   .myRecipes {
     width: calc(100% - 295px);
     flex: inherit;
     padding: 0 40px 0 0;
+
+    @media (max-width: 1199px) {
+      width: calc(100% - 240px);
+      padding: 0 20px 0 0;
+    }
+
+    @media (max-width: 1023px) {
+      width: 100%;
+      padding: 0;
+      margin: 0 0 35px;
+    }
 
     .sectionheader {
       display: flex;
@@ -575,11 +735,25 @@ export const Dashboard = styled(DashBoard)`
   .topPerformingRecipes {
     width: 295px;
     min-width: 295px;
+
+    @media (max-width: 1199px) {
+      width: 240px;
+      min-width: 240px;
+    }
+
+    @media (max-width: 1023px) {
+      width: 100%;
+    }
   }
 }
 
 .recipiesTableParent {
   overflow: hidden;
+
+  @media (max-width: 767px) {
+    overflow: auto;
+    margin: 0 0 5px;
+  }
 }
 
 .recipiesTable {
@@ -589,6 +763,10 @@ export const Dashboard = styled(DashBoard)`
   color: #1D2129;
   font-weight: 500;
 
+  @media (max-width: 767px) {
+    min-width: 500px;
+  }
+
   th {
     text-align: left;
     color: #7474A9;
@@ -597,6 +775,14 @@ export const Dashboard = styled(DashBoard)`
 
   th, td {
     padding: 10px 15px;
+
+    @media (max-width: 1439px) {
+      padding: 10px;
+    }
+
+    @media (max-width: 1199px) {
+      padding: 10px 7px;
+    }
   }
 
   .statusText {
@@ -707,6 +893,13 @@ export const Dashboard = styled(DashBoard)`
       margin: 0 10px 0 0;
       box-shadow: 0 0 10px rgba(0,0,0,0.15);
 
+      @media (max-width: 1199px) {
+        width: 45px;
+        min-width: 45px;
+        height: 45px;
+        border-radius: 8px;
+      }
+
       .recipeImage {
         width: 100%;
         height: 100%;
@@ -738,6 +931,7 @@ export const Dashboard = styled(DashBoard)`
         font-size: 10px;
         line-height: 13px;
         color: #1E1E2D;
+        font-weight: 700;
       }
 
       .receipeStatus {
@@ -746,11 +940,23 @@ export const Dashboard = styled(DashBoard)`
         color: #86909C;
 
         span {
-          font-size: 10px;
+          font-size: 8px;
           color: #0E8521;
+          background: #D9FADD;
+          border-radius: 10px;
+          padding: 1px 5px 3px;
         }
       }
     }
+  }
+}
+
+.dotsDrop {
+  min-width: 20px;
+  text-align: center;
+  
+  svg {
+    margin: 0 0 0 auto;
   }
 }
 `

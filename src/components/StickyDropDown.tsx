@@ -4,7 +4,7 @@ import {
   HtmlHTMLAttributes,
   ReactElement,
   ReactNode,
-  useState,
+  useState
 } from "react"
 import { useLayer } from "react-laag"
 

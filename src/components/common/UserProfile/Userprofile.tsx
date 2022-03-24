@@ -47,6 +47,10 @@ export const ProfileSteps = styled(Profilesteps)`
   display: flex;
   align-items: center;
   padding: 0 0 20px;
+
+  @media (max-width: 767px) {
+    flex-flow: row wrap;
+  }
   
   .circleprogress {
     width: 64px;
@@ -71,6 +75,11 @@ export const ProfileSteps = styled(Profilesteps)`
   .userProfileProgresBox {
     display: flex;
     align-items: center;
+
+    @media (max-width: 767px) {
+      width: 100%;
+      margin: 0 0 15px;
+    }
   }
 
   .userProfileTextbox {
@@ -81,17 +90,18 @@ export const ProfileSteps = styled(Profilesteps)`
   .userProfileTitle {
     font-size: 18px;
     lien-heoght: 22px;
-    display: flex;
-    align-items: center;
+    display: block;
 
     span {
       font-weight: 400;
-      margin: 0 0 0 5px;
+      margin: 0 0 0 1px;
     }
 
     .userProfileImageWrap {
       width: 25px;
       margin: 0 0 0 5px;
+      display: inline-block;
+      vertical-align: middle;
     }
   }
 
@@ -105,6 +115,10 @@ export const ProfileSteps = styled(Profilesteps)`
 
   .userProfileProgresStatus {
     min-width: 120px;
+
+    @media (max-width: 767px) {
+      width: 100%;
+    }
   }
   
   .userProfileProgreTitle {

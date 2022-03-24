@@ -16,6 +16,7 @@ export function CardHeader<T>(props: Iheaderprops<T>) {
     <div className={className}>
       {title && <p>{title} </p>}
       <StikcyDropDown
+      className="dotsDrop"
         button={props =>
           triggerItem ? (
             triggerItem?.({ ...props })

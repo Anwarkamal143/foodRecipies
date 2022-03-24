@@ -36,7 +36,7 @@ export const PageLayoutWrapper = styled.div<{ variant?: string }>`
   }
 
   @media (max-width: 767px) {
-    padding: 15px;
+    padding: 15px 15px 60px;
   }
 
   .button.button-sm.buttonFilter {
