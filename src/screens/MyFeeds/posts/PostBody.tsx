@@ -25,6 +25,9 @@ const ImagesSlider = (props: ImagesProps) => {
     <div className={className}>
       <div className="main-img">
         <Image className="postbody-img" src={images[0]} alt={images[0]} />
+        <Icon >
+          <span>Vegan</span>
+        </Icon>
         <Icon className="heartIcon">
           <HeartIcon
             fill={post.liked ? "red" : "none"}

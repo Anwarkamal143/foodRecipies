@@ -2,7 +2,6 @@ import { useAppDispatch, useAppSelector } from "@hooks"
 import { LeftSliderArrow, RightSliderArrow } from "@icons"
 import { setSliderAttachments, toggleSlider } from "@reducers"
 import React, { useEffect, useRef, useState } from "react"
-import Stories from "react-insta-stories"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick-theme.css"
 import "slick-carousel/slick/slick.css"
@@ -100,29 +99,29 @@ const AttachmentsPreviewModel: React.FC<Props> = props => {
           </div>
         )
       }
-      return (
-        <>
-          <Stories
-            key={file.path}
-            stories={file?.stories}
-            isPaused={index !== activeSlide}
-            keyboardNavigation
-            defaultInterval={3000}
-            height={508}
-            onAllStoriesEnd={() => {
-              console.log({ index })
-              if (activeSlide < items?.length - 1) {
-                sliderRef.current.slickNext()
-                setActiveSlide(activeSlide + 1)
-                // console.log((sliderRef.current as any).slickNext())
-                // nextRef?.current?.click()
-              } else {
-                handleClose()
-              }
-            }}
-          />
-        </>
-      )
+      // return (
+      //   <>
+      //     <Stories
+      //       key={file.path}
+      //       stories={file?.stories}
+      //       isPaused={index !== activeSlide}
+      //       keyboardNavigation
+      //       defaultInterval={3000}
+      //       height={508}
+      //       onAllStoriesEnd={() => {
+      //         console.log({ index })
+      //         if (activeSlide < items?.length - 1) {
+      //           sliderRef.current.slickNext()
+      //           setActiveSlide(activeSlide + 1)
+      //           // console.log((sliderRef.current as any).slickNext())
+      //           // nextRef?.current?.click()
+      //         } else {
+      //           handleClose()
+      //         }
+      //       }}
+      //     />
+      //   </>
+      // )
       // if (attrAccept(file, "video/*")) {
       //   return (
       //     <div
@@ -280,7 +279,7 @@ export const PreviewSlider = styled(AttachmentsPreviewModel)`
       }
     }
   }
-  
+
   .slick-prev,
   .slick-next {
     color: white;
