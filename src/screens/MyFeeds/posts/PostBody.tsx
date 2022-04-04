@@ -26,7 +26,9 @@ const ImagesSlider = (props: ImagesProps) => {
       <div className="main-img">
         <Image className="postbody-img" src={images[0]} alt={images[0]} />
         <Icon className="tagsIcon">
-          <span><Tag /> Vegan</span>
+          <span>
+            <Tag /> Vegan
+          </span>
         </Icon>
         <Icon className="heartIcon">
           <HeartIcon
@@ -50,7 +52,7 @@ const ImagesSlider = (props: ImagesProps) => {
             return (
               <>
                 <Image key={img} src={img} alt={img} />
-                {index >= 3 && images[index + 1] && (
+                {index >= 2 && images[index + 1] && (
                   <span className="image-counter">{`+${
                     images.length - 3
                   }`}</span>
@@ -192,7 +194,7 @@ export default styled(PostBody)`
       position: absolute;
       right: 2em;
       top: 1em;
-      background: #11C278;
+      background: #11c278;
       width: auto;
       color: #fff;
       border: 0;
