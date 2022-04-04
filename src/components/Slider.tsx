@@ -24,6 +24,7 @@ const AttachmentsPreviewModel: React.FC<Props> = props => {
     isOpen,
     attachments: { items = [], active = null },
   } = useAppSelector(state => state?.slider)
+  const [isOpenModal, setIsOpenModal] = useState(isOpen)
 
   useEffect(() => {
     const index = items.findIndex(f => f.path === active?.path)
@@ -191,6 +192,7 @@ const AttachmentsPreviewModel: React.FC<Props> = props => {
       className={`${className}`}
     >
       <div className="slider_container">
+        <span onClick={handleClose}>X</span>
         {/* <Slider {...settings}>{renderAttachments()}</Slider> */}
         <Slider
           {...settingsMain}
