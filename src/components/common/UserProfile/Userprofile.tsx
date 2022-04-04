@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { useOpenClose } from "@hooks"
 import clsxm from "@lib/clsxm"
 import { useAppSelector } from "@redux/hooks"
 import React from "react"
@@ -6,11 +7,13 @@ import { ProgressBar } from "src/components"
 import { CircularProgresWithChildren } from "src/components/CirclePrgoressWithChildren"
 import { Image } from "src/components/Image"
 import styled from "styled-components"
+import ProfileTaskModel from "../../ProfileTaskModel/ProfileTaskModel"
 import { CircleDefaultImage } from "../images"
 import { LeftSide, RightSide, Userprofilewrapper } from "./userprofile.styled"
 
 function Profilesteps({ src = "", alt = "", className = "" }) {
   const user = useAppSelector(state => state.user)
+  const [isOpenModel, onOpenModel, onCloseModel] = useOpenClose()
   return (
     <Userprofilewrapper className={clsxm("", className)}>
       <LeftSide className="userProfileProgresBox">
@@ -21,15 +24,17 @@ function Profilesteps({ src = "", alt = "", className = "" }) {
           className="circleimages"
           value={15}
         >
-          <CircleDefaultImage
-            className="circleimg"
-            src="/images/profile-img.png"
-            alt="default profile imag"
-          />
+          <div onClick={onOpenModel}>
+            <CircleDefaultImage
+              className="circleimg"
+              src="/images/profile-img.png"
+              alt="default profile imag"
+            />
+          </div>
         </CircularProgresWithChildren>
         <div className="userProfileTextbox">
           <h2 className="userProfileTitle">
-            Welcome Back, <span>{user.name}{" "}</span>
+            Welcome Back, <span>{user.name} </span>
             <Image src="/images/WavingHandEmoji.png" alt="waving hand" />
           </h2>
           <span className="userProfilesubTitle">Founder Cook Profile</span>
@@ -37,8 +42,13 @@ function Profilesteps({ src = "", alt = "", className = "" }) {
       </LeftSide>
       <RightSide className="userProfileProgresStatus">
         <p className="userProfileProgreTitle">15% Tasks Completed</p>
-        <ProgressBar showPrgress={false} progresspercent={20} bgColor={"#ef305e"} />
+        <ProgressBar
+          showPrgress={false}
+          progresspercent={20}
+          bgColor={"#ef305e"}
+        />
       </RightSide>
+      <ProfileTaskModel isOpen={isOpenModel} onCancel={onCloseModel} />
     </Userprofilewrapper>
   )
 }
@@ -51,7 +61,7 @@ export const ProfileSteps = styled(Profilesteps)`
   @media (max-width: 767px) {
     flex-flow: row wrap;
   }
-  
+
   .circleprogress {
     width: 64px;
     margin: 0 15px 0 0;
@@ -59,11 +69,11 @@ export const ProfileSteps = styled(Profilesteps)`
 
   .CircularProgressbar {
     .CircularProgressbar-trail {
-      stroke: transparent;    
+      stroke: transparent;
     }
 
     .CircularProgressbar-path {
-      stroke: #ef305e;  
+      stroke: #ef305e;
     }
   }
 
@@ -120,7 +130,7 @@ export const ProfileSteps = styled(Profilesteps)`
       width: 100%;
     }
   }
-  
+
   .userProfileProgreTitle {
     text-align: right;
     margin: 0 0 6px;
