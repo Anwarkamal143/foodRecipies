@@ -62,8 +62,8 @@ const DashBoard = ({ className }: { className?: string }) => {
             <BarChart data={chartData}>
               <XAxis dataKey="day" strokeOpacity={0} />
               {/* <YAxis /> */}
-              <Tooltip wrapperStyle={{ backgroundColor: "black" }} />
-              <Bar dataKey="count" strokeLinecap={"round"} fill="lightgray" />
+              <Tooltip wrapperStyle={{ backgroundColor: "red" }} />
+              <Bar dataKey="count" strokeLinecap={"round"} fill="#E6ECF5" />
             </BarChart>
           </ResponsiveContainer>
         </StatisticsWrapper>
@@ -403,6 +403,28 @@ export const Dashboard = styled(DashBoard)`
           height: 150px !important;
         }
       }
+    }
+
+    .recharts-bar-rectangle {
+      &:hover {
+        path {
+          fill: #E0464D !important;
+          stroke: #E0464D !important;;
+        }
+      }
+
+      path {
+        stroke-width: 2px;
+        stroke-linejoin: round;
+        stroke: #E6ECF5;
+      }
+    }
+
+    .recharts-tooltip-cursor {
+      display: none !important;
+      position: relative;
+      z-index: 9;
+      fill: #E0464D !important;
     }
   }
 }
