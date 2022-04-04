@@ -1,13 +1,13 @@
 import { Image } from "@components"
+import { Clock } from "@icons"
 import React from "react"
 import styled from "styled-components"
 import {
   RecipeName,
   RecipesDetails,
   RecipesDetailsWrapper,
-  RecipesWrapper
+  RecipesWrapper,
 } from "./recipes.styled"
-
 interface IRecipeProps {
   className?: string
   data: any[]
@@ -36,6 +36,9 @@ function PerformingRecipes(props: IRecipeProps) {
           </RecipesWrapper>
         )
       })}
+      <div>
+        <Clock /> Resets Weekly:<span> 3 days 4 hours </span>
+      </div>
     </div>
   )
 }

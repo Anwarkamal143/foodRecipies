@@ -1,5 +1,13 @@
 import { Button, Card, DropDown, Image } from "@components"
-import { AddCircleIcon, CalendarIcon, DownArrowIcon, EyeIcon } from "@icons"
+import {
+  AddCircleIcon,
+  CalendarIcon,
+  DownArrowIcon,
+  EyeIcon,
+  Save,
+  Star,
+  StatusUp,
+} from "@icons"
 import { DashboardLayout } from "@layouts/Dashboard/DashboardLayout"
 import { FormatNumber } from "@utils"
 import dayjs from "dayjs"
@@ -13,7 +21,7 @@ import {
   ResponsiveContainer,
   Tooltip,
   XAxis,
-  YAxis
+  YAxis,
 } from "recharts"
 import styled from "styled-components"
 import { chartData, data, LineChartData } from "../../../data"
@@ -28,7 +36,7 @@ import {
   ProfileperformanceWrapper,
   RightMyRecipiesSection,
   RightPerformanceSection,
-  StatisticsWrapper
+  StatisticsWrapper,
 } from "./dashboard.styed"
 
 const dateFormatter = (item: Date) => dayjs(item).format("MMM YY")
@@ -46,12 +54,15 @@ const DashBoard = ({ className }: { className?: string }) => {
               trandingCount={item.trandingCount}
             />
           ))}
-          <ResponsiveContainer width="100%" height={75}
-              className="dashboardStatisticsGraph">
+          <ResponsiveContainer
+            width="100%"
+            height={75}
+            className="dashboardStatisticsGraph"
+          >
             <BarChart data={chartData}>
               <XAxis dataKey="day" strokeOpacity={0} />
               {/* <YAxis /> */}
-              <Tooltip />
+              <Tooltip wrapperStyle={{ backgroundColor: "black" }} />
               <Bar dataKey="count" strokeLinecap={"round"} fill="lightgray" />
             </BarChart>
           </ResponsiveContainer>
@@ -61,7 +72,7 @@ const DashBoard = ({ className }: { className?: string }) => {
             <div className="sectionheader">
               <p className="subtitle">Profile Performance</p>
               <p className="sortBy">
-                <span  className="label">Sort by</span>
+                <span className="label">Sort by</span>
                 <DropDown
                   button={selected => (
                     <Button
@@ -74,17 +85,18 @@ const DashBoard = ({ className }: { className?: string }) => {
                     </Button>
                   )}
                   items={[
-                    { name: "Recipe Views" },
-                    { name: "Recipe Saves" },
-                    { name: "Recipe Reviews" },
-                    { name: "Profile Visits " },
+                    { name: "Recipe Views", icon: <EyeIcon /> },
+                    { name: "Recipe Saves", icon: <Save /> },
+                    { name: "Recipe Reviews", icon: <Star /> },
+                    { name: "Profile Visits ", icon: <StatusUp /> },
                   ]}
                   renderItem={({ item, isActive, onClick }) => {
                     return (
                       <div
                         className={`${isActive} item`}
-                        onClick={() => onClick(item.name)}
+                        onClick={() => onClick(item.name, item.icon)}
                       >
+                        <span>{item.icon}</span>
                         {item.name}
                       </div>
                     )
@@ -178,7 +190,9 @@ const DashBoard = ({ className }: { className?: string }) => {
                   interactions.
                   <Image src="/images/rocket.png" alt="rocket" />
                 </p>
-                <Button className="buttonDashboard" shape="circle">Interactions Dashboard</Button>
+                <Button className="buttonDashboard" shape="circle">
+                  Interactions Dashboard
+                </Button>
               </Card.Body>
             </Card>
           </RightPerformanceSection>

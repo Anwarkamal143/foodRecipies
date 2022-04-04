@@ -1,4 +1,4 @@
-import { useAppDispatch } from "@hooks"
+import { useAppDispatch, useOpenClose } from "@hooks"
 import { ProfileTogglerIcon } from "@icons"
 import { useAppSelector } from "@redux/hooks"
 import { setUser } from "@redux/reducers"
@@ -6,6 +6,7 @@ import { useEffect, useState } from "react"
 import { CircleImage } from "src/components/common"
 import { DropDown } from "src/components/DropDown"
 import styled from "styled-components"
+import ProfileTaskModel from "../../ProfileTaskModel/ProfileTaskModel"
 import { DropDownItem } from "./header.styled"
 export type ISidebarHeaderProps = {
   className?: string
@@ -21,7 +22,7 @@ const Header = ({
 }: ISidebarHeaderProps) => {
   const [sideBarToggler, setSideBarToggler] = useState(isSidebarOpen)
   const dispatch = useAppDispatch()
-
+  const [isOpenModel, onOpenModel, onCloseModel] = useOpenClose()
   const user = useAppSelector(state => state.user)
   console.log({ user })
   const handleToggle = () => {
@@ -67,7 +68,6 @@ const Header = ({
                 <DropDownItem
                   className={`${isActive} item`}
                   onClick={() => {
-                    console.log({ item })
                     dispatch(setUser({ ...item }))
                   }}
                 >
@@ -76,9 +76,10 @@ const Header = ({
               )
             }}
             button={() => {
-              return <ProfileTogglerIcon />
+              return <ProfileTogglerIcon onClick={onOpenModel} />
             }}
           />
+          <ProfileTaskModel isOpen={isOpenModel} onCancel={onCloseModel} />
         </div>
       </div>
       {/* <button

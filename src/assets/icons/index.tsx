@@ -89,6 +89,170 @@ export function RoundArrowIcon(props: IconType) {
     </svg>
   )
 }
+export function Ticke() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+    >
+      <path
+        d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z"
+        stroke="#7474A9"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M7.75 12L10.58 14.83L16.25 9.17"
+        stroke="#7474A9"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
+export const StatusUp = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      fill="none"
+    >
+      <path
+        d="M5.08264 13.4083V11.8791"
+        stroke="#7474A9"
+        strokeLinecap="round"
+      />
+      <path
+        d="M8.86499 13.4083V10.3499"
+        stroke="#7474A9"
+        strokeLinecap="round"
+      />
+      <path
+        d="M12.6475 13.4083V8.81329"
+        stroke="#7474A9"
+        strokeLinecap="round"
+      />
+      <path
+        d="M12.6474 4.32169L12.3076 4.72061C10.4238 6.92209 7.89728 8.48085 5.08264 9.18266"
+        stroke="#7474A9"
+        strokeLinecap="round"
+      />
+      <path
+        d="M10.4829 4.32169H12.6474V6.47884"
+        stroke="#7474A9"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M6.64879 16.2525H11.0813C14.775 16.2525 16.2525 14.775 16.2525 11.0813V6.64875C16.2525 2.955 14.775 1.4775 11.0813 1.4775H6.64879C2.95504 1.4775 1.47754 2.955 1.47754 6.64875V11.0813C1.47754 14.775 2.95504 16.2525 6.64879 16.2525Z"
+        stroke="#7474A9"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+export const Clock = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+    >
+      <path
+        d="M14.6666 7.99998C14.6666 11.68 11.68 14.6666 7.99998 14.6666C4.31998 14.6666 1.33331 11.68 1.33331 7.99998C1.33331 4.31998 4.31998 1.33331 7.99998 1.33331C11.68 1.33331 14.6666 4.31998 14.6666 7.99998Z"
+        stroke="#EF305E"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M10.4734 10.12L8.40669 8.88665C8.04669 8.67332 7.75336 8.15999 7.75336 7.73999V5.00665"
+        stroke="#EF305E"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+export const Star = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      fill="none"
+    >
+      <path
+        d="M11.3694 3.84889L12.4111 5.93216C12.5514 6.22027 12.9282 6.49361 13.2458 6.55271L15.1297 6.86298C16.3338 7.06244 16.6146 7.93417 15.7502 8.8059L14.2801 10.276C14.0363 10.5198 13.896 11 13.9772 11.3472L14.3983 13.1645C14.7307 14.5977 13.9624 15.1591 12.6992 14.4056L10.9336 13.3566C10.6159 13.1645 10.084 13.1645 9.76634 13.3566L8.00072 14.4056C6.73746 15.1518 5.96917 14.5977 6.3016 13.1645L6.7227 11.3472C6.80396 11.0074 6.66359 10.5272 6.41981 10.276L4.9497 8.8059C4.08536 7.94156 4.36609 7.06983 5.57025 6.86298L7.45405 6.55271C7.77171 6.50099 8.14848 6.22027 8.28884 5.93216L9.33048 3.84889C9.88455 2.7186 10.8006 2.7186 11.3694 3.84889Z"
+        stroke="#7474A9"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M5.91004 3.69375H1.47754"
+        stroke="#7474A9"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M3.69379 14.0362H1.47754"
+        stroke="#7474A9"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M2.21629 8.865H1.47754"
+        stroke="#7474A9"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+export const Save = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      fill="none"
+    >
+      <path
+        d="M9.52254 4.34385H3.77504C2.51178 4.34385 1.47754 5.37809 1.47754 6.64135V15.0336C1.47754 16.1048 2.24584 16.5628 3.18405 16.0383L6.08733 14.4204C6.39761 14.2505 6.89996 14.2505 7.20285 14.4204L10.1061 16.0383C11.0443 16.5628 11.8126 16.1048 11.8126 15.0336V6.64135C11.82 5.37809 10.7858 4.34385 9.52254 4.34385Z"
+        stroke="#E0464D"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M11.82 6.64135V15.0336C11.82 16.1048 11.0517 16.5554 10.1135 16.0383L7.21025 14.4204C6.89997 14.2505 6.39761 14.2505 6.08733 14.4204L3.18405 16.0383C2.24584 16.5554 1.47754 16.1048 1.47754 15.0336V6.64135C1.47754 5.37809 2.51178 4.34385 3.77504 4.34385H9.52254C10.7858 4.34385 11.82 5.37809 11.82 6.64135Z"
+        stroke="#E0464D"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M16.2525 3.775V12.1672C16.2525 13.2384 15.4842 13.689 14.546 13.1719L11.82 11.6501V6.64136C11.82 5.37809 10.7858 4.34385 9.52253 4.34385H5.91003V3.775C5.91003 2.51174 6.94427 1.4775 8.20754 1.4775H13.955C15.2183 1.4775 16.2525 2.51174 16.2525 3.775Z"
+        stroke="#E0464D"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
 export function AddIcon(props: IconType) {
   const { width = 24, height = 24, stroke = "#E0464D", ...rest } = props
   return (

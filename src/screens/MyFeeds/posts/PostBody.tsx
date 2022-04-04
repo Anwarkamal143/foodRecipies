@@ -43,8 +43,17 @@ const ImagesSlider = (props: ImagesProps) => {
       </div>
       <div className="scrollslides">
         <Scrollbar>
-          {images.slice(1).map(img => {
-            return <Image key={img} src={img} alt={img} />
+          {images.slice(1, 4).map((img, index) => {
+            return (
+              <>
+                <Image key={img} src={img} alt={img} />
+                {index >= 3 && images[index + 1] && (
+                  <span className="image-counter">{`+${
+                    images.length - 3
+                  }`}</span>
+                )}
+              </>
+            )
           })}
         </Scrollbar>
       </div>
