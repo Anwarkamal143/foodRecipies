@@ -48,16 +48,16 @@ function PostHeader(props: IMyFeedProps) {
         </Button>
       </div>
       <div className="socialIcons">
-        <Icon className="socialIconsItem">
+        <Icon className="socialIconsItem facebook">
           <FacebookIcon />
         </Icon>
-        <Icon className="socialIconsItem">
+        <Icon className="socialIconsItem youtube">
           <YoutubeIcon />
         </Icon>
-        <Icon className="socialIconsItem">
+        <Icon className="socialIconsItem twitter">
           <TwitterIcon />
         </Icon>
-        <Icon className="socialIconsItem">
+        <Icon className="socialIconsItem instagram">
           <InstagramIcon />
         </Icon>
       </div>
@@ -97,6 +97,12 @@ export default styled(PostHeader)`
     }
 
     .socialIconsItem {
+      transition: all 0.25s ease-in-out;
+
+      svg {
+        transition: all 0.25s ease-in-out;
+      }
+
       &:hover {
         background: #e0464d;
         border-color: #e0464d;
@@ -105,6 +111,34 @@ export default styled(PostHeader)`
           path {
             fill: #fff;
           }
+        }
+      }
+
+      &.facebook {
+        &:hover {
+          background: #3b5998;
+          border-color: #3b5998;
+        }
+      }
+
+      &.youtube {
+        &:hover {
+          background: #f00;
+          border-color: #f00;
+        }
+      }
+
+      &.twitter {
+        &:hover {
+          background: #1da1f2;
+          border-color: #1da1f2;
+        }
+      }
+
+      &.instagram {
+        &:hover {
+          background: #C13584;
+          border-color: #C13584;
         }
       }
     }

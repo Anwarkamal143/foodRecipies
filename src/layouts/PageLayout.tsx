@@ -39,6 +39,14 @@ export const PageLayoutWrapper = styled.div<{ variant?: string }>`
     padding: 15px 15px 60px;
   }
 
+  button {
+    outline: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
   .button.button-sm.buttonFilter {
     background: #fff;
     border-color: #e5e8ef;

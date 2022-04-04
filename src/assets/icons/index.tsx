@@ -3,7 +3,7 @@ import {
   DetailedHTMLProps,
   forwardRef,
   ImgHTMLAttributes,
-  SVGProps,
+  SVGProps
 } from "react"
 export type IconType = SVGProps<SVGSVGElement>
 // import Profile from "../images/profile.jpg"
@@ -113,6 +113,82 @@ export function Ticke() {
         strokeLinejoin="round"
       />
     </svg>
+  )
+}
+
+export function Tag() {
+  return (
+    <svg 
+      xmlns="http://www.w3.org/2000/svg" 
+      viewBox="0 0 512 512"
+      width="16"
+      height="16"
+      fill="none"
+      >
+      <path 
+        d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"
+      />
+    </svg>
+  )
+}
+
+export function HeartFilled() {
+  return (
+    <svg 
+      xmlns="http://www.w3.org/2000/svg" 
+      viewBox="0 0 512 512"
+      width="24"
+      height="24"
+      fill="none"
+      >
+        <path 
+        d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"
+        />
+    </svg>
+  )
+}
+
+export function AngleRight() {
+  return (
+    <svg 
+      xmlns="http://www.w3.org/2000/svg" 
+      viewBox="0 0 256 512"
+      width="16"
+      height="16"
+      fill="none"
+    >
+      <path 
+        d="M89.45 87.5l143.1 152c4.375 4.625 6.562 10.56 6.562 16.5c0 5.937-2.188 11.87-6.562 16.5l-143.1 152C80.33 434.1 65.14 434.5 55.52 425.4c-9.688-9.125-10.03-24.38-.9375-33.94l128.4-135.5l-128.4-135.5C45.49 110.9 45.83 95.75 55.52 86.56C65.14 77.47 80.33 77.87 89.45 87.5z"
+      />
+    </svg>
+  )
+}
+
+export function LampIcon() {
+  return (
+    <svg 
+      width="20" 
+      height="20" 
+      viewBox="0 0 20 20" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg"
+      >
+      <path 
+      d="M6.91672 15.0333V14.0667C5.00005 12.9083 3.42505 10.65 3.42505 8.25C3.42505 4.125 7.21672 0.891671 11.5 1.825C13.3834 2.24167 15.0334 3.49167 15.8917 5.21667C17.6334 8.71667 15.8 12.4333 13.1084 14.0583V15.025C13.1084 15.2667 13.2 15.825 12.3084 15.825H7.71672C6.80005 15.8333 6.91672 15.475 6.91672 15.0333Z" 
+      stroke="#7474A9" 
+      stroke-width="1.5" 
+      stroke-linecap="round" 
+      stroke-linejoin="round"
+      />
+      <path 
+      d="M7.08337 18.3333C8.99171 17.7916 11.0084 17.7916 12.9167 18.3333" 
+      stroke="#7474A9" 
+      stroke-width="1.5" 
+      stroke-linecap="round" 
+      stroke-linejoin="round"
+      />
+  </svg>
+
   )
 }
 

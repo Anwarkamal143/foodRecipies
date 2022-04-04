@@ -1,12 +1,12 @@
 import { Image } from "@components"
-import { Clock } from "@icons"
+import { Clock, ProgressArrowUp } from "@icons"
 import React from "react"
 import styled from "styled-components"
 import {
   RecipeName,
   RecipesDetails,
   RecipesDetailsWrapper,
-  RecipesWrapper,
+  RecipesWrapper
 } from "./recipes.styled"
 interface IRecipeProps {
   className?: string
@@ -28,7 +28,7 @@ function PerformingRecipes(props: IRecipeProps) {
                 <div className="recipemeta">
                   <div className="receipeRatings">{u.rating}</div>
                   <div className="receipeStatus">
-                    {u.views} <span>{u.status}</span>
+                    {u.views} Views <span>{u.status} <ProgressArrowUp /></span>
                   </div>
                 </div>
               </RecipesDetails>
@@ -36,7 +36,7 @@ function PerformingRecipes(props: IRecipeProps) {
           </RecipesWrapper>
         )
       })}
-      <div>
+      <div className="weeklyReset">
         <Clock /> Resets Weekly:<span> 3 days 4 hours </span>
       </div>
     </div>

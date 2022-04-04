@@ -4,9 +4,9 @@ import {
   DropDown,
   PopOver,
   PreviewSlider,
-  ProfileItem,
+  ProfileItem
 } from "@components"
-import { AddIcon, DownArrowIcon, FilterIcon } from "@icons"
+import { AddIcon, AngleRight, DownArrowIcon, FilterIcon } from "@icons"
 import { Page } from "@layouts"
 import { useFormik } from "formik"
 import { useState } from "react"
@@ -25,7 +25,7 @@ import {
   LeftContainer,
   RightContainer,
   SlidertWrapper,
-  SuggestedCooksSection,
+  SuggestedCooksSection
 } from "./myfeeds.styled"
 import { Post } from "./posts"
 
@@ -133,7 +133,7 @@ function MyFeeds(props: IMyFeedProps) {
                 <HeaderCooks className="feedsWidgetHeader">
                   <HeaderTitle>Suggested Cooks</HeaderTitle>
                   <HeaderRightSide className="feedsWidgetSeeAll">
-                    <span>See All</span>
+                    <span>See All <AngleRight /></span>
                   </HeaderRightSide>
                 </HeaderCooks>
                 <ProfileItem data={Users} />
@@ -147,7 +147,7 @@ function MyFeeds(props: IMyFeedProps) {
                 <HeaderCooks className="feedsWidgetHeader">
                   <HeaderTitle>My Cooks</HeaderTitle>
                   <HeaderRightSide className="feedsWidgetCount">
-                    <span>60</span>
+                    <a href="#">60</a>
                   </HeaderRightSide>
                 </HeaderCooks>
                 <ProfileItem data={Users} />

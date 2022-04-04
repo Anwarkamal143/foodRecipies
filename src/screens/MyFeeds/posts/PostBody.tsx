@@ -1,5 +1,5 @@
 import { Icon, Image, Scrollbar } from "@components"
-import { HeartIcon } from "@icons"
+import { HeartIcon, Tag } from "@icons"
 import { useState } from "react"
 import styled from "styled-components"
 import { IPostType } from "./Posts"
@@ -25,8 +25,8 @@ const ImagesSlider = (props: ImagesProps) => {
     <div className={className}>
       <div className="main-img">
         <Image className="postbody-img" src={images[0]} alt={images[0]} />
-        <Icon >
-          <span>Vegan</span>
+        <Icon className="tagsIcon">
+          <span><Tag /> Vegan</span>
         </Icon>
         <Icon className="heartIcon">
           <HeartIcon
@@ -185,6 +185,32 @@ export default styled(PostBody)`
       svg {
         width: 24px;
         height: 24px;
+      }
+    }
+
+    .tagsIcon {
+      position: absolute;
+      right: 2em;
+      top: 1em;
+      background: #11C278;
+      width: auto;
+      color: #fff;
+      border: 0;
+      border-radius: 25px;
+      height: 42px;
+      font-size: 14px;
+      line-height: 20px;
+      padding: 5px 15px;
+      font-weight: 600;
+
+      span {
+        display: flex;
+        align-items: center;
+
+        svg {
+          fill: #fff;
+          margin: 0 10px 0 0;
+        }
       }
     }
   }
