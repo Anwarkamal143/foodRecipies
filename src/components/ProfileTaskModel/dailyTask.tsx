@@ -6,7 +6,7 @@ import { CircularProgresWithChildren } from "src/components/CirclePrgoressWithCh
 import styled from "styled-components"
 import {
   LeftSide,
-  Userprofilewrapper,
+  Userprofilewrapper
 } from "../../components/common/UserProfile/userprofile.styled"
 import { CircleDefaultImage } from "../common/images"
 
