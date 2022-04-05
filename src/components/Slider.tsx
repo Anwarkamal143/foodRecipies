@@ -32,7 +32,7 @@ const AttachmentsPreviewModel: React.FC<Props> = props => {
     return () => {}
   }, [active])
   const settingsMain = {
-    // slidesToShow: 3,
+    slidesToShow: 3,
     slidesToScroll: 1,
     // fade: true,
     // variableWidth: true,
@@ -40,7 +40,7 @@ const AttachmentsPreviewModel: React.FC<Props> = props => {
     // asNavFor: ".slider-nav",
     centerMode: true,
     variableWidth: true,
-    infinite: false,
+    infinite: true,
     className: "center",
     centerPadding: "60px",
     // adaptiveHeight: true,
@@ -52,10 +52,6 @@ const AttachmentsPreviewModel: React.FC<Props> = props => {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
-          infinite: false,
-          dots: false,
-          variableWidth: true,
-          centerMode: true,
         },
       },
       {
@@ -63,7 +59,6 @@ const AttachmentsPreviewModel: React.FC<Props> = props => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          initialSlide: 0,
         },
       },
       {
@@ -71,7 +66,6 @@ const AttachmentsPreviewModel: React.FC<Props> = props => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          infinite: false,
         },
       },
     ],
@@ -219,61 +213,86 @@ export const PreviewSlider = styled(AttachmentsPreviewModel)`
   max-width: inherit !important;
   margin: 0;
   background: #1a1a1a;
-  .modal-content {
-    border-radius: 0;
-    background: none;
-    padding: 0;
-  }
-  .modal-header {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    .modal-title {
-      color: #fff;
+  &.modal-dialog {
+    .modal-content {
+      border-radius: 0;
+      background: none;
+      padding: 0;
     }
-    .close {
-      color: #fff;
-    }
-  }
-  .modal-body {
-    height: 100vh;
-  }
-  .slider_container {
-    height: 100%;
-  }
-  .slick-track {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    .slick-slide {
-      width: 250px;
-      height: auto;
-      transition: all 300ms ease;
-      &.slick-current {
-        width: 375px;
-        transform: scale(1.5);
+    .modal-header {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      .modal-title {
+        color: #fff;
+      }
+      .close {
+        color: #fff;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        z-index: 99;
       }
     }
-  }
-  .slick-prev,
-  .slick-next {
-    color: white;
-    z-index: 999;
-    width: 100px;
-  }
-  /* width: calc(100% - 127px); */
-  /* @media (max-width: 600px) {
-    width: 1480px;
-  } */
-  .slick-slider {
-    flex-grow: 0;
-    flex-basis: inherit;
-    width: 100%;
-  }
-  .slick-slide {
-    width: 300px;
-    padding: 0 7px;
-    /* width: 135px !important; */
+    .modal-body {
+      height: 100vh;
+    }
+    .slider_container {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .slick-slide {
+      &.slick-current {
+        img,
+        video {
+          transform: scale(1);
+        }
+      }
+
+      img,
+      video {
+        transform: scale(0.7);
+        height: 90vh;
+        width: auto;
+        transition: all 0.4s ease;
+      }
+    }
+    /* .slick-track {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      .slick-slide {
+        width: 250px;
+        height: auto;
+        transition: all 300ms ease;
+        &.slick-current {
+          width: 375px;
+          transform: scale(1.5);
+        }
+      }
+    } */
+    .slick-prev,
+    .slick-next {
+      color: white;
+      z-index: 999;
+      width: 100px;
+    }
+    /* width: calc(100% - 127px); */
+    /* @media (max-width: 600px) {
+      width: 1480px;
+    } */
+    .slick-slider {
+      flex-grow: 0;
+      flex-basis: inherit;
+      width: 100%;
+    }
+    .slick-slide {
+      width: 300px;
+      padding: 0 7px;
+      /* width: 135px !important; */
+    }
   }
 `

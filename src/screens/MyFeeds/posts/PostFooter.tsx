@@ -1,5 +1,11 @@
 import { Icon } from "@components"
-import { DisLikeIcon, ExportIcon, HeartFilled, HeartIcon, LikeIcon } from "@icons"
+import {
+  DisLikeIcon,
+  ExportIcon,
+  HeartFilled,
+  HeartIcon,
+  LikeIcon,
+} from "@icons"
 import { FormatNumber } from "@utils"
 import styled from "styled-components"
 import { IPostType } from "./Posts"
@@ -23,7 +29,8 @@ function PostFooter(props: IPostFooterProps) {
           <HeartFilled />
           <span className="saveRecipeText">Save Recipe</span>
         </div>
-        <HeartIcon className="heartIcon"
+        <HeartIcon
+          className="heartIcon"
           fill={post.liked ? "red" : "none"}
           {...(post.liked ? { stroke: "red" } : {})}
           // stroke={post.liked ? "red" : "lightgray"}
@@ -70,6 +77,7 @@ export default styled(PostFooter)`
   .likeDetails {
     display: flex;
     align-items: center;
+    padding: 0 10px 0 0;
 
     span {
       margin-top: 0;
@@ -82,14 +90,14 @@ export default styled(PostFooter)`
       cursor: pointer;
 
       svg {
-        fill: rgba(0,0,0,0.15);
+        fill: rgba(0, 0, 0, 0.15);
         margin: 0 15px 0 0;
       }
 
       .saveRecipeText {
         font-size: 14px;
         line-height: 20px;
-        color: rgba(0,0,0,0.25);
+        color: rgba(0, 0, 0, 0.25);
         margin: 0;
       }
     }
@@ -113,18 +121,18 @@ export default styled(PostFooter)`
 
     .iconShare {
       border: transparent;
-      
+
       svg {
         width: 24px;
         height: 24px;
 
         path {
-          stroke: rgba(0,0,0,0.35);
+          stroke: rgba(0, 0, 0, 0.35);
         }
       }
-      
+
       transition: all 0.25s ease-in-out;
-      
+
       &:hover {
         background: lightgray;
       }
@@ -150,7 +158,7 @@ export default styled(PostFooter)`
       border-color: #c2ffe6;
       transition: all 0.25s ease-in-out;
       display: none;
-      
+
       &:hover {
         background: #c2ffe6;
       }
@@ -160,16 +168,16 @@ export default styled(PostFooter)`
       border-color: #ffc4c6;
       transition: all 0.25s ease-in-out;
       display: none;
-      
+
       &:hover {
         background: #ffc4c6;
       }
     }
 
     .recipeButton {
-      border: 1px solid rgba(0,0,0,0.15);
+      border: 1px solid rgba(0, 0, 0, 0.15);
       border-radius: 15px;
-      color: rgba(0,0,0,0.35);
+      color: rgba(0, 0, 0, 0.35);
       padding: 5px 20px;
       font-size: 14px;
       line-height: 20px;
@@ -178,7 +186,7 @@ export default styled(PostFooter)`
 
       &:hover {
         color: #000;
-        background: rgba(0,0,0,0.15);
+        background: rgba(0, 0, 0, 0.15);
       }
     }
   }

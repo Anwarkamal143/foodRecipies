@@ -204,7 +204,8 @@ function Sliderr(props: ISliderProps) {
 }
 
 export const FeedsSlider = styled(Sliderr)`
-  width: calc(100% - 127px);
+  width: 100%;
+  overflow: hidden;
 
   .slick-slider {
     flex-grow: 0;

@@ -4,9 +4,9 @@ import {
   DropDown,
   PopOver,
   PreviewSlider,
-  ProfileItem
+  ProfileItem,
 } from "@components"
-import { AddIcon, AngleRight, DownArrowIcon, FilterIcon } from "@icons"
+import { AngleRight, DownArrowIcon, FilterIcon } from "@icons"
 import { Page } from "@layouts"
 import { useFormik } from "formik"
 import { useState } from "react"
@@ -16,7 +16,6 @@ import { POSTSDATA } from "../data"
 import { FeedsSlider } from "./components"
 import PostSliderForm from "./components/PostsFilters/PostSliderForm"
 import {
-  AddStorie,
   FeedsContainer,
   FilterSection,
   HeaderCooks,
@@ -25,7 +24,7 @@ import {
   LeftContainer,
   RightContainer,
   SlidertWrapper,
-  SuggestedCooksSection
+  SuggestedCooksSection,
 } from "./myfeeds.styled"
 import { Post } from "./posts"
 
@@ -58,10 +57,10 @@ function MyFeeds(props: IMyFeedProps) {
       <FeedsContainer className={className}>
         <LeftContainer>
           <SlidertWrapper>
-            <AddStorie>
+            {/* <AddStorie>
               <AddIcon />
               Add Story
-            </AddStorie>
+            </AddStorie> */}
             <NoSSR>
               <FeedsSlider />
             </NoSSR>
@@ -133,7 +132,9 @@ function MyFeeds(props: IMyFeedProps) {
                 <HeaderCooks className="feedsWidgetHeader">
                   <HeaderTitle>Suggested Cooks</HeaderTitle>
                   <HeaderRightSide className="feedsWidgetSeeAll">
-                    <span>See All <AngleRight /></span>
+                    <span>
+                      See All <AngleRight />
+                    </span>
                   </HeaderRightSide>
                 </HeaderCooks>
                 <ProfileItem data={Users} />

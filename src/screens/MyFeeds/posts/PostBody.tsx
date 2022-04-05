@@ -1,4 +1,4 @@
-import { Icon, Image, Scrollbar } from "@components"
+import { Icon, Image } from "@components"
 import { HeartIcon, Tag } from "@icons"
 import { useState } from "react"
 import styled from "styled-components"
@@ -47,20 +47,22 @@ const ImagesSlider = (props: ImagesProps) => {
         </Icon>
       </div>
       <div className="scrollslides">
-        <Scrollbar>
-          {images.slice(1, 4).map((img, index) => {
-            return (
-              <>
+        {images.slice(1, 4).map((img, index) => {
+          return (
+            <>
+              <div className="images-area">
                 <Image key={img} src={img} alt={img} />
                 {index >= 2 && images[index + 1] && (
-                  <span className="image-counter">{`+${
-                    images.length - 3
-                  }`}</span>
+                  <div className="image-counter-wrap">
+                    <span className="image-counter">{`${
+                      images.length - 3
+                    } More Photos`}</span>
+                  </div>
                 )}
-              </>
-            )
-          })}
-        </Scrollbar>
+              </div>
+            </>
+          )
+        })}
       </div>
     </div>
   )
@@ -100,12 +102,13 @@ const ImgSlides = styled(ImagesSlider)`
 
   .scrollslides {
     width: 20%;
+    display: flex;
+    flex-direction: column;
 
     @media (max-width: 767px) {
+      display: block;
       width: 100%;
-      height: 60px;
-      max-height: 60px;
-      margin-top: 2px;
+      margin-top: 10px;
     }
 
     .image-comp {
@@ -218,21 +221,50 @@ export default styled(PostBody)`
   }
 
   .scrollslides {
-    .image-comp {
-      height: calc(33.333% - 14px);
-      max-height: 140px;
+    .images-area {
+      flex-grow: 1;
+      flex-basis: 0;
       margin: 0 0 14px;
       overflow: hidden;
       border-radius: 15px;
+      position: relative;
+
+      &:last-child,
+      &:only-child {
+        margin: 0;
+      }
+
+      .image-comp {
+        height: 100%;
+      }
 
       img {
         width: 100%;
-        height: auto;
+        height: 100%;
         display: block;
         object-fit: cover;
         object-position: center;
         border-radius: 15px;
       }
+    }
+
+    .image-counter-wrap {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 14px;
+      line-height: 18px;
+      background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.55),
+        rgba(0, 0, 0, 0.55)
+      );
     }
   }
 `

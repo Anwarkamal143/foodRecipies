@@ -195,8 +195,8 @@ export default styled(Sidebar)`
           transform: translateY(-50%);
           width: 2px;
           height: 25px;
-          background: #EF305E;
-          content: '';
+          background: #ef305e;
+          content: "";
           display: none;
 
           @media (max-width: 1199px) {
@@ -213,6 +213,13 @@ export default styled(Sidebar)`
           }
         }
 
+        &:hover {
+          span {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+
         span {
           display: block;
           font-size: 14px;
@@ -220,13 +227,30 @@ export default styled(Sidebar)`
           width: 100%;
           padding: 8px 15px 10px 34px;
           font-weight: 600;
-          
+
           @media (max-width: 1199px) {
             padding: 8px 15px 10px 28px;
           }
 
           @media (max-width: 767px) {
-            display: none;
+            position: absolute;
+            left: 50%;
+            width: auto;
+            display: inline-block;
+            white-space: nowrap;
+            background: #e0464d;
+            color: #fff;
+            font-size: 8px;
+            line-height: 12px;
+            padding: 2px 5px;
+            font-weight: 400;
+            border-radius: 4px;
+            top: -4px;
+            letter-spacing: 0.5px;
+            transform: translate(-50%, 0);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
           }
         }
 
@@ -247,7 +271,7 @@ export default styled(Sidebar)`
             @media (max-width: 767px) {
               margin: 7px 0 0;
             }
-            
+
             svg {
               width: 22px;
               height: 22px;
@@ -279,7 +303,7 @@ export default styled(Sidebar)`
               stroke: #e0464d;
 
               @media (max-width: 767px) {
-                stroke: #7474A9;
+                stroke: #7474a9;
               }
             }
           }
@@ -287,7 +311,7 @@ export default styled(Sidebar)`
 
         &:hover {
           @media (max-width: 767px) {
-            background: rgba(0,0,0,0.03);
+            background: rgba(0, 0, 0, 0.03);
             border-radius: 10px;
           }
         }
@@ -386,7 +410,7 @@ export default styled(Sidebar)`
           display: block;
         }
       }
-      
+
       a {
         span {
           font-size: 12px;
@@ -414,7 +438,6 @@ export default styled(Sidebar)`
       left: 20px;
       width: 210px;
     }
-
   }
 
   .sidebarList > li:nth-last-child(2) {
