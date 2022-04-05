@@ -1,8 +1,5 @@
 import { EnvelopIcon, LampIcon, Loader, Ticke } from "@icons"
-<<<<<<< HEAD
 import clsxm from "@lib/clsxm"
-=======
->>>>>>> 39dff7ee287fd0c47b23379151ef2faa4e012a03
 import React, { useState } from "react"
 import { ProgressBar } from "src/components"
 import { CircularProgresWithChildren } from "src/components/CirclePrgoressWithChildren"
@@ -10,7 +7,7 @@ import { Image } from "src/components/Image"
 import styled from "styled-components"
 import {
   LeftSide,
-  Userprofilewrapper,
+  Userprofilewrapper
 } from "../../components/common/UserProfile/userprofile.styled"
 import { CircleDefaultImage } from "../common/images"
 
