@@ -1,6 +1,5 @@
-import { EnvelopIcon, LampIcon, Loader, Ticke } from "@icons"
+import { EnvelopIcon, Loader, Ticke } from "@icons"
 import React, { useState } from "react"
-
 
 const DataTwo = [
   {
@@ -112,7 +111,7 @@ const DataTwo = [
 type Props = {}
 
 function DailyTask({}: Props) {
-  const [taskData, setTaskData] = useState<any>([])
+  const [taskData, setTaskData] = useState<any>(0)
   const DaliyTaskData = (item: any) => {
     setTaskData(item)
     return true
@@ -125,6 +124,7 @@ function DailyTask({}: Props) {
           return (
             <>
               <span
+                className={`${ele === taskData ? "active" : "in-active"}`}
                 onClick={() => {
                   DaliyTaskData(ele)
                 }}
