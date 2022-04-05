@@ -245,7 +245,7 @@ export const PreviewSlider = styled(AttachmentsPreviewModel)`
       justify-content: center;
     }
     .slick-slide {
-      &.slick-current {
+      &.slick-center {
         img,
         video {
           transform: scale(1);
@@ -258,6 +258,8 @@ export const PreviewSlider = styled(AttachmentsPreviewModel)`
         height: 90vh;
         width: auto;
         transition: all 0.4s ease;
+        object-fit: cover;
+        border-radius: 20px;
       }
     }
     /* .slick-track {
