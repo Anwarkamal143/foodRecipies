@@ -1,5 +1,15 @@
-import { EnvelopIcon, Loader, Ticke } from "@icons"
+import { EnvelopIcon, LampIcon, Loader, Ticke } from "@icons"
+import clsxm from "@lib/clsxm"
 import React, { useState } from "react"
+import { ProgressBar } from "src/components"
+import { CircularProgresWithChildren } from "src/components/CirclePrgoressWithChildren"
+import { Image } from "src/components/Image"
+import styled from "styled-components"
+import {
+  LeftSide,
+  Userprofilewrapper,
+} from "../../components/common/UserProfile/userprofile.styled"
+import { CircleDefaultImage } from "../common/images"
 
 const DataTwo = [
   {
@@ -108,9 +118,12 @@ const DataTwo = [
     ],
   },
 ]
-type Props = {}
+type Props = {
+  className?: string
+  userName?: string
+}
 
-function DailyTask({}: Props) {
+function DailyTask({ className, userName }: Props) {
   const [taskData, setTaskData] = useState<any>(0)
   const DaliyTaskData = (item: any) => {
     setTaskData(item)
@@ -119,6 +132,36 @@ function DailyTask({}: Props) {
   console.log(taskData, "DataTwo[item]")
   return (
     <div className="profileStatusModal">
+      <Userprofilewrapper className={clsxm("", className)}>
+        <LeftSide className="userProfileProgresBox">
+          <CircularProgresWithChildren
+            maxValue={100}
+            parentClass="circleprogress"
+            strokeWidth={3}
+            className="circleimages"
+            value={15}
+          >
+            <CircleDefaultImage
+              className="circleimg"
+              src="/images/profile-img.png"
+              alt="default profile imag"
+            />
+          </CircularProgresWithChildren>
+          <div className="userProfileTextbox">
+            <h2 className="userProfileTitle">
+              <span>{userName} </span>
+              <Image src="/images/WavingHandEmoji.png" alt="waving hand" />
+            </h2>
+            <span className="userProfilesubTitle">Founder Cook Profile</span>
+          </div>
+          <p className="userProfileProgreTitle">15% Tasks Completed</p>
+          <ProgressBar
+            showPrgress={false}
+            progresspercent={20}
+            bgColor={"#ef305e"}
+          />
+        </LeftSide>
+      </Userprofilewrapper>
       <div className="profileStatusWeekly">
         {DataTwo.map((e, ele) => {
           return (
@@ -163,11 +206,11 @@ function DailyTask({}: Props) {
           Start
         </a>
         <a href="#" className="btnIdeaLamp">
-          {/* <LampIcon /> */}
+          <LampIcon />
         </a>
       </div>
     </div>
   )
 }
 
-export default DailyTask
+export default styled(DailyTask)``
