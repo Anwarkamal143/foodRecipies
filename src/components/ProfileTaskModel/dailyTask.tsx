@@ -1,40 +1,144 @@
-import { EnvelopIcon, LampIcon, Ticke } from "@icons"
-import React from "react"
+import { EnvelopIcon, LampIcon, Loader, Ticke } from "@icons"
+import React, { useState } from "react"
 
-const days = ["M", "T", "W", "T", "F", "S", "S"]
-const Data = [
+const DataTwo = [
   {
-    status: "complete",
-    title: "Master Cook",
-    subtitle: "Upload more than 250 recipes",
+    day: "M",
+    data: [
+      {
+        status: "complete",
+        title: "Master Cook",
+        subtitle: "Upload more than 250 recipes",
+      },
+      {
+        status: "complete",
+        title: "Master Cook",
+        subtitle: "Upload more than 250 recipes",
+      },
+      {
+        status: "complete",
+        title: "Master Cook",
+        subtitle: "Upload more than 250 recipes",
+      },
+      {
+        status: "complete",
+        title: "Master Cook",
+        subtitle: "Upload more than 250 recipes",
+      },
+    ],
   },
   {
-    status: "complete",
-    title: "Master Cook",
-    subtitle: "Upload more than 250 recipes",
+    day: "T",
+    data: [
+      {
+        status: "complete",
+        title: "Master Cook",
+        subtitle: "Upload more than 250 recipes",
+      },
+      {
+        status: "complete",
+        title: "Master Cook",
+        subtitle: "Upload more than 250 recipes",
+      },
+      {
+        status: "complete",
+        title: "Master Cook",
+        subtitle: "Upload more than 250 recipes",
+      },
+    ],
   },
   {
-    status: "complete",
-    title: "Master Cook",
-    subtitle: "Upload more than 250 recipes",
+    day: "W",
+    data: [
+      {
+        status: "complete",
+        title: "Master Cook",
+        subtitle: "Upload more than 250 recipes",
+      },
+    ],
+  },
+  {
+    day: "T",
+    data: [],
+  },
+  {
+    day: "F",
+    data: [
+      {
+        status: "complete",
+        title: "Master Cook",
+        subtitle: "Upload more than 250 recipes",
+      },
+      {
+        status: "complete",
+        title: "Master Cook",
+        subtitle: "Upload more than 250 recipes",
+      },
+      {
+        status: "complete",
+        title: "Master Cook",
+        subtitle: "Upload more than 250 recipes",
+      },
+    ],
+  },
+  {
+    day: "S",
+    data: [
+      {
+        status: "complete",
+        title: "Master Cook",
+        subtitle: "Upload more than 250 recipes",
+      },
+
+      {
+        status: "complete",
+        title: "Master Cook",
+        subtitle: "Upload more than 250 recipes",
+      },
+    ],
+  },
+  {
+    day: "S",
+    data: [
+      {
+        status: "complete",
+        title: "Master Cook",
+        subtitle: "Upload more than 250 recipes",
+      },
+    ],
   },
 ]
 type Props = {}
 
 function DailyTask({}: Props) {
+  const [taskData, setTaskData] = useState<any>(0)
+  const DaliyTaskData = (item: any) => {
+    setTaskData(item)
+    return true
+  }
+  console.log(taskData, "DataTwo[item]")
   return (
     <div className="profileStatusModal">
       <div className="profileStatusWeekly">
-        {days.map(e => {
+        {DataTwo.map((e, ele) => {
           return (
             <>
-              <span>{e}</span>
+              <span
+                className={`tab-link ${
+                  ele === taskData ? "active" : "in-active"
+                }`}
+                onClick={() => {
+                  DaliyTaskData(ele)
+                }}
+              >
+                {e.day}
+              </span>
             </>
           )
         })}
       </div>
       <div className="receipeDetailsWrap">
-        {(Data || [])?.map((u: any, i: number) => {
+        {(DataTwo[taskData]?.data || []).map((u: any, i: number) => {
           return (
             <div className="receipeDetails" key={i}>
               <div className="recipeholder">
@@ -48,6 +152,9 @@ function DailyTask({}: Props) {
                   <span className="recipename">{u.title}</span>
                   <div className="recipemeta">
                     <div className="receipeRatings">{u.subtitle}</div>
+                  </div>
+                  <div className="img-loader">
+                    <Loader />
                   </div>
                 </div>
               </div>

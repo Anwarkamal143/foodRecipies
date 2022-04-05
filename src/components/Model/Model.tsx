@@ -199,7 +199,9 @@ export default styled(Model)`
 
   .modal-content {
     border-radius: 15px;
-    padding: 25px 40px;
+    padding: 25px 30px;
+    max-height: 90vh;
+    overflow: auto;
 
     @media (max-width: 430px) {
       padding: 15px;

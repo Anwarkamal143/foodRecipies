@@ -218,6 +218,8 @@ export const PreviewSlider = styled(AttachmentsPreviewModel)`
       border-radius: 0;
       background: none;
       padding: 0;
+      max-height: inherit;
+      overflow: visible;
     }
     .modal-header {
       position: absolute;
