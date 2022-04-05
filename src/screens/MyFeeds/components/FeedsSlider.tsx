@@ -67,7 +67,7 @@ function Sliderr(props: ISliderProps) {
     slidesToShow: 1,
     slidesToScroll: 1,
     className: "slider",
-
+    dots: false,
     variableWidth: true,
     arrows: false,
     responsive: [
@@ -76,9 +76,6 @@ function Sliderr(props: ISliderProps) {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          infinite: true,
-          dots: false,
-          variableWidth: true,
         },
       },
       {
@@ -86,9 +83,6 @@ function Sliderr(props: ISliderProps) {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          initialSlide: 0,
-          infinite: true,
-          variableWidth: true,
         },
       },
       {
@@ -96,8 +90,6 @@ function Sliderr(props: ISliderProps) {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          infinite: true,
-          variableWidth: true,
         },
       },
     ],

@@ -1,5 +1,8 @@
 import { EnvelopIcon, LampIcon, Loader, Ticke } from "@icons"
+<<<<<<< HEAD
 import clsxm from "@lib/clsxm"
+=======
+>>>>>>> 39dff7ee287fd0c47b23379151ef2faa4e012a03
 import React, { useState } from "react"
 import { ProgressBar } from "src/components"
 import { CircularProgresWithChildren } from "src/components/CirclePrgoressWithChildren"
@@ -13,7 +16,7 @@ import { CircleDefaultImage } from "../common/images"
 
 const DataTwo = [
   {
-    day: 1,
+    day: "M",
     data: [
       {
         status: "complete",
@@ -38,7 +41,7 @@ const DataTwo = [
     ],
   },
   {
-    day: 2,
+    day: "T",
     data: [
       {
         status: "complete",
@@ -58,7 +61,7 @@ const DataTwo = [
     ],
   },
   {
-    day: 3,
+    day: "W",
     data: [
       {
         status: "complete",
@@ -68,11 +71,11 @@ const DataTwo = [
     ],
   },
   {
-    day: 4,
+    day: "T",
     data: [],
   },
   {
-    day: 5,
+    day: "F",
     data: [
       {
         status: "complete",
@@ -92,7 +95,7 @@ const DataTwo = [
     ],
   },
   {
-    day: 6,
+    day: "S",
     data: [
       {
         status: "complete",
@@ -108,7 +111,7 @@ const DataTwo = [
     ],
   },
   {
-    day: 7,
+    day: "S",
     data: [
       {
         status: "complete",
@@ -167,7 +170,9 @@ function DailyTask({ className, userName }: Props) {
           return (
             <>
               <span
-                className={`${ele === taskData ? "active" : "in-active"}`}
+                className={`tab-link ${
+                  ele === taskData ? "active" : "in-active"
+                }`}
                 onClick={() => {
                   DaliyTaskData(ele)
                 }}
@@ -194,7 +199,9 @@ function DailyTask({ className, userName }: Props) {
                   <div className="recipemeta">
                     <div className="receipeRatings">{u.subtitle}</div>
                   </div>
-                  <Loader />
+                  <div className="img-loader">
+                    <Loader />
+                  </div>
                 </div>
               </div>
             </div>
