@@ -1,9 +1,11 @@
-import { Icon, Image, Scrollbar } from "@components"
-import { HeartIcon } from "@icons"
+import { Icon, Image } from "@components"
+import { HeartIcon, Tag } from "@icons"
+import "photoswipe/dist/default-skin/default-skin.css"
+import "photoswipe/dist/photoswipe.css"
 import { useState } from "react"
+import { Gallery, Item } from "react-photoswipe-gallery"
 import styled from "styled-components"
 import { IPostType } from "./Posts"
-
 type IMyFeedProps = {
   className?: string
   //   title?: ReactChild | ReactChildren | ReactNode | ReactElement | HTMLElement
@@ -21,45 +23,97 @@ type ImagesProps = {
 const ImagesSlider = (props: ImagesProps) => {
   const { images, className, post, onSubmit } = props
   const [like, setLike] = useState(false)
+  const maintemProps: any = {
+    width: "1024",
+    height: "768",
+    original: images[0],
+  }
   return (
     <div className={className}>
-      <div className="main-img">
-        <Image className="postbody-img" src={images[0]} alt={images[0]} />
-        <Icon >
-          <span>Vegan</span>
-        </Icon>
-        <Icon className="heartIcon">
-          <HeartIcon
-            fill={post.liked ? "red" : "none"}
-            {...(post.liked ? { stroke: "red" } : {})}
-            // stroke={post.liked ? "red" : "lightgray"}
-            onClick={() => {
-              const newPost: IPostType = {
-                ...post,
-                likes: post.likes - 1 < 0 ? 0 : post.likes - 1,
-                liked: post.likes - 1 < 0 ? post.liked : !post.liked,
-              }
-              onSubmit?.(newPost)
+      <Gallery>
+        <div className="main-img">
+          <Item {...maintemProps}>
+            {({ ref, open }: any) => {
+              return (
+                <div ref={ref}>
+                  <Image
+                    className="postbody-img"
+                    src={images[0]}
+                    alt={images[0]}
+                    ref={ref as any}
+                    onClick={open}
+                  />
+                </div>
+              )
             }}
-          />
-        </Icon>
-      </div>
-      <div className="scrollslides">
-        <Scrollbar>
-          {images.slice(1, 4).map((img, index) => {
+          </Item>
+          <Icon className="tagsIcon">
+            <span>
+              <Tag /> Vegan
+            </span>
+          </Icon>
+          <Icon className="heartIcon">
+            <HeartIcon
+              fill={post.liked ? "red" : "none"}
+              {...(post.liked ? { stroke: "red" } : {})}
+              // stroke={post.liked ? "red" : "lightgray"}
+              onClick={() => {
+                const newPost: IPostType = {
+                  ...post,
+                  likes: post.likes - 1 < 0 ? 0 : post.likes - 1,
+                  liked: post.likes - 1 < 0 ? post.liked : !post.liked,
+                }
+                onSubmit?.(newPost)
+              }}
+            />
+          </Icon>
+        </div>
+        <div className="scrollslides">
+          {images.slice(1).map((img, index) => {
+            const itemProps: any = {
+              width: "1024",
+              height: "768",
+              original: img,
+            }
             return (
               <>
-                <Image key={img} src={img} alt={img} />
-                {index >= 3 && images[index + 1] && (
-                  <span className="image-counter">{`+${
-                    images.length - 3
-                  }`}</span>
-                )}
+                <Item {...itemProps}>
+                  {({ ref, open }: any) => {
+                    return (
+                      <>
+                        {index > 2 ? (
+                          <span ref={ref} className="hidden"></span>
+                        ) : (
+                          <div className="images-area" ref={ref}>
+                            <Image
+                              key={img}
+                              src={img}
+                              alt={img}
+                              ref={ref as any}
+                              onClick={open}
+                            />
+                            {index >= 2 && images[index + 1] && (
+                              <div
+                                className="image-counter-wrap"
+                                onClick={open}
+                                ref={ref}
+                              >
+                                <span className="image-counter">{`${
+                                  images.length - 3
+                                } More Photos`}</span>
+                              </div>
+                            )}
+                          </div>
+                        )}
+                      </>
+                    )
+                  }}
+                </Item>
               </>
             )
           })}
-        </Scrollbar>
-      </div>
+        </div>
+      </Gallery>
     </div>
   )
 }
@@ -98,12 +152,13 @@ const ImgSlides = styled(ImagesSlider)`
 
   .scrollslides {
     width: 20%;
+    display: flex;
+    flex-direction: column;
 
     @media (max-width: 767px) {
+      display: block;
       width: 100%;
-      height: 60px;
-      max-height: 60px;
-      margin-top: 2px;
+      margin-top: 10px;
     }
 
     .image-comp {
@@ -125,7 +180,9 @@ const ImgSlides = styled(ImagesSlider)`
         }
       }
     }
-
+    .hidden {
+      display: none;
+    }
     .rc-scollbar {
       @media (max-width: 767px) {
         display: flex;
@@ -187,24 +244,79 @@ export default styled(PostBody)`
         height: 24px;
       }
     }
+
+    .tagsIcon {
+      position: absolute;
+      right: 2em;
+      top: 1em;
+      background: #11c278;
+      width: auto;
+      color: #fff;
+      border: 0;
+      border-radius: 25px;
+      height: 42px;
+      font-size: 14px;
+      line-height: 20px;
+      padding: 5px 15px;
+      font-weight: 600;
+
+      span {
+        display: flex;
+        align-items: center;
+
+        svg {
+          fill: #fff;
+          margin: 0 10px 0 0;
+        }
+      }
+    }
   }
 
   .scrollslides {
-    .image-comp {
-      height: calc(33.333% - 14px);
-      max-height: 140px;
+    .images-area {
+      flex-grow: 1;
+      flex-basis: 0;
       margin: 0 0 14px;
       overflow: hidden;
       border-radius: 15px;
+      position: relative;
+
+      &:last-child,
+      &:only-child {
+        margin: 0;
+      }
+
+      .image-comp {
+        height: 100%;
+      }
 
       img {
         width: 100%;
-        height: auto;
+        height: 100%;
         display: block;
         object-fit: cover;
         object-position: center;
         border-radius: 15px;
       }
+    }
+
+    .image-counter-wrap {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 14px;
+      line-height: 18px;
+      background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.55),
+        rgba(0, 0, 0, 0.55)
+      );
     }
   }
 `
