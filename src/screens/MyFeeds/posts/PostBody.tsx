@@ -1,6 +1,5 @@
 import { Icon, Image } from "@components"
 import { HeartIcon, Tag } from "@icons"
-import "photoswipe/dist/default-skin/default-skin.css"
 import "photoswipe/dist/photoswipe.css"
 import { useState } from "react"
 import { Gallery, Item } from "react-photoswipe-gallery"
