@@ -47,6 +47,7 @@ const Header = ({
               }}
             >
               {item.name}
+              <span>{item.role}</span>
             </DropDownItem>
           )
         }}

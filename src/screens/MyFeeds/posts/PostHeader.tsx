@@ -2,9 +2,10 @@ import { Button, Icon, Image } from "@components"
 import { FacebookIcon, InstagramIcon, TwitterIcon, YoutubeIcon } from "@icons"
 import dayjs from "dayjs"
 import relativeTime from "dayjs/plugin/relativeTime"
+import { useState } from "react"
 import styled from "styled-components"
+import UnfolloeModal from "./components/UnfollowModel"
 import { IPostType } from "./Posts"
-
 dayjs.extend(relativeTime)
 type IMyFeedProps = {
   className?: string
@@ -17,6 +18,16 @@ type IMyFeedProps = {
 function PostHeader(props: IMyFeedProps) {
   const { className, onSubmit, post } = props
   const { person, createdAt } = post
+  const [isOpenModel, setOpenModel] = useState(false)
+  const handleSave = () => {
+    const newPost = {
+      ...post,
+      person: { ...person, followed: !person.followed },
+    }
+    onSubmit?.(newPost)
+    setOpenModel(false)
+    console.log(person.followed, "person.followed")
+  }
   return (
     <div className={className}>
       <div className="person-details">
@@ -37,11 +48,9 @@ function PostHeader(props: IMyFeedProps) {
           shape="circle"
           size="small"
           onClick={() => {
-            const newPost = {
-              ...post,
-              person: { ...person, followed: !person.followed },
+            {
+              person.followed ? setOpenModel(true) : handleSave()
             }
-            onSubmit?.(newPost)
           }}
         >
           {person.followed ? "Unfollow" : "Follow"}
@@ -61,6 +70,11 @@ function PostHeader(props: IMyFeedProps) {
           <InstagramIcon />
         </Icon>
       </div>
+      <UnfolloeModal
+        isOpen={isOpenModel}
+        onCancel={setOpenModel}
+        handleSave={handleSave}
+      />
     </div>
   )
 }

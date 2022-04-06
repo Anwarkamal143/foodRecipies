@@ -1,9 +1,10 @@
 import { Icon, Image } from "@components"
 import { HeartIcon, Tag } from "@icons"
+import "photoswipe/dist/photoswipe.css"
 import { useState } from "react"
+import { Gallery, Item } from "react-photoswipe-gallery"
 import styled from "styled-components"
 import { IPostType } from "./Posts"
-
 type IMyFeedProps = {
   className?: string
   //   title?: ReactChild | ReactChildren | ReactNode | ReactElement | HTMLElement
@@ -21,49 +22,97 @@ type ImagesProps = {
 const ImagesSlider = (props: ImagesProps) => {
   const { images, className, post, onSubmit } = props
   const [like, setLike] = useState(false)
+  const maintemProps: any = {
+    width: "1024",
+    height: "768",
+    original: images[0],
+  }
   return (
     <div className={className}>
-      <div className="main-img">
-        <Image className="postbody-img" src={images[0]} alt={images[0]} />
-        <Icon className="tagsIcon">
-          <span>
-            <Tag /> Vegan
-          </span>
-        </Icon>
-        <Icon className="heartIcon">
-          <HeartIcon
-            fill={post.liked ? "red" : "none"}
-            {...(post.liked ? { stroke: "red" } : {})}
-            // stroke={post.liked ? "red" : "lightgray"}
-            onClick={() => {
-              const newPost: IPostType = {
-                ...post,
-                likes: post.likes - 1 < 0 ? 0 : post.likes - 1,
-                liked: post.likes - 1 < 0 ? post.liked : !post.liked,
-              }
-              onSubmit?.(newPost)
+      <Gallery>
+        <div className="main-img">
+          <Item {...maintemProps}>
+            {({ ref, open }: any) => {
+              return (
+                <div ref={ref}>
+                  <Image
+                    className="postbody-img"
+                    src={images[0]}
+                    alt={images[0]}
+                    ref={ref as any}
+                    onClick={open}
+                  />
+                </div>
+              )
             }}
-          />
-        </Icon>
-      </div>
-      <div className="scrollslides">
-        {images.slice(1, 4).map((img, index) => {
-          return (
-            <>
-              <div className="images-area">
-                <Image key={img} src={img} alt={img} />
-                {index >= 2 && images[index + 1] && (
-                  <div className="image-counter-wrap">
-                    <span className="image-counter">{`${
-                      images.length - 3
-                    } More Photos`}</span>
-                  </div>
-                )}
-              </div>
-            </>
-          )
-        })}
-      </div>
+          </Item>
+          <Icon className="tagsIcon">
+            <span>
+              <Tag /> Vegan
+            </span>
+          </Icon>
+          <Icon className="heartIcon">
+            <HeartIcon
+              fill={post.liked ? "red" : "none"}
+              {...(post.liked ? { stroke: "red" } : {})}
+              // stroke={post.liked ? "red" : "lightgray"}
+              onClick={() => {
+                const newPost: IPostType = {
+                  ...post,
+                  likes: post.likes - 1 < 0 ? 0 : post.likes - 1,
+                  liked: post.likes - 1 < 0 ? post.liked : !post.liked,
+                }
+                onSubmit?.(newPost)
+              }}
+            />
+          </Icon>
+        </div>
+        <div className="scrollslides">
+          {images.slice(1).map((img, index) => {
+            const itemProps: any = {
+              width: "1024",
+              height: "768",
+              original: img,
+            }
+            return (
+              <>
+                <Item {...itemProps}>
+                  {({ ref, open }: any) => {
+                    return (
+                      <>
+                        {index > 2 ? (
+                          <span ref={ref} className="hidden"></span>
+                        ) : (
+                          <div className="images-area" ref={ref}>
+                            <Image
+                              key={img}
+                              src={img}
+                              alt={img}
+                              ref={ref as any}
+                              onClick={open}
+                            />
+                            {index >= 2 && images[index + 1] && (
+                              <div
+                                className="image-counter-wrap"
+                                onClick={open}
+                                ref={ref}
+                              >
+                                <span className="image-counter">{`${
+                                  images.length - 3
+                                } More Photos`}</span>
+                              </div>
+                            )}
+                          </div>
+                        )}
+                      </>
+                    )
+                  }}
+                </Item>
+              </>
+            )
+          })}
+        </div>
+      </Gallery>
     </div>
   )
 }
@@ -130,7 +179,9 @@ const ImgSlides = styled(ImagesSlider)`
         }
       }
     }
-
+    .hidden {
+      display: none;
+    }
     .rc-scollbar {
       @media (max-width: 767px) {
         display: flex;
