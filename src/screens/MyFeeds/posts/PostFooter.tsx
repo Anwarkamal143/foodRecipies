@@ -120,7 +120,7 @@ export default styled(PostFooter)`
     }
 
     .iconShare {
-      border: transparent;
+      border: 1px solid #e6eaf5;
 
       svg {
         width: 24px;

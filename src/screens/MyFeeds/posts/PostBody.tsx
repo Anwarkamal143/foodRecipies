@@ -216,6 +216,18 @@ export default styled(PostBody)`
     margin: 0 0 24px;
   }
 
+  .image-comp {
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+
+    img {
+      height: 100% !important;
+      width: 100% !important;
+      object-fit: cover !important;
+    }
+  }
+
   .main-img {
     overflow: hidden;
 

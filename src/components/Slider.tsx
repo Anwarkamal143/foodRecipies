@@ -242,9 +242,9 @@ export const PreviewSlider = styled(AttachmentsPreviewModel)`
     }
     .slider_container {
       height: 100%;
-      display: flex;
+      /* display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: center; */
     }
     .slick-slide {
       &.slick-center {
@@ -256,8 +256,9 @@ export const PreviewSlider = styled(AttachmentsPreviewModel)`
 
       img,
       video {
-        transform: scale(0.7);
-        height: 90vh;
+        transform: scale(0.6);
+        height: 80vh;
+        margin: 8vh 0 0;
         width: auto;
         transition: all 0.4s ease;
         object-fit: cover;
@@ -295,7 +296,7 @@ export const PreviewSlider = styled(AttachmentsPreviewModel)`
     }
     .slick-slide {
       width: 100%;
-      max-width: 500px;
+      max-width: 450px;
       padding: 0 7px;
       /* width: 135px !important; */
     }

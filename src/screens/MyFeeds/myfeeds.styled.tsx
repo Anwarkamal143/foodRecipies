@@ -11,9 +11,9 @@ export const FeedsContainer = styled.div`
 export const LeftContainer = styled.div`
   /* background: #6e6c6c; */
   /* width: 70%; */
-  padding: 0 30px 0 10px;
+  padding: 0 10px;
   width: calc(100% - 297px);
-  max-width: 1000px;
+  max-width: 800px;
   margin: 0 auto;
 
   @media (max-width: 1199px) {
