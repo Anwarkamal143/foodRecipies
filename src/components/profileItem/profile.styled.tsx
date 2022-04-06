@@ -11,5 +11,13 @@ export const ProfileDetailsWrapper = styled.div`
 export const ProfileDetails = styled.div``
 export const ProfileName = styled.h3``
 export const ProfileUserName = styled.p``
-export const ProfileStatus = styled.span``
+export const ProfileStatus = styled.span`
+  font-size: 9px;
+  line-height: 12px;
+  color: #0E8521;
+  background: #D9FADD;
+  border-radius: 10px;
+  padding: 1px 8px 3px;
+  margin-left: 5px;
+`
 export const ProfileActionWrapper = styled.div``

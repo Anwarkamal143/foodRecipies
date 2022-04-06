@@ -1,3 +1,4 @@
+import { ProgressArrowUp } from "@icons"
 import React from "react"
 import styled from "styled-components"
 const tableData = [
@@ -57,11 +58,11 @@ function RecipiesTable() {
       <table className="table recipiesTable">
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Status</th>
-            <th>View</th>
-            <th>Date</th>
+            <th><a href="#">ID</a></th>
+            <th><a href="#">Name</a></th>
+            <th><a href="#">Status</a></th>
+            <th><a href="#">View</a></th>
+            <th><a href="#">Date</a></th>
           </tr>
         </thead>
         <tbody>
@@ -76,7 +77,7 @@ function RecipiesTable() {
                     <>
                       <td className="view">
                         <span className="ratings">{m.rateing}</span>
-                        <span  className="ratingsStatus">{m.downrate}</span>
+                        <span  className="ratingsStatus">{m.downrate} <ProgressArrowUp /></span>
                       </td>
                     </>
                   )

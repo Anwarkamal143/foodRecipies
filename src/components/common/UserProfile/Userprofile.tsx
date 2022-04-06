@@ -48,7 +48,11 @@ function Profilesteps({ src = "", alt = "", className = "" }) {
           bgColor={"#ef305e"}
         />
       </RightSide>
-      <ProfileTaskModel isOpen={isOpenModel} onCancel={onCloseModel} />
+      <ProfileTaskModel
+        userName={user.name}
+        isOpen={isOpenModel}
+        onCancel={onCloseModel}
+      />
     </Userprofilewrapper>
   )
 }

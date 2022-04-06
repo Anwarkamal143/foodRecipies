@@ -25,6 +25,9 @@ export const POSTSDATA = [
       "/images/mock/post2.png",
       "/images/mock/post3.png",
       "/images/mock/post1.png",
+      "/images/mock/post2.png",
+      "/images/mock/post3.png",
+      "/images/mock/post1.png",
     ],
   },
   {

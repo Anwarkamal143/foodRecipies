@@ -93,9 +93,33 @@ export default styled(Card)`
       line-height: 18px;
       color: #e0464d;
       cursor: pointer;
+      position: relative;
+      transition: all 0.25s ease-in-out;
+
+      span {
+        display: flex;
+        align-items: center;
+      }
+
+      svg {
+        fill: #b80a12;
+        opacity: 0;
+        visibilty: hidden;
+        transition: all 0.25s ease-in-out;
+        position: absolute;
+        right: 0;
+        top: 52%;
+        transform: translateY(-50%);
+      }
 
       &:hover {
         color: #b80a12;
+        padding-right: 18px;
+
+        svg {
+          opacity: 1;
+          visibilty: visible;
+        }
       }
     }
 
@@ -103,24 +127,33 @@ export default styled(Card)`
       font-size: 12px;
       line-height: 16px;
 
-      span {
+      a {
         background: #e6ecf5;
         border-radius: 10px;
         display: inline-block;
         padding: 2px 7px;
         color: #7474a9;
+        text-decoration: none;
+        transition: all 0.25s ease-in-out;
+
+        &:hover {
+          background: #cddef7;
+        }
       }
     }
   }
 
   .userProfileWrapper {
     margin-top: -9px;
+    position: relative;
   }
 
   .userProfile {
-    padding: 9px 0;
+    padding: 9px 10px;
+    margin: 0 -10px;
     display: flex;
     align-items: center;
+    border-radius: 10px;
 
     
     .userProfileHolder {
@@ -172,6 +205,7 @@ export default styled(Card)`
       min-width: 20px;
       height: 20px;
       margin-right: -10px;
+      display: none;
 
       button {
         width: 20px;
@@ -196,6 +230,11 @@ export default styled(Card)`
           }
         }
       }
+    }
+
+    &:hover {
+      cursor: pointer;
+      background: rgba(0,0,0,0.04);
     }
   }
 `

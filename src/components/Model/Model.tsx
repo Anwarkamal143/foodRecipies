@@ -178,12 +178,8 @@ export default styled(Model)`
   }
 
   .modal-header {
-    margin: 0 0 25px;
+    margin: 0 0 10px;
 
-    @media (max-width: 430px) {
-      margin: 0 0 15px;
-    }
-    
     .close {
       font-size: 25px;
     }
@@ -192,14 +188,16 @@ export default styled(Model)`
   .modal-title {
     display: block;
     font-weight: 700;
-    color: #1E1E2D;
+    color: #1e1e2d;
     font-size: 16px;
     line-height: 21px;
   }
 
   .modal-content {
     border-radius: 15px;
-    padding: 25px 40px;
+    padding: 25px 30px;
+    max-height: 90vh;
+    overflow: auto;
 
     @media (max-width: 430px) {
       padding: 15px;
@@ -221,7 +219,7 @@ export default styled(Model)`
         width: 26px;
         font-size: 26px;
         left: 4px;
-        color: #E0464D;
+        color: #e0464d;
       }
 
       label {
@@ -240,7 +238,7 @@ export default styled(Model)`
         label {
           left: 36px;
         }
-        
+
         .form-control {
           padding-left: 36px;
         }
@@ -254,12 +252,12 @@ export default styled(Model)`
     .form-control {
       width: 100%;
       height: 32px;
-      border: 1px solid #E0464D;
+      border: 1px solid #e0464d;
       border-radius: 20px;
       outline: none;
       font-size: 10px;
       line-height: 14px;
-      color: #1E1E2D;
+      color: #1e1e2d;
       padding: 8px 10px;
 
       &:focus {
@@ -277,7 +275,7 @@ export default styled(Model)`
     flex-flow: row wrap;
     font-size: 10px;
     text-align: center;
-    color: #1E1E2D;
+    color: #1e1e2d;
 
     li {
       padding: 12px 9px;
@@ -288,12 +286,12 @@ export default styled(Model)`
       height: 50px;
       margin: 0 0 3px;
       border-radius: 100%;
-      border-color: #E5E8EF;
+      border-color: #e5e8ef;
       transition: all 0.25s ease-in-out;
 
       &.icon-link {
-        background: #C3C3D7;
-        border-color: #C3C3D7;
+        background: #c3c3d7;
+        border-color: #c3c3d7;
 
         svg {
           width: 18px;
@@ -307,8 +305,8 @@ export default styled(Model)`
       }
 
       &.icon-sms {
-        background: #1E1E2D;
-        border-color: #1E1E2D;
+        background: #1e1e2d;
+        border-color: #1e1e2d;
 
         svg {
           width: 20px;
@@ -322,8 +320,8 @@ export default styled(Model)`
       }
 
       &.icon-facebook {
-        background: #425A94;
-        border-color: #425A94;
+        background: #425a94;
+        border-color: #425a94;
 
         svg {
           width: 22px;
@@ -341,8 +339,8 @@ export default styled(Model)`
       }
 
       &.icon-twitter {
-        background: #57C0FA;
-        border-color: #57C0FA;
+        background: #57c0fa;
+        border-color: #57c0fa;
 
         svg {
           width: 22px;
@@ -360,8 +358,8 @@ export default styled(Model)`
       }
 
       &.icon-whatsapp {
-        background: #66CF72;
-        border-color: #66CF72;
+        background: #66cf72;
+        border-color: #66cf72;
 
         svg {
           width: 22px;
@@ -379,8 +377,8 @@ export default styled(Model)`
       }
 
       &.icon-telegram {
-        background: #59AAE2;
-        border-color: #59AAE2;
+        background: #59aae2;
+        border-color: #59aae2;
 
         svg {
           width: 22px;

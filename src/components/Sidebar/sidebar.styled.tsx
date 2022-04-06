@@ -29,10 +29,11 @@ export const SidebarContainer = styled.div`
     min-width: inherit;
     right: 0;
     background: #fff;
-    border-radius: 15px 15px 0 0;
+    border-radius: 0;
     border: 1px solid #f2f3f5;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
     z-index: 49;
+    padding: 0 5px;
   }
 
   .rc-scollbar {

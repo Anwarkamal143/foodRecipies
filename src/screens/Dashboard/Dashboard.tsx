@@ -1,12 +1,13 @@
 import { Button, Card, DropDown, Image } from "@components"
 import {
   AddCircleIcon,
+  AngleRight,
   CalendarIcon,
   DownArrowIcon,
   EyeIcon,
   Save,
   Star,
-  StatusUp,
+  StatusUp
 } from "@icons"
 import { DashboardLayout } from "@layouts/Dashboard/DashboardLayout"
 import { FormatNumber } from "@utils"
@@ -21,7 +22,7 @@ import {
   ResponsiveContainer,
   Tooltip,
   XAxis,
-  YAxis,
+  YAxis
 } from "recharts"
 import styled from "styled-components"
 import { chartData, data, LineChartData } from "../../../data"
@@ -36,7 +37,7 @@ import {
   ProfileperformanceWrapper,
   RightMyRecipiesSection,
   RightPerformanceSection,
-  StatisticsWrapper,
+  StatisticsWrapper
 } from "./dashboard.styed"
 
 const dateFormatter = (item: Date) => dayjs(item).format("MMM YY")
@@ -171,7 +172,7 @@ const DashBoard = ({ className }: { className?: string }) => {
               <Card.Header>
                 <CardHeader
                   className="subtitle"
-                  title="Cook Weekly Performance"
+                  title="Weekly Performance"
                   items={[{ name: "action 1" }, { name: "action 2" }]}
                   renderItem={({ item, handleToggle }) => {
                     console.log({ item })
@@ -202,9 +203,12 @@ const DashBoard = ({ className }: { className?: string }) => {
             <div className="sectionheader">
               <div className="myRecipesTitle">
                 <p className="subtitle">My Recipes</p>
-                <AddCircleIcon />
+                <a href="#" className="addRecipeButton">
+                  <AddCircleIcon />
+                  <span className="addRecipeButtonText">Add Recipe</span>
+                </a>
               </div>
-              <Button className="buttonText"> View All My Recipes</Button>
+              <Button className="buttonText"> View All My Recipes <AngleRight /></Button>
             </div>
             <RecipiesTable />
           </LeftMyRecipiesSection>
@@ -546,9 +550,28 @@ export const Dashboard = styled(DashBoard)`
             color: #7474A9;
             padding: 5px 15px;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+
+            span {
+              margin-left: 0;
+              margin-right: 10px;
+            }
+
+            svg {
+              path {
+                stroke: #7474A9;
+              }
+            }
 
             &:hover {
               color: #E0464D;
+              
+              svg {
+                path {
+                  stroke: #E0464D;
+                }
+              }
             }
           }
         }
@@ -663,9 +686,16 @@ export const Dashboard = styled(DashBoard)`
         font-size: 12px;
         line-height: 20px;
         padding: 2px 15px;
+        cursor: pointer;
+        transition: all 0.25s ease-in-out;
 
         @media (max-width: 1199px) {
           padding: 2px 10px;
+        }
+
+        &:hover {
+          border-color: #c0d0f5;
+          background: #c0d0f5;
         }
       }
     }
@@ -698,6 +728,11 @@ export const Dashboard = styled(DashBoard)`
 
       .text-button {
         vertical-align: top;
+      }
+
+      &:hover {
+        background: #fff;
+        border-color: #F3F3F3;
       }
     }
 
@@ -743,6 +778,46 @@ export const Dashboard = styled(DashBoard)`
         align-items: center;
       }
 
+      .addRecipeButton {
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        svg {
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          transition: all 0.25s ease-in-out;
+        }
+
+        .addRecipeButtonText {
+          font-size: 12px;
+          line-height: 14px;
+          color: #E0464D;
+          padding: 3px 10px;
+          border-radius: 15px;
+          font-weight: 600;
+          border: 1px solid #E0464D;
+          background: #fff;
+          opacity: 0;
+          visibilty: hidden;
+          transition: all 0.25s ease-in-out;
+        }
+
+        &:hover {
+          .addRecipeButtonText {
+            opacity: 1;
+            visibilty: visible;
+          }
+
+          svg {
+            opacity: 0;
+            visibilty: hidden;
+          }
+        }
+      }
+
       .subtitle {
         font-weight: 700;
         font-size: 16px;
@@ -760,9 +835,34 @@ export const Dashboard = styled(DashBoard)`
         background: none;
         border: 0;
         padding: 0;
+        position: relative;
+        min-width: inherit;
+
+        .text-button {
+          display: inline-flex;
+          align-items: center;
+        }
+
+        svg {
+          fill: #aa141c;
+          opacity: 0;
+          visibilty: hidden;
+          transition: all 0.25s ease-in-out;
+          position: absolute;
+          right: 0;
+          top: 52%;
+          transform: translateY(-49%);
+          margin: 0;
+        }
 
         &:hover {
           color: #aa141c;
+          padding-right: 18px;
+  
+          svg {
+            opacity: 1;
+            visibilty: visible;
+          }
         }
       }
     }
@@ -800,13 +900,18 @@ export const Dashboard = styled(DashBoard)`
   font-weight: 500;
 
   @media (max-width: 767px) {
-    min-width: 500px;
+    min-width: 510px;
   }
 
   th {
     text-align: left;
     color: #7474A9;
     text-transform: capitalize;
+
+    a {
+      color: #7474A9;
+      text-decoration: none;
+    }
   }
 
   th, td {
@@ -888,6 +993,12 @@ export const Dashboard = styled(DashBoard)`
       padding: 3px 8px;
       background: #D9FADD;
       margin: 0 0 0 5px;
+
+      svg {
+        width: 6px;
+        height: 6px;
+        margin: 0 0 0 3px;
+      }
     }
   }
 
@@ -968,31 +1079,78 @@ export const Dashboard = styled(DashBoard)`
         line-height: 13px;
         color: #1E1E2D;
         font-weight: 700;
+        display: none;
       }
 
       .receipeStatus {
         font-size: 12px;
         line-height: 16px;
         color: #86909C;
+        display: flex;
+        align-items: center;
 
         span {
-          font-size: 8px;
+          font-size: 10px;
+          line-height: 12px;
           color: #0E8521;
           background: #D9FADD;
           border-radius: 10px;
-          padding: 1px 5px 3px;
+          padding: 2px 6px 4px;
+          display: flex;
+          align-items: center;
+          margin-left: 7px;
+
+          svg {
+            width: 6px;
+            height: 6px;
+            margin-left: 3px;
+          }
         }
       }
     }
   }
 }
 
-.dotsDrop {
-  min-width: 20px;
-  text-align: center;
-  
+.weeklyReset {
+  background: #EFF3FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 -20px -20px;
+  padding: 12px 15px;
+  color: #7474A9;
+
   svg {
-    margin: 0 0 0 auto;
+    margin: 0 5px 0 0;
+  }
+
+  span {
+    color: #2B5CFD;
+    padding: 0 0 0 6px;
+  }
+}
+
+.dotsDrop {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+
+  svg {
+    transition: all 0.25s ease-in-out;
+  }
+
+  &:hover {
+    background: #F3F3F3;
+  
+    svg {
+      transform: rotate(90deg);
+    }
   }
 }
 `

@@ -52,7 +52,6 @@ function ProfileTaskModel({
     <Modal
       className={`modal-popups ${className}`}
       isOpen={isOpenModel}
-      title={<span className="title-holder">Task</span>}
       showFooter={false}
       showHeader={true}
       onClose={handleClose}
@@ -61,4 +60,8 @@ function ProfileTaskModel({
     </Modal>
   )
 }
-export default styled(ProfileTaskModel)``
+export default styled(ProfileTaskModel)`
+  .profileStatusModal {
+    padding-bottom: 10px;
+  }
+`

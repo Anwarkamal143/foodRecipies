@@ -8,24 +8,20 @@ import "slick-carousel/slick/slick.css"
 import styled from "styled-components"
 import { Modal } from "."
 import { Image } from "./Image"
-
 interface Props {
   className?: string
 }
-
 const AttachmentsPreviewModel: React.FC<Props> = props => {
   const { className } = props
   const dispatch = useAppDispatch()
   const [activeSlide, setActiveSlide] = useState(0)
   const [endStories, setEndStories] = useState(false)
   const sliderRef = useRef(null)
-
   const {
     isOpen,
     attachments: { items = [], active = null },
   } = useAppSelector(state => state?.slider)
   const [isOpenModal, setIsOpenModal] = useState(isOpen)
-
   useEffect(() => {
     const index = items.findIndex(f => f.path === active?.path)
     if (index !== -1) {
@@ -35,9 +31,8 @@ const AttachmentsPreviewModel: React.FC<Props> = props => {
     }
     return () => {}
   }, [active])
-
   const settingsMain = {
-    // slidesToShow: 3,
+    slidesToShow: 3,
     slidesToScroll: 1,
     // fade: true,
     // variableWidth: true,
@@ -45,7 +40,7 @@ const AttachmentsPreviewModel: React.FC<Props> = props => {
     // asNavFor: ".slider-nav",
     centerMode: true,
     variableWidth: true,
-    infinite: false,
+    infinite: true,
     className: "center",
     centerPadding: "60px",
     // adaptiveHeight: true,
@@ -57,10 +52,6 @@ const AttachmentsPreviewModel: React.FC<Props> = props => {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
-          infinite: false,
-          dots: false,
-          variableWidth: true,
-          centerMode: true,
         },
       },
       {
@@ -68,7 +59,6 @@ const AttachmentsPreviewModel: React.FC<Props> = props => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          initialSlide: 0,
         },
       },
       {
@@ -76,30 +66,23 @@ const AttachmentsPreviewModel: React.FC<Props> = props => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          infinite: false,
         },
       },
     ],
-
     ...props,
   }
-
   const renderAttachments = () => {
     return items?.map((file: any, index) => {
-      console.log({ file })
-      console.log(index !== activeSlide)
-      if (activeSlide !== index) {
-        return (
-          <div className="slider_item image" key={file?.path || file?.url}>
-            {/* <ImgX src={`${file?.path || file?.url}`} width={"100%"} />; */}
-            <Image
-              src={`${file?.path || file?.url}`}
-              alt="alt"
-              key={file?.path || file?.url}
-            />
-          </div>
-        )
-      }
+      return (
+        <div className="slider_item image" key={file?.path || file?.url}>
+          {/* <ImgX src={`${file?.path || file?.url}`} width={"100%"} />; */}
+          <Image
+            src={`${file?.path || file?.url}`}
+            alt="alt"
+            key={file?.path || file?.url}
+          />
+        </div>
+      )
       // return (
       //   <>
       //     <Stories
@@ -181,18 +164,15 @@ const AttachmentsPreviewModel: React.FC<Props> = props => {
     dispatch(toggleSlider(false))
     dispatch(setSliderAttachments({ items: [], active: null }))
   }
-
   return (
     <Modal
       isOpen={isOpen}
       onClose={handleClose}
       showFooter={false}
       showHeader={true}
-      title={"asdsadsdsd asd "}
       className={`${className}`}
     >
       <div className="slider_container">
-        <span onClick={handleClose}>X</span>
         {/* <Slider {...settings}>{renderAttachments()}</Slider> */}
         <Slider
           {...settingsMain}
@@ -206,7 +186,6 @@ const AttachmentsPreviewModel: React.FC<Props> = props => {
               const item = document
                 .querySelector(".slick-active .slider_item.audio")
                 ?.getElementsByTagName("audio")[0]
-
               item?.pause()
             } catch (error) {
               console.log(error)
@@ -229,80 +208,95 @@ const AttachmentsPreviewModel: React.FC<Props> = props => {
     </Modal>
   )
 }
-
 export const PreviewSlider = styled(AttachmentsPreviewModel)`
   width: 100%;
   max-width: inherit !important;
   margin: 0;
   background: #1a1a1a;
-
-  .modal-content {
-    border-radius: 0;
-    background: none;
-    padding: 0;
-  }
-
-  .modal-header {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-
-    .modal-title {
-      color: #fff;
+  &.modal-dialog {
+    .modal-content {
+      border-radius: 0;
+      background: none;
+      padding: 0;
+      max-height: inherit;
+      overflow: visible;
     }
-
-    .close {
-      color: #fff;
-    }
-  }
-
-  .modal-body {
-    height: 100vh;
-  }
-
-  .slider_container {
-    height: 100%;
-  }
-
-  .slick-track {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-
-    .slick-slide {
-      width: 250px;
-      height: auto;
-      transition: all 300ms ease;
-
-      &.slick-current {
-        width: 375px;
-        transform: scale(1.5);
+    .modal-header {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      .modal-title {
+        color: #fff;
+      }
+      .close {
+        color: #fff;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        z-index: 99;
       }
     }
-  }
+    .modal-body {
+      height: 100vh;
+    }
+    .slider_container {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .slick-slide {
+      &.slick-center {
+        img,
+        video {
+          transform: scale(1);
+        }
+      }
 
-  .slick-prev,
-  .slick-next {
-    color: white;
-    z-index: 999;
-    width: 100px;
-  }
-  /* width: calc(100% - 127px); */
-
-  /* @media (max-width: 600px) {
-    width: 1480px;
-  } */
-
-  .slick-slider {
-    flex-grow: 0;
-    flex-basis: inherit;
-    width: 100%;
-  }
-
-  .slick-slide {
-    width: 300px;
-    padding: 0 7px;
-    /* width: 135px !important; */
+      img,
+      video {
+        transform: scale(0.7);
+        height: 90vh;
+        width: auto;
+        transition: all 0.4s ease;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+    }
+    /* .slick-track {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      .slick-slide {
+        width: 250px;
+        height: auto;
+        transition: all 300ms ease;
+        &.slick-current {
+          width: 375px;
+          transform: scale(1.5);
+        }
+      }
+    } */
+    .slick-prev,
+    .slick-next {
+      color: white;
+      z-index: 999;
+      width: 100px;
+    }
+    /* width: calc(100% - 127px); */
+    /* @media (max-width: 600px) {
+      width: 1480px;
+    } */
+    .slick-slider {
+      flex-grow: 0;
+      flex-basis: inherit;
+      width: 100%;
+    }
+    .slick-slide {
+      width: 300px;
+      padding: 0 7px;
+      /* width: 135px !important; */
+    }
   }
 `

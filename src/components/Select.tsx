@@ -174,6 +174,7 @@ export const Select = styled(RSelect)`
   .react-select__menu {
     margin: 0;
     z-index: 5;
+    font-size: 13px;
 
     &-list {
       padding: 0;
