@@ -178,11 +178,7 @@ export default styled(Model)`
   }
 
   .modal-header {
-    margin: 0 0 25px;
-
-    @media (max-width: 430px) {
-      margin: 0 0 15px;
-    }
+    margin: 0 0 10px;
 
     .close {
       font-size: 25px;

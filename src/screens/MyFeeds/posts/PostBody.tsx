@@ -1,6 +1,5 @@
 import { Icon, Image } from "@components"
 import { HeartIcon, Tag } from "@icons"
-import "photoswipe/dist/default-skin/default-skin.css"
 import "photoswipe/dist/photoswipe.css"
 import { useState } from "react"
 import { Gallery, Item } from "react-photoswipe-gallery"
@@ -93,8 +92,12 @@ const ImagesSlider = (props: ImagesProps) => {
                               onClick={open}
                             />
                             {index >= 2 && images[index + 1] && (
-                              <div className="image-counter-wrap" onClick={open} ref={ref}>
-                                <span className="image-counter" >{`${
+                              <div
+                                className="image-counter-wrap"
+                                onClick={open}
+                                ref={ref}
+                              >
+                                <span className="image-counter">{`${
                                   images.length - 3
                                 } More Photos`}</span>
                               </div>
