@@ -24,7 +24,7 @@ export function DropDown(props: IDropDownProps) {
         leaveFrom="transform scale-100 opacity-100"
         leaveTo="transform scale-95 opacity-0"
       >
-        <Menu.Items className="absolute z-10 py-4 origin-top-right bg-white shadow-lg -right-3 w-52 rounded-xl ring-1 ring-black ring-opacity-5 focus:outline-none md:right-0 sortByFilterDrop">
+        <Menu.Items className="absolute z-10 origin-top-right bg-white shadow-lg -right-3 w-52 rounded-xl ring-1 ring-black ring-opacity-5 focus:outline-none md:right-0 sortByFilterDrop">
           {items.map((item, i) => {
             return (
               <Menu.Item key={i}>

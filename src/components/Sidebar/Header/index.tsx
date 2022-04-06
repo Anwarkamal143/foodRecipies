@@ -35,8 +35,8 @@ const Header = ({
     <div className="ml-auto">
       <DropDown
         items={[
-          { id: 1, name: "Omer E", status: "Founder Cook", role: "cook" },
-          { id: 1, name: "Javed M", status: "Admin Cook", role: "admin" },
+          { id: 1, name: "Omer E", status: "Cook Account", role: "cook" },
+          { id: 1, name: "Javed M", status: "User Account", role: "admin" },
         ]}
         renderItem={({ item, isActive, onClick }) => {
           return (
@@ -47,7 +47,7 @@ const Header = ({
               }}
             >
               {item.name}
-              <span>{item.role}</span>
+              <span className="user-status">{item.status}</span>
             </DropDownItem>
           )
         }}

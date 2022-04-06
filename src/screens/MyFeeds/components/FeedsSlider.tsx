@@ -205,9 +205,19 @@ export const FeedsSlider = styled(Sliderr)`
     width: 100%;
   }
 
+  .image-comp {
+    transition: all 0.4s ease;
+  }
+
   .slick-slide {
     width: 134px;
     padding: 0 7px;
     /* width: 135px !important; */
+
+    &:hover {
+      .image-comp {
+        transform: scale(1.05);
+      }
+    }
   }
 `

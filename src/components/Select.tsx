@@ -1,16 +1,16 @@
 // import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons"
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import classNames from "classnames";
-import React, { CSSProperties } from "react";
+import classNames from "classnames"
+import React, { CSSProperties } from "react"
 import SelectComponent, {
   ActionMeta,
   GroupedOptionsType,
   NamedProps,
   OptionsType,
   OptionTypeBase,
-  ValueType
-} from "react-select";
-import styled from "styled-components";
+  ValueType,
+} from "react-select"
+import styled from "styled-components"
 
 export interface SelectProps<
   OptionType extends OptionTypeBase = { label: string; value: string },
@@ -174,13 +174,14 @@ export const Select = styled(RSelect)`
   .react-select__menu {
     margin: 0;
     z-index: 5;
-    font-size: 13px;
+    font-size: 10px;
 
     &-list {
       padding: 0;
     }
 
     .react-select__option {
+      padding: 5px 12px;
       &.react-select__option--is-focused,
       &.react-select__option--is-selected {
         background: #255b87;
@@ -191,6 +192,11 @@ export const Select = styled(RSelect)`
         }
       }
     }
+  }
+
+  .react-select__input {
+    outline: none !important;
+    box-shadow: none !important;
   }
 
   .react-select__control {

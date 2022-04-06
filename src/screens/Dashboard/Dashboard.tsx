@@ -7,7 +7,7 @@ import {
   EyeIcon,
   Save,
   Star,
-  StatusUp
+  StatusUp,
 } from "@icons"
 import { DashboardLayout } from "@layouts/Dashboard/DashboardLayout"
 import { FormatNumber } from "@utils"
@@ -22,7 +22,7 @@ import {
   ResponsiveContainer,
   Tooltip,
   XAxis,
-  YAxis
+  YAxis,
 } from "recharts"
 import styled from "styled-components"
 import { chartData, data, LineChartData } from "../../../data"
@@ -37,7 +37,7 @@ import {
   ProfileperformanceWrapper,
   RightMyRecipiesSection,
   RightPerformanceSection,
-  StatisticsWrapper
+  StatisticsWrapper,
 } from "./dashboard.styed"
 
 const dateFormatter = (item: Date) => dayjs(item).format("MMM YY")
@@ -208,7 +208,10 @@ const DashBoard = ({ className }: { className?: string }) => {
                   <span className="addRecipeButtonText">Add Recipe</span>
                 </a>
               </div>
-              <Button className="buttonText"> View All My Recipes <AngleRight /></Button>
+              <Button className="buttonText">
+                {" "}
+                View All My Recipes <AngleRight />
+              </Button>
             </div>
             <RecipiesTable />
           </LeftMyRecipiesSection>
@@ -414,6 +417,13 @@ export const Dashboard = styled(DashBoard)`
         path {
           fill: #E0464D !important;
           stroke: #E0464D !important;;
+        }
+      }
+
+      &:nth-child(4) {
+        path {
+          fill: #E0464D !important;
+          stroke: #E0464D !important;
         }
       }
 
@@ -687,6 +697,7 @@ export const Dashboard = styled(DashBoard)`
         line-height: 20px;
         padding: 2px 15px;
         cursor: pointer;
+        white-space: nowrap;
         transition: all 0.25s ease-in-out;
 
         @media (max-width: 1199px) {
@@ -694,8 +705,7 @@ export const Dashboard = styled(DashBoard)`
         }
 
         &:hover {
-          border-color: #c0d0f5;
-          background: #c0d0f5;
+          border-color: #e0464d;
         }
       }
     }
@@ -924,6 +934,13 @@ export const Dashboard = styled(DashBoard)`
     @media (max-width: 1199px) {
       padding: 10px 7px;
     }
+
+    &:nth-child(4),
+    &:nth-child(5) {
+      @media (max-width: 767px) {
+        display: none !important;
+      }
+    }
   }
 
   .statusText {
@@ -1062,8 +1079,8 @@ export const Dashboard = styled(DashBoard)`
     }
 
     .recipename {
-      font-size: 15px;
-      line-height: 20px;
+      font-size: 13px;
+      line-height: 17px;
       color: #1E1E2D;
       display: block;
       margin: 0 0 5px;
@@ -1088,6 +1105,12 @@ export const Dashboard = styled(DashBoard)`
         color: #86909C;
         display: flex;
         align-items: center;
+
+        a {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+        }
 
         span {
           font-size: 10px;

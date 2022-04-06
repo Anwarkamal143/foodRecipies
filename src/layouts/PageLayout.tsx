@@ -80,7 +80,7 @@ export const PageLayoutWrapper = styled.div<{ variant?: string }>`
       width: 100%;
       margin: 0 0 10px;
     }
-    
+
     .sortByFilterlbl {
       font-size: 12px;
       color: #7474a9;
@@ -117,7 +117,7 @@ export const PageLayoutWrapper = styled.div<{ variant?: string }>`
       }
     }
   }
-  
+
   .postFeed.feedsWidget {
     border-radius: 20px;
     border-color: #f2f3f5;

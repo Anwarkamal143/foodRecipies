@@ -24,7 +24,7 @@ function Profilesteps({ src = "", alt = "", className = "" }) {
           className="circleimages"
           value={15}
         >
-          <div onClick={onOpenModel}>
+          <div onClick={onOpenModel} className="cursor-hand">
             <CircleDefaultImage
               className="circleimg"
               src="/images/profile-img.png"
@@ -41,7 +41,12 @@ function Profilesteps({ src = "", alt = "", className = "" }) {
         </div>
       </LeftSide>
       <RightSide className="userProfileProgresStatus">
-        <p className="userProfileProgreTitle">15% Tasks Completed</p>
+        <p className="userProfileProgreTitle">
+          <span onClick={onOpenModel} className="cursor-hand">
+            15%
+          </span>{" "}
+          Tasks Completed
+        </p>
         <ProgressBar
           showPrgress={false}
           progresspercent={20}
@@ -138,5 +143,9 @@ export const ProfileSteps = styled(Profilesteps)`
   .userProfileProgreTitle {
     text-align: right;
     margin: 0 0 6px;
+  }
+
+  .cursor-hand {
+    cursor: pointer;
   }
 `

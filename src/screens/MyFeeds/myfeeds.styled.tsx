@@ -13,6 +13,8 @@ export const LeftContainer = styled.div`
   /* width: 70%; */
   padding: 0 30px 0 10px;
   width: calc(100% - 297px);
+  max-width: 1000px;
+  margin: 0 auto;
 
   @media (max-width: 1199px) {
     width: calc(100% - 250px);

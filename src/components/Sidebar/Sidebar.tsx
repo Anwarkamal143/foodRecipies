@@ -101,6 +101,7 @@ export default styled(Sidebar)`
     .userWidgetText {
       flex-grow: 1;
       flex-basis: 0;
+      text-align: left;
 
       @media (max-width: 767px) {
         display: none;

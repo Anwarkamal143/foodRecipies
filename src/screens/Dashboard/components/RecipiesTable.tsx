@@ -58,31 +58,55 @@ function RecipiesTable() {
       <table className="table recipiesTable">
         <thead>
           <tr>
-            <th><a href="#">ID</a></th>
-            <th><a href="#">Name</a></th>
-            <th><a href="#">Status</a></th>
-            <th><a href="#">View</a></th>
-            <th><a href="#">Date</a></th>
+            <th>
+              <a href="#">ID</a>
+            </th>
+            <th>
+              <a href="#">Name</a>
+            </th>
+            <th>
+              <a href="#">Status</a>
+            </th>
+            <th>
+              <a href="#">View</a>
+            </th>
+            <th>
+              <a href="#">Date</a>
+            </th>
           </tr>
         </thead>
         <tbody>
           {tableData.map((items: any, index: any) => {
             return (
               <tr key={index}>
-                <td>{items.id}</td>
-                <td>{items.name}</td>
-                <td className={items.status}><span className="statusText">{items.status}</span></td>
+                <td>
+                  <a href="#">{items.id}</a>
+                </td>
+                <td>
+                  <a href="#">{items.name}</a>
+                </td>
+                <td className={items.status}>
+                  <a href="#">
+                    <span className="statusText">{items.status}</span>
+                  </a>
+                </td>
                 {items?.view?.map(m => {
                   return (
                     <>
                       <td className="view">
-                        <span className="ratings">{m.rateing}</span>
-                        <span  className="ratingsStatus">{m.downrate} <ProgressArrowUp /></span>
+                        <a href="#">
+                          <span className="ratings">{m.rateing}</span>
+                          <span className="ratingsStatus">
+                            {m.downrate} <ProgressArrowUp />
+                          </span>
+                        </a>
                       </td>
                     </>
                   )
                 })}
-                <td className="date">{items.date}</td>
+                <td className="date">
+                  <a href="#">{items.date}</a>
+                </td>
               </tr>
             )
           })}

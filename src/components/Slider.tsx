@@ -294,7 +294,8 @@ export const PreviewSlider = styled(AttachmentsPreviewModel)`
       width: 100%;
     }
     .slick-slide {
-      width: 300px;
+      width: 100%;
+      max-width: 500px;
       padding: 0 7px;
       /* width: 135px !important; */
     }

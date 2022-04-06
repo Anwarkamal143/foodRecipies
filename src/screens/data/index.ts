@@ -58,7 +58,7 @@ export const RECEPESITEMS = [
     name: "Greek salad",
     rating: 4.5,
     views: 380,
-    status: "up",
+    status: "20",
   },
   {
     _id: setItemId(),
@@ -66,7 +66,7 @@ export const RECEPESITEMS = [
     name: "Greek salad",
     rating: 4.5,
     views: 380,
-    status: "up",
+    status: "10",
   },
   {
     _id: setItemId(),
@@ -74,7 +74,7 @@ export const RECEPESITEMS = [
     name: "Greek salad",
     rating: 4.5,
     views: 380,
-    status: "up",
+    status: "15",
   },
   {
     _id: setItemId(),
@@ -82,7 +82,7 @@ export const RECEPESITEMS = [
     name: "Greek salad",
     rating: 4.5,
     views: 380,
-    status: "up",
+    status: "20",
   },
   {
     _id: setItemId(),
@@ -90,6 +90,6 @@ export const RECEPESITEMS = [
     name: "Greek salad",
     rating: 4.5,
     views: 380,
-    status: "up",
+    status: "24",
   },
 ]
