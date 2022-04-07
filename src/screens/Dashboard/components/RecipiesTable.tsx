@@ -252,6 +252,8 @@ function RecipiesTable() {
         current={currentPage}
         total={tableData.length}
         showPrevNextJumpers={true}
+        nextIcon="Next"
+        prevIcon="Previous"
       />
     </div>
   )
