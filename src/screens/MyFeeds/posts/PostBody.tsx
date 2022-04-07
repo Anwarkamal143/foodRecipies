@@ -1,10 +1,13 @@
 import { Icon, Image } from "@components"
-import { HeartIcon, Tag } from "@icons"
+import { Tag } from "@icons"
+import "photoswipe/dist/default-skin/default-skin.css"
 import "photoswipe/dist/photoswipe.css"
 import { useState } from "react"
 import { Gallery, Item } from "react-photoswipe-gallery"
 import styled from "styled-components"
+import HeartIconAnimate from "../../../assets/icons/HeartIcon"
 import { IPostType } from "./Posts"
+
 type IMyFeedProps = {
   className?: string
   //   title?: ReactChild | ReactChildren | ReactNode | ReactElement | HTMLElement
@@ -52,19 +55,7 @@ const ImagesSlider = (props: ImagesProps) => {
             </span>
           </Icon>
           <Icon className="heartIcon">
-            <HeartIcon
-              fill={post.liked ? "red" : "none"}
-              {...(post.liked ? { stroke: "red" } : {})}
-              // stroke={post.liked ? "red" : "lightgray"}
-              onClick={() => {
-                const newPost: IPostType = {
-                  ...post,
-                  likes: post.likes - 1 < 0 ? 0 : post.likes - 1,
-                  liked: post.likes - 1 < 0 ? post.liked : !post.liked,
-                }
-                onSubmit?.(newPost)
-              }}
-            />
+            <HeartIconAnimate />
           </Icon>
         </div>
         <div className="scrollslides">
