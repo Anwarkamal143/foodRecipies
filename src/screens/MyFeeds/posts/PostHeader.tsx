@@ -44,7 +44,7 @@ function PostHeader(props: IMyFeedProps) {
           </span>
         </div>
         <Button
-          className="buttonFollow"
+          className={`buttonFollow ${person.followed ? "unfollow" : "follow"}`}
           shape="circle"
           size="small"
           onClick={() => {
@@ -217,6 +217,11 @@ export default styled(PostHeader)`
 
     @media (max-width: 767px) {
       margin-left: auto;
+    }
+
+    &.unfollow {
+      background: #999;
+      border-color: #999;
     }
 
     &:hover {

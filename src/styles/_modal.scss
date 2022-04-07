@@ -215,6 +215,10 @@
   overflow: scroll;
 }
 
+.pswp__bg {
+  background: rgba(0, 0, 0, 0.9) !important;
+}
+
 @media (min-width: 576px) {
   .modal-dialog {
     max-width: 500px;

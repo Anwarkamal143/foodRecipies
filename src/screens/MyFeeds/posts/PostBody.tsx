@@ -134,7 +134,11 @@ const ImgSlides = styled(ImagesSlider)`
       display: flex;
       justify-content: center;
       align-items: center;
-      border-radius: 100%;
+      border-radius: 6px;
+
+      &:hover {
+        background: #feeef3;
+      }
     }
   }
 
@@ -256,10 +260,10 @@ export default styled(PostBody)`
       color: #fff;
       border: 0;
       border-radius: 25px;
-      height: 42px;
+      height: 36px;
       font-size: 14px;
       line-height: 20px;
-      padding: 5px 15px;
+      padding: 5px 10px;
       font-weight: 600;
 
       span {
@@ -268,7 +272,7 @@ export default styled(PostBody)`
 
         svg {
           fill: #fff;
-          margin: 0 10px 0 0;
+          margin: 0 5px 0 0;
         }
       }
     }
