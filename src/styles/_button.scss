@@ -134,6 +134,52 @@
   color: #fff;
 }
 
+.pswp__top-bar {
+  color: #fff;
+  padding: 5px;
+}
+
+.pswp__button--arrow--right,
+.pswp__button--arrow--left {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translate(0, -50%) rotate(-135deg);
+  width: 30px;
+  height: 30px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+}
+
+.pswp__button--arrow--right {
+  transform: translate(0, -50%) rotate(45deg);
+  left: auto;
+  right: 15px;
+}
+.pswp__button--close {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+
+  &:after,
+  &:before {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 10px;
+    content: "";
+    transform: rotate(45deg);
+    height: 2px;
+    background: #fff;
+  }
+
+  &:after {
+    transform: rotate(-45deg);
+  }
+}
+
 @media (max-width: 767px) {
   .btn {
     font-size: 16px;

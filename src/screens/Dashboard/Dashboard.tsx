@@ -397,15 +397,34 @@ export const Dashboard = styled(DashBoard)`
     color: #7474A9;
     justify-content: space-between;
     text-align: center;
+    max-width: 170px;
+    margin: 0 0 0 auto;
+
+    @media (max-width: 1023px) {
+      margin: 0 auto;
+    }
 
     li {
       width: 14px;
-      margin: 0 5px;
+      margin: 0 4px;
+      
+      &:hover {
+        .bar {
+          background: #E0464D;
+          box-shadow: 0 0 4px rgba(224, 70, 77, 0.6)
+        }
+      }
     }
 
     .bar {
       background: #E6ECF5;
       border-radius: 2px;
+      margin: 0 0 5px;
+
+      &.active {
+        background: #E0464D;
+        box-shadow: 0 0 4px rgba(224, 70, 77, 0.6)
+      }
     }
   }
 
@@ -950,6 +969,62 @@ export const Dashboard = styled(DashBoard)`
   @media (max-width: 767px) {
     overflow: auto;
     margin: 0 0 5px;
+  }
+
+  .rc-pagination {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 12px;
+    line-height: 15px;
+    padding: 30px 0 0;
+
+    li {
+      margin: 0 5px;
+
+      &.rc-pagination-prev,
+      &.rc-pagination-next {
+        height: 30px;
+        border: 1px solid #F2F3F5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 10px;
+        cursor: pointer;
+        transition: all 0.4s ease;
+
+        &:hover {
+          background: #e0464d;
+          color: #fff;
+          border-color: #e0464d;
+        }
+      }
+
+      &.rc-pagination-item-active {
+        a {
+          background: #e0464d;
+          color: #fff;
+          border-color: #e0464d;
+        }
+      }
+    }
+
+    a {
+      width: 30px;
+      height: 30px;
+      border: 1px solid #F2F3F5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.4s ease;
+
+      &:hover{
+        background: #e0464d;
+        color: #fff;
+        border-color: #e0464d;
+      }
+    }
   }
 }
 

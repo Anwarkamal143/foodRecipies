@@ -73,27 +73,30 @@ function ProfileComponent(props: IProfileProps) {
                 </ProfileDropDown>
               </ProfileActionWrapper>
             </ProfileWrapperHover>
-
-            <HoverDiv>
-              <Image className="userProfileImage" src={u.src} alt={u.name} />
-              <ProfileUserName className="userProfileStatus">
-                {u.username}{" "}
-              </ProfileUserName>
-              <div className="socialIcons">
-                <Icon className="socialIconsItem">
-                  <FacebookIcon />
-                </Icon>
-                <Icon className="socialIconsItem">
-                  <YoutubeIcon />
-                </Icon>
-                <Icon className="socialIconsItem">
-                  <TwitterIcon />
-                </Icon>
-                <Icon className="socialIconsItem">
-                  <InstagramIcon />
-                </Icon>
+            <div className="user-hover-block">
+              <div className="image-holder">
+                <Image className="userProfileImage" src={u.src} alt={u.name} />
               </div>
-            </HoverDiv>
+              <div className="user-detail-area">
+                <ProfileUserName className="userProfileStatus">
+                  {u.username}{" "}
+                </ProfileUserName>
+                <div className="socialIcons">
+                  <Icon className="socialIconsItem facebook">
+                    <FacebookIcon />
+                  </Icon>
+                  <Icon className="socialIconsItem youtube">
+                    <YoutubeIcon />
+                  </Icon>
+                  <Icon className="socialIconsItem twitter">
+                    <TwitterIcon />
+                  </Icon>
+                  <Icon className="socialIconsItem instagram">
+                    <InstagramIcon />
+                  </Icon>
+                </div>
+              </div>
+            </div>
           </ProfileWrapper>
         )
       })}

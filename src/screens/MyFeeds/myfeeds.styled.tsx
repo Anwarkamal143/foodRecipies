@@ -47,6 +47,59 @@ export const RightContainer = styled.div`
   }
 `
 export const StoriesWrapper = styled.div``
+export const FeedsWidget = styled.div`
+  border: 1px solid #f2f3f5;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+  margin: 0 0 20px;
+  padding: 5px;
+  font-size: 14px;
+  line-height: 16px;
+
+  .head {
+    position: relative;
+    padding: 0 30px 0 35px;
+    margin: 0 0 5px;
+
+    .img-icon {
+      position: absolute;
+      left: 10px;
+      top: 0;
+      width: 15px;
+
+      svg,
+      img {
+        width: 100%;
+        height: auto;
+        vertical-align: top;
+      }
+    }
+  }
+
+  .content {
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 15px;
+    transition: all 0.4s ease;
+
+    &:hover {
+      background: #f8f8f8;
+    }
+  }
+
+  .close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #f2f3f5;
+    border-radius: 100%;
+    text-align: center;
+    font-size: 12px;
+    line-height: 18px;
+    cursor: pointer;
+  }
+`
 
 export const MainContentWrapper = styled.div``
 export const SlidertWrapper = styled.div`

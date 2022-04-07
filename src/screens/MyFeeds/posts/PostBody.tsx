@@ -1,5 +1,6 @@
+import HeartIconAnimtaed from "@assets/icons/HeartIconAnimtaed"
 import { Icon, Image } from "@components"
-import { HeartIcon, Tag } from "@icons"
+import { Tag } from "@icons"
 import "photoswipe/dist/photoswipe.css"
 import { useState } from "react"
 import { Gallery, Item } from "react-photoswipe-gallery"
@@ -52,19 +53,7 @@ const ImagesSlider = (props: ImagesProps) => {
             </span>
           </Icon>
           <Icon className="heartIcon">
-            <HeartIcon
-              fill={post.liked ? "red" : "none"}
-              {...(post.liked ? { stroke: "red" } : {})}
-              // stroke={post.liked ? "red" : "lightgray"}
-              onClick={() => {
-                const newPost: IPostType = {
-                  ...post,
-                  likes: post.likes - 1 < 0 ? 0 : post.likes - 1,
-                  liked: post.likes - 1 < 0 ? post.liked : !post.liked,
-                }
-                onSubmit?.(newPost)
-              }}
-            />
+            <HeartIconAnimtaed />
           </Icon>
         </div>
         <div className="scrollslides">
@@ -221,6 +210,10 @@ export default styled(PostBody)`
     border-radius: 20px;
     overflow: hidden;
 
+    @media (max-width: 767px) {
+      height: 250px;
+    }
+
     img {
       height: 100% !important;
       width: 100% !important;
@@ -229,8 +222,6 @@ export default styled(PostBody)`
   }
 
   .main-img {
-    overflow: hidden;
-
     .image-comp {
       overflow: hidden;
       border-radius: 15px;

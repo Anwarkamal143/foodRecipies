@@ -17,6 +17,7 @@ import { FeedsSlider } from "./components"
 import PostSliderForm from "./components/PostsFilters/PostSliderForm"
 import {
   FeedsContainer,
+  FeedsWidget,
   FilterSection,
   HeaderCooks,
   HeaderRightSide,
@@ -128,16 +129,20 @@ function MyFeeds(props: IMyFeedProps) {
         </LeftContainer>
         <RightContainer className="feedsMainColumn">
           {giftModal && (
-            <div className="birthday-reminder">
+            <FeedsWidget>
               <div className="head">
-                <FilterIcon />
-                <span>birthday</span>
-                <span onClick={() => setGiftModal(false)}>X</span>
+                <div className="img-icon">
+                  <FilterIcon />
+                </div>
+                <span className="title">Trending</span>
+                <span className="close" onClick={() => setGiftModal(false)}>
+                  X
+                </span>
               </div>
               <div className="content">
-                hamza and other have birthday today.
+                Patrick Kirk and 2 others posted trending recipes today.
               </div>
-            </div>
+            </FeedsWidget>
           )}
           <SuggestedCooksSection className="feedsColumn">
             <Card>

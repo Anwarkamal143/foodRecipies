@@ -154,8 +154,8 @@ export default styled(Card)`
     display: flex;
     align-items: center;
     border-radius: 10px;
+    position: relative;
 
-    
     .userProfileHolder {
       width: calc(100% - 20px);
       display: flex;
@@ -221,7 +221,7 @@ export default styled(Card)`
         background: #fff;
         padding-top: 8px !important;
         padding-bottom: 8px !important;
-        
+
         > div {
           padding: 6px 16px;
 
@@ -234,7 +234,117 @@ export default styled(Card)`
 
     &:hover {
       cursor: pointer;
-      background: rgba(0,0,0,0.04);
+      background: rgba(0, 0, 0, 0.04);
+
+      .user-hover-block {
+        opacity: 1;
+        visibility: visible;
+
+        @media (max-width: 767px) {
+          opacity: 0;
+          visibility: visible;
+        }
+      }
+    }
+  }
+  .user-hover-block {
+    position: absolute;
+    right: 100%;
+    width: 220px;
+    background: #fff;
+    border: 1px solid #f2f3f5;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+
+    .image-holder {
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+
+      .userProfileImageWrap {
+        width: 100%;
+        height: 100%;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .user-detail-area {
+      flex-grow: 1;
+      flex-basis: 0;
+      min-width: 0;
+      padding: 0 0 0 10px;
+    }
+
+    .userProfileStatus {
+      color: #000;
+      margin: 0 0 8px;
+      font-weight: 700;
+    }
+
+    .socialIcons {
+      display: flex;
+
+      @media (max-width: 767px) {
+        width: 100%;
+      }
+
+      .socialIconsItem {
+        transition: all 0.25s ease-in-out;
+
+        svg {
+          transition: all 0.25s ease-in-out;
+        }
+
+        &:hover {
+          background: #e0464d;
+          border-color: #e0464d;
+
+          svg {
+            path {
+              fill: #fff;
+            }
+          }
+        }
+
+        &.facebook {
+          &:hover {
+            background: #3b5998;
+            border-color: #3b5998;
+          }
+        }
+
+        &.youtube {
+          &:hover {
+            background: #f00;
+            border-color: #f00;
+          }
+        }
+
+        &.twitter {
+          &:hover {
+            background: #1da1f2;
+            border-color: #1da1f2;
+          }
+        }
+
+        &.instagram {
+          &:hover {
+            background: #c13584;
+            border-color: #c13584;
+          }
+        }
+      }
     }
   }
 `

@@ -3,7 +3,7 @@ import styled from "styled-components"
 type IType = {
   className?: string
 }
-function HeartIcon({ className }: IType) {
+function HeartIconAnimtaed({ className }: IType) {
   const [like, setLikes] = useState(0)
   const [active, setActive] = useState(false)
   useEffect(() => {
@@ -37,7 +37,7 @@ function HeartIcon({ className }: IType) {
     </div>
   )
 }
-export default styled(HeartIcon)`
+export default styled(HeartIconAnimtaed)`
   &.like {
     position: relative;
     cursor: pointer;
@@ -48,6 +48,7 @@ export default styled(HeartIcon)`
     align-items: center;
     border-radius: 12px;
     transition: all 0.3s ease;
+    margin: -4px 0 0;
 
     &::after {
       z-index: -2;
@@ -63,6 +64,9 @@ export default styled(HeartIcon)`
 
     svg {
       transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+      z-index: 3;
+
       path {
         transition: all 0.2s ease;
       }

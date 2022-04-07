@@ -259,4 +259,8 @@ function RecipiesTable() {
   )
 }
 
-export default styled(RecipiesTable)``
+export default styled(RecipiesTable)`
+  .rc-pagination {
+    display: none;
+  }
+`
