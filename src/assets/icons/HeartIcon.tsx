@@ -3,7 +3,7 @@ import styled from "styled-components"
 type IType = {
   className?: string
 }
-function HeartIcon({ className }: IType) {
+function HeartIconAnimate({ className }: IType) {
   const [like, setLikes] = useState(0)
   const [active, setActive] = useState(false)
   useEffect(() => {
@@ -37,7 +37,7 @@ function HeartIcon({ className }: IType) {
     </div>
   )
 }
-export default styled(HeartIcon)`
+export default styled(HeartIconAnimate)`
   &.like {
     position: relative;
     cursor: pointer;
