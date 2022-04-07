@@ -1,7 +1,130 @@
 import { ProgressArrowUp } from "@icons"
+import cloneDeep from "lodash/cloneDeep"
+import Pagination from "rc-pagination"
 import React from "react"
 import styled from "styled-components"
+
 const tableData = [
+  {
+    id: "#89325",
+    status: "live",
+    name: "Organic Vegetable with peas and chicken",
+    view: [
+      {
+        rateing: "150",
+        downrate: "20",
+      },
+    ],
+    date: "02-1-2313",
+  },
+  {
+    id: "#89325",
+    status: "Draft",
+    name: "Organic Vegetable with peas and chicken",
+    view: [
+      {
+        rateing: "150",
+        downrate: "20",
+      },
+    ],
+    date: "02-1-2313",
+  },
+  {
+    id: "#89325",
+    status: "Scheduled",
+    name: "Organic Vegetable with peas and chicken",
+    view: [
+      {
+        rateing: "150",
+        downrate: "20",
+      },
+    ],
+    date: "02-1-2313",
+  },
+  {
+    id: "#89325",
+    status: "live",
+    name: "Organic Vegetable with peas and chicken",
+    view: [
+      {
+        rateing: "150",
+        downrate: "20",
+      },
+    ],
+    date: "02-1-2313",
+  },
+  {
+    id: "#89325",
+    status: "live",
+    name: "Organic Vegetable with peas and chicken",
+    view: [
+      {
+        rateing: "150",
+        downrate: "20",
+      },
+    ],
+    date: "02-1-2313",
+  },
+  {
+    id: "#89325",
+    status: "Draft",
+    name: "Organic Vegetable with peas and chicken",
+    view: [
+      {
+        rateing: "150",
+        downrate: "20",
+      },
+    ],
+    date: "02-1-2313",
+  },
+  {
+    id: "#89325",
+    status: "Scheduled",
+    name: "Organic Vegetable with peas and chicken",
+    view: [
+      {
+        rateing: "150",
+        downrate: "20",
+      },
+    ],
+    date: "02-1-2313",
+  },
+  {
+    id: "#89325",
+    status: "live",
+    name: "Organic Vegetable with peas and chicken",
+    view: [
+      {
+        rateing: "150",
+        downrate: "20",
+      },
+    ],
+    date: "02-1-2313",
+  },
+  {
+    id: "#89325",
+    status: "Draft",
+    name: "Organic Vegetable with peas and chicken",
+    view: [
+      {
+        rateing: "150",
+        downrate: "20",
+      },
+    ],
+    date: "02-1-2313",
+  },
+  {
+    id: "#89325",
+    status: "Scheduled",
+    name: "Organic Vegetable with peas and chicken",
+    view: [
+      {
+        rateing: "150",
+        downrate: "20",
+      },
+    ],
+    date: "02-1-2313",
+  },
   {
     id: "#89325",
     status: "live",
@@ -53,6 +176,17 @@ const tableData = [
 ]
 
 function RecipiesTable() {
+  const countPerPage = 10
+  const [currentPage, setCurrentPage] = React.useState(1)
+  const [collection, setCollection] = React.useState(
+    cloneDeep(tableData.slice(0, countPerPage))
+  )
+  const updatePage = p => {
+    setCurrentPage(p)
+    const to = countPerPage * p
+    const from = to - countPerPage
+    setCollection(cloneDeep(tableData.slice(from, to)))
+  }
   return (
     <div className="recipiesTableParent">
       <table className="table recipiesTable">
@@ -76,7 +210,7 @@ function RecipiesTable() {
           </tr>
         </thead>
         <tbody>
-          {tableData.map((items: any, index: any) => {
+          {collection.map((items: any, index: any) => {
             return (
               <tr key={index}>
                 <td>
@@ -112,6 +246,13 @@ function RecipiesTable() {
           })}
         </tbody>
       </table>
+      <Pagination
+        pageSize={countPerPage}
+        onChange={updatePage}
+        current={currentPage}
+        total={tableData.length}
+        showPrevNextJumpers={true}
+      />
     </div>
   )
 }

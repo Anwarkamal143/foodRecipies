@@ -37,6 +37,7 @@ type IMyFeedProps = {
 function MyFeeds(props: IMyFeedProps) {
   const { className, onSubmit } = props
   const [posts, setPosts] = useState([...POSTSDATA])
+  const [giftModal, setGiftModal] = useState(true)
   const {
     values,
     handleSubmit,
@@ -126,6 +127,18 @@ function MyFeeds(props: IMyFeedProps) {
           ))}
         </LeftContainer>
         <RightContainer className="feedsMainColumn">
+          {giftModal && (
+            <div className="birthday-reminder">
+              <div className="head">
+                <FilterIcon />
+                <span>birthday</span>
+                <span onClick={() => setGiftModal(false)}>X</span>
+              </div>
+              <div className="content">
+                hamza and other have birthday today.
+              </div>
+            </div>
+          )}
           <SuggestedCooksSection className="feedsColumn">
             <Card>
               <Card.Body>
