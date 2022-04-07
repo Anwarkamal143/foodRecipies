@@ -14,8 +14,6 @@ import { FormatNumber } from "@utils"
 import dayjs from "dayjs"
 import React from "react"
 import {
-  Bar,
-  BarChart,
   CartesianGrid,
   Line,
   LineChart,
@@ -25,7 +23,7 @@ import {
   YAxis,
 } from "recharts"
 import styled from "styled-components"
-import { chartData, data, LineChartData } from "../../../data"
+import { data, LineChartData } from "../../../data"
 import { RECEPESITEMS } from "../data"
 import { CardHeader, PerformanceBar, StatisticsItem } from "./components"
 import { PerformingRecipe } from "./components/Recipies"
@@ -55,18 +53,50 @@ const DashBoard = ({ className }: { className?: string }) => {
               trandingCount={item.trandingCount}
             />
           ))}
-          <ResponsiveContainer
+          <div className="dashboardStatisticsGraph">
+            <ul className="list-stats-graph">
+              <li>
+                <div className="bar" style={{ height: 28 }}></div>
+                <div className="day">M</div>
+              </li>
+              <li>
+                <div className="bar" style={{ height: 49 }}></div>
+                <div className="day">T</div>
+              </li>
+              <li>
+                <div className="bar" style={{ height: 40 }}></div>
+                <div className="day">W</div>
+              </li>
+              <li>
+                <div className="bar active" style={{ height: 57 }}></div>
+                <div className="day">T</div>
+              </li>
+              <li>
+                <div className="bar" style={{ height: 38 }}></div>
+                <div className="day">F</div>
+              </li>
+              <li>
+                <div className="bar" style={{ height: 17 }}></div>
+                <div className="day">S</div>
+              </li>
+              <li>
+                <div className="bar" style={{ height: 28 }}></div>
+                <div className="day">S</div>
+              </li>
+            </ul>
+          </div>
+          {/* <ResponsiveContainer
             width="100%"
             height={75}
             className="dashboardStatisticsGraph"
           >
             <BarChart data={chartData}>
               <XAxis dataKey="day" strokeOpacity={0} />
-              {/* <YAxis /> */}
+              <YAxis />
               <Tooltip wrapperStyle={{ backgroundColor: "red" }} />
               <Bar dataKey="count" strokeLinecap={"round"} fill="#E6ECF5" />
             </BarChart>
-          </ResponsiveContainer>
+          </ResponsiveContainer> */}
         </StatisticsWrapper>
         <ProfileperformanceWrapper className="dashboardPerformance">
           <LeftPerformanceSection className="dashboardPerformanceGraph">
@@ -355,6 +385,27 @@ export const Dashboard = styled(DashBoard)`
           }
         }
       }
+    }
+  }
+
+  .list-stats-graph {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    font-size: 8px;
+    line-height: 10px;
+    color: #7474A9;
+    justify-content: space-between;
+    text-align: center;
+
+    li {
+      width: 14px;
+      margin: 0 5px;
+    }
+
+    .bar {
+      background: #E6ECF5;
+      border-radius: 2px;
     }
   }
 
