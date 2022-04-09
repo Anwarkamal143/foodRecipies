@@ -1,5 +1,6 @@
 import { Icon } from "@components"
 import {
+  AngleRight,
   FacebookIcon,
   InstagramIcon,
   TwitterIcon,
@@ -47,7 +48,7 @@ function ProfileComponent(props: IProfileProps) {
                     {u.name}
                   </ProfileName>
                   <ProfileUserName className="userProfileStatus">
-                    {u.username}{" "}
+                    <span className="user-name">{u.username} </span>
                     {u.status && <ProfileStatus>{u.status}</ProfileStatus>}
                   </ProfileUserName>
                 </ProfileDetails>
@@ -79,7 +80,7 @@ function ProfileComponent(props: IProfileProps) {
               </div>
               <div className="user-detail-area">
                 <ProfileUserName className="userProfileStatus">
-                  {u.username}{" "}
+                  {u.username} <AngleRight />
                 </ProfileUserName>
                 <div className="socialIcons">
                   <Icon className="socialIconsItem facebook">

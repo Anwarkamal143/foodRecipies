@@ -399,17 +399,5 @@ export default styled(Model)`
 
   .btns-actions {
     display: flex;
-
-    .button {
-      min-width: inherit;
-    }
-
-    .btn-cancel {
-      color: #11c278;
-    }
-
-    .button-link:not(.btn-cancel) {
-      color: #e0464d;
-    }
   }
 `

@@ -136,7 +136,7 @@ function MyFeeds(props: IMyFeedProps) {
                 </div>
                 <span className="title">Trending</span>
                 <span className="close" onClick={() => setGiftModal(false)}>
-                  X
+                  <span className="close-icon"></span>
                 </span>
               </div>
               <div className="content">

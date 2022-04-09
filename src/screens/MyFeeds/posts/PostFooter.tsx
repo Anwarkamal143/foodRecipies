@@ -123,8 +123,8 @@ export default styled(PostFooter)`
       border: 1px solid #e6eaf5;
 
       svg {
-        width: 24px;
-        height: 24px;
+        width: 20px;
+        height: 22px;
 
         path {
           stroke: rgba(0, 0, 0, 0.35);
@@ -182,11 +182,11 @@ export default styled(PostFooter)`
       font-size: 14px;
       line-height: 20px;
       cursor: pointer;
-      font-weight: 600;
+      font-weight: 400;
+      transition: all 0.4s ease;
 
       &:hover {
-        color: #000;
-        background: rgba(0, 0, 0, 0.15);
+        border-color: #e0464d;
       }
     }
   }

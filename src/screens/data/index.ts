@@ -92,4 +92,28 @@ export const RECEPESITEMS = [
     views: 380,
     status: "24",
   },
+  {
+    _id: setItemId(),
+    image: "/images/mock/post1.png",
+    name: "Greek salad",
+    rating: 4.5,
+    views: 380,
+    status: "24",
+  },
+  {
+    _id: setItemId(),
+    image: "/images/mock/post1.png",
+    name: "Greek salad",
+    rating: 4.5,
+    views: 380,
+    status: "24",
+  },
+  {
+    _id: setItemId(),
+    image: "/images/mock/post1.png",
+    name: "Greek salad",
+    rating: 4.5,
+    views: 380,
+    status: "24",
+  },
 ]

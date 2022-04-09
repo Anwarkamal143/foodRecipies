@@ -157,7 +157,7 @@ export default styled(Card)`
     position: relative;
 
     .userProfileHolder {
-      width: calc(100% - 20px);
+      width: 100%;
       display: flex;
       align-items: center;
     }
@@ -197,7 +197,9 @@ export default styled(Card)`
       font-size: 12px;
       line-height: 20px;
       color: #7474a9;
-      display: block;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
     }
 
     .userProfileAction {
@@ -290,6 +292,31 @@ export default styled(Card)`
       color: #000;
       margin: 0 0 8px;
       font-weight: 700;
+      position: relative;
+      display: inline-block;
+      vertical-align: top;
+
+      svg {
+        fill: #aa141c;
+        opacity: 0;
+        visibilty: hidden;
+        transition: all 0.25s ease-in-out;
+        position: absolute;
+        right: 0;
+        top: 52%;
+        transform: translateY(-49%);
+        margin: 0;
+      }
+
+      &:hover {
+        color: #aa141c;
+        padding-right: 18px;
+
+        svg {
+          opacity: 1;
+          visibilty: visible;
+        }
+      }
     }
 
     .socialIcons {

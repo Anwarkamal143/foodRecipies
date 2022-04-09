@@ -215,8 +215,13 @@
   overflow: scroll;
 }
 
-.pswp__bg {
+.pswp__bg,
+.ReactModal__Overlay {
   background: rgba(0, 0, 0, 0.9) !important;
+
+  .ReactModal__Content {
+    background: none !important;
+  }
 }
 
 @media (min-width: 576px) {

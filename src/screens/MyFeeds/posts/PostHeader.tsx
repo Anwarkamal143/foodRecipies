@@ -208,7 +208,7 @@ export default styled(PostHeader)`
     line-height: 16px;
     color: #fff;
     min-width: 64px;
-    mn-height: 30px;
+    min-height: 30px;
     height: 30px;
     display: inline-flex;
     align-items: center;

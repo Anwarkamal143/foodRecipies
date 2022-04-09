@@ -51,9 +51,14 @@ export const FeedsWidget = styled.div`
   border: 1px solid #f2f3f5;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
   margin: 0 0 20px;
-  padding: 5px;
+  padding: 15px 10px;
   font-size: 14px;
   line-height: 16px;
+  border-radius: 20px;
+
+  @media (max-width: 1023px) {
+    display: none !important;
+  }
 
   .head {
     position: relative;
@@ -90,14 +95,40 @@ export const FeedsWidget = styled.div`
     position: absolute;
     right: 0;
     top: 0;
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     border: 1px solid #f2f3f5;
     border-radius: 100%;
     text-align: center;
     font-size: 12px;
     line-height: 18px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .close-icon {
+      width: 14px;
+      height: 14px;
+      display: block;
+      position: relative;
+
+      &:after,
+      &:before {
+        position: absolute;
+        height: 1px;
+        left: 0;
+        right: 0;
+        content: "";
+        background: #000;
+        top: 7px;
+        transform: rotate(45deg);
+      }
+
+      &:after {
+        transform: rotate(-45deg);
+      }
+    }
   }
 `
 
@@ -180,6 +211,7 @@ export const SuggestedCooksSection = styled.div`
 
   @media (max-width: 1023px) {
     width: 48.5%;
+    display: none !important;
   }
 
   @media (max-width: 767px) {

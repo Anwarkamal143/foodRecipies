@@ -973,7 +973,6 @@ export const Dashboard = styled(DashBoard)`
 
   .rc-pagination {
     display: flex;
-    justify-content: flex-end;
     align-items: center;
     font-size: 12px;
     line-height: 15px;

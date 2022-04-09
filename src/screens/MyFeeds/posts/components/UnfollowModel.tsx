@@ -11,24 +11,24 @@ type Props = {
 const UnfolloeModal = ({ isOpen, className, onCancel, handleSave }: Props) => {
   return (
     <Modal
-      className={`modal-popups ${className}`}
+      className={`modal-unsubscribe ${className}`}
       isOpen={isOpen}
       showFooter={false}
       showHeader={true}
       onClose={() => onCancel?.(false)}
-      title={<span>UNFOLLOW</span>}
+      title={<span>Unfollow</span>}
     >
       <span className="modal-description">Are you sure to Unfollow</span>
       <div className="btns-actions">
+        <Button onClick={() => handleSave?.()} type="link">
+          Unfollow
+        </Button>
         <Button
           type="link"
           onClick={() => onCancel?.(false)}
           className="btn-cancel"
         >
-          CANCEL
-        </Button>
-        <Button onClick={() => handleSave?.()} type="link">
-          YES, UNFOLLOW
+          Cancel
         </Button>
       </div>
     </Modal>
@@ -36,6 +36,48 @@ const UnfolloeModal = ({ isOpen, className, onCancel, handleSave }: Props) => {
 }
 
 export default styled(UnfolloeModal)`
+  &.modal-unsubscribe {
+    max-width: 375px;
+    font-size: 14px;
+    line-height: 16px;
+
+    .modal-title {
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    .modal-description {
+      display: block;
+      margin: 0 0 20px;
+    }
+
+    .button {
+      min-width: 120px;
+      font-size: 14px;
+      line-height: 18px;
+      border: 1px solid #e5e5f1;
+      border-radius: 40px;
+      text-align: center;
+      padding: 10px;
+      color: #000;
+
+      &:hover {
+        border-color: #e0464d;
+      }
+
+      &.btn-cancel {
+        background: #e0464d;
+        border-color: #e0464d;
+        color: #fff;
+
+        &:hover {
+          background: none;
+          color: #000;
+        }
+      }
+    }
+  }
+
   &.modal-post {
     &.modal-dialog {
       max-width: 376px;

@@ -316,8 +316,9 @@ export default styled(PostBody)`
       align-items: center;
       justify-content: center;
       color: #fff;
-      font-size: 14px;
+      font-size: 15px;
       line-height: 18px;
+      font-weight: 500;
       background: linear-gradient(
         0deg,
         rgba(0, 0, 0, 0.55),

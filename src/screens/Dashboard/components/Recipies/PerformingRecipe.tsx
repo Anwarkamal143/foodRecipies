@@ -18,7 +18,7 @@ function PerformingRecipes(props: IRecipeProps) {
 
   return (
     <div className="userProfileWrapper">
-      <Scrollbar autoHeightMax={300} autoHeight>
+      <Scrollbar autoHeightMax={410} autoHeight>
         {data.map((u: any, i: number) => {
           return (
             <RecipesWrapper className="receipeDetails" key={i}>
