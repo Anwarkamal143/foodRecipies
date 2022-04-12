@@ -67,6 +67,7 @@ export default styled(Card)`
   font-weight: 400;
   color: #525367;
   margin: 0 0 20px;
+  border-radius: 10px;
 
   @media (max-width: 1199px) {
     padding: 15px;
@@ -297,7 +298,7 @@ export default styled(Card)`
       vertical-align: top;
 
       svg {
-        fill: #aa141c;
+        fill: #000;
         opacity: 0;
         visibilty: hidden;
         transition: all 0.25s ease-in-out;
@@ -309,7 +310,6 @@ export default styled(Card)`
       }
 
       &:hover {
-        color: #aa141c;
         padding-right: 18px;
 
         svg {

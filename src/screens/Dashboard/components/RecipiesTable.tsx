@@ -214,10 +214,14 @@ function RecipiesTable() {
             return (
               <tr key={index}>
                 <td>
-                  <a href="#">{items.id}</a>
+                  <a href="#" className="link-item">
+                    {items.id}
+                  </a>
                 </td>
                 <td>
-                  <a href="#">{items.name}</a>
+                  <a href="#" className="link-item">
+                    {items.name}
+                  </a>
                 </td>
                 <td className={items.status}>
                   <a href="#">
@@ -259,8 +263,4 @@ function RecipiesTable() {
   )
 }
 
-export default styled(RecipiesTable)`
-  .rc-pagination {
-    display: none;
-  }
-`
+export default styled(RecipiesTable)``

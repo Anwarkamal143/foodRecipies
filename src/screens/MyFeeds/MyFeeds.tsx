@@ -140,7 +140,14 @@ function MyFeeds(props: IMyFeedProps) {
                 </span>
               </div>
               <div className="content">
-                Patrick Kirk and 2 others posted trending recipes today.
+                <a href="#" className="link">
+                  Patrick Kirk
+                </a>{" "}
+                and{" "}
+                <a href="#" className="link">
+                  2 others
+                </a>{" "}
+                posted trending recipes today.
               </div>
             </FeedsWidget>
           )}

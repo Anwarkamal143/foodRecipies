@@ -1049,6 +1049,14 @@ export const Dashboard = styled(DashBoard)`
     }
   }
 
+  .link-item {
+    transition: all 0.4s ease;
+    
+    &:hover {
+      color: #e0464d;
+    }
+  }
+
   th, td {
     padding: 10px 15px;
 

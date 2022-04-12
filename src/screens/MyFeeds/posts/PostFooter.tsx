@@ -1,11 +1,6 @@
+import HeartIconAnimtaed from "@assets/icons/HeartIconAnimtaed"
 import { Icon } from "@components"
-import {
-  DisLikeIcon,
-  ExportIcon,
-  HeartFilled,
-  HeartIcon,
-  LikeIcon,
-} from "@icons"
+import { DisLikeIcon, ExportIcon, LikeIcon } from "@icons"
 import { FormatNumber } from "@utils"
 import styled from "styled-components"
 import { IPostType } from "./Posts"
@@ -26,10 +21,13 @@ function PostFooter(props: IPostFooterProps) {
     <div className={className}>
       <div className="likeDetails">
         <div className="saveRecipeBox">
-          <HeartFilled />
+          {/* <HeartFilled /> */}
+          <Icon className="heartIcon">
+            <HeartIconAnimtaed />
+          </Icon>
           <span className="saveRecipeText">Save Recipe</span>
         </div>
-        <HeartIcon
+        {/* <HeartIcon
           className="heartIcon"
           fill={post.liked ? "red" : "none"}
           {...(post.liked ? { stroke: "red" } : {})}
@@ -42,7 +40,7 @@ function PostFooter(props: IPostFooterProps) {
             }
             onSubmit?.(newPost)
           }}
-        />
+        /> */}
 
         <span className="likeDetailsText">
           {" "}
@@ -103,7 +101,27 @@ export default styled(PostFooter)`
     }
 
     .heartIcon {
-      display: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 4px;
+      border: none;
+      background: #f3f3f3;
+
+      &:hover {
+        background: #feeef3;
+      }
+
+      .like {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+      }
+
+      svg {
+        width: 20px;
+        height: 20px;
+        margin: 0;
+      }
     }
 
     .likeDetailsText {

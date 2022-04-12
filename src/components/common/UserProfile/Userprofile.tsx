@@ -50,7 +50,7 @@ function Profilesteps({ src = "", alt = "", className = "" }) {
         <ProgressBar
           showPrgress={false}
           progresspercent={20}
-          bgColor={"#ef305e"}
+          bgColor={"#e0464d"}
         />
       </RightSide>
       <ProfileTaskModel
@@ -82,7 +82,7 @@ export const ProfileSteps = styled(Profilesteps)`
     }
 
     .CircularProgressbar-path {
-      stroke: #ef305e;
+      stroke: #e0464d;
     }
   }
 

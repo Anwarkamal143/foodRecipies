@@ -156,7 +156,7 @@ export default styled(Sidebar)`
       }
 
       span {
-        color: #7474a9;
+        color: #7b7b7b;
         font-size: 10px;
         line-height: 14px;
         font-weight: 600;
@@ -181,7 +181,7 @@ export default styled(Sidebar)`
         display: flex;
         align-items: center;
         position: relative;
-        color: #7474a9;
+        color: #7b7b7b;
 
         @media (max-width: 767px) {
           width: 100%;
@@ -196,7 +196,7 @@ export default styled(Sidebar)`
           transform: translateY(-50%);
           width: 2px;
           height: 25px;
-          background: #ef305e;
+          background: #e0464d;
           content: "";
           display: none;
 
@@ -293,6 +293,10 @@ export default styled(Sidebar)`
             width: 24px;
             height: 24px;
           }
+
+          path {
+            stroke: #7b7b7b;
+          }
         }
 
         &:hover,
@@ -304,7 +308,7 @@ export default styled(Sidebar)`
               stroke: #e0464d;
 
               @media (max-width: 767px) {
-                stroke: #7474a9;
+                stroke: #7b7b7b;
               }
             }
           }
@@ -374,7 +378,7 @@ export default styled(Sidebar)`
         left: 5px;
         top: 0;
         bottom: 0;
-        background: #7474a9;
+        background: #7b7b7b;
         content: "";
       }
 
@@ -386,7 +390,7 @@ export default styled(Sidebar)`
         height: 5px;
         content: "";
         border-radius: 100%;
-        background: #7474a9;
+        background: #7b7b7b;
         display: none;
       }
 

@@ -6,7 +6,7 @@ import { CircularProgresWithChildren } from "src/components/CirclePrgoressWithCh
 import styled from "styled-components"
 import {
   LeftSide,
-  Userprofilewrapper
+  Userprofilewrapper,
 } from "../../components/common/UserProfile/userprofile.styled"
 import { CircleDefaultImage } from "../common/images"
 
@@ -154,7 +154,7 @@ function DailyTask({ className, userName }: Props) {
             <ProgressBar
               showPrgress={false}
               progresspercent={20}
-              bgColor={"#ef305e"}
+              bgColor={"#e0464d"}
             />
           </div>
         </LeftSide>

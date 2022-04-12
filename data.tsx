@@ -4,13 +4,13 @@ export const Users = [
     src: "/images/mock/slider1profile.png",
     name: "Amanda Miles",
     username: "@florinpop17",
-    status: "tranding",
+    status: "trending",
   },
   {
     src: "/images/mock/slider2profile.png",
     name: "Amanda Miles",
     username: "@florinpop17",
-    status: "tranding",
+    status: "trending",
   },
   {
     src: "/images/mock/slider3profile.png",

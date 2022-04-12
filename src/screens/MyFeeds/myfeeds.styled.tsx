@@ -52,9 +52,9 @@ export const FeedsWidget = styled.div`
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
   margin: 0 0 20px;
   padding: 15px 10px;
-  font-size: 14px;
-  line-height: 16px;
-  border-radius: 20px;
+  font-size: 12px;
+  line-height: 15px;
+  border-radius: 10px;
 
   @media (max-width: 1023px) {
     display: none !important;
@@ -63,7 +63,7 @@ export const FeedsWidget = styled.div`
   .head {
     position: relative;
     padding: 0 30px 0 35px;
-    margin: 0 0 5px;
+    margin: 0 0 10px;
 
     .img-icon {
       position: absolute;
@@ -82,8 +82,8 @@ export const FeedsWidget = styled.div`
 
   .content {
     padding: 5px 10px;
-    font-size: 12px;
-    line-height: 15px;
+    font-size: 14px;
+    line-height: 18px;
     transition: all 0.4s ease;
 
     &:hover {
@@ -91,10 +91,19 @@ export const FeedsWidget = styled.div`
     }
   }
 
+  .link {
+    font-weight: 600;
+    transition: all 0.4s ease;
+
+    &:hover {
+      color: #e0464d;
+    }
+  }
+
   .close {
     position: absolute;
     right: 0;
-    top: 0;
+    top: -5px;
     width: 24px;
     height: 24px;
     border: 1px solid #f2f3f5;
