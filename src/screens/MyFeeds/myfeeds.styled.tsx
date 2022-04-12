@@ -62,14 +62,14 @@ export const FeedsWidget = styled.div`
 
   .head {
     position: relative;
-    padding: 0 30px 0 35px;
+    padding: 0 30px 0 30px;
     margin: 0 0 10px;
 
     .img-icon {
       position: absolute;
       left: 10px;
       top: 0;
-      width: 15px;
+      width: 12px;
 
       svg,
       img {

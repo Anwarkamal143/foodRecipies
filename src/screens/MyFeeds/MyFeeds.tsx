@@ -132,7 +132,7 @@ function MyFeeds(props: IMyFeedProps) {
             <FeedsWidget>
               <div className="head">
                 <div className="img-icon">
-                  <FilterIcon />
+                  <img src="/images/mock/flame.png" alt="flame" />
                 </div>
                 <span className="title">Trending</span>
                 <span className="close" onClick={() => setGiftModal(false)}>
