@@ -94,11 +94,11 @@ export default styled(PostsFilerForm)`
       display: block;
       font-size: 12px;
       line-height: 20px;
-      color: #7474a9;
+      color: #7b7b7b;
       margin: 0 0 7px;
     }
   }
-  
+
   .form-control {
     padding: 0 0 5px;
     display: flex;

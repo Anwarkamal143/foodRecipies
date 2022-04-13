@@ -196,7 +196,7 @@ export default styled(PostHeader)`
   .userProfileTime {
     font-size: 12px;
     line-height: 20px;
-    color: #7474a9;
+    color: #7b7b7b;
     display: block;
   }
 

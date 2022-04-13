@@ -230,7 +230,7 @@ export default styled(DailyTask)`
       justify-content: center;
       border-radius: 100%;
       margin: 0 5px;
-      color: #7474a9;
+      color: #7b7b7b;
       font-size: 12px;
       line-height: 16px;
       font-weight: 400;
@@ -315,7 +315,7 @@ export default styled(DailyTask)`
     }
 
     .userProfileProgreTitle {
-      color: #7474a9;
+      color: #7b7b7b;
       font-size: 10px;
       line-height: 13px;
       margin: 0 0 10px;

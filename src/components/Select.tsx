@@ -204,7 +204,7 @@ export const Select = styled(RSelect)`
     border-radius: 3px;
     font-size: 12px;
     line-height: 18px;
-    color: #7474a9;
+    color: #7b7b7b;
     min-height: 40px;
     box-shadow: none !important;
     outline: none !important;
@@ -225,7 +225,7 @@ export const Select = styled(RSelect)`
     }
 
     .react-select__indicator {
-      color: #7474a9;
+      color: #7b7b7b;
     }
 
     .react-select__indicator-separator {

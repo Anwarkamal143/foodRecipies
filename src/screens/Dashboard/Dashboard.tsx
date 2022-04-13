@@ -358,7 +358,7 @@ export const Dashboard = styled(DashBoard)`
     .dashboardStatisticsTime {
       font-size: 10px;
       line-height: 13px;
-      color: #7474A9;
+      color: #7b7b7b;
     }
 
     &.down {
@@ -394,7 +394,7 @@ export const Dashboard = styled(DashBoard)`
     align-items: flex-end;
     font-size: 8px;
     line-height: 10px;
-    color: #7474A9;
+    color: #7b7b7b;
     justify-content: space-between;
     text-align: center;
     max-width: 170px;
@@ -576,7 +576,7 @@ export const Dashboard = styled(DashBoard)`
         .label {
           font-size: 12px;
           line-height: 20px;
-          color: #7474A9;
+          color: #7b7b7b;
 
           @media (max-width: 1199px) {
             margin-left: 0;
@@ -598,11 +598,11 @@ export const Dashboard = styled(DashBoard)`
           align-items: center;
           border: 1px solid #E5E8EF;
           background: transparent;
-          color: #7474A9;
+          color: #7b7b7b;
           font-size: 12px;
 
           &:hover {
-            color: #7474A9;
+            color: #7b7b7b;
             background: #E5E8EF;
           }
 
@@ -627,7 +627,7 @@ export const Dashboard = styled(DashBoard)`
           .item {
             font-size: 10px;
             line-height: 16px;
-            color: #7474A9;
+            color: #7b7b7b;
             padding: 5px 15px;
             cursor: pointer;
             display: flex;
@@ -640,7 +640,7 @@ export const Dashboard = styled(DashBoard)`
 
             svg {
               path {
-                stroke: #7474A9;
+                stroke: #7b7b7b;
               }
             }
 
@@ -735,7 +735,7 @@ export const Dashboard = styled(DashBoard)`
       overflow: hidden;
 
       .textSubtitle {
-        color: #7474A9;
+        color: #7b7b7b;
         font-size: 12px;
         line-height: 20px;
         display: block;
@@ -753,7 +753,7 @@ export const Dashboard = styled(DashBoard)`
         }
 
         span {
-          color: #7474A9;
+          color: #7b7b7b;
           font-size: 12px;
           line-height: 20px;
         }
@@ -781,7 +781,7 @@ export const Dashboard = styled(DashBoard)`
     }
 
     .text {
-      color: #7474A9;
+      color: #7b7b7b;
       font-size: 10px;
       line-height: 16px;
       text-align: center;
@@ -1040,11 +1040,11 @@ export const Dashboard = styled(DashBoard)`
 
   th {
     text-align: left;
-    color: #7474A9;
+    color: #7b7b7b;
     text-transform: capitalize;
 
     a {
-      color: #7474A9;
+      color: #7b7b7b;
       text-decoration: none;
     }
   }
@@ -1274,7 +1274,7 @@ export const Dashboard = styled(DashBoard)`
   justify-content: center;
   margin: 0 -20px -20px;
   padding: 12px 15px;
-  color: #7474A9;
+  color: #7b7b7b;
 
   svg {
     margin: 0 5px 0 0;

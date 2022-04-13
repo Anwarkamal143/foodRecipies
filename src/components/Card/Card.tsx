@@ -133,7 +133,7 @@ export default styled(Card)`
         border-radius: 10px;
         display: inline-block;
         padding: 2px 7px;
-        color: #7474a9;
+        color: #7b7b7b;
         text-decoration: none;
         transition: all 0.25s ease-in-out;
 
@@ -197,7 +197,7 @@ export default styled(Card)`
     .userProfileStatus {
       font-size: 12px;
       line-height: 20px;
-      color: #7474a9;
+      color: #7b7b7b;
       display: flex;
       flex-direction: row;
       align-items: center;

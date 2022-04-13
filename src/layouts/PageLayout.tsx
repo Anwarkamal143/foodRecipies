@@ -61,7 +61,7 @@ export const PageLayoutWrapper = styled.div<{ variant?: string }>`
 
     .text-button {
       padding: 0 5px;
-      color: #7474a9;
+      color: #7b7b7b;
 
       + svg {
         margin-top: 2px;
@@ -83,7 +83,7 @@ export const PageLayoutWrapper = styled.div<{ variant?: string }>`
 
     .sortByFilterlbl {
       font-size: 12px;
-      color: #7474a9;
+      color: #7b7b7b;
       line-height: 20px;
 
       @media (max-width: 767px) {
@@ -107,7 +107,7 @@ export const PageLayoutWrapper = styled.div<{ variant?: string }>`
         padding: 5px 20px;
         font-size: 12px;
         line-height: 20px;
-        color: #7474a9;
+        color: #7b7b7b;
         cursor: pointer;
         transition: all 0.4s ease;
 

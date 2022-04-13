@@ -100,14 +100,14 @@ export function Ticke() {
     >
       <path
         d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z"
-        stroke="#7474A9"
+        stroke="#7b7b7b"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M7.75 12L10.58 14.83L16.25 9.17"
-        stroke="#7474A9"
+        stroke="#7b7b7b"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -155,14 +155,14 @@ export function LampIcon() {
     >
       <path
         d="M6.91672 15.0333V14.0667C5.00005 12.9083 3.42505 10.65 3.42505 8.25C3.42505 4.125 7.21672 0.891671 11.5 1.825C13.3834 2.24167 15.0334 3.49167 15.8917 5.21667C17.6334 8.71667 15.8 12.4333 13.1084 14.0583V15.025C13.1084 15.2667 13.2 15.825 12.3084 15.825H7.71672C6.80005 15.8333 6.91672 15.475 6.91672 15.0333Z"
-        stroke="#7474A9"
+        stroke="#7b7b7b"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M7.08337 18.3333C8.99171 17.7916 11.0084 17.7916 12.9167 18.3333"
-        stroke="#7474A9"
+        stroke="#7b7b7b"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -182,33 +182,33 @@ export const StatusUp = () => {
     >
       <path
         d="M5.08264 13.4083V11.8791"
-        stroke="#7474A9"
+        stroke="#7b7b7b"
         strokeLinecap="round"
       />
       <path
         d="M8.86499 13.4083V10.3499"
-        stroke="#7474A9"
+        stroke="#7b7b7b"
         strokeLinecap="round"
       />
       <path
         d="M12.6475 13.4083V8.81329"
-        stroke="#7474A9"
+        stroke="#7b7b7b"
         strokeLinecap="round"
       />
       <path
         d="M12.6474 4.32169L12.3076 4.72061C10.4238 6.92209 7.89728 8.48085 5.08264 9.18266"
-        stroke="#7474A9"
+        stroke="#7b7b7b"
         strokeLinecap="round"
       />
       <path
         d="M10.4829 4.32169H12.6474V6.47884"
-        stroke="#7474A9"
+        stroke="#7b7b7b"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M6.64879 16.2525H11.0813C14.775 16.2525 16.2525 14.775 16.2525 11.0813V6.64875C16.2525 2.955 14.775 1.4775 11.0813 1.4775H6.64879C2.95504 1.4775 1.47754 2.955 1.47754 6.64875V11.0813C1.47754 14.775 2.95504 16.2525 6.64879 16.2525Z"
-        stroke="#7474A9"
+        stroke="#7b7b7b"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -252,25 +252,25 @@ export const Star = () => {
     >
       <path
         d="M11.3694 3.84889L12.4111 5.93216C12.5514 6.22027 12.9282 6.49361 13.2458 6.55271L15.1297 6.86298C16.3338 7.06244 16.6146 7.93417 15.7502 8.8059L14.2801 10.276C14.0363 10.5198 13.896 11 13.9772 11.3472L14.3983 13.1645C14.7307 14.5977 13.9624 15.1591 12.6992 14.4056L10.9336 13.3566C10.6159 13.1645 10.084 13.1645 9.76634 13.3566L8.00072 14.4056C6.73746 15.1518 5.96917 14.5977 6.3016 13.1645L6.7227 11.3472C6.80396 11.0074 6.66359 10.5272 6.41981 10.276L4.9497 8.8059C4.08536 7.94156 4.36609 7.06983 5.57025 6.86298L7.45405 6.55271C7.77171 6.50099 8.14848 6.22027 8.28884 5.93216L9.33048 3.84889C9.88455 2.7186 10.8006 2.7186 11.3694 3.84889Z"
-        stroke="#7474A9"
+        stroke="#7b7b7b"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M5.91004 3.69375H1.47754"
-        stroke="#7474A9"
+        stroke="#7b7b7b"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M3.69379 14.0362H1.47754"
-        stroke="#7474A9"
+        stroke="#7b7b7b"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M2.21629 8.865H1.47754"
-        stroke="#7474A9"
+        stroke="#7b7b7b"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -337,7 +337,7 @@ export function AddIcon(props: IconType) {
   )
 }
 export function FilterIcon(props: IconType) {
-  const { width = 18, stroke = "#7474A9", height = 18, ...rest } = props
+  const { width = 18, stroke = "#7b7b7b", height = 18, ...rest } = props
   return (
     <svg
       width={width}
@@ -393,7 +393,7 @@ export function FilterIcon(props: IconType) {
   )
 }
 export function DownArrowIcon(props: IconType) {
-  const { width = 12, height = 12, fill = "#7474A9", ...rest } = props
+  const { width = 12, height = 12, fill = "#7b7b7b", ...rest } = props
   return (
     <svg
       width={width}
@@ -424,7 +424,7 @@ export function Loader(props: IconType) {
       <circle cx="20" cy="20" r="20" fill="#F1F4FB" />
       <path
         d="M5.85786 34.1421C8.18355 36.4678 11.0469 38.1841 14.1943 39.1388C17.3417 40.0936 20.676 40.2574 23.9018 39.6157C27.1276 38.974 30.1454 37.5467 32.6879 35.4602C35.2303 33.3737 37.2189 30.6923 38.4776 27.6537C39.7362 24.615 40.2261 21.3128 39.9037 18.0397C39.5813 14.7665 38.4567 11.6233 36.6294 8.8886C34.8021 6.15388 32.3286 3.91201 29.4279 2.36158C26.5273 0.811142 23.289 2.48314e-07 20 0V2.26562C22.9164 2.26562 25.7879 2.98487 28.3599 4.35967C30.932 5.73447 33.1253 7.72238 34.7456 10.1473C36.3659 12.5722 37.3631 15.3593 37.649 18.2617C37.9348 21.1641 37.5005 24.0922 36.3844 26.7867C35.2684 29.4811 33.505 31.8587 31.2506 33.7089C28.9961 35.559 26.3202 36.8247 23.4598 37.3936C20.5994 37.9626 17.6428 37.8173 14.852 36.9707C12.0611 36.1241 9.52213 34.6023 7.4599 32.5401L5.85786 34.1421Z"
-        fill="#7474A9"
+        fill="#7b7b7b"
       />
       <path
         d="M28.9664 32.0252C31.4901 30.1434 33.3578 27.5152 34.305 24.513C35.2522 21.5108 35.2307 18.2866 34.2437 15.2972C33.2568 12.3079 31.3543 9.70479 28.8057 7.85671C26.2572 6.00863 23.1917 5.00923 20.0437 5.00006L20.037 7.28752C22.705 7.29528 25.303 8.14228 27.4629 9.70853C29.6228 11.2748 31.2351 13.4809 32.0716 16.0144C32.9081 18.5479 32.9262 21.2804 32.1235 23.8248C31.3208 26.3692 29.7379 28.5965 27.599 30.1914L28.9664 32.0252Z"
@@ -434,7 +434,7 @@ export function Loader(props: IconType) {
   )
 }
 export function FacebookIcon(props: IconType) {
-  const { width = 16, height = 16, fill = "#7474A9", ...rest } = props
+  const { width = 16, height = 16, fill = "#7b7b7b", ...rest } = props
   return (
     <svg
       width={width}
@@ -452,7 +452,7 @@ export function FacebookIcon(props: IconType) {
   )
 }
 export function YoutubeIcon(props: IconType) {
-  const { width = 16, height = 16, fill = "#7474A9", ...rest } = props
+  const { width = 16, height = 16, fill = "#7b7b7b", ...rest } = props
   return (
     <svg
       width={width}
@@ -470,7 +470,7 @@ export function YoutubeIcon(props: IconType) {
   )
 }
 export function TwitterIcon(props: IconType) {
-  const { width = 16, height = 16, fill = "#7474A9", ...rest } = props
+  const { width = 16, height = 16, fill = "#7b7b7b", ...rest } = props
   return (
     <svg
       width={width}
@@ -503,7 +503,7 @@ export function Tag(props: IconType) {
   )
 }
 export function InstagramIcon(props: IconType) {
-  const { width = 16, height = 16, fill = "#7474A9", ...rest } = props
+  const { width = 16, height = 16, fill = "#7b7b7b", ...rest } = props
   return (
     <svg
       width={width}
@@ -529,7 +529,7 @@ export function HeartIcon(props: IconType) {
     width = 30,
     height = 30,
     fill = "none",
-    stroke = "#7474A9",
+    stroke = "#7b7b7b",
     ...rest
   } = props
   return (
@@ -698,7 +698,7 @@ export function StarFillIcon(props: IconType) {
     width = 14,
     height = 15,
 
-    // stroke = "#7474A9",
+    // stroke = "#7b7b7b",
     fill = "#EFA330",
     ...rest
   } = props
@@ -795,7 +795,7 @@ export function NavHeaderToggleSVG(props: IconType) {
   )
 }
 export function DashboardIcon(props: IconType) {
-  const { width = 18, height = 18, stroke = "#7474A9", ...rest } = props
+  const { width = 18, height = 18, stroke = "#7b7b7b", ...rest } = props
   // const { width = 18, height = 18, stroke = "#E0464D", ...rest } = props
   return (
     <svg
@@ -842,7 +842,7 @@ export function DashboardIcon(props: IconType) {
   )
 }
 export function PerformanceIcon(props: IconType) {
-  const { width = 18, height = 18, stroke = "#7474A9", ...rest } = props
+  const { width = 18, height = 18, stroke = "#7b7b7b", ...rest } = props
   return (
     <svg
       width={width}
@@ -877,7 +877,7 @@ export function PerformanceIcon(props: IconType) {
   )
 }
 export function NotificationsIcon(props: IconType) {
-  const { width = 18, height = 18, stroke = "#7474A9", ...rest } = props
+  const { width = 18, height = 18, stroke = "#7b7b7b", ...rest } = props
   return (
     <svg
       width={width}
@@ -911,7 +911,7 @@ export function NotificationsIcon(props: IconType) {
   )
 }
 export function RecipesIcon(props: IconType) {
-  const { width = 18, height = 18, stroke = "#7474A9", ...rest } = props
+  const { width = 18, height = 18, stroke = "#7b7b7b", ...rest } = props
   return (
     <svg
       width={width}
@@ -967,7 +967,7 @@ export function RecipesIcon(props: IconType) {
   )
 }
 export function AddCircleIcon(props: IconType) {
-  const { width = 18, height = 18, stroke = "#7474A9", ...rest } = props
+  const { width = 18, height = 18, stroke = "#7b7b7b", ...rest } = props
   return (
     <svg
       width={width}
@@ -1002,7 +1002,7 @@ export function AddCircleIcon(props: IconType) {
   )
 }
 export function UserTick(props: IconType) {
-  const { width = 18, height = 18, stroke = "#7474A9", ...rest } = props
+  const { width = 18, height = 18, stroke = "#7b7b7b", ...rest } = props
   return (
     <svg
       width={width}
@@ -1045,7 +1045,7 @@ export function UserTick(props: IconType) {
   )
 }
 export function ReserveIcon(props: IconType) {
-  const { width = 18, height = 18, stroke = "#7474A9", ...rest } = props
+  const { width = 18, height = 18, stroke = "#7b7b7b", ...rest } = props
   return (
     <svg
       width={width}
@@ -1087,7 +1087,7 @@ export function ReserveIcon(props: IconType) {
   )
 }
 export function ProfileCircleIcon(props: IconType) {
-  const { width = 18, height = 18, stroke = "#7474A9", ...rest } = props
+  const { width = 18, height = 18, stroke = "#7b7b7b", ...rest } = props
   return (
     <svg
       width={width}
@@ -1122,7 +1122,7 @@ export function ProfileCircleIcon(props: IconType) {
   )
 }
 export function PeoplesIcon(props: IconType) {
-  const { width = 18, height = 18, stroke = "#7474A9", ...rest } = props
+  const { width = 18, height = 18, stroke = "#7b7b7b", ...rest } = props
   return (
     <svg
       width={width}
@@ -1178,7 +1178,7 @@ export function PeoplesIcon(props: IconType) {
   )
 }
 export function SettingsIcon(props: IconType) {
-  const { width = 18, height = 18, stroke = "#7474A9", ...rest } = props
+  const { width = 18, height = 18, stroke = "#7b7b7b", ...rest } = props
   return (
     <svg
       width={width}
@@ -1208,7 +1208,7 @@ export function SettingsIcon(props: IconType) {
   )
 }
 export function LogoutIcon(props: IconType) {
-  const { width = 17, height = 14, stroke = "#7474A9", ...rest } = props
+  const { width = 17, height = 14, stroke = "#7b7b7b", ...rest } = props
   return (
     <svg
       width={width}
@@ -1270,7 +1270,7 @@ export function ProfileTogglerIcon(props: IconType) {
   )
 }
 export const VerticalDots = forwardRef((props: IconType, ref) => {
-  const { width = 3, height = 15, fill = "#7474A9", ...rest } = props
+  const { width = 3, height = 15, fill = "#7b7b7b", ...rest } = props
   return (
     <svg
       ref={ref as any}
@@ -1362,7 +1362,7 @@ export function ProgressArrowDown(props: IconType) {
   )
 }
 export function CalendarIcon(props: IconType) {
-  const { width = 18, height = 18, stroke = "#7474A9", ...rest } = props
+  const { width = 18, height = 18, stroke = "#7b7b7b", ...rest } = props
   return (
     <svg
       width={width}
@@ -1440,7 +1440,7 @@ export function CalendarIcon(props: IconType) {
   )
 }
 export function EyeIcon(props: IconType) {
-  const { width = 18, height = 18, stroke = "#7474A9", ...rest } = props
+  const { width = 18, height = 18, stroke = "#7b7b7b", ...rest } = props
   return (
     <svg
       width={width}

@@ -129,7 +129,7 @@ export const ProfileSteps = styled(Profilesteps)`
     display: block;
     font-size: 10px;
     line-height: 13px;
-    color: #7474a9;
+    color: #7b7b7b;
   }
 
   .userProfileProgresStatus {
