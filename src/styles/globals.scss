@@ -69,6 +69,11 @@
     font-display: swap;
   }
 
+  b,
+  strong {
+    font-weight: 700;
+  }
+
   .cursor-newtab {
     cursor: url("/images/new-tab.png") 10 10, pointer;
   }
