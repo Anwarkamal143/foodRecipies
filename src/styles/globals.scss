@@ -51,6 +51,24 @@
     font-display: swap;
   }
 
+  @font-face {
+    font-family: "puck";
+    src: url("/fonts/Puck-Regular.woff2") format("woff2"),
+      url("/fonts/Puck-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "puck";
+    src: url("/fonts/Puck-Medium.woff2") format("woff2"),
+      url("/fonts/Puck-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
   .cursor-newtab {
     cursor: url("/images/new-tab.png") 10 10, pointer;
   }

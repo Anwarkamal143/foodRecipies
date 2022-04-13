@@ -20,7 +20,7 @@ module.exports = {
         84: "22rem",
       },
       fontFamily: {
-        primary: ["Poppins", ...fontFamily.sans],
+        primary: ["puck", ...fontFamily.sans],
       },
       colors: {
         primary: {
