@@ -877,7 +877,7 @@ export const Dashboard = styled(DashBoard)`
           color: #E0464D;
           padding: 3px 10px;
           border-radius: 15px;
-          font-weight: 600;
+          font-weight: 400;
           border: 1px solid #E0464D;
           background: #fff;
           opacity: 0;

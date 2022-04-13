@@ -264,7 +264,7 @@ export default styled(PostBody)`
       font-size: 14px;
       line-height: 20px;
       padding: 5px 10px;
-      font-weight: 600;
+      font-weight: 400;
 
       span {
         display: flex;

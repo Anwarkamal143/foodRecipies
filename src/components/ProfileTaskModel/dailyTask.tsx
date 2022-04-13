@@ -233,7 +233,7 @@ export default styled(DailyTask)`
       color: #7474a9;
       font-size: 12px;
       line-height: 16px;
-      font-weight: 600;
+      font-weight: 400;
       transition: all 0.4s ease;
       position: relative;
       cursor: pointer;
@@ -350,7 +350,7 @@ export default styled(DailyTask)`
       font-size: 18px;
       line-height: 1.4;
       color: #1e1e2d;
-      font-weight: 600;
+      font-weight: 400;
       display: block;
     }
 

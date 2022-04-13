@@ -95,7 +95,7 @@ export default styled(HeartIconAnimtaed)`
   i {
     position: absolute;
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 400;
     padding: 6px 10px;
     color: white;
     background: #f65c8a;

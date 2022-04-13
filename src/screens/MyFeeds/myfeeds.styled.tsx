@@ -92,7 +92,7 @@ export const FeedsWidget = styled.div`
   }
 
   .link {
-    font-weight: 600;
+    font-weight: 400;
     transition: all 0.4s ease;
 
     &:hover {

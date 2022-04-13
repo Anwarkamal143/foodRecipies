@@ -159,7 +159,7 @@ export default styled(Sidebar)`
         color: #7b7b7b;
         font-size: 10px;
         line-height: 14px;
-        font-weight: 600;
+        font-weight: 400;
       }
     }
 
@@ -227,7 +227,7 @@ export default styled(Sidebar)`
           line-height: 18px;
           width: 100%;
           padding: 8px 15px 10px 34px;
-          font-weight: 600;
+          font-weight: 400;
 
           @media (max-width: 1199px) {
             padding: 8px 15px 10px 28px;
