@@ -110,6 +110,11 @@
   .p {
     @apply font-primary text-sm md:text-base;
   }
+
+  body {
+    color: #4b4b4b;
+  }
+
   /* #endregion  /**======== Typography =========== */
 
   .layout {

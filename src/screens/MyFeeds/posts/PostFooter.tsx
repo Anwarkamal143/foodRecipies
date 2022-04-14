@@ -195,7 +195,7 @@ export default styled(PostFooter)`
     .recipeButton {
       border: 1px solid rgba(0, 0, 0, 0.15);
       border-radius: 15px;
-      color: rgba(0, 0, 0, 0.35);
+      color: rgba(75, 75, 75, 0.55);
       padding: 5px 20px;
       font-size: 14px;
       line-height: 20px;

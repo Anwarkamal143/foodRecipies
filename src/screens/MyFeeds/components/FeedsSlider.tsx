@@ -212,6 +212,8 @@ export const FeedsSlider = styled(Sliderr)`
   .slick-slide {
     width: 134px;
     padding: 0 7px;
+    outline: none !important;
+    box-shadow: none !important;
     /* width: 135px !important; */
 
     &:hover {

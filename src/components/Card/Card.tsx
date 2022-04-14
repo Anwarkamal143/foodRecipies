@@ -90,7 +90,7 @@ export default styled(Card)`
     }
 
     .feedsWidgetSeeAll {
-      font-size: 14px;
+      font-size: 13px;
       line-height: 18px;
       color: #e0464d;
       cursor: pointer;

@@ -54,6 +54,7 @@ function PostHeader(props: IMyFeedProps) {
           }}
         >
           {person.followed ? "Unfollow" : "Follow"}
+          <span className="plus-btn"></span>
         </Button>
       </div>
       <div className="socialIcons">
@@ -214,6 +215,8 @@ export default styled(PostHeader)`
     align-items: center;
     justify-content: center;
     padding: 6px 10px;
+    position: relative;
+    transition: all 0.4s ease;
 
     @media (max-width: 767px) {
       margin-left: auto;
@@ -224,9 +227,48 @@ export default styled(PostHeader)`
       border-color: #999;
     }
 
+    &.follow {
+      &:hover {
+        padding-right: 30px;
+
+        .plus-btn {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+
     &:hover {
       background: #f93e46;
       border-color: #f93e46;
+    }
+
+    .plus-btn {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translate(0, -50%);
+      width: 12px;
+      height: 12px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s ease;
+
+      &:after,
+      &:before {
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: #fff;
+        content: '';
+        top: 50%;
+        margin: -1px 0 0;
+      }
+
+      &:after {
+        transform: rotate(90deg);
+      }
     }
   }
 `

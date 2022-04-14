@@ -260,9 +260,9 @@ export default styled(PostBody)`
       color: #fff;
       border: 0;
       border-radius: 25px;
-      height: 36px;
-      font-size: 14px;
-      line-height: 20px;
+      height: 30px;
+      font-size: 13px;
+      line-height: 16px;
       padding: 5px 10px;
       font-weight: 400;
 
@@ -272,7 +272,11 @@ export default styled(PostBody)`
 
         svg {
           fill: #fff;
-          margin: 0 5px 0 0;
+          margin: 2px 5px 0 0;
+          width: 12px;
+          height: 12px;
+          display: inline-block;
+          vertical-align: middle;
         }
       }
     }

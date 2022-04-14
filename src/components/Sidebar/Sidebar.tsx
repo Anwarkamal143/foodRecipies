@@ -50,6 +50,11 @@ export default styled(Sidebar)`
     }
   }
 
+  button {
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
   .userWidget {
     width: 100%;
     border: 1px solid #f2f3f5;

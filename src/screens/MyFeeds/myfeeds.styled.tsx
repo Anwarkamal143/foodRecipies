@@ -49,7 +49,7 @@ export const RightContainer = styled.div`
 export const StoriesWrapper = styled.div``
 export const FeedsWidget = styled.div`
   border: 1px solid #f2f3f5;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.02);
   margin: 0 0 20px;
   padding: 15px 10px;
   font-size: 12px;
@@ -85,6 +85,7 @@ export const FeedsWidget = styled.div`
     font-size: 14px;
     line-height: 18px;
     transition: all 0.4s ease;
+    color: #4b4b4b;
 
     &:hover {
       background: #f8f8f8;
