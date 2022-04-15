@@ -1177,6 +1177,7 @@ export function PeoplesIcon(props: IconType) {
     </svg>
   )
 }
+
 export function SettingsIcon(props: IconType) {
   const { width = 18, height = 18, stroke = "#7b7b7b", ...rest } = props
   return (
