@@ -24,7 +24,7 @@ const SignUpSide = (props: Props) => {
       email: "",
     },
     onSubmit: () => {
-      console.log("ho")
+      console.log("onSubmit")
     },
   })
   const { setView, view } = props
@@ -41,7 +41,6 @@ const SignUpSide = (props: Props) => {
       setView("2")
     }
   }
-  console.log(formValue, 'formValue')
   return (
     <form className="login-right-area" onSubmit={handleSubmit}>
       {view === "0" && (
@@ -81,11 +80,7 @@ const SignUpSide = (props: Props) => {
               required
             />
           </div>
-          <Button
-            htmlType="submit"
-            type="primary"
-            className="button-circle"
-          >
+          <Button htmlType="submit" type="primary" className="button-circle">
             Sign Up with Email
           </Button>
         </>
