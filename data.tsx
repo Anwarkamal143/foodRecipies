@@ -177,3 +177,21 @@ export const chartData = [
     count: "50",
   },
 ]
+export const FavData = [
+  {
+    id: "asdk",
+    image: "/images/bbq.jpg",
+    title: "Organic Vegetable with Peas and  chicken Burrito",
+    fvrtBy: "By Emma Olivia",
+    time: "20 mins",
+    state: "easy",
+  },
+  {
+    id: "assddddd",
+    image: "/images/bbq.jpg",
+    title: "Organic Vegetable with Peas and  chicken Burrito",
+    fvrtBy: "By Emma Olivia",
+    time: "20 mins",
+    state: "easy",
+  },
+]
