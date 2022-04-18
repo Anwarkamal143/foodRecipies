@@ -34,7 +34,7 @@ const ButtonStyle = styled.div`
     letter-spacing: 0.15px;
     padding: 8px 10px;
     text-align: center;
-    border: 2px solid transparent;
+    border: 1px solid transparent;
     border-radius: 5px;
     transition: all 0.4s ease;
     position: relative;
@@ -277,14 +277,14 @@ const ButtonStyle = styled.div`
 
   &.button-primary {
     /* background: #255b87; */
-    background: ${({ theme }) => theme.colors.btnbgprimary};
+    background: #ff6067;
     color: #fff;
 
     &.button-dashed,
     &.button-outline {
       /* border-color: #255b87; */
-      border-color: ${({ theme }) => theme.colors.btnbgprimary};
-      color: #255b87;
+      border-color: #ff6067;
+      color: #ff6067;
     }
 
     &.button-danger {
@@ -299,15 +299,15 @@ const ButtonStyle = styled.div`
 
   &.button-default {
     /* background: #ebeef1; */
-    background: ${({ theme }) => theme.colors.btnbgdefault};
-    color: ${({ theme }) => theme.colors.btncolordefault};
+    background: #7b7b82;
+    color: #fff;
     /* color: #72777d; */
 
     &.button-dashed,
     &.button-outline {
       /* border-color: #e5e5e5; */
-      border-color: ${({ theme }) => theme.colors.btnborderdefault};
-      color: ${({ theme }) => theme.colors.btncolorvairationdefault};
+      border-color: #7b7b82;
+      color: #7b7b82;
       /* color: #a3a0a0; */
     }
   }

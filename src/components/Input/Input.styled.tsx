@@ -49,15 +49,21 @@ export const InputWrapper = styled.div`
   }
 
   .form-control {
-    line-height: 1.5;
+    line-height: 20px;
     font-weight: 400;
-    color: #000;
+    font-size: 14px;
+    color: rgba(70, 70, 70, 1);
     font-family: "Roboto", sans-serif;
-    padding: 18px 17px 4px;
+    padding: 13px 23px;
+    width: 100%;
+    height: 48px;
+    border: 1px solid rgba(27, 29, 33, 0.1);
+    border-radius: 4px;
   }
 
   .form-control:focus {
-    border-width: 1px !important;
+    outline: none;
+    box-shadow: none;
   }
 
   .no-label .form-control {
@@ -71,18 +77,22 @@ export const InputWrapper = styled.div`
 
   .text-input {
     position: relative;
+    margin: 0 0 27px;
   }
 
   .text-input label {
     -webkit-transition: all 0.25s ease-in-out;
     transition: all 0.25s ease-in-out;
     line-height: 24px;
-    color: #000;
-    opacity: 0.7;
+    font-size: 14px;
+    height: 18px;
+    padding: 0 8px;
+    background: #fff;
+    color: rgba(27, 29, 33, 0.4);
     margin: 0;
     position: absolute;
-    left: 18px;
-    top: 18px;
+    left: 15px;
+    top: 14px;
     pointer-events: none;
     font-weight: 300;
     transform: translateY(-10%);
@@ -106,8 +116,7 @@ export const InputWrapper = styled.div`
   .text-input.input-active label {
     font-size: 14px;
     line-height: 16px;
-    top: 10px;
-    opacity: 0.7;
+    top: -5px;
   }
 
   .text-input .word-count {
