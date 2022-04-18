@@ -190,7 +190,7 @@ export default styled(PostHeader)`
     display: block;
     font-size: 14px;
     line-height: 18px;
-    color: #1e1e2d;
+    color: #4b4b4b;
     margin: 0 0 2px;
   }
 

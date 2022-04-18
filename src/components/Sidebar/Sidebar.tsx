@@ -116,14 +116,14 @@ export default styled(Sidebar)`
     .userWidgetName {
       font-size: 14px;
       line-height: 18px;
-      color: #1e1e2d;
+      color: #4b4b4b;
       display: block;
     }
 
     .userWidgetDesignation {
       font-size: 10px;
       line-height: 14px;
-      color: #1e1e2d;
+      color: #4b4b4b;
       display: block;
     }
 

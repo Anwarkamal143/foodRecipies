@@ -595,7 +595,7 @@ export function ExportIcon(props: IconType) {
     width = 16,
     height = 16,
 
-    stroke = "#1E1E2D",
+    stroke = "#4b4b4b",
     ...rest
   } = props
   return (
@@ -1547,7 +1547,7 @@ export const RightSliderArrow = (props: IconType) => {
 }
 
 export function AttachmentIcon(props: IconType) {
-  const { width = 19, height = 19, fill = "#1E1E2D", ...rest } = props
+  const { width = 19, height = 19, fill = "#4b4b4b", ...rest } = props
   return (
     <svg
       width={width}
@@ -1673,7 +1673,7 @@ function SvgExclamationCircle(
 export const ExclamationCircleIcon = React.forwardRef(SvgExclamationCircle)
 
 export function HorizontalDotsIcon(props: IconType) {
-  const { width = 15, height = 3, fill = "#1E1E2D", ...rest } = props
+  const { width = 15, height = 3, fill = "#4b4b4b", ...rest } = props
   return (
     <svg
       width={width}
