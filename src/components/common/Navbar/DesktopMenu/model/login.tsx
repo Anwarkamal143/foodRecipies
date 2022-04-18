@@ -17,6 +17,7 @@ const LoginModel = ({ className, isOpen, onCancel }: login) => {
   const handleClose = () => {
     onCloseModel()
     onCancel?.()
+    setView("0")
   }
   useEffect(() => {
     if (isOpen) {
