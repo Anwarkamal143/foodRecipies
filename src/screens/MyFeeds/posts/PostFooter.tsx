@@ -128,7 +128,7 @@ export default styled(PostFooter)`
       padding: 0 30px 0 10px;
       font-size: 14px;
       line-heoght: 20px;
-      color: #1e1e2d;
+      color: #4b4b4b;
       font-weight: 700px;
       display: none;
 

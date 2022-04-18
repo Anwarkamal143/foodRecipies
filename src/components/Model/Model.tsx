@@ -188,7 +188,7 @@ export default styled(Model)`
   .modal-title {
     display: block;
     font-weight: 700;
-    color: #1e1e2d;
+    color: #4b4b4b;
     font-size: 16px;
     line-height: 21px;
   }
@@ -257,7 +257,7 @@ export default styled(Model)`
       outline: none;
       font-size: 10px;
       line-height: 14px;
-      color: #1e1e2d;
+      color: #4b4b4b;
       padding: 8px 10px;
 
       &:focus {
@@ -275,7 +275,7 @@ export default styled(Model)`
     flex-flow: row wrap;
     font-size: 10px;
     text-align: center;
-    color: #1e1e2d;
+    color: #4b4b4b;
 
     li {
       padding: 12px 9px;
@@ -305,8 +305,8 @@ export default styled(Model)`
       }
 
       &.icon-sms {
-        background: #1e1e2d;
-        border-color: #1e1e2d;
+        background: #4b4b4b;
+        border-color: #4b4b4b;
 
         svg {
           width: 20px;

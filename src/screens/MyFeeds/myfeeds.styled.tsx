@@ -82,7 +82,7 @@ export const FeedsWidget = styled.div`
 
   .content {
     padding: 5px 10px;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 18px;
     transition: all 0.4s ease;
     color: #4b4b4b;
@@ -166,7 +166,7 @@ export const AddStorie = styled.div`
   border-radius: 15px;
   font-size: 14px;
   line-height: 18px;
-  color: #1e1e2d;
+  color: #4b4b4b;
   svg {
     margin-bottom: 10px;
     width: 30px;

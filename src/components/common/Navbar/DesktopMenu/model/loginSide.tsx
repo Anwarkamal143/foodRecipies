@@ -1,4 +1,5 @@
 import { Button, Input } from "@components"
+import { AngleRight } from "@icons"
 import React from "react"
 
 type Props = {
@@ -10,27 +11,48 @@ const LoginSide = (props: Props) => {
   const { setView, view } = props
 
   return (
-    <div>
+    <div className="login-left-area">
       {view === "0" && (
-        <div>
+        <>
           <h2>Log In</h2>
           <p>Hey you. Welcome back!</p>
-          <Input label="Email address" />
-          <Input label="Password" />
-          <p>Forgot Password?</p>
-          <Button>Login</Button>
-        </div>
+          <div className="field-holder">
+            <Input label="Email address" />
+          </div>
+          <div className="field-holder">
+            <Input label="Password" />
+          </div>
+          <div className="password-reset">
+            <span className="text-password">
+              Forgot Password?{" "}
+              <span className="img-arrow">
+                <AngleRight />
+              </span>
+            </span>
+          </div>
+          <Button type="primary" className="button-circle">
+            Login
+          </Button>
+        </>
       )}
       {view !== "0" && (
-        <div>
+        <>
           <h2>Log In</h2>
           <span>
             {" "}
-            <p>Already have an Online Cook acount?</p>Continue here!
+            <p className="small-text">
+              Already have an Online Cook acount?{" "}
+              <span className="link-text">Continue here!</span>
+            </p>
           </span>
-          <p>Forgot Password?</p>
-          <Button onClick={() => setView?.("0")}>Login</Button>
-        </div>
+          <Button
+            onClick={() => setView?.("0")}
+            type="default"
+            className="button-circle button-outline"
+          >
+            Login
+          </Button>
+        </>
       )}
     </div>
   )

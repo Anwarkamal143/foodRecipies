@@ -3,7 +3,7 @@ import {
   DetailedHTMLProps,
   forwardRef,
   ImgHTMLAttributes,
-  SVGProps,
+  SVGProps
 } from "react"
 export type IconType = SVGProps<SVGSVGElement>
 // import Profile from "../images/profile.jpg"
@@ -595,7 +595,7 @@ export function ExportIcon(props: IconType) {
     width = 16,
     height = 16,
 
-    stroke = "#1E1E2D",
+    stroke = "#4b4b4b",
     ...rest
   } = props
   return (
@@ -1258,7 +1258,7 @@ export function LogoutIcon(props: IconType) {
   )
 }
 export function ProfileTogglerIcon(props: IconType) {
-  const { width = 10, height = 20, stroke = "#1D2129", ...rest } = props
+  const { width = 10, height = 20, stroke = "#4b4b4b", ...rest } = props
   return (
     <svg
       width={width}
@@ -1565,7 +1565,7 @@ export const RightSliderArrow = (props: IconType) => {
 }
 
 export function AttachmentIcon(props: IconType) {
-  const { width = 19, height = 19, fill = "#1E1E2D", ...rest } = props
+  const { width = 19, height = 19, fill = "#4b4b4b", ...rest } = props
   return (
     <svg
       width={width}
@@ -1651,6 +1651,28 @@ export function PhoneIcon(props: IconType) {
     </svg>
   )
 }
+
+export function CheckCircle(props: IconType) {
+  const { width = 16, height = 17, fill = "#D7D7D7", ...rest } = props
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 16 17"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...rest}
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M8 0.912109C3.58182 0.912109 0 4.49393 0 8.91211C0 13.3303 3.58182 16.9121 8 16.9121C12.4182 16.9121 16 13.3303 16 8.91211C16 4.49393 12.4182 0.912109 8 0.912109ZM11.4676 7.55938C11.5315 7.48639 11.5801 7.40137 11.6106 7.30932C11.6411 7.21727 11.6529 7.12005 11.6453 7.02337C11.6377 6.9267 11.6108 6.83252 11.5662 6.74638C11.5217 6.66025 11.4604 6.5839 11.3859 6.52181C11.3114 6.45973 11.2252 6.41317 11.1324 6.38488C11.0397 6.35659 10.9422 6.34714 10.8457 6.35708C10.7493 6.36701 10.6558 6.39614 10.5707 6.44275C10.4857 6.48936 10.4108 6.55251 10.3505 6.62847L7.22327 10.3805L5.60509 8.76156C5.46793 8.62909 5.28422 8.55578 5.09353 8.55744C4.90284 8.55909 4.72043 8.63558 4.58559 8.77042C4.45074 8.90527 4.37426 9.08768 4.3726 9.27836C4.37094 9.46905 4.44425 9.65276 4.57673 9.78993L6.75855 11.9717C6.83001 12.0432 6.91556 12.0989 7.00976 12.1354C7.10395 12.1719 7.20473 12.1884 7.30565 12.1839C7.40657 12.1793 7.50544 12.1537 7.59594 12.1088C7.68643 12.0639 7.76658 12.0006 7.83127 11.923L11.4676 7.55938Z"
+        fill={fill}
+      />
+    </svg>
+  )
+}
+
 export function TelegramIcon(props: IconType) {
   const { width = 22, height = 22, fill = "#ffffff", ...rest } = props
   return (
@@ -1691,7 +1713,7 @@ function SvgExclamationCircle(
 export const ExclamationCircleIcon = React.forwardRef(SvgExclamationCircle)
 
 export function HorizontalDotsIcon(props: IconType) {
-  const { width = 15, height = 3, fill = "#1E1E2D", ...rest } = props
+  const { width = 15, height = 3, fill = "#4b4b4b", ...rest } = props
   return (
     <svg
       width={width}

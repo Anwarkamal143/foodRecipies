@@ -205,7 +205,7 @@ export default styled(PostBody)`
   .post-text {
     font-size: 12px;
     line-height: 20px;
-    color: #1e1e2d;
+    color: #4b4b4b;
     margin: 0 0 24px;
   }
 

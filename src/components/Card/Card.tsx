@@ -86,7 +86,7 @@ export default styled(Card)`
     h2 {
       font-size: 16px;
       line-height: 20px;
-      color: #1e1e2d;
+      color: #4b4b4b;
     }
 
     .feedsWidgetSeeAll {
@@ -189,7 +189,7 @@ export default styled(Card)`
       display: block;
       font-size: 14px;
       line-height: 18px;
-      color: #1e1e2d;
+      color: #4b4b4b;
       font-weight: 700;
       margin: 0 0 2px;
     }

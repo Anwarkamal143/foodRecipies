@@ -315,7 +315,7 @@ export const Dashboard = styled(DashBoard)`
     h3 {
       font-size: 12px;
       line-height: 20px;
-      color: #1d2129;
+      color: #4b4b4b;
       font-weight: 400;
       margin: 0 0 8px;
     }
@@ -331,7 +331,7 @@ export const Dashboard = styled(DashBoard)`
       
       strong {
         font-size: 22px;
-        color: #1d2129;
+        color: #4b4b4b;
 
         @media (max-width: 1199px) {
           font-size: 18px;
@@ -557,7 +557,7 @@ export const Dashboard = styled(DashBoard)`
         font-size: 16px;
         line-height: 21px;
         display: block;
-        color: #1E1E2D;
+        color: #4b4b4b;
 
         @media (max-width: 1199px) {
           margin: 0 0 20px;
@@ -727,7 +727,7 @@ export const Dashboard = styled(DashBoard)`
         display: flex;
         align-items: center;
         justify-content: space-between;
-        color: #1E1E2D;
+        color: #4b4b4b;
       }
     }
 
@@ -749,7 +749,7 @@ export const Dashboard = styled(DashBoard)`
         strong {
           font-size: 20px;
           line-height: 28px;
-          color: #1D2129;
+          color: #4b4b4b;
         }
 
         span {
@@ -762,7 +762,7 @@ export const Dashboard = styled(DashBoard)`
       .textRamaining {
         border: 1px solid #E5E8EF;
         border-radius: 15px;
-        color: #1D2129;
+        color: #4b4b4b;
         font-size: 12px;
         line-height: 20px;
         padding: 2px 15px;
@@ -903,7 +903,7 @@ export const Dashboard = styled(DashBoard)`
         font-size: 16px;
         line-height: 21px;
         display: block;
-        color: #1E1E2D;
+        color: #4b4b4b;
         margin: 0 15px 0 0;
       }
 
@@ -1031,7 +1031,7 @@ export const Dashboard = styled(DashBoard)`
   width: 100%;
   font-size: 12px;
   line-height: 20px;
-  color: #1D2129;
+  color: #4b4b4b;
   font-weight: 500;
 
   @media (max-width: 767px) {
@@ -1170,7 +1170,7 @@ export const Dashboard = styled(DashBoard)`
       display: flex;
       align-items: center;
       justify-content: space-between;
-      color: #1E1E2D;
+      color: #4b4b4b;
     }
   }
 
@@ -1214,7 +1214,7 @@ export const Dashboard = styled(DashBoard)`
     .recipename {
       font-size: 13px;
       line-height: 17px;
-      color: #1E1E2D;
+      color: #4b4b4b;
       display: block;
       margin: 0 0 5px;
     }
@@ -1227,7 +1227,7 @@ export const Dashboard = styled(DashBoard)`
       .receipeRatings {
         font-size: 10px;
         line-height: 13px;
-        color: #1E1E2D;
+        color: #4b4b4b;
         font-weight: 700;
         display: none;
       }

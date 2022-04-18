@@ -310,7 +310,7 @@ export default styled(DailyTask)`
       font-size: 18px;
       line-height: 23px;
       margin: 0 0 5px;
-      color: #1e1e2d;
+      color: #4b4b4b;
       font-weight: 400;
     }
 
@@ -349,7 +349,7 @@ export default styled(DailyTask)`
     .recipename {
       font-size: 18px;
       line-height: 1.4;
-      color: #1e1e2d;
+      color: #4b4b4b;
       font-weight: 400;
       display: block;
     }
