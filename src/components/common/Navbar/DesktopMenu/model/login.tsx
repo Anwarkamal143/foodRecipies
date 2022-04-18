@@ -71,6 +71,7 @@ export default styled(LoginModel)`
     justify-content: space-between;
     align-items: center;
     position: relative;
+    min-height: 392px;
 
     @media (max-width: 767px) {
       display: block;
