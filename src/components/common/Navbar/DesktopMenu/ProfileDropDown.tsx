@@ -1,9 +1,10 @@
 import { CircleImage, UnderlineLink, UnstyledLink } from "@components"
 import { Menu, Transition } from "@headlessui/react"
+import { useOpenClose } from "@hooks"
 import { classNames } from "@utils"
 import React, { Fragment } from "react"
 import { FiChevronDown, FiChevronUp } from "react-icons/fi"
-
+import LoginModel from "./model/login"
 const myMenus = [
   { id: 1, title: "My Favorite Recipes", href: "/" },
   { id: 2, title: "My Followed Cooks", href: "/" },
@@ -18,19 +19,25 @@ const otherMenus = [
 ]
 
 function ProfileDropDown() {
+  const [isOpenModel, onOpenModel, onCloseModel] = useOpenClose()
+
   return (
     <Menu as="div" className="relative">
       <div>
-        <Menu.Button className="relative flex items-center gap-2 text-sm font-medium text-white rounded-full focus:outline-none">
+        <Menu.Button
+          className="relative flex items-center gap-2 text-sm font-medium text-white rounded-full focus:outline-none"
+         
+        >
           <span className="sr-only">Open user menu</span>
           <CircleImage
             src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
             className="w-6 h-6"
           />
-          <p className="hidden md:block">Admin</p>
+          <p className="hidden md:block" onClick={onOpenModel} >Admin</p>
           <FiChevronDown size="0.8rem" className="hidden md:block" />
         </Menu.Button>
       </div>
+      <LoginModel isOpen={isOpenModel} onCancel={onCloseModel} />
       <Transition
         as={Fragment}
         enter="transition ease-out duration-100"

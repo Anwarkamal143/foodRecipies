@@ -8,7 +8,7 @@ import React, {
   Ref,
   TextareaHTMLAttributes,
   useEffect,
-  useState
+  useState,
 } from "react"
 import { InputWrapper } from "./Input.styled"
 interface inputProfile
@@ -175,7 +175,7 @@ function FocusInput(props: inputProfile, ref: Ref<any>) {
       )
   }
 
-  const iClasses = classNames("text-input", props.inputClasses || "mb-20", {
+  const iClasses = classNames("text-input", props.inputClasses || "", {
     "prefix-element": prefixElement,
     "materialized-input": props.materialDesign,
     "ico-input": icon,
