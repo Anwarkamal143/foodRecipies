@@ -1240,7 +1240,7 @@ export function LogoutIcon(props: IconType) {
   )
 }
 export function ProfileTogglerIcon(props: IconType) {
-  const { width = 10, height = 20, stroke = "#1D2129", ...rest } = props
+  const { width = 10, height = 20, stroke = "#4b4b4b", ...rest } = props
   return (
     <svg
       width={width}

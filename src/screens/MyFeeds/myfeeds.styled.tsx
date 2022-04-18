@@ -82,7 +82,7 @@ export const FeedsWidget = styled.div`
 
   .content {
     padding: 5px 10px;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 18px;
     transition: all 0.4s ease;
     color: #4b4b4b;
