@@ -4,10 +4,9 @@ import {
   DropDown,
   PopOver,
   PreviewSlider,
-  ProfileItem,
+  ProfileItem
 } from "@components"
 import { AngleRight, DownArrowIcon, FilterIcon } from "@icons"
-import { Page } from "@layouts"
 import { useFormik } from "formik"
 import { useState } from "react"
 import NoSSR from "react-no-ssr"
@@ -25,7 +24,7 @@ import {
   LeftContainer,
   RightContainer,
   SlidertWrapper,
-  SuggestedCooksSection,
+  SuggestedCooksSection
 } from "./myfeeds.styled"
 import { Post } from "./posts"
 
@@ -55,7 +54,7 @@ function MyFeeds(props: IMyFeedProps) {
   })
 
   return (
-    <Page nossr>
+    <NoSSR>
       <FeedsContainer className={className}>
         <LeftContainer>
           <SlidertWrapper>
@@ -185,7 +184,7 @@ function MyFeeds(props: IMyFeedProps) {
       <NoSSR>
         <PreviewSlider />
       </NoSSR>
-    </Page>
+    </NoSSR>
   )
 }
 export const MyFeedsScreen = MyFeeds

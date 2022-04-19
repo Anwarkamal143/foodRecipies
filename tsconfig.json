@@ -27,6 +27,7 @@
       "@layouts": ["src/layouts"],
       "@layouts/*": ["src/layouts/*"],
       "@screens": ["src/screens"],
+      "@animations": ["src/animations"],
       "@icons": ["src/assets/icons"],
       "@assets/*": ["src/assets/*"],
       "@pages/*": ["pages/*"],

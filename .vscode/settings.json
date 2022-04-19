@@ -5,6 +5,7 @@
   "window.zoomLevel": 0,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   "editor.codeActionsOnSave": {
     // "source.organizeImports": true,
     "source.fixAll.eslint": true
@@ -18,8 +19,10 @@
   "[typescriptreact]": {
     "editor.codeActionsOnSave": {
       "source.organizeImports": true,
-      "source.fixAll.eslint": true
-    }
+      "source.fixAll.eslint": true,
+
+    },
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "[javascript]": {
     "editor.codeActionsOnSave": {
@@ -34,5 +37,6 @@
     }
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
 }
