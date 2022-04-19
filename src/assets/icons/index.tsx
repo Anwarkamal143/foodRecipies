@@ -1729,6 +1729,47 @@ export function HorizontalDotsIcon(props: IconType) {
     </svg>
   )
 }
+export function SearchIcon(props: IconType) {
+  const { width = 18, height = 19, fill = "#fff", ...rest } = props
+  return (
+    <svg width={width} height={height} viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
+      <path d="M5.6301 4.48762C5.35255 4.20985 4.90226 4.20985 4.62472 4.48762C3.59424 5.51811 3.08776 6.95363 3.23495 8.42637C3.27167 8.79325 3.58075 9.06674 3.94169 9.06674C3.96541 9.06674 3.98931 9.06553 4.01303 9.06317C4.40386 9.02408 4.68896 8.67542 4.64987 8.28485C4.54511 7.23824 4.90253 6.22057 5.6301 5.49296C5.90786 5.21546 5.90786 4.76513 5.6301 4.48762Z" fill={fill} />
+      <path d="M8.01856 0C3.59711 0 0 3.59711 0 8.01856C0 12.44 3.59711 16.0371 8.01856 16.0371C12.44 16.0371 16.0371 12.44 16.0371 8.01856C16.0371 3.59711 12.44 0 8.01856 0ZM8.01856 14.6344C4.37047 14.6344 1.40268 11.6667 1.40268 8.01856C1.40268 4.37047 4.37047 1.40268 8.01856 1.40268C11.6664 1.40268 14.6344 4.37047 14.6344 8.01856C14.6344 11.6667 11.6667 14.6344 8.01856 14.6344Z" fill={fill} />
+      <path d="M17.7978 16.8284L13.8294 12.86C13.5603 12.5909 13.1247 12.5909 12.8556 12.86C12.5866 13.1288 12.5866 13.5649 12.8556 13.8337L16.8241 17.8022C16.9586 17.9367 17.1347 18.0039 17.311 18.0039C17.4873 18.0039 17.6633 17.9367 17.7978 17.8022C18.0668 17.5334 18.0668 17.0972 17.7978 16.8284Z" fill={fill} />
+    </svg>
+
+  )
+}
+export function CrossIcon(props: IconType) {
+  const { width = 42, height = 19, fill = "#fff", ...rest } = props
+  return (
+    <svg width={width} height={height} viewBox="0 0 42 19" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
+      <path d="M15.386 26.0996L25.6433 15.8423" stroke="#292D32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M25.6433 26.0991L15.386 15.8418" stroke="#292D32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+
+  )
+}
+export function LinkArrowIcon(props: IconType) {
+  const { width = 9, height = 9, fill = "#fff", ...rest } = props
+  return (
+    <svg width={width} height={height} viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
+      <path d="M8 1L1 8" stroke="#DEDEDE" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M2.865 1L8 1V6.135" stroke="#DEDEDE" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+
+  )
+}
+export function ChevronRightIcon(props: IconType) {
+  const { width = 12, height = 12, fill = "#fff", ...rest } = props
+  return (
+    <svg width={width} height={height} viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
+      <path fillRule="evenodd" clipRule="evenodd" d="M4.20316 2.8889C4.0079 3.08417 4.0079 3.40075 4.20316 3.59602L6.06615 5.45903L4.25785 7.26732C4.06259 7.46259 4.06259 7.77917 4.25785 7.97443L4.47882 8.1954C4.67409 8.39066 4.99067 8.39066 5.18593 8.1954L7.57242 5.80892C7.76768 5.61366 7.76768 5.29707 7.57242 5.10181L7.35145 4.88084C7.3341 4.86349 7.31579 4.84768 7.29669 4.83341L5.13124 2.66793C4.93597 2.47267 4.61939 2.47267 4.42413 2.66793L4.20316 2.8889Z" fill="#8D8D96" />
+    </svg>
+
+
+  )
+}
 
 type ImageProps = DetailedHTMLProps<
   ImgHTMLAttributes<HTMLImageElement>,
