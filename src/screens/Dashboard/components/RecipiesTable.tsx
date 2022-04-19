@@ -210,7 +210,7 @@ function RecipiesTable() {
           </tr>
         </thead>
         <tbody>
-          {collection.map((items: any, index: any) => {
+          {collection.map((items: any, index: number) => {
             return (
               <tr key={index}>
                 <td>
@@ -231,7 +231,7 @@ function RecipiesTable() {
                 {items?.view?.map(m => {
                   return (
                     <>
-                      <td className="view">
+                      <td className="view" key={m.downrate}>
                         <a href="#">
                           <span className="ratings">{m.rateing}</span>
                           <span className="ratingsStatus">

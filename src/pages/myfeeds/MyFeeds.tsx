@@ -1,5 +1,11 @@
+import { getPageLayout } from "@layouts"
 import { MyFeedsScreen } from "@screens"
 
-export default function MyFeeds() {
-  return <MyFeedsScreen />
+ const  MyFeeds =() =>{
+  return <MyFeedsScreen  />
 }
+
+// MyFeeds.pageLayout = Page
+
+MyFeeds.getLayout = getPageLayout
+export default MyFeeds

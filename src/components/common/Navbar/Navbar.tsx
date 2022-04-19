@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { UnstyledLink } from "@components"
+import { AppSearch, UnstyledLink } from "@components"
 import { Disclosure } from "@headlessui/react"
 import { XIcon } from "@heroicons/react/outline"
 import React from "react"
@@ -59,6 +59,7 @@ function NavBar() {
           </>
         )}
       </Disclosure>
+      <AppSearch />
     </>
   )
 }

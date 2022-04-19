@@ -1,5 +1,6 @@
 // import { Header, Sidebar } from "@Components"
 import { StyledLayoutWrapper } from "@styled"
+import { ComponentType, ReactElement, ReactNode } from "react"
 import { MainContentWrapper } from "./applayout.styled"
 
 export type LayoutType = {
@@ -22,3 +23,4 @@ export function AppLayout(props: LayoutType) {
     </StyledLayoutWrapper>
   )
 }
+export const getLayout = (page: ReactElement | ReactNode | ComponentType) => <AppLayout>{page}</AppLayout>

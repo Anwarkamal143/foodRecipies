@@ -1,4 +1,4 @@
-import { DetailedHTMLProps, HtmlHTMLAttributes } from "react"
+import { ComponentType, DetailedHTMLProps, HtmlHTMLAttributes, ReactElement, ReactNode } from "react"
 import NoSSR from "react-no-ssr"
 import styled, { css } from "styled-components"
 
@@ -148,3 +148,4 @@ export function Page(props: PageLayoutType) {
     </PageLayoutWrapper>
   )
 }
+export const getPageLayout = (page: ReactElement | ReactNode | ComponentType) => <Page nossr>{page}</Page>
