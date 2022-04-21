@@ -1,12 +1,10 @@
-import { LeftSliderArrow, RightSliderArrow } from "@icons";
 import { PageLayoutWrapper } from "@layouts";
-import { categoryData } from "data";
-import React, { useEffect, useRef, useState } from "react";
+import { categoryData, FavData } from "data";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import FeaturedRecipes from './../favorite-recipies/FeaturedRecipes';
+import RecipesCard from '../../components/RecipiesCard';
 import CategoryTypes from "./categoryTypes";
 import LatestRecipesSlider from "./latestRecipes";
-
 
 type Props = {
     className?: string
@@ -15,20 +13,10 @@ type Props = {
 
 const NewPage = ({ className }: Props) => {
     const [newPageData, setNewPageData] = useState<any>([])
-    const sliderRef = useRef(null)
 
     useEffect(() => {
         setNewPageData(categoryData)
     }, [categoryData])
-    const settings = {
-        className: "center",
-        slidesToShow: 5,
-
-        slidesToScroll: 1,
-        speed: 1200,
-        nextArrow: <RightSliderArrow />,
-        prevArrow: <LeftSliderArrow />,
-    };
     return (
         <div className={className}>
             <PageLayoutWrapper variant={'regular'}>
@@ -38,7 +26,7 @@ const NewPage = ({ className }: Props) => {
                         <span>A recipe is a set of instructions that describes how to prepare or make.</span>
                         <span className="feature-btn">View All Featured > </span>
                     </div>
-                    <FeaturedRecipes />
+                    <RecipesCard data={FavData} />
                 </div>
                 <div>
                     <CategoryTypes data={newPageData} />

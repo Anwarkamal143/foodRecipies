@@ -42,9 +42,6 @@ const LatestRecipesSlider = ({ className }: Props) => {
         ],
     };
     const LatestRecipes = () => {
-
-
-
         return FavData.map((e, index) => {
             return (
                 <div className={`item-${index}`} key={e.id}>
@@ -74,13 +71,9 @@ const LatestRecipesSlider = ({ className }: Props) => {
                 </div>
             )
         })
-
-
-
     }
     return (
         <div className={className}>
-
             <Slider
                 draggable={false}
                 ref={sliderRef}
@@ -89,7 +82,6 @@ const LatestRecipesSlider = ({ className }: Props) => {
                 {LatestRecipes()}
             </Slider>
         </div>
-
     )
 }
 export default styled(LatestRecipesSlider)`
