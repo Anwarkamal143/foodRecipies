@@ -1,18 +1,26 @@
 import HeartIconAnimtaed from "@assets/icons/HeartIconAnimtaed"
 import { DropDown, Icon } from "@components"
-import { DownArrowIcon, FilterIcon, Tag, TimeDuraion } from "@icons"
+import { DownArrowIcon, FilterIcon, SearchIcon, Tag, TimeDuraion } from "@icons"
+import { PageLayoutWrapper } from "@layouts"
 import { FavData } from "data"
 import React from "react"
 import PostSliderForm from "src/screens/MyFeeds/components/PostsFilters/PostSliderForm"
 import Button from "./../../components/Button/Button"
+import { Input } from './../../components/Input/Input'
 import { PopOver } from "./../../components/PopOver"
 import { FilterSection } from "./../../screens/MyFeeds/myfeeds.styled"
+
 type Props = {}
 
 const Favorite = (props: Props) => {
   return (
-    <div>
+    <PageLayoutWrapper variant={'regular'}>
+
       <FilterSection>
+        <Input
+          type={'text'}
+          icon={<SearchIcon />}
+        />
         <PopOver
           button={
             <Button
@@ -69,7 +77,7 @@ const Favorite = (props: Props) => {
               <Icon className="heartIcon">
                 <HeartIconAnimtaed />
               </Icon>
-              <image src={e.image} alt="image" />
+              <img src={e.image} alt="image" />
               <span>{e.title}</span>
               <span>{e.fvrtBy}</span>
             </div>
@@ -86,7 +94,7 @@ const Favorite = (props: Props) => {
           </div>
         )
       })}
-    </div>
+    </PageLayoutWrapper>
   )
 }
 
