@@ -195,3 +195,93 @@ export const FavData = [
     state: "easy",
   },
 ]
+export const categoryData = [
+  {
+    category: 'Breakfast',
+    data: [
+      {
+
+        id: "assddddd",
+        image: "/images/bbq.jpg",
+        title: "Organic Vegetable with Peas and  chicken Burrito",
+        fvrtBy: "By Emma Olivia",
+        time: "20 mins",
+        state: "easy",
+
+      },
+      {
+
+        id: "assddddd",
+        image: "/images/bbq.jpg",
+        title: "Organic Vegetable with Peas and  chicken Burrito",
+        fvrtBy: "By Emma Olivia",
+        time: "20 mins",
+        state: "easy",
+
+      },
+    ]
+  },
+  {
+    category: 'Snacks',
+    data: [
+      {
+
+        id: "assddddd",
+        image: "/images/bbq.jpg",
+        title: "Organic Vegetable with Peas and  chicken Burrito",
+        fvrtBy: "By Emma Olivia",
+        time: "20 mins",
+        state: "easy",
+
+      },
+      {
+
+        id: "assddddd",
+        image: "/images/bbq.jpg",
+        title: "Organic Vegetable with Peas and  chicken Burrito",
+        fvrtBy: "By Emma Olivia",
+        time: "20 mins",
+        state: "easy",
+
+      },
+    ]
+  },
+
+  {
+    category: 'Sandwiches',
+    data: []
+  },
+  {
+    category: 'Baked Goods',
+    data: []
+  },
+  {
+    category: 'Dinner',
+    data: []
+  },
+  {
+    category: 'Dessert',
+    data: []
+  },
+  {
+    category: 'Seafood',
+    data: []
+  },
+  {
+    category: 'Appetizers',
+    data: []
+  },
+  {
+    category: 'Pasta',
+    data: []
+  },
+  {
+    category: 'Snacks',
+    data: []
+  },
+  {
+    category: 'Snacks',
+    data: []
+  },
+
+]
