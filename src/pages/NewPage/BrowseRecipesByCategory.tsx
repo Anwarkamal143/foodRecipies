@@ -13,35 +13,39 @@ type Props = {
 const BrowseRecipesByCategory = ({ index, data = [], className }: Props) => {
     return (
         <div className={className}>
-            {data[index || 0]?.data?.map((e: any) => {
-                return (
-                    <div key={e.id}>
-                        <div>
-                            <Icon className="tagsIcon">
-                                <span>
-                                    <Tag /> Vegan
-                                </span>
-                            </Icon>
-                            <Icon className="heartIcon">
-                                <HeartIconAnimtaed />
-                            </Icon>
-                            <img src={e.image} alt="image" />
-                            <span>{e.title}</span>
-                            <span>{e.fvrtBy}</span>
+            <div className="recipesSectionHolder">
+                {data[index || 0]?.data?.map((e: any) => {
+                    return (
+                        <div className="recipeItem" key={e.id}>
+                            <div className="recipeItemImage">
+                                <Icon className="tagsIcon">
+                                    <span>
+                                        <Tag /> Vegan
+                                    </span>
+                                </Icon>
+                                <Icon className="heartIcon">
+                                    <HeartIconAnimtaed />
+                                </Icon>
+                                <img src={e.image} alt="image" />
+                            </div>
+                            <div className="recipeItemTextbox">
+                                <strong className="recipeTitle">{e.title}</strong>
+                                <span className="recipeAuthor">{e.fvrtBy}</span>
+                                <div className="recipeMeta">
+                                    <span className="recipeMetaBox">
+                                        <TimeDuraion />
+                                        {e.time}
+                                    </span>
+                                    <span className="recipeMetaBox">
+                                        <TimeDuraion />
+                                        {e.state}
+                                    </span>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <span>
-                                <TimeDuraion />
-                                {e.time}
-                            </span>
-                            <span>
-                                <TimeDuraion />
-                                {e.state}
-                            </span>
-                        </div>
-                    </div>
-                )
-            })}
+                    )
+                })}
+            </div>
         </div>
     )
 }

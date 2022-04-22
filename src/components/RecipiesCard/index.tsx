@@ -12,8 +12,8 @@ type Props = {
 const RecipesCard = ({ data = [], className }: Props) => {
     return data?.map((e: any) => {
         return (
-            <div key={e.id}>
-                <div>
+            <div className="recipeItem" key={e.id}>
+                <div className="recipeItemImage">
                     <Icon className="tagsIcon">
                         <span>
                             <Tag /> Vegan
@@ -23,18 +23,20 @@ const RecipesCard = ({ data = [], className }: Props) => {
                         <HeartIconAnimtaed />
                     </Icon>
                     <img src={e.image} alt="image" />
-                    <span>{e.title}</span>
-                    <span>{e.fvrtBy}</span>
                 </div>
-                <div>
-                    <span>
-                        <TimeDuraion />
-                        {e.time}
-                    </span>
-                    <span>
-                        <TimeDuraion />
-                        {e.state}
-                    </span>
+                <div className="recipeItemTextbox">
+                    <strong className="recipeTitle">{e.title}</strong>
+                    <span className="recipeAuthor">{e.fvrtBy}</span>
+                    <div className="recipeMeta">
+                        <span className="recipeMetaBox">
+                            <TimeDuraion />
+                            {e.time}
+                        </span>
+                        <span className="recipeMetaBox">
+                            <TimeDuraion />
+                            {e.state}
+                        </span>
+                    </div>
                 </div>
             </div>
         )

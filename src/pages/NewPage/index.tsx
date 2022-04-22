@@ -1,3 +1,4 @@
+import { ChevronRightIcon } from '@icons';
 import { PageLayoutWrapper } from "@layouts";
 import { categoryData, FavData } from "data";
 import React, { useEffect, useState } from "react";
@@ -18,33 +19,40 @@ const NewPage = ({ className }: Props) => {
         setNewPageData(categoryData)
     }, [categoryData])
     return (
-        <div className={className}>
-            <PageLayoutWrapper variant={'regular'}>
-                <div className="favorite-ctn">
-                    <span>Featured Recipes</span>
-                    <div className="favorite-head">
-                        <span>A recipe is a set of instructions that describes how to prepare or make.</span>
-                        <span className="feature-btn">View All Featured > </span>
+        <div className={`recipesPage ${className}`}>
+            <PageLayoutWrapper className='recipesPageWrapper' variant={'regular'}>
+                <div className="recipesContainer">
+                    <div className="recipesSection">
+                        <header className="recipesSectionHeader">
+                            <strong className="recipesSectionTitle">Featured Recipes</strong>
+                            <div className="favorite-head">
+                                <span className="recipesSectionText">A recipe is a set of instructions that describes how to prepare or make.</span>
+                                <span className="feature-btn">View All Featured <ChevronRightIcon /> </span>
+                            </div>
+                        </header>
+                        <div className="recipesSectionHolder">
+                            <RecipesCard data={FavData} />
+                        </div>
                     </div>
-                    <RecipesCard data={FavData} />
-                </div>
-                <div>
-                    <CategoryTypes data={newPageData} />
-                </div>
-                <div className="latest-Recipes">
-                    <div>
-                        <span>Latest Recipes</span>
-                        <span>View All </span>
+                    <div className='recipesSection'>
+                        <CategoryTypes data={newPageData} />
                     </div>
-                    <div className="latest-Recipes-head">
-                        <span>A recipe is a set of instructions that describes how to prepare or make.</span>
-                        <span className="feature-btn">View All Featured > </span>
+                    <div className="recipesSection">
+                        <header className="recipesSectionHeader">
+                            <strong className='recipesSectionTitle'>Latest Recipes</strong>
+                            <span className="feature-btn">View All <ChevronRightIcon /></span>
+                            <div className="favorite-head">
+                                <span className="recipesSectionText">A recipe is a set of instructions that describes how to prepare or make.</span>
+                            </div>
+                        </header>
+                        <LatestRecipesSlider />
                     </div>
-                    <LatestRecipesSlider />
                 </div>
             </PageLayoutWrapper>
         </div>
     )
 }
 
-export default styled(NewPage)``
+export default styled(NewPage)`
+    width: 100%;
+`
