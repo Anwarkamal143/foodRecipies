@@ -222,7 +222,6 @@
 @import "modal";
 @import "loader";
 
-
 body {
   min-width: 360px;
 }
@@ -280,7 +279,7 @@ body {
 
     @media (max-width: 767px) {
       width: 100%;
-      margin: 0 0 10px
+      margin: 0 0 10px;
     }
 
     &:only-child {
@@ -292,10 +291,10 @@ body {
     font-size: 10px;
     line-height: 14px;
     min-width: 70px;
-    color: #8D8D96;
+    color: #8d8d96;
     padding: 4px 10px;
     background: #fff;
-    border: 1px solid #E5E8EF;
+    border: 1px solid #e5e8ef;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -313,8 +312,8 @@ body {
 
     &:hover {
       color: #fff;
-      background: #FF6067;
-      border-color: #FF6067;
+      background: #ff6067;
+      border-color: #ff6067;
 
       path {
         fill: #fff;
@@ -334,7 +333,6 @@ body {
   margin: 0 7px 30px;
   border-radius: 8px;
   background: #fff;
-  overflow: hidden;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
 
   @media (max-width: 1199px) {
@@ -356,8 +354,10 @@ body {
 
   .recipeItemImage {
     position: relative;
+    border-radius: 8px 8px 0 0;
 
     img {
+      border-radius: 8px 8px 0 0;
       width: 100%;
     }
   }
@@ -391,14 +391,14 @@ body {
       height: 20px;
 
       path {
-        fill: #D4D4D4;
+        fill: #d4d4d4;
       }
     }
   }
 
   .tagsIcon {
     right: 12px;
-    background: #11C278;
+    background: #11c278;
     height: 26px;
     width: auto;
     border-radius: 15px;
@@ -425,13 +425,14 @@ body {
   .recipeItemTextbox {
     overflow: hidden;
     padding: 14px 12px;
+    border-radius: 0 0 8px 8px;
   }
 
   .recipeTitle {
     display: block;
     font-size: 15px;
     line-height: 20px;
-    color: #1E1E2D;
+    color: #1e1e2d;
     margin: 0 0 10px;
   }
 
@@ -439,7 +440,7 @@ body {
     display: block;
     font-size: 10px;
     line-height: 15px;
-    color: #A2A2A2;
+    color: #a2a2a2;
     margin: 0 0 13px;
   }
 
@@ -487,20 +488,16 @@ body {
   &.active,
   &:hover {
     color: #fff;
-    background: #11C278;
+    background: #11c278;
   }
-}
-
-.Sidebar  {
-  display: none;
 }
 
 .recipesPageWrapper {
-  padding: 20px 0 !important;
+  // padding: 20px 0 !important;
 
-  @media (max-width: 767px) {
-    padding: 20px 0 !important;
-  }
+  // @media (max-width: 767px) {
+  //   padding: 20px 0 !important;
+  // }
 }
 
 .slick-arrow {
@@ -516,7 +513,7 @@ body {
   box-shadow: 0 10px 5px rgba(0, 0, 0, 0.05);
 
   &:hover {
-    background: #FF6067;
+    background: #ff6067;
     color: #fff;
   }
 
@@ -607,7 +604,7 @@ body {
       padding-left: 40px !important;
       padding-top: 5px !important;
       padding-bottom: 5px !important;
-      color: #61616C;
+      color: #61616c;
     }
   }
 }
