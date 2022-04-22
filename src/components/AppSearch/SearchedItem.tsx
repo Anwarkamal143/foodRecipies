@@ -26,9 +26,13 @@ const SearchedItem = (props: Props) => {
 
                 <div key={id} className='item'>
                     <Image src={img} alt={name} />
-                    <p>{name}</p>
-                    {newrecipes && <span>{newrecipes} new Recipes</span>}
-                    <LinkArrowIcon onClick={onArrowClick} />
+                    <div className="itemTextbox">
+                        <p>{name}</p>
+                        {newrecipes && <span>{newrecipes} new Recipes</span>}
+                    </div>
+                    <span className="itemArrow">
+                        <LinkArrowIcon onClick={onArrowClick} />
+                    </span>
                 </div>
 
             </div>
@@ -39,8 +43,23 @@ const SearchedItem = (props: Props) => {
 }
 
 export const SearchedCookRecipeItem = styled(SearchedItem)`
+    .item {
+        display: flex;
+        align-items: center;
+        margin: 0 0 15px;
 
-img{
-    width: 50px;
-}
+        .userProfileImageWrap {
+            width: 34px;
+            height: 34px;
+        }
+
+        .itemTextbox {
+            flex-grow: 1;
+            flex-basis: 0;
+            font-size: 11px;
+            line-height: 18px;
+            color: #1E1E2D;
+            padding: 0 10px 0 15px;
+        }
+    }
 `

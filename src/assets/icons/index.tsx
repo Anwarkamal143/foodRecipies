@@ -1208,6 +1208,23 @@ export function SettingsIcon(props: IconType) {
     </svg>
   )
 }
+export function TimeDuraion(props: IconType) {
+  const { width = 18, height = 18, stroke = "#7b7b7b", ...rest } = props
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="14"
+      height="14"
+      viewBox="0 0 14 14"
+      fill="none"
+    >
+      <path
+        d="M7 0C3.14005 0 0 3.14005 0 7C0 10.86 3.14005 14 7 14C10.86 14 14 10.86 14 7C14 3.14005 10.86 0 7 0ZM10.3291 10.6207C10.2153 10.7345 10.066 10.7917 9.9167 10.7917C9.76738 10.7917 9.61795 10.7345 9.5043 10.6207L6.5876 7.7041C6.47791 7.59505 6.4167 7.44679 6.4167 7.2917V3.5C6.4167 3.17743 6.67796 2.9167 7 2.9167C7.32204 2.9167 7.5833 3.17743 7.5833 3.5V7.0502L10.3291 9.7959C10.5571 10.024 10.5571 10.3927 10.3291 10.6207Z"
+        fill="#11C278"
+      />
+    </svg>
+  )
+}
 export function LogoutIcon(props: IconType) {
   const { width = 17, height = 14, stroke = "#7b7b7b", ...rest } = props
   return (
@@ -1713,7 +1730,7 @@ export function HorizontalDotsIcon(props: IconType) {
   )
 }
 export function SearchIcon(props: IconType) {
-  const { width = 18, height = 19, fill = "#fff", ...rest } = props
+  const { width = 18, height = 19, fill = "#ffffff", ...rest } = props
   return (
     <svg width={width} height={height} viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
       <path d="M5.6301 4.48762C5.35255 4.20985 4.90226 4.20985 4.62472 4.48762C3.59424 5.51811 3.08776 6.95363 3.23495 8.42637C3.27167 8.79325 3.58075 9.06674 3.94169 9.06674C3.96541 9.06674 3.98931 9.06553 4.01303 9.06317C4.40386 9.02408 4.68896 8.67542 4.64987 8.28485C4.54511 7.23824 4.90253 6.22057 5.6301 5.49296C5.90786 5.21546 5.90786 4.76513 5.6301 4.48762Z" fill={fill} />
@@ -1724,11 +1741,13 @@ export function SearchIcon(props: IconType) {
   )
 }
 export function CrossIcon(props: IconType) {
-  const { width = 42, height = 19, fill = "#fff", ...rest } = props
+  const { width = 12, height = 12, fill = "#292D32", ...rest } = props
   return (
-    <svg width={width} height={height} viewBox="0 0 42 19" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
-      <path d="M15.386 26.0996L25.6433 15.8423" stroke="#292D32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M25.6433 26.0991L15.386 15.8418" stroke="#292D32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <svg width={width} height={height} viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
+      <path fill={fill} d="M0.8,11.8c-0.2,0-0.4-0.1-0.5-0.2c-0.3-0.3-0.3-0.8,0-1.1L10.5,0.3c0.3-0.3,0.8-0.3,1.1,0s0.3,0.8,0,1.1
+		L1.3,11.6C1.2,11.7,1,11.8,0.8,11.8z"/>
+      <path fill={fill} d="M11,11.8c-0.2,0-0.4-0.1-0.5-0.2L0.3,1.3C0,1,0,0.6,0.3,0.3S1,0,1.3,0.3l10.3,10.3c0.3,0.3,0.3,0.8,0,1.1
+		C11.4,11.7,11.2,11.8,11,11.8z"/>
     </svg>
 
   )

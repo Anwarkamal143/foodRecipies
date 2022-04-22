@@ -6,8 +6,8 @@ import React, { cloneElement, ReactElement, useEffect, useRef } from 'react'
 import styled from 'styled-components'
 
 type Props = {
-    className?: string;
-      children: ReactElement
+  className?: string;
+  children: ReactElement
 }
 const itemVariants = {
   closed: {
@@ -36,33 +36,33 @@ const sideVariants = {
 //   { name: "Blog", to: "#", id: 3 },
 //   { name: "Contact", to: "#", id: 4 }
 // ];
- const SidebarAnimation = ({className, children}: Props) => {
-       const [open, cycleOpen] = useCycle(false, true);
-       const isOpen = useAppSelector(state => state.sidebar.isOpen)
-       const dispatch = useAppDispatch();
-       const ref= useRef(null);
-      const helpo =  useOnClickOutside(ref, () => {
-        cycleOpen();
-        dispatch(toggleSidebar(false));
-        document.body.style.overflow = 'visible'
-      })
-       useEffect(() => {
-           if (isOpen) {
-             document.body.style.overflow = 'hidden'
-               cycleOpen()
-            }
-        },[isOpen])
-        console.log({open, isOpen})
+const SidebarAnimation = ({ className, children }: Props) => {
+  const [open, cycleOpen] = useCycle(false, true);
+  const isOpen = useAppSelector(state => state.sidebar.isOpen)
+  const dispatch = useAppDispatch();
+  const ref = useRef(null);
+  const helpo = useOnClickOutside(ref, () => {
+    cycleOpen();
+    dispatch(toggleSidebar(false));
+    document.body.style.overflow = 'visible'
+  })
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+      cycleOpen()
+    }
+  }, [isOpen])
+  console.log({ open, isOpen })
   return (
-    <div className={className + `${open ? ' slidebar_open': ''}`}>
-        <AnimatePresence >
+    <div className={className + `${open ? ' slidebar_open' : ''}`}>
+      <AnimatePresence >
         {open && (
           <motion.aside
-          ref={ref}
-          className='slider'
+            ref={ref}
+            className='slider'
             initial={{ width: 0, right: 0 }}
             animate={{
-              width: 300
+              width: 360
             }}
             exit={{
               width: 0,
@@ -77,7 +77,7 @@ const sideVariants = {
               exit="closed"
               variants={sideVariants}
             >
-                {cloneElement(children, {})}
+              {cloneElement(children, {})}
               {/* {links.map(({ name, to, id }) => (
                 <motion.a
                   key={id}
@@ -98,7 +98,7 @@ const sideVariants = {
 }
 export const SidebarAnimations = styled(SidebarAnimation)`
 
-&.slidebar_open{
+&.slidebar_open {
     position: fixed;
     top: 0;
     right: 0;
@@ -107,14 +107,22 @@ export const SidebarAnimations = styled(SidebarAnimation)`
     width: 100%;
     height: 100%;
     z-index: 98;
-
-    background: #d3d3d365
+    background: rgba(0, 0, 0, 0.7);
 }
-.slider{
-    
+
+.slider {
     position: fixed;
     height: 100vh;
-    z-index:99;
-    background: lightgray
+    z-index: 99;
+    background: #fff;
+    padding: 50px 25px;
+    overflow: auto;
+
+    @media (max-width: 767px) {
+      padding: 25px;
+      height: 74.4vh;
+      border-radius: 0 0 10px 10px;
+      box-shadow: 0px 24px 45px rgba(0, 0, 0, 0.18);
+    }
 }
 `
