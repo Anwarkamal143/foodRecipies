@@ -1,11 +1,10 @@
+import { Recipe } from "@apptypes/recipe"
 import { Card, ShareSocialLinks } from "@components"
 import { useOpenClose } from "@hooks"
-import { useFormik } from "formik"
-import { POSTSDATA } from "src/screens/data"
 import PostBody from "./PostBody"
 import PostFooter from "./PostFooter"
 import PostHeader from "./PostHeader"
-export type IPostType = typeof POSTSDATA[0]
+export type IPostType = Recipe
 type IMyFeedProps = {
   className?: string
   //   title?: ReactChild | ReactChildren | ReactNode | ReactElement | HTMLElement
@@ -16,18 +15,18 @@ type IMyFeedProps = {
 function Posts(props: IMyFeedProps) {
   const { className, onSubmit, post } = props
   const [isOpenModel, onOpenModel, onCloseModel] = useOpenClose()
-  const {
-    values,
-    handleSubmit,
-    isSubmitting,
-
-    setFieldValue,
-  } = useFormik({
-    initialValues: {},
-    onSubmit: values => {
-      onSubmit?.(true)
-    },
-  })
+  //   const {
+  //     values,
+  //     handleSubmit,
+  //     isSubmitting,
+  // setValues,
+  //     setFieldValue,
+  //   } = useFormik({
+  //     initialValues: {},
+  //     onSubmit: values => {
+  //       onSubmit?.(true, values)
+  //     },
+  //   })
 
   return (
     <>

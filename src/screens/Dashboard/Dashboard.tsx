@@ -7,9 +7,10 @@ import {
   EyeIcon,
   Save,
   Star,
-  StatusUp,
+  StatusUp
 } from "@icons"
 import { DashboardLayout } from "@layouts/Dashboard/DashboardLayout"
+import { DashboardAnalytics, LineChartData, RecipesData } from "@redux/data"
 import { FormatNumber } from "@utils"
 import dayjs from "dayjs"
 import React from "react"
@@ -20,11 +21,9 @@ import {
   ResponsiveContainer,
   Tooltip,
   XAxis,
-  YAxis,
+  YAxis
 } from "recharts"
 import styled from "styled-components"
-import { data, LineChartData } from "../../../data"
-import { RECEPESITEMS } from "../data"
 import { CardHeader, PerformanceBar, StatisticsItem } from "./components"
 import { PerformingRecipe } from "./components/Recipies"
 import RecipiesTable from "./components/RecipiesTable"
@@ -35,7 +34,7 @@ import {
   ProfileperformanceWrapper,
   RightMyRecipiesSection,
   RightPerformanceSection,
-  StatisticsWrapper,
+  StatisticsWrapper
 } from "./dashboard.styed"
 
 const dateFormatter = (item: Date) => dayjs(item).format("MMM YY")
@@ -44,7 +43,7 @@ const DashBoard = ({ className }: { className?: string }) => {
     <DashboardLayout className={`${className} items`}>
       <div className="dashboardDataContent">
         <StatisticsWrapper className="dashboardStatistics">
-          {data.map(item => (
+          {DashboardAnalytics.map(item => (
             <StatisticsItem
               key={item.title}
               title={item.title}
@@ -175,7 +174,7 @@ const DashBoard = ({ className }: { className?: string }) => {
                 }}
               >
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="month" />
+                <XAxis dataKey="date" />
                 <YAxis
                   dataKey={"price"}
                   tickFormatter={item => {
@@ -263,7 +262,7 @@ const DashBoard = ({ className }: { className?: string }) => {
                 />
               </Card.Header>
               <Card.Body>
-                <PerformingRecipe data={RECEPESITEMS} />
+                <PerformingRecipe data={RecipesData} />
               </Card.Body>
             </Card>
           </RightMyRecipiesSection>

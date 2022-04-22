@@ -1,191 +1,24 @@
 import { ProgressArrowUp } from "@icons"
+import { RecipesData } from "@redux/data"
+import dayjs from "dayjs"
 import cloneDeep from "lodash/cloneDeep"
 import Pagination from "rc-pagination"
 import React from "react"
 import styled from "styled-components"
 
-const tableData = [
-  {
-    id: "#89325",
-    status: "live",
-    name: "Organic Vegetable with peas and chicken",
-    view: [
-      {
-        rateing: "150",
-        downrate: "20",
-      },
-    ],
-    date: "02-1-2313",
-  },
-  {
-    id: "#89325",
-    status: "Draft",
-    name: "Organic Vegetable with peas and chicken",
-    view: [
-      {
-        rateing: "150",
-        downrate: "20",
-      },
-    ],
-    date: "02-1-2313",
-  },
-  {
-    id: "#89325",
-    status: "Scheduled",
-    name: "Organic Vegetable with peas and chicken",
-    view: [
-      {
-        rateing: "150",
-        downrate: "20",
-      },
-    ],
-    date: "02-1-2313",
-  },
-  {
-    id: "#89325",
-    status: "live",
-    name: "Organic Vegetable with peas and chicken",
-    view: [
-      {
-        rateing: "150",
-        downrate: "20",
-      },
-    ],
-    date: "02-1-2313",
-  },
-  {
-    id: "#89325",
-    status: "live",
-    name: "Organic Vegetable with peas and chicken",
-    view: [
-      {
-        rateing: "150",
-        downrate: "20",
-      },
-    ],
-    date: "02-1-2313",
-  },
-  {
-    id: "#89325",
-    status: "Draft",
-    name: "Organic Vegetable with peas and chicken",
-    view: [
-      {
-        rateing: "150",
-        downrate: "20",
-      },
-    ],
-    date: "02-1-2313",
-  },
-  {
-    id: "#89325",
-    status: "Scheduled",
-    name: "Organic Vegetable with peas and chicken",
-    view: [
-      {
-        rateing: "150",
-        downrate: "20",
-      },
-    ],
-    date: "02-1-2313",
-  },
-  {
-    id: "#89325",
-    status: "live",
-    name: "Organic Vegetable with peas and chicken",
-    view: [
-      {
-        rateing: "150",
-        downrate: "20",
-      },
-    ],
-    date: "02-1-2313",
-  },
-  {
-    id: "#89325",
-    status: "Draft",
-    name: "Organic Vegetable with peas and chicken",
-    view: [
-      {
-        rateing: "150",
-        downrate: "20",
-      },
-    ],
-    date: "02-1-2313",
-  },
-  {
-    id: "#89325",
-    status: "Scheduled",
-    name: "Organic Vegetable with peas and chicken",
-    view: [
-      {
-        rateing: "150",
-        downrate: "20",
-      },
-    ],
-    date: "02-1-2313",
-  },
-  {
-    id: "#89325",
-    status: "live",
-    name: "Organic Vegetable with peas and chicken",
-    view: [
-      {
-        rateing: "150",
-        downrate: "20",
-      },
-    ],
-    date: "02-1-2313",
-  },
-  {
-    id: "#89325",
-    status: "live",
-    name: "Organic Vegetable with peas and chicken",
-    view: [
-      {
-        rateing: "150",
-        downrate: "20",
-      },
-    ],
-    date: "02-1-2313",
-  },
-  {
-    id: "#89325",
-    status: "Draft",
-    name: "Organic Vegetable with peas and chicken",
-    view: [
-      {
-        rateing: "150",
-        downrate: "20",
-      },
-    ],
-    date: "02-1-2313",
-  },
-  {
-    id: "#89325",
-    status: "Scheduled",
-    name: "Organic Vegetable with peas and chicken",
-    view: [
-      {
-        rateing: "150",
-        downrate: "20",
-      },
-    ],
-    date: "02-1-2313",
-  },
-]
+
 
 function RecipiesTable() {
   const countPerPage = 10
   const [currentPage, setCurrentPage] = React.useState(1)
   const [collection, setCollection] = React.useState(
-    cloneDeep(tableData.slice(0, countPerPage))
+    cloneDeep(RecipesData.slice(0, countPerPage))
   )
   const updatePage = p => {
     setCurrentPage(p)
     const to = countPerPage * p
     const from = to - countPerPage
-    setCollection(cloneDeep(tableData.slice(from, to)))
+    setCollection(cloneDeep(RecipesData.slice(from, to)))
   }
   return (
     <div className="recipiesTableParent">
@@ -215,7 +48,7 @@ function RecipiesTable() {
               <tr key={index}>
                 <td>
                   <a href="#" className="link-item">
-                    {items.id}
+                    {items._id}
                   </a>
                 </td>
                 <td>
@@ -228,22 +61,20 @@ function RecipiesTable() {
                     <span className="statusText">{items.status}</span>
                   </a>
                 </td>
-                {items?.view?.map(m => {
-                  return (
-                    <>
-                      <td className="view">
-                        <a href="#">
-                          <span className="ratings">{m.rateing}</span>
-                          <span className="ratingsStatus">
-                            {m.downrate} <ProgressArrowUp />
-                          </span>
-                        </a>
-                      </td>
-                    </>
-                  )
-                })}
+
+                <>
+                  <td className="view" key={items.views.total}>
+                    <a href="#">
+                      <span className="ratings">{items.views.total}</span>
+                      <span className="ratingsStatus">
+                        {items.views.progress} <ProgressArrowUp />
+                      </span>
+                    </a>
+                  </td>
+                </>
+
                 <td className="date">
-                  <a href="#">{items.date}</a>
+                  <a href="#">{dayjs(items.createdAt).format('DD/MM/YYYY')}</a>
                 </td>
               </tr>
             )
@@ -254,7 +85,7 @@ function RecipiesTable() {
         pageSize={countPerPage}
         onChange={updatePage}
         current={currentPage}
-        total={tableData.length}
+        total={RecipesData.length}
         showPrevNextJumpers={true}
         nextIcon="Next"
         prevIcon="Previous"

@@ -1,3 +1,4 @@
+import { User } from "@apptypes/user"
 import { Icon } from "@components"
 import {
   AngleRight,
@@ -5,7 +6,7 @@ import {
   InstagramIcon,
   TwitterIcon,
   VerticalDots,
-  YoutubeIcon,
+  YoutubeIcon
 } from "@icons"
 import React from "react"
 import styled from "styled-components"
@@ -17,12 +18,12 @@ import {
   ProfileName,
   ProfileStatus,
   ProfileUserName,
-  ProfileWrapper,
+  ProfileWrapper
 } from "./profile.styled"
 import ProfileDropDown from "./ProfileDropDown"
 interface IProfileProps {
   className?: string
-  data: any[]
+  data: User[]
 }
 const HoverDiv = styled.div`
   display: none;
@@ -37,12 +38,12 @@ function ProfileComponent(props: IProfileProps) {
 
   return (
     <div className="userProfileWrapper">
-      {data.map((u: any, i: number) => {
+      {data.map((u: User, i: number) => {
         return (
           <ProfileWrapper className="userProfile" key={i}>
             <ProfileWrapperHover>
               <ProfileDetailsWrapper className="userProfileHolder">
-                <Image className="userProfileImage" src={u.src} alt={u.name} />
+                <Image className="userProfileImage" src={u.profileImg} alt={u.name} />
                 <ProfileDetails className="userProfileDetails">
                   <ProfileName className="userProfileName">
                     {u.name}
@@ -76,7 +77,7 @@ function ProfileComponent(props: IProfileProps) {
             </ProfileWrapperHover>
             <div className="user-hover-block">
               <div className="image-holder">
-                <Image className="userProfileImage" src={u.src} alt={u.name} />
+                <Image className="userProfileImage" src={u.profileImg} alt={u.name} />
               </div>
               <div className="user-detail-area">
                 <ProfileUserName className="userProfileStatus">

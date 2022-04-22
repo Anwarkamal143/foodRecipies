@@ -16,13 +16,20 @@ type IPostFooterProps = {
 
 function PostFooter(props: IPostFooterProps) {
   const { className, onSubmit, post, onSocialItemClick } = props
+  const handleSave = () => {
+    const newPost = {
+      ...post,
+      person: { ...post.person, isRecipeSaved: !post.person.isRecipeSaved },
+    }
+    onSubmit?.(newPost)
 
+  }
   return (
     <div className={className}>
       <div className="likeDetails">
         <div className="saveRecipeBox">
           {/* <HeartFilled /> */}
-          <Icon className="heartIcon">
+          <Icon className={`heartIcon ${post.person.isRecipeSaved ? 'saved_racipe' : ''}`} onClick={handleSave}>
             <HeartIconAnimtaed />
           </Icon>
           <span className="saveRecipeText">Save Recipe</span>
