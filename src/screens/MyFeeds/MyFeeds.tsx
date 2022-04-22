@@ -4,15 +4,13 @@ import {
   DropDown,
   PopOver,
   PreviewSlider,
-  ProfileItem,
+  ProfileItem
 } from "@components"
 import { AngleRight, DownArrowIcon, FilterIcon } from "@icons"
-import { Page } from "@layouts"
+import { RecipesData, Users } from "@redux/data"
 import { useFormik } from "formik"
 import { useState } from "react"
 import NoSSR from "react-no-ssr"
-import { Users } from "../../../data"
-import { POSTSDATA } from "../data"
 import { FeedsSlider } from "./components"
 import PostSliderForm from "./components/PostsFilters/PostSliderForm"
 import {
@@ -25,7 +23,7 @@ import {
   LeftContainer,
   RightContainer,
   SlidertWrapper,
-  SuggestedCooksSection,
+  SuggestedCooksSection
 } from "./myfeeds.styled"
 import { Post } from "./posts"
 
@@ -37,7 +35,7 @@ type IMyFeedProps = {
 }
 function MyFeeds(props: IMyFeedProps) {
   const { className, onSubmit } = props
-  const [posts, setPosts] = useState([...POSTSDATA])
+  const [posts, setPosts] = useState([...RecipesData])
   const [giftModal, setGiftModal] = useState(true)
   const {
     values,
@@ -55,7 +53,7 @@ function MyFeeds(props: IMyFeedProps) {
   })
 
   return (
-    <Page nossr>
+    <NoSSR>
       <FeedsContainer className={className}>
         <LeftContainer>
           <SlidertWrapper>
@@ -185,7 +183,7 @@ function MyFeeds(props: IMyFeedProps) {
       <NoSSR>
         <PreviewSlider />
       </NoSSR>
-    </Page>
+    </NoSSR>
   )
 }
 export const MyFeedsScreen = MyFeeds

@@ -17,7 +17,7 @@ type IMyFeedProps = {
 }
 function PostHeader(props: IMyFeedProps) {
   const { className, onSubmit, post } = props
-  const { person, createdAt } = post
+  const { creator, person, createdAt } = post
   const [isOpenModel, setOpenModel] = useState(false)
   const handleSave = () => {
     const newPost = {
@@ -33,11 +33,11 @@ function PostHeader(props: IMyFeedProps) {
       <div className="person-details">
         <Image
           className="post-headerimg userProfileImage"
-          src={person.profileImage}
+          src={creator.profileImage}
         />
         <div className="userProfileDetails">
           <p className="userProfileName">
-            <strong>{person.name}</strong>
+            <strong>{creator.name}</strong>
           </p>
           <span className="userProfileTime">
             {dayjs(createdAt).subtract(12, "hours").fromNow()}

@@ -1,5 +1,4 @@
 import { ProfileSteps } from "@components"
-import { Page } from "@layouts/PageLayout"
 import { DetailedHTMLProps, HtmlHTMLAttributes } from "react"
 import { DashboardWrapper } from "./dashboard.styled"
 
@@ -23,11 +22,11 @@ export function DashboardLayout(props: PageLayoutType) {
     ...rest
   } = props
   return (
-    <Page>
+    // <Page>
       <DashboardWrapper style={styles} {...otherProps} {...(rest as any)}>
         <ProfileSteps />
         {children}
       </DashboardWrapper>
-    </Page>
+    // </Page>
   )
 }

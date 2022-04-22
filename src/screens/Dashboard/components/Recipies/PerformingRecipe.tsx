@@ -1,3 +1,4 @@
+import { Recipe } from "@apptypes/recipe"
 import { Image, Scrollbar } from "@components"
 import { Clock, ProgressArrowUp } from "@icons"
 import React from "react"
@@ -6,11 +7,11 @@ import {
   RecipeName,
   RecipesDetails,
   RecipesDetailsWrapper,
-  RecipesWrapper,
+  RecipesWrapper
 } from "./recipes.styled"
 interface IRecipeProps {
   className?: string
-  data: any[]
+  data: Recipe[]
 }
 
 function PerformingRecipes(props: IRecipeProps) {
@@ -19,12 +20,12 @@ function PerformingRecipes(props: IRecipeProps) {
   return (
     <div className="userProfileWrapper">
       <Scrollbar autoHeightMax={410} autoHeight>
-        {data.map((u: any, i: number) => {
+        {data.map((u: Recipe, i: number) => {
           return (
             <RecipesWrapper className="receipeDetails" key={i}>
               <RecipesDetailsWrapper className="recipeholder">
                 <a href="#">
-                  <Image className="recipeImage" src={u.image} alt={u.name} />
+                  <Image className="recipeImage" src={u?.images?.[0] || ''} alt={u.name} />
                 </a>
                 <RecipesDetails className="receipeTextbox">
                   <RecipeName className="recipename">
@@ -34,9 +35,9 @@ function PerformingRecipes(props: IRecipeProps) {
                     <div className="receipeRatings">{u.rating}</div>
                     <div className="receipeStatus">
                       <a href="#">
-                        {u.views} Views{" "}
+                        {u?.views?.total} Views{" "}
                         <span>
-                          {u.status} <ProgressArrowUp />
+                          {u?.views?.progress} <ProgressArrowUp />
                         </span>
                       </a>
                     </div>
