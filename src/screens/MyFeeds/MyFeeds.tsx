@@ -53,7 +53,7 @@ function MyFeeds(props: IMyFeedProps) {
   })
 
   return (
-<>
+    <NoSSR>
       <FeedsContainer className={className}>
         <LeftContainer>
           <SlidertWrapper>
@@ -183,7 +183,7 @@ function MyFeeds(props: IMyFeedProps) {
       <NoSSR>
         <PreviewSlider />
       </NoSSR>
-</>
+    </NoSSR>
   )
 }
 export const MyFeedsScreen = MyFeeds

@@ -43,7 +43,7 @@ function RecipiesTable() {
           </tr>
         </thead>
         <tbody>
-          {collection.map((items: any, index: any) => {
+          {collection.map((items: any, index: number) => {
             return (
               <tr key={index}>
                 <td>

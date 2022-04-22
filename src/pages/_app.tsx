@@ -3,16 +3,20 @@ import { AppLayout, AuthLayout } from "@layouts"
 import {
   AppLayoutWrapper,
   MainContainer,
-  MainContentSectionWrapper,
+  MainContentSectionWrapper
 } from "@layouts/applayout.styled"
 import { store } from "@redux"
 import "@styles/globals.scss"
 import type { AppProps } from "next/app"
-import { useMemo } from "react"
+import { ComponentType, ReactElement, ReactNode, useMemo } from "react"
 import { CookiesProvider } from "react-cookie"
 import { Provider } from "react-redux"
-
-function MyApp({ Component, pageProps }: AppProps) {
+type IAppProps = AppProps & {
+  Component: AppProps['Component'] & {
+    getLayout?: (component: ComponentType | ReactElement | ReactNode) => ComponentType
+  }
+}
+function MyApp({ Component, pageProps }: IAppProps) {
   const MemoFunction = useMemo(
     () => (
       <AppLayout>
@@ -29,7 +33,8 @@ function MyApp({ Component, pageProps }: AppProps) {
     ),
     [pageProps]
   )
-  console.log("console log", typeof window == "undefined")
+  const getLayout  = Component.getLayout || (page => page)
+  console.log("console log", typeof window == "undefined", Component.getLayout)
   return (
     // <SessionProvider
     //   // Provider options are not required but can be useful in situations where
@@ -38,7 +43,17 @@ function MyApp({ Component, pageProps }: AppProps) {
     // >
     <CookiesProvider>
       <Provider store={store}>
-        <AuthLayout>{MemoFunction}</AuthLayout>
+        <AuthLayout> <AppLayout>
+        <AppLayoutWrapper>
+          <MainContainer>
+            <Navbar />
+            <MainContentSectionWrapper>
+              <Sidebar className="Sidebar" />
+              {getLayout(<Component {...pageProps} />) }
+            </MainContentSectionWrapper>
+          </MainContainer>
+        </AppLayoutWrapper>
+      </AppLayout></AuthLayout>
       </Provider>
     </CookiesProvider>
     // </SessionProvider>

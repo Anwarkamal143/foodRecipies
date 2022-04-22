@@ -1,16 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
 import { UnstyledLink } from "@components"
+import { useAppDispatch } from "@hooks"
+import { SearchIcon } from "@icons"
+import { toggleSidebar } from "@reducers"
 import React from "react"
 import { BiBell } from "react-icons/bi"
-import AppStoreDropDown from "./DesktopMenu/AppStoreDropDown"
 import CommunityMenuDropDown from "./DesktopMenu/CommunityMenuDropDown"
 import CooksMenuDropDown from "./DesktopMenu/CooksMenuDropDown"
-import LanguageSelectDropDown from "./DesktopMenu/LanguageSelectDropDown"
 import ProfileDropDown from "./DesktopMenu/ProfileDropDown"
 import RecipesMenuDropDown from "./DesktopMenu/RecipesMenuDropDown"
 import WishListDropDown from "./DesktopMenu/WishListDropDown"
 
 function DesktopMenu() {
+  const dispatch = useAppDispatch();
   return (
     <>
       <div className="flex items-center self-end">
@@ -31,21 +33,22 @@ function DesktopMenu() {
       </div>
       <div className="block lg:ml-6">
         <div className="flex items-center gap-x-10">
-          <div className="items-center hidden gap-6  sm:flex">
-            <LanguageSelectDropDown />
-            <AppStoreDropDown />
+          <div className="items-center hidden gap-6 sm:flex">
+            {/* <LanguageSelectDropDown /> */}
+            {/* <AppStoreDropDown /> */}
+            <SearchIcon onClick={() => dispatch(toggleSidebar(true))} />
             <WishListDropDown />
           </div>
 
           {/* Profile dropdown */}
-          <div className="flex items-center gap-3  sm:gap-0">
-            <div className="relative text-white  sm:hidden">
+          <div className="flex items-center gap-3 sm:gap-0">
+            <div className="relative text-white sm:hidden">
               <BiBell
                 size="1.4rem"
                 aria-hidden="true"
                 className="animate-shake"
               />
-              <span className="absolute flex items-center justify-center w-3 h-3 p-1 text-xs text-white rounded-full  -top-1 -right-1 bg-primary-50">
+              <span className="absolute flex items-center justify-center w-3 h-3 p-1 text-xs text-white rounded-full -top-1 -right-1 bg-primary-50">
                 4
               </span>
             </div>
