@@ -7,19 +7,23 @@ import { SearchedSections } from './SearchedSections'
 type Props = {
     className?: string
 
-}
 
+}
+const AppSearchC = ({ toggleSideBar }: { toggleSideBar?: any }) => {
+    console.log({ toggleSideBar })
+    const [searchText, setSearchText] = useState<any>('')
+    return <div>
+        <SearchHeader onClose={toggleSideBar} onSearch={(s?: string) => setSearchText(s)} />
+        <SearchedSections isSearchingEnable={!!searchText} />
+    </div>
+}
 const AppSearchSlider = (props: Props) => {
     const { className } = props
-    const [searchText, setSearchText] = useState('')
     return (
         <div className={className}>
             <SidebarAnimations >
 
-                <div>
-                    <SearchHeader onSearch={(s?: string) => setSearchText(s || '')} />
-                    <SearchedSections isSearchingEnable={!!searchText} />
-                </div>
+                <AppSearchC />
             </SidebarAnimations>
 
 

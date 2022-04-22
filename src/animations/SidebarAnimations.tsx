@@ -3,7 +3,9 @@ import { toggleSidebar } from '@reducers'
 import { useAppDispatch } from '@redux/hooks'
 import { AnimatePresence, motion, useCycle } from 'framer-motion'
 import React, { cloneElement, ReactElement, useEffect, useRef } from 'react'
+import { useMediaQuery } from 'react-responsive'
 import styled from 'styled-components'
+
 
 type Props = {
   className?: string;
@@ -41,28 +43,37 @@ const SidebarAnimation = ({ className, children }: Props) => {
   const isOpen = useAppSelector(state => state.sidebar.isOpen)
   const dispatch = useAppDispatch();
   const ref = useRef(null);
-  const helpo = useOnClickOutside(ref, () => {
+
+
+  const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
+
+  useOnClickOutside(ref, () => {
+    toggleSideBar()
+
+  })
+  const toggleSideBar = () => {
     cycleOpen();
     dispatch(toggleSidebar(false));
-    document.body.style.overflow = 'visible'
-  })
+  }
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden'
+      // document.body.style.overflow = 'hidden'
       cycleOpen()
     }
   }, [isOpen])
   console.log({ open, isOpen })
   return (
     <div className={className + `${open ? ' slidebar_open' : ''}`}>
-      <AnimatePresence >
+      <AnimatePresence onExitComplete={() => {
+        document.body.style.overflow = 'visible'
+      }} >
         {open && (
           <motion.aside
             ref={ref}
             className='slider'
             initial={{ width: 0, right: 0 }}
             animate={{
-              width: 360
+              width: isMobile ? '100%' : 360
             }}
             exit={{
               width: 0,
@@ -77,7 +88,7 @@ const SidebarAnimation = ({ className, children }: Props) => {
               exit="closed"
               variants={sideVariants}
             >
-              {cloneElement(children, {})}
+              {cloneElement(children, { toggleSideBar })}
               {/* {links.map(({ name, to, id }) => (
                 <motion.a
                   key={id}

@@ -14,7 +14,7 @@ function RecipiesTable() {
   const [collection, setCollection] = React.useState(
     cloneDeep(RecipesData.slice(0, countPerPage))
   )
-  const updatePage = p => {
+  const updatePage = (p: any) => {
     setCurrentPage(p)
     const to = countPerPage * p
     const from = to - countPerPage

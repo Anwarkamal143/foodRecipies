@@ -36,7 +36,7 @@ export const RecipesData: Recipe[] = [
           isRecipeSaved: true // is person saved recipe,
         },
         images: [
-            "/images/mock/post1.png",
+      "/images/mock/post1.png",
       "/images/mock/post2.png",
       "/images/mock/post3.png",
       "/images/mock/post1.png",

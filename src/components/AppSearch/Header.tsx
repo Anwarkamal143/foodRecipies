@@ -7,10 +7,11 @@ type Props = {
     className?: string,
     title?: string,
     onSearch?: (text?: string) => void
+    onClose?: () => void
 }
 
 const Header = (props: Props) => {
-    const { className, title = 'Smart Search', onSearch } = props
+    const { className, title = 'Smart Search', onSearch, onClose } = props
     const [searchText, setSearchText] = useState('');
 
 
@@ -24,15 +25,15 @@ const Header = (props: Props) => {
             <div className='searchHeaderHeading'>
 
                 <h3>{title}</h3>
-                <div className="searchHeaderClose">
+                <div className="searchHeaderClose" onClick={onClose}>
                     <CrossIcon />
                 </div>
             </div>
             <div className='searchHeaderForm'>
-                <Input className='search_input' placeholder='Search recipes,cook,shop,and more...' onChange={(e) => {
+                <Input value={searchText} className='search_input' placeholder='Search recipes,cook,shop,and more...' onChange={(e) => {
                     handleSearch(e.target.value)
                 }} materialDesign />
-                {searchText && <CrossIcon className='clearsearchbtn' onClick={() => setSearchText('')} />}
+                {searchText && <CrossIcon className='clearsearchbtn' onClick={() => handleSearch('')} />}
                 <span className={searchText ? 'active_search' : 'searchIcon'} >
                     <SearchIcon />
                 </span>
@@ -103,6 +104,7 @@ export const SearchHeader = styled(Header)`
         transform: translateY(-50%);
         width: 9px;
         height: 9px;
+        pointer-events: none;
 
         path {
             fill: #BDBDBD;
