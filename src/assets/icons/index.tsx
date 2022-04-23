@@ -1740,6 +1740,34 @@ export function SearchIcon(props: IconType) {
 
   )
 }
+export function Bell(props: IconType) {
+  const { width = 18, height = 19, fill = "#ffffff", ...rest } = props
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <path d="M12.6467 14.6673H3.31334C1.31334 14.6673 1.31334 13.7673 1.31334 12.6673V12.0007C1.31334 11.634 1.61334 11.334 1.98001 11.334H13.98C14.3467 11.334 14.6467 11.634 14.6467 12.0007V12.6673C14.6467 13.7673 14.6467 14.6673 12.6467 14.6673Z" stroke="white" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M13.8133 8.66732V11.334H2.17999V8.66732C2.17999 6.10732 3.98666 3.96732 6.39333 3.45398C6.75333 3.37398 7.12666 3.33398 7.51333 3.33398H8.47999C8.86666 3.33398 9.24666 3.37398 9.60666 3.45398C12.0133 3.97398 13.8133 6.10732 13.8133 8.66732Z" stroke="white" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M9.66666 3.00065C9.66666 3.16065 9.64666 3.30732 9.60666 3.45398C9.24666 3.37398 8.86666 3.33398 8.48 3.33398H7.51333C7.12666 3.33398 6.75333 3.37398 6.39333 3.45398C6.35333 3.30732 6.33333 3.16065 6.33333 3.00065C6.33333 2.08065 7.07999 1.33398 7.99999 1.33398C8.91999 1.33398 9.66666 2.08065 9.66666 3.00065Z" stroke="white" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M10 7.33398H6" stroke="white" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+export function Calander(props: IconType) {
+  const { width = 18, height = 19, fill = "#ffffff", ...rest } = props
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+      <path d="M6 1.5V3.75" stroke="white" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M12 1.5V3.75" stroke="white" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M2.625 6.81836H15.375" stroke="white" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M15.75 6.375V12.75C15.75 15 14.625 16.5 12 16.5H6C3.375 16.5 2.25 15 2.25 12.75V6.375C2.25 4.125 3.375 2.625 6 2.625H12C14.625 2.625 15.75 4.125 15.75 6.375Z" stroke="white" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M11.771 10.2754H11.7778" stroke="white" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M11.771 12.5254H11.7778" stroke="white" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M8.99661 10.2754H9.00335" stroke="white" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M8.99661 12.5254H9.00335" stroke="white" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M6.22073 10.2754H6.22747" stroke="white" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M6.22073 12.5254H6.22747" stroke="white" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
 export function CrossIcon(props: IconType) {
   const { width = 12, height = 12, fill = "#292D32", ...rest } = props
   return (

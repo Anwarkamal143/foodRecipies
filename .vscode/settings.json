@@ -19,10 +19,9 @@
   "[typescriptreact]": {
     "editor.codeActionsOnSave": {
       "source.organizeImports": true,
-      "source.fixAll.eslint": true,
-
+      "source.fixAll.eslint": true
     },
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascript]": {
     "editor.codeActionsOnSave": {
@@ -38,5 +37,5 @@
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-    "editor.formatOnPaste": true,
+  "editor.formatOnPaste": true
 }

@@ -261,91 +261,266 @@ export const FavData = [
 ]
 export const categoryData = [
   {
-    category: 'Breakfast',
+    category: "Breakfast",
     data: [
       {
-
         id: "assddddd",
         image: "/images/bbq.jpg",
         title: "Organic Vegetable with Peas and  chicken Burrito",
         fvrtBy: "By Emma Olivia",
         time: "20 mins",
         state: "easy",
-
       },
       {
-
         id: "assddddd",
         image: "/images/bbq.jpg",
         title: "Organic Vegetable with Peas and  chicken Burrito",
         fvrtBy: "By Emma Olivia",
         time: "20 mins",
         state: "easy",
-
       },
-    ]
+    ],
   },
   {
-    category: 'Snacks',
+    category: "Snacks",
     data: [
       {
-
         id: "assddddd",
         image: "/images/bbq.jpg",
         title: "Organic Vegetable with Peas and  chicken Burrito",
         fvrtBy: "By Emma Olivia",
         time: "20 mins",
         state: "easy",
-
       },
       {
-
         id: "assddddd",
         image: "/images/bbq.jpg",
         title: "Organic Vegetable with Peas and  chicken Burrito",
         fvrtBy: "By Emma Olivia",
         time: "20 mins",
         state: "easy",
-
       },
-    ]
+    ],
   },
 
   {
-    category: 'Sandwiches',
-    data: []
+    category: "Sandwiches",
+    data: [],
   },
   {
-    category: 'Baked Goods',
-    data: []
+    category: "Baked Goods",
+    data: [],
   },
   {
-    category: 'Dinner',
-    data: []
+    category: "Dinner",
+    data: [],
   },
   {
-    category: 'Dessert',
-    data: []
+    category: "Dessert",
+    data: [],
   },
   {
-    category: 'Seafood',
-    data: []
+    category: "Seafood",
+    data: [],
   },
   {
-    category: 'Appetizers',
-    data: []
+    category: "Appetizers",
+    data: [],
   },
   {
-    category: 'Pasta',
-    data: []
+    category: "Pasta",
+    data: [],
   },
   {
-    category: 'Snacks',
-    data: []
+    category: "Snacks",
+    data: [],
   },
   {
-    category: 'Snacks',
-    data: []
+    category: "Snacks",
+    data: [],
   },
-
+]
+export const LeaderBoradCategoryData = [
+  {
+    id: "assddddd",
+    image: "/images/bbq.jpg",
+    title: "Organic Vegetable with Peas and  chicken Burrito",
+    fvrtBy: "By Emma Olivia",
+    time: "20 mins",
+    state: "easy",
+  },
+  {
+    id: "assddddd",
+    image: "/images/bbq.jpg",
+    title: "Organic Vegetable with Peas and  chicken Burrito",
+    fvrtBy: "By Emma Olivia",
+    time: "20 mins",
+    state: "easy",
+  },
+  {
+    id: "assddddd",
+    image: "/images/bbq.jpg",
+    title: "Organic Vegetable with Peas and  chicken Burrito",
+    fvrtBy: "By Emma Olivia",
+    time: "20 mins",
+    state: "easy",
+  },
+]
+export const ourCooks = [
+  {
+    url: "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
+    type: "video",
+    userName: "Sam the Cooking Guy",
+    postby: "Posted March 23rd",
+    profile:
+      "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
+  },
+  {
+    url: "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
+    type: "video",
+    userName: "Sam the Cooking Guy",
+    postby: "Posted March 23rd",
+    profile:
+      "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
+  },
+  {
+    url: "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
+    type: "video",
+    userName: "Sam the Cooking Guy",
+    postby: "Posted March 23rd",
+    profile:
+      "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
+  },
+  {
+    url: "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
+    type: "video",
+    userName: "Sam the Cooking Guy",
+    postby: "Posted March 23rd",
+    profile:
+      "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
+  },
+  {
+    url: "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
+    type: "video",
+    userName: "Sam the Cooking Guy",
+    postby: "Posted March 23rd",
+    profile:
+      "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
+  },
+  {
+    url: "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
+    type: "video",
+    userName: "Sam the Cooking Guy",
+    postby: "Posted March 23rd",
+    profile:
+      "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
+  },
+  {
+    url: "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
+    type: "video",
+    userName: "Sam the Cooking Guy",
+    postby: "Posted March 23rd",
+    profile:
+      "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
+  },
+]
+export const userList = [
+  {
+    userName: "Sam the Cooking Guy",
+    low: 2,
+    profile:
+      "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
+  },
+  {
+    userName: "Sam the Cooking Guy",
+    low: 2,
+    profile:
+      "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
+  },
+  {
+    userName: "Sam the Cooking Guy",
+    high: 2,
+    profile:
+      "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
+  },
+  {
+    userName: "Sam the Cooking Guy",
+    high: 2,
+    profile:
+      "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
+  },
+  {
+    userName: "Sam the Cooking Guy",
+    low: 2,
+    profile:
+      "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
+  },
+  {
+    userName: "Sam the Cooking Guy",
+    high: 2,
+    profile:
+      "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
+  },
+  {
+    userName: "Sam the Cooking Guy",
+    high: 2,
+    profile:
+      "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
+  },
+  {
+    userName: "Sam the Cooking Guy",
+    high: 2,
+    profile:
+      "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
+  },
+  {
+    userName: "Sam the Cooking Guy",
+    high: 2,
+    profile:
+      "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
+  },
+]
+export const OnlineUsersData = [
+  {
+    profile:
+      "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
+    userName: "Sam Guy",
+    Recipes: 105,
+  },
+  {
+    profile:
+      "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
+    userName: "Sam Guy",
+    Recipes: 105,
+  },
+  {
+    profile:
+      "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
+    userName: "Sam Guy",
+    Recipes: 105,
+  },
+  {
+    profile:
+      "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
+    userName: "Sam Guy",
+    Recipes: 105,
+  },
+  {
+    profile:
+      "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
+    userName: "Sam Guy",
+    Recipes: 105,
+  },
+  {
+    profile:
+      "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
+    userName: "Sam Guy",
+    Recipes: 105,
+  },
+  {
+    profile:
+      "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
+    userName: "Sam Guy",
+    Recipes: 105,
+  },
 ]
