@@ -1,6 +1,6 @@
 import { Recipe } from "@apptypes/recipe"
 import { Image, Scrollbar } from "@components"
-import { ChevronDownIndicator, ChevronUpIndicator } from "@icons"
+import { ArrowRight, ChevronDownIndicator, ChevronUpIndicator } from "@icons"
 import React from "react"
 import styled from "styled-components"
 import {
@@ -46,6 +46,7 @@ function PerformingRecipes(props: IRecipeProps) {
                     </div>
                   </div> */}
                 </RecipesDetails>
+                <span className="arrow-holder"><ArrowRight /></span>
               </RecipesDetailsWrapper>
             </RecipesWrapper>
           )

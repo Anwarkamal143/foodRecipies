@@ -1,7 +1,6 @@
 import { Button, DropDown, Image } from "@components"
 import {
-  AddCircleIcon,
-  AngleRight,
+  AddCircleIcon, ArrowRight,
   CalendarIcon,
   CircleTick,
   DownArrowIcon,
@@ -39,7 +38,7 @@ import {
 const dateFormatter = (item: Date) => dayjs(item).format("MMM YY")
 const DashBoard = ({ className }: { className?: string }) => {
   return (
-    <DashboardLayout className={`${className} items`}>
+    <DashboardLayout className={`${className} dashboard-wrap`}>
       <div className="dashboardDataContent">
         <StatisticsWrapper className="dashboardStatistics">
           {DashboardAnalytics.map(item => (
@@ -52,38 +51,39 @@ const DashBoard = ({ className }: { className?: string }) => {
             />
           ))}
           <div className="dashboardStatisticsGraph">
-            <h2><span className="img"><Image src="/images/img-falme.png" alt="waving hand" /></span>13 day streak <span className="additional-text">Keep it up!</span></h2>
-            <ul className="list-streak">
-              <li>
-                <span className="day">m</span>
-                <span className="streak-status complete"><CircleTick /></span>
-              </li>
-              <li>
-                <span className="day">t</span>
-                <span className="streak-status complete"><CircleTick /></span>
-              </li>
-              <li>
-                <span className="day">w</span>
-                <span className="streak-status complete"><CircleTick /></span>
-              </li>
-              <li>
-                <span className="day">t</span>
-                <span className="streak-status current"><CircleTick /></span>
-              </li>
-              <li>
-                <span className="day">f</span>
-                <span className="streak-status"><CircleTick /></span>
-              </li>
-              <li>
-                <span className="day">s</span>
-                <span className="streak-status"><CircleTick /></span>
-              </li>
-              <li>
-                <span className="day">s</span>
-                <span className="streak-status"><CircleTick /></span>
-              </li>
-            </ul>
-            {/* <ul className="list-stats-graph">
+            <div className="dashboardStatisticsGraphWrap">
+              <h2><span className="img"><Image src="/images/img-falme.png" alt="waving hand" /></span>13 day streak <span className="additional-text">Keep it up!</span></h2>
+              <ul className="list-streak">
+                <li>
+                  <span className="day">m</span>
+                  <span className="streak-status complete"><CircleTick /></span>
+                </li>
+                <li>
+                  <span className="day">t</span>
+                  <span className="streak-status complete"><CircleTick /></span>
+                </li>
+                <li>
+                  <span className="day">w</span>
+                  <span className="streak-status complete"><CircleTick /></span>
+                </li>
+                <li>
+                  <span className="day">t</span>
+                  <span className="streak-status current"><CircleTick /></span>
+                </li>
+                <li>
+                  <span className="day">f</span>
+                  <span className="streak-status"><CircleTick /></span>
+                </li>
+                <li>
+                  <span className="day">s</span>
+                  <span className="streak-status"><CircleTick /></span>
+                </li>
+                <li>
+                  <span className="day">s</span>
+                  <span className="streak-status"><CircleTick /></span>
+                </li>
+              </ul>
+              {/* <ul className="list-stats-graph">
               <li>
                 <div className="bar" style={{ height: 28 }}></div>
                 <div className="day">M</div>
@@ -113,6 +113,7 @@ const DashBoard = ({ className }: { className?: string }) => {
                 <div className="day">S</div>
               </li>
             </ul> */}
+            </div>
           </div>
           {/* <ResponsiveContainer
             width="100%"
@@ -269,7 +270,7 @@ const DashBoard = ({ className }: { className?: string }) => {
               </div>
               <span className="btn-secondary">
                 {" "}
-                View All Recipes <AngleRight />
+                View All Recipes <ArrowRight />
               </span>
             </div>
             <RecipiesTable />
@@ -284,6 +285,9 @@ const DashBoard = ({ className }: { className?: string }) => {
   )
 }
 export const Dashboard = styled(DashBoard)`
+  max-width: 1080px;
+  margin: 0 auto;
+
 .dashboardStatistics {
   display: flex;
   align-items: center;
@@ -442,6 +446,9 @@ export const Dashboard = styled(DashBoard)`
   .dashboardStatisticsGraph {
     width: 15% !important;
     height: auto !important;
+    display: flex;
+    justify-content: flex-end;
+    
 
     @media (max-width: 1439px) {
       width: 20% !important;
@@ -450,6 +457,10 @@ export const Dashboard = styled(DashBoard)`
     @media (max-width: 1023px) {
       width: 100% !important;
       height: 100px !important;
+    }
+
+    .dashboardStatisticsGraph {
+      margin: 0 0 0 auto;
     }
 
     .recharts-wrapper {
@@ -609,7 +620,7 @@ export const Dashboard = styled(DashBoard)`
 .dashboardPerformance {
   display: flex;
   justify-content: space-between;
-  padding: 25px 0;
+  padding: 25px 0 57px;
 
   @media (max-width: 1023px) {
     flex-flow: row wrap;
@@ -786,8 +797,8 @@ export const Dashboard = styled(DashBoard)`
   }
 
   .right-section {
-    width: 295px;
-    min-width: 295px;
+    width: 270px;
+    min-width: 270px;
 
     @media (max-width: 1199px) {
       width: 240px;
@@ -924,7 +935,7 @@ export const Dashboard = styled(DashBoard)`
   }
   
   .myRecipes {
-    width: calc(100% - 295px);
+    width: calc(100% - 270px);
     flex: inherit;
     padding: 0 40px 0 0;
 
@@ -943,8 +954,8 @@ export const Dashboard = styled(DashBoard)`
       display: flex;
       justify-content: space-between;
       border-bottom: 1px solid #F2F3F5;
-      padding-bottom: 25px;
-      margin: 0 0 30px;
+      padding-bottom: 13px;
+      margin: 0 0 5px;
 
       .myRecipesTitle {
         display: flex;
@@ -1042,8 +1053,8 @@ export const Dashboard = styled(DashBoard)`
   }
   
   .topPerformingRecipes {
-    width: 295px;
-    min-width: 295px;
+    width: 270px;
+    min-width: 270px;
 
     @media (max-width: 1199px) {
       width: 240px;
@@ -1059,9 +1070,9 @@ export const Dashboard = styled(DashBoard)`
 .recipiesTableParent {
   overflow: hidden;
 
-  @media (max-width: 767px) {
+  @media (max-width: 1280px) {
     overflow: auto;
-    margin: 0 0 5px;
+    padding: 0 0 15px;
   }
 
   .rc-pagination {
@@ -1144,7 +1155,7 @@ export const Dashboard = styled(DashBoard)`
 
   .link-item {
     transition: all 0.4s ease;
-    max-width: 240px;
+    max-width: 210px;
     overflow: hidden;
     display: inline-block;
     vertical-align: top;
@@ -1157,15 +1168,8 @@ export const Dashboard = styled(DashBoard)`
   }
 
   th, td {
-    padding: 10px 15px;
-
-    @media (max-width: 1439px) {
-      padding: 10px;
-    }
-
-    @media (max-width: 1199px) {
-      padding: 10px 7px;
-    }
+    padding: 10px 5px;
+    min-width: 80px;
 
     &:nth-child(4),
     &:nth-child(5) {
@@ -1278,7 +1282,7 @@ export const Dashboard = styled(DashBoard)`
     font-size: 14px;
     line-height: 18px;
     color: #1E1E2D;
-    padding: 0 0 15px;
+    padding: 3px 0 15px;
     border-bottom: 1px solid #F2F3F5;
     margin: 0 0 20px;
 
@@ -1312,11 +1316,36 @@ export const Dashboard = styled(DashBoard)`
   }
 
   .receipeDetails {
-    padding: 10px 20px;
+    padding: 10px 30px 10px 20px;;
     background: #F8F8F8;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
     border-radius: 10px;
     margin: 0 0 10px;
+    position: relative;
+
+    &:hover {
+      .arrow-holder {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    .arrow-holder {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translate(0, -50%);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s ease;
+      width: 10px;
+
+      svg {
+        width: 100%;
+        height: auto;
+        vertical-align: top;
+      }
+    }
     
     .recipeholder {
       width: 100%;
@@ -1327,7 +1356,7 @@ export const Dashboard = styled(DashBoard)`
       font-size: 12px;
       line-height: 15px;
       color:#565661;
-      min-width: 40px;
+      margin: 0 10px 0 0;
 
       span {
         display: block;

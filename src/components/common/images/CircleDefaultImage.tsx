@@ -18,7 +18,7 @@ function CrclDefaultImage({
   return (
     <img
       className={clsxm(
-        " rounded-full border-2 border-gray-500 object-cover",
+        " rounded-full border-2 border-white object-cover",
         className
       )}
       src={src}
