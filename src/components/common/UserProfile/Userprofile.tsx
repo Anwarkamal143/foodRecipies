@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { useOpenClose } from "@hooks"
-import { AngleRight } from "@icons"
+import { AngleRight, FlashCircle } from "@icons"
 import clsxm from "@lib/clsxm"
 import { useAppSelector } from "@redux/hooks"
 import React from "react"
@@ -41,12 +41,13 @@ function Profilesteps({ src = "", alt = "", className = "" }) {
         </div>
       </LeftSide>
       <RightSide className="userProfileProgresStatus">
-        <p className="userProfileProgreTitle">
+        <span className="userRemainingTask"><span className="img"><FlashCircle /></span>4 Remaining Goals</span>
+        {/* <p className="userProfileProgreTitle">
           <span onClick={onOpenModel} className="cursor-hand">
             15%
           </span>{" "}
           Tasks Completed
-        </p>
+        </p> */}
         {/* <ProgressBar
           showPrgress={false}
           progresspercent={20}
@@ -179,5 +180,30 @@ export const ProfileSteps = styled(Profilesteps)`
 
   .cursor-hand {
     cursor: pointer;
+  }
+
+  .userRemainingTask {
+    display: inline-block;
+    vertical-align: top;
+    background: #F8F8F8;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #3D3D3D;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 400;
+    transition: all 0.4s ease;
+
+    &:hover {
+      background: #E0464D;
+    }
+
+    .img {
+      width: 16px;
+      display: inline-block;
+      vertical-align: top;
+      margin: 0 15px 0 0;
+    }
+    
   }
 `

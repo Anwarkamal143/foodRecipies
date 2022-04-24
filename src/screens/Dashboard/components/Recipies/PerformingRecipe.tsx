@@ -1,6 +1,5 @@
 import { Recipe } from "@apptypes/recipe"
 import { Image, Scrollbar } from "@components"
-import { ChevronDownIndicator, ChevronUpIndicator } from "@icons"
 import React from "react"
 import styled from "styled-components"
 import {
@@ -25,7 +24,7 @@ function PerformingRecipes(props: IRecipeProps) {
             <RecipesWrapper className="receipeDetails" key={i}>
               <RecipesDetailsWrapper className="recipeholder">
                 <div className="recipeprogress">
-                  <span>{u?.views?.progress}</span> {u.views?.status === 'down' ? <ChevronDownIndicator /> : <ChevronUpIndicator />}
+                  <span>{u?.views?.progress}</span> {u.views?.status === 'down' ? <span className="arrow-down"></span> : <span className="arrow-up"></span>}
                 </div>
                 <a href="#">
                   <Image className="recipeImage" src={u?.images?.[0] || ''} alt={u.name} />
