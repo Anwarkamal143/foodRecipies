@@ -1781,6 +1781,44 @@ export function FlashCircle(props: IconType) {
   )
 }
 
+export function ChevronDownIndicator(props: IconType) {
+  const { width = 9, height = 6, fill = "#E0464D", ...rest } = props
+  return (
+    <svg width={width} height={height} viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
+      <path d="M4.5 6L0.602886 0.750001L8.39711 0.75L4.5 6Z" fill={fill} />
+    </svg>
+  )
+}
+
+export function ChevronUpIndicator(props: IconType) {
+  const { width = 9, height = 6, fill = "#11C278", ...rest } = props
+  return (
+    <svg width={width} height={height} viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
+      <path d="M4.5 0L8.39711 5.25H0.602886L4.5 0Z" fill="#11C278" />
+    </svg>
+  )
+}
+
+export function CircleTick(props: IconType) {
+  const { width = 15, height = 15, fill = "#E0464D", ...rest } = props
+  return (
+    <svg width={width} height={height} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7.5 0C3.3675 0 0 3.3675 0 7.5C0 11.6325 3.3675 15 7.5 15C11.6325 15 15 11.6325 15 7.5C15 3.3675 11.6325 0 7.5 0ZM11.085 5.775L6.8325 10.0275C6.7275 10.1325 6.585 10.1925 6.435 10.1925C6.285 10.1925 6.1425 10.1325 6.0375 10.0275L3.915 7.905C3.6975 7.6875 3.6975 7.3275 3.915 7.11C4.1325 6.8925 4.4925 6.8925 4.71 7.11L6.435 8.835L10.29 4.98C10.5075 4.7625 10.8675 4.7625 11.085 4.98C11.3025 5.1975 11.3025 5.55 11.085 5.775Z" fill="#E0464D" />
+    </svg>
+  )
+}
+
+export function ArrowRight(props: IconType) {
+  const { width = 5, height = 5, fill = "#7B7B7B", ...rest } = props
+  return (
+    <svg width={width} height={height} viewBox="0 0 5 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3.03333 0.911331L4.62244 2.50045L3.02958 4.09331" stroke="#7B7B7B" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M4.62156 2.49956H0.378924" stroke="#7B7B7B" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+
+  )
+}
+
 type ImageProps = DetailedHTMLProps<
   ImgHTMLAttributes<HTMLImageElement>,
   HTMLImageElement

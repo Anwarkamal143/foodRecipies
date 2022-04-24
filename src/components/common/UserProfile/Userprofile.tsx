@@ -41,7 +41,7 @@ function Profilesteps({ src = "", alt = "", className = "" }) {
         </div>
       </LeftSide>
       <RightSide className="userProfileProgresStatus">
-        <span className="userRemainingTask"><span className="img"><FlashCircle /></span>4 Remaining Goals</span>
+        <span className="userRemainingTask" onClick={onOpenModel}><span className="img"><FlashCircle /></span>4 Remaining Goals</span>
         {/* <p className="userProfileProgreTitle">
           <span onClick={onOpenModel} className="cursor-hand">
             15%
@@ -191,19 +191,28 @@ export const ProfileSteps = styled(Profilesteps)`
     color: #3D3D3D;
     font-size: 12px;
     line-height: 15px;
-    font-weight: 400;
+    font-weight: 700;
     transition: all 0.4s ease;
+    cursor: pointer;
 
     &:hover {
       background: #E0464D;
+      color: #fff;
+
+      path {
+        fill: #fff;
+      }
     }
 
     .img {
       width: 16px;
       display: inline-block;
       vertical-align: top;
-      margin: 0 15px 0 0;
+      margin: 0 8px 0 0;
     }
-    
+
+    path {
+      transition: all 0.4s ease;
+    }
   }
 `

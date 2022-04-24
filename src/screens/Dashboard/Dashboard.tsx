@@ -1,8 +1,9 @@
-import { Button, Card, DropDown, Image } from "@components"
+import { Button, DropDown, Image } from "@components"
 import {
   AddCircleIcon,
   AngleRight,
   CalendarIcon,
+  CircleTick,
   DownArrowIcon,
   EyeIcon,
   Save,
@@ -24,7 +25,7 @@ import {
   YAxis
 } from "recharts"
 import styled from "styled-components"
-import { CardHeader, PerformanceBar, StatisticsItem } from "./components"
+import { StatisticsItem } from "./components"
 import { PerformingRecipe } from "./components/Recipies"
 import RecipiesTable from "./components/RecipiesTable"
 import {
@@ -32,9 +33,7 @@ import {
   LeftPerformanceSection,
   MyRecipiesWrapper,
   ProfileperformanceWrapper,
-  RightMyRecipiesSection,
-  RightPerformanceSection,
-  StatisticsWrapper
+  RightMyRecipiesSection, StatisticsWrapper
 } from "./dashboard.styed"
 
 const dateFormatter = (item: Date) => dayjs(item).format("MMM YY")
@@ -53,7 +52,38 @@ const DashBoard = ({ className }: { className?: string }) => {
             />
           ))}
           <div className="dashboardStatisticsGraph">
-            <ul className="list-stats-graph">
+            <h2><span className="img"><Image src="/images/img-falme.png" alt="waving hand" /></span>13 day streak <span className="additional-text">Keep it up!</span></h2>
+            <ul className="list-streak">
+              <li>
+                <span className="day">m</span>
+                <span className="streak-status complete"><CircleTick /></span>
+              </li>
+              <li>
+                <span className="day">t</span>
+                <span className="streak-status complete"><CircleTick /></span>
+              </li>
+              <li>
+                <span className="day">w</span>
+                <span className="streak-status complete"><CircleTick /></span>
+              </li>
+              <li>
+                <span className="day">t</span>
+                <span className="streak-status current"><CircleTick /></span>
+              </li>
+              <li>
+                <span className="day">f</span>
+                <span className="streak-status"><CircleTick /></span>
+              </li>
+              <li>
+                <span className="day">s</span>
+                <span className="streak-status"><CircleTick /></span>
+              </li>
+              <li>
+                <span className="day">s</span>
+                <span className="streak-status"><CircleTick /></span>
+              </li>
+            </ul>
+            {/* <ul className="list-stats-graph">
               <li>
                 <div className="bar" style={{ height: 28 }}></div>
                 <div className="day">M</div>
@@ -82,7 +112,7 @@ const DashBoard = ({ className }: { className?: string }) => {
                 <div className="bar" style={{ height: 28 }}></div>
                 <div className="day">S</div>
               </li>
-            </ul>
+            </ul> */}
           </div>
           {/* <ResponsiveContainer
             width="100%"
@@ -196,7 +226,7 @@ const DashBoard = ({ className }: { className?: string }) => {
               </LineChart>
             </ResponsiveContainer>
           </LeftPerformanceSection>
-          <RightPerformanceSection className="right-section">
+          {/* <RightPerformanceSection className="right-section">
             <Card>
               <Card.Header>
                 <CardHeader
@@ -225,46 +255,28 @@ const DashBoard = ({ className }: { className?: string }) => {
                 </Button>
               </Card.Body>
             </Card>
-          </RightPerformanceSection>
+          </RightPerformanceSection> */}
         </ProfileperformanceWrapper>
         <MyRecipiesWrapper className="dashboardMyRecipies">
           <LeftMyRecipiesSection className="myRecipes">
             <div className="sectionheader">
               <div className="myRecipesTitle">
                 <p className="subtitle">My Recipes</p>
-                <a href="#" className="addRecipeButton">
+                <a href="#" className="addRecipeButton btn-secondary">
+                  <span className="addRecipeButtonText">Add New Recipe</span>
                   <AddCircleIcon />
-                  <span className="addRecipeButtonText">Add Recipe</span>
                 </a>
               </div>
-              <Button className="buttonText">
+              <span className="btn-secondary">
                 {" "}
-                View All My Recipes <AngleRight />
-              </Button>
+                View All Recipes <AngleRight />
+              </span>
             </div>
             <RecipiesTable />
           </LeftMyRecipiesSection>
           <RightMyRecipiesSection className="topPerformingRecipes">
-            <Card>
-              <Card.Header>
-                <CardHeader
-                  title="Top Performing Recipes"
-                  className="subtitle"
-                  items={[{ name: "action 1" }, { name: "action 2" }]}
-                  renderItem={({ item, handleToggle }) => {
-                    console.log({ item })
-                    return (
-                      <div onClick={handleToggle} className="item recipe-item">
-                        {item.name}
-                      </div>
-                    )
-                  }}
-                />
-              </Card.Header>
-              <Card.Body>
-                <PerformingRecipe data={RecipesData} />
-              </Card.Body>
-            </Card>
+            <h2><span className="img"><Image src="/images/img-falme.png" alt="waving hand" /></span>Top Performing Recipes</h2>
+            <PerformingRecipe data={RecipesData} />
           </RightMyRecipiesSection>
         </MyRecipiesWrapper>
       </div>
@@ -481,6 +493,28 @@ export const Dashboard = styled(DashBoard)`
       }
     }
 
+    h2 {
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      line-height: 15px;
+      font-weight: 700;
+      margin: 0 0 15px;
+
+      .img {
+        display: block;
+        width: 13px;
+        margin: 0 5px;
+      }
+
+      .additional-text {
+        color: #979797;
+        font-size: 9px;
+        line-height: 12px;
+        padding: 0 0 0 15px;
+      }
+    }
+
     .recharts-bar-rectangle {
       &:hover {
         path {
@@ -512,6 +546,66 @@ export const Dashboard = styled(DashBoard)`
   }
 }
 
+.list-streak {
+  display: flex;
+  flex-direction: row;
+  margin: 0 -5px;
+  font-size: 10px;
+  line-height: 12px;
+  color: #979797;
+  text-transform: uppercase;
+  text-align: center;
+
+  li {
+    padding: 0 5px;
+  }
+
+  .day {
+    display: block;
+    margin: 0 0 5px;
+  }
+
+  .streak-status {
+    display: block;
+    width: 15px;
+    height: 15px;
+    position: relative;
+    background: #E5E8EF;
+    border-radius: 100%;
+
+    &.complete,
+    &.current {
+      svg {
+        display: block;
+      }
+    }
+
+    &.current {
+      &:before {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    svg {
+      display: none;
+    }
+
+    &:before {
+      position: absolute;
+      left: -2px;
+      right: -2px;
+      top: -2px;
+      bottom: -2px;
+      border: 1px solid #E0464D;
+      border-radius: 100%;
+      content: '';
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}
+
 .dashboardPerformance {
   display: flex;
   justify-content: space-between;
@@ -522,7 +616,7 @@ export const Dashboard = styled(DashBoard)`
   }
   
   .dashboardPerformanceGraph {
-    width: calc(100% - 295px);
+    width: 100%;
     flex: inherit;
     padding: 15px 25px 0 0;
 
@@ -862,7 +956,7 @@ export const Dashboard = styled(DashBoard)`
         align-items: center;
         position: relative;
 
-        svg {
+        /*svg {
           position: absolute;
           left: 0;
           top: 50%;
@@ -894,7 +988,7 @@ export const Dashboard = styled(DashBoard)`
             opacity: 0;
             visibilty: hidden;
           }
-        }
+        } */
       }
 
       .subtitle {
@@ -1050,6 +1144,12 @@ export const Dashboard = styled(DashBoard)`
 
   .link-item {
     transition: all 0.4s ease;
+    max-width: 240px;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     
     &:hover {
       color: #e0464d;
@@ -1073,6 +1173,14 @@ export const Dashboard = styled(DashBoard)`
         display: none !important;
       }
     }
+
+    a {
+      color: #86909C;
+
+      &.name-text {
+        color: #1D2129;
+      }
+    }
   }
 
   .statusText {
@@ -1094,7 +1202,7 @@ export const Dashboard = styled(DashBoard)`
     }
   }
 
-  .Draft {
+  .draft {
     .statusText {
       color: #0FA3D1;
       background: #D9EEFA;
@@ -1116,7 +1224,7 @@ export const Dashboard = styled(DashBoard)`
     }
   }
 
-  .Scheduled {
+  .scheduled {
     .statusText {
       color: #DF8C10;
       background: #FAF1D9;
@@ -1142,6 +1250,12 @@ export const Dashboard = styled(DashBoard)`
       padding: 3px 8px;
       background: #D9FADD;
       margin: 0 0 0 5px;
+      color: #0E8521;
+
+      &.downward {
+        color: #BD0F2E;
+        background: #FAD9D9;
+      }
 
       svg {
         width: 6px;
@@ -1157,6 +1271,30 @@ export const Dashboard = styled(DashBoard)`
 }
 
 .topPerformingRecipes {
+  h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    line-height: 18px;
+    color: #1E1E2D;
+    padding: 0 0 15px;
+    border-bottom: 1px solid #F2F3F5;
+    margin: 0 0 20px;
+
+    .img {
+      width: 15px;
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 10px 0 0;
+
+      img{
+        width: 100%;
+        height: auto;
+        vertical-align: top;
+      }
+    }
+  }
   .card-Header {
     border-bottom: 1px solid #F2F3F5;
     margin: 0 0 30px;
@@ -1174,27 +1312,40 @@ export const Dashboard = styled(DashBoard)`
   }
 
   .receipeDetails {
-    padding: 10px 0;
+    padding: 10px 20px;
+    background: #F8F8F8;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    margin: 0 0 10px;
     
     .recipeholder {
       width: 100%;
     }
+
+    .recipeprogress  {
+      text-align: center;
+      font-size: 12px;
+      line-height: 15px;
+      color:#565661;
+      min-width: 40px;
+
+      span {
+        display: block;
+        margin: 0 0 5px;
+      }
+
+      svg {
+        margin: 0 auto;
+      }
+    }
     
     .userProfileImageWrap {
-      width: 60px;
-      height: 60px;
-      min-width: 60px;
-      border-radius: 15px;
+      width: 33px;
+      height: 33px;
+      min-width: 33px;
+      border-radius: 5px;
       overflow: hidden;
       margin: 0 10px 0 0;
-      box-shadow: 0 0 10px rgba(0,0,0,0.15);
-
-      @media (max-width: 1199px) {
-        width: 45px;
-        min-width: 45px;
-        height: 45px;
-        border-radius: 8px;
-      }
 
       .recipeImage {
         width: 100%;
@@ -1211,12 +1362,13 @@ export const Dashboard = styled(DashBoard)`
     }
 
     .recipename {
-      font-size: 13px;
-      line-height: 17px;
-      color: #4b4b4b;
+      font-size: 11px;
+      line-height: 13px;
+      color: #62626C;
       display: block;
       margin: 0 0 5px;
     }
+    
 
     .recipemeta {
       display: flex;
