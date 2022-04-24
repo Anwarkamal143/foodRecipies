@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import { useOpenClose } from "@hooks"
+import { AngleRight } from "@icons"
 import clsxm from "@lib/clsxm"
 import { useAppSelector } from "@redux/hooks"
 import React from "react"
-import { ProgressBar } from "src/components"
 import { CircularProgresWithChildren } from "src/components/CirclePrgoressWithChildren"
 import { Image } from "src/components/Image"
 import styled from "styled-components"
@@ -37,7 +37,7 @@ function Profilesteps({ src = "", alt = "", className = "" }) {
             Welcome Back, <span>{user.name} </span>
             <Image src="/images/WavingHandEmoji.png" alt="waving hand" />
           </h2>
-          <span className="userProfilesubTitle">Founder Cook Profile</span>
+          <span className="userProfilesubTitle">Visit Your Cook Profile <AngleRight /></span>
         </div>
       </LeftSide>
       <RightSide className="userProfileProgresStatus">
@@ -47,11 +47,11 @@ function Profilesteps({ src = "", alt = "", className = "" }) {
           </span>{" "}
           Tasks Completed
         </p>
-        <ProgressBar
+        {/* <ProgressBar
           showPrgress={false}
           progresspercent={20}
           bgColor={"#e0464d"}
-        />
+        /> */}
       </RightSide>
       <ProfileTaskModel
         userName={user.name}
@@ -130,6 +130,38 @@ export const ProfileSteps = styled(Profilesteps)`
     font-size: 10px;
     line-height: 13px;
     color: #7b7b7b;
+  }
+
+  .userProfilesubTitle {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align:top;
+    position: relative;
+    transition: all 0.25s ease-in-out;
+    
+    svg {
+      fill: #aa141c;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.25s ease-in-out;
+      position: absolute;
+      right: 0;
+      top: 52%;
+      transform: translateY(-49%);
+      margin: 0;
+      width: 14px;
+      height: auto;
+    }
+
+    &:hover {
+      color: #aa141c;
+      padding-right: 18px;
+
+      svg {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
   }
 
   .userProfileProgresStatus {
