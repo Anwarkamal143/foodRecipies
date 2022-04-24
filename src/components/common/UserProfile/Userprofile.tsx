@@ -20,7 +20,7 @@ function Profilesteps({ src = "", alt = "", className = "" }) {
         <CircularProgresWithChildren
           maxValue={100}
           parentClass="circleprogress"
-          strokeWidth={3}
+          strokeWidth={5}
           className="circleimages"
           value={15}
         >
