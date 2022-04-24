@@ -24,7 +24,7 @@ function PerformingRecipes(props: IRecipeProps) {
           return (
             <RecipesWrapper className="receipeDetails" key={i}>
               <RecipesDetailsWrapper className="recipeholder">
-                <div className="recipeprogress">
+                <div className="recipeprogress ">
                   <span>{u?.views?.progress}</span> {u.views?.status === 'down' ? <ChevronDownIndicator /> : <ChevronUpIndicator />}
                 </div>
                 <a href="#">

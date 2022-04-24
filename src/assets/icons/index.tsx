@@ -1772,6 +1772,29 @@ export function ChevronRightIcon(props: IconType) {
 
   )
 }
+export function ChevronDownIndicator(props: IconType) {
+  const { width = 9, height = 6, fill = "#E0464D", ...rest } = props
+  return (
+    <svg width={width} height={height} viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
+      <path d="M4.5 6L0.602886 0.750001L8.39711 0.75L4.5 6Z" fill={fill} />
+    </svg>
+
+
+
+  )
+}
+export function ChevronUpIndicator(props: IconType) {
+  const { width = 9, height = 6, fill = "#11C278", ...rest } = props
+  return (
+    <svg width={width} height={height} viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
+      <path d="M4.5 0L8.39711 5.25H0.602886L4.5 0Z" fill="#11C278" />
+    </svg>
+
+
+
+
+  )
+}
 
 type ImageProps = DetailedHTMLProps<
   ImgHTMLAttributes<HTMLImageElement>,
