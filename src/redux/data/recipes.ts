@@ -19,6 +19,7 @@ export const RecipesData: Recipe[] = [
             progress: 20,
             status: 'up' // 'up' | 'down'
         },
+        tags: [],
         createdAt: dayjs() ,
         updatedAt: dayjs(),
         creator: {
@@ -61,8 +62,9 @@ export const RecipesData: Recipe[] = [
         views: {
             total: 450,
             progress: 20,
-            status: 'up' // 'up' | 'down'
+            status: 'down' // 'up' | 'down'
         },
+                tags: [],
         creator: {
           _id: setItemId(),
           name: "Amelia James", 
