@@ -101,7 +101,8 @@ export const PageLayoutWrapper = styled.div<{ variant?: string }>`
     }
 
     .sortByFilterDrop {
-      margin-top: 0 !important;
+      margin-top: 5px !important;
+      overflow: hidden;
 
       .item {
         padding: 5px 20px;

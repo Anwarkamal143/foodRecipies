@@ -68,14 +68,16 @@ const OurCooksDetails = ({ data = [], className }: Props) => {
     })
   }
   return (
-    <div className={className}>
-      <div className="details-head">
-        <h2>Our Cooks on Tiktok</h2>
-        <span>
-          A recipe is a set of instructions that describes how to prepare or
-          make something.
-        </span>
-      </div>
+    <div className={`${className} socialCooksblock align-center`}>
+      <header className="recipesSectionHeader">
+        <strong className="recipesSectionTitle">Our Cooks on Tiktok</strong>
+        <div className="favorite-head">
+          <span className="recipesSectionText">
+            A recipe is a set of instructions that describes how to prepare or
+            make something.
+          </span>
+        </div>
+      </header>
       <Slider draggable={true} ref={sliderRef} {...settings}>
         {users()}
       </Slider>

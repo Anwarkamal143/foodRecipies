@@ -16,6 +16,7 @@ export const SidebarContainer = styled.div`
   /* width: 25em; */
   width: 250px;
   min-width: 250px;
+  background-color: #fff;
 
   @media (max-width: 1199px) {
     width: 200px;

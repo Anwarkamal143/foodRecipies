@@ -65,7 +65,7 @@ const NewPage = ({ className }: Props) => {
             <LatestRecipesSlider />
           </div>
           <Leaderboard data={FavData} />
-          <div className="recipesSection">
+          <div className="recipesSection align-center">
             <CategoryTypes
               data={newPageData}
               title="Browse Recipes by Ingredient"
