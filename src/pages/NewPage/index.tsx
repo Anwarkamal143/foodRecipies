@@ -6,6 +6,7 @@ import styled from "styled-components"
 import RecipesCard from "../../components/RecipiesCard"
 import CategoryTypes from "./categoryTypes"
 import FollowUsers from "./FollowUsers"
+import Footer from "./footer/footer"
 import LatestRecipesSlider from "./latestRecipes"
 import Leaderboard from "./Leaderboard"
 import OurCooksDetails from "./OurCooksDetails"
@@ -73,11 +74,24 @@ const NewPage = ({ className }: Props) => {
               viewAllBtn={false}
             />
           </div>
-          <OurCooksDetails data={ourCooks} />
+          <OurCooksDetails
+            discription="A recipe is a set of instructions that describes how to prepare or make something."
+            title={"Our Cooks on Tiktok"}
+            data={ourCooks}
+          />
           <UserListSection />
-          <OurCooksDetails data={ourCooks} />
-          <FollowUsers data={OnlineUsersData} />
+          <OurCooksDetails
+            discription="A recipe is a set of instructions that describes how to prepare or make something."
+            title={"Our Cooks on Youtube"}
+            data={ourCooks}
+          />
+          <FollowUsers
+            data={OnlineUsersData}
+            discription="A recipe is a set of instructions that describes how to prepare or make something."
+            title={"New Online Cooks"}
+          />
         </div>
+        <Footer />
       </PageLayoutWrapper>
     </div>
   )

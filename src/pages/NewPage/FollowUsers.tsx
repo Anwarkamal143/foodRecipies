@@ -6,6 +6,8 @@ import styled from "styled-components"
 
 type Props = {
   className?: string
+  title?: string
+  discription?: string
   data?: any
 }
 const settings = {
@@ -48,7 +50,7 @@ const settings = {
     },
   ],
 }
-const FollowUsers = ({ className, data = [] }: Props) => {
+const FollowUsers = ({ className, data = [], title, discription }: Props) => {
   const sliderRef = useRef(null)
   const Followlist = () => {
     return data.map((e: any) => {
@@ -70,6 +72,10 @@ const FollowUsers = ({ className, data = [] }: Props) => {
   }
   return (
     <div className={className}>
+      <div className="Followlist-head">
+        <h2>{title}</h2>
+        <span>{discription}</span>
+      </div>
       <Slider draggable={true} ref={sliderRef} {...settings}>
         {Followlist()}
       </Slider>
