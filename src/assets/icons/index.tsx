@@ -137,7 +137,7 @@ export function AngleRight() {
       viewBox="0 0 256 512"
       width="16"
       height="16"
-      fill="none"
+      fill="currentColor"
     >
       <path d="M89.45 87.5l143.1 152c4.375 4.625 6.562 10.56 6.562 16.5c0 5.937-2.188 11.87-6.562 16.5l-143.1 152C80.33 434.1 65.14 434.5 55.52 425.4c-9.688-9.125-10.03-24.38-.9375-33.94l128.4-135.5l-128.4-135.5C45.49 110.9 45.83 95.75 55.52 86.56C65.14 77.47 80.33 77.87 89.45 87.5z" />
     </svg>
@@ -1796,7 +1796,53 @@ export function ChevronRightIcon(props: IconType) {
     <svg width={width} height={height} viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
       <path fillRule="evenodd" clipRule="evenodd" d="M4.20316 2.8889C4.0079 3.08417 4.0079 3.40075 4.20316 3.59602L6.06615 5.45903L4.25785 7.26732C4.06259 7.46259 4.06259 7.77917 4.25785 7.97443L4.47882 8.1954C4.67409 8.39066 4.99067 8.39066 5.18593 8.1954L7.57242 5.80892C7.76768 5.61366 7.76768 5.29707 7.57242 5.10181L7.35145 4.88084C7.3341 4.86349 7.31579 4.84768 7.29669 4.83341L5.13124 2.66793C4.93597 2.47267 4.61939 2.47267 4.42413 2.66793L4.20316 2.8889Z" fill="#8D8D96" />
     </svg>
+  )
+}
 
+
+export function FlashCircle(props: IconType) {
+  const { width = 16, height = 16, fill = "#3D3D3D", ...rest } = props
+  return (
+    <svg width={height} height={height} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
+      <path d="M7.97917 1.3335C4.29917 1.3335 1.3125 4.32016 1.3125 8.00016C1.3125 11.6802 4.29917 14.6668 7.97917 14.6668C11.6592 14.6668 14.6458 11.6802 14.6458 8.00016C14.6458 4.32016 11.6658 1.3335 7.97917 1.3335ZM10.4792 8.2335L7.99917 11.0535L7.70583 11.3868C7.29917 11.8468 6.96583 11.7268 6.96583 11.1068V8.46683H5.8325C5.31917 8.46683 5.17917 8.1535 5.51917 7.76683L7.99917 4.94683L8.2925 4.6135C8.69917 4.1535 9.0325 4.2735 9.0325 4.8935V7.5335H10.1658C10.6792 7.5335 10.8192 7.84683 10.4792 8.2335Z" fill="#3D3D3D" />
+    </svg>
+  )
+}
+
+export function ChevronDownIndicator(props: IconType) {
+  const { width = 9, height = 6, fill = "#E0464D", ...rest } = props
+  return (
+    <svg width={width} height={height} viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
+      <path d="M4.5 6L0.602886 0.750001L8.39711 0.75L4.5 6Z" fill={fill} />
+    </svg>
+  )
+}
+
+export function ChevronUpIndicator(props: IconType) {
+  const { width = 9, height = 6, fill = "#11C278", ...rest } = props
+  return (
+    <svg width={width} height={height} viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
+      <path d="M4.5 0L8.39711 5.25H0.602886L4.5 0Z" fill="#11C278" />
+    </svg>
+  )
+}
+
+export function CircleTick(props: IconType) {
+  const { width = 15, height = 15, fill = "#E0464D", ...rest } = props
+  return (
+    <svg width={width} height={height} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7.5 0C3.3675 0 0 3.3675 0 7.5C0 11.6325 3.3675 15 7.5 15C11.6325 15 15 11.6325 15 7.5C15 3.3675 11.6325 0 7.5 0ZM11.085 5.775L6.8325 10.0275C6.7275 10.1325 6.585 10.1925 6.435 10.1925C6.285 10.1925 6.1425 10.1325 6.0375 10.0275L3.915 7.905C3.6975 7.6875 3.6975 7.3275 3.915 7.11C4.1325 6.8925 4.4925 6.8925 4.71 7.11L6.435 8.835L10.29 4.98C10.5075 4.7625 10.8675 4.7625 11.085 4.98C11.3025 5.1975 11.3025 5.55 11.085 5.775Z" fill="#E0464D" />
+    </svg>
+  )
+}
+
+export function ArrowRight(props: IconType) {
+  const { width = 5, height = 5, fill = "#7B7B7B", ...rest } = props
+  return (
+    <svg width={width} height={height} viewBox="0 0 5 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3.03333 0.911331L4.62244 2.50045L3.02958 4.09331" stroke="#7B7B7B" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M4.62156 2.49956H0.378924" stroke="#7B7B7B" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
 
   )
 }

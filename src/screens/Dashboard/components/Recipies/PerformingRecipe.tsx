@@ -1,6 +1,6 @@
 import { Recipe } from "@apptypes/recipe"
 import { Image, Scrollbar } from "@components"
-import { Clock, ProgressArrowUp } from "@icons"
+import { ArrowRight, ChevronDownIndicator, ChevronUpIndicator } from "@icons"
 import React from "react"
 import styled from "styled-components"
 import {
@@ -24,6 +24,9 @@ function PerformingRecipes(props: IRecipeProps) {
           return (
             <RecipesWrapper className="receipeDetails" key={i}>
               <RecipesDetailsWrapper className="recipeholder">
+                <div className="recipeprogress ">
+                  <span>{u?.views?.progress}</span> {u.views?.status === 'down' ? <ChevronDownIndicator /> : <ChevronUpIndicator />}
+                </div>
                 <a href="#">
                   <Image className="recipeImage" src={u?.images?.[0] || ''} alt={u.name} />
                 </a>
@@ -31,7 +34,7 @@ function PerformingRecipes(props: IRecipeProps) {
                   <RecipeName className="recipename">
                     <a href="#">{u.name}</a>
                   </RecipeName>
-                  <div className="recipemeta">
+                  {/* <div className="recipemeta">
                     <div className="receipeRatings">{u.rating}</div>
                     <div className="receipeStatus">
                       <a href="#">
@@ -41,16 +44,17 @@ function PerformingRecipes(props: IRecipeProps) {
                         </span>
                       </a>
                     </div>
-                  </div>
+                  </div> */}
                 </RecipesDetails>
+                <span className="arrow-holder"><ArrowRight /></span>
               </RecipesDetailsWrapper>
             </RecipesWrapper>
           )
         })}
       </Scrollbar>
-      <div className="weeklyReset">
+      {/* <div className="weeklyReset">
         <Clock /> Resets Weekly:<span> 3 days 4 hours </span>
-      </div>
+      </div> */}
     </div>
   )
 }
