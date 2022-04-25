@@ -2,6 +2,8 @@ import { DropDown, ProfileSteps } from "@components"
 import { DownArrowIcon, FilterIcon, SearchIconAlt } from "@icons"
 import { PageLayoutWrapper } from "@layouts"
 import { FavData } from "data"
+import cloneDeep from "lodash/cloneDeep"
+import Pagination from "rc-pagination"
 import React from "react"
 import styled from "styled-components"
 import RecipesCard from "../../components/RecipiesCard"
@@ -10,11 +12,23 @@ import { Input } from "./../../components/Input/Input"
 import { PopOver } from "./../../components/PopOver"
 import { FilterSection } from "./../../screens/MyFeeds/myfeeds.styled"
 import FavoriteFilerForm from "./favoritePageFilter"
+
 type Props = {
   className?: string
 }
 
 const Favorite = ({ className }: Props) => {
+  const countPerPage = 10
+  const [currentPage, setCurrentPage] = React.useState(1)
+  const [collection, setCollection] = React.useState(
+    cloneDeep(FavData.slice(0, countPerPage))
+  )
+  const updatePage = (p: any) => {
+    setCurrentPage(p)
+    const to = countPerPage * p
+    const from = to - countPerPage
+    setCollection(cloneDeep(FavData.slice(from, to)))
+  }
   return (
     <div className={`savedRecipesPage ${className}`}>
       <PageLayoutWrapper className="savedRecipesWrapper" variant={"regular"}>
@@ -74,10 +88,19 @@ const Favorite = ({ className }: Props) => {
           </FilterSection>
           <div className="recipesSection">
             <div className="recipesSectionHolder">
-              <RecipesCard data={FavData} />
+              <RecipesCard data={collection} />
             </div>
           </div>
         </div>
+        <Pagination
+          pageSize={countPerPage}
+          onChange={updatePage}
+          current={currentPage}
+          total={FavData.length}
+          showPrevNextJumpers={true}
+          nextIcon="Next"
+          prevIcon="Previous"
+        />
       </PageLayoutWrapper>
     </div>
   )
