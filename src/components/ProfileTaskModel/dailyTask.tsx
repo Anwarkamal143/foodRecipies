@@ -1,7 +1,7 @@
-import { EnvelopIcon, LampIcon, Loader, Ticke } from "@icons"
+import { CircleProgress, CircleTick, LampIcon, Ticke } from "@icons"
 import clsxm from "@lib/clsxm"
 import React, { useState } from "react"
-import { ProgressBar } from "src/components"
+import { Image, ProgressBar } from "src/components"
 import { CircularProgresWithChildren } from "src/components/CirclePrgoressWithChildren"
 import styled from "styled-components"
 import {
@@ -16,23 +16,31 @@ const DataTwo = [
     data: [
       {
         status: "complete",
-        title: "Master Cook",
-        subtitle: "Upload more than 250 recipes",
+        title: "Recipe Posts",
+        subtitle: "Upload 5 recipes this week",
+        posts: "3/5",
+        postsTitle: "",
+      },
+      {
+        status: "complete",
+        title: "Profile Views",
+        subtitle: "Recieve 1k profile views",
+        posts: "275",
+        postsTitle: "Views",
+      },
+      {
+        status: "complete",
+        title: "New Followers",
+        subtitle: "Gain 25 new followers",
+        posts: "15",
+        postsTitle: "New",
       },
       {
         status: "complete",
         title: "Master Cook",
         subtitle: "Upload more than 250 recipes",
-      },
-      {
-        status: "complete",
-        title: "Master Cook",
-        subtitle: "Upload more than 250 recipes",
-      },
-      {
-        status: "complete",
-        title: "Master Cook",
-        subtitle: "Upload more than 250 recipes",
+        posts: "500k",
+        postsTitle: "Total",
       },
     ],
   },
@@ -41,18 +49,31 @@ const DataTwo = [
     data: [
       {
         status: "complete",
-        title: "Master Cook",
-        subtitle: "Upload more than 250 recipes",
+        title: "Recipe Posts",
+        subtitle: "Upload 5 recipes this week",
+        posts: "3/5",
+        postsTitle: "",
+      },
+      {
+        status: "complete",
+        title: "Profile Views",
+        subtitle: "Recieve 1k profile views",
+        posts: "275",
+        postsTitle: "Views",
+      },
+      {
+        status: "complete",
+        title: "New Followers",
+        subtitle: "Gain 25 new followers",
+        posts: "15",
+        postsTitle: "New",
       },
       {
         status: "complete",
         title: "Master Cook",
         subtitle: "Upload more than 250 recipes",
-      },
-      {
-        status: "complete",
-        title: "Master Cook",
-        subtitle: "Upload more than 250 recipes",
+        posts: "500k",
+        postsTitle: "Total",
       },
     ],
   },
@@ -61,48 +82,97 @@ const DataTwo = [
     data: [
       {
         status: "complete",
+        title: "Recipe Posts",
+        subtitle: "Upload 5 recipes this week",
+        posts: "3/5",
+        postsTitle: "",
+      },
+      {
+        status: "complete",
+        title: "Profile Views",
+        subtitle: "Recieve 1k profile views",
+        posts: "275",
+        postsTitle: "Views",
+      },
+      {
+        status: "complete",
+        title: "New Followers",
+        subtitle: "Gain 25 new followers",
+        posts: "15",
+        postsTitle: "New",
+      },
+      {
+        status: "complete",
         title: "Master Cook",
         subtitle: "Upload more than 250 recipes",
+        posts: "500k",
+        postsTitle: "Total",
       },
     ],
   },
   {
     day: "T",
-    data: [],
+    data: [
+      {
+        status: "complete",
+        title: "Recipe Posts",
+        subtitle: "Upload 5 recipes this week",
+        posts: "3/5",
+        postsTitle: "",
+      },
+      {
+        status: "complete",
+        title: "Profile Views",
+        subtitle: "Recieve 1k profile views",
+        posts: "275",
+        postsTitle: "Views",
+      },
+      {
+        status: "complete",
+        title: "New Followers",
+        subtitle: "Gain 25 new followers",
+        posts: "15",
+        postsTitle: "New",
+      },
+      {
+        status: "complete",
+        title: "Master Cook",
+        subtitle: "Upload more than 250 recipes",
+        posts: "500k",
+        postsTitle: "Total",
+      },
+    ],
   },
   {
     day: "F",
     data: [
       {
         status: "complete",
-        title: "Master Cook",
-        subtitle: "Upload more than 250 recipes",
+        title: "Recipe Posts",
+        subtitle: "Upload 5 recipes this week",
+        posts: "3/5",
+        postsTitle: "",
+      },
+      {
+        status: "complete",
+        title: "Profile Views",
+        subtitle: "Recieve 1k profile views",
+        posts: "275",
+        postsTitle: "Views",
+      },
+      {
+        status: "complete",
+        title: "New Followers",
+        subtitle: "Gain 25 new followers",
+        posts: "15",
+        postsTitle: "New",
       },
       {
         status: "complete",
         title: "Master Cook",
         subtitle: "Upload more than 250 recipes",
-      },
-      {
-        status: "complete",
-        title: "Master Cook",
-        subtitle: "Upload more than 250 recipes",
-      },
-    ],
-  },
-  {
-    day: "S",
-    data: [
-      {
-        status: "complete",
-        title: "Master Cook",
-        subtitle: "Upload more than 250 recipes",
-      },
-
-      {
-        status: "complete",
-        title: "Master Cook",
-        subtitle: "Upload more than 250 recipes",
+        posts: "500k",
+        postsTitle: "Total",
       },
     ],
   },
@@ -111,8 +181,64 @@ const DataTwo = [
     data: [
       {
         status: "complete",
+        title: "Recipe Posts",
+        subtitle: "Upload 5 recipes this week",
+        posts: "3/5",
+        postsTitle: "",
+      },
+      {
+        status: "complete",
+        title: "Profile Views",
+        subtitle: "Recieve 1k profile views",
+        posts: "275",
+        postsTitle: "Views",
+      },
+      {
+        status: "complete",
+        title: "New Followers",
+        subtitle: "Gain 25 new followers",
+        posts: "15",
+        postsTitle: "New",
+      },
+      {
+        status: "complete",
         title: "Master Cook",
         subtitle: "Upload more than 250 recipes",
+        posts: "500k",
+        postsTitle: "Total",
+      },
+    ],
+  },
+  {
+    day: "S",
+    data: [
+      {
+        status: "complete",
+        title: "Recipe Posts",
+        subtitle: "Upload 5 recipes this week",
+        posts: "3/5",
+        postsTitle: "",
+      },
+      {
+        status: "complete",
+        title: "Profile Views",
+        subtitle: "Recieve 1k profile views",
+        posts: "275",
+        postsTitle: "Views",
+      },
+      {
+        status: "complete",
+        title: "New Followers",
+        subtitle: "Gain 25 new followers",
+        posts: "15",
+        postsTitle: "New",
+      },
+      {
+        status: "complete",
+        title: "Master Cook",
+        subtitle: "Upload more than 250 recipes",
+        posts: "500k",
+        postsTitle: "Total",
       },
     ],
   },
@@ -159,23 +285,34 @@ function DailyTask({ className, userName }: Props) {
           </div>
         </LeftSide>
       </Userprofilewrapper>
-      <div className="profileStatusWeekly">
-        {DataTwo.map((e, ele) => {
-          return (
-            <>
-              <span
-                className={`tab-link ${
-                  ele === taskData ? "active" : "in-active"
-                }`}
-                onClick={() => {
-                  DaliyTaskData(ele)
-                }}
-              >
-                {e.day}
-              </span>
-            </>
-          )
-        })}
+      <div className="profileStatusWeeklyArea">
+        <h2>
+          <span className="img">
+            <Image src="/images/img-falme.png" alt="waving hand" />
+          </span>
+          13 day streak <span className="additional-text">Keep it up!</span>
+        </h2>
+        <div className="profileStatusWeekly">
+          {DataTwo.map((e, ele) => {
+            return (
+              <>
+                <span
+                  className={`tab-link ${
+                    ele === taskData ? "active" : "in-active"
+                  }`}
+                  onClick={() => {
+                    DaliyTaskData(ele)
+                  }}
+                >
+                  <span className="img">
+                    <CircleTick />
+                  </span>
+                  <span className="text">{e.day}</span>
+                </span>
+              </>
+            )
+          })}
+        </div>
       </div>
       <div className="receipeDetailsWrap">
         {(DataTwo[taskData]?.data || []).map((u: any, i: number) => {
@@ -186,7 +323,7 @@ function DailyTask({ className, userName }: Props) {
                   {u?.status === "complete" && <Ticke />}
                 </span>
                 <span className="imageIcon">
-                  <EnvelopIcon />
+                  <Image src="/images/cookImage.svg" alt="waving hand" />
                 </span>
                 <div className="receipeTextbox">
                   <span className="recipename">{u.title}</span>
@@ -194,7 +331,12 @@ function DailyTask({ className, userName }: Props) {
                     <div className="receipeRatings">{u.subtitle}</div>
                   </div>
                   <div className="img-loader">
-                    <Loader />
+                    <CircleProgress />
+                    <span className="data-text">
+                      <span className="data-text-wrap">
+                        <span className="num">{u.posts}</span> {u.postsTitle}
+                      </span>
+                    </span>
                   </div>
                 </div>
               </div>
@@ -204,7 +346,7 @@ function DailyTask({ className, userName }: Props) {
       </div>
       <div className="profileStatusModalButtons">
         <a href="#" className="btnStart">
-          Start
+          Post New Recipe or Collection
         </a>
         <a href="#" className="btnIdeaLamp">
           <LampIcon />
@@ -215,10 +357,33 @@ function DailyTask({ className, userName }: Props) {
 }
 
 export default styled(DailyTask)`
+  .profileStatusWeeklyArea {
+    h2 {
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      line-height: 15px;
+      font-weight: 700;
+      margin: 0 0 15px;
+
+      .img {
+        display: block;
+        width: 13px;
+        margin: 0 5px;
+      }
+
+      .additional-text {
+        color: #979797;
+        font-size: 9px;
+        line-height: 12px;
+        padding: 0 0 0 15px;
+      }
+    }
+  }
   .profileStatusWeekly {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     margin: 0 0 30px;
 
     .tab-link {
@@ -238,19 +403,39 @@ export default styled(DailyTask)`
       position: relative;
       cursor: pointer;
 
+      svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+
       &:hover {
         background: #e0464d;
         color: #fff;
       }
 
+      .img {
+        display: none;
+        width: 100%;
+        height: 100%;
+      }
+
       &.active {
-        background: #e0464d;
+        /* background: #e0464d; */
         color: #fff;
         border: 2px solid #fff;
 
         &:after {
           opacity: 1;
           visibility: visible;
+        }
+
+        .text {
+          display: none;
+        }
+
+        .img {
+          display: block;
         }
       }
 
@@ -376,6 +561,30 @@ export default styled(DailyTask)`
       transform: translate(0, -50%);
       width: 40px;
 
+      .data-text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        color: #86909c;
+        font-size: 7px;
+        line-height: 9px;
+      }
+
+      .data-text-wrap {
+        display: block;
+        width: 100%;
+        text-align: center;
+      }
+
+      .num {
+        display: block;
+      }
+
       svg {
         width: 100%;
         height: auto;
@@ -392,7 +601,8 @@ export default styled(DailyTask)`
     justify-content: center;
 
     .btnStart {
-      width: 135px;
+      flex-grow: 1;
+      flex-basis: 0;
       height: 40px;
       background: #e0464d;
       color: #fff;

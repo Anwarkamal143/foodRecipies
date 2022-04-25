@@ -1,13 +1,14 @@
 import { Button, DropDown, Image } from "@components"
 import {
-  AddCircleIcon, ArrowRight,
+  AddCircleIcon,
+  ArrowRight,
   CalendarIcon,
   CircleTick,
   DownArrowIcon,
   EyeIcon,
   Save,
   Star,
-  StatusUp
+  StatusUp,
 } from "@icons"
 import { DashboardLayout } from "@layouts/Dashboard/DashboardLayout"
 import { DashboardAnalytics, LineChartData, RecipesData } from "@redux/data"
@@ -21,7 +22,7 @@ import {
   ResponsiveContainer,
   Tooltip,
   XAxis,
-  YAxis
+  YAxis,
 } from "recharts"
 import styled from "styled-components"
 import { StatisticsItem } from "./components"
@@ -32,7 +33,8 @@ import {
   LeftPerformanceSection,
   MyRecipiesWrapper,
   ProfileperformanceWrapper,
-  RightMyRecipiesSection, StatisticsWrapper
+  RightMyRecipiesSection,
+  StatisticsWrapper,
 } from "./dashboard.styed"
 
 const dateFormatter = (item: Date) => dayjs(item).format("MMM YY")
@@ -52,35 +54,76 @@ const DashBoard = ({ className }: { className?: string }) => {
           ))}
           <div className="dashboardStatisticsGraph">
             <div className="dashboardStatisticsGraphWrap">
-              <h2><span className="img"><Image src="/images/img-falme.png" alt="waving hand" /></span>13 day streak <span className="additional-text">Keep it up!</span></h2>
+              <h2>
+                <span className="img">
+                  <Image src="/images/img-falme.png" alt="waving hand" />
+                </span>
+                13 day streak{" "}
+                <span className="additional-text">Keep it up!</span>
+              </h2>
               <ul className="list-streak">
                 <li>
                   <span className="day">m</span>
-                  <span className="streak-status complete"><CircleTick /></span>
+                  <span className="streak-status complete">
+                    <span className="tooltip-text">
+                      Login tomorrow to continue your stream
+                    </span>
+                    <CircleTick />
+                  </span>
                 </li>
                 <li>
                   <span className="day">t</span>
-                  <span className="streak-status complete"><CircleTick /></span>
+                  <span className="streak-status complete">
+                    <span className="tooltip-text">
+                      Login tomorrow to continue your stream
+                    </span>
+                    <CircleTick />
+                  </span>
                 </li>
                 <li>
                   <span className="day">w</span>
-                  <span className="streak-status complete"><CircleTick /></span>
+                  <span className="streak-status complete">
+                    <span className="tooltip-text">
+                      Login tomorrow to continue your stream
+                    </span>
+                    <CircleTick />
+                  </span>
                 </li>
                 <li>
                   <span className="day">t</span>
-                  <span className="streak-status current"><CircleTick /></span>
+                  <span className="streak-status current">
+                    <span className="tooltip-text">
+                      Login tomorrow to continue your stream
+                    </span>
+                    <CircleTick />
+                  </span>
                 </li>
                 <li>
                   <span className="day">f</span>
-                  <span className="streak-status"><CircleTick /></span>
+                  <span className="streak-status">
+                    <span className="tooltip-text">
+                      Login tomorrow to continue your stream
+                    </span>
+                    <CircleTick />
+                  </span>
                 </li>
                 <li>
                   <span className="day">s</span>
-                  <span className="streak-status"><CircleTick /></span>
+                  <span className="streak-status">
+                    <span className="tooltip-text">
+                      Login tomorrow to continue your stream
+                    </span>
+                    <CircleTick />
+                  </span>
                 </li>
                 <li>
                   <span className="day">s</span>
-                  <span className="streak-status"><CircleTick /></span>
+                  <span className="streak-status">
+                    <span className="tooltip-text">
+                      Login tomorrow to continue your stream
+                    </span>
+                    <CircleTick />
+                  </span>
                 </li>
               </ul>
               {/* <ul className="list-stats-graph">
@@ -276,7 +319,12 @@ const DashBoard = ({ className }: { className?: string }) => {
             <RecipiesTable />
           </LeftMyRecipiesSection>
           <RightMyRecipiesSection className="topPerformingRecipes">
-            <h2><span className="img"><Image src="/images/img-falme.png" alt="waving hand" /></span>Top Performing Recipes</h2>
+            <h2>
+              <span className="img">
+                <Image src="/images/img-falme.png" alt="waving hand" />
+              </span>
+              Top Performing Recipes
+            </h2>
             <PerformingRecipe data={RecipesData} />
           </RightMyRecipiesSection>
         </MyRecipiesWrapper>
@@ -285,8 +333,6 @@ const DashBoard = ({ className }: { className?: string }) => {
   )
 }
 export const Dashboard = styled(DashBoard)`
-  max-width: 1080px;
-  margin: 0 auto;
 
 .dashboardStatistics {
   display: flex;
@@ -360,7 +406,7 @@ export const Dashboard = styled(DashBoard)`
         font-size: 8px;
         line-height: 10px;
         background: #fff;
-        padding: 3px 5px;
+        padding: 3px 8px;
         text-align: center;
         margin: 0 0 0 4px;
 
@@ -569,6 +615,14 @@ export const Dashboard = styled(DashBoard)`
 
   li {
     padding: 0 5px;
+
+    &:last-child {
+      .tooltip-text {
+        transform: none;
+        left: auto;
+        right: 0;
+      }
+    }
   }
 
   .day {
@@ -578,28 +632,55 @@ export const Dashboard = styled(DashBoard)`
 
   .streak-status {
     display: block;
-    width: 15px;
-    height: 15px;
     position: relative;
     background: #E5E8EF;
     border-radius: 100%;
+    width: 16px;
+    height: 16px;
+    top: 1px;
+
+    &:hover {
+      .tooltip-text {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
 
     &.complete,
     &.current {
+      background: none;
+
+      .tooltip-text {
+        display: none;
+      }
+      
       svg {
         display: block;
       }
     }
 
     &.current {
+      width: 18px;
+      height: 18px;
+      margin: 0;
+      top: auto;
+    
       &:before {
         opacity: 1;
         visibility: visible;
+      }
+
+      svg {
+        border: 1px solid #E0464D;
+        border-radius: 100%;
+        padding: 1px;
       }
     }
 
     svg {
       display: none;
+      width: 100%;
+      height: auto;
     }
 
     &:before {
@@ -613,7 +694,26 @@ export const Dashboard = styled(DashBoard)`
       content: '';
       opacity: 0;
       visibility: hidden;
+      display: none;
     }
+  }
+
+  .tooltip-text {
+    position: absolute;
+    left: 50%;
+    width: 100px;
+    background: #BD0F2E;
+    color: #fff;
+    padding: 3px 5px;
+    border-radius: 4px;
+    transform: translate(-50%, 0);
+    bottom: 100%;
+    font-size: 9px;
+    line-height: 12px;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
   }
 }
 
@@ -636,7 +736,7 @@ export const Dashboard = styled(DashBoard)`
     }
 
     @media (max-width: 1199px) {
-      width: calc(100% - 240px);
+      //width: calc(100% - 240px);
     }
 
     @media (max-width: 1023px) {
