@@ -53,7 +53,6 @@ export const InputWrapper = styled.div`
     font-weight: 400;
     font-size: 14px;
     color: rgba(70, 70, 70, 1);
-    font-family: "Roboto", sans-serif;
     padding: 13px 23px;
     width: 100%;
     height: 48px;

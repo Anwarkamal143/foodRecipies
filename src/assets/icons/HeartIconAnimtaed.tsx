@@ -7,7 +7,8 @@ function HeartIconAnimtaed({ className }: IType) {
   const [like, setLikes] = useState(0)
   const [active, setActive] = useState(false)
   useEffect(() => {
-    setActive(true)
+    if(like) setActive(true)
+    
 
     setTimeout(() => {
       setActive(false)

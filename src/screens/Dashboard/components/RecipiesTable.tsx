@@ -6,8 +6,6 @@ import Pagination from "rc-pagination"
 import React from "react"
 import styled from "styled-components"
 
-
-
 function RecipiesTable() {
   const countPerPage = 10
   const [currentPage, setCurrentPage] = React.useState(1)
@@ -47,7 +45,7 @@ function RecipiesTable() {
             return (
               <tr key={index}>
                 <td>
-                  <a href="#" className="link-item">
+                  <a href="#" className="link-item link-id">
                     {items._id}
                   </a>
                 </td>
@@ -74,7 +72,7 @@ function RecipiesTable() {
                 </>
 
                 <td className="date">
-                  <a href="#">{dayjs(items.createdAt).format('DD/MM/YYYY')}</a>
+                  <a href="#">{dayjs(items.createdAt).format("DD/MM/YYYY")}</a>
                 </td>
               </tr>
             )

@@ -37,11 +37,18 @@ function Profilesteps({ src = "", alt = "", className = "" }) {
             Welcome Back, <span>{user.name} </span>
             <Image src="/images/WavingHandEmoji.png" alt="waving hand" />
           </h2>
-          <span className="userProfilesubTitle">Visit Your Cook Profile <AngleRight /></span>
+          <span className="userProfilesubTitle">
+            Visit Your Cook Profile <AngleRight />
+          </span>
         </div>
       </LeftSide>
       <RightSide className="userProfileProgresStatus">
-        <span className="userRemainingTask" onClick={onOpenModel}><span className="img"><FlashCircle /></span>4 Remaining Goals</span>
+        <span className="userRemainingTask" onClick={onOpenModel}>
+          <span className="img">
+            <FlashCircle />
+          </span>
+          4 Remaining Goals
+        </span>
         {/* <p className="userProfileProgreTitle">
           <span onClick={onOpenModel} className="cursor-hand">
             15%
@@ -109,8 +116,9 @@ export const ProfileSteps = styled(Profilesteps)`
 
   .userProfileTitle {
     font-size: 18px;
-    lien-heoght: 22px;
+    line-height: 22px;
     display: block;
+    color: #1e1e2d;
 
     span {
       font-weight: 400;
@@ -136,10 +144,10 @@ export const ProfileSteps = styled(Profilesteps)`
   .userProfilesubTitle {
     cursor: pointer;
     display: inline-block;
-    vertical-align:top;
+    vertical-align: top;
     position: relative;
     transition: all 0.25s ease-in-out;
-    
+
     svg {
       fill: #aa141c;
       opacity: 0;
@@ -185,10 +193,10 @@ export const ProfileSteps = styled(Profilesteps)`
   .userRemainingTask {
     display: inline-block;
     vertical-align: top;
-    background: #F8F8F8;
+    background: #f8f8f8;
     border-radius: 5px;
     padding: 5px 10px;
-    color: #3D3D3D;
+    color: #3d3d3d;
     font-size: 12px;
     line-height: 15px;
     font-weight: 700;
@@ -196,7 +204,7 @@ export const ProfileSteps = styled(Profilesteps)`
     cursor: pointer;
 
     &:hover {
-      background: #E0464D;
+      background: #e0464d;
       color: #fff;
 
       path {

@@ -1,42 +1,69 @@
 import { Button, Checkbox } from "@components"
 import styled from "styled-components"
 
-
 type IFilterFormProps = {
-    className?: string
-    onSubmit?: (...args: any[]) => void
+  className?: string
+  onSubmit?: (...args: any[]) => void
 }
 function FavoriteFilerForm(props: IFilterFormProps) {
-    const { className, onSubmit } = props
+  const { className, onSubmit } = props
 
-    return (
-        <div className={`${className}`}>
-          <ul className="filtersDropdownList">
-            <li><span className="category-title">Cuisine</span></li>
-            <li><Checkbox width={16} height={16} label='American' /></li>
-            <li><Checkbox width={16} height={16} label='Middle Eastern' /></li>
-            <li><Checkbox width={16} height={16} label='Mediterranean' /></li>
-            <li><span className="category-title">Meal Type</span></li>
-            <li><Checkbox width={16} height={16} label='Side Dishes' /></li>
-            <li><Checkbox width={16} height={16} label='Dinner' /></li>
-            <li><Checkbox width={16} height={16} label='Lunch' /></li>
-            <li><Checkbox width={16} height={16} label='Main Course' /></li>
-            <li><Checkbox width={16} height={16} label='Deserts' /></li>
-          </ul>
-          <div className="filtersDropdownbutton">
-              <Button shape="circle" size="small">
-                  Apply Filters
-              </Button>
-          </div>
-        </div>
-    )
+  return (
+    <div className={`${className}`}>
+      <ul className="filtersDropdownList">
+        <li>
+          <span className="category-title">Cuisine</span>
+        </li>
+        <li>
+          <img src="/images/italy.png" alt="italy" />
+          <Checkbox width={16} height={16} label="American" />
+        </li>
+        <li>
+          <img src="/images/india.png" alt="india" />
+          <Checkbox width={16} height={16} label="Middle Eastern" />
+        </li>
+        <li>
+          <img src="/images/asian.png" alt="asian" />
+          <Checkbox width={16} height={16} label="Mediterranean" />
+        </li>
+        <li>
+          <span className="category-title">Meal Type</span>
+        </li>
+        <li>
+          <img src="/images/side-dishes.svg" alt="side-dishes" />
+          <Checkbox width={16} height={16} label="Side Dishes" />
+        </li>
+        <li>
+          <img src="/images/breakfast.svg" alt="breakfast" />
+          <Checkbox width={16} height={16} label="Breakfast" />
+        </li>
+        <li>
+          <img src="/images/lunch.svg" alt="lunch" />
+          <Checkbox width={16} height={16} label="Lunch" />
+        </li>
+        <li>
+          <img src="/images/main-course.svg" alt="main" />
+          <Checkbox width={16} height={16} label="Main Course" />
+        </li>
+        <li>
+          <img src="/images/drinks.svg" alt="drinks" />
+          <Checkbox width={16} height={16} label="Drinks" />
+        </li>
+      </ul>
+      <div className="filtersDropdownbutton">
+        <Button shape="circle" size="small">
+          Apply Filters
+        </Button>
+      </div>
+    </div>
+  )
 }
 export default styled(FavoriteFilerForm)`
   position: absolute;
   width: 266px;
   background: #fff;
-  border: 1px solid #E5E8EF;
-  box-shadow: 0 10px 40px #E8E8FF;
+  border: 1px solid #e5e8ef;
+  box-shadow: 0 10px 40px #818181;
   border-radius: 15px;
   margin-top: 5px;
   padding: 10px 25px;
@@ -49,11 +76,12 @@ export default styled(FavoriteFilerForm)`
 
     li {
       padding: 10px 0;
+      position: relative;
     }
 
     .category-title {
       display: block;
-      color: #1E1E2D;
+      color: #1e1e2d;
       font-size: 12px;
       line-height: 20px;
       padding-top: 5px;
@@ -69,10 +97,20 @@ export default styled(FavoriteFilerForm)`
       }
     }
 
+    img {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+      width: 18px;
+      height: auto;
+    }
+
     label {
-      color: #7474A9;
+      color: #7474a9;
       font-size: 10px;
       line-height: 14px;
+      padding-left: 30px;
       cursor: pointer;
       justify-content: space-between;
 
@@ -93,14 +131,18 @@ export default styled(FavoriteFilerForm)`
     padding: 0 0 12px;
 
     .button-default.button-sm {
-      width: 124px;
-      height: 40px;
+      display: block;
       color: #fff;
-      background:  #E0464D;
+      background: #e0464d;
       border-radius: 20px;
-      font-sze: 14px;
-      line-height: 18px;
-      padding: 7px 15px 13px;
+      width: 100%;
+      font-size: 12px;
+      line-height: 15px;
+      padding: 5px 15px 7px;
+
+      .text-button {
+        vertical-align: top;
+      }
 
       &:hover {
         background: #d02a31;
