@@ -6,7 +6,9 @@ import styled from "styled-components"
 import RecipesCard from "../../components/RecipiesCard"
 import CategoryTypes from "./categoryTypes"
 import FollowUsers from "./FollowUsers"
+
 import Footer from "./footer/footer"
+
 import LatestRecipesSlider from "./latestRecipes"
 import Leaderboard from "./Leaderboard"
 import OurCooksDetails from "./OurCooksDetails"
@@ -74,6 +76,7 @@ const NewPage = ({ className }: Props) => {
               viewAllBtn={false}
             />
           </div>
+
           <OurCooksDetails
             discription="A recipe is a set of instructions that describes how to prepare or make something."
             title={"Our Cooks on Tiktok"}
@@ -92,6 +95,7 @@ const NewPage = ({ className }: Props) => {
           />
         </div>
         <Footer />
+        </div>
       </PageLayoutWrapper>
     </div>
   )

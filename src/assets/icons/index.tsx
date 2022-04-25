@@ -3,7 +3,7 @@ import {
   DetailedHTMLProps,
   forwardRef,
   ImgHTMLAttributes,
-  SVGProps
+  SVGProps,
 } from "react"
 export type IconType = SVGProps<SVGSVGElement>
 // import Profile from "../images/profile.jpg"
@@ -1732,12 +1732,141 @@ export function HorizontalDotsIcon(props: IconType) {
 export function SearchIcon(props: IconType) {
   const { width = 18, height = 19, fill = "#ffffff", ...rest } = props
   return (
-    <svg width={width} height={height} viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
-      <path d="M5.6301 4.48762C5.35255 4.20985 4.90226 4.20985 4.62472 4.48762C3.59424 5.51811 3.08776 6.95363 3.23495 8.42637C3.27167 8.79325 3.58075 9.06674 3.94169 9.06674C3.96541 9.06674 3.98931 9.06553 4.01303 9.06317C4.40386 9.02408 4.68896 8.67542 4.64987 8.28485C4.54511 7.23824 4.90253 6.22057 5.6301 5.49296C5.90786 5.21546 5.90786 4.76513 5.6301 4.48762Z" fill={fill} />
-      <path d="M8.01856 0C3.59711 0 0 3.59711 0 8.01856C0 12.44 3.59711 16.0371 8.01856 16.0371C12.44 16.0371 16.0371 12.44 16.0371 8.01856C16.0371 3.59711 12.44 0 8.01856 0ZM8.01856 14.6344C4.37047 14.6344 1.40268 11.6667 1.40268 8.01856C1.40268 4.37047 4.37047 1.40268 8.01856 1.40268C11.6664 1.40268 14.6344 4.37047 14.6344 8.01856C14.6344 11.6667 11.6667 14.6344 8.01856 14.6344Z" fill={fill} />
-      <path d="M17.7978 16.8284L13.8294 12.86C13.5603 12.5909 13.1247 12.5909 12.8556 12.86C12.5866 13.1288 12.5866 13.5649 12.8556 13.8337L16.8241 17.8022C16.9586 17.9367 17.1347 18.0039 17.311 18.0039C17.4873 18.0039 17.6633 17.9367 17.7978 17.8022C18.0668 17.5334 18.0668 17.0972 17.7978 16.8284Z" fill={fill} />
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 18 19"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...rest}
+    >
+      <path
+        d="M5.6301 4.48762C5.35255 4.20985 4.90226 4.20985 4.62472 4.48762C3.59424 5.51811 3.08776 6.95363 3.23495 8.42637C3.27167 8.79325 3.58075 9.06674 3.94169 9.06674C3.96541 9.06674 3.98931 9.06553 4.01303 9.06317C4.40386 9.02408 4.68896 8.67542 4.64987 8.28485C4.54511 7.23824 4.90253 6.22057 5.6301 5.49296C5.90786 5.21546 5.90786 4.76513 5.6301 4.48762Z"
+        fill={fill}
+      />
+      <path
+        d="M8.01856 0C3.59711 0 0 3.59711 0 8.01856C0 12.44 3.59711 16.0371 8.01856 16.0371C12.44 16.0371 16.0371 12.44 16.0371 8.01856C16.0371 3.59711 12.44 0 8.01856 0ZM8.01856 14.6344C4.37047 14.6344 1.40268 11.6667 1.40268 8.01856C1.40268 4.37047 4.37047 1.40268 8.01856 1.40268C11.6664 1.40268 14.6344 4.37047 14.6344 8.01856C14.6344 11.6667 11.6667 14.6344 8.01856 14.6344Z"
+        fill={fill}
+      />
+      <path
+        d="M17.7978 16.8284L13.8294 12.86C13.5603 12.5909 13.1247 12.5909 12.8556 12.86C12.5866 13.1288 12.5866 13.5649 12.8556 13.8337L16.8241 17.8022C16.9586 17.9367 17.1347 18.0039 17.311 18.0039C17.4873 18.0039 17.6633 17.9367 17.7978 17.8022C18.0668 17.5334 18.0668 17.0972 17.7978 16.8284Z"
+        fill={fill}
+      />
     </svg>
-
+  )
+}
+export function Bell(props: IconType) {
+  const { width = 18, height = 19, fill = "#ffffff", ...rest } = props
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+    >
+      <path
+        d="M12.6467 14.6673H3.31334C1.31334 14.6673 1.31334 13.7673 1.31334 12.6673V12.0007C1.31334 11.634 1.61334 11.334 1.98001 11.334H13.98C14.3467 11.334 14.6467 11.634 14.6467 12.0007V12.6673C14.6467 13.7673 14.6467 14.6673 12.6467 14.6673Z"
+        stroke="white"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M13.8133 8.66732V11.334H2.17999V8.66732C2.17999 6.10732 3.98666 3.96732 6.39333 3.45398C6.75333 3.37398 7.12666 3.33398 7.51333 3.33398H8.47999C8.86666 3.33398 9.24666 3.37398 9.60666 3.45398C12.0133 3.97398 13.8133 6.10732 13.8133 8.66732Z"
+        stroke="white"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M9.66666 3.00065C9.66666 3.16065 9.64666 3.30732 9.60666 3.45398C9.24666 3.37398 8.86666 3.33398 8.48 3.33398H7.51333C7.12666 3.33398 6.75333 3.37398 6.39333 3.45398C6.35333 3.30732 6.33333 3.16065 6.33333 3.00065C6.33333 2.08065 7.07999 1.33398 7.99999 1.33398C8.91999 1.33398 9.66666 2.08065 9.66666 3.00065Z"
+        stroke="white"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M10 7.33398H6"
+        stroke="white"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+export function Calander(props: IconType) {
+  const { width = 18, height = 19, fill = "#ffffff", ...rest } = props
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      fill="none"
+    >
+      <path
+        d="M6 1.5V3.75"
+        stroke="white"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M12 1.5V3.75"
+        stroke="white"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M2.625 6.81836H15.375"
+        stroke="white"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M15.75 6.375V12.75C15.75 15 14.625 16.5 12 16.5H6C3.375 16.5 2.25 15 2.25 12.75V6.375C2.25 4.125 3.375 2.625 6 2.625H12C14.625 2.625 15.75 4.125 15.75 6.375Z"
+        stroke="white"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M11.771 10.2754H11.7778"
+        stroke="white"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M11.771 12.5254H11.7778"
+        stroke="white"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M8.99661 10.2754H9.00335"
+        stroke="white"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M8.99661 12.5254H9.00335"
+        stroke="white"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M6.22073 10.2754H6.22747"
+        stroke="white"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M6.22073 12.5254H6.22747"
+        stroke="white"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
   )
 }
 export function Bell(props: IconType) {
@@ -1771,40 +1900,93 @@ export function Calander(props: IconType) {
 export function CrossIcon(props: IconType) {
   const { width = 12, height = 12, fill = "#292D32", ...rest } = props
   return (
-    <svg width={width} height={height} viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
-      <path fill={fill} d="M0.8,11.8c-0.2,0-0.4-0.1-0.5-0.2c-0.3-0.3-0.3-0.8,0-1.1L10.5,0.3c0.3-0.3,0.8-0.3,1.1,0s0.3,0.8,0,1.1
-		L1.3,11.6C1.2,11.7,1,11.8,0.8,11.8z"/>
-      <path fill={fill} d="M11,11.8c-0.2,0-0.4-0.1-0.5-0.2L0.3,1.3C0,1,0,0.6,0.3,0.3S1,0,1.3,0.3l10.3,10.3c0.3,0.3,0.3,0.8,0,1.1
-		C11.4,11.7,11.2,11.8,11,11.8z"/>
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 12 12"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...rest}
+    >
+      <path
+        fill={fill}
+        d="M0.8,11.8c-0.2,0-0.4-0.1-0.5-0.2c-0.3-0.3-0.3-0.8,0-1.1L10.5,0.3c0.3-0.3,0.8-0.3,1.1,0s0.3,0.8,0,1.1
+		L1.3,11.6C1.2,11.7,1,11.8,0.8,11.8z"
+      />
+      <path
+        fill={fill}
+        d="M11,11.8c-0.2,0-0.4-0.1-0.5-0.2L0.3,1.3C0,1,0,0.6,0.3,0.3S1,0,1.3,0.3l10.3,10.3c0.3,0.3,0.3,0.8,0,1.1
+		C11.4,11.7,11.2,11.8,11,11.8z"
+      />
     </svg>
-
   )
 }
 export function LinkArrowIcon(props: IconType) {
   const { width = 9, height = 9, fill = "#fff", ...rest } = props
   return (
-    <svg width={width} height={height} viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
-      <path d="M8 1L1 8" stroke="#DEDEDE" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M2.865 1L8 1V6.135" stroke="#DEDEDE" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 9 9"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...rest}
+    >
+      <path
+        d="M8 1L1 8"
+        stroke="#DEDEDE"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M2.865 1L8 1V6.135"
+        stroke="#DEDEDE"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
-
   )
 }
 export function ChevronRightIcon(props: IconType) {
   const { width = 12, height = 12, fill = "#fff", ...rest } = props
   return (
-    <svg width={width} height={height} viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
-      <path fillRule="evenodd" clipRule="evenodd" d="M4.20316 2.8889C4.0079 3.08417 4.0079 3.40075 4.20316 3.59602L6.06615 5.45903L4.25785 7.26732C4.06259 7.46259 4.06259 7.77917 4.25785 7.97443L4.47882 8.1954C4.67409 8.39066 4.99067 8.39066 5.18593 8.1954L7.57242 5.80892C7.76768 5.61366 7.76768 5.29707 7.57242 5.10181L7.35145 4.88084C7.3341 4.86349 7.31579 4.84768 7.29669 4.83341L5.13124 2.66793C4.93597 2.47267 4.61939 2.47267 4.42413 2.66793L4.20316 2.8889Z" fill="#8D8D96" />
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 12 11"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...rest}
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M4.20316 2.8889C4.0079 3.08417 4.0079 3.40075 4.20316 3.59602L6.06615 5.45903L4.25785 7.26732C4.06259 7.46259 4.06259 7.77917 4.25785 7.97443L4.47882 8.1954C4.67409 8.39066 4.99067 8.39066 5.18593 8.1954L7.57242 5.80892C7.76768 5.61366 7.76768 5.29707 7.57242 5.10181L7.35145 4.88084C7.3341 4.86349 7.31579 4.84768 7.29669 4.83341L5.13124 2.66793C4.93597 2.47267 4.61939 2.47267 4.42413 2.66793L4.20316 2.8889Z"
+        fill="#8D8D96"
+      />
     </svg>
   )
 }
 
-
 export function FlashCircle(props: IconType) {
   const { width = 16, height = 16, fill = "#3D3D3D", ...rest } = props
   return (
-    <svg width={height} height={height} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
-      <path d="M7.97917 1.3335C4.29917 1.3335 1.3125 4.32016 1.3125 8.00016C1.3125 11.6802 4.29917 14.6668 7.97917 14.6668C11.6592 14.6668 14.6458 11.6802 14.6458 8.00016C14.6458 4.32016 11.6658 1.3335 7.97917 1.3335ZM10.4792 8.2335L7.99917 11.0535L7.70583 11.3868C7.29917 11.8468 6.96583 11.7268 6.96583 11.1068V8.46683H5.8325C5.31917 8.46683 5.17917 8.1535 5.51917 7.76683L7.99917 4.94683L8.2925 4.6135C8.69917 4.1535 9.0325 4.2735 9.0325 4.8935V7.5335H10.1658C10.6792 7.5335 10.8192 7.84683 10.4792 8.2335Z" fill="#3D3D3D" />
+    <svg
+      width={height}
+      height={height}
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...rest}
+    >
+      <path
+        d="M7.97917 1.3335C4.29917 1.3335 1.3125 4.32016 1.3125 8.00016C1.3125 11.6802 4.29917 14.6668 7.97917 14.6668C11.6592 14.6668 14.6458 11.6802 14.6458 8.00016C14.6458 4.32016 11.6658 1.3335 7.97917 1.3335ZM10.4792 8.2335L7.99917 11.0535L7.70583 11.3868C7.29917 11.8468 6.96583 11.7268 6.96583 11.1068V8.46683H5.8325C5.31917 8.46683 5.17917 8.1535 5.51917 7.76683L7.99917 4.94683L8.2925 4.6135C8.69917 4.1535 9.0325 4.2735 9.0325 4.8935V7.5335H10.1658C10.6792 7.5335 10.8192 7.84683 10.4792 8.2335Z"
+        fill="#3D3D3D"
+      />
     </svg>
   )
 }
@@ -1812,7 +1994,14 @@ export function FlashCircle(props: IconType) {
 export function ChevronDownIndicator(props: IconType) {
   const { width = 9, height = 6, fill = "#E0464D", ...rest } = props
   return (
-    <svg width={width} height={height} viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 9 6"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...rest}
+    >
       <path d="M4.5 6L0.602886 0.750001L8.39711 0.75L4.5 6Z" fill={fill} />
     </svg>
   )
@@ -1821,7 +2010,14 @@ export function ChevronDownIndicator(props: IconType) {
 export function ChevronUpIndicator(props: IconType) {
   const { width = 9, height = 6, fill = "#11C278", ...rest } = props
   return (
-    <svg width={width} height={height} viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 9 6"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...rest}
+    >
       <path d="M4.5 0L8.39711 5.25H0.602886L4.5 0Z" fill="#11C278" />
     </svg>
   )
@@ -1830,8 +2026,17 @@ export function ChevronUpIndicator(props: IconType) {
 export function CircleTick(props: IconType) {
   const { width = 15, height = 15, fill = "#E0464D", ...rest } = props
   return (
-    <svg width={width} height={height} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M7.5 0C3.3675 0 0 3.3675 0 7.5C0 11.6325 3.3675 15 7.5 15C11.6325 15 15 11.6325 15 7.5C15 3.3675 11.6325 0 7.5 0ZM11.085 5.775L6.8325 10.0275C6.7275 10.1325 6.585 10.1925 6.435 10.1925C6.285 10.1925 6.1425 10.1325 6.0375 10.0275L3.915 7.905C3.6975 7.6875 3.6975 7.3275 3.915 7.11C4.1325 6.8925 4.4925 6.8925 4.71 7.11L6.435 8.835L10.29 4.98C10.5075 4.7625 10.8675 4.7625 11.085 4.98C11.3025 5.1975 11.3025 5.55 11.085 5.775Z" fill="#E0464D" />
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 15 15"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7.5 0C3.3675 0 0 3.3675 0 7.5C0 11.6325 3.3675 15 7.5 15C11.6325 15 15 11.6325 15 7.5C15 3.3675 11.6325 0 7.5 0ZM11.085 5.775L6.8325 10.0275C6.7275 10.1325 6.585 10.1925 6.435 10.1925C6.285 10.1925 6.1425 10.1325 6.0375 10.0275L3.915 7.905C3.6975 7.6875 3.6975 7.3275 3.915 7.11C4.1325 6.8925 4.4925 6.8925 4.71 7.11L6.435 8.835L10.29 4.98C10.5075 4.7625 10.8675 4.7625 11.085 4.98C11.3025 5.1975 11.3025 5.55 11.085 5.775Z"
+        fill="#E0464D"
+      />
     </svg>
   )
 }
@@ -1839,11 +2044,47 @@ export function CircleTick(props: IconType) {
 export function ArrowRight(props: IconType) {
   const { width = 5, height = 5, fill = "#7B7B7B", ...rest } = props
   return (
-    <svg width={width} height={height} viewBox="0 0 5 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M3.03333 0.911331L4.62244 2.50045L3.02958 4.09331" stroke="#7B7B7B" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M4.62156 2.49956H0.378924" stroke="#7B7B7B" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" />
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 5 5"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M3.03333 0.911331L4.62244 2.50045L3.02958 4.09331"
+        stroke="#7B7B7B"
+        strokeWidth="0.75"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M4.62156 2.49956H0.378924"
+        stroke="#7B7B7B"
+        strokeWidth="0.75"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
+  )
+}
 
+export function CircleProgress(props: IconType) {
+  const { width = 40, height = 40, ...rest } = props
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 40 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle cx="20" cy="20" r="20" fill="#F1F4FB" />
+      <path
+        d="M5.85786 34.1421C8.18355 36.4678 11.0469 38.1841 14.1943 39.1388C17.3417 40.0936 20.676 40.2574 23.9018 39.6157C27.1276 38.974 30.1454 37.5467 32.6879 35.4602C35.2303 33.3737 37.2189 30.6923 38.4776 27.6537C39.7362 24.615 40.2261 21.3128 39.9037 18.0397C39.5813 14.7665 38.4567 11.6233 36.6294 8.8886C34.8021 6.15388 32.3286 3.91201 29.4279 2.36158C26.5273 0.811142 23.289 2.48314e-07 20 0V2.26562C22.9164 2.26562 25.7879 2.98487 28.3599 4.35967C30.932 5.73447 33.1253 7.72238 34.7456 10.1473C36.3659 12.5722 37.3631 15.3593 37.649 18.2617C37.9348 21.1641 37.5005 24.0922 36.3844 26.7867C35.2684 29.4811 33.505 31.8587 31.2506 33.7089C28.9961 35.559 26.3202 36.8247 23.4598 37.3936C20.5994 37.9626 17.6428 37.8173 14.852 36.9707C12.0611 36.1241 9.52213 34.6023 7.4599 32.5401L5.85786 34.1421Z"
+        fill="#E0464D"
+      />
+    </svg>
   )
 }
 

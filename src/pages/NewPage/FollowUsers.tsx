@@ -6,8 +6,11 @@ import styled from "styled-components"
 
 type Props = {
   className?: string
+
   title?: string
   discription?: string
+
+
   data?: any
 }
 const settings = {
@@ -50,7 +53,9 @@ const settings = {
     },
   ],
 }
+
 const FollowUsers = ({ className, data = [], title, discription }: Props) => {
+
   const sliderRef = useRef(null)
   const Followlist = () => {
     return data.map((e: any) => {
