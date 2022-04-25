@@ -18,7 +18,7 @@ type Props = {
 }
 
 const Favorite = ({ className }: Props) => {
-  const countPerPage = 10
+  const countPerPage = 20
   const [currentPage, setCurrentPage] = React.useState(1)
   const [collection, setCollection] = React.useState(
     cloneDeep(FavData.slice(0, countPerPage))
