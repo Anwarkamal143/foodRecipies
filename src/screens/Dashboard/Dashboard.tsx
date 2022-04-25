@@ -1190,61 +1190,6 @@ export const Dashboard = styled(DashBoard)`
     overflow: auto;
     padding: 0 0 15px;
   }
-
-  .rc-pagination {
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    line-height: 15px;
-    padding: 30px 0 0;
-
-    li {
-      margin: 0 5px;
-
-      &.rc-pagination-prev,
-      &.rc-pagination-next {
-        height: 30px;
-        border: 1px solid #F2F3F5;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0 10px;
-        cursor: pointer;
-        transition: all 0.4s ease;
-
-        &:hover {
-          background: #e0464d;
-          color: #fff;
-          border-color: #e0464d;
-        }
-      }
-
-      &.rc-pagination-item-active {
-        a {
-          background: #e0464d;
-          color: #fff;
-          border-color: #e0464d;
-        }
-      }
-    }
-
-    a {
-      width: 30px;
-      height: 30px;
-      border: 1px solid #F2F3F5;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.4s ease;
-
-      &:hover{
-        background: #e0464d;
-        color: #fff;
-        border-color: #e0464d;
-      }
-    }
-  }
 }
 
 .recipiesTable {
