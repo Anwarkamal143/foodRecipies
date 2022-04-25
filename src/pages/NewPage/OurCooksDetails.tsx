@@ -6,6 +6,11 @@ import styled from "styled-components"
 type Props = {
   data?: any
   className?: string
+
+  title?: string
+  discription?: string
+
+
 }
 
 const settings = {
@@ -48,7 +53,14 @@ const settings = {
     },
   ],
 }
-const OurCooksDetails = ({ data = [], className }: Props) => {
+
+const OurCooksDetails = ({
+  data = [],
+  className,
+  title,
+  discription,
+}: Props) => {
+
   const sliderRef = useRef(null)
   const users = () => {
     return data.map((e: any, index: any) => {
@@ -68,16 +80,11 @@ const OurCooksDetails = ({ data = [], className }: Props) => {
     })
   }
   return (
-    <div className={`${className} socialCooksblock align-center`}>
-      <header className="recipesSectionHeader">
-        <strong className="recipesSectionTitle">Our Cooks on Tiktok</strong>
-        <div className="favorite-head">
-          <span className="recipesSectionText">
-            A recipe is a set of instructions that describes how to prepare or
-            make something.
-          </span>
-        </div>
-      </header>
+    <div className={className}>
+      <div className="details-head">
+        <h2>{title}</h2>
+        <span>{discription}</span>
+      </div>
       <Slider draggable={true} ref={sliderRef} {...settings}>
         {users()}
       </Slider>
