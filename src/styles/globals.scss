@@ -608,3 +608,36 @@ body {
     }
   }
 }
+
+.btn-secondary {
+  display: flex;
+  align-items: center;
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 400;
+  color: #7b7b7b;
+  background: #f8f8f8;
+  transition: all 0.4s ease;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background: #e0464d;
+    color: #fff;
+
+    path {
+      stroke: #fff;
+    }
+  }
+
+  svg {
+    max-width: 8px;
+    height: auto;
+    margin: 0 0 0 5px;
+
+    path {
+      transition: all 0.4s ease;
+    }
+  }
+}

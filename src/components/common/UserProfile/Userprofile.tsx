@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import { useOpenClose } from "@hooks"
+import { AngleRight, FlashCircle } from "@icons"
 import clsxm from "@lib/clsxm"
 import { useAppSelector } from "@redux/hooks"
 import React from "react"
-import { ProgressBar } from "src/components"
 import { CircularProgresWithChildren } from "src/components/CirclePrgoressWithChildren"
 import { Image } from "src/components/Image"
 import styled from "styled-components"
@@ -20,7 +20,7 @@ function Profilesteps({ src = "", alt = "", className = "" }) {
         <CircularProgresWithChildren
           maxValue={100}
           parentClass="circleprogress"
-          strokeWidth={3}
+          strokeWidth={5}
           className="circleimages"
           value={15}
         >
@@ -37,21 +37,22 @@ function Profilesteps({ src = "", alt = "", className = "" }) {
             Welcome Back, <span>{user.name} </span>
             <Image src="/images/WavingHandEmoji.png" alt="waving hand" />
           </h2>
-          <span className="userProfilesubTitle">Founder Cook Profile</span>
+          <span className="userProfilesubTitle">Visit Your Cook Profile <AngleRight /></span>
         </div>
       </LeftSide>
       <RightSide className="userProfileProgresStatus">
-        <p className="userProfileProgreTitle">
+        <span className="userRemainingTask" onClick={onOpenModel}><span className="img"><FlashCircle /></span>4 Remaining Goals</span>
+        {/* <p className="userProfileProgreTitle">
           <span onClick={onOpenModel} className="cursor-hand">
             15%
           </span>{" "}
           Tasks Completed
-        </p>
-        <ProgressBar
+        </p> */}
+        {/* <ProgressBar
           showPrgress={false}
           progresspercent={20}
           bgColor={"#e0464d"}
-        />
+        /> */}
       </RightSide>
       <ProfileTaskModel
         userName={user.name}
@@ -132,6 +133,38 @@ export const ProfileSteps = styled(Profilesteps)`
     color: #7b7b7b;
   }
 
+  .userProfilesubTitle {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align:top;
+    position: relative;
+    transition: all 0.25s ease-in-out;
+    
+    svg {
+      fill: #aa141c;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.25s ease-in-out;
+      position: absolute;
+      right: 0;
+      top: 52%;
+      transform: translateY(-49%);
+      margin: 0;
+      width: 14px;
+      height: auto;
+    }
+
+    &:hover {
+      color: #aa141c;
+      padding-right: 18px;
+
+      svg {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
   .userProfileProgresStatus {
     min-width: 120px;
 
@@ -147,5 +180,39 @@ export const ProfileSteps = styled(Profilesteps)`
 
   .cursor-hand {
     cursor: pointer;
+  }
+
+  .userRemainingTask {
+    display: inline-block;
+    vertical-align: top;
+    background: #F8F8F8;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #3D3D3D;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 700;
+    transition: all 0.4s ease;
+    cursor: pointer;
+
+    &:hover {
+      background: #E0464D;
+      color: #fff;
+
+      path {
+        fill: #fff;
+      }
+    }
+
+    .img {
+      width: 16px;
+      display: inline-block;
+      vertical-align: top;
+      margin: 0 8px 0 0;
+    }
+
+    path {
+      transition: all 0.4s ease;
+    }
   }
 `

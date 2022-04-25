@@ -37,5 +37,6 @@ export type Recipe = {
         views?: RecipeViews
         rating?: number
         isDeleted?: boolean,
+        tags?: string[],
 
     }

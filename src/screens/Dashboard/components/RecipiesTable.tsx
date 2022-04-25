@@ -52,7 +52,7 @@ function RecipiesTable() {
                   </a>
                 </td>
                 <td>
-                  <a href="#" className="link-item">
+                  <a href="#" className="link-item name-text">
                     {items.name}
                   </a>
                 </td>
