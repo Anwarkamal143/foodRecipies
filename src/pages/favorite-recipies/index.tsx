@@ -91,16 +91,16 @@ const Favorite = ({ className }: Props) => {
               <RecipesCard data={collection} />
             </div>
           </div>
+          <Pagination
+            pageSize={countPerPage}
+            onChange={updatePage}
+            current={currentPage}
+            total={FavData.length}
+            showPrevNextJumpers={true}
+            nextIcon="Next"
+            prevIcon="Previous"
+          />
         </div>
-        <Pagination
-          pageSize={countPerPage}
-          onChange={updatePage}
-          current={currentPage}
-          total={FavData.length}
-          showPrevNextJumpers={true}
-          nextIcon="Next"
-          prevIcon="Previous"
-        />
       </PageLayoutWrapper>
     </div>
   )
