@@ -95,7 +95,7 @@ export const data = [
     reviewTime: "Saves ( 30 days )",
   },
   {
-    title: "Recipe Reviews",
+    title: "Total Followers",
     count: FormatNumber(1100),
     status: "up",
     trandingCount: "23",
