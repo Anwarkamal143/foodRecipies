@@ -74,6 +74,7 @@ const NewPage = ({ className }: Props) => {
               viewAllBtn={false}
             />
           </div>
+
           <OurCooksDetails
             discription="A recipe is a set of instructions that describes how to prepare or make something."
             title={"Our Cooks on Tiktok"}
