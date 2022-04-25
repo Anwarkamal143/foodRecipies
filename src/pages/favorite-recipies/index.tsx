@@ -1,5 +1,5 @@
 import { CircleDefaultImage, CircularProgresWithChildren, DropDown } from "@components"
-import { DownArrowIcon, FilterIcon, SearchIcon } from "@icons"
+import { AngleRight, DownArrowIcon, FilterIcon, SearchIcon } from "@icons"
 import { PageLayoutWrapper } from "@layouts"
 import { FavData } from "data"
 import React from "react"
@@ -17,32 +17,34 @@ type Props = {
 
 const Favorite = ({ className }: Props) => {
   return (
-    <div className={`recipesPage ${className}`}>
-      <PageLayoutWrapper className='recipesPageWrapper' variant={'regular'}>
-        <LeftSide className="userProfileProgresBox">
-          <CircularProgresWithChildren
-            maxValue={100}
-            parentClass="circleprogress"
-            strokeWidth={3}
-            className="circleimages"
-            value={15}
-          >
-            <div className="cursor-hand">
-              <CircleDefaultImage
-                className="circleimg"
-                src="/images/profile-img.png"
-                alt="default profile imag"
-              />
-            </div>
-          </CircularProgresWithChildren>
-          <div className="userProfileTextbox">
-            <h2 className="userProfileTitle">
-              Welcome Back, <span> </span>
-            </h2>
-            <span className="userProfilesubTitle">Founder Cook Profile</span>
-          </div>
-        </LeftSide>
+    <div className={`savedRecipesPage ${className}`}>
+      <PageLayoutWrapper className='savedRecipesWrapper' variant={'regular'}>
         <div className="recipesContainer">
+          <header className="savedRecipesHeader">
+            <LeftSide className="userProfileProgresBox">
+              <CircularProgresWithChildren
+                maxValue={100}
+                parentClass="circleprogress"
+                strokeWidth={4}
+                className="circleimages"
+                value={60}
+              >
+                <div className="cursor-hand">
+                  <CircleDefaultImage
+                    className="circleimg"
+                    src="/images/profile-img.png"
+                    alt="default profile imag"
+                  />
+                </div>
+              </CircularProgresWithChildren>
+              <div className="userProfileTextbox">
+                <h2 className="userProfileTitle">
+                  Welcome Back, <span>Omer Erdogan</span>
+                </h2>
+                <span className="userProfilesubTitle">Founder Cook Profile <AngleRight /></span>
+              </div>
+            </LeftSide>
+          </header>
           <FilterSection className="recipesFiltersForm">
             <div className="recipesFiltersbox">
               <Input
