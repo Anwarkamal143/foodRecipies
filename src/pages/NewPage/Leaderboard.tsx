@@ -11,7 +11,7 @@ type Props = {
 const Leaderboard = ({ data = [] }: Props) => {
   return (
     <div className="leaderboardRecipesSection">
-      <div className="leaderboardRecipesBlock">
+      <div className="recipesSection leaderboardRecipesBlock">
         <header className="recipesSectionHeader">
           <div className="recipesSectionTitlebox">
             <strong className="recipesSectionTitle"> Recipe Leaderboard</strong>

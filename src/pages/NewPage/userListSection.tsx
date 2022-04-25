@@ -3,9 +3,8 @@ import {
   Bell,
   Calander,
   FacebookIcon,
-  InstagramIcon,
-  TwitterIcon,
-  YoutubeIcon,
+  InstagramIcon, TimeDuraion, TwitterIcon,
+  YoutubeIcon
 } from "@icons"
 import { userList } from "data"
 import React from "react"
@@ -13,11 +12,13 @@ type Props = {}
 
 const UserListSection = (props: Props) => {
   return (
-    <div>
-      <div className="laederboard-head">
-        <h2> Cook Leaderboard</h2>
-        <span>Ends in 10 Days 23 Hours 46 Minutes 26 Seconds</span>
-        <div>
+    <div className="recipesSection leaderboardRecipesBlock">
+      <header className="recipesSectionHeader">
+        <div className="recipesSectionTitlebox">
+          <strong className="recipesSectionTitle"> Cook Leaderboard</strong>
+          <span className="recipesSectionText"><TimeDuraion /> Ends in 10 Days 23 Hours 46 Minutes 26 Seconds</span>
+        </div>
+        <div className="leaderboardFilters">
           <DropDown
             button={selected => (
               <Button
@@ -67,46 +68,60 @@ const UserListSection = (props: Props) => {
             }}
           />
         </div>
-      </div>
-      <div className="top-rank">
-        {userList.slice(0, 3).map((e: any) => {
-          return (
-            <div className="top-3-profiles" key={e.low || e.heigh}>
-              <div className="image">
-                <img src={e.profile} alt="profile" />
+      </header>
+      <div className="leaderboardRecipesHolder">
+        <div className="top-rank">
+          {userList.slice(0, 3).map((e: any) => {
+            return (
+              <div className="top-3-profiles gold silver/bronze" key={e.low || e.heigh}>
+                <div className="image">
+                  <img src={e.profile} alt="profile" />
+                </div>
+                <div className="textbox">
+                  <span className="cookname">{e.userName}</span>
+                  <ul className="socialIcons">
+                    <li>
+                      <Icon className="socialIconsItem facebook">
+                        <FacebookIcon />
+                      </Icon>
+                    </li>
+                    <li>
+                      <Icon className="socialIconsItem youtube">
+                        <YoutubeIcon />
+                      </Icon>
+                    </li>
+                    <li>
+                      <Icon className="socialIconsItem twitter">
+                        <TwitterIcon />
+                      </Icon>
+                    </li>
+                    <li>
+                      <Icon className="socialIconsItem instagram">
+                        <InstagramIcon />
+                      </Icon>
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <span>{e.userName}</span>
-              <div className="socialIcons">
-                <Icon className="socialIconsItem facebook">
-                  <FacebookIcon />
-                </Icon>
-                <Icon className="socialIconsItem youtube">
-                  <YoutubeIcon />
-                </Icon>
-                <Icon className="socialIconsItem twitter">
-                  <TwitterIcon />
-                </Icon>
-                <Icon className="socialIconsItem instagram">
-                  <InstagramIcon />
-                </Icon>
+            )
+          })}
+        </div>
+        <div className="userlist">
+          {userList.slice(3).map((e: any) => {
+            return (
+              <div className="top-profiles" key={e.low || e.heigh}>
+                <div className="rate-info">
+                  <span className={`rate-${e.low ? "low" : "heigh"}`}></span>
+                  <span className={`rate`}>{e.low ? e.low : e.heigh}</span>
+                </div>
+                <div className="image">
+                  <img src={e.profile} alt="profile" />
+                </div>
+                <span className="cookname">{e.userName}</span>
               </div>
-            </div>
-          )
-        })}
-      </div>
-      <div className="userlist">
-        {userList.slice(3).map((e: any) => {
-          return (
-            <div className="top-3-profiles" key={e.low || e.heigh}>
-              <span className={`rate-${e.low ? "low" : "heigh"}`}></span>
-              <span className={`rate`}>{e.low ? e.low : e.heigh}</span>
-              <div className="image">
-                <img src={e.profile} alt="profile" />
-              </div>
-              <span>{e.userName}</span>
-            </div>
-          )
-        })}
+            )
+          })}
+        </div>
       </div>
     </div>
   )

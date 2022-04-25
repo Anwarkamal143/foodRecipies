@@ -65,26 +65,32 @@ const OurCooksDetails = ({
   const users = () => {
     return data.map((e: any, index: any) => {
       return (
-        <div className="items" key={index}>
-          {e.type && <span className="videobtn"></span>}
-          <img src={e.url} alt="video" />
-          <div className="user">
-            <div className="profile">
+        <div className="cookItemBox" key={index}>
+          <div className="image-holder">
+            {e.type && <span className="videobtn"></span>}
+            <img src={e.url} alt="video" />
+          </div>
+          <div className="textbox">
+            <div className="profile-image">
               <img src={e.profile} alt="video" />
             </div>
-            <span className="uesername">{e.userName}</span>
-            <span className="postby">{e.postby}</span>
+            <div className="textinfo">
+              <span className="uesername">{e.userName}</span>
+              <span className="postby">{e.postby}</span>
+            </div>
           </div>
         </div>
       )
     })
   }
   return (
-    <div className={className}>
-      <div className="details-head">
-        <h2>{title}</h2>
-        <span>{discription}</span>
-      </div>
+    <div className={`class ${className} recipesSection socialCooksblock align-center`}>
+      <header className="recipesSectionHeader">
+        <strong className="recipesSectionTitle">{title}</strong>
+        <div className="favorite-head">
+          <span className="recipesSectionText">{discription}</span>
+        </div>
+      </header>
       <Slider draggable={true} ref={sliderRef} {...settings}>
         {users()}
       </Slider>

@@ -76,11 +76,13 @@ const FollowUsers = ({ className, data = [], title, discription }: Props) => {
     })
   }
   return (
-    <div className={className}>
-      <div className="Followlist-head">
-        <h2>{title}</h2>
-        <span>{discription}</span>
-      </div>
+    <div className={`${className} recipesSection align-center`}>
+      <header className="recipesSectionHeader">
+        <strong className="recipesSectionTitle">{title}</strong>
+        <div className="favorite-head">
+          <span className="recipesSectionText">{discription}</span>
+        </div>
+      </header>
       <Slider draggable={true} ref={sliderRef} {...settings}>
         {Followlist()}
       </Slider>
