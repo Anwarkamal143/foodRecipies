@@ -1,4 +1,4 @@
-import { Button, Checkbox } from "@components"
+import { Button, Checkbox ,Image} from "@components"
 import styled from "styled-components"
 
 type IFilterFormProps = {
@@ -15,31 +15,40 @@ function FavoriteFilerForm(props: IFilterFormProps) {
           <span className="category-title">Cuisine</span>
         </li>
         <li>
+          <Image src="/images/italy.png" alt="italy" />
           <Checkbox width={16} height={16} label="American" />
         </li>
         <li>
+          <Image src="/images/india.png" alt="india" />
           <Checkbox width={16} height={16} label="Middle Eastern" />
         </li>
         <li>
+          <Image src="/images/asian.png" alt="asian" />
           <Checkbox width={16} height={16} label="Mediterranean" />
         </li>
         <li>
           <span className="category-title">Meal Type</span>
         </li>
         <li>
+          <Image src="/images/side-dishes.svg" alt="side-dishes" />
           <Checkbox width={16} height={16} label="Side Dishes" />
         </li>
         <li>
-          <Checkbox width={16} height={16} label="Dinner" />
+          <Image src="/images/breakfast.svg" alt="breakfast" />
+          <Checkbox width={16} height={16} label="Breakfast" />
         </li>
+
         <li>
+          <Image src="/images/lunch.svg" alt="lunch" />
           <Checkbox width={16} height={16} label="Lunch" />
         </li>
         <li>
+          <Image src="/images/main-course.png" alt="main" />
           <Checkbox width={16} height={16} label="Main Course" />
         </li>
         <li>
-          <Checkbox width={16} height={16} label="Deserts" />
+          <Image src="/images/drinks.svg" alt="drinks" />
+          <Checkbox width={16} height={16} label="Drinks" />
         </li>
       </ul>
       <div className="filtersDropdownbutton">
