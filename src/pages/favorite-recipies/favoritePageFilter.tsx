@@ -1,4 +1,4 @@
-import { Button, Checkbox ,Image} from "@components"
+import { Button, Checkbox } from "@components"
 import styled from "styled-components"
 
 type IFilterFormProps = {
@@ -15,39 +15,38 @@ function FavoriteFilerForm(props: IFilterFormProps) {
           <span className="category-title">Cuisine</span>
         </li>
         <li>
-          <Image src="/images/italy.png" alt="italy" />
+          <img src="/images/italy.png" alt="italy" />
           <Checkbox width={16} height={16} label="American" />
         </li>
         <li>
-          <Image src="/images/india.png" alt="india" />
+          <img src="/images/india.png" alt="india" />
           <Checkbox width={16} height={16} label="Middle Eastern" />
         </li>
         <li>
-          <Image src="/images/asian.png" alt="asian" />
+          <img src="/images/asian.png" alt="asian" />
           <Checkbox width={16} height={16} label="Mediterranean" />
         </li>
         <li>
           <span className="category-title">Meal Type</span>
         </li>
         <li>
-          <Image src="/images/side-dishes.svg" alt="side-dishes" />
+          <img src="/images/side-dishes.svg" alt="side-dishes" />
           <Checkbox width={16} height={16} label="Side Dishes" />
         </li>
         <li>
-          <Image src="/images/breakfast.svg" alt="breakfast" />
+          <img src="/images/breakfast.svg" alt="breakfast" />
           <Checkbox width={16} height={16} label="Breakfast" />
         </li>
-
         <li>
-          <Image src="/images/lunch.svg" alt="lunch" />
+          <img src="/images/lunch.svg" alt="lunch" />
           <Checkbox width={16} height={16} label="Lunch" />
         </li>
         <li>
-          <Image src="/images/main-course.png" alt="main" />
+          <img src="/images/main-course.svg" alt="main" />
           <Checkbox width={16} height={16} label="Main Course" />
         </li>
         <li>
-          <Image src="/images/drinks.svg" alt="drinks" />
+          <img src="/images/drinks.svg" alt="drinks" />
           <Checkbox width={16} height={16} label="Drinks" />
         </li>
       </ul>
@@ -77,6 +76,7 @@ export default styled(FavoriteFilerForm)`
 
     li {
       padding: 10px 0;
+      position: relative;
     }
 
     .category-title {
@@ -97,10 +97,20 @@ export default styled(FavoriteFilerForm)`
       }
     }
 
+    img {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+      width: 18px;
+      height: auto;
+    }
+
     label {
       color: #7474a9;
       font-size: 10px;
       line-height: 14px;
+      padding-left: 30px;
       cursor: pointer;
       justify-content: space-between;
 
@@ -121,14 +131,18 @@ export default styled(FavoriteFilerForm)`
     padding: 0 0 12px;
 
     .button-default.button-sm {
-      width: 124px;
-      height: 40px;
+      display: block;
       color: #fff;
       background: #e0464d;
       border-radius: 20px;
-      font-sze: 14px;
-      line-height: 18px;
-      padding: 7px 15px 13px;
+      width: 100%;
+      font-size: 12px;
+      line-height: 15px;
+      padding: 5px 15px 7px;
+
+      .text-button {
+        vertical-align: top;
+      }
 
       &:hover {
         background: #d02a31;
