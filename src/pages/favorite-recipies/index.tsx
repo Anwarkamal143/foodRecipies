@@ -1,16 +1,15 @@
-import { CircleDefaultImage, CircularProgresWithChildren, DropDown } from "@components"
-import { AngleRight, DownArrowIcon, FilterIcon, SearchIcon } from "@icons"
+import { DropDown, ProfileSteps } from "@components"
+import { DownArrowIcon, FilterIcon, SearchIconAlt } from "@icons"
 import { PageLayoutWrapper } from "@layouts"
 import { FavData } from "data"
 import React from "react"
-import { LeftSide } from "src/components/common/UserProfile/userprofile.styled"
 import styled from "styled-components"
-import RecipesCard from '../../components/RecipiesCard'
+import RecipesCard from "../../components/RecipiesCard"
 import Button from "./../../components/Button/Button"
-import { Input } from './../../components/Input/Input'
+import { Input } from "./../../components/Input/Input"
 import { PopOver } from "./../../components/PopOver"
 import { FilterSection } from "./../../screens/MyFeeds/myfeeds.styled"
-import FavoriteFilerForm from './favoritePageFilter'
+import FavoriteFilerForm from "./favoritePageFilter"
 type Props = {
   className?: string
 }
@@ -18,38 +17,15 @@ type Props = {
 const Favorite = ({ className }: Props) => {
   return (
     <div className={`savedRecipesPage ${className}`}>
-      <PageLayoutWrapper className='savedRecipesWrapper' variant={'regular'}>
+      <PageLayoutWrapper className="savedRecipesWrapper" variant={"regular"}>
         <div className="recipesContainer">
-          <header className="savedRecipesHeader">
-            <LeftSide className="userProfileProgresBox">
-              <CircularProgresWithChildren
-                maxValue={100}
-                parentClass="circleprogress"
-                strokeWidth={4}
-                className="circleimages"
-                value={60}
-              >
-                <div className="cursor-hand">
-                  <CircleDefaultImage
-                    className="circleimg"
-                    src="/images/profile-img.png"
-                    alt="default profile imag"
-                  />
-                </div>
-              </CircularProgresWithChildren>
-              <div className="userProfileTextbox">
-                <h2 className="userProfileTitle">
-                  Welcome Back, <span>Omer Erdogan</span>
-                </h2>
-                <span className="userProfilesubTitle">Founder Cook Profile <AngleRight /></span>
-              </div>
-            </LeftSide>
-          </header>
+          <ProfileSteps className="profile-header" />
           <FilterSection className="recipesFiltersForm">
             <div className="recipesFiltersbox">
               <Input
-                type={'text'}
-                icon={<SearchIcon />}
+                type={"text"}
+                icon={<SearchIconAlt />}
+                placeholder="Search My Saved Recipes ..."
               />
               <PopOver
                 button={

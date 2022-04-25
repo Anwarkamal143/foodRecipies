@@ -1729,6 +1729,7 @@ export function HorizontalDotsIcon(props: IconType) {
     </svg>
   )
 }
+
 export function SearchIcon(props: IconType) {
   const { width = 18, height = 19, fill = "#ffffff", ...rest } = props
   return (
@@ -1755,6 +1756,45 @@ export function SearchIcon(props: IconType) {
     </svg>
   )
 }
+
+export function SearchIconAlt(props: IconType) {
+  const { width = 16, height = 16, fill = "#1E1E2D", ...rest } = props
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M9.33334 3.33337H13.3333"
+        stroke={fill}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M9.33334 5.33337H11.3333"
+        stroke={fill}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M14 7.66671C14 11.1667 11.1667 14 7.66668 14C4.16668 14 1.33334 11.1667 1.33334 7.66671C1.33334 4.16671 4.16668 1.33337 7.66668 1.33337"
+        stroke={fill}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M14.6667 14.6667L13.3333 13.3334"
+        stroke={fill}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
 export function Bell(props: IconType) {
   const { width = 18, height = 19, fill = "#ffffff", ...rest } = props
   return (
