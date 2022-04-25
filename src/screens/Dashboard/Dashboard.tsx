@@ -841,7 +841,7 @@ export const Dashboard = styled(DashBoard)`
 
         .sortByFilterDrop {
           border: 1px solid #E5E8EF;
-          box-shadow: 0 10px 40px #E8E8FF;
+          box-shadow: 0 10px 40px #818181;
           border-radius: 15px;
 
           .item {

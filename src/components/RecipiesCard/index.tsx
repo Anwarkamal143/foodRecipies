@@ -1,5 +1,5 @@
 import HeartIconAnimtaed from "@assets/icons/HeartIconAnimtaed"
-import { Icon } from "@components"
+import { Icon, Image } from "@components"
 import { AngleRight, Tag, TimeDuraion } from "@icons"
 import React from "react"
 import styled from "styled-components"
@@ -55,7 +55,7 @@ const RecipesCard = ({
                 {e.time}
               </span>
               <span className="recipeMetaBox">
-                <TimeDuraion />
+                <Image src="/images/emoji.png" alt="waving hand" />
                 {e.state}
               </span>
             </div>

@@ -1,5 +1,5 @@
 import HeartIconAnimtaed from "@assets/icons/HeartIconAnimtaed"
-import { Icon } from "@components"
+import Image, { Icon } from "@components"
 import { LeftSliderArrow, RightSliderArrow, Tag, TimeDuraion } from "@icons"
 import { FavData } from "data"
 import React, { useRef } from "react"
@@ -77,7 +77,7 @@ const LatestRecipesSlider = ({ className }: Props) => {
                 {e.time}
               </span>
               <span className="recipeMetaBox">
-                <TimeDuraion />
+                <Image src="/images/emoji.png" alt="waving hand" />
                 {e.state}
               </span>
             </div>

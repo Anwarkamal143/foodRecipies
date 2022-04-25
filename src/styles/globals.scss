@@ -342,6 +342,7 @@ body {
   border-radius: 8px;
   background: #fff;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
 
   @media (max-width: 1199px) {
     width: calc(25% - 14px);
@@ -358,6 +359,10 @@ body {
 
   @media (max-width: 479px) {
     width: calc(100% - 14px);
+  }
+
+  &:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
   }
 
   .recipeItemImage {
@@ -449,6 +454,11 @@ body {
     line-height: 20px;
     color: #1e1e2d;
     margin: 0 0 10px;
+    cursor: pointer;
+
+    &:hover {
+      color: #e0464d;
+    }
   }
 
   .recipeAuthor {
@@ -463,7 +473,7 @@ body {
     cursor: pointer;
 
     svg {
-      fill: #aa141c;
+      fill: #e0464d;
       opacity: 0;
       visibility: hidden;
       transition: all 0.25s ease-in-out;
@@ -477,7 +487,7 @@ body {
     }
 
     &:hover {
-      color: #aa141c;
+      color: #e0464d;
       padding-right: 18px;
 
       svg {
@@ -504,11 +514,22 @@ body {
     transition: all 0.4s ease;
 
     &:hover {
-      color: #aa141c;
+      color: #e0464d;
     }
 
     svg {
       margin: 0 10px 0 0;
+    }
+
+    .image-comp {
+      width: 14px;
+      display: block;
+      margin: 0 10px 0 0;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
     }
   }
 }
@@ -767,7 +788,7 @@ body {
     transition: all 0.25s ease-in-out;
 
     svg {
-      fill: #aa141c;
+      fill: #e0464d;
       opacity: 0;
       visibility: hidden;
       transition: all 0.25s ease-in-out;
@@ -781,7 +802,7 @@ body {
     }
 
     &:hover {
-      color: #aa141c;
+      color: #e0464d;
       padding-right: 18px;
 
       svg {
