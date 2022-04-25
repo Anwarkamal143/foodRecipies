@@ -807,6 +807,10 @@ export const Dashboard = styled(DashBoard)`
 
         > div {
           padding: 0 5px;
+
+          &:last-child {
+            padding-right: 0;
+          }
         }
 
         .button.button-sm.button-has-icon {
