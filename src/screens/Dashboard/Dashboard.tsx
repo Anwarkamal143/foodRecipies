@@ -1251,7 +1251,16 @@ export const Dashboard = styled(DashBoard)`
   font-weight: 500;
 
   @media (max-width: 767px) {
-    min-width: 510px;
+    min-width: 310px;
+  }
+
+  th:first-child,
+  th:last-child,
+  td:first-child,
+  td:last-child {
+    @media (max-width: 1399px) {
+      display: none !important;
+    }
   }
 
   th {
@@ -1274,12 +1283,20 @@ export const Dashboard = styled(DashBoard)`
     text-overflow: ellipsis;
     white-space: nowrap;
 
+    @media(max-width: 767px) {
+      max-width: 100px;
+    }
+
     &.link-id {
       max-width: 60px;
     }
 
     &.name-text {
       max-width: 350px;
+
+      @media(max-width: 767px) {
+        max-width: 150px;
+      }
     }
     
     &:hover {
