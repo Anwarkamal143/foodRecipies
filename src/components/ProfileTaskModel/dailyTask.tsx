@@ -16,23 +16,31 @@ const DataTwo = [
     data: [
       {
         status: "complete",
-        title: "Master Cook",
-        subtitle: "Upload more than 250 recipes",
+        title: "Recipe Posts",
+        subtitle: "Upload 5 recipes this week",
+        posts: "3/5",
+        postsTitle: "",
+      },
+      {
+        status: "complete",
+        title: "Profile Views",
+        subtitle: "Recieve 1k profile views",
+        posts: "275",
+        postsTitle: "Views",
+      },
+      {
+        status: "complete",
+        title: "New Followers",
+        subtitle: "Gain 25 new followers",
+        posts: "15",
+        postsTitle: "New",
       },
       {
         status: "complete",
         title: "Master Cook",
         subtitle: "Upload more than 250 recipes",
-      },
-      {
-        status: "complete",
-        title: "Master Cook",
-        subtitle: "Upload more than 250 recipes",
-      },
-      {
-        status: "complete",
-        title: "Master Cook",
-        subtitle: "Upload more than 250 recipes",
+        posts: "500k",
+        postsTitle: "Total",
       },
     ],
   },
@@ -41,18 +49,31 @@ const DataTwo = [
     data: [
       {
         status: "complete",
-        title: "Master Cook",
-        subtitle: "Upload more than 250 recipes",
+        title: "Recipe Posts",
+        subtitle: "Upload 5 recipes this week",
+        posts: "3/5",
+        postsTitle: "",
+      },
+      {
+        status: "complete",
+        title: "Profile Views",
+        subtitle: "Recieve 1k profile views",
+        posts: "275",
+        postsTitle: "Views",
+      },
+      {
+        status: "complete",
+        title: "New Followers",
+        subtitle: "Gain 25 new followers",
+        posts: "15",
+        postsTitle: "New",
       },
       {
         status: "complete",
         title: "Master Cook",
         subtitle: "Upload more than 250 recipes",
-      },
-      {
-        status: "complete",
-        title: "Master Cook",
-        subtitle: "Upload more than 250 recipes",
+        posts: "500k",
+        postsTitle: "Total",
       },
     ],
   },
@@ -61,48 +82,97 @@ const DataTwo = [
     data: [
       {
         status: "complete",
+        title: "Recipe Posts",
+        subtitle: "Upload 5 recipes this week",
+        posts: "3/5",
+        postsTitle: "",
+      },
+      {
+        status: "complete",
+        title: "Profile Views",
+        subtitle: "Recieve 1k profile views",
+        posts: "275",
+        postsTitle: "Views",
+      },
+      {
+        status: "complete",
+        title: "New Followers",
+        subtitle: "Gain 25 new followers",
+        posts: "15",
+        postsTitle: "New",
+      },
+      {
+        status: "complete",
         title: "Master Cook",
         subtitle: "Upload more than 250 recipes",
+        posts: "500k",
+        postsTitle: "Total",
       },
     ],
   },
   {
     day: "T",
-    data: [],
+    data: [
+      {
+        status: "complete",
+        title: "Recipe Posts",
+        subtitle: "Upload 5 recipes this week",
+        posts: "3/5",
+        postsTitle: "",
+      },
+      {
+        status: "complete",
+        title: "Profile Views",
+        subtitle: "Recieve 1k profile views",
+        posts: "275",
+        postsTitle: "Views",
+      },
+      {
+        status: "complete",
+        title: "New Followers",
+        subtitle: "Gain 25 new followers",
+        posts: "15",
+        postsTitle: "New",
+      },
+      {
+        status: "complete",
+        title: "Master Cook",
+        subtitle: "Upload more than 250 recipes",
+        posts: "500k",
+        postsTitle: "Total",
+      },
+    ],
   },
   {
     day: "F",
     data: [
       {
         status: "complete",
-        title: "Master Cook",
-        subtitle: "Upload more than 250 recipes",
+        title: "Recipe Posts",
+        subtitle: "Upload 5 recipes this week",
+        posts: "3/5",
+        postsTitle: "",
+      },
+      {
+        status: "complete",
+        title: "Profile Views",
+        subtitle: "Recieve 1k profile views",
+        posts: "275",
+        postsTitle: "Views",
+      },
+      {
+        status: "complete",
+        title: "New Followers",
+        subtitle: "Gain 25 new followers",
+        posts: "15",
+        postsTitle: "New",
       },
       {
         status: "complete",
         title: "Master Cook",
         subtitle: "Upload more than 250 recipes",
-      },
-      {
-        status: "complete",
-        title: "Master Cook",
-        subtitle: "Upload more than 250 recipes",
-      },
-    ],
-  },
-  {
-    day: "S",
-    data: [
-      {
-        status: "complete",
-        title: "Master Cook",
-        subtitle: "Upload more than 250 recipes",
-      },
-
-      {
-        status: "complete",
-        title: "Master Cook",
-        subtitle: "Upload more than 250 recipes",
+        posts: "500k",
+        postsTitle: "Total",
       },
     ],
   },
@@ -111,8 +181,64 @@ const DataTwo = [
     data: [
       {
         status: "complete",
+        title: "Recipe Posts",
+        subtitle: "Upload 5 recipes this week",
+        posts: "3/5",
+        postsTitle: "",
+      },
+      {
+        status: "complete",
+        title: "Profile Views",
+        subtitle: "Recieve 1k profile views",
+        posts: "275",
+        postsTitle: "Views",
+      },
+      {
+        status: "complete",
+        title: "New Followers",
+        subtitle: "Gain 25 new followers",
+        posts: "15",
+        postsTitle: "New",
+      },
+      {
+        status: "complete",
         title: "Master Cook",
         subtitle: "Upload more than 250 recipes",
+        posts: "500k",
+        postsTitle: "Total",
+      },
+    ],
+  },
+  {
+    day: "S",
+    data: [
+      {
+        status: "complete",
+        title: "Recipe Posts",
+        subtitle: "Upload 5 recipes this week",
+        posts: "3/5",
+        postsTitle: "",
+      },
+      {
+        status: "complete",
+        title: "Profile Views",
+        subtitle: "Recieve 1k profile views",
+        posts: "275",
+        postsTitle: "Views",
+      },
+      {
+        status: "complete",
+        title: "New Followers",
+        subtitle: "Gain 25 new followers",
+        posts: "15",
+        postsTitle: "New",
+      },
+      {
+        status: "complete",
+        title: "Master Cook",
+        subtitle: "Upload more than 250 recipes",
+        posts: "500k",
+        postsTitle: "Total",
       },
     ],
   },
@@ -208,7 +334,7 @@ function DailyTask({ className, userName }: Props) {
                     <CircleProgress />
                     <span className="data-text">
                       <span className="data-text-wrap">
-                        <span className="num">15</span> New
+                        <span className="num">{u.posts}</span> {u.postsTitle}
                       </span>
                     </span>
                   </div>
@@ -450,6 +576,12 @@ export default styled(DailyTask)`
       }
 
       .data-text-wrap {
+        display: block;
+        width: 100%;
+        text-align: center;
+      }
+
+      .num {
         display: block;
       }
 
