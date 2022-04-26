@@ -108,7 +108,7 @@ export const SearchedSections = styled(SearchedRecipesAndCooks)`
     justify-content: space-between;
     padding: 0 0 10px;
     border-bottom: 1px solid #e6e6e6;
-    margin: 0 0 15px;
+    margin: 0 0 10px;
 
     .section_title {
       display: block;
