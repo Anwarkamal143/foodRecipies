@@ -398,7 +398,7 @@ export const FavData = [
 export const categoryData = [
   {
     category: "Breakfast",
-    image: "/images/bbq.jpg",
+    image: "/images/icon-cat01.png",
     data: [
       {
         id: "assddddd",
@@ -420,7 +420,7 @@ export const categoryData = [
   },
   {
     category: "Snacks",
-    image: "/images/bbq.jpg",
+    image: "/images/icon-cat02.png",
     data: [
       {
         id: "assddddd",
@@ -443,37 +443,37 @@ export const categoryData = [
 
   {
     category: "Sandwiches",
-    image: "/images/bbq.jpg",
+    image: "/images/icon-cat03.png",
     data: [],
   },
   {
     category: "Baked Goods",
-    image: "/images/bbq.jpg",
+    image: "/images/icon-cat04.png",
     data: [],
   },
   {
     category: "Dinner",
-    image: "/images/bbq.jpg",
+    image: "/images/icon-cat05.png",
     data: [],
   },
   {
     category: "Dessert",
-    image: "/images/bbq.jpg",
+    image: "/images/icon-cat06.png",
     data: [],
   },
   {
     category: "Seafood",
-    image: "/images/bbq.jpg",
+    image: "/images/icon-cat07.png",
     data: [],
   },
   {
     category: "Appetizers",
-    image: "/images/bbq.jpg",
+    image: "/images/icon-cat08.png",
     data: [],
   },
   {
     category: "Pasta",
-    image: "/images/bbq.jpg",
+    image: "/images/icon-cat09.png",
     data: [],
   },
 ]

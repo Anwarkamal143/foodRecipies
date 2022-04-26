@@ -227,29 +227,41 @@ body {
 }
 
 .recipesContainer {
-  // max-width: 1200px;
-  // margin: 0 auto;
-  padding: 0 50px;
-
-  @media (max-width: 1399px) {
-    padding: 0 20px;
-  }
-
-  @media (max-width: 767px) {
-    padding: 0 15px;
-  }
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 .recipesSection {
-  // margin: 0 0 70px;
+  margin: 0 0 70px;
 
-  // @media (max-width: 1023px) {
-  //   margin: 0 0 40px;
-  // }
+  @media (max-width: 1023px) {
+    margin: 0 0 40px;
+  }
 
-  // @media (max-width: 767px) {
-  //   margin: 0 0 30px;
-  // }
+  @media (max-width: 767px) {
+    margin: 0 0 30px;
+  }
+}
+
+.savedRecipesWrapper {
+  .recipesContainer {
+    max-width: inherit;
+    margin: 0 auto;
+    padding: 0 50px;
+
+    @media (max-width: 1399px) {
+      padding: 0 20px;
+    }
+
+    @media (max-width: 767px) {
+      padding: 0 15px;
+    }
+  }
+
+  .recipesSection {
+    margin: 0 !important;
+  }
 }
 
 .recipesSectionHeader {
@@ -554,6 +566,12 @@ body {
   margin: 0 10px 0 0;
   cursor: pointer;
   transition: all 0.4s ease;
+
+  .img {
+     min-width: 28px;
+     text-align: center;
+     margin: 0 5px 0 0;
+  }
 
   &.active,
   &:hover {
@@ -1851,17 +1869,17 @@ body {
   }
 }
 
-.recipesPageWrapper {
-  padding: 20px 0 !important;
+// .recipesPageWrapper {
+//   padding: 20px 0 !important;
 
-  @media (max-width: 767px) {
-    padding: 20px 0 !important;
-  }
-}
+//   @media (max-width: 767px) {
+//     padding: 20px 0 !important;
+//   }
+// }
 
-.Sidebar {
-  display: none;
-}
+// .Sidebar {
+//   display: none;
+// }
 
 .rc-pagination {
   display: flex;
