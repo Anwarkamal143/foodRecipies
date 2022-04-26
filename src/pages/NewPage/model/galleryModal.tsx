@@ -52,7 +52,7 @@ const settings = {
     },
   ],
 }
-const MobileSwiperModal: React.FC<props> = ({
+const MobileSwiperModal = ({
   className,
   items,
   isModalOpen = false,
@@ -60,7 +60,7 @@ const MobileSwiperModal: React.FC<props> = ({
   currentSlideIndex,
   onClose,
   ...rest
-}) => {
+}: props) => {
   const ref = useRef<any>()
   const activeData = () => {
     return items?.map((item: any) => {
