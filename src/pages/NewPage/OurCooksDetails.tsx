@@ -73,7 +73,7 @@ const OurCooksDetails = ({
     return data.map((e: any, index: any) => {
       return (
         <div className="cookItemBox" key={index}>
-          <div className="image-holder">
+          <div className="image-holder" onClick={handlerSwiperOpen(index)}>
             {e.type && <span className="videobtn"></span>}
             <img src={e.url} alt="video" />
           </div>
