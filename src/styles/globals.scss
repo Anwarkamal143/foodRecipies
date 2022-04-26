@@ -227,9 +227,17 @@ body {
 }
 
 .recipesContainer {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
+  // max-width: 1200px;
+  // margin: 0 auto;
+  padding: 0 50px;
+
+  @media (max-width: 1399px) {
+    padding: 0 20px;
+  }
+
+  @media (max-width: 767px) {
+    padding: 0 15px;
+  }
 }
 
 .recipesSection {
@@ -568,9 +576,9 @@ body {
   transition: all 0.4s ease;
 
   .img {
-     min-width: 28px;
-     text-align: center;
-     margin: 0 5px 0 0;
+    min-width: 28px;
+    text-align: center;
+    margin: 0 5px 0 0;
   }
 
   &.active,
@@ -1915,6 +1923,23 @@ body {
         color: #fff;
         border-color: #e0464d;
       }
+    }
+  }
+
+  a {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #f2f3f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.4s ease;
+
+    &:hover {
+      background: #e0464d;
+      color: #fff;
+      border-color: #e0464d;
     }
   }
 }
