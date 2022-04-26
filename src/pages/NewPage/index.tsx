@@ -1,9 +1,13 @@
-import { ChevronRightIcon } from "@icons"
+import { DropDown } from "@components"
+import { Calander, ChevronRightIcon } from "@icons"
 import { PageLayoutWrapper } from "@layouts"
 import { categoryData, FavData, OnlineUsersData, ourCooks } from "data"
 import React, { useEffect, useState } from "react"
+import { SearchHeader } from "src/components/AppSearch/Header"
 import styled from "styled-components"
 import RecipesCard from "../../components/RecipiesCard"
+import { SearchedSections } from "./../../components/AppSearch/SearchedSections"
+import Button from "./../../components/Button/Button"
 import CategoryTypes from "./categoryTypes"
 import FollowUsers from "./FollowUsers"
 import Footer from "./footer/footer"
@@ -17,6 +21,7 @@ type Props = {
 
 const NewPage = ({ className }: Props) => {
   const [newPageData, setNewPageData] = useState<any>([])
+  const [searchText, setSearchText] = useState<any>("")
 
   useEffect(() => {
     setNewPageData(categoryData)
@@ -26,6 +31,67 @@ const NewPage = ({ className }: Props) => {
       <PageLayoutWrapper className="recipesPageWrapper" variant={"regular"}>
         <div className="recipesContainer">
           <div className="recipesSection">
+            {/* <AppSearch toggleSideBar={true} /> */}
+            <div className="search_bar_ctn">
+              <div className="search">
+                <SearchHeader onSearch={(s?: string) => setSearchText(s)} />
+                <SearchedSections isSearchingEnable={!!searchText} />
+              </div>
+              <div className="quickFind">
+                <span>Quick Find:</span>
+                <DropDown
+                  button={selected => (
+                    <Button
+                      shape="circle"
+                      iconLeft={<Calander />}
+                      className="buttonFilter"
+                      size="small"
+                      title="Monthly"
+                      defaultValue={"By Diet"}
+                    >
+                      {selected}
+                    </Button>
+                  )}
+                  items={[{ name: "By Diet" }, { name: "By Diet" }]}
+                  renderItem={({ item, isActive, onClick }) => {
+                    return (
+                      <div
+                        className={`${isActive} item`}
+                        onClick={() => onClick(item.name)}
+                      >
+                        {item.name}
+                      </div>
+                    )
+                  }}
+                />
+                <DropDown
+                  button={selected => (
+                    <Button
+                      shape="circle"
+                      iconLeft={<Calander />}
+                      className="buttonFilter"
+                      size="small"
+                      title="Monthly"
+                      defaultValue={"By Cuisine"}
+                    >
+                      {selected}
+                    </Button>
+                  )}
+                  items={[{ name: "By Cuisine" }, { name: "By Cuisine" }]}
+                  renderItem={({ item, isActive, onClick }) => {
+                    return (
+                      <div
+                        className={`${isActive} item`}
+                        onClick={() => onClick(item.name)}
+                      >
+                        {item.name}
+                      </div>
+                    )
+                  }}
+                />
+              </div>
+            </div>
+
             <header className="recipesSectionHeader">
               <strong className="recipesSectionTitle">Featured Recipes</strong>
               <div className="favorite-head">
