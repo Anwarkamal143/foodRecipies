@@ -43,6 +43,9 @@ const CategoryTypes = ({
                 ind === index ? "active" : "in-active"
               }`}
             >
+              <span className="img">
+                <img src={e.image} />
+              </span>
               <span onClick={() => setIndex(ind)}>{e.category}</span>
             </div>
           )
