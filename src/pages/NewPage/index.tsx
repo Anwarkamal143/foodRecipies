@@ -81,11 +81,13 @@ const NewPage = ({ className }: Props) => {
             data={ourCooks}
           />
           <UserListSection />
-          <OurCooksDetails
-            discription="A recipe is a set of instructions that describes how to prepare or make something."
-            title={"Our Cooks on Youtube"}
-            data={ourCooks}
-          />
+          <div className="sectionYoutube">
+            <OurCooksDetails
+              discription="A recipe is a set of instructions that describes how to prepare or make something."
+              title={"Our Cooks on Youtube"}
+              data={ourCooks}
+            />
+          </div>
           <FollowUsers
             data={OnlineUsersData}
             discription="A recipe is a set of instructions that describes how to prepare or make something."

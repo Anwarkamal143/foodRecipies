@@ -7,38 +7,38 @@ type Props = {
 
 const FooterLeftSide = ({ className }: Props) => {
   return (
-    <div className={className}>
-      <div className="Company">
-        <h2>Company</h2>
+    <div className={`${className} footerColumns`}>
+      <div className="footerNav">
+        <strong className="title">Company</strong>
         <ul>
-          <li>About Online Cook</li>
-          <li>Our Team</li>
-          <li>Sponsorships</li>
-          <li>Our Community</li>
-          <li>Podcast Network</li>
-          <li>Join the Team</li>
+          <li><a href="#">About Online Cook</a></li>
+          <li><a href="#">Our Team</a></li>
+          <li><a href="#">Sponsorships</a></li>
+          <li><a href="#">Our Community</a></li>
+          <li><a href="#">Podcast Network</a></li>
+          <li><a href="#">Join the Team</a></li>
         </ul>
       </div>
-      <div className="Company">
-        <h2>Cooks</h2>
+      <div className="footerNav">
+        <strong className="title">Cooks</strong>
         <ul>
-          <li>View all Cooks</li>
-          <li>Cook Collections</li>
-          <li>Cook Leaderboards</li>
-          <li>Request a Cook</li>
-          <li>Online Cook Application</li>
-          <li>Cook Sponsorship</li>
+          <li><a href="#">View all Cooks</a></li>
+          <li><a href="#">Cook Collections</a></li>
+          <li><a href="#">Cook Leaderboards</a></li>
+          <li><a href="#">Request a Cook</a></li>
+          <li><a href="#">Online Cook Application</a></li>
+          <li><a href="#">Cook Sponsorship</a></li>
         </ul>
       </div>
-      <div className="Explore">
-        <h2>Explore</h2>
+      <div className="footerNav">
+        <strong className="title">Explore</strong>
         <ul>
-          <li>View all Recipes</li>
-          <li>Recipe Leaderboards</li>
-          <li>Recipes by Type</li>
-          <li>Recipes by Cuisine</li>
-          <li>Recipes by Cuisine</li>
-          <li>Recipe Collections</li>
+          <li><a href="#">View all Recipes</a></li>
+          <li><a href="#">Recipe Leaderboards</a></li>
+          <li><a href="#">Recipes by Type</a></li>
+          <li><a href="#">Recipes by Cuisine</a></li>
+          <li><a href="#">Recipes by Cuisine</a></li>
+          <li><a href="#">Recipe Collections</a></li>
         </ul>
       </div>
     </div>

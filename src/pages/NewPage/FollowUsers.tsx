@@ -60,23 +60,25 @@ const FollowUsers = ({ className, data = [], title, discription }: Props) => {
   const Followlist = () => {
     return data.map((e: any) => {
       return (
-        <div className="follow-list" key={e.Recipes}>
+        <div className="onlineCookBox" key={e.Recipes}>
           <span className="close">X</span>
-          <div className="img">
+          <div className="image">
             <img src={e.profile} alt="" />
           </div>
-          <span>{e.userName}</span>
-          <div className="totle-recip">
-            <img src="/images/Likes.png" alt="" />
-            <span>{e.Recipes}</span>
+          <div className="textbox">
+            <span className="userName">{e.userName}</span>
+            <div className="totle-recip">
+              <img src="/images/Likes.png" alt="" />
+              <span>{e.Recipes} Recipes</span>
+            </div>
+            <Button>Follow Cook</Button>
           </div>
-          <Button>Follow Cook</Button>
         </div>
       )
     })
   }
   return (
-    <div className={`${className} recipesSection align-center`}>
+    <div className={`${className} recipesSection align-center onlineCookBlock`}>
       <header className="recipesSectionHeader">
         <strong className="recipesSectionTitle">{title}</strong>
         <div className="favorite-head">
