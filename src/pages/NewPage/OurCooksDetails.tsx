@@ -1,16 +1,15 @@
+import { useOpenClose } from "@hooks"
 import { LeftSliderArrow, RightSliderArrow } from "@icons"
-import React, { useRef } from "react"
+import React, { useRef, useState } from "react"
 import Slider from "react-slick"
 import styled from "styled-components"
-
+import MobileSwiperModal from "./model/galleryModal"
 type Props = {
   data?: any
   className?: string
 
   title?: string
   discription?: string
-
-
 }
 
 const settings = {
@@ -60,8 +59,16 @@ const OurCooksDetails = ({
   title,
   discription,
 }: Props) => {
-
+  const [isOpenModel, onOpenModel, onCloseModel] = useOpenClose()
+  const [activeSlide, setActiveSlide] = useState(0)
   const sliderRef = useRef(null)
+  const handlerSwiperOpen = (index: number) => {
+    setActiveSlide(index)
+    onOpenModel()
+  }
+  const hanldeClose = () => {
+    onCloseModel()
+  }
   const users = () => {
     return data.map((e: any, index: any) => {
       return (
@@ -84,7 +91,9 @@ const OurCooksDetails = ({
     })
   }
   return (
-    <div className={`class ${className} recipesSection socialCooksblock align-center`}>
+    <div
+      className={`class ${className} recipesSection socialCooksblock align-center`}
+    >
       <header className="recipesSectionHeader">
         <strong className="recipesSectionTitle">{title}</strong>
         <div className="favorite-head">
@@ -94,6 +103,12 @@ const OurCooksDetails = ({
       <Slider draggable={true} ref={sliderRef} {...settings}>
         {users()}
       </Slider>
+      <MobileSwiperModal
+        isOpen={isOpenModel}
+        items={data}
+        onClose={hanldeClose}
+        currentSlideIndex={activeSlide}
+      />
     </div>
   )
 }

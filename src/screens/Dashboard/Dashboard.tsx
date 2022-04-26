@@ -235,40 +235,42 @@ const DashBoard = ({ className }: { className?: string }) => {
                 />
               </p>
             </div>
-            <ResponsiveContainer width="100%" height={300}>
-              <LineChart
-                // width={500}
-                // height={300}
-                data={LineChartData}
-                margin={{
-                  top: 5,
-                  right: 30,
-                  left: 20,
-                  bottom: 5,
-                }}
-              >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="date" />
-                <YAxis
-                  dataKey={"price"}
-                  tickFormatter={item => {
-                    return FormatNumber(item)
+            <div className="chart-holder">
+              <ResponsiveContainer width="100%" height={300}>
+                <LineChart
+                  // width={500}
+                  // height={300}
+                  data={LineChartData}
+                  margin={{
+                    top: 5,
+                    right: 30,
+                    left: 20,
+                    bottom: 5,
                   }}
-                />
-                <Tooltip />
-                {/* <Legend /> */}
-                <Line
-                  type="monotone"
-                  dataKey="price"
-                  stroke="red"
-                  activeDot={{ r: 10 }}
-                  dot={{
-                    r: 0,
-                  }}
-                />
-                {/* <Line type="monotone" dataKey="price" stroke="#82ca9d" /> */}
-              </LineChart>
-            </ResponsiveContainer>
+                >
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="date" />
+                  <YAxis
+                    dataKey={"price"}
+                    tickFormatter={item => {
+                      return FormatNumber(item)
+                    }}
+                  />
+                  <Tooltip />
+                  {/* <Legend /> */}
+                  <Line
+                    type="monotone"
+                    dataKey="price"
+                    stroke="red"
+                    activeDot={{ r: 10 }}
+                    dot={{
+                      r: 0,
+                    }}
+                  />
+                  {/* <Line type="monotone" dataKey="price" stroke="#82ca9d" /> */}
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
           </LeftPerformanceSection>
           {/* <RightPerformanceSection className="right-section">
             <Card>
@@ -333,6 +335,11 @@ const DashBoard = ({ className }: { className?: string }) => {
   )
 }
 export const Dashboard = styled(DashBoard)`
+  padding: 0 50px;
+
+  @media (max-width: 1199px) {
+    padding: 0;
+  }
 
 .dashboardStatistics {
   display: flex;
@@ -376,7 +383,7 @@ export const Dashboard = styled(DashBoard)`
     h3 {
       font-size: 12px;
       line-height: 20px;
-      color: #4b4b4b;
+      color: #1D2129;
       font-weight: 400;
       margin: 0 0 8px;
     }
@@ -392,7 +399,7 @@ export const Dashboard = styled(DashBoard)`
       
       strong {
         font-size: 22px;
-        color: #4b4b4b;
+        color: #1D2129;
 
         @media (max-width: 1199px) {
           font-size: 18px;
@@ -503,10 +510,15 @@ export const Dashboard = styled(DashBoard)`
     @media (max-width: 1023px) {
       width: 100% !important;
       height: 100px !important;
+      justify-content: center;
     }
 
     .dashboardStatisticsGraph {
       margin: 0 0 0 auto;
+
+      @media (max-width: 1023px) {
+        margin: 0;
+      }
     }
 
     .recharts-wrapper {
@@ -729,11 +741,7 @@ export const Dashboard = styled(DashBoard)`
   .dashboardPerformanceGraph {
     width: 100%;
     flex: inherit;
-    padding: 15px 25px 0 0;
-
-    @media (max-width: 1439px) {
-      padding-right: 15px;
-    }
+    padding: 15px 0 0 0;
 
     @media (max-width: 1199px) {
       //width: calc(100% - 240px);
@@ -743,6 +751,10 @@ export const Dashboard = styled(DashBoard)`
       width: 100%;
       margin: 0 0 35px;
       padding: 0;
+    }
+
+    .chart-holder {
+      margin: 0 -20px 0 -40px;
     }
     
     .sectionheader {
@@ -761,7 +773,7 @@ export const Dashboard = styled(DashBoard)`
         font-size: 16px;
         line-height: 21px;
         display: block;
-        color: #4b4b4b;
+        color: #1E1E2D;
 
         @media (max-width: 1199px) {
           margin: 0 0 20px;
@@ -795,6 +807,10 @@ export const Dashboard = styled(DashBoard)`
 
         > div {
           padding: 0 5px;
+
+          &:last-child {
+            padding-right: 0;
+          }
         }
 
         .button.button-sm.button-has-icon {
@@ -825,7 +841,7 @@ export const Dashboard = styled(DashBoard)`
 
         .sortByFilterDrop {
           border: 1px solid #E5E8EF;
-          box-shadow: 0 10px 40px #E8E8FF;
+          box-shadow: 0 10px 40px #818181;
           border-radius: 15px;
 
           .item {
@@ -931,7 +947,7 @@ export const Dashboard = styled(DashBoard)`
         display: flex;
         align-items: center;
         justify-content: space-between;
-        color: #4b4b4b;
+        color: #1E1E2D;
       }
     }
 
@@ -1107,7 +1123,7 @@ export const Dashboard = styled(DashBoard)`
         font-size: 16px;
         line-height: 21px;
         display: block;
-        color: #4b4b4b;
+        color: #1E1E2D;
         margin: 0 15px 0 0;
       }
 
@@ -1174,61 +1190,6 @@ export const Dashboard = styled(DashBoard)`
     overflow: auto;
     padding: 0 0 15px;
   }
-
-  .rc-pagination {
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    line-height: 15px;
-    padding: 30px 0 0;
-
-    li {
-      margin: 0 5px;
-
-      &.rc-pagination-prev,
-      &.rc-pagination-next {
-        height: 30px;
-        border: 1px solid #F2F3F5;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0 10px;
-        cursor: pointer;
-        transition: all 0.4s ease;
-
-        &:hover {
-          background: #e0464d;
-          color: #fff;
-          border-color: #e0464d;
-        }
-      }
-
-      &.rc-pagination-item-active {
-        a {
-          background: #e0464d;
-          color: #fff;
-          border-color: #e0464d;
-        }
-      }
-    }
-
-    a {
-      width: 30px;
-      height: 30px;
-      border: 1px solid #F2F3F5;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.4s ease;
-
-      &:hover{
-        background: #e0464d;
-        color: #fff;
-        border-color: #e0464d;
-      }
-    }
-  }
 }
 
 .recipiesTable {
@@ -1239,7 +1200,16 @@ export const Dashboard = styled(DashBoard)`
   font-weight: 500;
 
   @media (max-width: 767px) {
-    min-width: 510px;
+    min-width: 310px;
+  }
+
+  th:first-child,
+  th:last-child,
+  td:first-child,
+  td:last-child {
+    @media (max-width: 1399px) {
+      display: none !important;
+    }
   }
 
   th {
@@ -1261,6 +1231,22 @@ export const Dashboard = styled(DashBoard)`
     vertical-align: top;
     text-overflow: ellipsis;
     white-space: nowrap;
+
+    @media(max-width: 767px) {
+      max-width: 100px;
+    }
+
+    &.link-id {
+      max-width: 60px;
+    }
+
+    &.name-text {
+      max-width: 350px;
+
+      @media(max-width: 767px) {
+        max-width: 150px;
+      }
+    }
     
     &:hover {
       color: #e0464d;
@@ -1411,7 +1397,7 @@ export const Dashboard = styled(DashBoard)`
       display: flex;
       align-items: center;
       justify-content: space-between;
-      color: #4b4b4b;
+      color: #1E1E2D;
     }
   }
 

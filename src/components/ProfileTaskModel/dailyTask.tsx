@@ -276,7 +276,7 @@ function DailyTask({ className, userName }: Props) {
             <div className="userProfileTextbox">
               <h2 className="userProfileTitle">Omer Erdogan</h2>
             </div>
-            <p className="userProfileProgreTitle">15% Tasks Completed</p>
+            <p className="userProfileProgreTitle">1/5 Weekly Goals Completed</p>
             <ProgressBar
               showPrgress={false}
               progresspercent={20}
@@ -428,6 +428,10 @@ export default styled(DailyTask)`
         &:after {
           opacity: 1;
           visibility: visible;
+        }
+
+        &:hover {
+          background: none;
         }
 
         .text {
@@ -599,6 +603,7 @@ export default styled(DailyTask)`
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 10px 0 0;
 
     .btnStart {
       flex-grow: 1;
@@ -609,6 +614,7 @@ export default styled(DailyTask)`
       display: flex;
       align-items: center;
       justify-content: center;
+      font-size: 12px;
       border-radius: 30px;
       transition: all 0.25s ease-in-out;
 

@@ -11,7 +11,6 @@ import LatestRecipesSlider from "./latestRecipes"
 import Leaderboard from "./Leaderboard"
 import OurCooksDetails from "./OurCooksDetails"
 import UserListSection from "./userListSection"
-
 type Props = {
   className?: string
 }
@@ -63,7 +62,7 @@ const NewPage = ({ className }: Props) => {
                 </span>
               </div>
             </header>
-            <LatestRecipesSlider />
+            <LatestRecipesSlider data={FavData} />
           </div>
           <Leaderboard data={FavData} />
           <div className="recipesSection align-center">
