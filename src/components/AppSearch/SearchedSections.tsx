@@ -14,7 +14,7 @@ type Props = {
 const SearchedRecipesAndCooks = (props: Props) => {
   const { className, onClickClear, isSearchingEnable = false } = props
   return (
-    <div className={className}>
+    <div className={`${className} searchPopup`}>
       <div className="searchHeaderSection">
         {isSearchingEnable ? (
           <>

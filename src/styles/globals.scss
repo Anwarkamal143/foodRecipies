@@ -250,6 +250,27 @@ body {
   @media (max-width: 767px) {
     margin: 0 0 30px;
   }
+
+  .slick-slider {
+    @media (max-width: 767px) {
+      padding-right: 40px;
+      margin-left: -10px;
+    }
+
+    .slick-list {
+      @media (max-width: 767px) {
+        overflow: visible;
+      }
+    }
+
+    .slick-slide {
+      padding: 0 14px 5px 0;
+
+      @media (max-width: 767px) {
+        padding: 0 10px 5px 0;
+      }
+    }
+  }
 }
 
 .savedRecipesWrapper {
@@ -279,6 +300,11 @@ body {
   flex-flow: row wrap;
   margin: 0 0 23px;
 
+  @media (max-width: 767px) {
+    position: relative;
+    margin: 0 0 10px;
+  }
+
   .recipesSectionTitle {
     display: block;
     font-size: 25px;
@@ -287,7 +313,10 @@ body {
     margin: 0 20px 0 0;
 
     @media (max-width: 767px) {
-      font-size: 21px;
+      font-size: 16px;
+      color: #1E1E2D;
+      margin: 0 0 5px;
+      padding-right: 105px;
     }
   }
 
@@ -308,6 +337,7 @@ body {
     @media (max-width: 767px) {
       width: 100%;
       margin: 0 0 10px;
+      font-size: 9px;
     }
 
     &:only-child {
@@ -329,6 +359,15 @@ body {
     cursor: pointer;
     border-radius: 20px;
     transition: all 0.4s ease;
+
+    @media (max-width: 767px) {
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-size: 8px;
+      min-width: 100px;
+      padding: 4px 5px;
+    }
 
     svg {
       margin: 0 -3px 0 3px;
@@ -373,12 +412,8 @@ body {
   }
 
   @media (max-width: 767px) {
-    width: calc(50% - 14px);
-    margin-bottom: 15px;
-  }
-
-  @media (max-width: 479px) {
-    width: calc(100% - 14px);
+    width: calc(50% - 10px);
+    margin: 0 5px 20px;
   }
 
   &:hover {
@@ -399,6 +434,10 @@ body {
   .heartIcon {
     position: absolute;
     top: 12px;
+
+    @media (max-width: 479px) {
+      top: 6px;
+    }
   }
 
   .heartIcon {
@@ -412,6 +451,13 @@ body {
     align-items: center;
     justify-content: center;
 
+    @media (max-width: 479px) {
+      left: 6px;
+      width: 22px;
+      height: 22px;
+      border-radius: 5px;
+    }
+
     .like {
       width: 32px;
       height: 32px;
@@ -422,6 +468,11 @@ body {
     svg {
       width: 20px;
       height: 20px;
+
+      @media (max-width: 479px) {
+        width: 14px;
+        height: 14px;
+      }
 
       path {
         fill: #d4d4d4;
@@ -440,6 +491,16 @@ body {
     color: #fff;
     border: 0;
     padding: 3px 12px;
+    margin: 0 !important;
+
+    @media (max-width: 479px) {
+      right: 6px;
+      font-size: 9px;
+      height: 20px;
+      line-height: 12px;
+      padding: 2px 8px;
+      font-size: 9px;
+    }
 
     &:hover {
       svg {
@@ -459,6 +520,12 @@ body {
       height: 9px;
       margin: 0 5px 0 0;
       transition: all 0.4s ease;
+
+      @media (max-width: 479px) {
+        width: 7px;
+        height: 7px;
+        margin: 0 4px 0 0;
+      }
     }
   }
 
@@ -466,6 +533,10 @@ body {
     overflow: hidden;
     padding: 14px 12px;
     border-radius: 0 0 8px 8px;
+
+    @media (max-width: 479px) {
+      padding: 10px 8px;
+    }
   }
 
   .recipeTitle {
@@ -475,6 +546,11 @@ body {
     color: #1e1e2d;
     margin: 0 0 10px;
     cursor: pointer;
+
+    @media (max-width: 479px) {
+      font-size: 10px;
+      line-height: 14px;
+    }
 
     &:hover {
       color: #e0464d;
@@ -491,6 +567,10 @@ body {
     position: relative;
     transition: all 0.25s ease-in-out;
     cursor: pointer;
+
+    @media (max-width: 479px) {
+      font-size: 9px;
+    }
 
     svg {
       fill: #e0464d;
@@ -533,18 +613,33 @@ body {
     cursor: pointer;
     transition: all 0.4s ease;
 
+    @media (max-width: 479px) {
+      font-size: 9px;
+    }
+
     &:hover {
       color: #e0464d;
     }
 
     svg {
       margin: 0 10px 0 0;
+
+      @media (max-width: 479px) {
+        margin: 0 5px 0 0;
+        width: 12px;
+        height: 12px;
+      }
     }
 
     .image-comp {
       width: 14px;
       display: block;
       margin: 0 10px 0 0;
+
+      @media (max-width: 479px) {
+        width: 12px;
+        margin: 0 5px 0 0;
+      }
     }
 
     img {
@@ -560,6 +655,11 @@ body {
   overflow: auto;
   margin: 0 0 20px;
   padding: 5px 0 15px;
+
+  @media (max-width: 767px) {
+    padding: 0 0 10px;
+    margin: 0 0 10px;
+  }
 }
 
 .recipesCategoriesButton {
@@ -575,10 +675,27 @@ body {
   cursor: pointer;
   transition: all 0.4s ease;
 
+  @media (max-width: 767px) {
+    font-size: 9px;
+    line-height: 14px;
+    padding: 3px 12px 3px 8px;
+    margin: 0 7px 0 0;
+  }
+
   .img {
     min-width: 28px;
     text-align: center;
     margin: 0 5px 0 0;
+
+    @media (max-width: 767px) {
+      min-width: 20px;
+    }
+
+    img {
+      @media (max-width: 767px) {
+        width: 100%;
+      }
+    }
   }
 
   &.active,
@@ -837,7 +954,7 @@ body {
   padding: 60px 0 80px;
 
   @media (max-width: 767px) {
-    padding: 40px 0;
+    padding: 30px 0;
   }
 
   &:before {
@@ -859,9 +976,17 @@ body {
     overflow: visible;
     justify-content: space-between;
 
+    @media (max-width: 767px) {
+      margin: 0 0 15px;
+    }
+
     .recipesSectionTitle {
       color: #fff;
       margin: 0 0 10px;
+
+      @media (max-width: 767px) {
+        margin: 0 0 5px;
+      }
     }
 
     .recipesSectionText {
@@ -871,8 +996,18 @@ body {
       display: flex;
       align-items: center;
 
+      @media (max-width: 767px) {
+        font-size: 9px;
+      }
+
       svg {
         margin: 0 8px 0 0;
+
+        @media (max-width: 767px) {
+          width: 11px;
+          height: 11px;
+          margin: 0 5px 0 0;
+        }
 
         path {
           fill: #e0464d;
@@ -886,8 +1021,17 @@ body {
     align-items: center;
 
     @media (max-width: 767px) {
-      width: 100%;
-      padding-top: 20px;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    > div {
+      + div {
+        @media (max-width: 767px) {
+          display: none;
+        }
+      }
     }
 
     .button.button-sm.buttonFilter {
@@ -897,7 +1041,11 @@ body {
       margin: 0 0 0 20px;
 
       @media (max-width: 767px) {
-        margin: 0 20px 0 0;
+        margin: 0;
+        font-size: 9px;
+        height: 24px;
+        padding: 6px !important;
+        min-width: 95px;
       }
 
       .text-button {
@@ -910,6 +1058,14 @@ body {
         height: 16px;
         max-height: 16px;
         margin: 0 5px 0 0;
+
+        @media (max-width: 767px) {
+          width: 12px;
+          max-width: 12px;
+          height: 12px;
+          max-height: 12px;
+          margin: 0 !important;
+        }
       }
 
       &:hover {
@@ -1003,13 +1159,21 @@ body {
   flex-flow: row wrap;
   padding-top: 20px;
 
+  @media (max-width: 1023px) {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 767px) {
+    padding-top: 10px;
+  }
+
   .Confort-Food {
     width: calc(33.333% - 16px);
     margin: 0 8px;
 
     @media (max-width: 1023px) {
       width: 100%;
-      margin: 0 0 20px;
+      margin: 0 0 30px;
     }
   }
 
@@ -1028,6 +1192,10 @@ body {
       line-height: 1.5;
       color: #000;
       margin: 0 20px 0 0;
+
+      @media (max-width: 767px) {
+        font-size: 16px;
+      }
     }
 
     .feature-btn {
@@ -1044,6 +1212,12 @@ body {
       cursor: pointer;
       border-radius: 20px;
       transition: all 0.4s ease;
+
+      @media (max-width: 767px) {
+        font-size: 9px;
+        line-height: 12px;
+        padding: 3px 10px;
+      }
 
       svg {
         margin: 0 -3px 0 3px;
@@ -1092,7 +1266,7 @@ body {
       @media (max-width: 479px) {
         width: 100px;
         min-width: 100px;
-        height: 100px;
+        height: 95px;
       }
 
       img {
@@ -1116,24 +1290,105 @@ body {
     text-align: center;
     justify-content: center;
 
+    @media (max-width: 767px) {
+      text-align: left;
+      justify-content: flex-start;
+    }
+
     .recipesSectionTitle {
       margin: 0;
     }
 
     .favorite-head {
       justify-content: center;
+
+      @media (max-width: 767px) {
+        justify-content: flex-start;
+      }
     }
   }
 
   .recipesCategories {
     justify-content: center;
+
+    @media (max-width: 767px) {
+      justify-content: flex-start;
+    }
   }
 }
 
-.socialCooksblock {
-  .slick-slider {
-    .slick-slide {
-      padding: 0 14px 5px 0;
+.ingredientBlock {
+  .recipesSectionHeader {
+    .recipesSectionTitle {
+      @media (max-width: 767px) {
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+.socialCooksblock  {
+  .recipesSectionHeader {
+    position: relative;
+    overflow: visible;
+  }
+  
+  .btnTikTok {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    background: #A4374E;
+    position: absolute;
+    left: -15px;
+    top: 100%;
+    z-index: 5;
+    font-size: 12px;
+    line-height: 14px;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+    transform: rotate(-30deg);
+
+    @media (max-width: 1023px) {
+      width: 50px;
+      height: 50px;
+      font-size: 7px;
+      line-height: 1;
+    }
+
+    .text {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8px;
+      line-height: 12px;
+      padding: 2px 0 0;
+
+      @media (max-width: 1023px) {
+        font-size: 5px;
+        padding: 0;
+      }
+
+      svg {
+        width: 7px;
+        height: 7px;
+        margin: 0 0 0 5px;
+
+        @media (max-width: 1023px) {
+          margin: 0 0 0 1px;
+          width: 5px;
+          height: 5px;
+        }
+
+        path {
+          stroke: #fff;
+        }
+      }
     }
   }
 }
@@ -1144,6 +1399,11 @@ body {
   border-radius: 15px;
   overflow: hidden;
   margin: 0 7px;
+
+  @media (max-width: 767px) {
+    border-radius: 10px;
+    margin: 0 5px;
+  }
 
   .image-holder {
     overflow: hidden;
@@ -1167,6 +1427,11 @@ body {
     cursor: pointer;
     transition: all 0.4s ease-in-out;
 
+    @media (max-width: 767px) {
+      width: 42px;
+      height: 42px;
+    }
+
     &:before {
       position: absolute;
       left: 50%;
@@ -1177,6 +1442,10 @@ body {
       border-style: solid;
       border-color: transparent transparent transparent #000;
       border-width: 10px 0 10px 16px;
+
+      @media (max-width: 767px) {
+        border-width: 6px 0 6px 10px;
+      }
     }
 
     &:hover {
@@ -1188,6 +1457,10 @@ body {
     display: flex;
     align-items: center;
     padding: 20px;
+
+    @media (max-width: 767px) {
+      padding: 10px 6px;
+    }
   }
 
   .profile-image {
@@ -1197,6 +1470,13 @@ body {
     border-radius: 100%;
     overflow: hidden;
     margin: 0 10px 0 0;
+
+    @media (max-width: 767px) {
+      width: 16px;
+      min-width: 16px;
+      height: 16px;
+      margin: 0 7px 0 0;
+    }
 
     img {
       width: 100%;
@@ -1218,6 +1498,11 @@ body {
     line-height: 17px;
     color: #1e1e2d;
     display: block;
+
+    @media (max-width: 767px) {
+      font-size: 10px;
+      line-height: 14px;
+    }
   }
 
   .postby {
@@ -1245,6 +1530,7 @@ body {
 
   @media (max-width: 767px) {
     flex-flow: row wrap;
+    display: none;
   }
 }
 
@@ -1395,15 +1681,61 @@ body {
   }
 
   .rate-info {
+    margin: 0 5px 0 0;
     display: flex;
+    flex-flow: row wrap;
     align-items: center;
+
+    @media (max-width: 767px) {
+      margin: 0;
+    }
   }
 
   .rate {
     font-size: 12px;
     line-height: 18px;
     color: #565661;
+    order: 1;
+    text-align: center;
     margin: 0 5px 0 0;
+  }
+
+  .rate-low {
+    position: relative;
+    height: 6px;
+    order: 2;
+    display: block;
+    text-align: center;
+    padding: 1px 0 0;
+
+    &:after {
+      content: '';
+      display: inline-block;
+      vertical-align: top;
+      margin: 0 auto;
+      border-style: solid;
+      border-width: 6px 4.5px 0 4.5px;
+      border-color: #E0464D transparent transparent transparent;
+    }
+  }
+
+  .rate-heigh {
+    position: relative;
+    height: 6px;
+    order: 2;
+    display: block;
+    text-align: center;
+    padding: 1px 0 0;
+
+    &:after {
+      content: '';
+      display: inline-block;
+      vertical-align: top;
+      margin: 0 auto;
+      border-style: solid;
+      border-width: 0 4.5px 6px 4.5px;
+      border-color: transparent transparent #11C278 transparent;
+    }
   }
 
   .image {
@@ -1432,12 +1764,23 @@ body {
 }
 
 .sectionYoutube {
+  .btnTikTok { 
+    display: none;
+  }
+
   .cookItemBox {
     .image-holder {
       height: 140px;
 
       @media (max-width: 767px) {
         height: 170px;
+      }
+
+      img {
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: center;
       }
     }
 
@@ -1458,14 +1801,6 @@ body {
   }
 }
 
-.onlineCookBlock {
-  .slick-slider {
-    .slick-slide {
-      padding: 0 14px 5px 0;
-    }
-  }
-}
-
 .onlineCookBox {
   position: relative;
   background: #fff;
@@ -1474,11 +1809,39 @@ body {
   overflow: hidden;
   margin: 0 7px 15px;
 
+  @media (max-width: 767px) {
+    margin: 0 5px 15px;
+  }
+
   .close {
     position: absolute;
-    right: 0;
-    top: 0;
-    display: none;
+    right: 15px;
+    top: 15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background: rgba(0, 0, 0, 0.31);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 1;
+    transition: all 0.4s ease-in-out;
+
+    @media (max-width: 767px) {
+      width: 22px;
+      height: 22px;
+      right: 8px;
+      top: 8px;
+      font-size: 11px;
+    }
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.6);
+    }
   }
 
   .image {
@@ -1498,12 +1861,20 @@ body {
     overflow: hidden;
     padding: 15px;
 
+    @media (max-width: 767px) {
+      padding: 10px 8px;
+    }
+
     .userName {
       display: block;
       color: #1e1e2d;
       font-size: 16px;
       line-height: 20px;
       margin: 0 0 10px;
+
+      @media (max-width: 767px) {
+        font-size: 10px;
+      }
     }
   }
 
@@ -1512,11 +1883,22 @@ body {
     align-items: center;
     margin: 0 0 10px;
 
+    img {
+      @media (max-width: 767px) {
+        width: 35px;
+      }
+    }
+
     span {
       font-size: 12px;
       line-height: 18px;
       color: #a2a2a2;
       margin: 0 0 0 10px;
+
+      @media (max-width: 767px) {
+        font-size: 9px;
+        margin: 0 0 0 7px;
+      }
     }
   }
 
@@ -1527,6 +1909,11 @@ body {
     font-size: 10px;
     line-height: 16px;
     width: 100%;
+
+    @media (max-width: 767px) {
+      padding: 5px 10px;
+      font-size: 9px;
+    }
 
     &:hover {
       background: #3072e7;
@@ -1549,6 +1936,10 @@ body {
       left: 50%;
       transform: translateX(-50%);
     }
+
+    @media (max-width: 767px) {
+      min-width: 800px;
+    }
   }
 
   .followButton {
@@ -1569,10 +1960,25 @@ body {
     font-weight: 700;
     transition: all 0.4s ease-in-out;
 
+    @media (max-width: 767px) {
+      font-size: 10px;
+      padding: 6px 10px;
+    }
+
     svg {
       width: 22px;
       height: 22px;
       margin: 0 10px 0 0;
+
+      @media (max-width: 767px) {
+        width: 18px;
+        height: 18px;
+        margin: 0 7px 0 0;
+      }
+
+      path {
+        fill: #1e1e2d;
+      }
     }
 
     &:hover {
@@ -1585,7 +1991,7 @@ body {
   background: #0e121a;
   padding: 35px 0;
 
-  @media (max-width: 479px) {
+  @media (max-width: 767px) {
     padding: 25px 0;
   }
 
@@ -1598,6 +2004,10 @@ body {
   .footerHolder {
     display: flex;
     flex-flow: row wrap;
+
+    @media (max-width: 767px) {
+      padding: 0 30px;
+    }
   }
 
   .footerLeft {
@@ -1614,6 +2024,10 @@ body {
     display: block;
     margin: 0 0 20px;
 
+    @media (max-width: 767px) {
+      margin: 0 auto 20px;
+    }
+
     img {
       width: 100%;
       height: auto;
@@ -1624,6 +2038,10 @@ body {
   .footerColumns {
     display: flex;
     flex-flow: row wrap;
+
+    @media (max-width: 767px) {
+      justify-content: space-between;
+    }
   }
 
   .footerNav {
@@ -1636,8 +2054,16 @@ body {
       padding-right: 10px;
     }
 
+    @media (max-width: 767px) {
+      width: auto;
+    }
+
     &:last-child {
       padding-right: 0 !important;
+
+      @media (max-width: 767px) {
+        display: none;
+      }
     }
 
     .title {
@@ -1695,6 +2121,10 @@ body {
     flex-flow: row wrap;
     margin: 0 -10px 25px;
 
+    @media (max-width: 767px) {
+      display: none;
+    }
+
     li {
       padding: 0 5px;
 
@@ -1707,6 +2137,11 @@ body {
           width: 22px;
           height: 22px;
 
+          @media (max-width: 767px) {
+            width: 20px;
+            height: 20px;
+          }
+
           path {
             fill: #fff;
           }
@@ -1717,15 +2152,33 @@ body {
 
   .subscribeForm {
     overflow: hidden;
+    position: relative;
+
+    @media (max-width: 767px) {
+      padding: 0 0 0 35px;
+      margin: 0 0 10px;
+    }
 
     .titleWrap {
       display: flex;
       align-items: center;
       margin: 0 0 8px;
 
+      @media (max-width: 767px) {
+        margin: 0;
+      }
+
       img {
         width: 26px;
         margin: 0 10px 0 0;
+
+        @media (max-width: 767px) {
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          margin-top: -10px;
+        }
       }
 
       .title {
@@ -1734,6 +2187,10 @@ body {
         line-height: 24px;
         color: #fff;
         font-weight: 400;
+
+        @media (max-width: 767px) {
+          font-size: 12px;
+        }
       }
     }
 
@@ -1743,10 +2200,19 @@ body {
       line-height: 17px;
       color: #8d8d96;
       margin: 0 0 20px;
+
+      @media (max-width: 767px) {
+        font-size: 9px;
+        line-height: 14px;
+      }
     }
   }
 
   .parent-input_wrapper {
+    @media (max-width: 767px) {
+      margin: 0 -20px 10px;
+    }
+
     .text-input {
       width: 100%;
       background: #181e29;
@@ -1794,6 +2260,18 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 30px 0 0;
+
+    .socialIcons {
+      display: none;
+
+      @media (max-width: 767px) {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        order: 2;
+        margin: 0 0 10px;
+      }
+    }
   }
 
   .footerLinks {
@@ -1819,15 +2297,24 @@ body {
       @media (max-width: 767px) {
         width: 100%;
         margin: 0 0 10px;
+        order: 3;
+        text-align: center;
       }
     }
 
-    ul {
+    .footerLinksList {
       list-style: none;
       padding: 0;
       margin: 0;
       display: flex;
       flex-flow: row wrap;
+
+      @media (max-width: 767px) {
+        order: 1;
+        margin: 0 0 10px;
+        width: 100%;
+        justify-content: center;
+      }
 
       li {
         + li {
@@ -1839,7 +2326,7 @@ body {
             margin: 0 10px;
 
             @media (max-width: 767px) {
-              margin: 0 5px;
+              margin: 0 10px;
             }
           }
         }
@@ -1863,6 +2350,10 @@ body {
     font-size: 12px;
     line-height: 18px;
     min-width: 60px;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
 
     &:hover {
       text-decoration: underline;
@@ -1941,5 +2432,273 @@ body {
       color: #fff;
       border-color: #e0464d;
     }
+  }
+}
+
+.pageFiltersSearch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 0 50px;
+
+  @media (max-width: 1023px) {
+    flex-flow: row wrap;
+    padding: 10px 0 34px;
+  }
+
+  .searchHeaderHeading,
+  .searchPopup {
+    display: none;
+  }
+
+  .search {
+    width: 606px;
+
+    @media (max-width: 1439px) {
+      width: 490px;
+    }
+
+    @media (max-width: 1199px) {
+      width: 350px;
+    }
+
+    @media (max-width: 1023px) {
+      width: 100%;
+      margin: 0 0 30px;
+    }
+  }
+
+  .searchHeaderForm {
+    .text-input {
+      margin: 0;
+    }
+
+    .form-control {
+      height: 45px !important;
+      border-color: #E6E6E6 !important;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      border-radius: 25px !important;
+      padding: 10px 140px 10px 45px !important;
+
+      @media (max-width: 1199px) {
+        padding: 10px 90px 10px 45px !important;
+      }
+
+      @media (max-width: 767px) {
+        height: 35px !important;
+        font-size: 10px !important;
+        padding: 7px 90px 7px 45px !important;
+      }
+
+      &:focus {
+        box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      }
+    }
+
+    .searchIcon,
+    .active_search {
+      width: 45px !important;
+      right: auto !important;
+      left: 0 !important;
+      top: 50% !important;
+      transform: translateY(-50%);
+      background: transparent !important;
+      padding-left: 5px;
+      cursor: default !important;
+
+      svg {
+        width: 11px !important;
+        height: 11px !important;
+
+        @media (max-width: 767px) {
+          width: 14px !important;
+          height: 14px !important;
+        }
+
+        path {
+          fill: #FF6067 !important;
+        }
+      }
+    }
+
+    .buttonSearch {
+      width: 135px;
+      height: 30px;
+      font-size: 12px;
+      line-height: 20px;
+      color: #fff;
+      background: #FF6067;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.4s ease-in-out;
+
+      @media (max-width: 1199px) {
+        width: 50px;
+      }
+
+      @media (max-width: 767px) {
+        width: 40px;
+        height: 34px;
+        border-radius: 0 20px 20px 0;
+      }
+
+      svg {
+        width: 10px;
+        height: 10px;
+        margin: 0 0 0 8px;
+
+        @media (max-width: 1199px) {
+          display: none;
+          margin: 0;
+        }
+
+        path {
+          stroke: #fff;
+        }
+      }
+
+      .iconSearch {
+        display: none;
+
+        @media (max-width: 1199px) {
+          display: block;
+          width: 14px;
+          height: 14px;
+        }
+      }
+
+      .text {
+        @media (max-width: 1199px) {
+          display: none;
+        }
+      }
+
+      &:hover {
+        background: #ff363f;
+      }
+    }
+
+    .buttonFilters {
+      display: block;
+      margin: 0 5px 0 0;
+    }
+
+    .clearsearchbtn {
+      display: none !important;
+    }
+  }
+
+  .filterButtons {
+    display: flex !important;
+    align-items: center;
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @media (max-width: 767px) {
+      right: 0;
+    }
+  }
+
+  .quickFind {
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 1023px) {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    .lbl {
+      display: block;
+      font-size: 10px;
+      line-height: 14px;
+      color: #979797;
+
+      @media (max-width: 1023px) {
+        display: none;
+      }
+    }
+
+    > div {
+      @media (max-width: 1023px) {
+        width: 48%;
+      }
+
+      button {
+        @media (max-width: 1023px) {
+          width: 100%;
+        }
+
+        + div {
+          @media (max-width: 1023px) {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .button.button-sm.buttonFilter {
+      font-size: 11px;
+      min-width: 130px;
+      margin: 0 0 0 15px;
+      height: 36px;
+
+      @media (max-width: 1023px) {
+        margin: 0;
+        width: 100%;
+      }
+
+      svg {
+        width: 16px;
+        max-width: 16px;
+        height: 16px;
+        max-height: 16px;
+        margin: 0 5px 0 0;
+
+        path {
+          stroke: rgba(30, 30, 45, 0.7);
+        }
+      }
+    }
+
+    .sortByFilterDrop {
+      margin-top: 5px !important;
+      overflow: hidden;
+      width: 130px;
+
+      @media (max-width: 1023px) {
+        width: 100%;
+      }
+
+      .item {
+        padding: 5px 20px;
+        font-size: 12px;
+        line-height: 20px;
+        color: #7b7b7b;
+        cursor: pointer;
+        transition: all 0.4s ease;
+
+        &:hover {
+          background: #e5e8ef;
+        }
+      }
+    }
+  }
+}
+
+.ingredientBlock {
+  .recipesCategories {
+
+  }
+}
+
+.recipesPageWrapper {
+  @media (max-width: 767px) {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 }
