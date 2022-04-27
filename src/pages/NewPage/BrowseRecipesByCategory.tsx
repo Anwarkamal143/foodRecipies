@@ -1,6 +1,6 @@
 import HeartIconAnimtaed from "@assets/icons/HeartIconAnimtaed"
 import { Icon, Image } from "@components"
-import { Tag, TimeDuraion } from "@icons"
+import { AngleRight, Tag, TimeDuraion } from "@icons"
 import React from "react"
 import styled from "styled-components"
 
@@ -30,7 +30,9 @@ const BrowseRecipesByCategory = ({ index, data = [], className }: Props) => {
               </div>
               <div className="recipeItemTextbox">
                 <strong className="recipeTitle">{e.title}</strong>
-                <span className="recipeAuthor">{e.fvrtBy}</span>
+                <span className="recipeAuthor">
+                  {e.fvrtBy} <AngleRight />
+                </span>
                 <div className="recipeMeta">
                   <span className="recipeMetaBox">
                     <TimeDuraion />

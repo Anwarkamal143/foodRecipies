@@ -30,7 +30,7 @@ const Header = (props: Props) => {
         <Input
           value={searchText}
           className="search_input"
-          placeholder="Search recipes,cook,shop,and more..."
+          placeholder="Smart Search Recipe & Cooks…"
           onChange={e => {
             handleSearch(e.target.value)
           }}
@@ -70,9 +70,20 @@ export const SearchHeader = styled(Header)`
       position: absolute;
       right: 25px;
       top: 5px;
+      transition: all 0.4s ease;
+      cursor: pointer;
 
       @media (max-width: 767px) {
         right: 0;
+      }
+
+      &:hover {
+        color: #e0464d;
+        transform: rotate(180deg);
+
+        path {
+          fill: #e0464d;
+        }
       }
     }
   }
@@ -127,6 +138,12 @@ export const SearchHeader = styled(Header)`
       justify-content: center;
       background: #ff6067;
       border-radius: 0 20px 20px 0;
+      transition: all 0.4s ease;
+      cursor: pointer;
+
+      &:hover {
+        background: #000;
+      }
 
       svg {
         width: 14px;

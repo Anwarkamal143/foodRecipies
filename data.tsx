@@ -394,12 +394,11 @@ export const FavData = [
     time: "20 mins",
     state: "easy",
   },
-  
-  
 ]
 export const categoryData = [
   {
     category: "Breakfast",
+    image: "/images/icon-cat01.png",
     data: [
       {
         id: "assddddd",
@@ -421,6 +420,7 @@ export const categoryData = [
   },
   {
     category: "Snacks",
+    image: "/images/icon-cat02.png",
     data: [
       {
         id: "assddddd",
@@ -443,38 +443,37 @@ export const categoryData = [
 
   {
     category: "Sandwiches",
+    image: "/images/icon-cat03.png",
     data: [],
   },
   {
     category: "Baked Goods",
+    image: "/images/icon-cat04.png",
     data: [],
   },
   {
     category: "Dinner",
+    image: "/images/icon-cat05.png",
     data: [],
   },
   {
     category: "Dessert",
+    image: "/images/icon-cat06.png",
     data: [],
   },
   {
     category: "Seafood",
+    image: "/images/icon-cat07.png",
     data: [],
   },
   {
     category: "Appetizers",
+    image: "/images/icon-cat08.png",
     data: [],
   },
   {
     category: "Pasta",
-    data: [],
-  },
-  {
-    category: "Snacks",
-    data: [],
-  },
-  {
-    category: "Snacks",
+    image: "/images/icon-cat09.png",
     data: [],
   },
 ]

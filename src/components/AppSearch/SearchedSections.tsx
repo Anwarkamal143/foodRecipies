@@ -81,19 +81,24 @@ const SearchedRecipesAndCooks = (props: Props) => {
             <p className="section_title">What We’re Into Right Now</p>
           </div>
           <div className="selection">
-            <span className="categort">
-              <img src="/images/side-dishes.svg" alt="side-dishes" />
-              #Chicken
-            </span>
-
-            <span className="categort">
-              <img src="/images/italy.png" alt="italy" />
-              #Italian
-            </span>
-            <span className="categort">
-              <img src="/images/glutenFree.svg" alt="italy" />
-              #Gluten-Free
-            </span>
+            <div className="selection-category">
+              <div className="image-hold">
+                <img src="/images/side-dishes.svg" alt="side-dishes" />
+              </div>
+              <div className="itemTextbox">#Chicken</div>
+            </div>
+            <div className="selection-category">
+              <div className="image-hold">
+                <img src="/images/italy.png" alt="side-dishes" />
+              </div>
+              <div className="itemTextbox">#Gluten-Free</div>
+            </div>
+            <div className="selection-category">
+              <div className="image-hold">
+                <img src="/images/glutenFree.svg" alt="side-dishes" />
+              </div>
+              <div className="itemTextbox">#Gluten-Free</div>
+            </div>
           </div>
         </div>
       ) : null}
@@ -108,7 +113,7 @@ export const SearchedSections = styled(SearchedRecipesAndCooks)`
     justify-content: space-between;
     padding: 0 0 10px;
     border-bottom: 1px solid #e6e6e6;
-    margin: 0 0 15px;
+    margin: 0 0 10px;
 
     .section_title {
       display: block;
@@ -153,5 +158,63 @@ export const SearchedSections = styled(SearchedRecipesAndCooks)`
   .searchCooks {
     overflow: hidden;
     margin: 0 0 30px;
+  }
+
+  .searchCooks {
+    .itemArrow {
+      display: none !important;
+    }
+  }
+
+  .selection {
+    .selection-category {
+      display: flex;
+      align-items: center;
+      margin: 0 0 5px;
+      padding: 5px 0;
+      transition: all 0.4s ease;
+
+      &:hover {
+        background: #f3f5f8;
+        padding: 5px;
+
+        .itemTextbox {
+          color: #ff6067;
+        }
+
+        svg {
+          path {
+            fill: #ff6067;
+          }
+        }
+      }
+
+      path {
+        transition: all 0.4s ease;
+      }
+
+      .image-hold {
+        width: 18px;
+        height: 18px;
+        display: flex;
+        align-items: center;
+      }
+
+      .itemTextbox {
+        flex-grow: 1;
+        flex-basis: 0;
+        font-size: 11px;
+        line-height: 18px;
+        color: #1e1e2d;
+        padding: 0 10px 0 15px;
+        transition: all 0.4s ease;
+        display: flex;
+        align-items: center;
+      }
+
+      .btn-recipe {
+        margin: 0 0 0 10px;
+      }
+    }
   }
 `

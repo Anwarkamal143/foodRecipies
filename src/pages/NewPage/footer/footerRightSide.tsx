@@ -10,27 +10,35 @@ type Props = {
 const FooterRightSide = ({ className }: Props) => {
   return (
     <div className={className}>
-      <div className="socialIcons">
-        <Icon className="socialIconsItem facebook">
+      <ul className="socialIcons">
+        <li>
+          <Icon className="socialIconsItem facebook">
           <FacebookIcon />
         </Icon>
-        <Icon className="socialIconsItem youtube">
-          <YoutubeIcon />
-        </Icon>
-        <Icon className="socialIconsItem twitter">
-          <TwitterIcon />
-        </Icon>
-        <Icon className="socialIconsItem instagram">
-          <InstagramIcon />
-        </Icon>
-      </div>
+        </li>
+        <li>
+          <Icon className="socialIconsItem youtube">
+            <YoutubeIcon />
+          </Icon>
+        </li>
+        <li>
+          <Icon className="socialIconsItem twitter">
+            <TwitterIcon />
+          </Icon>
+        </li>
+        <li>
+          <Icon className="socialIconsItem instagram">
+            <InstagramIcon />
+          </Icon>
+        </li>
+      </ul>
 
-      <div className="Company">
-        <span>
+      <div className="subscribeForm">
+        <div className="titleWrap">
           <img src="images/mail-box.png" alt="" />
-          <h2>Personalized Reccomendations</h2>
-        </span>
-        <p>
+          <strong className="title">Personalized Reccomendations</strong>
+        </div>
+        <p className="text">
           Join our outreach to recieve personalized recipe reccomendations,
           cooking tips, and stay up to date on your favorite cooks.
         </p>
