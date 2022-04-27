@@ -692,6 +692,8 @@ body {
     }
 
     img {
+      margin: 0 auto;
+      
       @media (max-width: 767px) {
         width: 100%;
       }
@@ -1094,35 +1096,37 @@ body {
 }
 
 .leaderboardRecipesList {
-  column-count: 4;
-  column-width: 25%;
-  column-gap: 12px;
-
-  @media (max-width: 1023px) {
-    column-count: 3;
-    column-width: 33.333%;
-  }
-
-  @media (max-width: 767px) {
-    column-count: 2;
-    column-width: 50%;
-  }
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  margin: 0 -6px;
 
   @media (max-width: 479px) {
-    column-count: 1;
-    column-width: 100%;
-    column-gap: normal;
+    margin: 0;
   }
 
   .recipeItem {
-    width: 100%;
-    margin: 0 0 12px;
+    width: calc(25% - 12px);
+    margin: 0 6px 12px;
     display: flex;
     align-items: center;
     padding: 10px;
     background: #f8f8f8;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05);
     border-radius: 10px;
+
+    @media (max-width: 1199px) {
+      width: calc(33.333% - 12px);
+    }
+
+    @media (max-width: 1023px) {
+      width: calc(50% - 12px);
+    }
+
+    @media (max-width: 479px) {
+      width: 100%;
+      margin: 0 0 12px;
+    }
 
     .recipeItemImage {
       width: 33px;
@@ -1309,21 +1313,8 @@ body {
   }
 
   .recipesCategories {
-    justify-content: center;
-
-    @media (max-width: 767px) {
-      justify-content: flex-start;
-    }
-  }
-}
-
-.ingredientBlock {
-  .recipesSectionHeader {
-    .recipesSectionTitle {
-      @media (max-width: 767px) {
-        padding-right: 0;
-      }
-    }
+    display: block;
+    text-align: center;
   }
 }
 
@@ -1846,7 +1837,6 @@ body {
 
   .image {
     width: 100%;
-    height: 218px;
 
     img {
       width: 100%;
@@ -2691,8 +2681,52 @@ body {
 }
 
 .ingredientBlock {
-  .recipesCategories {
+  .recipesSectionHeader {
+    .recipesSectionTitle {
+      @media (max-width: 767px) {
+        padding-right: 0;
+      }
+    }
+  }
 
+  .recipesCategories {
+    @media (min-width: 1024px) {
+      border-bottom: 1px solid #ECECEC;
+      padding-bottom: 0;
+      margin-bottom: 30px;
+    }
+
+    .recipesCategoriesButton {
+      @media (min-width: 1024px) {
+        border-radius: 0;
+        padding: 5px 10px 12px;
+        position: relative;
+        vertical-align: bottom;
+      }
+
+      &:after {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background: #FF595F;
+        content: '';
+        transition: width 0.25s ease-in-out;
+      }
+
+      &:hover,
+      &.active {
+        @media (min-width: 1024px) {
+          background: transparent;
+          color: #1E1E2D;
+        }
+
+        &:after {
+          width: 100%;
+        }
+      }
+    }
   }
 }
 
