@@ -184,7 +184,7 @@ export const SearchedSections = styled(SearchedRecipesAndCooks)`
 
         svg {
           path {
-            fill: #ff6067;
+            stroke: #ff6067;
           }
         }
       }
@@ -203,7 +203,7 @@ export const SearchedSections = styled(SearchedRecipesAndCooks)`
       .itemTextbox {
         flex-grow: 1;
         flex-basis: 0;
-        font-size: 11px;
+        font-size: 14px;
         line-height: 18px;
         color: #1e1e2d;
         padding: 0 10px 0 15px;
