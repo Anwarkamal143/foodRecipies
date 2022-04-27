@@ -22,6 +22,7 @@ const settings = {
   slidesToScroll: 1,
   nextArrow: <RightSliderArrow />,
   prevArrow: <LeftSliderArrow />,
+  swipe: true,
   responsive: [
     {
       breakpoint: 1199,
@@ -42,15 +43,9 @@ const settings = {
       settings: {
         slidesToScroll: 1,
         slidesToShow: 2,
+        arrows: false,
       },
-    },
-    {
-      breakpoint: 479,
-      settings: {
-        slidesToScroll: 1,
-        slidesToShow: 1,
-      },
-    },
+    }
   ],
 }
 

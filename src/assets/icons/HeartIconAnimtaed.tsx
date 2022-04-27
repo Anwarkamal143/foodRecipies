@@ -7,8 +7,7 @@ function HeartIconAnimtaed({ className }: IType) {
   const [like, setLikes] = useState(0)
   const [active, setActive] = useState(false)
   useEffect(() => {
-    if(like) setActive(true)
-    
+    if (like) setActive(true)
 
     setTimeout(() => {
       setActive(false)
@@ -117,9 +116,9 @@ export default styled(HeartIconAnimtaed)`
     opacity: 1;
     z-index: -2;
     position: absolute;
-    width: 90%;
-    height: 90%;
-    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
     background: radial-gradient(
       50% 50% at 50% 50%,
       rgba(255, 255, 255, 0) 0%,

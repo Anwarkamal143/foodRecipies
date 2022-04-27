@@ -18,6 +18,8 @@ const settings = {
   slidesToScroll: 1,
   nextArrow: <RightSliderArrow />,
   prevArrow: <LeftSliderArrow />,
+  draggable: true,
+	swipe: true,
   responsive: [
     {
       breakpoint: 1199,
@@ -38,15 +40,9 @@ const settings = {
       settings: {
         slidesToScroll: 1,
         slidesToShow: 2,
+        arrows: false,
       },
-    },
-    {
-      breakpoint: 479,
-      settings: {
-        slidesToScroll: 1,
-        slidesToShow: 1,
-      },
-    },
+    }
   ],
 }
 const LatestRecipesSlider = ({ data, className }: Props) => {
@@ -97,10 +93,4 @@ const LatestRecipesSlider = ({ data, className }: Props) => {
 }
 export default styled(LatestRecipesSlider)`
   width: 100%;
-
-  .slick-slider {
-    .slick-slide {
-      padding: 0 14px 5px 0;
-    }
-  }
 `

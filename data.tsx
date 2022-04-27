@@ -505,7 +505,7 @@ export const LeaderBoradCategoryData = [
 ]
 export const ourCooks = [
   {
-    url: "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
+    url: "/images/img-food01.png",
     type: "video",
     userName: "Sam the Cooking Guy",
     postby: "Posted March 23rd",
@@ -513,7 +513,7 @@ export const ourCooks = [
       "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
   },
   {
-    url: "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
+    url: "/images/img-food02.png",
     type: "video",
     userName: "Sam the Cooking Guy",
     postby: "Posted March 23rd",
@@ -521,7 +521,7 @@ export const ourCooks = [
       "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
   },
   {
-    url: "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
+    url: "/images/img-food03.png",
     type: "video",
     userName: "Sam the Cooking Guy",
     postby: "Posted March 23rd",
@@ -529,7 +529,7 @@ export const ourCooks = [
       "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
   },
   {
-    url: "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
+    url: "/images/img-food04.png",
     type: "video",
     userName: "Sam the Cooking Guy",
     postby: "Posted March 23rd",
@@ -537,7 +537,7 @@ export const ourCooks = [
       "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
   },
   {
-    url: "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
+    url: "/images/img-food05.png",
     type: "video",
     userName: "Sam the Cooking Guy",
     postby: "Posted March 23rd",
@@ -545,7 +545,7 @@ export const ourCooks = [
       "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
   },
   {
-    url: "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
+    url: "/images/img-food01.png",
     type: "video",
     userName: "Sam the Cooking Guy",
     postby: "Posted March 23rd",
@@ -553,7 +553,7 @@ export const ourCooks = [
       "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
   },
   {
-    url: "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
+    url: "/images/img-food02.png",
     type: "video",
     userName: "Sam the Cooking Guy",
     postby: "Posted March 23rd",
@@ -620,44 +620,44 @@ export const userList = [
 export const OnlineUsersData = [
   {
     profile:
-      "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
-    userName: "Sam Guy",
+      "/images/img-cook01.png",
+    userName: "Will Courtney",
     Recipes: 105,
   },
   {
     profile:
-      "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
-    userName: "Sam Guy",
+      "/images/img-cook02.png",
+    userName: "Ralph Edwards",
     Recipes: 105,
   },
   {
     profile:
-      "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
-    userName: "Sam Guy",
+      "/images/img-cook03.png",
+    userName: "Robert Fox",
     Recipes: 105,
   },
   {
     profile:
-      "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
-    userName: "Sam Guy",
+      "/images/img-cook04.png",
+    userName: "Cameron Williamson",
     Recipes: 105,
   },
   {
     profile:
-      "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
-    userName: "Sam Guy",
+      "/images/img-cook01.png",
+    userName: "Will Courtney",
     Recipes: 105,
   },
   {
     profile:
-      "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
-    userName: "Sam Guy",
+      "/images/img-cook02.png",
+    userName: "Ralph Edwards",
     Recipes: 105,
   },
   {
     profile:
-      "https://i.pinimg.com/564x/6f/f0/55/6ff0557b423947563d39f570e36e6aab.jpg",
-    userName: "Sam Guy",
+      "/images/img-cook03.png",
+    userName: "Robert Fox",
     Recipes: 105,
   },
 ]

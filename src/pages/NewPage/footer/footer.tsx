@@ -1,4 +1,5 @@
-import { InstagramIcon } from "@icons"
+import { Icon } from "@components"
+import { FacebookIcon, InstagramIcon, TwitterIcon, YoutubeIcon } from "@icons"
 import React from "react"
 import FooterLeftSide from "./footerLeftSides"
 import FooterRightSide from "./footerRightSide"
@@ -31,11 +32,33 @@ const Footer = (props: Props) => {
           <div className="footerBottom">
             <div className="footerLinks">
               <p className="copyrights">©2022 OnlineCook LLC</p>
-              <ul>
+              <ul className="footerLinksList">
                 <li><a href="#">Terms</a></li>
                 <li><a href="#">Privacy</a></li>
                 <li><a href="#">Code of Conduct</a></li>
                 <li><a href="#">Accessibility Policy</a></li>
+              </ul>
+              <ul className="socialIcons">
+                <li>
+                  <Icon className="socialIconsItem facebook">
+                  <FacebookIcon />
+                </Icon>
+                </li>
+                <li>
+                  <Icon className="socialIconsItem youtube">
+                    <YoutubeIcon />
+                  </Icon>
+                </li>
+                <li>
+                  <Icon className="socialIconsItem twitter">
+                    <TwitterIcon />
+                  </Icon>
+                </li>
+                <li>
+                  <Icon className="socialIconsItem instagram">
+                    <InstagramIcon />
+                  </Icon>
+                </li>
               </ul>
             </div>
             <a href="#" className="help-link"><img src="/images/device-message.png" alt="icon" /> Help</a>

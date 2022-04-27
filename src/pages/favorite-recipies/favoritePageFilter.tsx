@@ -107,9 +107,9 @@ export default styled(FavoriteFilerForm)`
     }
 
     label {
-      color: #7474a9;
-      font-size: 10px;
-      line-height: 14px;
+      color: #746d6d;
+      font-size: 14px;
+      line-height: 18px;
       padding-left: 30px;
       cursor: pointer;
       justify-content: space-between;

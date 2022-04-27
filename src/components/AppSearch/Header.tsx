@@ -1,4 +1,4 @@
-import { CrossIcon, SearchIcon } from "@icons"
+import { ArrowRight, CrossIcon, SearchIcon } from "@icons"
 import React, { useState } from "react"
 import styled from "styled-components"
 import { Input } from "../Input"
@@ -45,6 +45,10 @@ const Header = (props: Props) => {
         <span className={searchText ? "active_search" : "searchIcon"}>
           <SearchIcon />
         </span>
+        <div className="filterButtons">
+          <a href="#" className="buttonFilters"><img src="/images/icon-filters.png" alt="Filters" /></a>
+          <button className="buttonSearch"><span className="text">Smart Search</span> <ArrowRight className="iconArrow" /> <SearchIcon className="iconSearch" /></button>
+        </div>
       </div>
     </div>
   )
@@ -154,5 +158,9 @@ export const SearchHeader = styled(Header)`
         }
       }
     }
+  }
+
+  .filterButtons {
+    display: none;
   }
 `

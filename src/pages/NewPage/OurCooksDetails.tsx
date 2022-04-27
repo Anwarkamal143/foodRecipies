@@ -1,5 +1,5 @@
 import { useOpenClose } from "@hooks"
-import { LeftSliderArrow, RightSliderArrow } from "@icons"
+import { ArrowRight, LeftSliderArrow, RightSliderArrow } from "@icons"
 import React, { useRef, useState } from "react"
 import Slider from "react-slick"
 import styled from "styled-components"
@@ -21,6 +21,8 @@ const settings = {
   slidesToScroll: 1,
   nextArrow: <RightSliderArrow />,
   prevArrow: <LeftSliderArrow />,
+  draggable: true,
+	swipe: true,
   responsive: [
     {
       breakpoint: 1199,
@@ -41,15 +43,9 @@ const settings = {
       settings: {
         slidesToScroll: 1,
         slidesToShow: 2,
+        arrows: false,
       },
-    },
-    {
-      breakpoint: 479,
-      settings: {
-        slidesToScroll: 1,
-        slidesToShow: 1,
-      },
-    },
+    }
   ],
 }
 
@@ -73,7 +69,10 @@ const OurCooksDetails = ({
     return data.map((e: any, index: any) => {
       return (
         <div className="cookItemBox" key={index}>
-          <div className="image-holder">
+          <div
+            className="image-holder"
+            onClick={() => handlerSwiperOpen(index)}
+          >
             {e.type && <span className="videobtn"></span>}
             <img src={e.url} alt="video" />
           </div>
@@ -99,6 +98,7 @@ const OurCooksDetails = ({
         <div className="favorite-head">
           <span className="recipesSectionText">{discription}</span>
         </div>
+        <a href="#" className="btnTikTok"><div>Latest<br/>TikToks <span className="text">View All <ArrowRight /></span></div></a>
       </header>
       <Slider draggable={true} ref={sliderRef} {...settings}>
         {users()}

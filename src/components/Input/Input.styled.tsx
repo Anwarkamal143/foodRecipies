@@ -128,7 +128,6 @@ export const InputWrapper = styled.div`
 
   .text-input.ico-input {
     position: relative;
-    font-family: "Roboto", sans-serif !important;
   }
 
   .text-input.ico-input .icon {

@@ -32,13 +32,13 @@ const NewPage = ({ className }: Props) => {
         <div className="recipesContainer">
           <div className="recipesSection">
             {/* <AppSearch toggleSideBar={true} /> */}
-            <div className="search_bar_ctn">
+            <div className="pageFiltersSearch">
               <div className="search">
                 <SearchHeader onSearch={(s?: string) => setSearchText(s)} />
                 <SearchedSections isSearchingEnable={!!searchText} />
               </div>
               <div className="quickFind">
-                <span>Quick Find:</span>
+                <span className="lbl">Quick Find:</span>
                 <DropDown
                   button={selected => (
                     <Button
@@ -131,7 +131,7 @@ const NewPage = ({ className }: Props) => {
             <LatestRecipesSlider data={FavData} />
           </div>
           <Leaderboard data={FavData} />
-          <div className="recipesSection align-center">
+          <div className="recipesSection align-center ingredientBlock">
             <CategoryTypes
               data={newPageData}
               title="Browse Recipes by Ingredient"
