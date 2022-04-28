@@ -1,29 +1,30 @@
 import { DropDown } from "@components"
 import {
   Calander,
-  ChevronRightIcon,
   DairyFree,
   GlutenFree,
   NutFree,
   Vegan,
-  Vegetarian
+  Vegetarian,
 } from "@icons"
 import { PageLayoutWrapper } from "@layouts"
 import {
   categoryData,
   FavData,
   FavRecipeData,
+  IngredientData,
   OnlineUsersData,
   ourCooks,
-  IngredientData
 } from "data"
 import React, { useEffect, useState } from "react"
 import { SearchHeader } from "src/components/AppSearch/Header"
+import ItemContent from "src/components/ItemContent"
+import NavBar from "src/components/NavBar"
+import SliderContent from "src/components/SliderContent"
+import SliderNav from "src/components/SliderNavBar"
 import styled from "styled-components"
-import RecipesCard from "../../components/RecipiesCard"
 import { SearchedSections } from "./../../components/AppSearch/SearchedSections"
 import Button from "./../../components/Button/Button"
-import SilderComponent from "./components/SliderComponents"
 import FollowUsers from "./FollowUsers"
 import Footer from "./footer/footer"
 import Leaderboard from "./Leaderboard"
@@ -37,10 +38,13 @@ type Props = {
 const NewPage = ({ className }: Props) => {
   const [newPageData, setNewPageData] = useState<any>([])
   const [searchText, setSearchText] = useState<any>("")
-
+  const [id, setId] = useState<any>("")
+  const [data, setSilderData] = useState<any>([])
+  const [ingredientData, setIngredientData] = useState<any>([])
   useEffect(() => {
     setNewPageData(categoryData)
   }, [categoryData])
+
   return (
     <div className={`recipesPage ${className}`}>
       <PageLayoutWrapper className="recipesPageWrapper" variant={"regular"}>
@@ -141,61 +145,51 @@ const NewPage = ({ className }: Props) => {
                 />
               </div>
             </div>
-            <SilderComponent
-              data={categoryData}
-              isContent={false}
-              isNavBar={true}
-              isNavSlider={true}
-              rightIcon={false}
-            />
-            <header className="recipesSectionHeader">
-              <strong className="recipesSectionTitle">Featured Recipes</strong>
-              <div className="favorite-head">
-                <span className="recipesSectionText">
-                  A recipe is a set of instructions that describes how to
-                  prepare or make.
-                </span>
-                <span className="feature-btn">
-                  View All Featured <ChevronRightIcon />{" "}
-                </span>
-              </div>
-            </header>
-            <div className="recipesSectionHolder">
-              <RecipesCard data={FavRecipeData} />
-            </div>
+            <SliderNav data={categoryData} header={false} />
           </div>
           <div className="recipesSection">
-            <SilderComponent
-              data={categoryData}
-              isContentSlider={false}
-              isContent={true}
-              isNavBar={true}
-              isNavSlider={true}
+            <SliderNav
+              title="Featured Recipes"
+              discription="A recipe is a set of instructions that describes how to prepare or make."
+            />
+            <ItemContent data={FavRecipeData} />
+          </div>
+          <div className="recipesSection">
+            <SliderNav
               title="Browse Recipes By Category"
               discription="A recipe is a set of instructions that describes how to prepare or make."
+              data={categoryData}
+              handleSilderData={(data: any, id: string) => {
+                if (data || id) {
+                  setSilderData(data)
+                  setId(id)
+                }
+              }}
             />
+            <ItemContent data={data} id={id} />
           </div>
           <div className="recipesSection">
-            <SilderComponent
-              data={FavData}
-              title="Latest Recipes"
-              isContentSlider={true}
-              isContent={true}
+            <NavBar
               isNavBar={false}
+              title="Latest Recipes"
               discription="A recipe is a set of instructions that describes how to prepare or make."
             />
+            <SliderContent data={FavData} />
           </div>
           <Leaderboard data={FavData} />
           <div className="recipesSection">
-            <SilderComponent
+            <NavBar
               data={IngredientData}
               title="Browse Recipes by Ingredient"
-              isContentSlider={true}
-              isContent={true}
-              isNavBar={true}
-              isNavSlider={false}
               discription="A recipe is a set of instructions that describes how to prepare or make."
+              handleSilderData={(data: any) => {
+                if (data) {
+                  setIngredientData(data)
+                  // setId(id)
+                }
+              }}
             />
+            <SliderContent data={ingredientData} />
           </div>
           <OurTiktoker
             discription="A recipe is a set of instructions that describes how to prepare or make something."
