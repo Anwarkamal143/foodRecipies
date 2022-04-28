@@ -110,19 +110,19 @@ const NewPage = ({ className }: Props) => {
                     },
                     {
                       name: "American",
-                      icon: <img src="/images/italy.png" alt="side-dishes" />,
+                      icon: <img src="/images/american.png" alt="side-dishes" />,
                     },
                     {
                       name: "Mexican",
-                      icon: <img src="/images/italy.png" alt="side-dishes" />,
+                      icon: <img src="/images/mexican.png" alt="side-dishes" />,
                     },
                     {
                       name: "Asian",
-                      icon: <img src="/images/italy.png" alt="side-dishes" />,
+                      icon: <img src="/images/asian.png" alt="side-dishes" />,
                     },
                     {
                       name: "Indian",
-                      icon: <img src="/images/italy.png" alt="side-dishes" />,
+                      icon: <img src="/images/india.png" alt="side-dishes" />,
                     },
                   ]}
                   renderItem={({ item, isActive, onClick }) => {
