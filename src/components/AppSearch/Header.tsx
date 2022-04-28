@@ -1,5 +1,5 @@
 import { ArrowRight, CrossIcon, SearchIcon } from "@icons"
-import React, { useState } from "react"
+import React from "react"
 import styled from "styled-components"
 import { Input } from "../Input"
 
@@ -8,14 +8,14 @@ type Props = {
   title?: string
   onSearch?: (text?: string) => void
   onClose?: () => void
+  value?: string
 }
 
 const Header = (props: Props) => {
-  const { className, title = "Smart Search", onSearch, onClose } = props
-  const [searchText, setSearchText] = useState("")
+  const { className, title = "Smart Search", onSearch, onClose, value } = props
 
   const handleSearch = (searchTextt: string) => {
-    setSearchText(searchTextt)
+
     onSearch?.(searchTextt)
   }
   return (
@@ -28,7 +28,7 @@ const Header = (props: Props) => {
       </div>
       <div className="searchHeaderForm">
         <Input
-          value={searchText}
+          value={value}
           className="search_input"
           placeholder="Smart Search Recipe & Cooks…"
           onChange={e => {
@@ -36,13 +36,14 @@ const Header = (props: Props) => {
           }}
           materialDesign
         />
-        {searchText && (
+        {value && (
           <CrossIcon
             className="clearsearchbtn"
-            onClick={() => handleSearch("")}
+            onClick={() => {
+              handleSearch("")}}
           />
         )}
-        <span className={searchText ? "active_search" : "searchIcon"}>
+        <span className={value ? "active_search" : "searchIcon"}>
           <SearchIcon />
         </span>
         <div className="filterButtons">

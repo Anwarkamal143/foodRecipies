@@ -13,8 +13,8 @@ const AppSearchC = ({ toggleSideBar }: { toggleSideBar?: any }) => {
     console.log({ toggleSideBar })
     const [searchText, setSearchText] = useState<any>('')
     return <div>
-        <SearchHeader onClose={toggleSideBar} onSearch={(s?: string) => setSearchText(s)} />
-        <SearchedSections isSearchingEnable={!!searchText} />
+        <SearchHeader value={searchText} onClose={toggleSideBar} onSearch={(s?: string) => setSearchText(s)} />
+        <SearchedSections isSearchingEnable={!!searchText} onClickClear={() => setSearchText('')} />
     </div>
 }
 const AppSearchSlider = (props: Props) => {

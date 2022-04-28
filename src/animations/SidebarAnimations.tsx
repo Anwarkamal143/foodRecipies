@@ -1,3 +1,4 @@
+import { Scrollbar } from '@components'
 import { useAppSelector, useOnClickOutside } from '@hooks'
 import { toggleSidebar } from '@reducers'
 import { useAppDispatch } from '@redux/hooks'
@@ -45,6 +46,7 @@ const SidebarAnimation = ({ className, children }: Props) => {
   const ref = useRef(null);
 
 
+  const tablets = useMediaQuery({ query: '(max-width: 1300px)' })
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
 
   useOnClickOutside(ref, () => {
@@ -52,12 +54,14 @@ const SidebarAnimation = ({ className, children }: Props) => {
 
   })
   const toggleSideBar = () => {
-    cycleOpen();
+    cycleOpen(0);
     dispatch(toggleSidebar(false));
   }
   useEffect(() => {
     if (isOpen) {
-      // document.body.style.overflow = 'hidden'
+      const width = document.body.clientWidth
+      document.body.style.overflow = 'hidden';
+      // document.body.style.width = `${width}px`;
       cycleOpen()
     }
   }, [isOpen])
@@ -71,35 +75,41 @@ const SidebarAnimation = ({ className, children }: Props) => {
           <motion.aside
             ref={ref}
             className='slider'
-            initial={{ width: 0, right: 0 }}
+            initial={{ right: 0, }}
             animate={{
-              width: isMobile ? '100%' : 360
+              left: isMobile ? '0%' : tablets ? '70%' : '80%',
+              // width: isMobile ? '100%' : 360,
+              position: 'fixed',
             }}
             exit={{
-              width: 0,
+              // width: 0,
+              left: '100%',
               right: 0,
               transition: { delay: 0.3, duration: 0.3 }
             }}
           >
-            <motion.div
-              className="container"
-              initial="closed"
-              animate="open"
-              exit="closed"
-              variants={sideVariants}
-            >
-              {cloneElement(children, { toggleSideBar })}
-              {/* {links.map(({ name, to, id }) => (
-                <motion.a
+            <Scrollbar>
+              <motion.div
+                className="container"
+                initial="closed"
+                animate="open"
+                exit="closed"
+                variants={sideVariants}
+              >
+
+                {cloneElement(children, { toggleSideBar })}
+                {/* {links.map(({ name, to, id }) => (
+                  <motion.a
                   key={id}
                   href={to}
                   whileHover={{ scale: 1.1 }}
                   variants={itemVariants}
-                >
+                  >
                   {name}
-                </motion.a>
-              ))} */}
-            </motion.div>
+                  </motion.a>
+                ))} */}
+              </motion.div>
+            </Scrollbar>
           </motion.aside>
         )}
       </AnimatePresence>
@@ -108,7 +118,14 @@ const SidebarAnimation = ({ className, children }: Props) => {
   )
 }
 export const SidebarAnimations = styled(SidebarAnimation)`
+.container{
+  padding: 50px 25px;
+  height: 100%;
+   @media (max-width: 767px) {
+      padding: 25px;
 
+    }
+}
 &.slidebar_open {
     position: fixed;
     top: 0;
@@ -126,11 +143,10 @@ export const SidebarAnimations = styled(SidebarAnimation)`
     height: 100vh;
     z-index: 99;
     background: #fff;
-    padding: 50px 25px;
     overflow: auto;
 
     @media (max-width: 767px) {
-      padding: 25px;
+      /* padding: 25px; */
       height: 74.4vh;
       border-radius: 0 0 10px 10px;
       box-shadow: 0px 24px 45px rgba(0, 0, 0, 0.18);
