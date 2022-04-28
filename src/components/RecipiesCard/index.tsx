@@ -37,7 +37,13 @@ const RecipesCard = ({
               <HeartIconAnimtaed />
             </Icon>
           )}
-
+          {e.high ||
+            (e.low && (
+              <div>
+                <span className={`rate-${e.low ? "low" : "heigh"}`}></span>
+                <span className={`rate`}>{e.low ? e.low : e.high}</span>
+              </div>
+            ))}
           <img src={e.image} alt="image" />
         </div>
         <div className="recipeItemTextbox">

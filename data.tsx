@@ -1,3 +1,4 @@
+import { LeftSliderArrow, RightSliderArrow } from "@icons"
 import { FormatNumber } from "@utils"
 export const Users = [
   {
@@ -177,6 +178,42 @@ export const chartData = [
     count: "50",
   },
 ]
+export const settings = {
+  dots: false,
+  arrow: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 5,
+  slidesToScroll: 1,
+  nextArrow: <RightSliderArrow />,
+  prevArrow: <LeftSliderArrow />,
+  draggable: true,
+  swipe: true,
+  responsive: [
+    {
+      breakpoint: 1199,
+      settings: {
+        slidesToScroll: 1,
+        slidesToShow: 4,
+      },
+    },
+    {
+      breakpoint: 1023,
+      settings: {
+        slidesToScroll: 1,
+        slidesToShow: 3,
+      },
+    },
+    {
+      breakpoint: 767,
+      settings: {
+        slidesToScroll: 1,
+        slidesToShow: 2,
+        arrows: false,
+      },
+    },
+  ],
+}
 export const FavData = [
   {
     id: "asdk",
@@ -185,6 +222,7 @@ export const FavData = [
     fvrtBy: "By Emma Olivia",
     time: "20 mins",
     state: "easy",
+    high: 2,
   },
   {
     id: "assddddd",
@@ -193,6 +231,7 @@ export const FavData = [
     fvrtBy: "By Emma Olivia",
     time: "20 mins",
     state: "easy",
+    high: 2,
   },
   {
     id: "asdk",
@@ -201,6 +240,7 @@ export const FavData = [
     fvrtBy: "By Emma Olivia",
     time: "20 mins",
     state: "easy",
+    high: 2,
   },
   {
     id: "assddddd",
@@ -209,6 +249,7 @@ export const FavData = [
     fvrtBy: "By Emma Olivia",
     time: "20 mins",
     state: "easy",
+    high: 2,
   },
   {
     id: "asdk",
@@ -217,6 +258,7 @@ export const FavData = [
     fvrtBy: "By Emma Olivia",
     time: "20 mins",
     state: "easy",
+    high: 2,
   },
   {
     id: "assddddd",
@@ -225,6 +267,7 @@ export const FavData = [
     fvrtBy: "By Emma Olivia",
     time: "20 mins",
     state: "easy",
+    high: 2,
   },
   {
     id: "assddddd",
@@ -233,6 +276,7 @@ export const FavData = [
     fvrtBy: "By Emma Olivia",
     time: "20 mins",
     state: "easy",
+    high: 2,
   },
   {
     id: "assddddd",
@@ -241,6 +285,7 @@ export const FavData = [
     fvrtBy: "By Emma Olivia",
     time: "20 mins",
     state: "easy",
+    high: 2,
   },
   {
     id: "assddddd",
@@ -249,6 +294,7 @@ export const FavData = [
     fvrtBy: "By Emma Olivia",
     time: "20 mins",
     state: "easy",
+    high: 2,
   },
   {
     id: "assddddd",
@@ -257,6 +303,7 @@ export const FavData = [
     fvrtBy: "By Emma Olivia",
     time: "20 mins",
     state: "easy",
+    high: 2,
   },
   {
     id: "asdk",
@@ -265,6 +312,7 @@ export const FavData = [
     fvrtBy: "By Emma Olivia",
     time: "20 mins",
     state: "easy",
+    high: 2,
   },
   {
     id: "assddddd",
@@ -273,6 +321,7 @@ export const FavData = [
     fvrtBy: "By Emma Olivia",
     time: "20 mins",
     state: "easy",
+    high: 2,
   },
   {
     id: "asdk",
@@ -281,6 +330,7 @@ export const FavData = [
     fvrtBy: "By Emma Olivia",
     time: "20 mins",
     state: "easy",
+    high: 2,
   },
   {
     id: "assddddd",
@@ -289,6 +339,7 @@ export const FavData = [
     fvrtBy: "By Emma Olivia",
     time: "20 mins",
     state: "easy",
+    high: 2,
   },
   {
     id: "asdk",
@@ -395,13 +446,55 @@ export const FavData = [
     state: "easy",
   },
 ]
+export const FavRecipeData = [
+  {
+    id: "asdk",
+    image: "/images/bbq.jpg",
+    title: "Organic Vegetable with Peas and  chicken Burrito",
+    fvrtBy: "By Emma Olivia",
+    time: "20 mins",
+    state: "easy",
+  },
+  {
+    id: "assddddd",
+    image: "/images/bbq.jpg",
+    title: "Organic Vegetable with Peas and  chicken Burrito",
+    fvrtBy: "By Emma Olivia",
+    time: "20 mins",
+    state: "easy",
+  },
+  {
+    id: "asdk",
+    image: "/images/bbq.jpg",
+    title: "Organic Vegetable with Peas and  chicken Burrito",
+    fvrtBy: "By Emma Olivia",
+    time: "20 mins",
+    state: "easy",
+  },
+  {
+    id: "assddddd",
+    image: "/images/bbq.jpg",
+    title: "Organic Vegetable with Peas and  chicken Burrito",
+    fvrtBy: "By Emma Olivia",
+    time: "20 mins",
+    state: "easy",
+  },
+  {
+    id: "assddddd",
+    image: "/images/bbq.jpg",
+    title: "Organic Vegetable with Peas and  chicken Burrito",
+    fvrtBy: "By Emma Olivia",
+    time: "20 mins",
+    state: "easy",
+  },
+]
 export const categoryData = [
   {
     category: "Breakfast",
     image: "/images/icon-cat01.png",
     data: [
       {
-        id: "assddddd",
+        id: "s",
         image: "/images/bbq.jpg",
         title: "Organic Vegetable with Peas and  chicken Burrito",
         fvrtBy: "By Emma Olivia",
@@ -409,7 +502,7 @@ export const categoryData = [
         state: "easy",
       },
       {
-        id: "assddddd",
+        id: "ss",
         image: "/images/bbq.jpg",
         title: "Organic Vegetable with Peas and  chicken Burrito",
         fvrtBy: "By Emma Olivia",
@@ -423,7 +516,7 @@ export const categoryData = [
     image: "/images/icon-cat02.png",
     data: [
       {
-        id: "assddddd",
+        id: "sss",
         image: "/images/bbq.jpg",
         title: "Organic Vegetable with Peas and  chicken Burrito",
         fvrtBy: "By Emma Olivia",
@@ -431,7 +524,7 @@ export const categoryData = [
         state: "easy",
       },
       {
-        id: "assddddd",
+        id: "ssss",
         image: "/images/bbq.jpg",
         title: "Organic Vegetable with Peas and  chicken Burrito",
         fvrtBy: "By Emma Olivia",
@@ -455,6 +548,241 @@ export const categoryData = [
     category: "Dinner",
     image: "/images/icon-cat05.png",
     data: [],
+  },
+  {
+    category: "Dessert",
+    image: "/images/icon-cat06.png",
+    data: [],
+  },
+  {
+    category: "Seafood",
+    image: "/images/icon-cat07.png",
+    data: [],
+  },
+  {
+    category: "Appetizers",
+    image: "/images/icon-cat08.png",
+    data: [],
+  },
+  {
+    category: "Pasta",
+    image: "/images/icon-cat09.png",
+    data: [],
+  },
+]
+export const IngredientData = [
+  {
+    category: "Breakfast",
+    image: "/images/icon-cat01.png",
+    data: [
+      {
+        id: "s",
+        image: "/images/bbq.jpg",
+        title: "Organic Vegetable with Peas and  chicken Burrito",
+        fvrtBy: "By Emma Olivia",
+        time: "20 mins",
+        state: "easy",
+      },
+      {
+        id: "ss",
+        image: "/images/bbq.jpg",
+        title: "Organic Vegetable with Peas and  chicken Burrito",
+        fvrtBy: "By Emma Olivia",
+        time: "20 mins",
+        state: "easy",
+      },
+      {
+        id: "ss",
+        image: "/images/bbq.jpg",
+        title: "Organic Vegetable with Peas and  chicken Burrito",
+        fvrtBy: "By Emma Olivia",
+        time: "20 mins",
+        state: "easy",
+      },
+      {
+        id: "ss",
+        image: "/images/bbq.jpg",
+        title: "Organic Vegetable with Peas and  chicken Burrito",
+        fvrtBy: "By Emma Olivia",
+        time: "20 mins",
+        state: "easy",
+      },
+      {
+        id: "ss",
+        image: "/images/bbq.jpg",
+        title: "Organic Vegetable with Peas and  chicken Burrito",
+        fvrtBy: "By Emma Olivia",
+        time: "20 mins",
+        state: "easy",
+      },
+      {
+        id: "ss",
+        image: "/images/bbq.jpg",
+        title: "Organic Vegetable with Peas and  chicken Burrito",
+        fvrtBy: "By Emma Olivia",
+        time: "20 mins",
+        state: "easy",
+      },
+      {
+        id: "ss",
+        image: "/images/bbq.jpg",
+        title: "Organic Vegetable with Peas and  chicken Burrito",
+        fvrtBy: "By Emma Olivia",
+        time: "20 mins",
+        state: "easy",
+      },
+    ],
+  },
+  {
+    category: "Snacks",
+    image: "/images/icon-cat02.png",
+    data: [
+      {
+        id: "sss",
+        image: "/images/bbq.jpg",
+        title: "Organic Vegetable with Peas and  chicken Burrito",
+        fvrtBy: "By Emma Olivia",
+        time: "20 mins",
+        state: "easy",
+      },
+      {
+        id: "ssss",
+        image: "/images/bbq.jpg",
+        title: "Organic Vegetable with Peas and  chicken Burrito",
+        fvrtBy: "By Emma Olivia",
+        time: "20 mins",
+        state: "easy",
+      },
+      {
+        id: "ssss",
+        image: "/images/bbq.jpg",
+        title: "Organic Vegetable with Peas and  chicken Burrito",
+        fvrtBy: "By Emma Olivia",
+        time: "20 mins",
+        state: "easy",
+      },
+      {
+        id: "ssss",
+        image: "/images/bbq.jpg",
+        title: "Organic Vegetable with Peas and  chicken Burrito",
+        fvrtBy: "By Emma Olivia",
+        time: "20 mins",
+        state: "easy",
+      },
+      {
+        id: "ssss",
+        image: "/images/bbq.jpg",
+        title: "Organic Vegetable with Peas and  chicken Burrito",
+        fvrtBy: "By Emma Olivia",
+        time: "20 mins",
+        state: "easy",
+      },
+      {
+        id: "ssss",
+        image: "/images/bbq.jpg",
+        title: "Organic Vegetable with Peas and  chicken Burrito",
+        fvrtBy: "By Emma Olivia",
+        time: "20 mins",
+        state: "easy",
+      },
+      {
+        id: "ssss",
+        image: "/images/bbq.jpg",
+        title: "Organic Vegetable with Peas and  chicken Burrito",
+        fvrtBy: "By Emma Olivia",
+        time: "20 mins",
+        state: "easy",
+      },
+      {
+        id: "ssss",
+        image: "/images/bbq.jpg",
+        title: "Organic Vegetable with Peas and  chicken Burrito",
+        fvrtBy: "By Emma Olivia",
+        time: "20 mins",
+        state: "easy",
+      },
+      {
+        id: "ssss",
+        image: "/images/bbq.jpg",
+        title: "Organic Vegetable with Peas and  chicken Burrito",
+        fvrtBy: "By Emma Olivia",
+        time: "20 mins",
+        state: "easy",
+      },
+    ],
+  },
+
+  {
+    category: "Sandwiches",
+    image: "/images/icon-cat03.png",
+    data: [],
+  },
+  {
+    category: "Baked Goods",
+    image: "/images/icon-cat04.png",
+    data: [],
+  },
+  {
+    category: "Dinner",
+    image: "/images/icon-cat05.png",
+    data: [
+      {
+        id: "ssss",
+        image: "/images/bbq.jpg",
+        title: "Organic Vegetable with Peas and  chicken Burrito",
+        fvrtBy: "By Emma Olivia",
+        time: "20 mins",
+        state: "easy",
+      },
+      {
+        id: "ssss",
+        image: "/images/bbq.jpg",
+        title: "Organic Vegetable with Peas and  chicken Burrito",
+        fvrtBy: "By Emma Olivia",
+        time: "20 mins",
+        state: "easy",
+      },
+      {
+        id: "ssss",
+        image: "/images/bbq.jpg",
+        title: "Organic Vegetable with Peas and  chicken Burrito",
+        fvrtBy: "By Emma Olivia",
+        time: "20 mins",
+        state: "easy",
+      },
+      {
+        id: "ssss",
+        image: "/images/bbq.jpg",
+        title: "Organic Vegetable with Peas and  chicken Burrito",
+        fvrtBy: "By Emma Olivia",
+        time: "20 mins",
+        state: "easy",
+      },
+      {
+        id: "ssss",
+        image: "/images/bbq.jpg",
+        title: "Organic Vegetable with Peas and  chicken Burrito",
+        fvrtBy: "By Emma Olivia",
+        time: "20 mins",
+        state: "easy",
+      },
+      {
+        id: "ssss",
+        image: "/images/bbq.jpg",
+        title: "Organic Vegetable with Peas and  chicken Burrito",
+        fvrtBy: "By Emma Olivia",
+        time: "20 mins",
+        state: "easy",
+      },
+      {
+        id: "ssss",
+        image: "/images/bbq.jpg",
+        title: "Organic Vegetable with Peas and  chicken Burrito",
+        fvrtBy: "By Emma Olivia",
+        time: "20 mins",
+        state: "easy",
+      },
+    ],
   },
   {
     category: "Dessert",
@@ -619,44 +947,37 @@ export const userList = [
 ]
 export const OnlineUsersData = [
   {
-    profile:
-      "/images/img-cook01.png",
+    profile: "/images/img-cook01.png",
     userName: "Will Courtney",
     Recipes: 105,
   },
   {
-    profile:
-      "/images/img-cook02.png",
+    profile: "/images/img-cook02.png",
     userName: "Ralph Edwards",
     Recipes: 105,
   },
   {
-    profile:
-      "/images/img-cook03.png",
+    profile: "/images/img-cook03.png",
     userName: "Robert Fox",
     Recipes: 105,
   },
   {
-    profile:
-      "/images/img-cook04.png",
+    profile: "/images/img-cook04.png",
     userName: "Cameron Williamson",
     Recipes: 105,
   },
   {
-    profile:
-      "/images/img-cook01.png",
+    profile: "/images/img-cook01.png",
     userName: "Will Courtney",
     Recipes: 105,
   },
   {
-    profile:
-      "/images/img-cook02.png",
+    profile: "/images/img-cook02.png",
     userName: "Ralph Edwards",
     Recipes: 105,
   },
   {
-    profile:
-      "/images/img-cook03.png",
+    profile: "/images/img-cook03.png",
     userName: "Robert Fox",
     Recipes: 105,
   },

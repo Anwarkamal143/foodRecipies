@@ -3,8 +3,10 @@ import {
   Bell,
   Calander,
   FacebookIcon,
-  InstagramIcon, TimeDuraion, TwitterIcon,
-  YoutubeIcon
+  InstagramIcon,
+  TimeDuraion,
+  TwitterIcon,
+  YoutubeIcon,
 } from "@icons"
 import { userList } from "data"
 import React from "react"
@@ -16,7 +18,9 @@ const UserListSection = (props: Props) => {
       <header className="recipesSectionHeader">
         <div className="recipesSectionTitlebox">
           <strong className="recipesSectionTitle"> Cook Leaderboard</strong>
-          <span className="recipesSectionText"><TimeDuraion /> Ends in 10 Days 23 Hours 46 Minutes 26 Seconds</span>
+          <span className="recipesSectionText">
+            <TimeDuraion /> Ends in 10 Days 23 Hours 46 Minutes 26 Seconds
+          </span>
         </div>
         <div className="leaderboardFilters">
           <DropDown
@@ -73,7 +77,10 @@ const UserListSection = (props: Props) => {
         <div className="top-rank">
           {userList.slice(0, 3).map((e: any) => {
             return (
-              <div className="top-3-profiles gold silver/bronze" key={e.low || e.heigh}>
+              <div
+                className="top-3-profiles gold silver/bronze"
+                key={e.low || e.heigh}
+              >
                 <div className="image">
                   <img src={e.profile} alt="profile" />
                 </div>
@@ -112,7 +119,7 @@ const UserListSection = (props: Props) => {
               <div className="top-profiles" key={e.low || e.heigh}>
                 <div className="rate-info">
                   <span className={`rate-${e.low ? "low" : "heigh"}`}></span>
-                  <span className={`rate`}>{e.low ? e.low : e.heigh}</span>
+                  <span className={`rate`}>{e.low ? e.low : e.high}</span>
                 </div>
                 <div className="image">
                   <img src={e.profile} alt="profile" />

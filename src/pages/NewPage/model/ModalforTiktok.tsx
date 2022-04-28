@@ -22,7 +22,7 @@ const settings = {
   nextArrow: <RightSliderArrow />,
   prevArrow: <LeftSliderArrow />,
 }
-const MobileSwiperModal = ({
+const ModalforTiktok = ({
   className,
   items,
   isModalOpen = false,
@@ -53,7 +53,7 @@ const MobileSwiperModal = ({
               </div>
               <div className="subscribeButton">
                 <a href="#" className="btnSubscribe">
-                  Subscribe
+                  Follow
                 </a>
               </div>
             </div>
@@ -90,7 +90,7 @@ const MobileSwiperModal = ({
   )
 }
 
-export default styled(MobileSwiperModal)`
+export default styled(ModalforTiktok)`
   max-width: 1040px;
 
   .modal-content {
