@@ -1,5 +1,5 @@
 import { useOpenClose } from "@hooks"
-import { ArrowRight, LeftSliderArrow, RightSliderArrow } from "@icons"
+import { AngleRight, ArrowRight, LeftSliderArrow, RightSliderArrow } from "@icons"
 import React, { useRef, useState } from "react"
 import Slider from "react-slick"
 import styled from "styled-components"
@@ -76,7 +76,7 @@ const OurTiktoker = ({ data = [], className, title, discription }: Props) => {
               <img src={e.profile} alt="video" />
             </div>
             <div className="textinfo">
-              <span className="uesername">{e.userName}</span>
+              <span className="uesername"><a href="#">{e.userName} <AngleRight /></a></span>
               <span className="postby">{e.postby}</span>
             </div>
           </div>

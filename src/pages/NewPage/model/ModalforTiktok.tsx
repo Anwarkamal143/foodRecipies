@@ -80,7 +80,7 @@ const ModalforTiktok = ({
           )}
           {...rest}
         >
-          <span onClick={onClose}>X</span>
+          <span className="modalCloseButton" onClick={onClose}>X</span>
           <Slider draggable={true} ref={ref} {...settings}>
             {activeData()}
           </Slider>
@@ -91,33 +91,58 @@ const ModalforTiktok = ({
 }
 
 export default styled(ModalforTiktok)`
-  max-width: 1040px;
+  max-width: 600px;
+
+  .modalCloseButton {
+    position: absolute;
+    right: 0;
+    top: -10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    z-index: 1;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 5px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+
+    @media (max-width: 1023px) {
+      right: 17px;
+    }
+
+    @media (max-width: 767px) {
+      width: 32px;
+      height: 32px;
+      right: -10px;
+    }
+  }
 
   .modal-content {
     padding: 0;
     margin: 0;
     background: none;
-    padding: 0 100px;
+    padding: 20px 100px;
 
     @media (max-width: 1023px) {
-      padding: 0 80px;
+      padding: 20px 80px;
     }
 
     @media (max-width: 767px) {
-      padding: 0 40px;
+      padding: 20px 40px;
     }
   }
 
   .slick-slider {
     background: #fff;
-    width: 804px;
+    width: 378px;
     margin: 0 auto;
     border-radius: 30px;
-    padding: 40px;
+    padding: 24px;
 
     @media (max-width: 1023px) {
-      width: 600px;
-      padding: 25px;
+      width: 378px;
     }
 
     @media (max-width: 767px) {
@@ -170,11 +195,16 @@ export default styled(ModalforTiktok)`
     border: 0;
     width: 100%;
     height: 100%;
+    min-height: 450px;
+
+    @media (max-width: 767px) {
+      min-height: 350px;
+    }
   }
 
   .userTextbox {
     overflow: hidden;
-    padding: 35px 0 0;
+    padding: 20px 0 0;
 
     @media (max-width: 767px) {
       padding: 20px 0 0;
@@ -183,10 +213,10 @@ export default styled(ModalforTiktok)`
     .title {
       display: block;
       color: #fff;
-      font-size: 19px;
+      font-size: 15px;
       line-height: 1.25;
       color: #1e1e2d;
-      margin: 0 0 30px;
+      margin: 0 0 20px;
 
       @media (max-width: 767px) {
         font-size: 15px;
@@ -213,11 +243,11 @@ export default styled(ModalforTiktok)`
     }
 
     .profileImage {
-      width: 44px;
-      min-width: 44px;
-      height: 44px;
+      width: 34px;
+      min-width: 34px;
+      height: 34px;
       border-radius: 10px;
-      margin: 0 20px 0 0;
+      margin: 0 10px 0 0;
 
       @media (max-width: 767px) {
         width: 34px;
@@ -238,7 +268,7 @@ export default styled(ModalforTiktok)`
 
     .uesername {
       display: block;
-      font-size: 16px;
+      font-size: 12px;
       line-height: 1.25;
       color: #1e1e2d;
       margin: 0 0 4px;
@@ -250,7 +280,7 @@ export default styled(ModalforTiktok)`
 
     .postby {
       display: block;
-      font-size: 10px;
+      font-size: 9px;
       line-height: 1.25;
       color: #8d8d8d;
 
@@ -261,13 +291,13 @@ export default styled(ModalforTiktok)`
   }
 
   .btnSubscribe {
-    height: 34px;
-    background: #e0464d;
+    height: 30px;
+    background: #000;
     border-radius: 5px;
     color: #fff;
-    font-size: 13px;
+    font-size: 11px;
     line-height: 20px;
-    padding: 7px 30px;
+    padding: 5px 30px;
     transition: all 0.4s ease-in-out;
 
     @media (max-width: 767px) {

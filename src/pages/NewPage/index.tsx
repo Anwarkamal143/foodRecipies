@@ -110,19 +110,19 @@ const NewPage = ({ className }: Props) => {
                     },
                     {
                       name: "American",
-                      icon: <img src="/images/italy.png" alt="side-dishes" />,
+                      icon: <img src="/images/american.png" alt="side-dishes" />,
                     },
                     {
                       name: "Mexican",
-                      icon: <img src="/images/italy.png" alt="side-dishes" />,
+                      icon: <img src="/images/mexican.png" alt="side-dishes" />,
                     },
                     {
                       name: "Asian",
-                      icon: <img src="/images/italy.png" alt="side-dishes" />,
+                      icon: <img src="/images/asian.png" alt="side-dishes" />,
                     },
                     {
                       name: "Indian",
-                      icon: <img src="/images/italy.png" alt="side-dishes" />,
+                      icon: <img src="/images/india.png" alt="side-dishes" />,
                     },
                   ]}
                   renderItem={({ item, isActive, onClick }) => {
@@ -139,13 +139,15 @@ const NewPage = ({ className }: Props) => {
                 />
               </div>
             </div>
-            <SilderComponent
-              data={categoryData}
-              isContent={false}
-              isNavBar={true}
-              isNavSlider={true}
-              rightIcon={false}
-            />
+            <div className="recipesSection pageProductCategories">
+              <SilderComponent
+                data={categoryData}
+                isContent={false}
+                isNavBar={true}
+                isNavSlider={true}
+                rightIcon={false}
+              />
+            </div>
             <header className="recipesSectionHeader">
               <strong className="recipesSectionTitle">Featured Recipes</strong>
               <div className="favorite-head">
@@ -185,7 +187,7 @@ const NewPage = ({ className }: Props) => {
             />
           </div>
           <Leaderboard data={FavData} />
-          <div className="recipesSection">
+          <div className="recipesSection align-center ingredientBlock">
             <SilderComponent
               data={IngredientData}
               title="Browse Recipes by Ingredient"

@@ -26,7 +26,7 @@ const SilderComponent = ({
   rightIcon,
 }: Props) => {
   return (
-    <div className={`${className} recipesSection`}>
+    <div className={`${className}`}>
       <SliderNav
         isContentSlider={isContentSlider}
         data={data}
