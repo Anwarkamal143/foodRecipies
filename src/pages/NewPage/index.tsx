@@ -12,10 +12,8 @@ import { PageLayoutWrapper } from "@layouts"
 import {
   categoryData,
   FavData,
-  FavRecipeData,
-  OnlineUsersData,
-  ourCooks,
-  IngredientData
+  FavRecipeData, IngredientData, OnlineUsersData,
+  ourCooks
 } from "data"
 import React, { useEffect, useState } from "react"
 import { SearchHeader } from "src/components/AppSearch/Header"
@@ -141,13 +139,15 @@ const NewPage = ({ className }: Props) => {
                 />
               </div>
             </div>
-            <SilderComponent
-              data={categoryData}
-              isContent={false}
-              isNavBar={true}
-              isNavSlider={true}
-              rightIcon={false}
-            />
+            <div className="recipesSection pageProductCategories">
+              <SilderComponent
+                data={categoryData}
+                isContent={false}
+                isNavBar={true}
+                isNavSlider={true}
+                rightIcon={false}
+              />
+            </div>
             <header className="recipesSectionHeader">
               <strong className="recipesSectionTitle">Featured Recipes</strong>
               <div className="favorite-head">
@@ -186,7 +186,7 @@ const NewPage = ({ className }: Props) => {
             />
           </div>
           <Leaderboard data={FavData} />
-          <div className="recipesSection">
+          <div className="recipesSection align-center ingredientBlock">
             <SilderComponent
               data={IngredientData}
               title="Browse Recipes by Ingredient"

@@ -80,7 +80,7 @@ const MobileSwiperModal = ({
           )}
           {...rest}
         >
-          <span onClick={onClose}>X</span>
+          <span className="modalCloseButton" onClick={onClose}>X</span>
           <Slider draggable={true} ref={ref} {...settings}>
             {activeData()}
           </Slider>
@@ -93,18 +93,48 @@ const MobileSwiperModal = ({
 export default styled(MobileSwiperModal)`
   max-width: 1040px;
 
+  @media (max-width: 1023px) {
+    max-width: 768px;
+  }
+
+  .modalCloseButton {
+    position: absolute;
+    right: 0;
+    top: -10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    z-index: 1;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 5px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+
+    @media (max-width: 1023px) {
+      right: -5px;
+    }
+
+    @media (max-width: 767px) {
+      width: 32px;
+      height: 32px;
+      right: -10px;
+    }
+  }
+
   .modal-content {
     padding: 0;
     margin: 0;
     background: none;
-    padding: 0 100px;
+    padding: 20px 100px;
 
     @media (max-width: 1023px) {
-      padding: 0 80px;
+      padding: 20px 80px;
     }
 
     @media (max-width: 767px) {
-      padding: 0 40px;
+      padding: 20px 40px;
     }
   }
 

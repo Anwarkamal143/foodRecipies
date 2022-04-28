@@ -72,13 +72,18 @@ const SliderNav = ({
           )}
         </div>
       </header>
+      
       {isNavBar &&
         (isNavSlider ? (
-          <Slider ref={sliderRef} {...settings}>
-            {TypeSlider()}
-          </Slider>
+          <div className="recipesCategoriesSlider">
+            <Slider ref={sliderRef} {...settings}>
+              {TypeSlider()}
+            </Slider>
+          </div>
         ) : (
-          <TypeSlider />
+          <div className="recipesCategories">
+            <TypeSlider />
+          </div>
         ))}
       {isContent && (
         <SliderContent
