@@ -8,14 +8,12 @@ import {
   Vegan,
   Vegetarian
 } from "@icons"
-import { PageLayoutWrapper } from "@layouts"
+import { getPageLayout } from "@layouts"
 import {
   categoryData,
   FavData,
-  FavRecipeData,
-  OnlineUsersData,
-  ourCooks,
-  IngredientData
+  FavRecipeData, IngredientData, OnlineUsersData,
+  ourCooks
 } from "data"
 import React, { useEffect, useState } from "react"
 import { SearchHeader } from "src/components/AppSearch/Header"
@@ -43,7 +41,7 @@ const NewPage = ({ className }: Props) => {
   }, [categoryData])
   return (
     <div className={`recipesPage ${className}`}>
-      <PageLayoutWrapper className="recipesPageWrapper" variant={"regular"}>
+
         <div className="recipesContainer">
           <div className="recipesSection">
             {/* <AppSearch toggleSideBar={true} /> */}
@@ -170,6 +168,7 @@ const NewPage = ({ className }: Props) => {
               isContentSlider={false}
               isContent={true}
               isNavBar={true}
+              
               isNavSlider={true}
               title="Browse Recipes By Category"
               discription="A recipe is a set of instructions that describes how to prepare or make."
@@ -217,11 +216,16 @@ const NewPage = ({ className }: Props) => {
           />
         </div>
         <Footer />
-      </PageLayoutWrapper>
     </div>
   )
 }
-
+NewPage.layout = {
+  layout: getPageLayout,
+  props: {
+    className:"recipesPageWrapper", variant:"regular",
+    sidebar: false
+  }
+}
 export default styled(NewPage)`
   width: 100%;
 `

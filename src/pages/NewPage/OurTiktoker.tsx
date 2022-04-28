@@ -104,11 +104,12 @@ const OurTiktoker = ({ data = [], className, title, discription }: Props) => {
           </div>
         </a>
       </header>
-      <Slider draggable={true} ref={sliderRef} {...settings}>
+      <Slider ref={sliderRef} {...settings}>
         {users()}
       </Slider>
       <ModalforTiktok
         isOpen={isOpenModel}
+
         items={data}
         onClose={hanldeClose}
         currentSlideIndex={activeSlide}

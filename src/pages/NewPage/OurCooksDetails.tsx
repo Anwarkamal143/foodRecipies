@@ -100,7 +100,7 @@ const OurCooksDetails = ({
         </div>
         <a href="#" className="btnTikTok"><div>Latest<br/>TikToks <span className="text">View All <ArrowRight /></span></div></a>
       </header>
-      <Slider draggable={true} ref={sliderRef} {...settings}>
+      <Slider  ref={sliderRef} {...settings}>
         {users()}
       </Slider>
       <MobileSwiperModal

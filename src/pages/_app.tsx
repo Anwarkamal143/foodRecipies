@@ -1,40 +1,23 @@
-import { Navbar, Sidebar } from "@components"
-import { AppLayout, AuthLayout } from "@layouts"
-import {
-  AppLayoutWrapper,
-  MainContainer,
-  MainContentSectionWrapper
-} from "@layouts/applayout.styled"
+import { AppLayout } from "@layouts"
 import { store } from "@redux"
 import "@styles/globals.scss"
 import type { AppProps } from "next/app"
-import { ComponentType, ReactElement, ReactNode, useMemo } from "react"
+import { ComponentType, ReactElement, ReactNode } from "react"
 import { CookiesProvider } from "react-cookie"
 import { Provider } from "react-redux"
 type IAppProps = AppProps & {
   Component: AppProps['Component'] & {
     getLayout?: (component: ComponentType | ReactElement | ReactNode) => ComponentType
+    layout?: {
+      layout:  (component: ComponentType | ReactElement | ReactNode, props?: Record<string, any>) => ComponentType,
+      props: Record<string, any>
+    }
   }
 }
 function MyApp({ Component, pageProps }: IAppProps) {
-  const MemoFunction = useMemo(
-    () => (
-      <AppLayout>
-        <AppLayoutWrapper>
-          <MainContainer>
-            <Navbar />
-            <MainContentSectionWrapper>
-              <Sidebar className="Sidebar" />
-              <Component {...pageProps} />
-            </MainContentSectionWrapper>
-          </MainContainer>
-        </AppLayoutWrapper>
-      </AppLayout>
-    ),
-    [pageProps]
-  )
-  const getLayout  = Component.getLayout || (page => page)
-  console.log("console log", typeof window == "undefined", Component.getLayout)
+
+  const getLayout  = Component.layout?.layout || (page => page)
+  console.log("console log", typeof window == "undefined", Component.layout?.props)
   return (
     // <SessionProvider
     //   // Provider options are not required but can be useful in situations where
@@ -43,17 +26,9 @@ function MyApp({ Component, pageProps }: IAppProps) {
     // >
     <CookiesProvider>
       <Provider store={store}>
-        <AuthLayout> <AppLayout>
-        <AppLayoutWrapper>
-          <MainContainer>
-            <Navbar />
-            <MainContentSectionWrapper>
-              <Sidebar className="Sidebar" />
-              {getLayout(<Component {...pageProps} />) }
-            </MainContentSectionWrapper>
-          </MainContainer>
-        </AppLayoutWrapper>
-      </AppLayout></AuthLayout>
+         <AppLayout {...(Component.layout?.props || {})} >
+              {getLayout(<Component {...pageProps}  />, {...(Component.layout?.props || {})}) }
+      </AppLayout>
       </Provider>
     </CookiesProvider>
     // </SessionProvider>

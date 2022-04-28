@@ -6,7 +6,7 @@ import {
   InstagramIcon,
   TimeDuraion,
   TwitterIcon,
-  YoutubeIcon,
+  YoutubeIcon
 } from "@icons"
 import { userList } from "data"
 import React from "react"
@@ -35,10 +35,11 @@ const UserListSection = (props: Props) => {
                 {selected}
               </Button>
             )}
-            items={[{ name: "New" }, { name: "Most Popular" }]}
+            items={[{ name: "New", id: 1 }, { name: "Most Popular", id:2 }]}
             renderItem={({ item, isActive, onClick }) => {
               return (
-                <div
+                <div  
+                key={item.id}
                   className={`${isActive} item`}
                   onClick={() => onClick(item.name)}
                 >
@@ -59,10 +60,11 @@ const UserListSection = (props: Props) => {
                 {selected}
               </Button>
             )}
-            items={[{ name: "New" }, { name: "Most Popular" }]}
+            items={[{ name: "New",id: 1 }, { name: "Most Popular", id:2 }]}
             renderItem={({ item, isActive, onClick }) => {
               return (
                 <div
+                key={item.id}
                   className={`${isActive} item`}
                   onClick={() => onClick(item.name)}
                 >

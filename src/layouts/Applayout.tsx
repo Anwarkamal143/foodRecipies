@@ -1,25 +1,34 @@
 // import { Header, Sidebar } from "@Components"
+import { Navbar, Sidebar } from "@components"
 import { StyledLayoutWrapper } from "@styled"
-import { ComponentType, ReactElement, ReactNode } from "react"
-import { MainContentWrapper } from "./applayout.styled"
+import { cloneElement, ComponentType, ReactElement, ReactNode } from "react"
+import { AppLayoutWrapper, MainContainer, MainContentSectionWrapper, MainContentWrapper } from "./applayout.styled"
 
 export type LayoutType = {
   variant?: "small" | "regular"
   children: React.ReactNode | JSX.Element | React.ReactNode[]
   styles?: React.CSSProperties
-  otherProps?: Record<string, unknown>
+  otherProps?: Record<string, unknown>,
+  sidebar?: boolean
 }
 
 export function AppLayout(props: LayoutType) {
-  const { otherProps, children, styles } = props
+  const { otherProps, children, styles, sidebar = true } = props
+  console.log({props})
 
   return (
     <StyledLayoutWrapper>
-      {/* <AppLayoutWrapper style={styles} {...otherProps}>
-        <MainContainer> */}
-      <MainContentWrapper>{children}</MainContentWrapper>
-      {/* </MainContainer>
-      </AppLayoutWrapper> */}
+      <AppLayoutWrapper style={styles} {...otherProps}>
+        <MainContainer>
+          <Navbar />
+           <MainContentSectionWrapper>
+              {sidebar && <Sidebar className="Sidebar" />}
+                  <MainContentWrapper>
+                    {cloneElement(children as any, {...props})}
+                  </MainContentWrapper>
+            </MainContentSectionWrapper>
+      </MainContainer>
+      </AppLayoutWrapper>
     </StyledLayoutWrapper>
   )
 }
