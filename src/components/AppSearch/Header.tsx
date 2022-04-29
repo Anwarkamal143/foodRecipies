@@ -2,9 +2,13 @@ import { ArrowRight, CrossIcon, SearchIcon } from "@icons"
 import React from "react"
 import styled from "styled-components"
 import { Input } from "../Input"
+import { Select } from "../Select"
+import Button from "./../Button/Button"
 
 type Props = {
   className?: string
+  header?: boolean
+  filterOption?: boolean
   title?: string
   onSearch?: (text?: string) => void
   onClose?: () => void
@@ -12,20 +16,32 @@ type Props = {
 }
 
 const Header = (props: Props) => {
-  const { className, title = "Smart Search", onSearch, onClose, value } = props
+  const {
+    className,
+    filterOption = false,
+    title = "Smart Search",
+    onSearch,
+    onClose,
+    header = true,
+    value,
+  } = props
+  const [searchText, setSearchText] = useState("")
+  const [filter, setFilter] = useState(false)
 
   const handleSearch = (searchTextt: string) => {
-
     onSearch?.(searchTextt)
   }
   return (
     <div className={className}>
-      <div className="searchHeaderHeading">
-        <h3>{title}</h3>
-        <div className="searchHeaderClose" onClick={onClose}>
-          <CrossIcon />
+      {header && (
+        <div className="searchHeaderHeading">
+          <h3>{title}</h3>
+          <div className="searchHeaderClose" onClick={onClose}>
+            <CrossIcon />
+          </div>
         </div>
-      </div>
+      )}
+
       <div className="searchHeaderForm">
         <Input
           value={value}
@@ -40,16 +56,70 @@ const Header = (props: Props) => {
           <CrossIcon
             className="clearsearchbtn"
             onClick={() => {
-              handleSearch("")}}
+              handleSearch("")
+            }}
           />
         )}
         <span className={value ? "active_search" : "searchIcon"}>
           <SearchIcon />
         </span>
-        <div className="filterButtons">
-          <a href="#" className="buttonFilters"><img src="/images/icon-filters.png" alt="Filters" /></a>
-          <button className="buttonSearch"><span className="text">Smart Search</span> <ArrowRight className="iconArrow" /> <SearchIcon className="iconSearch" /></button>
-        </div>
+        {filterOption && (
+          <div className="filterButtons">
+            <Button
+              shape="circle"
+              className="buttonFilters"
+              size="small"
+              onClick={() => setFilter(!filter)}
+            >
+              <img src="/images/icon-filters.png" alt="Filters" />
+            </Button>
+            {filter && (
+              <div className="searchSiltersDropdown">
+                <div className="option-type">
+                  <label>Recipe Type</label>
+                  <Select
+                    options={[{ value: "All Cooks", label: "All Cooks" }]}
+                  />
+                </div>
+                <div className="option-type">
+                  <label>Diet Restrictions</label>
+                  <Select
+                    options={[{ value: "All Cooks", label: "All Cooks" }]}
+                  />
+                </div>
+                <div className="option-type">
+                  <label>Ingredient Search</label>
+                  <div className="field-wrap">
+                    <Input
+                      value={searchText}
+                      className="search_input"
+                      placeholder="Smart Search Recipe & Cooks…"
+                      onChange={e => {
+                        handleSearch(e.target.value)
+                      }}
+                      materialDesign
+                    />
+                    <SearchIcon />
+                  </div>
+                </div>
+                <Button
+                  shape="circle"
+                  className="buttonFilterApply"
+                  size="small"
+                  onClick={() => setFilter(false)}
+                >
+                  Apply
+                </Button>
+              </div>
+            )}
+            <span className="buttonFilters"></span>
+            <button className="buttonSearch">
+              <span className="text">Smart Search</span>{" "}
+              <ArrowRight className="iconArrow" />{" "}
+              <SearchIcon className="iconSearch" />
+            </button>
+          </div>
+        )}
       </div>
     </div>
   )

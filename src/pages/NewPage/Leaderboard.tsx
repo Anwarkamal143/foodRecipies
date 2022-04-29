@@ -22,7 +22,7 @@ const Leaderboard = ({ data = [] }: Props) => {
               button={selected => (
                 <Button
                   shape="circle"
-                  iconRight={<Bell />}
+                  iconLeft={<Bell />}
                   className="buttonFilter"
                   size="small"
                   title="All Recipes"
@@ -46,7 +46,7 @@ const Leaderboard = ({ data = [] }: Props) => {
               button={selected => (
                 <Button
                   shape="circle"
-                  iconRight={<Calander />}
+                  iconLeft={<Calander />}
                   className="buttonFilter"
                   size="small"
                   title="Monthly"
