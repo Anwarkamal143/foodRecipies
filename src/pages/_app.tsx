@@ -16,8 +16,8 @@ type IAppProps = AppProps & {
 }
 function MyApp({ Component, pageProps }: IAppProps) {
 
-  const {layout,...rest} = Component.layout
-  const getLayout  = layout ? layout : (page => page)
+
+  const getLayout  = Component?.layout?.layout ? Component?.layout.layout : (page => page)
   console.log("console log", typeof window == "undefined", Component.layout?.props, Component.layout)
   return (
     // <SessionProvider
@@ -27,8 +27,8 @@ function MyApp({ Component, pageProps }: IAppProps) {
     // >
     <CookiesProvider>
       <Provider store={store}>
-         <AppLayout {...(rest.props || {})} >
-              {getLayout(<Component {...pageProps}  />, {...(rest.props || {}), ...pageProps}) }
+         <AppLayout {...(Component?.layout?.props || {})} >
+              {getLayout(<Component {...pageProps}  />, {...(Component?.layout?.props || {}), ...pageProps}) }
       </AppLayout>
       </Provider>
     </CookiesProvider>

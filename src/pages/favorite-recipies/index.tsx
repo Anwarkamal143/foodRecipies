@@ -1,6 +1,6 @@
 import { DropDown, ProfileSteps } from "@components"
 import { DownArrowIcon, FilterIcon, SearchIconAlt } from "@icons"
-import { PageLayoutWrapper } from "@layouts"
+import { getPageLayout } from "@layouts"
 import { FavData } from "data"
 import cloneDeep from "lodash/cloneDeep"
 import Pagination from "rc-pagination"
@@ -31,7 +31,7 @@ const Favorite = ({ className }: Props) => {
   }
   return (
     <div className={`savedRecipesPage ${className}`}>
-      <PageLayoutWrapper className="savedRecipesWrapper" variant={"regular"}>
+      {/* <PageLayoutWrapper className="savedRecipesWrapper" variant={"regular"}> */}
         <div className="recipesContainer">
           <ProfileSteps className="profile-header" />
           <FilterSection className="recipesFiltersForm">
@@ -101,11 +101,19 @@ const Favorite = ({ className }: Props) => {
             prevIcon="Previous"
           />
         </div>
-      </PageLayoutWrapper>
+      {/* </PageLayoutWrapper> */}
     </div>
   )
 }
 
+Favorite.layout  ={
+  layout: getPageLayout,
+  props: {
+className:"savedRecipesWrapper", variant:"regular",
+sidebar:false
+  }
+}
 export default styled(Favorite)`
   width: 100%;
 `
+
