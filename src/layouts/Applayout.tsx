@@ -18,8 +18,8 @@ export function AppLayout(props: LayoutType) {
   console.log({props})
 
   return (
-    <StyledLayoutWrapper>
-      <AppLayoutWrapper style={styles} {...otherProps}>
+    <StyledLayoutWrapper >
+      <AppLayoutWrapper style={styles} {...otherProps} className={sidebar ? 'sidebar': "no_sidebar"}>
         <MainContainer>
           <Navbar />
            <MainContentSectionWrapper>
