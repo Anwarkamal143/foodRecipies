@@ -1,5 +1,4 @@
-import { ChevronRightIcon } from "@icons"
-import { settings } from "data"
+import { ChevronRightIcon, LeftSliderArrow, RightSliderArrow } from "@icons"
 import React, { useRef, useState } from "react"
 import Slider from "react-slick"
 import styled from "styled-components"
@@ -14,16 +13,52 @@ type Props = {
   header?: boolean
   handleSilderData?: any
 }
-
+const settings = {
+  dots: false,
+  arrow: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 5,
+  slidesToScroll: 1,
+  nextArrow: <RightSliderArrow />,
+  prevArrow: <LeftSliderArrow />,
+  draggable: true,
+  swipe: true,
+  responsive: [
+    {
+      breakpoint: 1199,
+      settings: {
+        slidesToScroll: 1,
+        slidesToShow: 4,
+      },
+    },
+    {
+      breakpoint: 1023,
+      settings: {
+        slidesToScroll: 1,
+        slidesToShow: 3,
+      },
+    },
+    {
+      breakpoint: 767,
+      settings: {
+        slidesToScroll: 1,
+        slidesToShow: 2,
+        arrows: false,
+      },
+    },
+  ],
+}
 const SliderNav = ({
   className,
   data = [],
   title,
-  header =true,
+  header = true,
   discription,
   rightIcon = true,
   isNavBar = true,
   handleSilderData,
+  ...rest
 }: Props) => {
   const [active, setActive] = useState<any>("")
   const sliderRef = useRef(null)
@@ -72,7 +107,7 @@ const SliderNav = ({
       )}
 
       {isNavBar && (
-        <Slider ref={sliderRef} {...settings}>
+        <Slider ref={sliderRef} {...settings} {...rest}>
           {TypeSlider()}
         </Slider>
       )}
