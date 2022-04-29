@@ -1,5 +1,6 @@
 import { DropDown } from "@components"
 import {
+  AngleRight,
   Bell,
   Calander,
   DairyFree,
@@ -95,7 +96,12 @@ const NewPage = ({ className }: Props) => {
                     >
                       {item.icon}
                       {item.name}
-                      {item.option && <span>{item.option}</span>}
+                      {item.option && (
+                        <span className="img-arrow">
+                          {item.option}
+                          <AngleRight />
+                        </span>
+                      )}
                     </div>
                   )
                 }}
@@ -150,7 +156,12 @@ const NewPage = ({ className }: Props) => {
                     >
                       {item.icon}
                       {item.name}
-                      {item.option && <span>{item.option}</span>}
+                      {item.option && (
+                        <span className="img-arrow">
+                          {item.option}
+                          <AngleRight />
+                        </span>
+                      )}
                     </div>
                   )
                 }}
@@ -161,7 +172,7 @@ const NewPage = ({ className }: Props) => {
             <SliderNav data={categoryData} header={false} />
           </div>
         </div>
-        <div className="recipesSection">
+        <div className="recipesSection no-slider">
           <SliderNav
             title="Featured Recipes"
             discription="A recipe is a set of instructions that describes how to prepare or make."
@@ -238,4 +249,10 @@ NewPage.layout = {
 }
 export default styled(NewPage)`
   width: 100%;
+
+  .no-slider {
+    .recipesCategoriesSlider {
+      margin: 0;
+    }
+  }
 `

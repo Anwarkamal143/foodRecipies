@@ -71,8 +71,8 @@ export const SearchedCookRecipeItem = styled(SearchedItem)`
     .itemTextbox {
       flex-grow: 1;
       flex-basis: 0;
-      font-size: 14px;
-      line-height: 18px;
+      font-size: 12px;
+      line-height: 15px;
       color: #1e1e2d;
       padding: 0 10px 0 15px;
       transition: all 0.4s ease;
