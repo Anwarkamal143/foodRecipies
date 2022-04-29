@@ -1,7 +1,6 @@
 import { ChevronRightIcon } from "@icons"
-import React, { useState } from "react"
+import React, { useRef, useState } from "react"
 import styled from "styled-components"
-import BrowseRecipesByCategory from "./BrowseRecipesByCategory"
 
 type Props = {
   data?: any
@@ -11,7 +10,7 @@ type Props = {
   viewAllBtn?: boolean
 }
 
-const CategoryTypes = ({
+const IngredientTabs = ({
   className,
   data = [],
   title,
@@ -19,6 +18,8 @@ const CategoryTypes = ({
   viewAllBtn = true,
 }: Props) => {
   const [index, setIndex] = useState<any>(0)
+  const sliderRef = useRef(null)
+  const [tabIndex, setTabIndex] = useState(0)
 
   return (
     <div className={className}>
@@ -33,27 +34,8 @@ const CategoryTypes = ({
           )}
         </div>
       </header>
-
-      <div className="recipesCategories">
-        {data?.map((e: any, ind) => {
-          return (
-            <div
-              key={e?.category}
-              className={`recipesCategoriesButton ${className} ${
-                ind === index ? "active" : "in-active"
-              }`}
-            >
-              <span className="img">
-                <img src={e.image} />
-              </span>
-              <span onClick={() => setIndex(ind)}>{e.category}</span>
-            </div>
-          )
-        })}
-      </div>
-      <BrowseRecipesByCategory index={index} data={data} />
     </div>
   )
 }
 
-export default styled(CategoryTypes)``
+export default styled(IngredientTabs)``

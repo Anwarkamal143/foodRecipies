@@ -7,5 +7,7 @@ import { MyFeedsScreen } from "@screens"
 
 // MyFeeds.pageLayout = Page
 
-MyFeeds.getLayout = getPageLayout
+MyFeeds.layout = {
+  layout: getPageLayout
+}
 export default MyFeeds

@@ -2,6 +2,7 @@ import { Modal, VideoPlayer } from "@components"
 import { LeftSliderArrow, RightSliderArrow } from "@icons"
 import classNames from "classnames"
 import React, { useRef } from "react"
+import NoSSR from "react-no-ssr"
 import Slider from "react-slick"
 import styled from "styled-components"
 
@@ -22,7 +23,7 @@ const settings = {
   nextArrow: <RightSliderArrow />,
   prevArrow: <LeftSliderArrow />,
 }
-const MobileSwiperModal = ({
+const ModalforTiktok = ({
   className,
   items,
   isModalOpen = false,
@@ -53,7 +54,7 @@ const MobileSwiperModal = ({
               </div>
               <div className="subscribeButton">
                 <a href="#" className="btnSubscribe">
-                  Subscribe
+                  Follow
                 </a>
               </div>
             </div>
@@ -63,7 +64,7 @@ const MobileSwiperModal = ({
     })
   }
   return (
-    <React.Fragment>
+    <NoSSR>
       {isOpen && (
         <Modal
           showHeader={false}
@@ -80,22 +81,20 @@ const MobileSwiperModal = ({
           )}
           {...rest}
         >
-          <span className="modalCloseButton" onClick={onClose}>X</span>
+          <span className="modalCloseButton" onClick={onClose}>
+            X
+          </span>
           <Slider draggable={true} ref={ref} {...settings}>
             {activeData()}
           </Slider>
         </Modal>
       )}
-    </React.Fragment>
+    </NoSSR>
   )
 }
 
-export default styled(MobileSwiperModal)`
-  max-width: 1040px;
-
-  @media (max-width: 1023px) {
-    max-width: 768px;
-  }
+export default styled(ModalforTiktok)`
+  max-width: 600px;
 
   .modalCloseButton {
     position: absolute;
@@ -112,7 +111,7 @@ export default styled(MobileSwiperModal)`
     cursor: pointer;
 
     @media (max-width: 1023px) {
-      right: -5px;
+      right: 17px;
     }
 
     @media (max-width: 767px) {
@@ -150,15 +149,14 @@ export default styled(MobileSwiperModal)`
 
   .slick-slider {
     background: #fff;
-    width: 804px;
+    width: 378px;
     margin: 0 auto;
     border-radius: 30px;
-    padding: 40px;
+    padding: 24px;
     position: static;
 
     @media (max-width: 1023px) {
-      width: 600px;
-      padding: 25px;
+      width: 378px;
     }
 
     @media (max-width: 767px) {
@@ -211,11 +209,16 @@ export default styled(MobileSwiperModal)`
     border: 0;
     width: 100%;
     height: 100%;
+    min-height: 450px;
+
+    @media (max-width: 767px) {
+      min-height: 350px;
+    }
   }
 
   .userTextbox {
     overflow: hidden;
-    padding: 35px 0 0;
+    padding: 20px 0 0;
 
     @media (max-width: 767px) {
       padding: 20px 0 0;
@@ -224,10 +227,10 @@ export default styled(MobileSwiperModal)`
     .title {
       display: block;
       color: #fff;
-      font-size: 19px;
+      font-size: 15px;
       line-height: 1.25;
       color: #1e1e2d;
-      margin: 0 0 30px;
+      margin: 0 0 20px;
 
       @media (max-width: 767px) {
         font-size: 15px;
@@ -254,11 +257,11 @@ export default styled(MobileSwiperModal)`
     }
 
     .profileImage {
-      width: 44px;
-      min-width: 44px;
-      height: 44px;
+      width: 34px;
+      min-width: 34px;
+      height: 34px;
       border-radius: 10px;
-      margin: 0 20px 0 0;
+      margin: 0 10px 0 0;
 
       @media (max-width: 767px) {
         width: 34px;
@@ -279,7 +282,7 @@ export default styled(MobileSwiperModal)`
 
     .uesername {
       display: block;
-      font-size: 16px;
+      font-size: 12px;
       line-height: 1.25;
       color: #1e1e2d;
       margin: 0 0 4px;
@@ -291,7 +294,7 @@ export default styled(MobileSwiperModal)`
 
     .postby {
       display: block;
-      font-size: 10px;
+      font-size: 9px;
       line-height: 1.25;
       color: #8d8d8d;
 
@@ -302,13 +305,13 @@ export default styled(MobileSwiperModal)`
   }
 
   .btnSubscribe {
-    height: 34px;
-    background: #e0464d;
+    height: 30px;
+    background: #000;
     border-radius: 5px;
     color: #fff;
-    font-size: 13px;
+    font-size: 11px;
     line-height: 20px;
-    padding: 7px 30px;
+    padding: 5px 30px;
     transition: all 0.4s ease-in-out;
 
     @media (max-width: 767px) {

@@ -15,8 +15,6 @@ type IMyFeedProps = {
 function Posts(props: IMyFeedProps) {
   const { className, onSubmit, post } = props
   const [isOpenModel, onOpenModel, onCloseModel] = useOpenClose()
-  console.log(post, "posts")
-
   //   const {
   //     values,
   //     handleSubmit,
