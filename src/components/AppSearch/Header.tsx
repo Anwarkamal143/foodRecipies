@@ -67,14 +67,14 @@ const Header = (props: Props) => {
           <div className="filterButtons">
             <Button
               shape="circle"
-              className="buttonFilter"
+              className="buttonFilters"
               size="small"
               onClick={() => setFilter(!filter)}
             >
               <img src="/images/icon-filters.png" alt="Filters" />
             </Button>
             {filter && (
-              <div className="dropdown">
+              <div className="searchSiltersDropdown">
                 <div className="option-type">
                   <label>Recipe Type</label>
                   <Select
@@ -82,26 +82,29 @@ const Header = (props: Props) => {
                   />
                 </div>
                 <div className="option-type">
-                  <label>Recipe Type</label>
+                  <label>Diet Restrictions</label>
                   <Select
                     options={[{ value: "All Cooks", label: "All Cooks" }]}
                   />
                 </div>
                 <div className="option-type">
-                  <label>Recipe Type</label>
-                  <Input
-                    value={searchText}
-                    className="search_input"
-                    placeholder="Smart Search Recipe & Cooks…"
-                    onChange={e => {
-                      handleSearch(e.target.value)
-                    }}
-                    materialDesign
-                  />
+                  <label>Ingredient Search</label>
+                  <div className="field-wrap">
+                    <Input
+                      value={searchText}
+                      className="search_input"
+                      placeholder="Smart Search Recipe & Cooks…"
+                      onChange={e => {
+                        handleSearch(e.target.value)
+                      }}
+                      materialDesign
+                    />
+                    <SearchIcon />
+                  </div>
                 </div>
-                <Button
+                 <Button 
                   shape="circle"
-                  className="buttonFilter"
+                  className="buttonFilterApply"
                   size="small"
                   onClick={() => setFilter(false)}
                 >

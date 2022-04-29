@@ -5,16 +5,16 @@ import {
   GlutenFree,
   NutFree,
   Vegan,
-  Vegetarian,
+  Vegetarian
 } from "@icons"
-import { PageLayoutWrapper } from "@layouts"
+import { getPageLayout } from "@layouts"
 import {
   categoryData,
   FavData,
   FavRecipeData,
   IngredientData,
   OnlineUsersData,
-  ourCooks,
+  ourCooks
 } from "data"
 import React, { useEffect, useState } from "react"
 import { SearchHeader } from "src/components/AppSearch/Header"
@@ -47,7 +47,7 @@ const NewPage = ({ className }: Props) => {
 
   return (
     <div className={`recipesPage ${className}`}>
-      <PageLayoutWrapper className="recipesPageWrapper" variant={"regular"}>
+
         <div className="recipesContainer">
           <div className="recipesSection">
             {/* <AppSearch toggleSideBar={true} /> */}
@@ -116,19 +116,19 @@ const NewPage = ({ className }: Props) => {
                     },
                     {
                       name: "American",
-                      icon: <img src="/images/italy.png" alt="side-dishes" />,
+                      icon: <img src="/images/american.png" alt="side-dishes" />,
                     },
                     {
                       name: "Mexican",
-                      icon: <img src="/images/italy.png" alt="side-dishes" />,
+                      icon: <img src="/images/mexican.png" alt="side-dishes" />,
                     },
                     {
                       name: "Asian",
-                      icon: <img src="/images/italy.png" alt="side-dishes" />,
+                      icon: <img src="/images/asian.png" alt="side-dishes" />,
                     },
                     {
                       name: "Indian",
-                      icon: <img src="/images/italy.png" alt="side-dishes" />,
+                      icon: <img src="/images/india.png" alt="side-dishes" />,
                     },
                   ]}
                   renderItem={({ item, isActive, onClick }) => {
@@ -211,11 +211,16 @@ const NewPage = ({ className }: Props) => {
           />
         </div>
         <Footer />
-      </PageLayoutWrapper>
     </div>
   )
 }
-
+NewPage.layout = {
+  layout: getPageLayout,
+  props: {
+    className:"recipesPageWrapper", variant:"regular",
+    sidebar: false
+  }
+}
 export default styled(NewPage)`
   width: 100%;
 `

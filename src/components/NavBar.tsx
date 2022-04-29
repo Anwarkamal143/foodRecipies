@@ -1,5 +1,5 @@
 import { ChevronRightIcon } from "@icons"
-import React, { useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import styled from "styled-components"
 type Props = {
   data?: any
@@ -22,7 +22,15 @@ const NavBar = ({
   handleSilderData,
 }: Props) => {
   const [active, setActive] = useState<any>("")
+  const sliderRef = useRef(null)
+  const [silderData, setSilderData] = useState<any>([])
+useEffect(() => {
+  if(data?.length){
 
+    setActive(data[0].category);
+    setSilderData(data[0].data);
+  }
+},[])
   const handleContent = (_id: string) => {
     setActive(_id)
     const filterData = data.filter((e: any) => {

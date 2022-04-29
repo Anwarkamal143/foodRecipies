@@ -122,6 +122,10 @@ export const SearchedSections = styled(SearchedRecipesAndCooks)`
       color: #8d8d96;
     }
 
+    span.section_title {
+      color: #E0464D;
+    }
+
     .buttonViewAll {
       font-size: 10px;
       line-height: 14px;

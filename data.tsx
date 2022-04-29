@@ -490,8 +490,8 @@ export const FavRecipeData = [
 ]
 export const categoryData = [
   {
-    category: "Breakfast",
-    image: "/images/icon-cat01.png",
+    category: "Snacks",
+    image: "/images/icon-lg01.png",
     data: [
       {
         id: "s",
@@ -512,8 +512,8 @@ export const categoryData = [
     ],
   },
   {
-    category: "Snacks",
-    image: "/images/icon-cat02.png",
+    category: "Breakfast",
+    image: "/images/icon-lg02.png",
     data: [
       {
         id: "sss",
@@ -536,37 +536,62 @@ export const categoryData = [
 
   {
     category: "Sandwiches",
-    image: "/images/icon-cat03.png",
+    image: "/images/icon-lg03.png",
     data: [],
   },
   {
-    category: "Baked Goods",
-    image: "/images/icon-cat04.png",
+    category: "BBQ",
+    image: "/images/icon-lg04.png",
+    data: [],
+  },
+  {
+    category: "Healthy",
+    image: "/images/icon-lg05.png",
     data: [],
   },
   {
     category: "Dinner",
-    image: "/images/icon-cat05.png",
+    image: "/images/icon-lg06.png",
     data: [],
   },
   {
     category: "Dessert",
-    image: "/images/icon-cat06.png",
+    image: "/images/icon-lg07.png",
     data: [],
   },
   {
     category: "Seafood",
-    image: "/images/icon-cat07.png",
+    image: "/images/icon-lg08.png",
     data: [],
   },
   {
     category: "Appetizers",
-    image: "/images/icon-cat08.png",
+    image: "/images/icon-lg09.png",
     data: [],
   },
   {
     category: "Pasta",
-    image: "/images/icon-cat09.png",
+    image: "/images/icon-lg10.png",
+    data: [],
+  },
+  {
+    category: "Drinks",
+    image: "/images/icon-lg11.png",
+    data: [],
+  },
+  {
+    category: "Soup",
+    image: "/images/icon-lg12.png",
+    data: [],
+  },
+  {
+    category: "Baked Goods",
+    image: "/images/icon-lg13.png",
+    data: [],
+  },
+  {
+    category: "Appetizers",
+    image: "/images/icon-lg14.png",
     data: [],
   },
 ]
