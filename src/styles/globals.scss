@@ -314,7 +314,7 @@ body {
 
     @media (max-width: 767px) {
       font-size: 16px;
-      color: #1E1E2D;
+      color: #1e1e2d;
       margin: 0 0 5px;
       padding-right: 105px;
     }
@@ -393,6 +393,12 @@ body {
   display: flex;
   margin: 0 -7px;
   flex-flow: row wrap;
+}
+
+.slick-slider {
+  .recipeItem {
+    width: 100%;
+  }
 }
 
 .recipeItem {
@@ -714,7 +720,7 @@ body {
       margin: 0 auto;
       width: auto;
       max-height: 25px;
-      
+
       @media (max-width: 767px) {
         width: 100%;
       }
@@ -1100,7 +1106,7 @@ body {
         position: absolute;
         right: 10px;
         top: 50%;
-        content: '';
+        content: "";
         margin-top: -1px;
         transform: translateY(-50%) rotate(45deg);
       }
@@ -1225,13 +1231,13 @@ body {
       text-align: center;
 
       &:after {
-        content: '';
+        content: "";
         display: inline-block;
         vertical-align: top;
         margin: 0 auto;
         border-style: solid;
         border-width: 6px 4.5px 0 4.5px;
-        border-color: #E0464D transparent transparent transparent;
+        border-color: #e0464d transparent transparent transparent;
       }
     }
 
@@ -1243,13 +1249,13 @@ body {
       text-align: center;
 
       &:after {
-        content: '';
+        content: "";
         display: inline-block;
         vertical-align: top;
         margin: 0 auto;
         border-style: solid;
         border-width: 0 4.5px 6px 4.5px;
-        border-color: transparent transparent #11C278 transparent;
+        border-color: transparent transparent #11c278 transparent;
       }
     }
   }
@@ -1415,17 +1421,17 @@ body {
   }
 }
 
-.socialCooksblock  {
+.socialCooksblock {
   .recipesSectionHeader {
     position: relative;
     overflow: visible;
   }
-  
+
   .btnTikTok {
     width: 80px;
     height: 80px;
     border-radius: 100%;
-    background: #A4374E;
+    background: #a4374e;
     position: absolute;
     left: -15px;
     top: 100%;
@@ -1849,13 +1855,13 @@ body {
     padding: 1px 0 0;
 
     &:after {
-      content: '';
+      content: "";
       display: inline-block;
       vertical-align: top;
       margin: 0 auto;
       border-style: solid;
       border-width: 6px 4.5px 0 4.5px;
-      border-color: #E0464D transparent transparent transparent;
+      border-color: #e0464d transparent transparent transparent;
     }
   }
 
@@ -1868,13 +1874,13 @@ body {
     padding: 1px 0 0;
 
     &:after {
-      content: '';
+      content: "";
       display: inline-block;
       vertical-align: top;
       margin: 0 auto;
       border-style: solid;
       border-width: 0 4.5px 6px 4.5px;
-      border-color: transparent transparent #11C278 transparent;
+      border-color: transparent transparent #11c278 transparent;
     }
   }
 
@@ -1904,7 +1910,7 @@ body {
 }
 
 .sectionYoutube {
-  .btnTikTok { 
+  .btnTikTok {
     display: none;
   }
 
@@ -2611,13 +2617,13 @@ body {
 
   .searchHeaderForm {
     z-index: 6;
-    
+
     .text-input {
       margin: 0;
 
       &.input-active {
         .form-control {
-          border-color: #FD6066 !important;
+          border-color: #fd6066 !important;
           box-shadow: none;
         }
       }
@@ -2625,8 +2631,8 @@ body {
 
     .form-control {
       height: 45px !important;
-      border-color: #E6E6E6 !important;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      border-color: #e6e6e6 !important;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
       border-radius: 25px !important;
       padding: 10px 185px 10px 45px !important;
 
@@ -2641,7 +2647,7 @@ body {
       }
 
       &:focus {
-        box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
       }
     }
 
@@ -2666,7 +2672,7 @@ body {
         }
 
         path {
-          fill: #FF6067 !important;
+          fill: #ff6067 !important;
         }
       }
     }
@@ -2677,7 +2683,7 @@ body {
       font-size: 12px;
       line-height: 20px;
       color: #fff;
-      background: #FF6067;
+      background: #ff6067;
       border-radius: 15px;
       display: flex;
       align-items: center;
@@ -2843,7 +2849,7 @@ body {
       }
 
       &:after {
-        border: 1px solid #424E66;
+        border: 1px solid #424e66;
         border-top: 0;
         border-left: 0;
         width: 5px;
@@ -2851,7 +2857,7 @@ body {
         position: absolute;
         right: 10px;
         top: 50%;
-        content: '';
+        content: "";
         margin-top: -1px;
         transform: translateY(-50%) rotate(45deg);
       }
@@ -2874,9 +2880,9 @@ body {
       overflow: hidden;
       width: 180px;
       background: #fff;
-      border: 1px solid #E5E8EF;
+      border: 1px solid #e5e8ef;
       box-sizing: border-box;
-      box-shadow: 0px 10px 40px #8F8F8F;
+      box-shadow: 0px 10px 40px #8f8f8f;
       border-radius: 15px;
       padding: 15px 10px;
 
@@ -2888,7 +2894,7 @@ body {
         padding: 5px 10px;
         font-size: 10px;
         line-height: 20px;
-        color: #62626C;
+        color: #62626c;
         cursor: pointer;
         transition: all 0.4s ease;
         display: flex;
@@ -2907,7 +2913,7 @@ body {
         }
 
         &:hover {
-          color: #E0464D;
+          color: #e0464d;
         }
       }
     }
@@ -2938,7 +2944,7 @@ body {
     position: absolute;
     right: 35px;
     bottom: 100%;
-    content: '';
+    content: "";
     margin-bottom: -10px;
     border-style: solid;
     border-width: 0 19px 34px 19px;
@@ -2962,7 +2968,7 @@ body {
 
       .react-select__indicators {
         height: 34px;
-        color: rgba(0,0,0,0.8) !important;
+        color: rgba(0, 0, 0, 0.8) !important;
       }
 
       .react-select__indicator-separator {
@@ -3003,7 +3009,7 @@ body {
   .button.button-sm.buttonFilterApply {
     width: 100%;
     border-radius: 6px;
-    background: #FF6067;
+    background: #ff6067;
     color: #fff;
     height: 36px;
     padding: 5px 10px 9px;
@@ -3030,7 +3036,7 @@ body {
 
   .recipesCategories {
     @media (min-width: 1024px) {
-      border-bottom: 1px solid #ECECEC;
+      border-bottom: 1px solid #ececec;
       padding-bottom: 0;
       margin-bottom: 30px;
     }
@@ -3049,8 +3055,8 @@ body {
         bottom: 0;
         width: 0;
         height: 2px;
-        background: #FF595F;
-        content: '';
+        background: #ff595f;
+        content: "";
         transition: width 0.25s ease-in-out;
       }
 
@@ -3058,7 +3064,7 @@ body {
       &.active {
         @media (min-width: 1024px) {
           background: transparent;
-          color: #1E1E2D;
+          color: #1e1e2d;
         }
 
         &:after {
@@ -3107,7 +3113,7 @@ body {
       span {
         display: block;
       }
-      
+
       .img {
         margin: 0 auto 5px;
         max-width: 47px;

@@ -2,6 +2,7 @@ import { Modal, VideoPlayer } from "@components"
 import { LeftSliderArrow, RightSliderArrow } from "@icons"
 import classNames from "classnames"
 import React, { useRef } from "react"
+import NoSSR from "react-no-ssr"
 import Slider from "react-slick"
 import styled from "styled-components"
 
@@ -63,7 +64,7 @@ const ModalforTiktok = ({
     })
   }
   return (
-    <React.Fragment>
+    <NoSSR>
       {isOpen && (
         <Modal
           showHeader={false}
@@ -80,13 +81,15 @@ const ModalforTiktok = ({
           )}
           {...rest}
         >
-          <span className="modalCloseButton" onClick={onClose}>X</span>
+          <span className="modalCloseButton" onClick={onClose}>
+            X
+          </span>
           <Slider draggable={true} ref={ref} {...settings}>
             {activeData()}
           </Slider>
         </Modal>
       )}
-    </React.Fragment>
+    </NoSSR>
   )
 }
 

@@ -24,36 +24,32 @@ const ItemCards = ({
   className,
 }: Props) => {
   return (
-    <div className={className}>
-      <div className="recipesSectionHolder">
-        <div className="recipeItem" key={id}>
-          <div className="recipeItemImage">
-            <Icon className="tagsIcon">
-              <span>
-                <Tag /> Vegan
-              </span>
-            </Icon>
-            <Icon className="heartIcon">
-              <HeartIconAnimtaed />
-            </Icon>
-            <img src={image} alt="image" />
-          </div>
-          <div className="recipeItemTextbox">
-            <strong className="recipeTitle">{title}</strong>
-            <span className="recipeAuthor">
-              {fvrtBy} <AngleRight />
-            </span>
-            <div className="recipeMeta">
-              <span className="recipeMetaBox">
-                <TimeDuraion />
-                {time}
-              </span>
-              <span className="recipeMetaBox">
-                <Image src="/images/emoji.png" alt="waving hand" />
-                {state}
-              </span>
-            </div>
-          </div>
+    <div className={`${className} recipeItem`} key={id}>
+      <div className="recipeItemImage">
+        <Icon className="tagsIcon">
+          <span>
+            <Tag /> Vegan
+          </span>
+        </Icon>
+        <Icon className="heartIcon">
+          <HeartIconAnimtaed />
+        </Icon>
+        <img src={image} alt="image" />
+      </div>
+      <div className="recipeItemTextbox">
+        <strong className="recipeTitle">{title}</strong>
+        <span className="recipeAuthor">
+          {fvrtBy} <AngleRight />
+        </span>
+        <div className="recipeMeta">
+          <span className="recipeMetaBox">
+            <TimeDuraion />
+            {time}
+          </span>
+          <span className="recipeMetaBox">
+            <Image src="/images/emoji.png" alt="waving hand" />
+            {state}
+          </span>
         </div>
       </div>
     </div>

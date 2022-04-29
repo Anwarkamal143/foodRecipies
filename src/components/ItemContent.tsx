@@ -13,15 +13,14 @@ const ItemContent = ({ data, id, className }: Props) => {
       <div className="recipesSectionHolder">
         {data?.map((e: any) => {
           return (
-            <div className="recipesSectionCards" key={e.id}>
-              <ItemCards
-                image={e.image}
-                id={id || ""}
-                fvrtBy={e.fvrtBy}
-                time={e.time}
-                state={e.state}
-              />
-            </div>
+            <ItemCards
+              key={e.id}
+              image={e.image}
+              id={id || ""}
+              fvrtBy={e.fvrtBy}
+              time={e.time}
+              state={e.state}
+            />
           )
         })}
       </div>
