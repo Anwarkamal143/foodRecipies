@@ -1,5 +1,5 @@
 import { ChevronRightIcon, LeftSliderArrow, RightSliderArrow } from "@icons"
-import React, { useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import Slider from "react-slick"
 import styled from "styled-components"
 type Props = {
@@ -49,7 +49,12 @@ const SliderNav = ({
 }: Props) => {
   const [active, setActive] = useState<any>("")
   const sliderRef = useRef(null)
-
+  useEffect(() => {
+    if (data?.length) {
+      setActive(data[0]?.category)
+      handleSilderData?.(data[0]?.data, data[0]?.category)
+    }
+  }, [])
   const handleContent = (_id: string) => {
     setActive(_id)
     const filterData = data.filter((e: any) => {

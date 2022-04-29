@@ -24,13 +24,12 @@ const NavBar = ({
   const [active, setActive] = useState<any>("")
   const sliderRef = useRef(null)
   const [silderData, setSilderData] = useState<any>([])
-useEffect(() => {
-  if(data?.length){
-
-    setActive(data[0].category);
-    setSilderData(data[0].data);
-  }
-},[])
+  useEffect(() => {
+    if (data?.length) {
+      setActive(data[0]?.category)
+      handleSilderData?.(data[0]?.data, data[0]?.category)
+    }
+  }, [])
   const handleContent = (_id: string) => {
     setActive(_id)
     const filterData = data.filter((e: any) => {
