@@ -3,7 +3,7 @@ import { AngleRight, ArrowRight, LeftSliderArrow, RightSliderArrow } from "@icon
 import React, { useRef, useState } from "react"
 import Slider from "react-slick"
 import styled from "styled-components"
-import MobileSwiperModal from "./model/galleryModal"
+import ModalforTiktok from "./model/ModalforTiktok"
 type Props = {
   data?: any
   className?: string
@@ -22,7 +22,7 @@ const settings = {
   nextArrow: <RightSliderArrow />,
   prevArrow: <LeftSliderArrow />,
   draggable: true,
-	swipe: true,
+  swipe: true,
   responsive: [
     {
       breakpoint: 1199,
@@ -45,16 +45,11 @@ const settings = {
         slidesToShow: 2,
         arrows: false,
       },
-    }
+    },
   ],
 }
 
-const OurCooksDetails = ({
-  data = [],
-  className,
-  title,
-  discription,
-}: Props) => {
+const OurTiktoker = ({ data = [], className, title, discription }: Props) => {
   const [isOpenModel, onOpenModel, onCloseModel] = useOpenClose()
   const [activeSlide, setActiveSlide] = useState(0)
   const sliderRef = useRef(null)
@@ -98,13 +93,23 @@ const OurCooksDetails = ({
         <div className="favorite-head">
           <span className="recipesSectionText">{discription}</span>
         </div>
-        <a href="#" className="btnTikTok"><div>Latest<br/>TikToks <span className="text">View All <ArrowRight /></span></div></a>
+        <a href="#" className="btnTikTok">
+          <div>
+            Latest
+            <br />
+            TikToks{" "}
+            <span className="text">
+              View All <ArrowRight />
+            </span>
+          </div>
+        </a>
       </header>
-      <Slider  ref={sliderRef} {...settings}>
+      <Slider ref={sliderRef} {...settings}>
         {users()}
       </Slider>
-      <MobileSwiperModal
+      <ModalforTiktok
         isOpen={isOpenModel}
+
         items={data}
         onClose={hanldeClose}
         currentSlideIndex={activeSlide}
@@ -113,4 +118,4 @@ const OurCooksDetails = ({
   )
 }
 
-export default styled(OurCooksDetails)``
+export default styled(OurTiktoker)``

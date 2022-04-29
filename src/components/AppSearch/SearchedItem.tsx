@@ -46,7 +46,7 @@ export const SearchedCookRecipeItem = styled(SearchedItem)`
 
     &:hover {
       background: #f3f5f8;
-      padding: 5px;
+      padding: 5px 10px 5px 5px;
 
       .itemTextbox {
         color: #ff6067;
