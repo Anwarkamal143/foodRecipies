@@ -104,7 +104,6 @@ export default styled(MobileSwiperModal)`
     width: 40px;
     height: 40px;
     border-radius: 100%;
-    z-index: 1;
     background: #fff;
     display: flex;
     align-items: center;
@@ -121,6 +120,15 @@ export default styled(MobileSwiperModal)`
       height: 32px;
       right: -10px;
     }
+
+    &:after {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      content: '';
+    }
   }
 
   .modal-content {
@@ -128,6 +136,8 @@ export default styled(MobileSwiperModal)`
     margin: 0;
     background: none;
     padding: 20px 100px;
+    border: 0;
+    border-radius: 0;
 
     @media (max-width: 1023px) {
       padding: 20px 80px;
@@ -144,6 +154,7 @@ export default styled(MobileSwiperModal)`
     margin: 0 auto;
     border-radius: 30px;
     padding: 40px;
+    position: static;
 
     @media (max-width: 1023px) {
       width: 600px;
@@ -173,7 +184,7 @@ export default styled(MobileSwiperModal)`
         }
 
         @media (min-width: 1024px) {
-          left: -90px;
+          left: -70px;
         }
       }
 
@@ -185,7 +196,7 @@ export default styled(MobileSwiperModal)`
         }
 
         @media (min-width: 1024px) {
-          right: -90px;
+          right: -70px;
         }
       }
 

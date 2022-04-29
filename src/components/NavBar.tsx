@@ -71,7 +71,9 @@ useEffect(() => {
           )}
         </div>
       </header>
-      {isNavBar && <NavBarData />}
+      <div className="recipesCategories">
+        {isNavBar && <NavBarData />}
+      </div>
     </div>
   )
 }

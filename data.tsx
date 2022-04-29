@@ -180,7 +180,7 @@ export const chartData = [
 ]
 export const settings = {
   dots: false,
-  arrow: true,
+  arrows: true,
   infinite: true,
   speed: 500,
   slidesToShow: 5,

@@ -39,6 +39,14 @@ export const PageLayoutWrapper = styled.div<{ variant?: string }>`
     padding: 15px 15px 60px;
   }
 
+  .no_sidebar & {
+    padding: 20px 0 !important;
+
+    @media (max-width: 767px) {
+      padding: 20px 0 !important;
+    }
+  }
+
   button {
     outline: none;
 

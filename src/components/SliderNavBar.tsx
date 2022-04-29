@@ -15,35 +15,22 @@ type Props = {
 }
 const settings = {
   dots: false,
-  arrow: true,
+  arrows: true,
   infinite: true,
   speed: 500,
-  slidesToShow: 5,
+  slidesToShow: 1,
   slidesToScroll: 1,
   nextArrow: <RightSliderArrow />,
   prevArrow: <LeftSliderArrow />,
   draggable: true,
   swipe: true,
+  variableWidth: true,
   responsive: [
-    {
-      breakpoint: 1199,
-      settings: {
-        slidesToScroll: 1,
-        slidesToShow: 4,
-      },
-    },
-    {
-      breakpoint: 1023,
-      settings: {
-        slidesToScroll: 1,
-        slidesToShow: 3,
-      },
-    },
     {
       breakpoint: 767,
       settings: {
         slidesToScroll: 1,
-        slidesToShow: 2,
+        slidesToShow: 1,
         arrows: false,
       },
     },
@@ -107,9 +94,11 @@ const SliderNav = ({
       )}
 
       {isNavBar && (
-        <Slider ref={sliderRef} {...settings} {...rest}>
-          {TypeSlider()}
-        </Slider>
+        <div className="recipesCategoriesSlider">
+          <Slider ref={sliderRef} {...settings} {...rest}>
+            {TypeSlider()}
+          </Slider>
+        </div>
       )}
     </div>
   )
