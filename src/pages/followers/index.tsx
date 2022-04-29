@@ -10,10 +10,13 @@ type Props = {
 
 const PanCake = ({ className }: Props) => {
   const [posts, setPosts] = useState([...RecipesData])
+  const [singlePosts, setSinglePosts] = useState<any>({})
   return (
     <div className={className}>
-      {posts.splice(0, 1).map((post, i) => (
-        <Post
+      {posts.splice(0, 1).map((post, i) => {
+        setSinglePosts(post)
+        return (
+          <Post
           key={i}
           post={post}
           onSubmit={post => {
@@ -25,8 +28,9 @@ const PanCake = ({ className }: Props) => {
             }
           }}
         />
-      ))}
-      <PanCakeScreen />
+        )
+      })}
+      <PanCakeScreen post={singlePosts} />
     </div>
   )
 }
