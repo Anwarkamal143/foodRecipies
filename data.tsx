@@ -619,44 +619,37 @@ export const userList = [
 ]
 export const OnlineUsersData = [
   {
-    profile:
-      "/images/img-cook01.png",
+    profile: "/images/img-cook01.png",
     userName: "Will Courtney",
     Recipes: 105,
   },
   {
-    profile:
-      "/images/img-cook02.png",
+    profile: "/images/img-cook02.png",
     userName: "Ralph Edwards",
     Recipes: 105,
   },
   {
-    profile:
-      "/images/img-cook03.png",
+    profile: "/images/img-cook03.png",
     userName: "Robert Fox",
     Recipes: 105,
   },
   {
-    profile:
-      "/images/img-cook04.png",
+    profile: "/images/img-cook04.png",
     userName: "Cameron Williamson",
     Recipes: 105,
   },
   {
-    profile:
-      "/images/img-cook01.png",
+    profile: "/images/img-cook01.png",
     userName: "Will Courtney",
     Recipes: 105,
   },
   {
-    profile:
-      "/images/img-cook02.png",
+    profile: "/images/img-cook02.png",
     userName: "Ralph Edwards",
     Recipes: 105,
   },
   {
-    profile:
-      "/images/img-cook03.png",
+    profile: "/images/img-cook03.png",
     userName: "Robert Fox",
     Recipes: 105,
   },
