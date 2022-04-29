@@ -6,7 +6,7 @@ import {
   GlutenFree,
   NutFree,
   Vegan,
-  Vegetarian
+  Vegetarian,
 } from "@icons"
 import { getPageLayout } from "@layouts"
 import {
@@ -15,7 +15,7 @@ import {
   FavRecipeData,
   IngredientData,
   OnlineUsersData,
-  ourCooks
+  ourCooks,
 } from "data"
 import React, { useEffect, useState } from "react"
 import { SearchHeader } from "src/components/AppSearch/Header"
@@ -83,6 +83,9 @@ const NewPage = ({ className }: Props) => {
                   { name: "Vegetarian", icon: <Vegetarian /> },
                   { name: "Nut-Free", icon: <NutFree /> },
                   { name: "Dairy-Free", icon: <DairyFree /> },
+                  {
+                    option: "See all Diet Options",
+                  },
                 ]}
                 renderItem={({ item, isActive, onClick }) => {
                   return (
@@ -92,6 +95,7 @@ const NewPage = ({ className }: Props) => {
                     >
                       {item.icon}
                       {item.name}
+                      {item.option && <span>{item.option}</span>}
                     </div>
                   )
                 }}
@@ -130,6 +134,13 @@ const NewPage = ({ className }: Props) => {
                     name: "Indian",
                     icon: <img src="/images/india.png" alt="side-dishes" />,
                   },
+                  {
+                    name: "Indian",
+                    icon: <img src="/images/india.png" alt="side-dishes" />,
+                  },
+                  {
+                    option: "See all Cuisine",
+                  },
                 ]}
                 renderItem={({ item, isActive, onClick }) => {
                   return (
@@ -139,6 +150,7 @@ const NewPage = ({ className }: Props) => {
                     >
                       {item.icon}
                       {item.name}
+                      {item.option && <span>{item.option}</span>}
                     </div>
                   )
                 }}
