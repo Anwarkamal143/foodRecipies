@@ -1,11 +1,12 @@
 import { DropDown } from "@components"
 import {
+  Bell,
   Calander,
   DairyFree,
   GlutenFree,
   NutFree,
   Vegan,
-  Vegetarian,
+  Vegetarian
 } from "@icons"
 import { getPageLayout } from "@layouts"
 import {
@@ -14,7 +15,7 @@ import {
   FavRecipeData,
   IngredientData,
   OnlineUsersData,
-  ourCooks,
+  ourCooks
 } from "data"
 import React, { useEffect, useState } from "react"
 import { SearchHeader } from "src/components/AppSearch/Header"
@@ -99,7 +100,7 @@ const NewPage = ({ className }: Props) => {
                 button={selected => (
                   <Button
                     shape="circle"
-                    iconLeft={<Calander />}
+                    iconLeft={<Bell />}
                     className="buttonFilter"
                     size="small"
                     title="Monthly"
@@ -144,7 +145,9 @@ const NewPage = ({ className }: Props) => {
               />
             </div>
           </div>
-          <SliderNav data={categoryData} header={false} />
+          <div className="pageProductCategories">
+            <SliderNav data={categoryData} header={false} />
+          </div>
         </div>
         <div className="recipesSection">
           <SliderNav
@@ -176,7 +179,7 @@ const NewPage = ({ className }: Props) => {
           <SliderContent data={FavData} />
         </div>
         <Leaderboard data={FavData} />
-        <div className="recipesSection">
+        <div className="recipesSection align-center ingredientBlock">
           <NavBar
             data={IngredientData}
             title="Browse Recipes by Ingredient"

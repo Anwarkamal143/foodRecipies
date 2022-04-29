@@ -393,6 +393,10 @@ body {
   display: flex;
   margin: 0 -7px;
   flex-flow: row wrap;
+
+  @media (max-width: 767px) {
+    margin: 0;
+  }
 }
 
 .slick-slider {
@@ -669,6 +673,12 @@ body {
   .slick-slider {
     .slick-slide {
       padding: 0 1px;
+    }
+
+    .slick-arrow.slick-prev {
+      @media (max-width: 767px) {
+        left: 0;
+      }
     }
   }
 }
@@ -1073,7 +1083,7 @@ body {
         margin: 0;
         font-size: 9px;
         height: 24px;
-        padding: 6px !important;
+        padding: 6px 20px 6px 6px !important;
         min-width: 95px;
       }
 
@@ -2513,18 +2523,6 @@ body {
   }
 }
 
-// .recipesPageWrapper {
-//   padding: 20px 0 !important;
-
-//   @media (max-width: 767px) {
-//     padding: 20px 0 !important;
-//   }
-// }
-
-// .Sidebar {
-//   display: none;
-// }
-
 .rc-pagination {
   display: flex;
   align-items: center;
@@ -3085,57 +3083,64 @@ body {
 }
 
 .pageProductCategories {
-  &.recipesSection {
-    .recipesSectionHeader {
-      display: none;
+  .recipesCategoriesSlider {
+    margin: 0 !important;
+  }
+
+  .slick-slider {
+    .slick-slide {
+      padding: 0 1px;
+    }
+  }
+
+  .recipesCategoriesButton {
+    display: inline-block !important;
+    text-align: center;
+    border-radius: 10px;
+
+    @media (max-width: 767px) {
+      padding: 3px 8px;
+      border-radius: 6px;
     }
 
-    .recipesCategoriesSlider {
-      margin: 0 !important;
+    span {
+      display: block;
     }
 
-    .slick-slider {
-      .slick-slide {
-        padding: 0 1px;
-      }
-    }
-
-    .recipesCategoriesButton {
-      display: inline-block !important;
-      text-align: center;
-      border-radius: 10px;
+    .img {
+      margin: 0 auto 5px;
+      max-width: 47px;
+      min-width: 47px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       @media (max-width: 767px) {
-        padding: 3px 8px;
-        border-radius: 6px;
+        max-width: 30px;
+        min-width: 30px;
+        height: 30px;
       }
 
-      span {
-        display: block;
-      }
-
-      .img {
-        margin: 0 auto 5px;
-        max-width: 47px;
-        min-width: 47px;
-        height: 38px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      img {
+        margin: 0 auto;
+        max-height: 38px;
+        transition: all 0.4s ease-in-out;
 
         @media (max-width: 767px) {
-          max-width: 30px;
-          min-width: 30px;
           height: 30px;
         }
+      }
+    }
 
+    &:hover,
+    &.active {
+      color: #ff6067;
+      background: transparent;
+
+      .img {
         img {
-          margin: 0 auto;
-          max-height: 38px;
-
-          @media (max-width: 767px) {
-            height: 30px;
-          }
+          transform: scale(1.15);
         }
       }
     }
