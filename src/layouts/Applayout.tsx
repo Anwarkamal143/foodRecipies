@@ -13,7 +13,8 @@ export type LayoutType = {
 }
 
 export function AppLayout(props: LayoutType) {
-  const { otherProps, children, styles, sidebar = true } = props
+  const { otherProps, children, styles, sidebar = true, ...rest } = props
+
   console.log({props})
 
   return (
@@ -24,7 +25,7 @@ export function AppLayout(props: LayoutType) {
            <MainContentSectionWrapper>
               {sidebar && <Sidebar className="Sidebar" />}
                   <MainContentWrapper>
-                    {cloneElement(children as any, {...props})}
+                    {cloneElement(children as any, {...rest, sidebar, styles, otherProps})}
                   </MainContentWrapper>
             </MainContentSectionWrapper>
       </MainContainer>
