@@ -43,7 +43,7 @@ const FooterRightSide = ({ className }: Props) => {
           cooking tips, and stay up to date on your favorite cooks.
         </p>
       </div>
-      <Input icon={<span>Subscribe</span>} />
+      <Input placeholder="Hello@onlinecook.com" icon={<span>Subscribe</span>} />
     </div>
   )
 }

@@ -1,8 +1,7 @@
 import { DropDown } from "@components"
 import {
-  Bell,
-  Calander,
-  DairyFree,
+  Bell, DairyFree,
+  DietIcon,
   GlutenFree,
   NutFree,
   Vegan,
@@ -68,10 +67,10 @@ const NewPage = ({ className }: Props) => {
                 button={selected => (
                   <Button
                     shape="circle"
-                    iconLeft={<Calander />}
-                    className="buttonFilter"
+                    iconLeft={<DietIcon />}
+                    className="buttonFilter dietButton"
                     size="small"
-                    title="Monthly"
+                    title="By Diet"
                     defaultValue={"By Diet"}
                   >
                     {selected}
@@ -103,7 +102,7 @@ const NewPage = ({ className }: Props) => {
                     iconLeft={<Bell />}
                     className="buttonFilter"
                     size="small"
-                    title="Monthly"
+                    title="By Cuisine"
                     defaultValue={"By Cuisine"}
                   >
                     {selected}
@@ -149,7 +148,7 @@ const NewPage = ({ className }: Props) => {
             <SliderNav data={categoryData} header={false} />
           </div>
         </div>
-        <div className="recipesSection">
+        <div className="recipesSection featuredRecipesBlock">
           <SliderNav
             title="Featured Recipes"
             discription="A recipe is a set of instructions that describes how to prepare or make."
@@ -170,7 +169,7 @@ const NewPage = ({ className }: Props) => {
           />
           <ItemContent data={data} id={id} />
         </div>
-        <div className="recipesSection">
+        <div className="recipesSection latestRecipesSection">
           <NavBar
             isNavBar={false}
             title="Latest Recipes"

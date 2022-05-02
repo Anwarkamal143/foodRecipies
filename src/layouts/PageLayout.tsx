@@ -40,10 +40,10 @@ export const PageLayoutWrapper = styled.div<{ variant?: string }>`
   }
 
   .no_sidebar & {
-    padding: 20px 0 !important;
+    padding: 20px 0 0 !important;
 
     @media (max-width: 767px) {
-      padding: 20px 0 !important;
+      padding: 20px 0 0 !important;
     }
   }
 
