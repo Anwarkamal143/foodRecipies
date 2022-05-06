@@ -1,4 +1,9 @@
-import { ArrowRight, ChevronRightIcon, LeftSliderArrow, RightSliderArrow } from "@icons"
+import {
+  ArrowRight,
+  ChevronRightIcon,
+  LeftSliderArrow,
+  RightSliderArrow,
+} from "@icons"
 import React, { useEffect, useRef, useState } from "react"
 import Slider from "react-slick"
 import styled from "styled-components"
@@ -12,6 +17,7 @@ type Props = {
   rightIcon?: boolean
   header?: boolean
   handleSilderData?: any
+  rightIconTitle?: string
 }
 const settings = {
   dots: false,
@@ -43,6 +49,7 @@ const SliderNav = ({
   header = true,
   discription,
   rightIcon = true,
+  rightIconTitle = "View All Breakfast",
   isNavBar = true,
   handleSilderData,
   ...rest
@@ -91,7 +98,15 @@ const SliderNav = ({
             <span className="recipesSectionText">{discription}</span>
             {rightIcon && (
               <span className="feature-btn">
-                View All Breakfast <span className="arrowIcon"><span className="arrowShort"><ChevronRightIcon /></span><span className="arrowLong"><ArrowRight /></span></span>{" "}
+                {rightIconTitle}
+                <span className="arrowIcon">
+                  <span className="arrowShort">
+                    <ChevronRightIcon />
+                  </span>
+                  <span className="arrowLong">
+                    <ArrowRight />
+                  </span>
+                </span>{" "}
               </span>
             )}
           </div>
