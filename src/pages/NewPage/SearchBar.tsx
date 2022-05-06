@@ -9,8 +9,9 @@ import {
   Vegan,
   Vegetarian,
 } from "@icons"
-import React, { useState } from "react"
+import React, { useRef, useState } from "react"
 import { SearchHeader } from "src/components/AppSearch/Header"
+import { useOnClickOutside } from "src/hooks/useClickOutside"
 import { SearchedSections } from "./../../components/AppSearch/SearchedSections"
 import Button from "./../../components/Button/Button"
 type Props = {}
@@ -19,11 +20,24 @@ const SearchBar = (props: Props) => {
   const [searchText, setSearchText] = useState<any>("")
   const [isActiveFocus, setIsActiveFocus] = useState(false)
   const activeFocus = (e: any) => {
-      setIsActiveFocus(e)
+    setIsActiveFocus(e)
   }
+  const ref = useRef()
+  const [isModalOpen, setModalOpen] = useState(false)
+  useOnClickOutside(ref, e => {
+    setModalOpen(false)
+    console.log(e, "sdd")
+  })
+  console.log(isModalOpen, "isModalOpen")
 
   return (
-    <div className="pageFiltersSearch">
+    <div
+      className="pageFiltersSearch"
+      ref={ref as any}
+      onClick={() => {
+        setModalOpen(true)
+      }}
+    >
       <div className="search">
         <SearchHeader
           onSearch={(s?: string) => setSearchText(s)}
@@ -32,7 +46,7 @@ const SearchBar = (props: Props) => {
           value={searchText}
           activeFocus={activeFocus}
         />
-        {isActiveFocus && (
+        {isModalOpen && searchText && (
           <SearchedSections
             isSearchingEnable={!!searchText}
             onClickClear={() => setSearchText("")}

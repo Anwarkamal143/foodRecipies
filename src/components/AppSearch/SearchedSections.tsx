@@ -13,6 +13,7 @@ type Props = {
 
 const SearchedRecipesAndCooks = (props: Props) => {
   const { className, onClickClear, isSearchingEnable = false } = props
+
   return (
     <div className={`${className} searchPopup`}>
       <div className="searchHeaderSection">
@@ -133,13 +134,13 @@ export const SearchedSections = styled(SearchedRecipesAndCooks)`
         display: none;
 
         path {
-          stroke: #E0464D;
+          stroke: #e0464d;
         }
       }
     }
 
     span.section_title {
-      color: #E0464D;
+      color: #e0464d;
       cursor: pointer;
 
       &:hover {

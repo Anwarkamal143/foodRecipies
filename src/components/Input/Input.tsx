@@ -72,9 +72,9 @@ function FocusInput(props: inputProfile, ref: Ref<any>) {
   const limit = props.limit ? props.limit : inputType === "text" ? 120 : 250
 
   const inputFocused = () => {
-    activeFocus?.(true)
     setFocus(true)
   }
+  activeFocus?.(focus)
 
   const inputBlurred = (e: any) => {
     setFocus(Boolean(value && value.trim().length))

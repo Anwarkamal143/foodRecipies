@@ -55,9 +55,9 @@ const Header = (props: Props) => {
           type="text"
           materialDesign
           activeFocus={activeFocus}
-          onBlur={e => {
-            activeFocus?.(false)
-          }}
+          // onBlur={e => {
+          //   activeFocus?.(false)
+          // }}
          
         />
         {value && (
