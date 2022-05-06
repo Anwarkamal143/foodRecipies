@@ -10,7 +10,7 @@ type Props = {
 const PanCakeScreen = (props: Props) => {
   const { post } = props
   return (
-    <div>
+    <div className="followersContainer">
       <LeftSide post={post} />
       <RightSide />
       <Nutrition />

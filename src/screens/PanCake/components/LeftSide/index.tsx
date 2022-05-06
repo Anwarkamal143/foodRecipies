@@ -1,4 +1,5 @@
 import { Button } from "@components"
+import { AvatarIcon, LinkArrowIcon } from "@icons"
 import React from "react"
 import PostHeader from "src/pages/followers/post/PostHeader"
 import Ingredients from "./Ingredients"
@@ -11,14 +12,18 @@ type Props = {
 const LeftSide = (props: Props) => {
   const { post } = props
   return (
-    <div>
+    <div className="detailsLeftColumn">
       <Ingredients />
       <Instructions />
-      <div className="About-The-Cook">
-        <h2>About The Cook</h2>
+      <div className="ingredientsBlock">
+        <div className="ingredientsBlockHead">
+          <h2>About The Cook</h2>
+        </div>
         <PostHeader post={post} />
-        <Button>View My Profile</Button>
-        <Button>Visit My Website</Button>
+        <div className="ingredientsBlockButtons">
+          <Button className="buttonWhite">View My Profile <AvatarIcon /></Button>
+          <Button className="buttonGreen">Visit My Website <LinkArrowIcon/></Button>
+        </div>
       </div>
     </div>
   )
