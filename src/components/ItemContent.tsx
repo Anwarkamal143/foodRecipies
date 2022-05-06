@@ -19,6 +19,7 @@ const ItemContent = ({ data, id, className }: Props) => {
               id={id || ""}
               fvrtBy={e.fvrtBy}
               time={e.time}
+              title={e.title}
               state={e.state}
             />
           )

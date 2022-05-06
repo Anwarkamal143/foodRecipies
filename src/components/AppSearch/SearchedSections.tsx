@@ -1,4 +1,4 @@
-import { ChevronRightIcon } from "@icons"
+import { ArrowRight, ChevronRightIcon } from "@icons"
 import React from "react"
 import styled from "styled-components"
 import { Button } from "../Button"
@@ -20,7 +20,7 @@ const SearchedRecipesAndCooks = (props: Props) => {
           <>
             <p className="section_title">Recipes</p>{" "}
             <span className="section_title" onClick={onClickClear}>
-              Clear
+              <span>Clear</span> <ArrowRight className="iconArrow" />
             </span>
           </>
         ) : (
@@ -116,14 +116,37 @@ export const SearchedSections = styled(SearchedRecipesAndCooks)`
     margin: 0 0 10px;
 
     .section_title {
-      display: block;
+      display: flex;
+      align-items: center;
       font-size: 12px;
       line-height: 18px;
       color: #8d8d96;
+
+      svg {
+        width: 10px;
+        height: 10px;
+        margin: 0 0 0 5px;
+        position: relative;
+        top: 2px;
+        right: 0;
+        transition: all 0.25s ease;
+        display: none;
+
+        path {
+          stroke: #E0464D;
+        }
+      }
     }
 
     span.section_title {
       color: #E0464D;
+      cursor: pointer;
+
+      &:hover {
+        svg {
+          right: -3px;
+        }
+      }
     }
 
     .buttonViewAll {
@@ -162,12 +185,6 @@ export const SearchedSections = styled(SearchedRecipesAndCooks)`
   .searchCooks {
     overflow: hidden;
     margin: 0 0 30px;
-  }
-
-  .searchCooks {
-    .itemArrow {
-      display: none !important;
-    }
   }
 
   .selection {

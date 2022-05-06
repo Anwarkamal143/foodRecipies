@@ -1,5 +1,5 @@
 import { Button } from "@components"
-import { LeftSliderArrow, RightSliderArrow } from "@icons"
+import { AddCookIcon, AngleRight, LeftSliderArrow, RightSliderArrow } from "@icons"
 import React, { useRef } from "react"
 import Slider from "react-slick"
 import styled from "styled-components"
@@ -61,12 +61,12 @@ const FollowUsers = ({ className, data = [], title, discription }: Props) => {
             <img src={e.profile} alt="" />
           </div>
           <div className="textbox">
-            <span className="userName">{e.userName}</span>
+            <span className="userName"><a href="#">{e.userName} <AngleRight /></a></span>
             <div className="totle-recip">
               <img src="/images/Likes.png" alt="" />
               <span>{e.Recipes} Recipes</span>
             </div>
-            <Button>Follow Cook</Button>
+            <Button><AddCookIcon /> Follow Cook</Button>
           </div>
         </div>
       )

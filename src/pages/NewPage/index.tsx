@@ -1,12 +1,13 @@
 import { DropDown } from "@components"
 import {
+  AngleRight,
   Bell,
-  Calander,
   DairyFree,
+  DietIcon,
   GlutenFree,
   NutFree,
   Vegan,
-  Vegetarian
+  Vegetarian,
 } from "@icons"
 import { getPageLayout } from "@layouts"
 import {
@@ -15,7 +16,7 @@ import {
   FavRecipeData,
   IngredientData,
   OnlineUsersData,
-  ourCooks
+  ourCooks,
 } from "data"
 import React, { useEffect, useState } from "react"
 import { SearchHeader } from "src/components/AppSearch/Header"
@@ -68,10 +69,10 @@ const NewPage = ({ className }: Props) => {
                 button={selected => (
                   <Button
                     shape="circle"
-                    iconLeft={<Calander />}
-                    className="buttonFilter"
+                    iconLeft={<DietIcon />}
+                    className="buttonFilter dietButton"
                     size="small"
-                    title="Monthly"
+                    title="By Diet"
                     defaultValue={"By Diet"}
                   >
                     {selected}
@@ -83,6 +84,9 @@ const NewPage = ({ className }: Props) => {
                   { name: "Vegetarian", icon: <Vegetarian /> },
                   { name: "Nut-Free", icon: <NutFree /> },
                   { name: "Dairy-Free", icon: <DairyFree /> },
+                  {
+                    option: "See all Diet Options",
+                  },
                 ]}
                 renderItem={({ item, isActive, onClick }) => {
                   return (
@@ -92,6 +96,12 @@ const NewPage = ({ className }: Props) => {
                     >
                       {item.icon}
                       {item.name}
+                      {item.option && (
+                        <span className="img-arrow">
+                          {item.option}
+                          <AngleRight />
+                        </span>
+                      )}
                     </div>
                   )
                 }}
@@ -103,7 +113,7 @@ const NewPage = ({ className }: Props) => {
                     iconLeft={<Bell />}
                     className="buttonFilter"
                     size="small"
-                    title="Monthly"
+                    title="By Cuisine"
                     defaultValue={"By Cuisine"}
                   >
                     {selected}
@@ -130,6 +140,13 @@ const NewPage = ({ className }: Props) => {
                     name: "Indian",
                     icon: <img src="/images/india.png" alt="side-dishes" />,
                   },
+                  {
+                    name: "Indian",
+                    icon: <img src="/images/india.png" alt="side-dishes" />,
+                  },
+                  {
+                    option: "See all Cuisine",
+                  },
                 ]}
                 renderItem={({ item, isActive, onClick }) => {
                   return (
@@ -139,6 +156,12 @@ const NewPage = ({ className }: Props) => {
                     >
                       {item.icon}
                       {item.name}
+                      {item.option && (
+                        <span className="img-arrow">
+                          {item.option}
+                          <AngleRight />
+                        </span>
+                      )}
                     </div>
                   )
                 }}
@@ -149,7 +172,7 @@ const NewPage = ({ className }: Props) => {
             <SliderNav data={categoryData} header={false} />
           </div>
         </div>
-        <div className="recipesSection">
+        <div className="recipesSection featuredRecipesBlock">
           <SliderNav
             title="Featured Recipes"
             discription="A recipe is a set of instructions that describes how to prepare or make."
@@ -170,7 +193,7 @@ const NewPage = ({ className }: Props) => {
           />
           <ItemContent data={data} id={id} />
         </div>
-        <div className="recipesSection">
+        <div className="recipesSection latestRecipesSection">
           <NavBar
             isNavBar={false}
             title="Latest Recipes"
@@ -226,4 +249,10 @@ NewPage.layout = {
 }
 export default styled(NewPage)`
   width: 100%;
+
+  .no-slider {
+    .recipesCategoriesSlider {
+      margin: 0;
+    }
+  }
 `

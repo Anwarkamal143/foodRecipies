@@ -1,4 +1,4 @@
-import { ChevronRightIcon, LeftSliderArrow, RightSliderArrow } from "@icons"
+import { ArrowRight, ChevronRightIcon, LeftSliderArrow, RightSliderArrow } from "@icons"
 import React, { useEffect, useRef, useState } from "react"
 import Slider from "react-slick"
 import styled from "styled-components"
@@ -91,7 +91,7 @@ const SliderNav = ({
             <span className="recipesSectionText">{discription}</span>
             {rightIcon && (
               <span className="feature-btn">
-                View All Breakfast <ChevronRightIcon />{" "}
+                View All Breakfast <span className="arrowIcon"><span className="arrowShort"><ChevronRightIcon /></span><span className="arrowLong"><ArrowRight /></span></span>{" "}
               </span>
             )}
           </div>

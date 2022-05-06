@@ -61,9 +61,9 @@ const Footer = (props: Props) => {
                 </li>
               </ul>
             </div>
-            <a href="#" className="help-link"><img src="/images/device-message.png" alt="icon" /> Help</a>
           </div>
         </div>
+        <a href="#" className="help-link"><img src="/images/device-message.svg" alt="icon" /> Help</a>
       </div>
     </div>
   )

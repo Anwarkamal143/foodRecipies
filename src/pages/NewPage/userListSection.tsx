@@ -1,10 +1,10 @@
 import { Button, DropDown, Icon } from "@components"
 import {
+  ArrowRight,
   Bell,
   Calander,
   FacebookIcon,
-  InstagramIcon,
-  TimeDuraion,
+  InstagramIcon, TimeIcon,
   TwitterIcon,
   YoutubeIcon
 } from "@icons"
@@ -19,7 +19,7 @@ const UserListSection = (props: Props) => {
         <div className="recipesSectionTitlebox">
           <strong className="recipesSectionTitle"> Cook Leaderboard</strong>
           <span className="recipesSectionText">
-            <TimeDuraion /> Ends in 10 Days 23 Hours 46 Minutes 26 Seconds
+            <TimeIcon /> Ends in 10 Days 23 Hours 46 Minutes 26 Seconds
           </span>
         </div>
         <div className="leaderboardFilters">
@@ -116,7 +116,7 @@ const UserListSection = (props: Props) => {
           })}
         </div>
         <div className="userlist">
-          {userList.slice(3).map((e: any) => {
+          {userList.slice(1).map((e: any) => {
             return (
               <div className="top-profiles" key={e.low || e.heigh}>
                 <div className="rate-info">
@@ -127,6 +127,7 @@ const UserListSection = (props: Props) => {
                   <img src={e.profile} alt="profile" />
                 </div>
                 <span className="cookname">{e.userName}</span>
+                <span className="iconArrow"><ArrowRight /></span>
               </div>
             )
           })}

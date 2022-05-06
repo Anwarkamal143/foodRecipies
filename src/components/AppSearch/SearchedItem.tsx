@@ -41,12 +41,13 @@ export const SearchedCookRecipeItem = styled(SearchedItem)`
     display: flex;
     align-items: center;
     margin: 0 0 5px;
-    padding: 5px 0;
+    padding: 7px 0;
     transition: all 0.4s ease;
 
     &:hover {
       background: #f3f5f8;
-      padding: 5px 10px 5px 5px;
+      padding: 7px 15px 7px 10px;
+      border-radius: 6px;
 
       .itemTextbox {
         color: #ff6067;
@@ -71,8 +72,8 @@ export const SearchedCookRecipeItem = styled(SearchedItem)`
     .itemTextbox {
       flex-grow: 1;
       flex-basis: 0;
-      font-size: 14px;
-      line-height: 18px;
+      font-size: 12px;
+      line-height: 15px;
       color: #1e1e2d;
       padding: 0 10px 0 15px;
       transition: all 0.4s ease;
