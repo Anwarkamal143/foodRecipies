@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { toast } from "src/components/toaster"
 import styled from "styled-components"
 type IType = {
   className?: string
@@ -17,6 +18,7 @@ function HeartIconAnimtaed({ className }: IType) {
     <div
       className={`${className} like`}
       onClick={() => {
+        toast.save("Chicken Parmigiana with Ragu Palenta")
         setLikes(like + 1)
       }}
     >

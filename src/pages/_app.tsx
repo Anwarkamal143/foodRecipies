@@ -5,20 +5,31 @@ import type { AppProps } from "next/app"
 import { ComponentType, ReactElement, ReactNode } from "react"
 import { CookiesProvider } from "react-cookie"
 import { Provider } from "react-redux"
+import ToasterContainer from "../components/toaster"
 type IAppProps = AppProps & {
-  Component: AppProps['Component'] & {
-    getLayout?: (component: ComponentType | ReactElement | ReactNode) => ComponentType
+  Component: AppProps["Component"] & {
+    getLayout?: (
+      component: ComponentType | ReactElement | ReactNode
+    ) => ComponentType
     layout?: {
-      layout:  (component: ComponentType | ReactElement | ReactNode, props?: Record<string, any>) => ComponentType,
+      layout: (
+        component: ComponentType | ReactElement | ReactNode,
+        props?: Record<string, any>
+      ) => ComponentType
       props: Record<string, any>
     }
   }
 }
 function MyApp({ Component, pageProps }: IAppProps) {
-
-
-  const getLayout  = Component?.layout?.layout ? Component?.layout.layout : (page => page)
-  console.log("console log", typeof window == "undefined", Component.layout?.props, Component.layout)
+  const getLayout = Component?.layout?.layout
+    ? Component?.layout.layout
+    : page => page
+  console.log(
+    "console log",
+    typeof window == "undefined",
+    Component.layout?.props,
+    Component.layout
+  )
   return (
     // <SessionProvider
     //   // Provider options are not required but can be useful in situations where
@@ -26,10 +37,14 @@ function MyApp({ Component, pageProps }: IAppProps) {
     //   session={pageProps.session}
     // >
     <CookiesProvider>
+      <ToasterContainer />
       <Provider store={store}>
-         <AppLayout {...(Component?.layout?.props || {})} >
-              {getLayout(<Component {...pageProps}  />, {...(Component?.layout?.props || {}), ...pageProps}) }
-      </AppLayout>
+        <AppLayout {...(Component?.layout?.props || {})}>
+          {getLayout(<Component {...pageProps} />, {
+            ...(Component?.layout?.props || {}),
+            ...pageProps,
+          })}
+        </AppLayout>
       </Provider>
     </CookiesProvider>
     // </SessionProvider>
