@@ -7,7 +7,7 @@ import {
   GlutenFree,
   NutFree,
   Vegan,
-  Vegetarian
+  Vegetarian,
 } from "@icons"
 import { getPageLayout } from "@layouts"
 import {
@@ -16,7 +16,7 @@ import {
   FavRecipeData,
   IngredientData,
   OnlineUsersData,
-  ourCooks
+  ourCooks,
 } from "data"
 import React, { useEffect, useState } from "react"
 import { SearchHeader } from "src/components/AppSearch/Header"
@@ -54,6 +54,7 @@ const NewPage = ({ className }: Props) => {
           {/* <AppSearch toggleSideBar={true} /> */}
           <div className="pageFiltersSearch">
             <div className="search">
+              <span className="close-header-search"></span>
               <SearchHeader
                 onSearch={(s?: string) => setSearchText(s)}
                 header={false}
@@ -70,8 +71,7 @@ const NewPage = ({ className }: Props) => {
             <div className="quickFind">
               <span className="lbl">Quick Find:</span>
               <DropDown
-              defaultValue='By Diet'
-
+                defaultValue="By Diet"
                 button={selected => (
                   <Button
                     shape="circle"
@@ -79,7 +79,6 @@ const NewPage = ({ className }: Props) => {
                     className="buttonFilter"
                     size="small"
                     title="By Diet"
-                    
                   >
                     {selected}
                   </Button>
@@ -113,7 +112,7 @@ const NewPage = ({ className }: Props) => {
                 }}
               />
               <DropDown
-              defaultValue='By Cuisine'
+                defaultValue="By Cuisine"
                 button={selected => (
                   <Button
                     shape="circle"
@@ -121,7 +120,6 @@ const NewPage = ({ className }: Props) => {
                     className="buttonFilter"
                     size="small"
                     title="By Cuisine"
-                    
                   >
                     {selected}
                   </Button>
@@ -261,5 +259,13 @@ export default styled(NewPage)`
     .recipesCategoriesSlider {
       margin: 0;
     }
+  }
+
+  .close-header-search {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
   }
 `
