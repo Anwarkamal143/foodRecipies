@@ -13,6 +13,7 @@ type Props = {
   onSearch?: (text?: string) => void
   onClose?: () => void
   value?: string
+  activeFocus?: any
 }
 
 const Header = (props: Props) => {
@@ -24,13 +25,14 @@ const Header = (props: Props) => {
     onClose,
     header = true,
     value,
+    activeFocus,
   } = props
   const [searchText, setSearchText] = useState("")
   const [filter, setFilter] = useState(false)
-
   const handleSearch = (searchTextt: string) => {
     onSearch?.(searchTextt)
   }
+
   return (
     <div className={className}>
       {header && (
@@ -50,7 +52,13 @@ const Header = (props: Props) => {
           onChange={e => {
             handleSearch(e.target.value)
           }}
+          type="text"
           materialDesign
+          activeFocus={activeFocus}
+          // onBlur={e => {
+          //   activeFocus?.(false)
+          // }}
+         
         />
         {value && (
           <CrossIcon

@@ -38,6 +38,7 @@ interface inputProfile
   dataLpignore?: string
   autocomplete?: string
   hasLimit?: boolean
+  activeFocus?: any
 }
 function FocusInput(props: inputProfile, ref: Ref<any>) {
   const {
@@ -46,6 +47,7 @@ function FocusInput(props: inputProfile, ref: Ref<any>) {
     label,
     labelClasses,
     prefixElement,
+    activeFocus,
     hasLimit = true,
     ...rest
   } = props
@@ -72,6 +74,7 @@ function FocusInput(props: inputProfile, ref: Ref<any>) {
   const inputFocused = () => {
     setFocus(true)
   }
+  activeFocus?.(focus)
 
   const inputBlurred = (e: any) => {
     setFocus(Boolean(value && value.trim().length))

@@ -1,14 +1,3 @@
-import { DropDown } from "@components"
-import {
-  AngleRight,
-  Bell,
-  DairyFree,
-  DietIcon,
-  GlutenFree,
-  NutFree,
-  Vegan,
-  Vegetarian,
-} from "@icons"
 import { getPageLayout } from "@layouts"
 import {
   categoryData,
@@ -19,19 +8,17 @@ import {
   ourCooks,
 } from "data"
 import React, { useEffect, useState } from "react"
-import { SearchHeader } from "src/components/AppSearch/Header"
 import ItemContent from "src/components/ItemContent"
 import NavBar from "src/components/NavBar"
 import SliderContent from "src/components/SliderContent"
 import SliderNav from "src/components/SliderNavBar"
 import styled from "styled-components"
-import { SearchedSections } from "./../../components/AppSearch/SearchedSections"
-import Button from "./../../components/Button/Button"
 import FollowUsers from "./FollowUsers"
 import Footer from "./footer/footer"
 import Leaderboard from "./Leaderboard"
 import OurCooksDetails from "./OurCooksDetails"
 import OurTiktoker from "./OurTiktoker"
+import SearchBar from "./SearchBar"
 import UserListSection from "./userListSection"
 type Props = {
   className?: string
@@ -39,7 +26,6 @@ type Props = {
 
 const NewPage = ({ className }: Props) => {
   const [newPageData, setNewPageData] = useState<any>([])
-  const [searchText, setSearchText] = useState<any>("")
   const [id, setId] = useState<any>("")
   const [data, setSilderData] = useState<any>([])
   const [ingredientData, setIngredientData] = useState<any>([])
@@ -52,128 +38,14 @@ const NewPage = ({ className }: Props) => {
       <div className="recipesContainer">
         <div className="recipesSection">
           {/* <AppSearch toggleSideBar={true} /> */}
-          <div className="pageFiltersSearch">
-            <div className="search">
-              <SearchHeader
-                onSearch={(s?: string) => setSearchText(s)}
-                header={false}
-                filterOption={true}
-              />
-              {searchText && (
-                <SearchedSections isSearchingEnable={!!searchText} />
-              )}
-            </div>
-            <div className="quickFind">
-              <span className="lbl">Quick Find:</span>
-              <DropDown
-                button={selected => (
-                  <Button
-                    shape="circle"
-                    iconLeft={<DietIcon />}
-                    className="buttonFilter dietButton"
-                    size="small"
-                    title="By Diet"
-                    defaultValue={"By Diet"}
-                  >
-                    {selected}
-                  </Button>
-                )}
-                items={[
-                  { name: "Gluten-Free", icon: <GlutenFree /> },
-                  { name: "Vegan", icon: <Vegan /> },
-                  { name: "Vegetarian", icon: <Vegetarian /> },
-                  { name: "Nut-Free", icon: <NutFree /> },
-                  { name: "Dairy-Free", icon: <DairyFree /> },
-                  {
-                    option: "See all Diet Options",
-                  },
-                ]}
-                renderItem={({ item, isActive, onClick }) => {
-                  return (
-                    <div
-                      className={`${isActive} item`}
-                      onClick={() => onClick(item.name)}
-                    >
-                      {item.icon}
-                      {item.name}
-                      {item.option && (
-                        <span className="img-arrow">
-                          {item.option}
-                          <AngleRight />
-                        </span>
-                      )}
-                    </div>
-                  )
-                }}
-              />
-              <DropDown
-                button={selected => (
-                  <Button
-                    shape="circle"
-                    iconLeft={<Bell />}
-                    className="buttonFilter"
-                    size="small"
-                    title="By Cuisine"
-                    defaultValue={"By Cuisine"}
-                  >
-                    {selected}
-                  </Button>
-                )}
-                items={[
-                  {
-                    name: "Italian",
-                    icon: <img src="/images/italy.png" alt="side-dishes" />,
-                  },
-                  {
-                    name: "American",
-                    icon: <img src="/images/american.png" alt="side-dishes" />,
-                  },
-                  {
-                    name: "Mexican",
-                    icon: <img src="/images/mexican.png" alt="side-dishes" />,
-                  },
-                  {
-                    name: "Asian",
-                    icon: <img src="/images/asian.png" alt="side-dishes" />,
-                  },
-                  {
-                    name: "Indian",
-                    icon: <img src="/images/india.png" alt="side-dishes" />,
-                  },
-                  {
-                    name: "Indian",
-                    icon: <img src="/images/india.png" alt="side-dishes" />,
-                  },
-                  {
-                    option: "See all Cuisine",
-                  },
-                ]}
-                renderItem={({ item, isActive, onClick }) => {
-                  return (
-                    <div
-                      className={`${isActive} item`}
-                      onClick={() => onClick(item.name)}
-                    >
-                      {item.icon}
-                      {item.name}
-                      {item.option && (
-                        <span className="img-arrow">
-                          {item.option}
-                          <AngleRight />
-                        </span>
-                      )}
-                    </div>
-                  )
-                }}
-              />
-            </div>
-          </div>
+          <SearchBar />
           <div className="pageProductCategories">
             <SliderNav data={categoryData} header={false} />
           </div>
         </div>
-        <div className="recipesSection featuredRecipesBlock">
+        <div className="recipesSection no-slider">
           <SliderNav
+            rightIconTitle="View All Featured"
             title="Featured Recipes"
             discription="A recipe is a set of instructions that describes how to prepare or make."
           />
@@ -181,6 +53,7 @@ const NewPage = ({ className }: Props) => {
         </div>
         <div className="recipesSection">
           <SliderNav
+            rightIconTitle={`View All ${id}`}
             title="Browse Recipes By Category"
             discription="A recipe is a set of instructions that describes how to prepare or make."
             data={categoryData}
@@ -193,7 +66,7 @@ const NewPage = ({ className }: Props) => {
           />
           <ItemContent data={data} id={id} />
         </div>
-        <div className="recipesSection latestRecipesSection">
+        <div className="recipesSection">
           <NavBar
             isNavBar={false}
             title="Latest Recipes"
@@ -254,5 +127,13 @@ export default styled(NewPage)`
     .recipesCategoriesSlider {
       margin: 0;
     }
+  }
+
+  .close-header-search {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
   }
 `
