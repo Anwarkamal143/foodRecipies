@@ -2,12 +2,12 @@ import { DropDown } from "@components"
 import {
   AngleRight,
   Bell,
+  Calander,
   DairyFree,
-  DietIcon,
   GlutenFree,
   NutFree,
   Vegan,
-  Vegetarian,
+  Vegetarian
 } from "@icons"
 import { getPageLayout } from "@layouts"
 import {
@@ -16,7 +16,7 @@ import {
   FavRecipeData,
   IngredientData,
   OnlineUsersData,
-  ourCooks,
+  ourCooks
 } from "data"
 import React, { useEffect, useState } from "react"
 import { SearchHeader } from "src/components/AppSearch/Header"
@@ -58,22 +58,28 @@ const NewPage = ({ className }: Props) => {
                 onSearch={(s?: string) => setSearchText(s)}
                 header={false}
                 filterOption={true}
+                value={searchText}
               />
               {searchText && (
-                <SearchedSections isSearchingEnable={!!searchText} />
+                <SearchedSections
+                  isSearchingEnable={!!searchText}
+                  onClickClear={() => setSearchText("")}
+                />
               )}
             </div>
             <div className="quickFind">
               <span className="lbl">Quick Find:</span>
               <DropDown
+              defaultValue='By Diet'
+
                 button={selected => (
                   <Button
                     shape="circle"
-                    iconLeft={<DietIcon />}
-                    className="buttonFilter dietButton"
+                    iconLeft={<Calander />}
+                    className="buttonFilter"
                     size="small"
                     title="By Diet"
-                    defaultValue={"By Diet"}
+                    
                   >
                     {selected}
                   </Button>
@@ -107,6 +113,7 @@ const NewPage = ({ className }: Props) => {
                 }}
               />
               <DropDown
+              defaultValue='By Cuisine'
                 button={selected => (
                   <Button
                     shape="circle"
@@ -114,7 +121,7 @@ const NewPage = ({ className }: Props) => {
                     className="buttonFilter"
                     size="small"
                     title="By Cuisine"
-                    defaultValue={"By Cuisine"}
+                    
                   >
                     {selected}
                   </Button>
@@ -172,7 +179,7 @@ const NewPage = ({ className }: Props) => {
             <SliderNav data={categoryData} header={false} />
           </div>
         </div>
-        <div className="recipesSection featuredRecipesBlock">
+        <div className="recipesSection no-slider">
           <SliderNav
             title="Featured Recipes"
             discription="A recipe is a set of instructions that describes how to prepare or make."
@@ -193,7 +200,7 @@ const NewPage = ({ className }: Props) => {
           />
           <ItemContent data={data} id={id} />
         </div>
-        <div className="recipesSection latestRecipesSection">
+        <div className="recipesSection">
           <NavBar
             isNavBar={false}
             title="Latest Recipes"

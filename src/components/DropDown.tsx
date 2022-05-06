@@ -6,11 +6,12 @@ type IDropDownProps = {
   className?: string
   items: any[]
   button?: (...args: any) => ReactElement | ReactNode
+  defaultValue?: string
 }
 
 export function DropDown(props: IDropDownProps) {
-  const { renderItem, className, items, button } = props
-  const [selected, setSelected] = useState("Most Popular")
+  const { renderItem, className, items, button, defaultValue } = props
+  const [selected, setSelected] = useState(defaultValue || "Most Popular")
   return (
     <Menu as="div" className="relative">
       <Menu.Button>{button?.(selected, setSelected)}</Menu.Button>
