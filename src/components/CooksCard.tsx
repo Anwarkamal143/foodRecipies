@@ -37,7 +37,7 @@ const ItemCards = ({
         <img src={image} alt="image" />
       </div>
       <div className="recipeItemTextbox">
-        <strong className="recipeTitle">{title}</strong>
+        <strong className="recipeTitle">{title} Organic Vegetable with Peas and  chicken Burrito</strong>
         <span className="recipeAuthor">
           {fvrtBy} <AngleRight />
         </span>

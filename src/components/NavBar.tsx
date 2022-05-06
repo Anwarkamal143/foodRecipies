@@ -1,4 +1,4 @@
-import { ChevronRightIcon } from "@icons"
+import { ArrowRight, ChevronRightIcon } from "@icons"
 import React, { useEffect, useRef, useState } from "react"
 import styled from "styled-components"
 type Props = {
@@ -65,7 +65,7 @@ const NavBar = ({
           <span className="recipesSectionText">{discription}</span>
           {rightIcon && (
             <span className="feature-btn">
-              View All Breakfast <ChevronRightIcon />{" "}
+              View All Breakfast <span className="arrowIcon"><span className="arrowShort"><ChevronRightIcon /></span><span className="arrowLong"><ArrowRight /></span></span>{" "}
             </span>
           )}
         </div>

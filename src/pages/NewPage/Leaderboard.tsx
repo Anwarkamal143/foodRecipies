@@ -1,5 +1,5 @@
 import { Button, DropDown } from "@components"
-import { Bell, Calander, TimeDuraion } from "@icons"
+import { Bell, Calander, TimeIcon } from "@icons"
 import { LeaderBoradCategoryData } from "data"
 import React from "react"
 import RecipesCard from "../../components/RecipiesCard"
@@ -15,7 +15,7 @@ const Leaderboard = ({ data = [] }: Props) => {
         <header className="recipesSectionHeader">
           <div className="recipesSectionTitlebox">
             <strong className="recipesSectionTitle"> Recipe Leaderboard</strong>
-            <span className="recipesSectionText"><TimeDuraion /> Ends in 10 Days 23 Hours 46 Minutes 26 Seconds</span>
+            <span className="recipesSectionText"><TimeIcon /> Ends in 10 Days 23 Hours 46 Minutes 26 Seconds</span>
           </div>
           <div className="leaderboardFilters">
             <DropDown
@@ -68,14 +68,29 @@ const Leaderboard = ({ data = [] }: Props) => {
             />
           </div>
         </header>
-        <div className="leaderboardRecipesList">
-          <RecipesCard
-            tag={false}
-            heartIcon={false}
-            discription={false}
-            timeDuraion={false}
-            data={data}
-          />
+        <div className="leaderboardRecipesHolder">
+          <div className="leaderboardRecipesColumn">
+            <div className="leaderboardRecipesList">
+              <RecipesCard
+                tag={false}
+                heartIcon={false}
+                discription={false}
+                timeDuraion={false}
+                data={data}
+              />
+            </div>
+          </div>
+          <div className="leaderboardRecipesColumn">
+            <div className="leaderboardRecipesList">
+              <RecipesCard
+                tag={false}
+                heartIcon={false}
+                discription={false}
+                timeDuraion={false}
+                data={data}
+              />
+            </div>
+          </div>
         </div>
       </div>
       <div className="items">

@@ -1,5 +1,5 @@
 import { Modal, VideoPlayer } from "@components"
-import { LeftSliderArrow, RightSliderArrow } from "@icons"
+import { AngleRight, LeftSliderArrow, RightSliderArrow } from "@icons"
 import classNames from "classnames"
 import React, { useRef } from "react"
 import NoSSR from "react-no-ssr"
@@ -48,7 +48,7 @@ const ModalforTiktok = ({
                   <img src={item?.profile} alt="video" />
                 </div>
                 <div className="textbox">
-                  <span className="uesername">{item?.userName}</span>
+                  <span className="uesername"><a href="#">{item?.userName} <AngleRight /></a></span>
                   <span className="postby">{item?.postby}</span>
                 </div>
               </div>
@@ -98,8 +98,8 @@ export default styled(ModalforTiktok)`
 
   .modalCloseButton {
     position: absolute;
-    right: 0;
-    top: -10px;
+    right: -5px;
+    top: -15px;
     width: 40px;
     height: 40px;
     border-radius: 100%;
@@ -109,6 +109,7 @@ export default styled(ModalforTiktok)`
     justify-content: center;
     box-shadow: 0 10px 5px rgba(0, 0, 0, 0.05);
     cursor: pointer;
+    transition: all 0.4s ease;
 
     @media (max-width: 1023px) {
       right: 17px;
@@ -127,6 +128,10 @@ export default styled(ModalforTiktok)`
       right: 0;
       bottom: 0;
       content: '';
+    }
+
+    &:hover {
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
     }
   }
 
@@ -231,10 +236,16 @@ export default styled(ModalforTiktok)`
       line-height: 1.25;
       color: #1e1e2d;
       margin: 0 0 20px;
+      cursor: pointer;
+      transition: all 0.25s ease-in-out;
 
       @media (max-width: 767px) {
         font-size: 15px;
         margin: 0 0 20px;
+      }
+
+      &:hover {
+        color: #e0464d;
       }
     }
   }
@@ -289,6 +300,38 @@ export default styled(ModalforTiktok)`
 
       @media (max-width: 767px) {
         font-size: 12px;
+      }
+
+      a {
+        display: inline-block;
+        position: relative;
+        transition: all 0.25s ease-in-out;
+        padding-right: 18px;
+
+        svg {
+          fill: #e0464d;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.25s ease-in-out;
+          position: absolute;
+          right: 10px;
+          top: 52%;
+          transform: translateY(-49%);
+          margin: 0;
+          width: 14px;
+          height: auto;
+          transition: all 0.25s ease-in-out;
+        }
+
+        &:hover {
+          color: #e0464d;
+
+          svg {
+            opacity: 1;
+            visibility: visible;
+            right: 0;
+          }
+        }
       }
     }
 
