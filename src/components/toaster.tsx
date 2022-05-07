@@ -35,10 +35,8 @@ const Element: React.FC<any> = ({
 }) => {
   return (
     <div className="toaster-wrap">
-      <div className="title">
-        <span className="icon">{Icon}</span>
-        <span className="title-text"> {customTitle}</span>
-      </div>
+      <span className="icon">{Icon}</span>
+      <span className="title-text"> {customTitle}</span>
       <div className="description">{message}</div>
     </div>
   )
