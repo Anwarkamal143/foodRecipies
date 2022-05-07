@@ -45,7 +45,7 @@ const NewPage = ({ className }: Props) => {
         </div>
         <div className="recipesSection no-slider">
           <SliderNav
-            rightIconTitle="View All Featured"
+            rightIconTitle="View All Seafood"
             title="Featured Recipes"
             discription="A recipe is a set of instructions that describes how to prepare or make."
           />
