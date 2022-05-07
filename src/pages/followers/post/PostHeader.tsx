@@ -18,7 +18,7 @@ function PostHeader(props: IMyFeedProps) {
   const { creator, person, createdAt } = post
 
   return (
-    <div className={className}>
+    <div className={`${className} ingredientsCookHeader`}>
       <div className="person-details">
         <Image
           className="post-headerimg userProfileImage"

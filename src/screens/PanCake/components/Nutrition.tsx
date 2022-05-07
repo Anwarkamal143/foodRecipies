@@ -5,8 +5,8 @@ type Props = {}
 
 const Nutrition = (props: Props) => {
   return (
-    <div>
-      <div className="head">
+    <div className="ingredientsBlock">
+      <div className="ingredientsBlockHead">
         <h2>Nutrition</h2>
         <Button>Smart Nutrition Calculator</Button>
       </div>

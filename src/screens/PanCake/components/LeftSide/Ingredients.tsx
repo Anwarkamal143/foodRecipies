@@ -1,74 +1,69 @@
 import { Button, Checkbox } from "@components"
-import { Minus, PlusBtn } from "@icons"
+import { Minus, PencilIcon, PlusBtn } from "@icons"
 import React from "react"
 
 type Props = {}
 
 const Ingredients = (props: Props) => {
   return (
-    <div>
-      <div className="head">
+    <div className="ingredientsBlock">
+      <div className="ingredientsBlockHead">
         <h2>Ingredients</h2>
-        <span>
-          <Minus /> 3 Servings <PlusBtn />
+        <span className="inputNumbers">
+          <Minus /> <span className="numText">3 Servings</span> <PlusBtn />
         </span>
         <Button>Convert Units</Button>
       </div>
-      <div className="Ingredients-body">
-        <div className="For-the-Gravy">
-          <p>For the Gravy</p>
-          <hr />
-          <div className="checkboxes">
+      <div className="ingredientsBody">
+        <div className="ingredientsItemsHolder">
+          <strong className="title">For the Gravy</strong>
+          <div className="ingredientsItems">
             <Checkbox
               width={16}
               height={16}
               label="1/4 Cup reduced-sodium soy sauce"
+              checked
               icon={
-                <span className="icon">
-                  <img src="images/chicken.svg" alt="" />
-                </span>
+                <img src="images/chicken.svg" alt="" />
               }
             />
             <Checkbox
               width={16}
               height={16}
               label="1/4 Cup reduced-sodium soy sauce"
+              checked
               icon={
-                <span className="icon">
-                  <img src="images/chicken.svg" alt="" />
-                </span>
+                <img src="images/chicken.svg" alt="" />
               }
             />
             <Checkbox
               width={16}
               height={16}
-              label="1/4 Cup reduced-sodium soy sauce"
+              label="1 tablespoon honey"
+              checked
               icon={
-                <span className="icon">
-                  <img src="images/chicken.svg" alt="" />
-                </span>
+                <img src="images/egg.svg" alt="" />
               }
             />
             <Checkbox
               width={16}
               height={16}
-              label="1/4 Cup reduced-sodium soy sauce"
+              label="1 tablespoon honey"
+              checked
               icon={
-                <span className="icon">
-                  <img src="images/chicken.svg" alt="" />
-                </span>
+                <img src="images/egg.svg" alt="" />
               }
             />
           </div>
         </div>
-        <div className="For-the-Chicken">
-          <p>For the Chicken</p>
-          <hr />
-          <div className="checkboxes">
+        <div className="ingredientsItemsHolder">
+          <strong className="title">For the Chicken</strong>
+          <div className="ingredientsItems">
             <Checkbox
               width={16}
               height={16}
               label="1/4 Cup reduced-sodium soy sauce"
+              checked
               icon={
                 <span className="icon">
                   <img src="images/chicken.svg" alt="" />
@@ -79,6 +74,7 @@ const Ingredients = (props: Props) => {
               width={16}
               height={16}
               label="1/4 Cup reduced-sodium soy sauce"
+              checked
               icon={
                 <span className="icon">
                   <img src="images/chicken.svg" alt="" />
@@ -88,25 +84,27 @@ const Ingredients = (props: Props) => {
             <Checkbox
               width={16}
               height={16}
-              label="1/4 Cup reduced-sodium soy sauce"
+              label="1 tablespoon honey"
+              checked
               icon={
                 <span className="icon">
-                  <img src="images/chicken.svg" alt="" />
+                  <img src="images/egg.svg" alt="" />
                 </span>
               }
             />
             <Checkbox
               width={16}
               height={16}
-              label="1/4 Cup reduced-sodium soy sauce"
+              label="1 tablespoon honey"
+              checked
               icon={
                 <span className="icon">
-                  <img src="images/chicken.svg" alt="" />
+                  <img src="images/egg.svg" alt="" />
                 </span>
               }
             />
           </div>
-        <Button>Add to Shopping List</Button>
+          <Button className="buttonGreen">Add to Shopping List <PencilIcon /></Button>
         </div>
       </div>
     </div>

@@ -89,10 +89,12 @@ const SearchBar = (props: Props) => {
                 {item.icon}
                 {item.name}
                 {item.option && (
-                  <span className="img-arrow">
+                  <>
                     {item.option}
-                    <AngleRight />
-                  </span>
+                    <span className="img-arrow">
+                      <AngleRight />
+                    </span>
+                  </>
                 )}
               </div>
             )

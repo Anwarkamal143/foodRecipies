@@ -120,7 +120,7 @@ export default styled(HeartIconAnimtaed)`
     position: absolute;
     width: 100%;
     height: 100%;
-    border-radius: 6px;
+    border-radius: 8px;
     background: radial-gradient(
       50% 50% at 50% 50%,
       rgba(255, 255, 255, 0) 0%,

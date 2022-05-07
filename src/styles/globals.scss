@@ -1988,7 +1988,8 @@ body {
     }
   }
 
-  &.silver {
+  &.silver,
+  &:nth-child(2) {
     .image {
       border-color: #b9bfc0;
 
@@ -1998,7 +1999,8 @@ body {
     }
   }
 
-  &.bronze {
+  &.bronze,
+  &:nth-child(3) {
     .image {
       border-color: #c0763f;
 
