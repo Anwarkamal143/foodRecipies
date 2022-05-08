@@ -11,29 +11,12 @@ import { Post } from "./post/Posts"
 type Props = {}
 
 const PanCakeScreen = (props: Props) => {
-  const [posts, setPosts] = useState([...RecipesData])
-  const [singlePost, setSinglePost] = useState<any>({})
+  const single = RecipesData.find(e => e.images.length === 7)
   return (
     <div className="ctn">
       <div className="followersContainer">
-        {posts.splice(0, 1).map((post, i) => {
-          setSinglePost(post)
-          return (
-            <Post
-              key={post._id}
-              postFeed={post}
-              onSubmit={post => {
-                const newPosts = [...posts]
-                const index = newPosts.findIndex(p => p._id === post._id)
-                if (index !== -1) {
-                  newPosts[index] = post
-                  setPosts(posts => newPosts)
-                }
-              }}
-            />
-          )
-        })}
-        <LeftSide post={singlePost} />
+        <Post key={single?._id} postFeed={single} />
+        <LeftSide post={single} />
         <RightSide />
         <Nutrition />
         <Review />

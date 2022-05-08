@@ -1,7 +1,7 @@
 import { Recipe } from "@apptypes/recipe"
 import { setItemId } from "@utils"
 import dayjs from "dayjs"
-export const RecipesData: Recipe[] = [
+export const RecipesData = [
   {
     _id: setItemId(),
     status: "live", // 'live' | 'draft' | 'scheduled'
