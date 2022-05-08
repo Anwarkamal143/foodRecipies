@@ -79,7 +79,71 @@ export const tableData = [
     date: "02-1-2313",
   },
 ]
-
+export const panCakeSliderData = [
+  {
+    id: "asdk",
+    image: "/images/bbq.jpg",
+    title: "Organic Vegetable with Peas and  chicken Burrito",
+    fvrtBy: "By Emma Olivia",
+    time: "20 mins",
+    state: "Easy",
+    high: 2,
+  },
+  {
+    id: "asdk",
+    image: "/images/bbq.jpg",
+    title: "Organic Vegetable with Peas and  chicken Burrito",
+    fvrtBy: "By Emma Olivia",
+    time: "20 mins",
+    state: "Easy",
+    high: 2,
+  },
+  {
+    id: "asdk",
+    image: "/images/bbq.jpg",
+    title: "Organic Vegetable with Peas and  chicken Burrito",
+    fvrtBy: "By Emma Olivia",
+    time: "20 mins",
+    state: "Easy",
+    high: 2,
+  },
+  {
+    id: "asdk",
+    image: "/images/bbq.jpg",
+    title: "Organic Vegetable with Peas and  chicken Burrito",
+    fvrtBy: "By Emma Olivia",
+    time: "20 mins",
+    state: "Easy",
+    high: 2,
+  },
+  {
+    id: "asdk",
+    image: "/images/bbq.jpg",
+    title: "Organic Vegetable with Peas and  chicken Burrito",
+    fvrtBy: "By Emma Olivia",
+    time: "20 mins",
+    state: "Easy",
+    high: 2,
+  },
+  {
+    id: "asdk",
+    image: "/images/bbq.jpg",
+    title: "Organic Vegetable with Peas and  chicken Burrito",
+    fvrtBy: "By Emma Olivia",
+    time: "20 mins",
+    state: "Easy",
+    high: 2,
+  },
+  {
+    id: "asdk",
+    image: "/images/bbq.jpg",
+    title: "Organic Vegetable with Peas and  chicken Burrito",
+    fvrtBy: "By Emma Olivia",
+    time: "20 mins",
+    state: "Easy",
+    high: 2,
+  },
+]
 export const data = [
   {
     title: "Recipe Views",

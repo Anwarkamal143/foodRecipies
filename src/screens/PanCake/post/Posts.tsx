@@ -10,10 +10,10 @@ type IMyFeedProps = {
   //   title?: ReactChild | ReactChildren | ReactNode | ReactElement | HTMLElement
   //   subTitle?: ReactChild | ReactChildren | ReactNode | ReactElement | HTMLElement
   onSubmit?: (...args: any[]) => void
-  post: IPostType
+  postFeed: any
 }
 function Posts(props: IMyFeedProps) {
-  const { className, onSubmit, post } = props
+  const { className, onSubmit, postFeed } = props
   const [isOpenModel, onOpenModel, onCloseModel] = useOpenClose()
   //   const {
   //     values,
@@ -27,19 +27,18 @@ function Posts(props: IMyFeedProps) {
   //       onSubmit?.(true, values)
   //     },
   //   })
-
   return (
     <>
       <Card className="postFeed">
         <Card.Header>
-          <PostHeader post={post} onSubmit={onSubmit} />
+          <PostHeader post={postFeed} onSubmit={onSubmit} />
         </Card.Header>
         <Card.Body>
-          <PostBody post={post} onSubmit={onSubmit} />
+          <PostBody post={postFeed} onSubmit={onSubmit} />
         </Card.Body>
         <Card.Footer>
           <PostFooter
-            post={post}
+            post={postFeed}
             onSubmit={onSubmit}
             onSocialItemClick={onOpenModel}
           />
