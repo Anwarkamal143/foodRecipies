@@ -2,11 +2,13 @@ import { Input } from "@components"
 import { InstagramIcon } from "@icons"
 import React, { useState } from "react"
 import Button from "./../../../components/Button/Button"
+import ReviewOnPost from "./ReviewOnPost"
 
 type Props = {}
 
 const Review = (props: Props) => {
   const [value, setValue] = useState("")
+  const [isShow, setIsShow] = useState(false)
 
   return (
     <div>
@@ -24,7 +26,9 @@ const Review = (props: Props) => {
         <div>
           <InstagramIcon />
           <h2>DID YOU MAKE THIS RECIPE?</h2>
-          <Button>See All Reviews</Button>
+          <Button onClick={() => setIsShow(!isShow)}>
+            {isShow ? "Hide All Reviews" : "See All Reviews"}
+          </Button>
         </div>
         <div>
           <span className="icon">R</span>
@@ -41,6 +45,7 @@ const Review = (props: Props) => {
           <InstagramIcon />
         </div>
       </div>
+      {isShow && <ReviewOnPost />}
     </div>
   )
 }

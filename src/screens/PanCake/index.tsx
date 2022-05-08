@@ -1,6 +1,6 @@
 import { RecipesData } from "@redux/data"
 import { panCakeSliderData } from "data"
-import React, { useState } from "react"
+import React from "react"
 import SliderContent from "src/components/SliderContent"
 import Footer from "src/pages/NewPage/footer/footer"
 import LeftSide from "./components/LeftSide/index"

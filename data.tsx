@@ -1,5 +1,5 @@
 import { LeftSliderArrow, RightSliderArrow } from "@icons"
-import { FormatNumber } from "@utils"
+import { FormatNumber, setItemId } from "@utils"
 export const Users = [
   {
     src: "/images/mock/slider1profile.png",
@@ -142,6 +142,17 @@ export const panCakeSliderData = [
     time: "20 mins",
     state: "Easy",
     high: 2,
+  },
+]
+export const reviewsComments = [
+  {
+    _id: setItemId(),
+    name: "Amanda Miles",
+    profileImage: "/images/mock/slider1profile.png",
+    reviewsComment:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. repudiandae accusamus nisi? Enim ducimus quod iusto quia quos consequuntur tenetur nihil deserunt.",
+    likes: 8,
+    comments: 4,
   },
 ]
 export const data = [
