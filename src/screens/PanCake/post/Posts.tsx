@@ -44,7 +44,7 @@ function Posts(props: IMyFeedProps) {
           />
         </Card.Footer>
       </Card>
-      <ShareSocialLinks isOpen={isOpenModel} onCancel={onCloseModel} />
+      <ShareSocialLinks isOpen={isOpenModel} onCancel={onCloseModel} isSearch={false} />
     </>
   )
 }

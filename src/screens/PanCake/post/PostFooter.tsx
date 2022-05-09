@@ -1,3 +1,4 @@
+import { Button } from "@components"
 import styled from "styled-components"
 import { IPostType } from "./Posts"
 
@@ -22,6 +23,7 @@ function PostFooter(props: IPostFooterProps) {
   return (
     <div className={className}>
       <span className="recipeButton">{post.description}</span>
+      <Button onClick={onSocialItemClick}></Button>
     </div>
   )
 }
