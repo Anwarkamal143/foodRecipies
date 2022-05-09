@@ -1,28 +1,32 @@
 import { Button, DropDown } from "@components"
-import { Calander, LikeIcon, Vegan } from "@icons"
+import { CommentIcon, HorizontalDotsIcon, LikeIcon, LikeSolidIcon, Vegan } from "@icons"
 import { reviewsComments } from "data"
 import React from "react"
 type Props = {}
 
 const ReviewOnPost = (props: Props) => {
   return (
-    <div>
+    <div className="reviewsContent">
       {reviewsComments.map((cmt: any) => {
         return (
-          <div className="reviewCtn" key={cmt._id}>
+          <div className="reviewPostItem" key={cmt._id}>
             <div className="profile">
               <div className="user">
                 <div className="profileImage">
-                  <img src={cmt.profileImage} alt="" />
-                  <LikeIcon />
+                  <div className="img">
+                    <img src={cmt.profileImage} alt="" />
+                  </div>
+                  <span className="iconLike">
+                    <LikeSolidIcon />
+                  </span>
                 </div>
-                <p>{cmt.name}</p>
+                <p className="userName">{cmt.name}</p>
               </div>
               <DropDown
                 defaultValue="By Diet"
                 button={selected => (
                   <Button shape="circle" className="buttonFilter" size="small">
-                    <Calander />
+                    <HorizontalDotsIcon />
                   </Button>
                 )}
                 items={[
@@ -44,14 +48,14 @@ const ReviewOnPost = (props: Props) => {
               />
             </div>
             <div className="reviewsComment">{cmt.reviewsComment}</div>
-            <div className="footer">
-              <span className="likes">
+            <div className="reviewPostFooter">
+              <span className="reviewCounts likes">
                 <LikeIcon />
-                {cmt.likes} Likes
+                <span className="number">{cmt.likes}</span> Likes
               </span>
-              <span className="comments">
-                <LikeIcon />
-                {cmt.comments} Comments
+              <span className="reviewCounts comments">
+                <CommentIcon />
+                <span className="number">{cmt.comments}</span> Comments
               </span>
             </div>
           </div>

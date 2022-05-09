@@ -1,5 +1,5 @@
 import { getPageLayout } from "@layouts"
-import React,  from "react"
+import React from "react"
 import styled from "styled-components"
 import PanCakeScreen from "./../../screens/PanCake/index"
 type Props = {
@@ -26,8 +26,8 @@ export default styled(PanCake)`
   
   .followersContainer {
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 80px;
+    margin: 0 auto 100px;
+    padding: 50px 80px 0;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -37,6 +37,9 @@ export default styled(PanCake)`
 
     @media (max-width: 1199px) {
       padding: 0 40px;
+      box-shadow: none;
+      border-radius: 0;
+      margin-bottom: 20px;
     }
 
     @media (max-width: 1023px) {
@@ -75,6 +78,7 @@ export default styled(PanCake)`
 
     @media (max-width: 767px) {
       width: 100%;
+      display: none;
     }
   }
 
@@ -100,7 +104,10 @@ export default styled(PanCake)`
 
       @media (max-width: 767px) {
         min-width: inherit;
-        padding: 7px 20px 9px;
+        padding: 8px 20px;
+        width: 100%;
+        font-size: 10px;
+        line-height: 14px;
       }
 
       svg {
@@ -134,7 +141,10 @@ export default styled(PanCake)`
 
       @media (max-width: 767px) {
         min-width: inherit;
-        padding: 7px 20px 9px;
+        padding: 8px 20px;
+        width: 100%;
+        font-size: 10px;
+        line-height: 14px;
       }
 
       svg {
@@ -193,6 +203,7 @@ export default styled(PanCake)`
       @media (max-width: 767px) {
         width: 100%;
         margin: 0 0 15px;
+        font-size: 18px;
       }
     }
 
@@ -216,6 +227,8 @@ export default styled(PanCake)`
 
         @media (max-width: 767px) {
           margin: 0;
+          width: 18px;
+          heightL 18px;
         }
       }
 
@@ -237,12 +250,31 @@ export default styled(PanCake)`
       min-width: 105px;
       padding: 5px 25px;
 
+      @media (max-width: 767px) {
+        font-size: 10px;
+      }
+
       svg {
         color: #B6B6B6;
       }
 
       &:hover {
         background: #f7f7f7;
+      }
+
+      &.calculatorButton {
+        .text-button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          img {
+            width: 18px;
+            height: 18px;
+            display: block;
+            margin: 0 5px 0 0;
+          }
+        }
       }
     }
   }
@@ -273,6 +305,11 @@ export default styled(PanCake)`
       color: #7B7B82;
       margin: 0 0 35px;
 
+      @media (max-width: 767px) {
+        font-size: 10px;
+        line-height: 18px;
+      }
+
       li {
         display: flex;
         padding: 15px 15px 15px 0;
@@ -298,6 +335,14 @@ export default styled(PanCake)`
           align-items: center;
           justify-content: center;
           border-right: 2px solid #11C278;
+
+          @media (max-width: 767px) {
+            font-size: 12px;
+            line-height: 18px;
+            margin: 0 12px 0 0;
+            width: 34px;
+            min-width: 34px;
+          }
         }
 
         &.active {
@@ -334,6 +379,12 @@ export default styled(PanCake)`
         align-items: center;
       }
 
+      .label-data {
+        @media (max-width: 767px) {
+          padding-left: 15px;
+        }
+      }
+
       label {
         pointer-events: none;
       }
@@ -361,12 +412,23 @@ export default styled(PanCake)`
         align-items: center;
         justify-content: center;
         margin: 0 10px 0 0;
+
+        @media (max-width: 767px) {
+          max-width: 28px;
+          min-width: 28px;
+          max-height: 28px;
+          min-height: 28px;
+        }
       }
 
       .label-text {
         font-size: 12px;
         line-height: 1.5;
         color: #1E1E2D;
+
+        @media (max-width: 767px) {
+          font-size: 10px;
+        }
       }
     }
   }
@@ -568,6 +630,855 @@ export default styled(PanCake)`
               fill: #fff;
             }
           }
+        }
+      }
+    }
+  }
+
+  .aboutCookBlock {
+    padding: 30px 0 50px;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  .nutritionBlock {
+    padding: 0 0 25px;
+
+    @media (max-width: 767px) {
+      padding: 0;
+    }
+    
+    .ingredientsBlockHead {
+      h2 {
+        font-size: 36px;
+
+        @media (max-width: 1023px) {
+          font-size: 28px;
+        }
+
+        @media (max-width: 767px) {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .nutritionProgressBar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px 0 0;
+
+    @media (max-width: 767px) {
+      padding: 0;
+    }
+
+    .nutritionProgressBox {
+      width: 90px;
+
+      @media (max-width: 767px) {
+        width: 50px;
+      }
+
+      &.Carbs {
+        .CircularProgressbar {
+          .CircularProgressbar-text {
+            fill: #11C278;
+          }
+        }
+      }
+
+      &.Fat {
+        .CircularProgressbar {
+          .CircularProgressbar-text {
+            fill: #FE585F;
+          }
+        }
+      }
+
+      &.Protein {
+        .CircularProgressbar {
+          .CircularProgressbar-text {
+            fill: #FEC745;
+          }
+        }
+      }
+
+      &.Calories {
+        .CircularProgressbar {
+          .CircularProgressbar-text {
+            fill: #11C278;
+            display: none;
+          }
+        }
+      }
+    }
+
+    .nutritionTitle {
+      display: block;
+      text-align: center;
+      font-size: 16px;
+      line-height: 1.3;
+      color: #030303;
+      margin: 0 0 15px;
+      
+      @media (max-width: 767px) {
+        font-size: 10px;
+        color: #979797;
+        margin: 0 0 10px;
+      }
+    }
+
+    .nutritionText {
+      display: block;
+      font-size: 13px;
+      line-height: 20px;
+      color: #6F7774;
+      text-align: center;
+      padding: 15px 0 0;
+
+      @media (max-width: 767px) {
+        font-size: 10px;
+        line-height: 14px;
+        padding: 10px 0 0;
+      }
+    }
+
+    .CircularProgressbar {
+      .CircularProgressbar-text {
+        font-size: 13px;
+        line-height: 20px;
+        position: absolute;
+        left: 0;
+        top: 100px;
+
+        @media (max-width: 767px) {
+          font-size: 18px;
+          line-height: 1;
+        }
+      }
+    }
+  }
+
+  .recipeTagsBlock {
+  }
+
+  .recipeTagsList {
+    list-style: none;
+    padding: 0;
+    margin: -5px -7px 55px;
+    display: flex;
+    align-items: flex-start;
+
+    @media (max-width: 767px) {
+      margin: -15px -5px 55px;
+    }
+
+    li {
+      padding: 0 7px;
+
+      @media (max-width: 767px) {
+        padding: 0 5px;
+      }
+
+      a {
+        display: block;
+        border: 1px solid #11C278;
+        border-radius: 20px;
+        color: #11C278;
+        font-size: 13px;
+        line-height: 20px;
+        padding: 5px 15px;
+        text-align: center;
+        transition: all 0.25s ease-in-out;
+
+        @media (max-width: 767px) {
+          font-size: 9px;
+          line-height: 15px;
+          padding: 4px 10px;
+        }
+
+        &:hover {
+          color: #fff;
+          background: #11C278;
+        }
+      }
+    }
+  }
+
+  .makeRecipeBlock {
+    padding: 30px;
+    background: #fff;
+    border: 1px solid #E5E8EF;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 1023px) {
+      padding: 15px;
+    }
+
+    @media (max-width: 767px) {
+      padding: 0;
+      border: 0;
+      box-shadow: none;
+    }
+
+    .img-holder {
+      width: 130px;
+      min-width: 100px;
+      height: 112px;
+      overflow: hidden;
+      border-radius: 10px;
+
+      @media (max-width: 1023px) {
+        width: 90px;
+        min-width: 90px;
+        height: 90px;
+      }
+
+      @media (max-width: 767px) {
+        display: none;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        border-radius: 10px;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+    .textbox {
+      flex-grow: 1;
+      flex-basis: 0;
+      padding: 0 0 0 20px;
+
+      @media (max-width: 1023px) {
+        padding: 0 0 0 10px;
+      }
+
+      @media (max-width: 767px) {
+        padding: 0;
+        display: flex;
+        flex-flow: row wrap;
+      }
+    }
+
+    .makeRecipeBlockHead {
+      display: flex;
+      align-items: center;
+      margin: 0 0 20px;
+
+      @media (max-width: 767px) {
+        order: 2;
+        width: 100%;
+      }
+
+      svg {
+        min-width: 24px;
+        margin: 0 18px 0 0;
+
+        @media (max-width: 1023px) {
+          width: 18px;
+          height: 18px;
+          min-width: 18px;
+          margin: 0 10px 0 0;
+        }
+
+        @media (max-width: 767px) {
+          display: none;
+        }
+      }
+
+      h3 {
+        font-size: 18px;
+        line-heght: 1.5;
+        color: #000;
+        margin: 0;
+
+        @media (max-width: 1023px) {
+          font-size: 14px;
+        }
+
+        @media (max-width: 767px) {
+          display: none;
+        }
+      }
+
+      .button.button-default {
+        background: #fff;
+        border: 1px solid #EFEFEF;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05);
+        border-radius: 27.5px;
+        font-size: 12px;
+        line-height: 1.5;
+        color: #7B7B82;
+        min-width: 105px;
+        padding: 5px 25px;
+        margin-left: auto;
+
+        @media (max-width: 1023px) {
+          padding: 5px 15px;
+        }
+
+        @media (max-width: 767px) {
+          width: 48%;
+          font-size: 10px;
+          line-height: 14px;
+          padding: 8px 20px;
+        }
+
+        svg {
+          color: #B6B6B6;
+          margin: 0 0 0 10px;
+          min-width: auto;
+          display: none;
+        }
+
+        &:hover {
+          background: #f7f7f7;
+        }
+
+        &.buttonGreen {
+          color: #fff;
+          background: #11C278;
+          border-radius: 60px;
+          font-size: 13px;
+          line-height: 18px;
+          padding: 7px 10px 9px;
+          min-width: 272px;
+          display: none;
+          align-items: center;
+          border-color: #11C278;
+          justify-content: center;
+          box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+
+          @media (max-width: 767px) {
+            min-width: inherit;
+            padding: 8px 20px;
+            width: 48%;
+            font-size: 10px;
+            line-height: 14px;
+            display: flex;
+          }
+
+          svg {
+            margin: 0 0 0 5px;
+            width: 10px;
+            height: 10px;
+          }
+
+          &:hover {
+            background: #000;
+            border-color: #000;
+          }
+        }
+      }
+    }
+
+    .makeRecipeForm {
+      display: flex;
+      align-items: center;
+
+      @media (max-width: 767px) {
+        order: 1;
+        margin: 0 0 16px;
+        width: 100%;
+      }
+
+      .icon {
+        width: 34px;
+        height: 34px;
+        border-radius: 100%;
+        background: #7474A9;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 15px 0 -5px;
+
+        @media (max-width: 1023px) {
+          width: 24px;
+          height: 24px;
+          font-size: 12px;
+          margin: 0 10px 0 0;
+        }
+
+        @media (max-width: 767px) {
+          width: 28px;
+          height: 28px;
+          background: #C4C4C4;
+        }
+      }
+
+      .text-input {
+        margin: 0;
+      }
+
+      .materialized-input {
+        margin: 0 30px 0 0;
+
+        @media (max-width: 1023px) {
+          margin: 0 20px 0 0;
+        }
+        
+        label {
+          display: none;
+        }
+        
+        .form-control {
+          width: 288px;
+          font-size: 14px;
+          line-height: 20px;
+          padding: 8px 17px;
+          border-color: #E3E3E3;
+          border-radius: 20px;
+          color: rgba(142, 142, 150, 0.6);
+
+          @media (max-width: 1023px) {
+            width: 250px;
+          }
+
+          @media (max-width: 767px) {
+            height: 28px;
+            font-size: 10px;
+            line-height: 16px;
+            padding: 5px 12px;
+          }
+        }
+      }
+    }
+  }
+
+  .reviewsContent {
+    padding: 60px 0 0;
+
+    @media (max-width: 767px) {
+      padding: 30px 0 0;
+    }
+  }
+
+  .reviewPostItem {
+    margin: 0 0 50px;
+    
+    .profile {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .button.button-sm.buttonFilter {
+        border: 0;
+        min-width: 50px;
+        border: 0;
+        box-shadow: none; 
+      }
+
+      .sortByFilterDrop {
+        width: 140px;
+        background: #fff;
+        box-shadow: -5px 10px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 7px 10px;
+
+        .item {
+          font-size: 12px;
+          line-height: 1.5;
+          color: #424E66;
+          padding: 3px 0
+        }
+      }
+    }
+
+    .user {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .userName {
+        display: block;
+        font-size: 13px;
+        line-height: 1.5;
+        color: #1E1E2D;
+      }
+    }
+
+    .profileImage {
+      position: relative;
+      margin: 0 15px 0 0;
+
+      img {
+        width: 40px;
+        height: 40px;
+        overflow: hidden;
+        border-radius: 100%;
+
+        @media (max-width: 767px) {
+          width: 32px;
+          height: 32px;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          display: block;
+          border-radius: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+
+      .iconLike {
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        position: absolute;
+        right: -5px;
+        bottom: -5px;
+        background: #11C278;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (max-width: 767px) {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+
+    .reviewsComment {
+      font-size: 14px;
+      line-height: 1.5;
+      color: rgba(30, 30, 45, 0.7);
+      padding: 3px 0 0 65px;
+      margin: 0 0 35px;
+
+      @media (max-width: 767px) {
+        font-size: 11px;
+        padding: 3px 0 0 50px;
+        margin: 0 0 20px;
+      }
+    }
+
+    .reviewPostFooter {
+      display: flex;
+      align-items: center;
+      padding: 0 0 0 55px;
+
+      @media (max-width: 767px) {
+        padding: 0 0 0 50px;
+      }
+
+      .reviewCounts {
+        display: flex;
+        align-items: center;
+        font-size: 13px;
+        line-height: 20px;
+        color: #1E1E2D;
+
+        @media (max-width: 767px) {
+          font-size: 11px;
+          line-height: 1.5;
+        }
+
+        svg {
+          width: 20px;
+          height: 20px;
+          margin: 0 10px 0 0;
+
+          @media (max-width: 767px) {
+            width: 16px;
+            height: 16px;
+          }
+
+          path {
+            stroke: #1E1E2D;
+          } 
+        }
+
+        .number {
+          margin: 0 5px 0 0;
+        }
+
+        &.likes {
+          margin-right: 50px;
+        }
+      }
+    }
+  }
+
+  .recommendedRecipesBlock {
+    overflow: hidden;
+    margin: 0 -60px;
+    padding: 60px 60px 40px;
+
+    @media (max-width: 767px) {
+      padding: 0 60px 10px;
+    }
+
+    h2 {
+      font-size: 33px;
+      line-height: 1.2;
+      margin: 0 0 30px;
+      color: #1E1E2D;
+
+      @media (max-width: 1023px) {
+        font-size: 28px;
+      }
+
+      @media (max-width: 767px) {
+        font-size: 16px;
+      }
+    }
+
+    .slick-slider .slick-slide {
+      padding: 0 14px 5px 0;
+    }
+  }
+
+  .sectionDetailsHeader {
+    h1 {
+      color: #1E1E2D;
+      font-size: 36px;
+      line-height: 1.3;
+      margin: 0 0 20px;
+
+      @media (max-width: 1199px) {
+        font-size: 32px;
+      }
+
+      @media (max-width: 1023px) {
+        font-size: 28px;
+      }
+
+      @media (max-width: 767px) {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  .followersContainer {
+    .postFeed {
+      &.feedsWidget {
+        border: 0;
+        border-radius: 0;
+        padding: 0;
+
+        .ingredientsCookHeader {
+          .person-details,
+          .socialIcons {
+            @media (max-width: 767px) {
+              width: auto;
+              margin: 0;
+            }
+          }
+          
+          .userProfileImageWrap {
+            @media (max-width: 767px) {
+              width: 22px;
+              height: 22px;
+              min-width: 22px;
+            }
+          }
+
+          .userProfileName {
+            @media (max-width: 767px) {
+              font-size: 12px;
+              line-height: 1.4;
+              margin: 0;
+            }
+          }
+
+          .userProfileTime {
+            @media (max-width: 767px) {
+              font-size: 10px;
+              line-height: 1.4;
+            }
+          }
+        }
+      }
+    }
+
+    .ingredientsCookHeader {
+      justify-content: space-between;
+    }
+
+    .main-img {
+      .heartIcon {
+        @media (max-width: 767px) {
+          width: 32px;
+          height: 32px;
+          left: 10px;
+          top: 10px;
+        }
+
+        svg {
+          @media (max-width: 767px) {
+            width: 18px;
+            height: 18px;
+          }
+        }
+      }
+
+      .tagsIcon {
+        @media (max-width: 767px) {
+          margin: 0;
+          top: 10px;
+          right: 10px;
+          font-size: 9px;
+          line-height: 1.23;
+          height: 22px;
+        }
+
+        span {
+          svg {
+            @media (max-width: 767px) {
+              width: 8px;
+              height: 8px;
+            }
+          }
+        }
+      }
+    }
+
+    .scrollslides {
+      @media (max-width: 767px) {
+        display: none;
+      }
+
+      .images-area {
+        .image-counter {
+          text-align: center;
+          padding: 0 5px;
+        }
+      }
+    }
+
+    .right-Details {
+      min-width: 230px;
+      max-width: 230px;
+      margin-left: 75px;
+      display: flex;
+      align-items: center;
+      flex-flow: row wrap;
+
+      @media (max-width: 1199px) {
+        margin-left: 45px;
+      }
+
+      @media (max-width: 1023px) {
+        min-width: 160px;
+        max-width: 160px;
+        margin-left: 20px;
+      }
+
+      @media (max-width: 767px) {
+        min-width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+      }
+
+      .right-holder {
+        width: 100%;
+
+        @media (max-width: 767px) {
+          display: flex;
+          flex-flow: row wrap;
+        }
+      }
+
+      .item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 23px 0;
+        width: 100%;
+
+        @media (max-width: 767px) {
+          width: 33.333%;
+          justify-content: center;
+          padding: 20px 0 0;
+        }
+
+        &:last-child {
+          @media (max-width: 767px) {
+            display: none;
+          }
+        }
+
+        &:nth-child(3) {
+          @media (max-width: 767px) {
+            display: none;
+          }
+        }
+
+        .title {
+          display: flex;
+          align-items: center;
+          font-size: 15px;
+          line-height: 1.4;
+          color: #7B7B82;
+
+          @media (max-width: 1023px) {
+            font-size: 12px;
+          }
+
+          img {
+            width: 24px;
+            margin: 0 12px 0 0;
+
+            @media (max-width: 1023px) {
+              width: 18px;
+              margin: 0 10px 0 0;
+            }
+
+            @media (max-width: 767px) {
+              width: 24px;
+            }
+          }
+
+          .text {
+            @media (max-width: 767px) {
+              display: none;
+            }
+          }
+        }
+
+        .subtitle {
+          display: block;
+          font-size: 16px;
+          line-height: 1.4;
+          color: #1E1E2D;
+
+          @media (max-width: 1023px) {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    .card-Footer {
+      font-size: 14px;
+      line-height: 2;
+      color: #7B7B82;
+
+      @media (max-width: 767px) {
+        font-size: 10px;
+        line-height: 18px;
+      }
+      
+      > div {
+        padding: 30px 0 50px !important;
+
+        @media (max-width: 767px) {
+          padding: 20px 0 30px !important;
         }
       }
     }

@@ -15,7 +15,7 @@ const LeftSide = (props: Props) => {
     <div className="detailsLeftColumn">
       <Ingredients />
       <Instructions />
-      <div className="ingredientsBlock">
+      <div className="ingredientsBlock aboutCookBlock">
         <div className="ingredientsBlockHead">
           <h2>About The Cook</h2>
         </div>

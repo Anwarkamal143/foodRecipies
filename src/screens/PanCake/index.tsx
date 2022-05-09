@@ -15,14 +15,28 @@ const PanCakeScreen = (props: Props) => {
   return (
     <div className="ctn">
       <div className="followersContainer">
-        <Post key={single?._id} postFeed={single} />
-        <LeftSide post={single} />
-        <RightSide />
-        <Nutrition />
-        <Review />
+        <header className="sectionDetailsHeader">
+          <ul className="breadcrumbs">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">BREAKFAST</a></li>
+            <li>PANCKAES</li>
+          </ul>
+          <h1>Homemade Burger with American Cheese and Burrata</h1>
+        </header>
+        <div className="sectionDetailsContent">
+          <Post key={single?._id} postFeed={single} />
+        </div>
+          <LeftSide post={single} />
+          <RightSide />
+        <div className="detailsLeftColumn">
+          <Nutrition />
+          <Review />
+        </div>
         {/* <div className="recipesSection"> */}
-        <h2>Recommended Recipes</h2>
-        <SliderContent data={panCakeSliderData} />
+        <div className="recommendedRecipesBlock">
+          <h2>Recommended Recipes</h2>
+          <SliderContent data={panCakeSliderData} />
+        </div>
         {/* </div> */}
       </div>
       <Footer />

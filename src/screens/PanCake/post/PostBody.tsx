@@ -103,17 +103,21 @@ const ImagesSlider = (props: ImagesProps) => {
         </div>
       </Gallery>
       <div className="right-Details">
-        {(post?.rightDetails || []).map((e: any) => {
-          return (
-            <div className="item" key={e._id}>
-              <span>
-                <img src={e.icon} alt="" />
-                {e.category}
-              </span>
-              {e.title}
-            </div>
-          )
-        })}
+        <div className="right-holder">
+          {(post?.rightDetails || []).map((e: any) => {
+            return (
+              <div className="item" key={e._id}>
+                <span className="title">
+                  <img src={e.icon} alt="" />
+                  <span className="text">{e.category}</span>
+                </span>
+                <span className="subtitle">
+                  {e.title}
+                </span>
+              </div>
+            )
+          })}
+        </div>
       </div>
     </div>
   )
