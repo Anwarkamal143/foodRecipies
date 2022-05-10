@@ -1,10 +1,14 @@
 import { Button, DropDown } from "@components"
+import { useOpenClose } from "@hooks"
 import { Calander, LikeIcon, Vegan } from "@icons"
 import { reviewsComments } from "data"
 import React from "react"
+import ReviewLikeModal from "../model/ReviewModal/ReviewLikeModal"
 type Props = {}
 
 const ReviewOnPost = (props: Props) => {
+  const [isOpenModel, onOpenModel, onCloseModel] = useOpenClose()
+
   return (
     <div>
       {reviewsComments.map((cmt: any) => {
@@ -45,7 +49,7 @@ const ReviewOnPost = (props: Props) => {
             </div>
             <div className="reviewsComment">{cmt.reviewsComment}</div>
             <div className="footer">
-              <span className="likes">
+              <span className="likes" onClick={onOpenModel}>
                 <LikeIcon />
                 {cmt.likes} Likes
               </span>
@@ -57,6 +61,7 @@ const ReviewOnPost = (props: Props) => {
           </div>
         )
       })}
+      <ReviewLikeModal isOpen={isOpenModel} onCancel={onCloseModel} />
     </div>
   )
 }

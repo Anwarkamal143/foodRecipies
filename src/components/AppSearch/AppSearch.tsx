@@ -1,38 +1,37 @@
-import { SidebarAnimations } from '@animations'
-import React, { useState } from 'react'
-import styled from 'styled-components'
-import { SearchHeader } from './Header'
-import { SearchedSections } from './SearchedSections'
+import { SidebarAnimations } from "@animations"
+import React, { useState } from "react"
+import styled from "styled-components"
+import { SearchHeader } from "./Header"
+import { SearchedSections } from "./SearchedSections"
 
 type Props = {
-    className?: string
-
-
+  className?: string
 }
 const AppSearchC = ({ toggleSideBar }: { toggleSideBar?: any }) => {
-    console.log({ toggleSideBar })
-    const [searchText, setSearchText] = useState<any>('')
-    return <div>
-        <SearchHeader value={searchText} onClose={toggleSideBar} onSearch={(s?: string) => setSearchText(s)} />
-        <SearchedSections isSearchingEnable={!!searchText} onClickClear={() => setSearchText('')} />
+  const [searchText, setSearchText] = useState<any>("")
+  return (
+    <div>
+      <SearchHeader
+        value={searchText}
+        onClose={toggleSideBar}
+        onSearch={(s?: string) => setSearchText(s)}
+      />
+      <SearchedSections
+        isSearchingEnable={!!searchText}
+        onClickClear={() => setSearchText("")}
+      />
     </div>
+  )
 }
 const AppSearchSlider = (props: Props) => {
-    const { className } = props
-    return (
-        <div className={className}>
-            <SidebarAnimations >
-
-                <AppSearchC />
-            </SidebarAnimations>
-
-
-        </div>
-    )
+  const { className } = props
+  return (
+    <div className={className}>
+      <SidebarAnimations>
+        <AppSearchC />
+      </SidebarAnimations>
+    </div>
+  )
 }
 
-export const AppSearch = styled(AppSearchSlider)`
-    
-
-    
-`
+export const AppSearch = styled(AppSearchSlider)``
