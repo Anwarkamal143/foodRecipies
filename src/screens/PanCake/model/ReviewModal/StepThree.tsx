@@ -101,17 +101,6 @@ const StepThree = (props: Props) => {
             />
           ))}
         </div>
-        <div>
-          {datatwo.map((item, idx) => (
-            <ProgressBar
-              key={idx}
-              bgColor={item.bgcolor}
-              progresspercent={item.completed}
-              showPrgress={false}
-              title={item.title}
-            />
-          ))}
-        </div>
       </div>
       <p>
         Percent Daily Values are based on a 2,000 calorie diet. Your daily
