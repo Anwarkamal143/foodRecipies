@@ -1,9 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import { CircleImage, UnstyledLink } from "@components"
+import { ArrowRight } from "@icons"
 import clsxm from "@lib/clsxm"
 import React from "react"
 import { BsArrowRight } from "react-icons/bs"
-import { FiChevronDown } from "react-icons/fi"
+import { FiChevronDown, FiChevronRight } from "react-icons/fi"
 import MegaMenu, { MegaMenuButton, MegaMenuPanel } from "./MegaMenu"
 import { CoocksMenu, TopCooksOfWeek } from "./MenuData/MenuData"
 
@@ -40,7 +41,153 @@ function CoocksMegaMenu() {
       <MegaMenuPanel className="-left-80 w-full lg:w-[70vw] xl:-left-96 xl:w-[60vw] 2xl:max-w-screen-md">
         {/* <span className='block customArrow drop-shadow-md after:left-10 after:-top-3 '></span> */}
 
-        <div className="flex ">
+        <div className="megaMenuWrapper cooksMenu">
+          <div className="menuLeftColumn">
+            <div className="menuBox">
+              <strong className="title">Cook Quick Access</strong>
+              <ul className="menuBoxItems">
+                <li>
+                  <a href="#">
+                    <div className="icon"><img src="/images/nav-icon05.png" alt="" width={13} /></div>
+                    <div className="text">
+                      <strong className="subtite">All Our Cooks</strong>
+                      <span className="subtext">View All Online Cooks</span>
+                    </div>
+                    <BsArrowRight className="arrow"/>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div className="icon"><img src="/images/nav-icon02.png" alt="" width={12} /></div>
+                    <div className="text">
+                      <strong className="subtite">Cook Leaderboards</strong>
+                      <span className="subtext">What’s trending? Find out now</span>
+                    </div>
+                    <BsArrowRight className="arrow"/>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div className="icon"><img src="/images/nav-icon22.png" alt="" width={14} /></div>
+                    <div className="text">
+                      <strong className="subtite">Cook Collections</strong>
+                      <span className="subtext">Prefer to watch? Check these out</span>
+                    </div>
+                    <BsArrowRight className="arrow"/>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div className="icon"><img src="/images/nav-icon03.png" alt="" width={12} /></div>
+                    <div className="text">
+                      <strong className="subtite">Cook Video Tutorials</strong>
+                      <span className="subtext">Prefer to watch? Check these out</span>
+                    </div>
+                    <BsArrowRight className="arrow"/>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="menuRightColumn">
+            <div className="menuRightColumnHead">
+              <strong className="title">Top cooks this week <img src="/images/flame.png" alt="" width={11} /></strong>
+              <a href="#" className="buttonView">View All <FiChevronRight /></a>
+            </div>
+            <div className="userlist">
+              <div className="top-profiles">
+                <div className="rate-info">
+                  <span className="rate-heigh"></span>
+                  <span className="rate">1</span>
+                </div>
+                <div className="image">
+                  <img src="/images/cook.png" alt="" width={26} />
+                </div>
+                <span className="cookname">Nick Digiovanni</span>
+                <span className="iconArrow"><ArrowRight /></span>
+              </div>
+              <div className="top-profiles">
+                <div className="rate-info">
+                  <span className="rate-low"></span>
+                  <span className="rate">2</span>
+                </div>
+                <div className="image">
+                  <img src="/images/cook.png" alt="" width={26} />
+                </div>
+                <span className="cookname">Nick Digiovanni</span>
+                <span className="iconArrow"><ArrowRight /></span>
+              </div>
+              <div className="top-profiles">
+                <div className="rate-info">
+                  <span className="rate-heigh"></span>
+                  <span className="rate">3</span>
+                </div>
+                <div className="image">
+                  <img src="/images/cook.png" alt="" width={26} />
+                </div>
+                <span className="cookname">Nick Digiovanni</span>
+                <span className="iconArrow"><ArrowRight /></span>
+              </div>
+              <div className="top-profiles">
+                <div className="rate-info">
+                  <span className="rate-low"></span>
+                  <span className="rate">4</span>
+                </div>
+                <div className="image">
+                  <img src="/images/cook.png" alt="" width={26} />
+                </div>
+                <span className="cookname">Nick Digiovanni</span>
+                <span className="iconArrow"><ArrowRight /></span>
+              </div>
+              <div className="top-profiles">
+                <div className="rate-info">
+                  <span className="rate-heigh"></span>
+                  <span className="rate">5</span>
+                </div>
+                <div className="image">
+                  <img src="/images/cook.png" alt="" width={26} />
+                </div>
+                <span className="cookname">Nick Digiovanni</span>
+                <span className="iconArrow"><ArrowRight /></span>
+              </div>
+              <div className="top-profiles">
+                <div className="rate-info">
+                  <span className="rate-heigh"></span>
+                  <span className="rate">6</span>
+                </div>
+                <div className="image">
+                  <img src="/images/cook.png" alt="" width={26} />
+                </div>
+                <span className="cookname">Nick Digiovanni</span>
+                <span className="iconArrow"><ArrowRight /></span>
+              </div>
+              <div className="top-profiles">
+                <div className="rate-info">
+                  <span className="rate-heigh"></span>
+                  <span className="rate">7</span>
+                </div>
+                <div className="image">
+                  <img src="/images/cook.png" alt="" width={26} />
+                </div>
+                <span className="cookname">Nick Digiovanni</span>
+                <span className="iconArrow"><ArrowRight /></span>
+              </div>
+              <div className="top-profiles">
+                <div className="rate-info">
+                  <span className="rate-low"></span>
+                  <span className="rate">8</span>
+                </div>
+                <div className="image">
+                  <img src="/images/cook.png" alt="" width={26} />
+                </div>
+                <span className="cookname">Nick Digiovanni</span>
+                <span className="iconArrow"><ArrowRight /></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex display-none">
           {/*  Quick Access Recipies */}
           <div className="flex flex-col w-6/12 gap-6 p-6 pr-4 text-left border-r ">
             <div className="flex flex-col">

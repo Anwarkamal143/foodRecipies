@@ -9,7 +9,7 @@ import {
   MessageIcon,
   PhoneIcon,
   TelegramIcon,
-  TwitterIcon,
+  TwitterIcon
 } from "@icons"
 import { ReactElement, useEffect, useState } from "react"
 import styled from "styled-components"
@@ -77,7 +77,7 @@ function SocialShareLinks({
       isOpen={isOpenModel}
       title={
         <span className="title-holder">{`${
-          page?.title ? page?.title : "Share List"
+          page?.title ? page?.title : "Share Via"
         }`}</span>
       }
       showFooter={false}
@@ -86,7 +86,7 @@ function SocialShareLinks({
     >
       <Card>
         {media && (
-          <div className="inviteModal">
+          <div className="inviteModal shareModal">
             {isSearch && (
               <Input
                 onChange={e => {
@@ -101,6 +101,14 @@ function SocialShareLinks({
                 // materialDesign
               />
             )}
+            <div className="shareRecipeBox">
+              <div className="image-holder">
+                <img src="/images/share-image.png" alt="" />
+              </div>
+              <div className="textbox">
+                <p>Credibly reinvent resource maximizing systems vis-a-vis value-added customer service. Authoritatively seize ...</p>
+              </div>
+            </div>
             <ul className="Social_icons">
               <li>
                 <Icon className="icon icon-link">
@@ -166,8 +174,8 @@ function SocialShareLinks({
           </div>
         )}
         {page?.linkPage === "sms" && (
-          <div className="smsLink">
-            <p className="discription">
+          <div className="smsLink shareFormElements">
+            <p className="label">
               Send a free text message with a link to this recipe.
             </p>
             <Input
@@ -179,14 +187,15 @@ function SocialShareLinks({
               inputClasses="spacer"
               type="tel"
               value={email}
+              placeholder="123-456-7890"
               // materialDesign
             />
-            <Button>Send Recipe</Button>
+            <Button className="buttonGreen">Send Recipe</Button>
           </div>
         )}
         {page?.linkPage === "facebook" && (
-          <div className="smsLink">
-            <p className="discription">
+          <div className="smsLink shareFormElements">
+            <p className="label">
               Send an email with a link to this recipe.
             </p>
             <Input
@@ -198,10 +207,11 @@ function SocialShareLinks({
               inputClasses="spacer"
               name="email"
               value={email}
-              icon={<PlusCircleIcon />}
+              // icon={<PlusCircleIcon />}
+              placeholder="Email Address"
               // materialDesign
             />
-            <Button>Send Recipe</Button>
+            <Button className="buttonGreen">Send Recipe</Button>
           </div>
         )}
       </Card>
@@ -209,7 +219,116 @@ function SocialShareLinks({
   )
 }
 export const ShareSocialLinks = styled(SocialShareLinks)`
+  .modal-title {
+    color: #1E1E2D;
+  }
+
+  .modal-header {
+    margin: 0 0 15px;
+    
+    .close {
+      font-size: 30px;
+      padding: 0.9rem 1rem;
+    }
+  }
+
+  .shareRecipeBox {
+    background: #fff;
+    border: 1px solid #F2F3F5;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 12px;
+    margin: 0 0 12px;
+    display: none;
+
+    .image-holder {
+      overflow: hidden;
+      border-radius: 15px;
+
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 15px;
+      }
+    }
+
+    .textbox {
+      font-size: 12px;
+      line-height: 20px;
+      color: #1E1E2D;
+      padding: 10px 3px 5px;
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+
+  .shareModal {
+    .shareRecipeBox {
+      display: block;
+    }
+  }
+  
   .Social_icons {
-    display: flex;
+    margin: 0 -9px;
+
+    @media (max-width: 575px) {
+      margin: 0;
+    }
+
+    li {
+      @media (max-width: 575px) {
+        padding: 12px 14px;
+      }
+    }
+  }
+
+  .shareFormElements {
+    overflow: hidden;
+
+    .label {
+      display: block;
+      font-size: 10px;
+      line-height: 15px;
+      margin: 0 0 10px;
+      color: #273746;
+    }
+
+    .text-input {
+      margin: 0 0 15px;
+      
+      label {
+        display: none;
+      }
+
+      .form-control {
+        width: 100%;
+        height: 36px;
+        border-color: #E5E8EF;
+        border-radius: 5px;
+        font-size: 10px;
+        line-height: 16px;
+        color: #929BAA;
+        padding: 8px 15px;
+      }
+    }
+
+    .buttonGreen {
+      width: 100%;
+      display: block;
+      background: #11C278;
+      color: #fff;
+      height: 32px;
+      font-size: 10px;
+      line-height: 16px;
+      padding: 5px 10px;
+      border-radius: 16px;
+
+      &:hover {
+        background: #000;
+      }
+    }
   }
 `
