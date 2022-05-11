@@ -65,7 +65,7 @@ const NavBar = ({
           <span className="recipesSectionText">{discription}</span>
           {rightIcon && (
             <span className="feature-btn">
-              View All Breakfast{" "}
+              View Latest Recipes{" "}
               <span className="arrowIcon">
                 <span className="arrowShort">
                   <ChevronRightIcon />
@@ -78,7 +78,12 @@ const NavBar = ({
           )}
         </div>
       </header>
-      <div className="recipesCategories">{isNavBar && <NavBarData />}</div>
+      {isNavBar && (
+        <div className="recipesCategories">
+          {" "}
+          <NavBarData />
+        </div>
+      )}
     </div>
   )
 }

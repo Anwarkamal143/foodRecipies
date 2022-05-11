@@ -9,7 +9,7 @@ const ToasterContainer: React.FC<any> = props => {
   return (
     <ToastContainer
       className={`${className} mahad`}
-      position="top-right"
+      position="bottom-right"
       autoClose={5000}
       hideProgressBar
       newestOnTop
@@ -105,7 +105,7 @@ const save = (
     <Element
       message={message}
       title={title || "Recipe Saved"}
-      Icon={<img src="images/SaveRecipe.svg" alt="heart" />}
+      Icon={<img src="images/SaveRecipe.png" alt="heart" />}
     />,
     options
   )

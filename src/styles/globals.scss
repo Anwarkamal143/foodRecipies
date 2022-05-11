@@ -232,7 +232,7 @@ body {
   padding: 0 50px;
 
   @media (max-width: 1399px) {
-    padding: 0 20px;
+    padding: 0 40px;
   }
 
   @media (max-width: 767px) {
@@ -280,7 +280,7 @@ body {
     padding: 0 50px;
 
     @media (max-width: 1399px) {
-      padding: 0 20px;
+      padding: 0 40px;
     }
 
     @media (max-width: 767px) {
@@ -741,6 +741,11 @@ body {
   }
 }
 
+.slick-slide {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
 .latestRecipesSection {
   .recipesCategories {
     display: none;
@@ -774,6 +779,8 @@ body {
   cursor: pointer;
   transition: all 0.4s ease;
   outline: none;
+  box-shadow: none;
+  min-height: 38px;
 
   @media (max-width: 767px) {
     font-size: 9px;
@@ -854,6 +861,27 @@ body {
     @media (max-width: 1023px) {
       padding-left: 0;
       padding-right: 0;
+    }
+  }
+
+  &.no-slider {
+    .recipeItem {
+      @media (max-width: 1199px) {
+        &:nth-child(4) {
+          + .recipeItem,
+          ~ .recipeItem {
+            display: none;
+          }
+        }
+      }
+      @media (max-width: 1023px) and (min-width: 768px) {
+        &:nth-child(3) {
+          + .recipeItem,
+          ~ .recipeItem {
+            display: none;
+          }
+        }
+      }
     }
   }
 }
@@ -1280,6 +1308,10 @@ body {
     @media (max-width: 479px) {
       width: 100%;
       margin: 0 0 12px;
+    }
+
+    &:hover {
+      box-shadow: 0 4px 4px rgba(255, 255, 255, 0.3);
     }
 
     .recipeItemImage {
@@ -1903,9 +1935,14 @@ body {
       line-height: 20px;
       color: #62626c;
       margin: 0 0 12px;
+      cursor: pointer;
 
       @media (max-width: 767px) {
         font-size: 12px;
+      }
+
+      &:hover {
+        color: #ff6067;
       }
     }
   }
@@ -2041,6 +2078,14 @@ body {
     width: calc(100% - 14px);
   }
 
+  &:hover {
+    .iconArrow {
+      path {
+        stroke: #ff6067;
+      }
+    }
+  }
+
   .rate-info {
     margin: 0 5px 0 0;
     display: flex;
@@ -2166,8 +2211,8 @@ body {
     }
 
     .videobtn {
-      width: 32px;
-      height: 32px;
+      width: 40px;
+      height: 40px;
       background: rgba(255, 255, 255, 0.8);
 
       &:before {
@@ -2203,7 +2248,7 @@ body {
     height: 30px;
     border-radius: 100%;
     background: rgba(0, 0, 0, 0.31);
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     color: #fff;
@@ -2702,6 +2747,7 @@ body {
 
         &::placeholder {
           color: #fff;
+          opacity: 0.7;
         }
       }
 
@@ -2721,6 +2767,11 @@ body {
         display: flex !important;
         align-items: center;
         justify-content: center;
+        cursor: pointer;
+
+        &:hover {
+          background: darken(#ff595f, 20%);
+        }
       }
     }
   }
@@ -3380,6 +3431,16 @@ body {
 }
 
 .ingredientBlock {
+  padding-top: 70px;
+
+  @media (max-width: 1023px) {
+    padding-top: 40px;
+  }
+
+  @media (max-width: 767px) {
+    padding-top: 30px;
+  }
+
   .recipesSectionHeader {
     .recipesSectionTitle {
       @media (max-width: 767px) {
@@ -3543,6 +3604,10 @@ body {
   .Toastify__toast {
     display: block;
     padding: 0;
+    font-family: puck, ui-sans-serif, system-ui, -apple-system,
+      BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+      "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol", "Noto Color Emoji";
   }
 
   .Toastify__toast-body {
@@ -3559,9 +3624,9 @@ body {
   }
 
   .Toastify__close-button {
-    color: rgba(130, 149, 167, 1);
+    color: rgba(130, 149, 167, 0.5);
     opacity: 1;
-    width: 20px;
+    width: 16px;
     position: absolute;
     right: 10px;
     top: 10px;
@@ -3608,7 +3673,7 @@ body {
   font-size: 14px;
   line-height: 1.5;
   text-transform: uppercase;
-  color: #7B7B82;
+  color: #7b7b82;
   font-weight: 500;
   margin: 0 0 15px;
 
@@ -3619,13 +3684,13 @@ body {
   li {
     + li {
       &:before {
-        content: '>';
+        content: ">";
         margin: 0 5px;
       }
     }
 
     a {
-      color: #7B7B82;
+      color: #7b7b82;
 
       &:hover {
         text-decoration: underline;
@@ -3669,7 +3734,7 @@ body {
       font-weight: 500;
       font-size: 12px;
       line-height: 18px;
-      color: #1A1A1A;
+      color: #1a1a1a;
       margin: 0 0 15px;
     }
   }
@@ -3704,7 +3769,7 @@ body {
         width: 24px;
         height: 22px;
         min-width: 20px;
-        background: #F0F5FA;
+        background: #f0f5fa;
         border-radius: 5px;
         display: flex;
         align-items: center;
@@ -3778,7 +3843,7 @@ body {
     .buttonView {
       width: 72px;
       height: 18px;
-      border: 1px solid #E5E8EF;
+      border: 1px solid #e5e8ef;
       border-radius: 31px;
       font-size: 8px;
       line-height: 12px;
@@ -3796,7 +3861,7 @@ body {
       }
 
       &:hover {
-        background-color: #E5E8EF;
+        background-color: #e5e8ef;
       }
     }
   }
@@ -3804,7 +3869,7 @@ body {
   .menuNavBox {
     width: 33.333%;
     padding: 0 30px;
-    margin: 0 0 50px ;
+    margin: 0 0 50px;
     min-height: 168px;
 
     .title {
@@ -3835,7 +3900,7 @@ body {
 
     li {
       a {
-        color: #4D4D4D;
+        color: #4d4d4d;
         display: flex;
         align-items: center;
         padding: 4px 5px;
@@ -4009,37 +4074,37 @@ body {
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
       }
 
-       .rate {
-         font-size: 10px;
-       }
+      .rate {
+        font-size: 10px;
+      }
 
-       .rate-heigh {
-         &:after {
-           border-width: 0 3px 4px 3px;
-         }
-       }
+      .rate-heigh {
+        &:after {
+          border-width: 0 3px 4px 3px;
+        }
+      }
 
-       .rate-low {
-         &:after {
-           border-width: 4px 3px 0 3px;
-         }
-       }
+      .rate-low {
+        &:after {
+          border-width: 4px 3px 0 3px;
+        }
+      }
 
-       .image {
-         width: 26px;
-         height: 26px;
-         min-width: 26px;
-         margin: 0 10px;
-       }
+      .image {
+        width: 26px;
+        height: 26px;
+        min-width: 26px;
+        margin: 0 10px;
+      }
 
-       .cookname {
-         font-size: 9px;
-         color: #4D4D4D;
-       }
+      .cookname {
+        font-size: 9px;
+        color: #4d4d4d;
+      }
 
-       .iconArrow {
-         right: 12px;
-       }
+      .iconArrow {
+        right: 12px;
+      }
     }
   }
 }
