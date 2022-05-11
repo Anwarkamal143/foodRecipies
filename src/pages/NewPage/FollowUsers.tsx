@@ -63,8 +63,11 @@ const FollowUsers = ({ className, data = [], title, discription }: Props) => {
           <div className="textbox">
             <span className="userName"><a href="#">{e.userName} <AngleRight /></a></span>
             <div className="totle-recip">
-              <img src="/images/Likes.png" alt="" />
-              <span>{e.Recipes} Recipes</span>
+              <ul className="likeImagesList">
+                <li><a href="#"><img src="/images/img-like01.png" alt="" /></a></li>
+                <li><a href="#"><img src="/images/img-like02.png" alt="" /></a></li>
+              </ul>
+              <a className="recepiesCont" href="#">{e.Recipes} Recipes <AngleRight /></a>
             </div>
             <Button><AddCookIcon /> Follow Cook</Button>
           </div>
