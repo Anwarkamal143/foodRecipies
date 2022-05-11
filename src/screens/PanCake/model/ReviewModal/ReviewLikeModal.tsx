@@ -1,6 +1,6 @@
 import { Modal } from "@components"
 import { useOpenClose } from "@hooks"
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useMemo, useState } from "react"
 import styled from "styled-components"
 import StepOne from "./StepOne"
 import StepThree from "./StepThree"
@@ -15,11 +15,11 @@ type Props = {
 
 const ReviewLikeModal = ({ isOpen, className, onSave, onCancel }: Props) => {
   const [isOpenModel, onOpenModel, onCloseModel] = useOpenClose()
-  const [likeStep, setLikeStep] = useState("0")
+  const [currentStep, setCurrentStep] = useState("1")
   const handleClose = () => {
     onCloseModel()
     onCancel?.()
-    setLikeStep("0")
+    setCurrentStep("1")
   }
 
   useEffect(() => {
@@ -27,18 +27,52 @@ const ReviewLikeModal = ({ isOpen, className, onSave, onCancel }: Props) => {
       onOpenModel()
     }
   }, [isOpen])
+  const Components = useMemo(() => {
+    switch (currentStep) {
+      case "1":
+        return {
+          header: 1,
+          step: (
+            <StepOne
+              currentStep={currentStep}
+              setCurrentStep={setCurrentStep}
+            />
+          ),
+          title: "Great ! How was it?",
+        }
+      case "2":
+        return {
+          header: 2,
+          title: "Choose List",
+          step: <StepTwo setCurrentStep={setCurrentStep} />,
+          stepOne: (
+            <StepOne
+              currentStep={currentStep}
+              setCurrentStep={setCurrentStep}
+            />
+          ),
+        }
+      case "3":
+        return {
+          header: 3,
+          title: "Create New List",
+          step: <StepThree />,
+        }
+      default:
+        return <StepOne />
+    }
+  }, [currentStep as any])
   return (
     <Modal
       className={`modal-popups ${className}`}
       isOpen={isOpenModel}
-      title={<span className="title-holder">Great ! How was it?</span>}
+      title={<span className="title-holder">{Components?.title}</span>}
       showFooter={false}
       showHeader={true}
       onClose={handleClose}
     >
-      <StepOne likeStep={likeStep} setLikeStep={setLikeStep} />
-      {likeStep === "1" && <StepTwo setLikeStep={setLikeStep} />}
-      {likeStep === "2" && <StepThree />}
+      {currentStep === "2" && Components?.stepOne}
+      {Components?.step}
     </Modal>
   )
 }

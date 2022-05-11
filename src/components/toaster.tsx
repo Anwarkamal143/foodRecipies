@@ -101,7 +101,7 @@ const save = (
   Icon?: ReactElement | ReactNode,
   options?: ToastOptions
 ) => {
-  rtoast.warning(
+  rtoast.success(
     <Element
       message={message}
       title={title || "Recipe Saved"}
@@ -110,7 +110,22 @@ const save = (
     options
   )
 }
+const follow = (
+  message: string,
+  title?: string,
+  Icon?: ReactElement | ReactNode,
+  options?: ToastOptions
+) => {
+  rtoast.success(
+    <Element
+      message={message}
+      title={title || "Cook Followed"}
+      Icon={<img src="images/userfollow.svg" alt="userfollow.svg" />}
+    />,
+    options
+  )
+}
 
-export const toast = { error, info, success, warning, save }
+export const toast = { error, info, success, warning, save, follow }
 
 export default styled(ToasterContainer)``

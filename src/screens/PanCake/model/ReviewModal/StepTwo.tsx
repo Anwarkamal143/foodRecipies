@@ -2,10 +2,10 @@ import { Button } from "@components"
 import React, { useState } from "react"
 
 type Props = {
-  setLikeStep?: any
+  setCurrentStep?: any
 }
 
-const StepTwo = ({ setLikeStep }: Props) => {
+const StepTwo = ({ setCurrentStep }: Props) => {
   const [file, setFile] = useState<any>(null)
 
   return (
@@ -60,7 +60,7 @@ const StepTwo = ({ setLikeStep }: Props) => {
           Share more about your experience. Any tips for improving this recipe?
         </span>
       </div>
-      <Button onClick={() => setLikeStep("2")}>Save Note</Button>
+      <Button onClick={() => setCurrentStep("3")}>Save Note</Button>
     </div>
   )
 }

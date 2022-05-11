@@ -58,7 +58,6 @@ const Header = (props: Props) => {
           // onBlur={e => {
           //   activeFocus?.(false)
           // }}
-         
         />
         {value && (
           <CrossIcon

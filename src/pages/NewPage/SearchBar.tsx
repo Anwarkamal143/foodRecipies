@@ -29,14 +29,14 @@ const SearchBar = (props: Props) => {
   })
 
   return (
-    <div
-      className="pageFiltersSearch"
-      ref={ref as any}
-      onClick={() => {
-        setModalOpen(true)
-      }}
-    >
-      <div className="search">
+    <div className="pageFiltersSearch">
+      <div
+        className="search"
+        ref={ref as any}
+        onClick={() => {
+          setModalOpen(true)
+        }}
+      >
         <SearchHeader
           onSearch={(s?: string) => setSearchText(s)}
           header={false}
