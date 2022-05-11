@@ -26,7 +26,6 @@ function PostHeader(props: IMyFeedProps) {
     }
     onSubmit?.(newPost)
     setOpenModel(false)
-    console.log(person.followed, "person.followed")
   }
   return (
     <div className={className}>

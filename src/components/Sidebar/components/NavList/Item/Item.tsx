@@ -96,7 +96,6 @@ export const NestedItems = (
         href={route}
         {...rest}
         onClick={() => {
-          console.log("hello")
           setIsOpen(!isOpen)
         }}
       >

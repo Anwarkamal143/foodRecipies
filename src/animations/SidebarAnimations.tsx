@@ -1,38 +1,37 @@
-import { Scrollbar } from '@components'
-import { useAppSelector, useOnClickOutside } from '@hooks'
-import { toggleSidebar } from '@reducers'
-import { useAppDispatch } from '@redux/hooks'
-import { AnimatePresence, motion, useCycle } from 'framer-motion'
-import React, { cloneElement, ReactElement, useEffect, useRef } from 'react'
-import { useMediaQuery } from 'react-responsive'
-import styled from 'styled-components'
-
+import { Scrollbar } from "@components"
+import { useAppSelector, useOnClickOutside } from "@hooks"
+import { toggleSidebar } from "@reducers"
+import { useAppDispatch } from "@redux/hooks"
+import { AnimatePresence, motion, useCycle } from "framer-motion"
+import React, { cloneElement, ReactElement, useEffect, useRef } from "react"
+import { useMediaQuery } from "react-responsive"
+import styled from "styled-components"
 
 type Props = {
-  className?: string;
+  className?: string
   children: ReactElement
 }
 const itemVariants = {
   closed: {
-    opacity: 0
+    opacity: 0,
   },
-  open: { opacity: 1 }
-};
+  open: { opacity: 1 },
+}
 
 const sideVariants = {
   closed: {
     transition: {
       staggerChildren: 0.2,
-      staggerDirection: -1
-    }
+      staggerDirection: -1,
+    },
   },
   open: {
     transition: {
       staggerChildren: 0.2,
-      staggerDirection: 1
-    }
-  }
-};
+      staggerDirection: 1,
+    },
+  },
+}
 // const links = [
 //   { name: "Home", to: "#", id: 1 },
 //   { name: "About", to: "#", id: 2 },
@@ -40,52 +39,51 @@ const sideVariants = {
 //   { name: "Contact", to: "#", id: 4 }
 // ];
 const SidebarAnimation = ({ className, children }: Props) => {
-  const [open, cycleOpen] = useCycle(false, true);
+  const [open, cycleOpen] = useCycle(false, true)
   const isOpen = useAppSelector(state => state.sidebar.isOpen)
-  const dispatch = useAppDispatch();
-  const ref = useRef(null);
+  const dispatch = useAppDispatch()
+  const ref = useRef(null)
 
-
-  const tablets = useMediaQuery({ query: '(max-width: 1300px)' })
-  const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
+  const tablets = useMediaQuery({ query: "(max-width: 1300px)" })
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" })
 
   useOnClickOutside(ref, () => {
     toggleSideBar()
-
   })
   const toggleSideBar = () => {
-    cycleOpen(0);
-    dispatch(toggleSidebar(false));
+    cycleOpen(0)
+    dispatch(toggleSidebar(false))
   }
   useEffect(() => {
     if (isOpen) {
       const width = document.body.clientWidth
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden"
       // document.body.style.width = `${width}px`;
       cycleOpen()
     }
   }, [isOpen])
-  console.log({ open, isOpen })
   return (
-    <div className={className + `${open ? ' slidebar_open' : ''}`}>
-      <AnimatePresence onExitComplete={() => {
-        document.body.style.overflow = 'visible'
-      }} >
+    <div className={className + `${open ? " slidebar_open" : ""}`}>
+      <AnimatePresence
+        onExitComplete={() => {
+          document.body.style.overflow = "visible"
+        }}
+      >
         {open && (
           <motion.aside
             ref={ref}
-            className='slider'
-            initial={{ right: 0, }}
+            className="slider"
+            initial={{ right: 0 }}
             animate={{
-              left: isMobile ? '0%' : tablets ? '70%' : '80%',
+              left: isMobile ? "0%" : tablets ? "70%" : "80%",
               // width: isMobile ? '100%' : 360,
-              position: 'fixed',
+              position: "fixed",
             }}
             exit={{
               // width: 0,
-              left: '100%',
+              left: "100%",
               right: 0,
-              transition: { delay: 0.3, duration: 0.3 }
+              transition: { delay: 0.3, duration: 0.3 },
             }}
           >
             <Scrollbar>
@@ -96,7 +94,6 @@ const SidebarAnimation = ({ className, children }: Props) => {
                 exit="closed"
                 variants={sideVariants}
               >
-
                 {cloneElement(children, { toggleSideBar })}
                 {/* {links.map(({ name, to, id }) => (
                   <motion.a
@@ -113,20 +110,18 @@ const SidebarAnimation = ({ className, children }: Props) => {
           </motion.aside>
         )}
       </AnimatePresence>
-
     </div>
   )
 }
 export const SidebarAnimations = styled(SidebarAnimation)`
-.container{
-  padding: 50px 25px;
-  height: 100%;
-   @media (max-width: 767px) {
+  .container {
+    padding: 50px 25px;
+    height: 100%;
+    @media (max-width: 767px) {
       padding: 25px;
-
     }
-}
-&.slidebar_open {
+  }
+  &.slidebar_open {
     position: fixed;
     top: 0;
     right: 0;
@@ -136,9 +131,9 @@ export const SidebarAnimations = styled(SidebarAnimation)`
     height: 100%;
     z-index: 98;
     background: rgba(0, 0, 0, 0.7);
-}
+  }
 
-.slider {
+  .slider {
     position: fixed;
     height: 100vh;
     z-index: 99;
@@ -151,5 +146,5 @@ export const SidebarAnimations = styled(SidebarAnimation)`
       border-radius: 0 0 10px 10px;
       box-shadow: 0px 24px 45px rgba(0, 0, 0, 0.18);
     }
-}
+  }
 `

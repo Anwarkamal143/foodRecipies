@@ -1,10 +1,14 @@
 import { Button, Checkbox } from "@components"
+import { useOpenClose } from "@hooks"
 import { Minus, PencilIcon, PlusBtn } from "@icons"
 import React from "react"
+import IngredientsModal from "../../model/IngredientsModal/IngredientsModal"
 
 type Props = {}
 
 const Ingredients = (props: Props) => {
+  const [isOpenModel, onOpenModel, onCloseModel] = useOpenClose()
+
   return (
     <div className="ingredientsBlock">
       <div className="ingredientsBlockHead">
@@ -23,36 +27,28 @@ const Ingredients = (props: Props) => {
               height={16}
               label="1/4 Cup reduced-sodium soy sauce"
               checked
-              icon={
-                <img src="images/chicken.svg" alt="" />
-              }
+              icon={<img src="images/chicken.svg" alt="" />}
             />
             <Checkbox
               width={16}
               height={16}
               label="1/4 Cup reduced-sodium soy sauce"
               checked
-              icon={
-                <img src="images/chicken.svg" alt="" />
-              }
+              icon={<img src="images/chicken.svg" alt="" />}
             />
             <Checkbox
               width={16}
               height={16}
               label="1 tablespoon honey"
               checked
-              icon={
-                <img src="images/egg.svg" alt="" />
-              }
+              icon={<img src="images/egg.svg" alt="" />}
             />
             <Checkbox
               width={16}
               height={16}
               label="1 tablespoon honey"
               checked
-              icon={
-                <img src="images/egg.svg" alt="" />
-              }
+              icon={<img src="images/egg.svg" alt="" />}
             />
           </div>
         </div>
@@ -104,9 +100,12 @@ const Ingredients = (props: Props) => {
               }
             />
           </div>
-          <Button className="buttonGreen">Add to Shopping List <PencilIcon /></Button>
+          <Button className="buttonGreen" onClick={onOpenModel}>
+            Add to Shopping List <PencilIcon />
+          </Button>
         </div>
       </div>
+      <IngredientsModal isOpen={isOpenModel} onCancel={onCloseModel} />
     </div>
   )
 }
