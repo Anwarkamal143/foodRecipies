@@ -15,7 +15,6 @@ export type LayoutType = {
 export function AppLayout(props: LayoutType) {
   const { otherProps, children, styles, sidebar = true, ...rest } = props
 
-  console.log({props})
 
   return (
     <StyledLayoutWrapper >

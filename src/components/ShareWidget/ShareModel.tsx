@@ -65,7 +65,6 @@ function SocialShareLinks({
       setEmail(value)
     }
   }, [isOpen])
-  console.log(page, "page")
   const handleSave = () => {
     onCloseModel()
 

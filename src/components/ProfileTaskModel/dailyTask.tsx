@@ -6,7 +6,7 @@ import { CircularProgresWithChildren } from "src/components/CirclePrgoressWithCh
 import styled from "styled-components"
 import {
   LeftSide,
-  Userprofilewrapper,
+  Userprofilewrapper
 } from "../../components/common/UserProfile/userprofile.styled"
 import { CircleDefaultImage } from "../common/images"
 
@@ -254,7 +254,6 @@ function DailyTask({ className, userName }: Props) {
     setTaskData(item)
     return true
   }
-  console.log(taskData, "DataTwo[item]")
   return (
     <div className={`${className} profileStatusModal`}>
       <Userprofilewrapper className={clsxm("")}>

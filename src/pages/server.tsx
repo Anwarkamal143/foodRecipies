@@ -9,7 +9,6 @@ export default function Page({ context }: { context: any }) {
   // is used by `useSession()`.
   const { data: session, status } = useSession()
   const loading = status === "loading"
-  console.log({ state })
   return (
     <div>
       <h1>Server Side Rendering</h1>

@@ -3,14 +3,12 @@ import { AddCookIcon, AngleRight, LeftSliderArrow, RightSliderArrow } from "@ico
 import React, { useRef } from "react"
 import Slider from "react-slick"
 import styled from "styled-components"
+import { toast } from "src/components/toaster"
 
 type Props = {
   className?: string
-
   title?: string
   discription?: string
-
-
   data?: any
 }
 const settings = {
@@ -69,7 +67,7 @@ const FollowUsers = ({ className, data = [], title, discription }: Props) => {
               </ul>
               <a className="recepiesCont" href="#">{e.Recipes} Recipes <AngleRight /></a>
             </div>
-            <Button><AddCookIcon /> Follow Cook</Button>
+            <Button onClick={()=> toast.follow('You followed Sam The Cooking Guy')}><AddCookIcon /> Follow Cook</Button>
           </div>
         </div>
       )

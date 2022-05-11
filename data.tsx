@@ -345,6 +345,7 @@ export const FavData = [
     high: 2,
   },
 ]
+
 export const FavRecipeData = [
   {
     id: "asdk",
@@ -496,8 +497,8 @@ export const categoryData = [
 ]
 export const IngredientData = [
   {
-    category: "Breakfast",
-    image: "/images/icon-cat01.png",
+    category: "Chicken",
+    image: "/images/Chicken2.svg",
     data: [
       {
         id: "s",
@@ -558,8 +559,8 @@ export const IngredientData = [
     ],
   },
   {
-    category: "Snacks",
-    image: "/images/icon-cat02.png",
+    category: "Fish",
+    image: "/images/salmon.svg",
     data: [
       {
         id: "sss",
@@ -637,18 +638,18 @@ export const IngredientData = [
   },
 
   {
-    category: "Sandwiches",
-    image: "/images/icon-cat03.png",
+    category: "Pork",
+    image: "/images/Pork.svg",
     data: [],
   },
   {
-    category: "Baked Goods",
-    image: "/images/icon-cat04.png",
+    category: "Pasta",
+    image: "/images/Pasta.svg",
     data: [],
   },
   {
-    category: "Dinner",
-    image: "/images/icon-cat05.png",
+    category: "Beef",
+    image: "/images/Beef.svg",
     data: [
       {
         id: "ssss",
@@ -707,26 +708,6 @@ export const IngredientData = [
         state: "Easy",
       },
     ],
-  },
-  {
-    category: "Dessert",
-    image: "/images/icon-cat06.png",
-    data: [],
-  },
-  {
-    category: "Seafood",
-    image: "/images/icon-cat07.png",
-    data: [],
-  },
-  {
-    category: "Appetizers",
-    image: "/images/icon-cat08.png",
-    data: [],
-  },
-  {
-    category: "Pasta",
-    image: "/images/icon-cat09.png",
-    data: [],
   },
 ]
 export const LeaderBoradCategoryData = [

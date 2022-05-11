@@ -146,7 +146,6 @@ export function Page(props: PageLayoutType) {
     nossr = false,
     ...rest
   } = props
-  console.log({rest})
   return nossr ? (
     <NoSSR>
       <PageLayoutWrapper variant={variant} style={styles} {...otherProps}>

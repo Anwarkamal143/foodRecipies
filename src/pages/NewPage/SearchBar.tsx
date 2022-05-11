@@ -7,7 +7,7 @@ import {
   GlutenFree,
   NutFree,
   Vegan,
-  Vegetarian,
+  Vegetarian
 } from "@icons"
 import React, { useRef, useState } from "react"
 import { SearchHeader } from "src/components/AppSearch/Header"
@@ -26,19 +26,17 @@ const SearchBar = (props: Props) => {
   const [isModalOpen, setModalOpen] = useState(false)
   useOnClickOutside(ref, e => {
     setModalOpen(false)
-    console.log(e, "sdd")
   })
-  console.log(isModalOpen, "isModalOpen")
 
   return (
-    <div
-      className="pageFiltersSearch"
-      ref={ref as any}
-      onClick={() => {
-        setModalOpen(true)
-      }}
-    >
-      <div className="search">
+    <div className="pageFiltersSearch">
+      <div
+        className="search"
+        ref={ref as any}
+        onClick={() => {
+          setModalOpen(true)
+        }}
+      >
         <SearchHeader
           onSearch={(s?: string) => setSearchText(s)}
           header={false}

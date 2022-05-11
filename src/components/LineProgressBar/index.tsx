@@ -4,9 +4,10 @@ type IProgressBarprops = {
   progresspercent: number
   bgColor: string
   showPrgress?: boolean
+  title?: string
 }
 const ProgressBarr = (props: IProgressBarprops) => {
-  const { bgColor, progresspercent, showPrgress = true } = props
+  const { bgColor, progresspercent, showPrgress = true, title } = props
 
   const containerStyles = {
     height: 7,
@@ -29,13 +30,24 @@ const ProgressBarr = (props: IProgressBarprops) => {
     color: "white",
     fontWeight: "bold",
   }
+  const showLabels = {
+    padding: 5,
+    color: "white",
+    fontWeight: "bold",
+  }
 
   return (
-    <div style={containerStyles}>
-      <div style={fillerStyles}>
-        {showPrgress && (
-          <span style={labelStyles}>{`${progresspercent}%`}</span>
-        )}
+    <div className="ctn-bar">
+      <div style={showLabels}>
+        <span>{title}</span>
+        <span>{`${progresspercent}%`}</span>
+      </div>
+      <div style={containerStyles}>
+        <div style={fillerStyles}>
+          {showPrgress && (
+            <span style={labelStyles}>{`${progresspercent}%`}</span>
+          )}
+        </div>
       </div>
     </div>
   )

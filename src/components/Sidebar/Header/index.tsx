@@ -23,7 +23,6 @@ const Header = ({
   const dispatch = useAppDispatch()
   const [isOpenModel, onOpenModel, onCloseModel] = useOpenClose()
   const user = useAppSelector(state => state.user)
-  console.log({ user })
   const handleToggle = () => {
     setSideBarToggler(!sideBarToggler)
     onSideBarToggle?.(!sideBarToggler)

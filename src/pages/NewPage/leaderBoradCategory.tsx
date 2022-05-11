@@ -7,7 +7,6 @@ type Props = {
 }
 
 const LeaderBoradCategory = ({ data }: Props) => {
-  console.log(data, 'data={data}')
   return (
     <div className="recipesSection leaderboardRecipesColumns">
       <div className="Confort-Food">

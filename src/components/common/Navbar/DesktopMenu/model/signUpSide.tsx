@@ -59,14 +59,11 @@ const SignUpSide = (props: Props) => {
         setView("2")
       }
     }
-    if (
-      values.password.match(/^[A-Za-z]\w{7,14}$/)
-    ) {
+    if (values.password.match(/^[A-Za-z]\w{7,14}$/)) {
       setView("0")
       resetForm()
     }
   }
-  console.log(values)
   return (
     <form className="login-right-area" onSubmit={handleSubmit}>
       {view === "0" && (
