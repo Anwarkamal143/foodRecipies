@@ -31,20 +31,21 @@ const ItemCards = ({
 }: Props) => {
   return (
     <div className={`${className} recipeItem`} key={id}>
-      {!icon && (
-        <div className="recipeItemImage">
-          <Icon className="tagsIcon">
-            <span>
-              <Tag /> Vegan
-            </span>
-          </Icon>
-          <Icon className="heartIcon">
-            <HeartIconAnimtaed />
-          </Icon>
-        </div>
-      )}
-      <img src={image || "/images/bbq.jpg"} alt="image" />
-
+      <div className="recipeItemImage">
+        {!icon && (
+          <>
+            <Icon className="tagsIcon">
+              <span>
+                <Tag /> Vegan
+              </span>
+            </Icon>
+            <Icon className="heartIcon">
+              <HeartIconAnimtaed />
+            </Icon>
+          </>
+        )}
+        <img src={image || "/images/bbq.jpg"} alt="image" />
+      </div>
       <div className="recipeItemTextbox">
         {title && <strong className="recipeTitle">{title}</strong>}
         {fvrtBy && (
