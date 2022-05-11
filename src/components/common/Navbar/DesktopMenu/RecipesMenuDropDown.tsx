@@ -46,7 +46,7 @@ function RecipesMegaMenu() {
           />
         </button>
       </MegaMenuButton>
-      <MegaMenuPanel className="-left-72 w-full lg:w-[90vw] xl:-left-96 xl:w-[70vw] 2xl:max-w-screen-lg">
+      <MegaMenuPanel className="-left-72 w-full lg:w-[90vw] xl:-left-96 xl:w-[70vw] 2xl:max-w-screen-lg headerMegaMenu">
         {/* <span className='block customArrow drop-shadow-md after:-top-3 after:left-52 '></span> */}
         <div className="megaMenuWrapper">
           <div className="menuLeftColumn">

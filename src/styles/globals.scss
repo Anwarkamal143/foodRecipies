@@ -3701,8 +3701,8 @@ body {
       }
 
       .icon {
-        width: 20px;
-        height: 18px;
+        width: 24px;
+        height: 22px;
         min-width: 20px;
         background: #F0F5FA;
         border-radius: 5px;
@@ -3862,6 +3862,128 @@ body {
       }
     }
   }
+  
+  .socialIcons {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    margin: 0 -5px;
+
+    li {
+      padding: 0 5px;
+    }
+
+    .socialIconsItem {
+      width: 25px;
+      height: 25px;
+      border-color: #EAEAEA;
+      transition: all 0.4s ease-in-out;
+
+      @media (max-width: 767px) {
+        width: 22px;
+        height: 22px;
+      }
+
+      svg {
+        width: 13px;
+        height: 13px;
+
+        path {
+          transition: all 0.4s ease-in-out;
+        }
+      }
+
+      &:hover {
+        background: #e0464d;
+        border-color: #e0464d;
+
+        svg {
+          path {
+            fill: #fff;
+          }
+        }
+      }
+
+      &.facebook {
+        svg {
+          path {
+            fill: #415A94;
+          }
+        }
+
+        &:hover {
+          background: #3b5998;
+          border-color: #3b5998;
+
+          svg {
+            path {
+              fill: #fff;
+            }
+          }
+        }
+      }
+
+      &.youtube {
+        svg {
+          path {
+            fill: #EC4845;
+          }
+        }
+
+        &:hover {
+          background: #EC4845;
+          border-color: #EC4845;
+
+          svg {
+            path {
+              fill: #fff;
+            }
+          }
+        }
+      }
+
+      &.twitter {
+        svg {
+          path {
+            fill: #48A2E4;
+          }
+        }
+
+        &:hover {
+          background: #48A2E4;
+          border-color: #48A2E4;
+
+          svg {
+            path {
+              fill: #fff;
+            }
+          }
+        }
+      }
+
+      &.tiktok {
+        svg {
+          width: 11px;
+          height: 11px;
+
+          path {
+            fill: #3D3D3D;
+          }
+        }
+
+        &:hover {
+          background: #3D3D3D;
+          border-color: #3D3D3D;
+
+          svg {
+            path {
+              fill: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
 
   &.cooksMenu {
     .menuLeftColumn {
@@ -3920,4 +4042,69 @@ body {
        }
     }
   }
+}
+
+.cooksMegaMenu {
+  @media (min-width: 1536px) {
+    max-width: 870px !important;
+    left: -400px !important;
+  }
+}
+
+.communityMegaMenu {
+  @media (min-width: 1024px) {
+    width: 70vw !important;
+    left: -350px !important;
+    max-width: 870px !important;
+  }
+
+  @media (min-width: 1280px) {
+    width: 54vw !important;
+    left: -300px !important;
+  }
+
+  @media (min-width: 1536px) {
+    max-width: 870px !important;
+    width: 43vw !important;
+    left: -350px !important;
+  }
+
+  .megaMenuColumn {
+    width: 33.333%;
+    padding: 45px 40px;
+
+    &:last-child {
+      border-left: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      width: 130px;
+      margin: 0 0 30px;
+    }
+    
+    .textbox {
+      font-size: 10px;
+      line-height: 15px;
+      color: #404040;
+      overflow: hidden;
+      margin: 0 0 20px;
+
+      p {
+        margin: 0 0 15px;
+      }
+
+      .founder {
+        display: block;
+
+        span {
+          opacity: 0.4;
+        }
+      }
+    }
+  }
+}
+
+.headerMegaMenu {
+  box-shadow: 0 0px 15px rgba(0, 0, 0, 0.25) !important;
+  border-radius: 15px !important;
 }

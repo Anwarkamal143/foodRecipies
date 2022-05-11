@@ -38,7 +38,7 @@ function CoocksMegaMenu() {
           />
         </button>
       </MegaMenuButton>
-      <MegaMenuPanel className="-left-80 w-full lg:w-[70vw] xl:-left-96 xl:w-[60vw] 2xl:max-w-screen-md">
+      <MegaMenuPanel className="-left-80 w-full lg:w-[70vw] xl:-left-96 xl:w-[60vw] 2xl:max-w-screen-md headerMegaMenu cooksMegaMenu">
         {/* <span className='block customArrow drop-shadow-md after:left-10 after:-top-3 '></span> */}
 
         <div className="megaMenuWrapper cooksMenu">
