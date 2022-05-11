@@ -54,6 +54,14 @@ function NavBar() {
                 </div>
               </div>
             </div>
+            <div className="recentBar">
+              <div className="container">
+                <ul>
+                  <li>Sam The Cooking Guy just posted a new trending recipe! <a href="#" className="linkRecipe">View recipe now</a></li>
+                  <li>Browse personalized recipes via Food Feed+ <a href="#" className="linkDetail">View Details</a></li>
+                </ul>
+              </div>
+            </div>
             {/* Mobile menu */}
             <MobileMenu isOpen={open} />
           </>

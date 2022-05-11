@@ -11,7 +11,8 @@ export const SidebarContainer = styled.div`
   left: 0;
   top: 0;
   bottom: 0;
-  top: 4rem;
+  /* top: 4rem; */
+  top: 6.2rem;
   border-right: 1px solid #f2f3f5;
   /* width: 25em; */
   width: 250px;

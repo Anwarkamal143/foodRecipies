@@ -44,6 +44,7 @@ function CoocksMegaMenu() {
         <div className="megaMenuWrapper cooksMenu">
           <div className="menuLeftColumn">
             <div className="menuBox">
+              <a href="#" className="buttonView">See All <FiChevronRight /></a>
               <strong className="title">Cook Quick Access</strong>
               <ul className="menuBoxItems">
                 <li>

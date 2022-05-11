@@ -50,7 +50,7 @@ function RecipesMegaMenu() {
         {/* <span className='block customArrow drop-shadow-md after:-top-3 after:left-52 '></span> */}
         <div className="megaMenuWrapper">
           <div className="menuLeftColumn">
-            <div className="menuBox">
+            <div className="menuBox smallStyle">
               <strong className="title">Recipe Quick Access</strong>
               <ul className="menuBoxItems">
                 <li>
@@ -85,7 +85,7 @@ function RecipesMegaMenu() {
                 </li>
               </ul>
             </div>
-            <div className="menuBox">
+            <div className="menuBox smallStyle">
               <strong className="title">My Favorites</strong>
               <ul className="menuBoxItems">
                 <li>
