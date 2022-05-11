@@ -2686,6 +2686,24 @@ export function CommentIcon(props: IconType) {
   )
 }
 
+export function BurgerIcon(props: IconType) {
+  const { width = 12, height = 10, fill = "currentColor", ...rest } = props
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 12 10"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...rest}
+    >
+      <line x1="0.625" y1="1.375" x2="11.375" y2="1.375" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+      <line x1="0.625" y1="5.375" x2="11.375" y2="5.375" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+      <line x1="0.625" y1="9.375" x2="11.375" y2="9.375" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+    </svg>
+  )
+}
+
 type ImageProps = DetailedHTMLProps<
   ImgHTMLAttributes<HTMLImageElement>,
   HTMLImageElement

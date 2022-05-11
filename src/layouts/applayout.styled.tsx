@@ -15,4 +15,12 @@ export const MainContentSectionWrapper = styled.div`
   display: flex;
   width: 100%;
   overflow: hidden;
+
+  @media (max-width: 1023px) {
+    margin-top: 112px;
+  }
+
+  @media (max-width: 767px) {
+    margin-top: 84px;
+  }
 `

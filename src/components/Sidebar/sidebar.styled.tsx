@@ -23,6 +23,10 @@ export const SidebarContainer = styled.div`
     min-width: 200px;
   }
 
+  @media (max-width: 1023px) {
+    top: 112px;
+  }
+
   @media (max-width: 767px) {
     top: auto;
     height: 60px !important;

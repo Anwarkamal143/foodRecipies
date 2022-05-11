@@ -16,8 +16,8 @@ function NavBar() {
           <>
             <div className="z-10 bg-navBg">
               <div className="container px-4 mx-auto sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-16 ">
-                  <div className="flex -mr-2 lg:hidden">
+                <div className="flex items-center justify-between h-16 mainHeader">
+                  <div className="flex -mr-2 lg:hidden display-none">
                     {/* Mobile menu button */}
                     <Disclosure.Button className="inline-flex items-center justify-center p-2 text-gray-400 rounded-md bg-primary-100 hover:bg-primary-50 hover:text-white focus:outline-none ">
                       <span className="sr-only">Open main menu</span>
@@ -35,7 +35,7 @@ function NavBar() {
                       )}
                     </Disclosure.Button>
                   </div>
-                  <div className="flex-shrink-0 mx-auto lg:mx-0">
+                  <div className="flex-shrink-0 mx-auto lg:mx-0 siteLogo">
                     <UnstyledLink href="/">
                       <img
                         className="mx-auto block h-10 w-auto md:h-[3.5rem]"

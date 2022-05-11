@@ -3,7 +3,7 @@ import { UnstyledLink } from "@components"
 import { DairyFree, GlutenFree, NutFree, Vegan, Vegetarian } from "@icons"
 import clsxm from "@lib/clsxm"
 import React from "react"
-import { BsArrowRight } from "react-icons/bs"
+import { BsArrowRight, BsPlus } from "react-icons/bs"
 import { FiChevronDown, FiChevronRight } from "react-icons/fi"
 import MegaMenu, { MegaMenuButton, MegaMenuPanel } from "./MegaMenu"
 import {
@@ -124,8 +124,41 @@ function RecipesMegaMenu() {
           <div className="menuRightColumn">
             <div className="menuNavBoxHolder">
               <div className="menuNavBox">
-                <strong className="title">By Meal Type <FiChevronRight /></strong>
+                <a href="#" className="buttonView">See All <FiChevronRight /></a>
+                <strong className="title">By Meal Type <FiChevronRight className="iconArrow" /><BsPlus className="iconPlus"/></strong>
                 <ul className="menuNavList">
+                  <li>
+                    <a href="#">
+                      <div className="icon"><img src="/images/icon-lg01.png" alt="" width={13} /></div>
+                      <div className="text">Appetizers</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div className="icon"><img src="/images/icon-lg07.png" alt="" width={12} /></div>
+                      <div className="text">Deserts</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div className="icon"><img src="/images/icon-lg02.png" alt="" width={16} /></div>
+                      <div className="text">Breakfast</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div className="icon"><img src="/images/icon-lg06.png" alt="" width={14} /></div>
+                      <div className="text">Dinner</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div className="icon"><img src="/images/icon-lg13.png" alt="" width={13} /></div>
+                      <div className="text">Baked Goods</div>
+                    </a>
+                  </li>
+                </ul>
+                <ul className="menuNavList visibleMobile">
                   <li>
                     <a href="#">
                       <div className="icon"><img src="/images/icon-lg01.png" alt="" width={13} /></div>
@@ -159,8 +192,41 @@ function RecipesMegaMenu() {
                 </ul>
               </div>
               <div className="menuNavBox">
-                <strong className="title">By Ingredient <FiChevronRight /></strong>
+                <a href="#" className="buttonView">See All <FiChevronRight /></a>
+                <strong className="title">By Ingredient  <FiChevronRight className="iconArrow" /><BsPlus className="iconPlus"/></strong>
                 <ul className="menuNavList">
+                  <li>
+                    <a href="#">
+                      <div className="icon"><img src="/images/nav-icon07.png" alt="" width={13} /></div>
+                      <div className="text">Beef</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div className="icon"><img src="/images/nav-icon08.png" alt="" width={14} /></div>
+                      <div className="text">Chicken</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div className="icon"><img src="/images/nav-icon09.png" alt="" width={13} /></div>
+                      <div className="text">Pasta</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div className="icon"><img src="/images/nav-icon10.png" alt="" width={13} /></div>
+                      <div className="text">Pork</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div className="icon"><img src="/images/nav-icon11.png" alt="" width={10} /></div>
+                      <div className="text">Fish</div>
+                    </a>
+                  </li>
+                </ul>
+                <ul className="menuNavList visibleMobile">
                   <li>
                     <a href="#">
                       <div className="icon"><img src="/images/nav-icon07.png" alt="" width={13} /></div>
@@ -194,8 +260,41 @@ function RecipesMegaMenu() {
                 </ul>
               </div>
               <div className="menuNavBox">
-                <strong className="title">By Diet <FiChevronRight /></strong>
+                <a href="#" className="buttonView">See All <FiChevronRight /></a>
+                <strong className="title">By Diet <FiChevronRight className="iconArrow" /><BsPlus className="iconPlus"/></strong>
                 <ul className="menuNavList">
+                  <li>
+                    <a href="#">
+                      <div className="icon"><Vegetarian /></div>
+                      <div className="text">Vegetarian</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div className="icon"><GlutenFree /></div>
+                      <div className="text">Gluten Free</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div className="icon"><DairyFree /></div>
+                      <div className="text">Dairy Free</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div className="icon"><Vegan /></div>
+                      <div className="text">Vegan</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div className="icon"><NutFree /></div>
+                      <div className="text">Nut Free</div>
+                    </a>
+                  </li>
+                </ul>
+                <ul className="menuNavList visibleMobile">
                   <li>
                     <a href="#">
                       <div className="icon"><Vegetarian /></div>
@@ -229,8 +328,41 @@ function RecipesMegaMenu() {
                 </ul>
               </div>
               <div className="menuNavBox">
-                <strong className="title">By World Cuisine <FiChevronRight /></strong>
+                <a href="#" className="buttonView">See All <FiChevronRight /></a>
+                <strong className="title">By World Cuisine <FiChevronRight className="iconArrow" /><BsPlus className="iconPlus"/></strong>
                 <ul className="menuNavList">
+                  <li>
+                    <a href="#">
+                      <div className="icon"><img src="/images/italy.png" alt="" width={13} /></div>
+                      <div className="text">Italian</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div className="icon"><img src="/images/asian.png" alt="" width={13} /></div>
+                      <div className="text">Asian</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div className="icon"><img src="/images/american.png" alt="" width={13} /></div>
+                      <div className="text">American</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div className="icon"><img src="/images/mexican.png" alt="" width={13} /></div>
+                      <div className="text">Mexican</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div className="icon"><img src="/images/india.png" alt="" width={13} /></div>
+                      <div className="text">Indian</div>
+                    </a>
+                  </li>
+                </ul>
+                <ul className="menuNavList visibleMobile">
                   <li>
                     <a href="#">
                       <div className="icon"><img src="/images/italy.png" alt="" width={13} /></div>
@@ -264,8 +396,41 @@ function RecipesMegaMenu() {
                 </ul>
               </div>
               <div className="menuNavBox">
-                <strong className="title">By Ingredient <FiChevronRight /></strong>
+                <a href="#" className="buttonView">See All <FiChevronRight /></a>
+                <strong className="title">By Ingredient <FiChevronRight className="iconArrow" /><BsPlus className="iconPlus"/></strong>
                 <ul className="menuNavList">
+                  <li>
+                    <a href="#">
+                      <div className="icon"><img src="/images/nav-icon12.png" alt="" width={13} /></div>
+                      <div className="text">30 Minutes or Less</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div className="icon"><img src="/images/nav-icon13.png" alt="" width={13} /></div>
+                      <div className="text">5 Ingredients or Less</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div className="icon"><img src="/images/nav-icon14.png" alt="" width={13} /></div>
+                      <div className="text">Slow Cooker</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div className="icon"><img src="/images/nav-icon15.png" alt="" width={13} /></div>
+                      <div className="text">Easy Recipes</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div className="icon"><img src="/images/nav-icon16.png" alt="" width={14} /></div>
+                      <div className="text">Kid-Friendly</div>
+                    </a>
+                  </li>
+                </ul>
+                <ul className="menuNavList visibleMobile">
                   <li>
                     <a href="#">
                       <div className="icon"><img src="/images/nav-icon12.png" alt="" width={13} /></div>
@@ -299,8 +464,41 @@ function RecipesMegaMenu() {
                 </ul>
               </div>
               <div className="menuNavBox">
-                <strong className="title">By Ranking <FiChevronRight /></strong>
+                <a href="#" className="buttonView">See All <FiChevronRight /></a>
+                <strong className="title">By Ranking <FiChevronRight className="iconArrow" /><BsPlus className="iconPlus"/></strong>
                 <ul className="menuNavList">
+                  <li>
+                    <a href="#">
+                      <div className="icon"><img src="/images/nav-icon17.png" alt="" width={13} /></div>
+                      <div className="text">Top Rated</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div className="icon"><img src="/images/nav-icon18.png" alt="" width={15} /></div>
+                      <div className="text">Recently Added</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div className="icon"><img src="/images/nav-icon19.png" alt="" width={14} /></div>
+                      <div className="text">Most Liked</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div className="icon"><img src="/images/nav-icon20.png" alt="" width={13} /></div>
+                      <div className="text">Most Viewed</div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div className="icon"><img src="/images/nav-icon21.png" alt="" width={14} /></div>
+                      <div className="text">Featured</div>
+                    </a>
+                  </li>
+                </ul>
+                <ul className="menuNavList visibleMobile">
                   <li>
                     <a href="#">
                       <div className="icon"><img src="/images/nav-icon17.png" alt="" width={13} /></div>
