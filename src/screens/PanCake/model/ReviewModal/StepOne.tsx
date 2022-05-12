@@ -20,6 +20,9 @@ const StepOne = ({ currentStep, setCurrentStep }: Props) => {
         </span>
         <span
           className={`${currentStep === "1" ? "dis-like" : "dis-like-fill"}`}
+           onClick={() => {
+            currentStep === "1" ? setCurrentStep?.("2") : null
+          }}
         >
           <LikeIcon />
         </span>

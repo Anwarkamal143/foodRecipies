@@ -9,6 +9,8 @@ import {
 import { reviewsComments } from "data"
 import React from "react"
 import ReviewLikeModal from "../model/ReviewModal/ReviewLikeModal"
+import { useOpenClose } from "@hooks"
+
 type Props = {}
 
 const ReviewOnPost = (props: Props) => {
