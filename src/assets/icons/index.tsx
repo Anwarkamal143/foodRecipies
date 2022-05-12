@@ -3,7 +3,7 @@ import {
   DetailedHTMLProps,
   forwardRef,
   ImgHTMLAttributes,
-  SVGProps,
+  SVGProps
 } from "react"
 export type IconType = SVGProps<SVGSVGElement>
 // import Profile from "../images/profile.jpg"
@@ -2724,6 +2724,40 @@ export function LikeSolidIcon(props: IconType) {
         d="M2.17087 2.6582H1.74171C1.09587 2.6582 0.833374 2.9082 0.833374 3.52487V7.71654C0.833374 8.3332 1.09587 8.5832 1.74171 8.5832H2.17087C2.81671 8.5832 3.07921 8.3332 3.07921 7.71654V3.52487C3.07921 2.9082 2.81671 2.6582 2.17087 2.6582Z"
         fill="currentColor"
       />
+    </svg>
+  )
+}
+
+export function LongArrowLeftIcon(props: IconType) {
+  const { width = 24, height = 24, fill = "currentColor", ...rest } = props
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...rest}
+    >
+      <path d="M9.57 5.92969L3.5 11.9997L9.57 18.0697" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M20.4999 12H3.66992" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  )
+}
+
+export function LinkIcon(props: IconType) {
+  const { width = 14, height = 14, fill = "currentColor", ...rest } = props
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 14 14"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...rest}
+    >
+      <path d="M13.039 0.961082C11.7575 -0.320356 9.68002 -0.320356 8.39859 0.961054L5.65617 3.70347C4.33069 5.02901 4.4534 7.14104 5.65617 8.34387C5.85759 8.54528 6.08044 8.70951 6.31576 8.84439L6.81629 8.34387C7.14457 8.01552 7.02902 7.6317 7.02311 7.35473C6.95106 7.30366 6.88098 7.24845 6.81629 7.18375C6.19906 6.56658 6.1713 5.50854 6.81629 4.86355C6.91207 4.76777 9.50051 2.17933 9.55864 2.12119C10.1985 1.48138 11.239 1.48138 11.8788 2.12119C12.5187 2.76101 12.5187 3.80158 11.8788 4.44139L10.0661 6.25409C10.1186 6.54413 10.4331 7.23117 10.2713 8.36451C10.2792 8.35675 10.2887 8.35174 10.2966 8.34389L13.039 5.60148C14.3204 4.32004 14.3204 2.24252 13.039 0.961082Z" fill="currentColor"/>
+      <path d="M8.55635 5.44389C8.35496 5.24247 8.13208 5.07825 7.89681 4.94336L7.39629 5.44389C7.06794 5.77218 7.1835 6.156 7.1894 6.43297C7.26151 6.48404 7.33159 6.53925 7.39629 6.60395C8.01352 7.22118 8.04127 8.27916 7.39629 8.92415C7.30028 9.02015 4.49744 11.823 4.44135 11.8791C3.80154 12.5189 2.76097 12.5189 2.12115 11.8791C1.48134 11.2393 1.48134 10.1987 2.12115 9.55888L4.14642 7.53361C4.09401 7.24357 3.77939 6.55653 3.94124 5.42319C3.93333 5.43095 3.92382 5.43601 3.91594 5.44386L0.961038 8.39882C-0.320346 9.68025 -0.320346 11.7578 0.961038 13.0392C2.24248 14.3206 4.31997 14.3206 5.60141 13.0392L8.55635 10.0843C9.85725 8.78338 9.78616 6.67367 8.55635 5.44389Z" fill="currentColor"/>
     </svg>
   )
 }

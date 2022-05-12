@@ -1,5 +1,6 @@
 import { Modal } from "@components"
 import { useOpenClose } from "@hooks"
+import { LongArrowLeftIcon } from "@icons"
 import { classNames, setItemId } from "@utils"
 import React, { useEffect, useMemo, useState } from "react"
 import styled from "styled-components"
@@ -16,15 +17,15 @@ type Props = {
 const itemsData = [
   {
     id: setItemId(),
-    list: "mar 7 Shopping List",
+    list: "Mar 7 Shopping List",
   },
   {
     id: setItemId(),
-    list: "mar 5 Shopping List",
+    list: "Mar 5 Shopping List",
   },
   {
     id: setItemId(),
-    list: "mar 9 Shopping List",
+    list: "Mar 9 Shopping List",
   },
 ]
 
@@ -58,7 +59,7 @@ const IngredientsModal = ({ isOpen, className, onSave, onCancel }: Props) => {
           header: 1,
           step: <StepOne />,
           title: (
-            <span>
+            <span className="ingredientsModalTitle">
               Add to{" "}
               <span onClick={() => setCurrentStep(2)}>{selectedItem}</span>
             </span>
@@ -67,7 +68,11 @@ const IngredientsModal = ({ isOpen, className, onSave, onCancel }: Props) => {
       case 2:
         return {
           header: 2,
-          title: "Choose List",
+          title: (
+            <span className="ingredientsModalTitle textCenter">
+              Choose List
+            </span>
+          ),
           step: (
             <StepTwo
               setItemsModal={setCurrentStep}
@@ -79,7 +84,11 @@ const IngredientsModal = ({ isOpen, className, onSave, onCancel }: Props) => {
       case 3:
         return {
           header: 3,
-          title: "Create New List",
+          title: (
+            <span className="ingredientsModalTitle textCenter">
+              Create New List
+            </span>
+          ),
           step: <StepThree handleSave={handleSave} handleClose={handleClose} />,
         }
       default:
@@ -98,10 +107,10 @@ const IngredientsModal = ({ isOpen, className, onSave, onCancel }: Props) => {
               className="back-btn"
               onClick={() => setCurrentStep(currentStep - 1)}
             >
-              {"<-"}
+              <LongArrowLeftIcon/>
             </span>
           )}
-          {Components.title as any}
+         {Components.title as any}
         </span>
       }
       showFooter={false}
