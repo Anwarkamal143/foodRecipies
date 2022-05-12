@@ -3,10 +3,12 @@ import { useOpenClose } from "@hooks"
 import { PlayIcon, PrintIcon, QuestionCommentIcon } from "@icons"
 import React from "react"
 import AskMeQuestionModal from "../../model/AskMeQuestionModal"
+import VideosModal from "../../model/VideosModal"
 type Props = {}
 
 const Instructions = (props: Props) => {
   const [isOpenModel, onOpenModel, onCloseModel] = useOpenClose()
+  const [isOpen, onOpen, onClose] = useOpenClose()
 
   return (
     <div className="ingredientsBlock">
@@ -63,12 +65,13 @@ const Instructions = (props: Props) => {
               of caramelized onions
             </li>
           </ol>
-          <Button className="buttonWhite">
+          <Button className="buttonWhite" onClick={onOpen}>
             Watch Video Tutorial <PlayIcon />
           </Button>
         </div>
       </div>
       <AskMeQuestionModal isOpen={isOpenModel} onCancel={onCloseModel} />
+      <VideosModal isOpen={isOpen} onClose={onClose} />
     </div>
   )
 }
