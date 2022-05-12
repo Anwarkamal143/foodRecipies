@@ -49,12 +49,19 @@ function DesktopMenu() {
           <div className="items-center hidden gap-6 sm:flex">
             {/* <LanguageSelectDropDown /> */}
             {/* <AppStoreDropDown /> */}
-            <SearchIcon onClick={() => dispatch(toggleSidebar(true))} />
+            <span className="headerSearchForm" onClick={() => dispatch(toggleSidebar(true))}>
+              <SearchIcon />
+              <span className="text">Search...</span>
+            </span>
             <WishListDropDown />
           </div>
 
           {/* Profile dropdown */}
           <div className="flex items-center gap-3 sm:gap-0">
+            <span className="headerSearchForm sm:hidden" onClick={() => dispatch(toggleSidebar(true))}>
+              <SearchIcon />
+              <span className="text">Search...</span>
+            </span>
             <div className="relative text-white sm:hidden">
               <BiBell
                 size="1.4rem"

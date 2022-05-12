@@ -61,7 +61,7 @@ function CoocksMegaMenu() {
                   <a href="#">
                     <div className="icon"><img src="/images/nav-icon02.png" alt="" width={12} /></div>
                     <div className="text">
-                      <strong className="subtite">Cook Leaderboards</strong>
+                      <strong className="subtite">Leaderboards</strong>
                       <span className="subtext">What’s trending? Find out now</span>
                     </div>
                     <BsArrowRight className="arrow"/>
@@ -71,7 +71,7 @@ function CoocksMegaMenu() {
                   <a href="#">
                     <div className="icon"><img src="/images/nav-icon22.png" alt="" width={14} /></div>
                     <div className="text">
-                      <strong className="subtite">Cook Collections</strong>
+                      <strong className="subtite">Collections</strong>
                       <span className="subtext">Prefer to watch? Check these out</span>
                     </div>
                     <BsArrowRight className="arrow"/>
@@ -81,7 +81,7 @@ function CoocksMegaMenu() {
                   <a href="#">
                     <div className="icon"><img src="/images/nav-icon03.png" alt="" width={12} /></div>
                     <div className="text">
-                      <strong className="subtite">Cook Video Tutorials</strong>
+                      <strong className="subtite">Video Tutorials</strong>
                       <span className="subtext">Prefer to watch? Check these out</span>
                     </div>
                     <BsArrowRight className="arrow"/>
@@ -115,7 +115,7 @@ function CoocksMegaMenu() {
                 <div className="image">
                   <img src="/images/cook.png" alt="" width={26} />
                 </div>
-                <span className="cookname">Nick Digiovanni</span>
+                <span className="cookname">Sam The Cooking Guy</span>
                 <span className="iconArrow"><ArrowRight /></span>
               </div>
               <div className="top-profiles">
@@ -126,7 +126,7 @@ function CoocksMegaMenu() {
                 <div className="image">
                   <img src="/images/cook.png" alt="" width={26} />
                 </div>
-                <span className="cookname">Nick Digiovanni</span>
+                <span className="cookname">Gordon Ramsey</span>
                 <span className="iconArrow"><ArrowRight /></span>
               </div>
               <div className="top-profiles">
@@ -137,7 +137,7 @@ function CoocksMegaMenu() {
                 <div className="image">
                   <img src="/images/cook.png" alt="" width={26} />
                 </div>
-                <span className="cookname">Nick Digiovanni</span>
+                <span className="cookname">Joshua Weissman</span>
                 <span className="iconArrow"><ArrowRight /></span>
               </div>
               <div className="top-profiles">
@@ -148,7 +148,7 @@ function CoocksMegaMenu() {
                 <div className="image">
                   <img src="/images/cook.png" alt="" width={26} />
                 </div>
-                <span className="cookname">Nick Digiovanni</span>
+                <span className="cookname">Gordon Ramsey</span>
                 <span className="iconArrow"><ArrowRight /></span>
               </div>
               <div className="top-profiles">
@@ -159,7 +159,7 @@ function CoocksMegaMenu() {
                 <div className="image">
                   <img src="/images/cook.png" alt="" width={26} />
                 </div>
-                <span className="cookname">Nick Digiovanni</span>
+                <span className="cookname">Gordon Ramsey</span>
                 <span className="iconArrow"><ArrowRight /></span>
               </div>
               <div className="top-profiles">
@@ -170,7 +170,7 @@ function CoocksMegaMenu() {
                 <div className="image">
                   <img src="/images/cook.png" alt="" width={26} />
                 </div>
-                <span className="cookname">Nick Digiovanni</span>
+                <span className="cookname">Gordon Ramsey</span>
                 <span className="iconArrow"><ArrowRight /></span>
               </div>
               <div className="top-profiles">
@@ -181,7 +181,7 @@ function CoocksMegaMenu() {
                 <div className="image">
                   <img src="/images/cook.png" alt="" width={26} />
                 </div>
-                <span className="cookname">Nick Digiovanni</span>
+                <span className="cookname">Gordon Ramsey</span>
                 <span className="iconArrow"><ArrowRight /></span>
               </div>
             </div>

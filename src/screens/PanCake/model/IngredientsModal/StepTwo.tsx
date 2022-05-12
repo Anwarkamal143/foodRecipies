@@ -1,4 +1,5 @@
 import { Button } from "@components"
+import { LinkIcon } from "@heroicons/react/outline"
 import React from "react"
 
 type Props = {
@@ -10,21 +11,22 @@ type Props = {
 
 const StepTwo = ({ setSelectedItem, setItemsModal, itemsData }: Props) => {
   return (
-    <div className="ctm-tags">
+    <div className="ingredientsItemsList">
       <div className="items">
         {itemsData?.map(e => (
-          <span
+          <span className="ingredientsItems"
             onClick={() => {
               setSelectedItem?.(e)
               setItemsModal?.(1)
             }}
             key={e.id}
           >
-            {e.list}
+            <strong className="title">{e.list} <span className="linkIcon"><LinkIcon /></span></strong>
+            <span className="itemNumbers">0 items</span>
           </span>
         ))}
       </div>
-      <Button onClick={() => setItemsModal?.(3)}>Create new list</Button>
+      <Button className="buttonOutlineGray" onClick={() => setItemsModal?.(3)}>Create new list</Button>
     </div>
   )
 }

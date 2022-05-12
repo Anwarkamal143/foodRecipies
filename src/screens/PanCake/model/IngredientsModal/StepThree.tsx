@@ -9,19 +9,24 @@ const StepThree = ({ handleSave, handleClose }: Props) => {
   const [email, setEmail] = useState("")
 
   return (
-    <div className="Macronutrients">
-      <Input
-        onChange={e => {
-          setEmail(e.target.value)
-        }}
-        label="Invite by email"
-        inputClasses="spacer"
-        name="email"
-        value={email}
-        // materialDesign
-      />
-      <Button onClick={handleClose}>Cancel</Button>
-      <Button onClick={() => handleSave?.(email)}>Create</Button>
+    <div className="createListForm">
+      <div className="createListFormHolder">
+        <Input
+          onChange={e => {
+            setEmail(e.target.value)
+          }}
+          label="Invite by email"
+          inputClasses="spacer"
+          name="email"
+          value={email}
+          placeholder="Johndoe_43@gmail.com"
+          // materialDesign
+        />
+      </div>
+      <div className="createListFormButtons">
+        <Button className="buttonOutlineGray" onClick={handleClose}>Cancel</Button>
+        <Button className="buttonGreen" onClick={() => handleSave?.(email)}>Create</Button>
+      </div>
     </div>
   )
 }
