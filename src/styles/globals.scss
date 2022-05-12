@@ -3761,7 +3761,7 @@ body {
 // Navigation Styles
 
 .display-none {
-  display: none;
+  display: none !important;
 }
 
 .bg-navBg {
@@ -3772,6 +3772,11 @@ body {
   @media (max-width: 1023px) {
     flex-flow: row wrap;
     height: auto !important;
+    padding: 14px 0 0;
+  }
+
+  @media (max-width: 1023px) {
+    padding: 9px 0 0;
   }
 }
 
@@ -3779,6 +3784,15 @@ body {
   @media (max-width: 1023px) {
     order: 1;
     margin: 0 !important;
+  }
+
+  img {
+    width: auto;
+    height: 28px;
+
+    @media (min-width: 768px) {
+      height: 35px;
+    }
   }
 }
 
@@ -3790,11 +3804,11 @@ body {
   @media (max-width: 1023px) {
     width: 100%;
     order: 3;
-    padding: 8px 0 0;
+    padding: 15px 0 0;
   }
 
   @media (max-width: 767px) {
-    padding: 4px 0 0;
+    padding: 9px 0 0;
   }
 
   .mainNavigationWrap {
@@ -3979,6 +3993,10 @@ body {
     padding: 35px 40px;
     border-right: 1px solid rgba(0, 0, 0, 0.1);
 
+    @media (max-width: 1279px) {
+      padding: 35px 30px;
+    }
+
     @media (max-width: 1023px) {
       padding: 30px 20px;
     }
@@ -3995,6 +4013,10 @@ body {
     flex-basis: 0;
     padding: 35px 60px;
 
+    @media (max-width: 1279px) {
+      padding: 35px 40px;
+    }
+
     @media (max-width: 1023px) {
       padding: 30px 20px;
     }
@@ -4008,11 +4030,11 @@ body {
   }
 
   .buttonView {
-    width: 72px;
-    height: 18px;
+    width: 80px;
+    height: 22px;
     border: 1px solid #e5e8ef;
     border-radius: 31px;
-    font-size: 8px;
+    font-size: 10px;
     line-height: 12px;
     display: flex;
     align-items: center;
@@ -4057,9 +4079,9 @@ body {
     .title {
       display: block;
       font-weight: 500;
-      font-size: 12px;
-      line-height: 18px;
-      color: #1a1a1a;
+      font-size: 13px;
+      line-height: 20px;
+      color: rgba(26, 26, 26, 0.5);
       margin: 0 0 15px;
 
       @media (max-width: 767px) {
@@ -4162,9 +4184,9 @@ body {
       }
 
       .icon {
-        width: 24px;
-        height: 22px;
-        min-width: 20px;
+        width: 28px;
+        height: 24px;
+        min-width: 28px;
         background: #f0f5fa;
         border-radius: 5px;
         display: flex;
@@ -4179,6 +4201,7 @@ body {
 
         img {
           display: block;
+          transform: scale(1.1);
 
           @media (max-width: 767px) {
             transform: scale(1.1);
@@ -4193,10 +4216,14 @@ body {
 
       .subtite {
         display: block;
-        font-size: 10px;
-        line-height: 15px;
+        font-size: 13px;
+        line-height: 20px;
         color: #292929;
         font-weight: 500;
+
+        @media (max-width: 1279px) {
+          font-size: 12px;
+        }
 
         @media (max-width: 767px) {
           font-size: 12px;
@@ -4205,7 +4232,7 @@ body {
       }
 
       .subtext {
-        display: block;
+        display: none;
         font-size: 8px;
         line-height: 12px;
         color: rgba(110, 109, 121, 0.5);
@@ -4251,14 +4278,15 @@ body {
     .title {
       display: flex;
       align-items: center;
-      font-size: 12px;
-      line-height: 18px;
+      font-size: 13px;
+      line-height: 20px;
       color: rgba(0, 0, 0, 0.9);
 
       @media (max-width: 767px) {
         padding: 0 0 12px;
         margin: 0 0 9px;
         width: 100%;
+        font-size: 12px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       }
 
@@ -4297,8 +4325,8 @@ body {
     .title {
       display: flex;
       align-items: center;
-      font-size: 12px;
-      line-height: 18px;
+      font-size: 13px;
+      line-height: 20px;
       color: rgba(0, 0, 0, 0.9);
       padding: 0 0 9px;
       margin: 0 0 9px;
@@ -4306,6 +4334,7 @@ body {
 
       @media (max-width: 767px) {
         width: 100%;
+        font-size: 12px;
         padding: 0 0 12px;
       }
 
@@ -4348,8 +4377,8 @@ body {
     list-style: none;
     padding: 0;
     margin: 0;
-    font-size: 11px;
-    line-height: 18px;
+    font-size: 13px;
+    line-height: 20px;
 
     @media (max-width: 767px) {
       width: 50%;
@@ -4358,7 +4387,7 @@ body {
 
     li {
       a {
-        color: #4d4d4d;
+        color: rgba(77, 77, 77, 0.8);
         display: flex;
         align-items: center;
         padding: 4px 5px;
@@ -4371,8 +4400,8 @@ body {
       }
 
       .icon {
-        width: 18px;
-        height: 18px;
+        width: 20px;
+        height: 20px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -4384,14 +4413,16 @@ body {
         }
 
         img {
+          transform: scale(1.1);
+
           @media (max-width: 767px) {
             transform: scale(1.1);
           }
         }
 
         svg {
-          width: 14px;
-          height: 14px;
+          width: 15px;
+          height: 15px;
 
           @media (max-width: 767px) {
             width: 16px;
@@ -4609,7 +4640,8 @@ body {
       }
 
       .rate {
-        font-size: 10px;
+        font-size: 12px;
+        margin: 0 6px 0 0;
 
         @media (max-width: 767px) {
           font-size: 12px;
@@ -4619,7 +4651,7 @@ body {
 
       .rate-heigh {
         &:after {
-          border-width: 0 3px 4px 3px;
+          border-width: 0 3px 5px 3px;
 
           @media (max-width: 767px) {
             border-width: 0 4px 6px 4px;
@@ -4629,7 +4661,7 @@ body {
 
       .rate-low {
         &:after {
-          border-width: 4px 3px 0 3px;
+          border-width: 5px 3px 0 3px;
 
           @media (max-width: 767px) {
             border-width: 6px 4px 0 4px;
@@ -4650,7 +4682,7 @@ body {
       }
 
       .cookname {
-        font-size: 9px;
+        font-size: 11px;
         color: #4d4d4d;
 
         @media (max-width: 767px) {
@@ -4716,7 +4748,7 @@ body {
     }
 
     .logo {
-      width: 130px;
+      width: 145px;
       margin: 0 0 30px;
 
       @media (max-width: 767px) {
@@ -4816,5 +4848,62 @@ body {
         }
       }
     }
+  }
+}
+
+.loggedOutState {
+  width: 26px;
+  height: 26px;
+  border-radius: 100%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0 0 2px;
+  cursor: pointer;
+
+  img {
+    width: 12px;
+    height: auto;
+    display: block;
+  }
+}
+
+.headerSearchForm {
+  cursor: pointer;
+
+  @media (min-width: 1280px) {
+    width: 123px;
+    height: 30px;
+    border: 1px solid #E5E8EF;
+    border-radius: 31px;
+    display: flex;
+    align-items: center;
+    padding: 7px 17px;
+  }
+
+  svg {
+     @media (min-width: 1280px) {
+      width: 12px;
+      height: 12px;
+      margin: 0 10px 0 0;
+     }
+  }
+
+  .text {
+    display: none;
+
+     @media (min-width: 1280px) {
+      font-size: 10px;
+      line-height: 16px;
+      color: #fff;
+      display: block;
+     }
+  }
+}
+
+.modal-dialog {
+  &.ingredientsModal {
+    max-width: 610px;
   }
 }

@@ -1,6 +1,6 @@
 import { Modal } from "@components"
 import { useOpenClose } from "@hooks"
-import { setItemId } from "@utils"
+import { classNames, setItemId } from "@utils"
 import React, { useEffect, useMemo, useState } from "react"
 import styled from "styled-components"
 import StepOne from "./StepOne"
@@ -88,7 +88,8 @@ const IngredientsModal = ({ isOpen, className, onSave, onCancel }: Props) => {
   }, [currentStep as any])
   return (
     <Modal
-      className={`modal-popups ${className}`}
+      // className={`modal-popups myClass ${className}`}
+      className={classNames("ingredientsModal")}
       isOpen={isOpenModel}
       title={
         <span className="title-holder">

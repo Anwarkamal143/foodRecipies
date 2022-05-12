@@ -39,7 +39,7 @@ function NavBar() {
                     <UnstyledLink href="/">
                       <img
                         className="mx-auto block h-10 w-auto md:h-[3.5rem]"
-                        src="/svg/logo-white.svg"
+                        src="/images/cook-logo-white.png"
                         alt="brand"
                       />
                     </UnstyledLink>

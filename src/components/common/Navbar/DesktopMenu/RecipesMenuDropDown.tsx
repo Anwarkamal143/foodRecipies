@@ -402,13 +402,13 @@ function RecipesMegaMenu() {
                   <li>
                     <a href="#">
                       <div className="icon"><img src="/images/nav-icon12.png" alt="" width={13} /></div>
-                      <div className="text">30 Minutes or Less</div>
+                      <div className="text">&#60; 30 Minutes</div>
                     </a>
                   </li>
                   <li>
                     <a href="#">
                       <div className="icon"><img src="/images/nav-icon13.png" alt="" width={13} /></div>
-                      <div className="text">5 Ingredients or Less</div>
+                      <div className="text">&#60; 5 Ingredients</div>
                     </a>
                   </li>
                   <li>
