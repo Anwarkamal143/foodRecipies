@@ -1,9 +1,8 @@
 import { Button, Modal, VideoPlayer } from "@components"
-import { AngleRight, LeftSliderArrow, RightSliderArrow } from "@icons"
+import { AngleRight } from "@icons"
 import classNames from "classnames"
-import React, { useRef } from "react"
+import React, { useMemo, useState } from "react"
 import NoSSR from "react-no-ssr"
-import Slider from "react-slick"
 import styled from "styled-components"
 interface props extends ReactModal.Props {
   className?: string
@@ -12,16 +11,7 @@ interface props extends ReactModal.Props {
   onClose?: ReactModal.Props["onRequestClose"]
   currentSlideIndex?: number
 }
-const settings = {
-  dots: false,
-  arrow: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  nextArrow: <RightSliderArrow />,
-  prevArrow: <LeftSliderArrow />,
-}
+
 const VideosModal = ({
   className,
   items,
@@ -31,50 +21,46 @@ const VideosModal = ({
   onClose,
   ...rest
 }: props) => {
-  const ref = useRef<any>()
-  const activeData = () => {
-    return (
-      <>
-        <div className="profileImage">
-          <img src={"/images/bbq.jpg"} alt="video" />
-          The Million Dollar Challenge
-        </div>
-        <hr />
-        <div className="tabs">
-          <Button>Watch YouTube Video</Button>
-          <Button>Tiktok YouTube Video</Button>
-          <Button>Watch Instagram Video</Button>
-        </div>
-        <VideoPlayer
-          url={"https://www.youtube.com/watch?v=yJ05d3bXPnI"}
-          className={`video_`}
-        />
-        <strong className="title">
-          GoPro HERO 10 Black: The Million Dollar Challenge
-        </strong>
-        <div className="userHolder">
-          <div className="userInfo">
-            <div className="profileImage">
-              <img src={"/images/bbq.jpg"} alt="video" />
+  const [currentStep, setCurrentStep] = useState("YouTube")
+  const Components = useMemo(() => {
+    switch (currentStep) {
+      case "YouTube":
+        return {
+          video: (
+            <div className={`${currentStep}-video-ctn`}>
+              <VideoPlayer
+                url={"https://www.youtube.com/watch?v=yJ05d3bXPnI"}
+                className={`video_`}
+              />
             </div>
-            <div className="textbox">
-              <span className="uesername">
-                <a href="#">
-                  Nick Digiovanni <AngleRight />
-                </a>
-              </span>
-              <span className="postby">{"245  Posts"}</span>
+          ),
+        }
+      case "Tiktok":
+        return {
+          video: (
+            <div className={`${currentStep}-video-ctn`}>
+              <VideoPlayer
+                url={"https://www.youtube.com/watch?v=yJ05d3bXPnI"}
+                className={`video_`}
+              />
             </div>
-          </div>
-          <div className="subscribeButton">
-            <a href="#" className="btnSubscribe">
-              Follow
-            </a>
-          </div>
-        </div>
-      </>
-    )
-  }
+          ),
+        }
+      case "Instagram":
+        return {
+          video: (
+            <div className={`${currentStep}-video-ctn`}>
+              <VideoPlayer
+                url={"https://www.youtube.com/watch?v=yJ05d3bXPnI"}
+                className={`video_`}
+              />
+            </div>
+          ),
+        }
+      default:
+        return
+    }
+  }, [currentStep as any])
   return (
     <NoSSR>
       {isOpen && (
@@ -94,9 +80,55 @@ const VideosModal = ({
           <span className="modalCloseButton" onClick={onClose}>
             X
           </span>
-          <Slider draggable={true} ref={ref} {...settings}>
-            {activeData()}
-          </Slider>
+          <div className="profileImage">
+            <img src={"/images/bbq.jpg"} alt="video" />
+            The Million Dollar Challenge
+          </div>
+          <hr />
+          <div className="tabs">
+            <Button
+              onClick={() => setCurrentStep("YouTube")}
+              className={`${currentStep === "YouTube" && "active"}`}
+            >
+              Watch YouTube Video
+            </Button>
+            <Button
+              onClick={() => setCurrentStep("Tiktok")}
+              className={`${currentStep === "Tiktok" && "active"}`}
+            >
+              Tiktok YouTube Video
+            </Button>
+            <Button
+              onClick={() => setCurrentStep("Instagram")}
+              className={`${currentStep === "Instagram" && "active"}`}
+            >
+              Watch Instagram Video
+            </Button>
+          </div>
+          {Components?.video}
+          <strong className="title">
+            GoPro HERO 10 Black: The Million Dollar Challenge
+          </strong>
+          <div className="userHolder">
+            <div className="userInfo">
+              <div className="profileImage">
+                <img src={"/images/bbq.jpg"} alt="video" />
+              </div>
+              <div className="textbox">
+                <span className="uesername">
+                  <a href="#">
+                    Nick Digiovanni <AngleRight />
+                  </a>
+                </span>
+                <span className="postby">{"245  Posts"}</span>
+              </div>
+            </div>
+            <div className="subscribeButton">
+              <a href="#" className="btnSubscribe">
+                Follow
+              </a>
+            </div>
+          </div>
         </Modal>
       )}
     </NoSSR>
