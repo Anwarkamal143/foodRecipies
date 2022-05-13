@@ -28,7 +28,7 @@ const StepOne = ({ currentStep, setCurrentStep }: Props) => {
         </span>
       </div>
       {currentStep === "1" && (
-        <p>
+        <p className="textHelp">
           Help others try this recipe too by sharing recipe tips and photos.
         </p>
       )}
