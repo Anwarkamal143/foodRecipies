@@ -1181,6 +1181,7 @@ export default styled(PanCake)`
         font-size: 13px;
         line-height: 20px;
         color: #1E1E2D;
+        cursor: pointer;
 
         @media (max-width: 767px) {
           font-size: 11px;

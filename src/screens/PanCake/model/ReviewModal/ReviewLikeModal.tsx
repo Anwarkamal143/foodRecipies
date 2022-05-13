@@ -1,5 +1,6 @@
 import { Modal } from "@components"
 import { useOpenClose } from "@hooks"
+import classNames from "classnames"
 import React, { useEffect, useMemo, useState } from "react"
 import styled from "styled-components"
 import StepOne from "./StepOne"
@@ -57,7 +58,7 @@ const ReviewLikeModal = ({ isOpen, className, onSave, onCancel }: Props) => {
   }, [currentStep as any])
   return (
     <Modal
-      className={`modal-popups ${className}`}
+      className={classNames("reviewLikeModal")}
       isOpen={isOpenModel}
       title={<span className="title-holder">{Components?.title}</span>}
       showFooter={false}

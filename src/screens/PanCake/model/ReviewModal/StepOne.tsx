@@ -1,4 +1,4 @@
-import { LikeIcon } from "@icons"
+import { DisLikeIcon, LikeIcon } from "@icons"
 import React, { useState } from "react"
 
 type Props = {
@@ -9,8 +9,8 @@ type Props = {
 const StepOne = ({ currentStep, setCurrentStep }: Props) => {
   const [active, setActive] = useState("")
   return (
-    <div>
-      <div className="smsLink">
+    <div className="reviewsModalContent">
+      <div className="reviewsModalOptions">
         <span
           className={`like ${active === "like" ? "like-fill" : ""}`}
           onClick={() => {
@@ -29,11 +29,11 @@ const StepOne = ({ currentStep, setCurrentStep }: Props) => {
             setActive("dis-like-fill")
           }}
         >
-          <LikeIcon />
+          <DisLikeIcon />
         </span>
       </div>
       {currentStep === "1" && (
-        <p>
+        <p className="textHelp">
           Help others try this recipe too by sharing recipe tips and photos.
         </p>
       )}
