@@ -5442,3 +5442,64 @@ body {
     }
   }
 }
+
+.modal-dialog {
+  &.reviewLikeModal {
+    max-width: 500px;
+
+    .modal-header {
+      margin: 0 0 25px;
+
+      .close {
+        font-size: 35px;
+      }
+    }
+
+    .modal-title {
+      width: 100%;
+      padding: 10px 0 0;
+    }
+
+    .title-holder {
+      font-size: 24px;
+      line-height: 1.5;
+      color: #1E1E2D;
+      display: block;
+    }
+  }
+}
+
+.reviewsModalContent {
+  overflow: hidden;
+
+  .reviewsModalOptions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 30px;
+
+    .like,
+    .dis-like {
+      width: 90px;
+      height: 90px;
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 22px;
+
+      svg {
+        width: 36px;
+        height: 36px;
+      }
+    }
+
+    .like {
+      background: #F2FFFA;
+    }
+
+    .dis-like {
+      background: #FFF7F7;
+    }
+  }
+}

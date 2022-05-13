@@ -1,4 +1,4 @@
-import { LikeIcon } from "@icons"
+import { DisLikeIcon, LikeIcon } from "@icons"
 import React from "react"
 
 type Props = {
@@ -8,8 +8,8 @@ type Props = {
 
 const StepOne = ({ currentStep, setCurrentStep }: Props) => {
   return (
-    <div>
-      <div className="smsLink">
+    <div className="reviewsModalContent">
+      <div className="reviewsModalOptions">
         <span
           className={`${currentStep === "1" ? "like" : "like-fill"}`}
           onClick={() => {
@@ -24,7 +24,7 @@ const StepOne = ({ currentStep, setCurrentStep }: Props) => {
             currentStep === "1" ? setCurrentStep?.("2") : null
           }}
         >
-          <LikeIcon />
+          <DisLikeIcon />
         </span>
       </div>
       {currentStep === "1" && (
