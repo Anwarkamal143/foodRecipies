@@ -3,7 +3,6 @@ import { useOpenClose } from "@hooks"
 import React, { useEffect, useMemo, useState } from "react"
 import styled from "styled-components"
 import StepOne from "./StepOne"
-import StepThree from "./StepThree"
 import StepTwo from "./StepTwo"
 
 type Props = {
@@ -51,12 +50,6 @@ const ReviewLikeModal = ({ isOpen, className, onSave, onCancel }: Props) => {
               setCurrentStep={setCurrentStep}
             />
           ),
-        }
-      case "3":
-        return {
-          header: 3,
-          title: "Create New List",
-          step: <StepThree />,
         }
       default:
         return <StepOne />

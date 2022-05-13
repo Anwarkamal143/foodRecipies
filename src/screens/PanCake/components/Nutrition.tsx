@@ -1,4 +1,5 @@
 import { Button } from "@components"
+import { useOpenClose } from "@hooks"
 import React from "react"
 import {
   buildStyles,
@@ -6,14 +7,19 @@ import {
   CircularProgressbarWithChildren
 } from "react-circular-progressbar"
 import "react-circular-progressbar/dist/styles.css"
+import SmartNutritionModal from "../model/SmartNutritionModal"
 type Props = {}
 
 const Nutrition = (props: Props) => {
+  const [isOpenModel, onOpenModel, onCloseModel] = useOpenClose()
+
   return (
     <div className="ingredientsBlock nutritionBlock">
       <div className="ingredientsBlockHead">
         <h2>Nutrition</h2>
-        <Button className="calculatorButton"><img src="/images/icon-bow.png" alt="" /> Smart Nutrition Calculator</Button>
+        <Button className="calculatorButton" onClick={onOpenModel}>
+          <img src="/images/icon-bow.png" alt="" /> Smart Nutrition Calculator
+        </Button>
       </div>
       <div className="nutritionProgressBar">
         <div className="nutritionProgressBox Carbs">
@@ -73,6 +79,7 @@ const Nutrition = (props: Props) => {
           <span className="nutritionText">320 Kcal</span>
         </div>
       </div>
+      <SmartNutritionModal isOpen={isOpenModel } onCancel={ onCloseModel}/>
     </div>
   )
 }

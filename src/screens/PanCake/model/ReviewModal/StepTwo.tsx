@@ -60,7 +60,7 @@ const StepTwo = ({ setCurrentStep }: Props) => {
           Share more about your experience. Any tips for improving this recipe?
         </span>
       </div>
-      <Button onClick={() => setCurrentStep("3")}>Save Note</Button>
+      <Button>Save Note</Button>
     </div>
   )
 }
