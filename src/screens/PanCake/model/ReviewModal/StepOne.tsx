@@ -1,5 +1,5 @@
 import { LikeIcon } from "@icons"
-import React from "react"
+import React, { useState } from "react"
 
 type Props = {
   currentStep?: string
@@ -7,21 +7,26 @@ type Props = {
 }
 
 const StepOne = ({ currentStep, setCurrentStep }: Props) => {
+  const [active, setActive] = useState("")
   return (
     <div>
       <div className="smsLink">
         <span
-          className={`${currentStep === "1" ? "like" : "like-fill"}`}
+          className={`like ${active === "like" ? "like-fill" : ""}`}
           onClick={() => {
             currentStep === "1" ? setCurrentStep?.("2") : null
+            setActive("like")
           }}
         >
           <LikeIcon />
         </span>
         <span
-          className={`${currentStep === "1" ? "dis-like" : "dis-like-fill"}`}
-           onClick={() => {
+          className={`dis-like ${
+            active === "dis-like-fill" ? "dis-like-fill" : ""
+          }`}
+          onClick={() => {
             currentStep === "1" ? setCurrentStep?.("2") : null
+            setActive("dis-like-fill")
           }}
         >
           <LikeIcon />
