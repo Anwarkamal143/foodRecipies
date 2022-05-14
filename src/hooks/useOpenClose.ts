@@ -5,7 +5,9 @@ const useOpenCls = (
 ): [boolean, () => void, () => void, () => void] => {
   const [open, setOpen] = useState(d)
 
-  const onOpen = () => setOpen(true)
+  const onOpen = () => {
+    setOpen(true)
+  }
   const onClose = () => setOpen(false)
   const onToggle = () => setOpen(!open)
   return [open, onOpen, onClose, onToggle]

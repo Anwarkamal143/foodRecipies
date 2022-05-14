@@ -1,111 +1,103 @@
 import { Button, Checkbox } from "@components"
 import { useOpenClose } from "@hooks"
 import { Minus, PencilIcon, PlusBtn } from "@icons"
-import React from "react"
+import { useCallback, useState } from "react"
 import IngredientsModal from "../../model/IngredientsModal/IngredientsModal"
 
 type Props = {}
-
+const Item = [
+  { id: "1", unit: "Cup", label: "reduced-sodium soy sauce" },
+  { id: "2", unit: "Cup", label: "reduced-sodium soy sauce" },
+  { id: "3", unit: "tablespoon", label: "honey" },
+  { id: "4", unit: "tablespoon", label: "honey" },
+]
 const Ingredients = (props: Props) => {
   const [isOpenModel, onOpenModel, onCloseModel] = useOpenClose()
+  const [isDropDownOpen, onDropDownOpen] = useOpenClose()
 
+  const [serving, setServing] = useState<number>(3)
+  const getUnitVal = useCallback(
+    (unit: "Cup" | "tablespoon") => {
+      switch (unit) {
+        case "Cup":
+          return `1/${serving + 1}`
+        case "tablespoon":
+          return `${serving + 1}`
+        default:
+          break
+      }
+    },
+    [serving]
+  )
+  const getIngredients = useCallback(
+    (items: any) => {
+      return items?.map((item: any) =>
+        item?.unit === "Cup" ? (
+          <Checkbox
+            width={16}
+            height={16}
+            label={`${getUnitVal(item?.unit)} ${item?.unit} ${item?.label}`}
+            checked
+            icon={<img src="images/chicken.svg" alt="" />}
+          />
+        ) : (
+          <Checkbox
+            width={16}
+            height={16}
+            label={`${getUnitVal(item?.unit)} ${item?.unit} ${item?.label}`}
+            checked
+            icon={<img src="images/egg.svg" alt="" />}
+          />
+        )
+      )
+    },
+    [Item, serving]
+  )
   return (
     <div className="ingredientsBlock">
       <div className="ingredientsBlockHead">
         <h2>Ingredients</h2>
         <span className="inputNumbers">
-          <Minus /> <span className="numText">3 Servings</span> <PlusBtn />
+          <Minus onClick={() => setServing((val: number) => val - 1)} />{" "}
+          <span className="numText">{serving} Servings</span>{" "}
+          <PlusBtn onClick={() => setServing((val: number) => val + 1)} />
         </span>
-        <Button>Convert Units</Button>
+        <Button onClick={onDropDownOpen}>Convert Units</Button>
+        {isDropDownOpen && (
+          <span>
+            <span className="active"></span>
+            <span></span>
+            <span></span>
+          </span>
+        )}
       </div>
       <div className="ingredientsBody">
         <div className="ingredientsItemsHolder">
           <strong className="title">For the Gravy</strong>
-          <div className="ingredientsItems">
-            <Checkbox
-              width={16}
-              height={16}
-              label="1/4 Cup reduced-sodium soy sauce"
-              checked
-              icon={<img src="images/chicken.svg" alt="" />}
-            />
-            <Checkbox
-              width={16}
-              height={16}
-              label="1/4 Cup reduced-sodium soy sauce"
-              checked
-              icon={<img src="images/chicken.svg" alt="" />}
-            />
-            <Checkbox
-              width={16}
-              height={16}
-              label="1 tablespoon honey"
-              checked
-              icon={<img src="images/egg.svg" alt="" />}
-            />
-            <Checkbox
-              width={16}
-              height={16}
-              label="1 tablespoon honey"
-              checked
-              icon={<img src="images/egg.svg" alt="" />}
-            />
-          </div>
+          <div className="ingredientsItems">{getIngredients(Item)}</div>
         </div>
         <div className="ingredientsItemsHolder">
           <strong className="title">For the Chicken</strong>
           <div className="ingredientsItems">
-            <Checkbox
-              width={16}
-              height={16}
-              label="1/4 Cup reduced-sodium soy sauce"
-              checked
-              icon={
-                <span className="icon">
-                  <img src="images/chicken.svg" alt="" />
-                </span>
-              }
-            />
-            <Checkbox
-              width={16}
-              height={16}
-              label="1/4 Cup reduced-sodium soy sauce"
-              checked
-              icon={
-                <span className="icon">
-                  <img src="images/chicken.svg" alt="" />
-                </span>
-              }
-            />
-            <Checkbox
-              width={16}
-              height={16}
-              label="1 tablespoon honey"
-              checked
-              icon={
-                <span className="icon">
-                  <img src="images/egg.svg" alt="" />
-                </span>
-              }
-            />
-            <Checkbox
-              width={16}
-              height={16}
-              label="1 tablespoon honey"
-              checked
-              icon={
-                <span className="icon">
-                  <img src="images/egg.svg" alt="" />
-                </span>
-              }
-            />
+            <div className="ingredientsItems">{getIngredients(Item)}</div>
           </div>
-          <Button className="buttonGreen" onClick={onOpenModel}>
+          <Button
+            className="buttonGreen"
+            onClick={() => {
+              onOpenModel()
+            }}
+          >
             Add to Shopping List <PencilIcon />
           </Button>
         </div>
       </div>
-      <IngredientsModal isOpen={isOpenModel} onCancel={onCloseModel} />
+      <IngredientsModal
+        Item={Item}
+        serving={serving}
+        setServing={setServing}
+        isOpen={isOpenModel}
+        onCancel={onCloseModel}
+      />
     </div>
   )
 }

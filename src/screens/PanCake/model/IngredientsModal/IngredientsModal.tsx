@@ -2,7 +2,7 @@ import { Modal } from "@components"
 import { useOpenClose } from "@hooks"
 import { LongArrowLeftIcon } from "@icons"
 import { classNames, setItemId } from "@utils"
-import React, { useEffect, useMemo, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import styled from "styled-components"
 import StepOne from "./StepOne"
 import StepThree from "./StepThree"
@@ -11,7 +11,10 @@ import StepTwo from "./StepTwo"
 type Props = {
   isOpen?: boolean
   className?: string
+  serving?: number
+  Item?: any
   onSave?: (...args: any) => void
+  setServing?: (...args: any) => void
   onCancel?: (...args: any) => void
 }
 const itemsData = [
@@ -29,7 +32,15 @@ const itemsData = [
   },
 ]
 
-const IngredientsModal = ({ isOpen, className, onSave, onCancel }: Props) => {
+const IngredientsModal = ({
+  isOpen,
+  className,
+  onSave,
+  onCancel,
+  Item,
+  setServing,
+  serving,
+}: Props) => {
   const [isOpenModel, onOpenModel, onCloseModel] = useOpenClose()
   const [currentStep, setCurrentStep] = useState(1)
   const [selectedItem, setSelectedItem] = useState(itemsData[0].list)
@@ -39,7 +50,7 @@ const IngredientsModal = ({ isOpen, className, onSave, onCancel }: Props) => {
     onCancel?.()
     setCurrentStep(1)
   }
-  const handleList = e => {
+  const handleList = (e: any) => {
     setSelectedItem(e.list)
   }
   useEffect(() => {
@@ -47,7 +58,7 @@ const IngredientsModal = ({ isOpen, className, onSave, onCancel }: Props) => {
       onOpenModel()
     }
   }, [isOpen])
-  const handleSave = e => {
+  const handleSave = (e: any) => {
     onCloseModel()
     setCurrentStep(1)
     onSave?.(e)
@@ -57,7 +68,9 @@ const IngredientsModal = ({ isOpen, className, onSave, onCancel }: Props) => {
       case 1:
         return {
           header: 1,
-          step: <StepOne />,
+          step: (
+            <StepOne Item={Item} setServing={setServing} serving={serving} />
+          ),
           title: (
             <span className="ingredientsModalTitle">
               Add to{" "}
@@ -89,15 +102,29 @@ const IngredientsModal = ({ isOpen, className, onSave, onCancel }: Props) => {
               Create New List
             </span>
           ),
-          step: <StepThree handleSave={handleSave} handleClose={handleClose} />,
+          step: (
+            <StepThree
+              handleSave={(name: string) => {
+                setCurrentStep(2)
+                itemsData.push({
+                  id: setItemId(),
+                  list: name,
+                })
+              }}
+              handleClose={handleClose}
+            />
+          ),
         }
       default:
-        return <StepOne />
+        return {
+          step: (
+            <StepOne Item={Item} setServing={setServing} serving={serving} />
+          ),
+        }
     }
   }, [currentStep as any])
   return (
     <Modal
-      // className={`modal-popups myClass ${className}`}
       className={classNames("ingredientsModal")}
       isOpen={isOpenModel}
       title={
@@ -107,10 +134,10 @@ const IngredientsModal = ({ isOpen, className, onSave, onCancel }: Props) => {
               className="back-btn"
               onClick={() => setCurrentStep(currentStep - 1)}
             >
-              <LongArrowLeftIcon/>
+              <LongArrowLeftIcon />
             </span>
           )}
-         {Components.title as any}
+          {Components.title as any}
         </span>
       }
       showFooter={false}
