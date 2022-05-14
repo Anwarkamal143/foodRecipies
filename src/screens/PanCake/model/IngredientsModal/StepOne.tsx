@@ -1,10 +1,50 @@
 import { Button, Checkbox } from "@components"
 import { Minus, PlusBtn } from "@icons"
-import React from "react"
+import { useCallback } from "react"
 
-type Props = {}
+type Props = {
+  Item?: any[]
+  serving?: number
+  setServing?: (...args: any) => void
+}
 
 const StepOne = (Props: Props) => {
+  const { Item, serving, setServing } = Props
+  const getUnitVal = useCallback(
+    (unit: "Cup" | "tablespoon") => {
+      switch (unit) {
+        case "Cup":
+          return `1/${serving + 1}`
+        case "tablespoon":
+          return `${serving + 1}`
+        default:
+          break
+      }
+    },
+    [serving]
+  )
+  const getIngredients = useCallback(
+    (item: any) => {
+      return item?.unit === "Cup" ? (
+        <Checkbox
+          width={16}
+          height={16}
+          label={`${getUnitVal(item?.unit)} ${item?.unit} ${item?.name}`}
+          checked
+          icon={<img src="images/chicken.svg" alt="" />}
+        />
+      ) : (
+        <Checkbox
+          width={16}
+          height={16}
+          label={`${getUnitVal(item?.unit)} ${item?.unit} ${item?.name}`}
+          checked
+          icon={<img src="images/egg.svg" alt="" />}
+        />
+      )
+    },
+    [Item]
+  )
   return (
     <div className="ingredientsModalContent">
       <div className="ingredientsModalHeader">
@@ -13,7 +53,9 @@ const StepOne = (Props: Props) => {
           Chicken-Parmesan Bundles
         </span>
         <span className="inputNumbers">
-          <Minus /> <span className="numText">3 Servings</span> <PlusBtn />
+          <Minus onClick={() => setServing?.((val: number) => val - 1)} />{" "}
+          <span className="numText">{serving} Servings</span>{" "}
+          <PlusBtn onClick={() => setServing?.((val: number) => val + 1)} />
         </span>
       </div>
       <div className="ingredientsItems">
