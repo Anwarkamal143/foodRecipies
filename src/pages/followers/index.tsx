@@ -51,6 +51,14 @@ export default styled(PanCake)`
     }
   }
 
+  .ingredientsCookHeader {
+    .ingredientsCookHeaderRight {
+      .copyLinkButton {
+        display: flex;
+      }
+    }
+  }
+
   .detailsLeftColumn {
     width: calc(100% - 310px);
 
@@ -235,6 +243,69 @@ export default styled(PanCake)`
       .numText {
         @media (max-width: 767px) {
           padding: 0 10px;
+        }
+      }
+    }
+
+    .convertUnitsDropdownBox {
+      position: relative;
+      z-index: 1;
+
+      .convertUnitsDropdown {
+        position: absolute;
+        left: 0;
+        top: 100%;
+        margin-top: 5px;
+        width: 146px;
+        background: #fff;
+        box-shadow: 0 4px 28px -10px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        padding: 15px 20px;
+        border: 1px solid #EFEFEF;
+
+        .item {
+          display: block;
+          position: relative;
+          font-size: 14px;
+          line-height: 20px;
+          color: #4F4F4F;
+          padding: 8px 0;
+          cursor: pointer;
+
+          .icon {
+            width: 14px;
+            height: 14px;
+            border: 2px solid #E0E0E0;
+            border-radius: 100%;
+            display: block;
+            position: absolute;
+            right: -5px;
+            top: 50%;
+            transform: translateY(-50%);
+
+            &:after {
+              width: 6px;
+              height: 6px;
+              content: '';
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              margin: -3px 0 0 -3px;
+              background: #fff;
+              border-radius: 100%;
+            }
+          }
+
+          &:hover,
+          &.active {
+            .icon {
+              border-color: #6FCF97;
+
+              &:after {
+                background: #6FCF97;
+              }
+            }
+          }
         }
       }
     }

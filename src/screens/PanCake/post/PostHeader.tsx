@@ -1,5 +1,5 @@
 import { Icon, Image } from "@components"
-import { FacebookIcon, InstagramIcon, TwitterIcon, YoutubeIcon } from "@icons"
+import { FacebookIcon, InstagramIcon, LinkIcon, TwitterIcon, YoutubeIcon } from "@icons"
 import dayjs from "dayjs"
 import relativeTime from "dayjs/plugin/relativeTime"
 import styled from "styled-components"
@@ -33,19 +33,25 @@ function PostHeader(props: IMyFeedProps) {
           </span>
         </div>
       </div>
-      <div className="socialIcons">
-        <Icon className="socialIconsItem facebook">
-          <FacebookIcon />
-        </Icon>
-        <Icon className="socialIconsItem youtube">
-          <YoutubeIcon />
-        </Icon>
-        <Icon className="socialIconsItem twitter">
-          <TwitterIcon />
-        </Icon>
-        <Icon className="socialIconsItem instagram">
-          <InstagramIcon />
-        </Icon>
+      <div className="ingredientsCookHeaderRight">
+        <span className="copyLinkButton">
+          <span className="icon"><LinkIcon/></span>
+          Copy Recipe Link
+        </span>
+        <div className="socialIcons">
+          <Icon className="socialIconsItem facebook">
+            <FacebookIcon />
+          </Icon>
+          <Icon className="socialIconsItem youtube">
+            <YoutubeIcon />
+          </Icon>
+          <Icon className="socialIconsItem twitter">
+            <TwitterIcon />
+          </Icon>
+          <Icon className="socialIconsItem instagram">
+            <InstagramIcon />
+          </Icon>
+        </div>
       </div>
     </div>
   )
@@ -73,6 +79,33 @@ export default styled(PostHeader)`
 
   .post-headerimg {
     height: 3em;
+  }
+
+  .ingredientsCookHeaderRight {
+    display: flex;
+    align-items: center;
+    
+    .copyLinkButton {
+      display: none;
+      font-size: 12px;
+      line-height: 18px;
+      color: #7B7B82;
+      align-items: center;
+      margin: 0 20px 0 0;
+      cursor: pointer;
+
+      .icon {
+        width: 32px;
+        height: 32px;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100%;
+        margin: 0 10px 0 0;
+      }
+    }
   }
 
   .socialIcons {

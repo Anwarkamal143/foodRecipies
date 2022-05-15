@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import { CircleImage, UnstyledLink } from "@components"
-import { ArrowRight } from "@icons"
+import { ArrowRight, ChevronRightIcon } from "@icons"
 import clsxm from "@lib/clsxm"
 import React from "react"
 import { BsArrowRight } from "react-icons/bs"
-import { FiChevronDown, FiChevronRight } from "react-icons/fi"
+import { FiChevronDown } from "react-icons/fi"
 import MegaMenu, { MegaMenuButton, MegaMenuPanel } from "./MegaMenu"
 import { CoocksMenu, TopCooksOfWeek } from "./MenuData/MenuData"
 
@@ -44,7 +44,7 @@ function CoocksMegaMenu() {
         <div className="megaMenuWrapper cooksMenu">
           <div className="menuLeftColumn">
             <div className="menuBox">
-              <a href="#" className="buttonView">See All <FiChevronRight /></a>
+              <a href="#" className="buttonView">See All <span className="arrowIcon"><span className="arrowShort"><ChevronRightIcon /></span><span className="arrowLong"><ArrowRight /></span></span></a>
               <strong className="title">Cook Quick Access</strong>
               <ul className="menuBoxItems">
                 <li>
@@ -93,7 +93,7 @@ function CoocksMegaMenu() {
           <div className="menuRightColumn">
             <div className="menuRightColumnHead">
               <strong className="title">Top cooks this week <img src="/images/flame.png" alt="" width={11} /></strong>
-              <a href="#" className="buttonView">View All <FiChevronRight /></a>
+              <a href="#" className="buttonView">View All <span className="arrowIcon"><span className="arrowShort"><ChevronRightIcon /></span><span className="arrowLong"><ArrowRight /></span></span></a>
             </div>
             <div className="userlist">
               <div className="top-profiles">

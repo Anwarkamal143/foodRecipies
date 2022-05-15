@@ -62,14 +62,16 @@ const Ingredients = (props: Props) => {
           <span className="numText">{serving} Servings</span>{" "}
           <PlusBtn onClick={() => setServing((val: number) => val + 1)} />
         </span>
-        <Button onClick={onDropDownOpen}>Convert Units</Button>
-        {isDropDownOpen && (
-          <span>
-            <span className="active"></span>
-            <span></span>
-            <span></span>
-          </span>
-        )}
+        <div className="convertUnitsDropdownBox">
+          <Button onClick={onDropDownOpen}>Convert Units</Button>
+          {isDropDownOpen && (
+            <span className="convertUnitsDropdown">
+              <span className="item active">Original <span className="icon"></span></span>
+              <span className="item">Metric <span className="icon"></span></span>
+              <span className="item">Imperial <span className="icon"></span></span>
+            </span>
+          )}
+        </div>
       </div>
       <div className="ingredientsBody">
         <div className="ingredientsItemsHolder">

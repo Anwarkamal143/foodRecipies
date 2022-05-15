@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import { ButtonLink, Icon, UnstyledLink } from "@components"
-import { FacebookIcon, TiktokIcon, TwitterIcon, YoutubeIcon } from "@icons"
+import { ArrowRight, ChevronRightIcon, FacebookIcon, TiktokIcon, TwitterIcon, YoutubeIcon } from "@icons"
 import clsxm from "@lib/clsxm"
 import React from "react"
 import { BsArrowRight } from "react-icons/bs"
-import { FiChevronDown, FiChevronRight } from "react-icons/fi"
+import { FiChevronDown } from "react-icons/fi"
 import MegaMenu, { MegaMenuButton, MegaMenuPanel } from "./MegaMenu"
 import { communites } from "./MenuData/MenuData"
 
@@ -75,7 +75,7 @@ function CommunityMegaMenu() {
           </div>
           <div className="megaMenuColumn">
             <div className="menuBox">
-              <a href="#" className="buttonView">See All <FiChevronRight /></a>
+              <a href="#" className="buttonView">See All <span className="arrowIcon"><span className="arrowShort"><ChevronRightIcon /></span><span className="arrowLong"><ArrowRight /></span></span></a>
               <strong className="title">Our Community</strong>
               <ul className="menuBoxItems">
                 <li>
@@ -123,7 +123,7 @@ function CommunityMegaMenu() {
           </div>
           <div className="megaMenuColumn">
             <div className="menuBox">
-              <a href="#" className="buttonView">See All <FiChevronRight /></a>
+              <a href="#" className="buttonView">See All <span className="arrowIcon"><span className="arrowShort"><ChevronRightIcon /></span><span className="arrowLong"><ArrowRight /></span></span></a>
               <strong className="title">About Our Cooks</strong>
               <ul className="menuBoxItems">
                 <li>

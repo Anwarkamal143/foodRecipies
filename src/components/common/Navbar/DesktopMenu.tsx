@@ -68,7 +68,7 @@ function DesktopMenu() {
                 aria-hidden="true"
                 className="animate-shake"
               />
-              <span className="absolute flex items-center justify-center w-3 h-3 p-1 text-xs text-white rounded-full -top-1 -right-1 bg-primary-50">
+              <span className="absolute flex items-center justify-center w-3 h-3 p-1 text-xs text-white rounded-full -top-1 -right-1 bg-primary-50 notificationsStatus">
                 4
               </span>
             </div>

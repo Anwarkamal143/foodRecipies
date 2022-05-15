@@ -29,14 +29,15 @@ function ProfileDropDown() {
         </div>
         <div className="loggedInState">
           <Menu.Button
-            className="relative flex items-center gap-2 text-sm font-medium text-white rounded-full focus:outline-none"
+            className="relative flex items-center gap-2 text-sm font-medium text-white rounded-full focus:outline-none btnLoggedIn"
           
           >
             <span className="sr-only">Open user menu</span>
-            <CircleImage
+            {/* <CircleImage
               src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
               className="w-6 h-6"
-            />
+            /> */}
+            <span className="userName">R</span>
             <p className="hidden md:block" onClick={onOpenModel} >Admin</p>
             <FiChevronDown size="0.8rem" className="hidden md:block" />
           </Menu.Button>

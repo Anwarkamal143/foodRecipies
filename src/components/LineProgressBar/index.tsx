@@ -10,10 +10,10 @@ const ProgressBarr = (props: IProgressBarprops) => {
   const { bgColor, progresspercent, showPrgress = true, title } = props
 
   const containerStyles = {
-    height: 7,
+    height: 4,
     width: "100%",
     backgroundColor: "#e5e8ef",
-    borderRadius: 7,
+    borderRadius: 4,
   }
 
   const fillerStyles = {
@@ -38,9 +38,9 @@ const ProgressBarr = (props: IProgressBarprops) => {
 
   return (
     <div className="ctn-bar">
-      <div style={showLabels}>
-        <span>{title}</span>
-        <span>{`${progresspercent}%`}</span>
+      <div className="ctn-barTitleWrap">
+        <span className="ctn-barTitle">{title}</span>
+        <span className="ctn-barProgress">40g <span className="ctn-barProgressStatus">({`${progresspercent}%`})</span></span>
       </div>
       <div style={containerStyles}>
         <div style={fillerStyles}>

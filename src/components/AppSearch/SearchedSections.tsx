@@ -31,11 +31,11 @@ const SearchedRecipesAndCooks = (props: Props) => {
               {" "}
               <Button
                 shape="circle"
-                iconRight={<ChevronRightIcon />}
                 className="custom-button buttonViewAll"
                 size="small"
               >
                 View All
+                <span className="arrowIcon"><span className="arrowShort"><ChevronRightIcon /></span><span className="arrowLong"><ArrowRight /></span></span>
               </Button>{" "}
             </span>{" "}
           </>
@@ -59,11 +59,11 @@ const SearchedRecipesAndCooks = (props: Props) => {
               {" "}
               <Button
                 shape="circle"
-                iconRight={<ChevronRightIcon />}
                 className="custom-button buttonViewAll"
                 size="small"
               >
                 View All
+                <span className="arrowIcon"><span className="arrowShort"><ChevronRightIcon /></span><span className="arrowLong"><ArrowRight /></span></span>
               </Button>{" "}
             </span>{" "}
           </>
@@ -162,11 +162,40 @@ export const SearchedSections = styled(SearchedRecipesAndCooks)`
       align-items: center;
       justify-content: center;
 
-      svg {
-        margin: 0 -3px 0 3px;
+      .text-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-        path {
-          transition: all 0.4s ease;
+      .arrowIcon {
+        position: relative;
+        width: 12px;
+        right: 0;
+        margin: 0 -3px 0 5px;
+        transition: all 0.25s ease-in-out;
+      }
+
+      .arrowShort {
+        position: absolute;
+        left: 55%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.25s ease-in-out;
+      }
+
+      .arrowLong {
+        display: block;
+        opacity: 0;
+        transition: all 0.25s ease-in-out;
+
+        svg {
+          width: 8px;
+          height: 8px;
+
+          path {
+            stroke: #8d8d96;
+          }
         }
       }
 
@@ -175,8 +204,27 @@ export const SearchedSections = styled(SearchedRecipesAndCooks)`
         background: #ff6067;
         border-color: #ff6067;
 
+        .arrowIcon {
+          right: -3px;
+        }
+
         path {
           fill: #fff;
+        }
+
+        .arrowShort {
+          opacity: 0;
+        }
+
+        .arrowLong {
+          opacity: 1;
+
+          svg {
+            path {
+              fill: transparent;
+              stroke: #fff;
+            }
+          }
         }
       }
     }

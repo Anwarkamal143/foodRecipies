@@ -1,6 +1,7 @@
 import { Modal, ProgressBar } from "@components"
 import { useOpenClose } from "@hooks"
-import { DairyFree, GlutenFree, NutFree, Vegan, Vegetarian } from "@icons"
+import { DairyFree, GlutenFree, InfoIcon, NutFree, Vegan, Vegetarian } from "@icons"
+import classNames from "classnames"
 import React, { useEffect } from "react"
 import styled from "styled-components"
 type Props = {}
@@ -50,91 +51,93 @@ const SmartNutritionModal = ({
   }, [isOpen])
   return (
     <Modal
-      className={`modal-popups ${className}`}
+      className={classNames("smartNutritionModal")}
       isOpen={isOpenModel}
-      title={<span className="title-holder">{}</span>}
+      title={<span className="title-holder">Online Cook Smart Nutrition Calculator</span>}
       showFooter={false}
       showHeader={true}
       onClose={handleClose}
     >
-      <div className="Macronutrients">
-        <p>Macronutrients</p>
-        <hr />
-        <div className="progressStatus">
-          <div>
-            {data.map((item, idx) => (
-              <ProgressBar
-                key={idx}
-                bgColor={item.bgcolor}
-                progresspercent={item.completed}
-                showPrgress={false}
-                title={item.title}
-              />
-            ))}
-          </div>
-          <div>
-            {data.map((item, idx) => (
-              <ProgressBar
-                key={idx}
-                bgColor={item.bgcolor}
-                progresspercent={item.completed}
-                title={item.title}
-                showPrgress={false}
-              />
-            ))}
-          </div>
-          <div className="dietPlansList">
-            {items.map(item => {
-              return (
-                <div className={`item`} key={item.name}>
-                  <div className="infoBox">
-                    {item.icon}
-                    {item.name}
+      <div className="smartNutritionContent">
+        <div className="smartNutritionRow">
+          <strong className="title">Macronutrients <InfoIcon/></strong>
+          <div className="progressStatus">
+            <div className="column">
+              {data.map((item, idx) => (
+                <ProgressBar
+                  key={idx}
+                  bgColor={item.bgcolor}
+                  progresspercent={item.completed}
+                  showPrgress={false}
+                  title={item.title}
+                />
+              ))}
+            </div>
+            <div className="column">
+              {data.map((item, idx) => (
+                <ProgressBar
+                  key={idx}
+                  bgColor={item.bgcolor}
+                  progresspercent={item.completed}
+                  title={item.title}
+                  showPrgress={false}
+                />
+              ))}
+            </div>
+            <div className="column dietPlansList">
+              {items.map(item => {
+                return (
+                  <div className={`item`} key={item.name}>
+                    <div className="infoBox">
+                      {item.icon}
+                      {item.name}
+                    </div>
+                    <span className="iconsStatus">{item.isTrue ? "Y" : "X"}</span>
                   </div>
-                  <span className="iconsStatus">{item.isTrue ? "Y" : "X"}</span>
-                </div>
-              )
-            })}
+                )
+              })}
+            </div>
           </div>
         </div>
-        <p>Macronutrients</p>
-        <hr />
-        <div className="progressStatus">
-          <div>
-            {datatwo.map((item, idx) => (
-              <ProgressBar
-                key={idx}
-                bgColor={item.bgcolor}
-                progresspercent={item.completed}
-                showPrgress={false}
-                title={item.title}
-              />
-            ))}
-          </div>
-          <div>
-            {datatwo.map((item, idx) => (
-              <ProgressBar
-                key={idx}
-                bgColor={item.bgcolor}
-                progresspercent={item.completed}
-                title={item.title}
-                showPrgress={false}
-              />
-            ))}
-          </div>
-          <div>
-            {datatwo.map((item, idx) => (
-              <ProgressBar
-                key={idx}
-                bgColor={item.bgcolor}
-                progresspercent={item.completed}
-                showPrgress={false}
-                title={item.title}
-              />
-            ))}
+        <div className="smartNutritionRow">
+          <strong className="title">Macronutrients <InfoIcon/></strong>
+          <div className="progressStatus">
+            <div className="column">
+              {datatwo.map((item, idx) => (
+                <ProgressBar
+                  key={idx}
+                  bgColor={item.bgcolor}
+                  progresspercent={item.completed}
+                  showPrgress={false}
+                  title={item.title}
+                />
+              ))}
+            </div>
+            <div className="column">
+              {datatwo.map((item, idx) => (
+                <ProgressBar
+                  key={idx}
+                  bgColor={item.bgcolor}
+                  progresspercent={item.completed}
+                  title={item.title}
+                  showPrgress={false}
+                />
+              ))}
+            </div>
+            <div className="column">
+              {datatwo.map((item, idx) => (
+                <ProgressBar
+                  key={idx}
+                  bgColor={item.bgcolor}
+                  progresspercent={item.completed}
+                  showPrgress={false}
+                  title={item.title}
+                />
+              ))}
+            </div>
           </div>
         </div>
-        <p>
+        <p className="noteText">
           Percent Daily Values are based on a 2,000 calorie diet. Your daily
           values may be higher or lower depending on your calorie needs.
         </p>

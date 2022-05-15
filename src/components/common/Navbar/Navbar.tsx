@@ -58,7 +58,7 @@ function NavBar() {
               <div className="container">
                 <ul>
                   <li>Sam The Cooking Guy just posted a new trending recipe! <a href="#" className="linkRecipe">View recipe now</a></li>
-                  <li>Browse personalized recipes via Food Feed+ <a href="#" className="linkDetail">View Details</a></li>
+                  <li>Browse personalized recipes via a custom feed  <a className="linkRecipe" href="#">Food Feed+</a></li>
                 </ul>
               </div>
             </div>
