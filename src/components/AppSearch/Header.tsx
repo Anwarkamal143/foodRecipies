@@ -1,5 +1,5 @@
 import { ArrowRight, CrossIcon, SearchIcon } from "@icons"
-import React, { useState } from "react"
+import { useState } from "react"
 import styled from "styled-components"
 import { Input } from "../Input"
 import { Select } from "../Select"
@@ -58,6 +58,7 @@ const Header = (props: Props) => {
           // onBlur={e => {
           //   activeFocus?.(false)
           // }}
+          autofocus
         />
         {value && (
           <CrossIcon

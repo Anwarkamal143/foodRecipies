@@ -1,7 +1,7 @@
 import { Modal } from "@components"
 import { useOpenClose } from "@hooks"
 import classNames from "classnames"
-import React, { useEffect, useMemo, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import styled from "styled-components"
 import StepOne from "./StepOne"
 import StepTwo from "./StepTwo"
@@ -15,6 +15,7 @@ type Props = {
 
 const ReviewLikeModal = ({ isOpen, className, onSave, onCancel }: Props) => {
   const [isOpenModel, onOpenModel, onCloseModel] = useOpenClose()
+  const [active, setActive] = useState("")
   const [currentStep, setCurrentStep] = useState("1")
   const handleClose = () => {
     onCloseModel()
@@ -24,6 +25,7 @@ const ReviewLikeModal = ({ isOpen, className, onSave, onCancel }: Props) => {
 
   useEffect(() => {
     if (isOpen) {
+      setActive("")
       onOpenModel()
     }
   }, [isOpen])
@@ -34,6 +36,8 @@ const ReviewLikeModal = ({ isOpen, className, onSave, onCancel }: Props) => {
           header: 1,
           step: (
             <StepOne
+              active={active}
+              setActive={setActive}
               currentStep={currentStep}
               setCurrentStep={setCurrentStep}
             />
@@ -47,6 +51,8 @@ const ReviewLikeModal = ({ isOpen, className, onSave, onCancel }: Props) => {
           step: <StepTwo setCurrentStep={setCurrentStep} />,
           stepOne: (
             <StepOne
+              active={active}
+              setActive={setActive}
               currentStep={currentStep}
               setCurrentStep={setCurrentStep}
             />
@@ -55,7 +61,7 @@ const ReviewLikeModal = ({ isOpen, className, onSave, onCancel }: Props) => {
       default:
         return <StepOne />
     }
-  }, [currentStep as any])
+  }, [currentStep as any, active])
   return (
     <Modal
       className={classNames("reviewLikeModal")}

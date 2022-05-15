@@ -1,13 +1,13 @@
 import { DisLikeIcon, LikeIcon } from "@icons"
-import React, { useState } from "react"
 
 type Props = {
   currentStep?: string
   setCurrentStep?: any
+  active?: string
+  setActive?: (...args: any) => void
 }
 
-const StepOne = ({ currentStep, setCurrentStep }: Props) => {
-  const [active, setActive] = useState("")
+const StepOne = ({ currentStep, setCurrentStep, active, setActive }: Props) => {
   return (
     <div className="reviewsModalContent">
       <div className="reviewsModalOptions">
@@ -15,7 +15,7 @@ const StepOne = ({ currentStep, setCurrentStep }: Props) => {
           className={`like ${active === "like" ? "like-fill" : ""}`}
           onClick={() => {
             currentStep === "1" ? setCurrentStep?.("2") : null
-            setActive("like")
+            setActive?.("like")
           }}
         >
           <LikeIcon />
@@ -26,7 +26,7 @@ const StepOne = ({ currentStep, setCurrentStep }: Props) => {
           }`}
           onClick={() => {
             currentStep === "1" ? setCurrentStep?.("2") : null
-            setActive("dis-like-fill")
+            setActive?.("dis-like-fill")
           }}
         >
           <DisLikeIcon />

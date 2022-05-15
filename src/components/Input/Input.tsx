@@ -38,6 +38,7 @@ interface inputProfile
   dataLpignore?: string
   autocomplete?: string
   hasLimit?: boolean
+  autofocus?: boolean
   activeFocus?: any
 }
 function FocusInput(props: inputProfile, ref: Ref<any>) {
@@ -49,6 +50,7 @@ function FocusInput(props: inputProfile, ref: Ref<any>) {
     prefixElement,
     activeFocus,
     hasLimit = true,
+    autofocus,
     ...rest
   } = props
   const [value, setValue] = useState<string>(props.value || "")
@@ -165,6 +167,7 @@ function FocusInput(props: inputProfile, ref: Ref<any>) {
           type={inputType}
           style={{ ...props.style }}
           onFocus={inputFocused}
+          autoFocus={autofocus}
           onBlur={inputBlurred}
           value={value}
           placeholder={props?.placeholder}

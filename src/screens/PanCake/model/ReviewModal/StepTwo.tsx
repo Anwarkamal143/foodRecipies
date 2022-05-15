@@ -1,6 +1,6 @@
 import { Button } from "@components"
 import { CameraIcon } from "@icons"
-import React, { useState } from "react"
+import { useState } from "react"
 
 type Props = {
   setCurrentStep?: any
@@ -62,7 +62,11 @@ const StepTwo = ({ setCurrentStep }: Props) => {
       </div>
       <div className="notesForm">
         <strong className="title">Notes</strong>
-        <textarea cols={30} rows={10} placeholder="Share more about your experience. Any tips for improving this recipe?"></textarea>
+        <textarea
+          cols={30}
+          rows={10}
+          placeholder="Share more about your experience. Any tips for improving this recipe?"
+        ></textarea>
       </div>
       <Button className="buttonGreen">Save Note</Button>
     </div>
