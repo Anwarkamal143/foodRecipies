@@ -1,5 +1,11 @@
 import { Icon, Image } from "@components"
-import { FacebookIcon, InstagramIcon, LinkIcon, TwitterIcon, YoutubeIcon } from "@icons"
+import {
+  FacebookIcon,
+  InstagramIcon,
+  LinkIcon,
+  TwitterIcon,
+  YoutubeIcon,
+} from "@icons"
 import dayjs from "dayjs"
 import relativeTime from "dayjs/plugin/relativeTime"
 import styled from "styled-components"
@@ -10,11 +16,11 @@ type IMyFeedProps = {
   //   title?: ReactChild | ReactChildren | ReactNode | ReactElement | HTMLElement
   //   subTitle?: ReactChild | ReactChildren | ReactNode | ReactElement | HTMLElement
   onSubmit?: (...args: any[]) => void
-
+  onSocialItemClick?: any
   post: IPostType
 }
 function PostHeader(props: IMyFeedProps) {
-  const { className, onSubmit, post } = props
+  const { className, onSubmit, post, onSocialItemClick } = props
   const { creator, person, createdAt } = post
 
   return (
@@ -34,8 +40,10 @@ function PostHeader(props: IMyFeedProps) {
         </div>
       </div>
       <div className="ingredientsCookHeaderRight">
-        <span className="copyLinkButton">
-          <span className="icon"><LinkIcon/></span>
+        <span className="copyLinkButton" onClick={() => onSocialItemClick?.()}>
+          <span className="icon">
+            <LinkIcon />
+          </span>
           Copy Recipe Link
         </span>
         <div className="socialIcons">
