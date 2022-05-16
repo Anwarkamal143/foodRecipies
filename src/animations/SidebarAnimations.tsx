@@ -75,7 +75,7 @@ const SidebarAnimation = ({ className, children }: Props) => {
             className="slider"
             initial={{ right: 0 }}
             animate={{
-              left: isMobile ? "0%" : tablets ? "70%" : "80%",
+              left: isMobile ? "0%" : tablets ? "60%" : "75%",
               // width: isMobile ? '100%' : 360,
               position: "fixed",
             }}
