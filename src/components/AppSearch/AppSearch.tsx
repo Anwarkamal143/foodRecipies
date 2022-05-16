@@ -1,9 +1,9 @@
 import { SidebarAnimations } from "@animations"
-import React, { useState } from "react"
+import { useState } from "react"
 import styled from "styled-components"
-import { SearchHeader } from "./Header"
+import { SearchHeader } from "../NotificationDrawer"
+// import { SearchHeader } from "./Header"
 import { SearchedSections } from "./SearchedSections"
-
 type Props = {
   className?: string
 }
@@ -28,7 +28,8 @@ const AppSearchSlider = (props: Props) => {
   return (
     <div className={className}>
       <SidebarAnimations>
-        <AppSearchC />
+        {/* <AppSearchC /> */}
+        <SearchHeader title="Notifications" />
       </SidebarAnimations>
     </div>
   )

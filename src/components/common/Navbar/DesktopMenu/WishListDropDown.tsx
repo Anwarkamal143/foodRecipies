@@ -3,7 +3,7 @@ import { CircleImage, UnderlineLink } from "@components"
 import { Menu, Transition } from "@headlessui/react"
 import clsxm from "@lib/clsxm"
 import parse from "html-react-parser"
-import React, { Fragment } from "react"
+import { Fragment } from "react"
 import { BiBell } from "react-icons/bi"
 import { IoSettingsOutline } from "react-icons/io5"
 // import UnstyledLink from '@/components/links/UnstyledLink';
