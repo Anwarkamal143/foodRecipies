@@ -1,5 +1,4 @@
-import { CrossIcon } from "@icons"
-import { useState } from "react"
+import { CrossIcon, SideHeartIcon } from "@icons"
 import styled from "styled-components"
 
 type Props = {
@@ -13,23 +12,8 @@ type Props = {
   activeFocus?: any
 }
 
-const NotificationDrawer = (props: Props) => {
-  const {
-    className,
-    filterOption = false,
-    title = "Smart Search",
-    onSearch,
-    onClose,
-    header = true,
-    value,
-    activeFocus,
-  } = props
-  const [searchText, setSearchText] = useState("")
-  const [filter, setFilter] = useState(false)
-  const handleSearch = (searchTextt: string) => {
-    onSearch?.(searchTextt)
-  }
-
+const ProfileDrawer = (props: Props) => {
+  const { className, title = "Smart Search", onClose, header = true } = props
   return (
     <div className={className}>
       {header && (
@@ -43,53 +27,77 @@ const NotificationDrawer = (props: Props) => {
       )}
       <div className="notifications-area">
         <div className="notification-box">
-          <strong className="notification-title">New Notifications</strong>
-          {[1, 1].map((value, idx) => (
-            <div key={idx} className="notification-row new-notifcation">
-              <div className="user-image-area">
-                <div className="user-image">
-                  <img src="/images/profile-img.png" alt="lsjf-skfl" />
-                </div>
-                <div className="reaction-type">
-                  <img src="images/userfollow.svg" alt="userfollow.svg" />
-                </div>
-              </div>
-              <div className="text-holder">
-                <p>
-                  <strong>Gloria Merine</strong> Liked your reviews
-                </p>
-                <span className="time-posted">a week ago</span>
-              </div>
-              <span className="alert-sign"></span>
-            </div>
-          ))}
-        </div>
-        <div className="notification-box">
-          <strong className="notification-title">Older Notifications</strong>
-          {[1, 1].map((value, idx) => (
-            <div key={idx} className="notification-row">
-              <div className="user-image-area">
-                <div className="user-image">
-                  <img src="/images/profile-img.png" alt="lsjf-skfl" />
-                </div>
-                <div className="reaction-type">
-                  <img src="images/userfollow.svg" alt="userfollow.svg" />
-                </div>
-              </div>
-              <div className="text-holder">
-                <p>
-                  <strong>Gloria Merine</strong> Liked your reviews
-                </p>
-                <span className="time-posted">a week ago</span>
-              </div>
-            </div>
-          ))}
+          <ul>
+            <li>
+              <span>
+                <SideHeartIcon />
+              </span>
+              Your Favorites & Followed Cooks
+              <span>(Saved Recipes, Shopping Lists, and Cooks)</span>
+            </li>
+            <li>
+              <span>
+                <SideHeartIcon />
+              </span>
+              Your Favorites & Followed Cooks
+              <span>(Saved Recipes, Shopping Lists, and Cooks)</span>
+            </li>
+            <li>
+              <span>
+                <SideHeartIcon />
+              </span>
+              My Food Feed +
+            </li>
+            <li>
+              <span>
+                <SideHeartIcon />
+              </span>
+              My Shopping Lists
+            </li>
+            <li>
+              <span>
+                <SideHeartIcon />
+              </span>
+              My Recipe Reviews
+            </li>{" "}
+            <span>Account Settings</span>
+            <li>
+              <span>
+                <SideHeartIcon />
+              </span>
+              Edit Your Public Profile
+            </li>
+            <li>
+              <span>
+                <SideHeartIcon />
+              </span>
+              Email & Newsletter Preferences
+            </li>
+            <li>
+              <span>
+                <SideHeartIcon />
+              </span>
+              Personalizations
+            </li>
+            <li>
+              <span>
+                <SideHeartIcon />
+              </span>
+              Shop Credit
+            </li>
+            <li>
+              <span>
+                <SideHeartIcon />
+              </span>
+              log Out
+            </li>
+          </ul>
         </div>
       </div>
     </div>
   )
 }
-export const NotificationDrawerC = styled(NotificationDrawer)`
+export const ProfileDrawerC = styled(ProfileDrawer)`
   position: relative;
 
   .notification-header-close {

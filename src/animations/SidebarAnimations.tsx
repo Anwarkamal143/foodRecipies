@@ -3,7 +3,7 @@ import { useAppSelector, useOnClickOutside } from "@hooks"
 import { toggleSidebar } from "@reducers"
 import { useAppDispatch } from "@redux/hooks"
 import { AnimatePresence, motion, useCycle } from "framer-motion"
-import React, { cloneElement, ReactElement, useEffect, useRef } from "react"
+import { cloneElement, ReactElement, useEffect, useRef } from "react"
 import { useMediaQuery } from "react-responsive"
 import styled from "styled-components"
 
@@ -41,9 +41,10 @@ const sideVariants = {
 const SidebarAnimation = ({ className, children }: Props) => {
   const [open, cycleOpen] = useCycle(false, true)
   const isOpen = useAppSelector(state => state.sidebar.isOpen)
+  const DrawerType = useAppSelector(state => state.sidebar.type)
+
   const dispatch = useAppDispatch()
   const ref = useRef(null)
-
   const tablets = useMediaQuery({ query: "(max-width: 1300px)" })
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" })
 
@@ -52,13 +53,12 @@ const SidebarAnimation = ({ className, children }: Props) => {
   })
   const toggleSideBar = () => {
     cycleOpen(0)
-    dispatch(toggleSidebar(false))
+    dispatch(toggleSidebar({ isOpen: false, type: DrawerType }))
   }
   useEffect(() => {
     if (isOpen) {
       const width = document.body.clientWidth
       document.body.style.overflow = "hidden"
-      // document.body.style.width = `${width}px`;
       cycleOpen()
     }
   }, [isOpen])
@@ -76,11 +76,9 @@ const SidebarAnimation = ({ className, children }: Props) => {
             initial={{ right: 0 }}
             animate={{
               left: isMobile ? "0%" : tablets ? "70%" : "80%",
-              // width: isMobile ? '100%' : 360,
               position: "fixed",
             }}
             exit={{
-              // width: 0,
               left: "100%",
               right: 0,
               transition: { delay: 0.3, duration: 0.3 },
@@ -95,16 +93,6 @@ const SidebarAnimation = ({ className, children }: Props) => {
                 variants={sideVariants}
               >
                 {cloneElement(children, { toggleSideBar })}
-                {/* {links.map(({ name, to, id }) => (
-                  <motion.a
-                  key={id}
-                  href={to}
-                  whileHover={{ scale: 1.1 }}
-                  variants={itemVariants}
-                  >
-                  {name}
-                  </motion.a>
-                ))} */}
               </motion.div>
             </Scrollbar>
           </motion.aside>

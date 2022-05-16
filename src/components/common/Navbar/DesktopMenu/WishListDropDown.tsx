@@ -1,15 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
-import { CircleImage, UnderlineLink } from "@components"
-import { Menu, Transition } from "@headlessui/react"
-import clsxm from "@lib/clsxm"
-import parse from "html-react-parser"
-import { Fragment } from "react"
+import { Menu } from "@headlessui/react"
+import { useAppDispatch } from "@hooks"
+import { toggleSidebar } from "@reducers"
+import { DRAWER } from "@utils/enums"
 import { BiBell } from "react-icons/bi"
-import { IoSettingsOutline } from "react-icons/io5"
 // import UnstyledLink from '@/components/links/UnstyledLink';
-import { notifications } from "./MenuData/MenuData"
 
 function WishListDropDown() {
+  const dispatch = useAppDispatch()
   return (
     <>
       <Menu type="button" as="button" className="relative">
@@ -17,6 +15,11 @@ function WishListDropDown() {
           <Menu.Button className="relative flex items-center text-white hover:text-gray-300 focus:outline-none">
             <span className="sr-only">View wish list</span>
             <BiBell
+              onClick={() => {
+                dispatch(
+                  toggleSidebar({ isOpen: true, type: DRAWER.NOTIFICATION })
+                )
+              }}
               size="1.4rem"
               aria-hidden="true"
               className="animate-shake"
@@ -27,7 +30,7 @@ function WishListDropDown() {
             {/* </button> */}
           </Menu.Button>
         </div>
-        <Transition
+        {/* <Transition
           as={Fragment}
           enter="transition ease-out duration-100"
           enterFrom="transform opacity-0 scale-95"
@@ -37,8 +40,6 @@ function WishListDropDown() {
           leaveTo="transform opacity-0 scale-95"
         >
           <Menu.Items className="absolute py-4 mt-6 origin-top-right bg-white shadow-lg -right-7 w-60 rounded-xl ring-1 ring-black ring-opacity-5 focus:outline-none">
-            {/* <span className='block customArrow after:right-7 after:left-auto'></span> */}
-            {/* Notification settings */}
             <div className="flex items-center justify-between px-4 mb-4 cursor-default ">
               <p className="text-sm font-bold text-dark">Notifications</p>
               <IoSettingsOutline
@@ -49,13 +50,9 @@ function WishListDropDown() {
 
             {notifications.length
               ? notifications.map(item => (
-                  // <Menu.Item key={item.id}>
-                  // {({ active }) => (
                   <div
                     key={item.id}
-                    // href={item.href}
                     className={clsxm(
-                      // active ? 'bg-gray-100' : '',
                       "block cursor-default px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     )}
                   >
@@ -69,8 +66,6 @@ function WishListDropDown() {
                       </div>
                     </div>
                   </div>
-                  // )}
-                  // </Menu.Item>
                 ))
               : null}
             <div className="mt-2 ">
@@ -89,7 +84,7 @@ function WishListDropDown() {
               </Menu.Item>
             </div>
           </Menu.Items>
-        </Transition>
+        </Transition> */}
       </Menu>
     </>
   )

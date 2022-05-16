@@ -1,50 +1,44 @@
-import { CircleImage, UnderlineLink, UnstyledLink } from "@components"
-import { Menu, Transition } from "@headlessui/react"
-import { useOpenClose } from "@hooks"
-import { classNames } from "@utils"
-import React, { Fragment } from "react"
-import { FiChevronDown, FiChevronUp } from "react-icons/fi"
-import LoginModel from "./model/login"
-const myMenus = [
-  { id: 1, title: "My Favorite Recipes", href: "/" },
-  { id: 2, title: "My Followed Cooks", href: "/" },
-  { id: 3, title: "My Food Feed", href: "/" },
-]
-
-const otherMenus = [
-  { id: 1, title: "Reccomendations", href: "/" },
-  { id: 2, title: "Settings", href: "/" },
-  { id: 3, title: "Help Center", href: "/" },
-  { id: 4, title: "Sign Out", href: "/" },
-]
-
+import { Menu } from "@headlessui/react"
+import { useAppDispatch } from "@hooks"
+import { toggleSidebar } from "@reducers"
+import { DRAWER } from "@utils/enums"
+import { FiChevronDown } from "react-icons/fi"
 function ProfileDropDown() {
-  const [isOpenModel, onOpenModel, onCloseModel] = useOpenClose()
+  const dispatch = useAppDispatch()
+  // const [isOpenModel, onOpenModel, onCloseModel] = useOpenClose()
 
   return (
     <Menu as="div" className="relative">
-      <div className="flex">
-        <div className="loggedOutState display-none" onClick={onOpenModel}>
+      <div
+        className="flex"
+        onClick={() => {
+          debugger
+          dispatch(toggleSidebar({ isOpen: true, type: DRAWER.PROFILE }))
+        }}
+      >
+        <div className="loggedOutState display-none">
           <img src="/images/logoutIcon.png" alt="" />
         </div>
         <div className="loggedInState">
-          <Menu.Button
-            className="relative flex items-center gap-2 text-sm font-medium text-white rounded-full focus:outline-none btnLoggedIn"
-          
-          >
+          <Menu.Button className="relative flex items-center gap-2 text-sm font-medium text-white rounded-full focus:outline-none btnLoggedIn">
             <span className="sr-only">Open user menu</span>
             {/* <CircleImage
               src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
               className="w-6 h-6"
             /> */}
             <span className="userName">R</span>
-            <p className="hidden md:block" onClick={onOpenModel} >Admin</p>
+            <p
+              className="hidden md:block"
+              // onClick={onOpenModel}
+            >
+              Admin
+            </p>
             <FiChevronDown size="0.8rem" className="hidden md:block" />
           </Menu.Button>
         </div>
       </div>
-      <LoginModel isOpen={isOpenModel} onCancel={onCloseModel} />
-      <Transition
+      {/* <LoginModel isOpen={isOpenModel} onCancel={onCloseModel} /> */}
+      {/* <Transition
         as={Fragment}
         enter="transition ease-out duration-100"
         enterFrom="transform opacity-0 scale-95"
@@ -54,7 +48,6 @@ function ProfileDropDown() {
         leaveTo="transform opacity-0 scale-95"
       >
         <Menu.Items className="absolute z-10 py-4 mt-6 origin-top-right bg-white shadow-lg -right-3 w-52 rounded-xl ring-1 ring-black ring-opacity-5 focus:outline-none md:right-0">
-          {/* <span className='customArrow block after:left-[83%] md:after:left-3/4'></span> */}
           <Menu.Item>
             {({ active }) => (
               <UnstyledLink
@@ -82,7 +75,6 @@ function ProfileDropDown() {
               </UnstyledLink>
             )}
           </Menu.Item>
-          {/* <hr className='mb-2 ' /> */}
           {myMenus.length
             ? myMenus.map(item => (
                 <Menu.Item key={item.id}>
@@ -162,7 +154,7 @@ function ProfileDropDown() {
             </Menu.Item>
           </div>
         </Menu.Items>
-      </Transition>
+      </Transition> */}
     </Menu>
   )
 }

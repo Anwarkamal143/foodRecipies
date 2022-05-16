@@ -16,3 +16,9 @@ export enum Time {
   DAYS = 24 * HOURS,
   YEARS = 365 * DAYS,
 }
+
+export enum DRAWER {
+  SEARCH = "SEARCH",
+  NOTIFICATION = "NOTIFICATION",
+  PROFILE = "PROFILE",
+}
