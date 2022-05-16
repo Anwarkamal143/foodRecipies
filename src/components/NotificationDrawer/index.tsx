@@ -33,47 +33,55 @@ const NotificationDrawer = (props: Props) => {
   return (
     <div className={className}>
       {header && (
-        <div className="searchHeaderHeading">
+        <div className="notification-header">
           <span className="userName">R</span>
           <h3>{title}</h3>
-          <div className="searchHeaderClose" onClick={onClose}>
+          <div className="notification-header-close" onClick={onClose}>
             <CrossIcon />
           </div>
         </div>
       )}
-      <div className="searchHeaderForm">
-        <div>
-          New Notifications
-          <hr />
+      <div className="notifications-area">
+        <div className="notification-box">
+          <strong className="notification-title">New Notifications</strong>
           {[1, 1].map((value, idx) => (
-            <div key={idx}>
-              <div>
-                <img src="/images/profile-img.png" alt="lsjf-skfl" />
-                <img src="images/userfollow.svg" alt="userfollow.svg" />
+            <div key={idx} className="notification-row new-notifcation">
+              <div className="user-image-area">
+                <div className="user-image">
+                  <img src="/images/profile-img.png" alt="lsjf-skfl" />
+                </div>
+                <div className="reaction-type">
+                  <img src="images/userfollow.svg" alt="userfollow.svg" />
+                </div>
               </div>
-              <span>
-                <strong>Gloria Merine</strong>
-                Liked your reviews
-              </span>
-              <span>a week ago</span>
-              <span />{" "}
+              <div className="text-holder">
+                <p>
+                  <strong>Gloria Merine</strong> Liked your reviews
+                </p>
+                <span className="time-posted">a week ago</span>
+              </div>
+              <span className="alert-sign"></span>
             </div>
           ))}
         </div>
-        <div>
-          Older Notifications
-          <hr />
+        <div className="notification-box">
+          <strong className="notification-title">Older Notifications</strong>
           {[1, 1].map((value, idx) => (
-            <div key={idx}>
-              <div>
-                <img src="/images/profile-img.png" alt="lsjf-skfl" />
-                <img src="images/userfollow.svg" alt="userfollow.svg" />
+            <div key={idx} className="notification-row">
+              <div className="user-image-area">
+                <div className="user-image">
+                  <img src="/images/profile-img.png" alt="lsjf-skfl" />
+                </div>
+                <div className="reaction-type">
+                  <img src="images/userfollow.svg" alt="userfollow.svg" />
+                </div>
               </div>
-              <span>
-                <strong>Gloria Merine</strong>
-                Liked your reviews
-              </span>
-              <span>a week ago</span>
+              <div className="text-holder">
+                <p>
+                  <strong>Gloria Merine</strong> Liked your reviews
+                </p>
+                <span className="time-posted">a week ago</span>
+              </div>
             </div>
           ))}
         </div>
@@ -82,113 +90,142 @@ const NotificationDrawer = (props: Props) => {
   )
 }
 export const SearchHeader = styled(NotificationDrawer)`
-  .searchHeaderHeading {
-    overflow: hidden;
-    text-align: center;
-    position: relative;
-    margin: 0 0 25px;
+  position: relative;
+
+  .notification-header-close {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    transition: all 0.4s ease;
+    cursor: pointer;
 
     @media (max-width: 767px) {
-      text-align: left;
+      right: 0;
     }
 
-    h3 {
-      font-size: 16px;
-      line-height: 20px;
+    &:hover {
       color: #e0464d;
-    }
+      transform: rotate(180deg);
 
-    .searchHeaderClose {
-      position: absolute;
-      right: 25px;
-      top: 5px;
-      transition: all 0.4s ease;
-      cursor: pointer;
-
-      @media (max-width: 767px) {
-        right: 0;
-      }
-
-      &:hover {
-        color: #e0464d;
-        transform: rotate(180deg);
-
-        path {
-          fill: #e0464d;
-        }
+      path {
+        fill: #e0464d;
       }
     }
   }
 
-  .searchHeaderForm {
-    position: relative;
+  .notification-header {
+    display: flex;
+    align-items: center;
+    padding: 0 0 30px;
 
-    label {
-      display: none;
-    }
-
-    .form-control {
-      width: 100%;
-      height: 34px;
-      font-size: 12px;
-      line-height: 18px;
-      padding: 7px 70px 7px 18px;
-      color: #8d8d96;
-      border: 1px solid #ff6067;
-      border-radius: 20px;
-    }
-
-    .input-active {
-      .form-control {
-        border-color: #ff6067;
-      }
-    }
-
-    .clearsearchbtn {
-      position: absolute;
-      right: 50px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 9px;
-      height: 9px;
-      pointer-events: none;
-
-      path {
-        fill: #bdbdbd;
-      }
-    }
-
-    .searchIcon,
-    .active_search {
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 40px;
-      height: 34px;
+    .userName {
+      width: 26px;
+      height: 26px;
+      border-radius: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #ff6067;
-      border-radius: 0 20px 20px 0;
-      transition: all 0.4s ease;
-      cursor: pointer;
+      color: #fff;
+      background: #1e1e2d;
+      font-size: 12px;
+      line-height: 15px;
+      font-weight: 400;
+    }
 
-      &:hover {
-        background: #000;
-      }
-
-      svg {
-        width: 14px;
-        height: 14px;
-
-        path {
-          fill: #fff;
-        }
-      }
+    h3 {
+      margin: 0 0 0 10px;
+      font-size: 20px;
+      line-height: 24px;
+      font-weight: 400;
     }
   }
 
-  .filterButtons {
-    display: none;
+  .notification-box {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .notification-title {
+    display: block;
+    font-size: 12px;
+    line-height: 15px;
+    color: #8d8d96;
+    padding: 0 0 10px;
+    border-bottom: 1px solid #e6e6e6;
+    margin: 0 0 10px;
+  }
+
+  .notification-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 0 0 10px;
+    font-size: 15px;
+    line-height: 18px;
+    border-radius: 10px;
+    color: #3b3b3b;
+    cursor: pointer;
+
+    &:hover {
+      background: #f8f8f8;
+    }
+
+    .user-image-area {
+      width: 40px;
+      height: 40px;
+      position: relative;
+
+      .user-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        img {
+          width: 100%;
+          height: 100%;
+          vertical-align: top;
+        }
+      }
+
+      .reaction-type {
+        width: 18px;
+        position: absolute;
+        right: -4px;
+        bottom: -4px;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .text-holder {
+      padding: 0 0 0 10px;
+      width: calc(100% - 80px);
+    }
+
+    strong {
+      font-weight: 700;
+    }
+
+    .time-posted {
+      font-size: 13px;
+      line-height: 15px;
+      display: block;
+      color: #3877e9;
+    }
+  }
+
+  .alert-sign {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background: #3677eb;
+    right: 10px;
+    top: 50%;
+    transform: translate(0, -50%);
   }
 `

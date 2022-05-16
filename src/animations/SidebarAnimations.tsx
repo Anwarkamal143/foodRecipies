@@ -117,10 +117,13 @@ export const SidebarAnimations = styled(SidebarAnimation)`
   .container {
     padding: 50px 25px;
     height: 100%;
+    max-width: 100%;
+
     @media (max-width: 767px) {
       padding: 25px;
     }
   }
+
   &.slidebar_open {
     position: fixed;
     top: 0;
