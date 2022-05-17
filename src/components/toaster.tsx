@@ -120,7 +120,7 @@ const follow = (
     <Element
       message={message}
       title={title || "Cook Followed"}
-      Icon={<img src="images/userfollow.svg" alt="userfollow.svg" />}
+      Icon={<img src="images/userfollow.png" alt="userfollow.svg" />}
     />,
     options
   )

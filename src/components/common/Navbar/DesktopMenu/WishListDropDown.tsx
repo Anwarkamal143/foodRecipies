@@ -11,7 +11,7 @@ function WishListDropDown() {
   return (
     <>
       <Menu type="button" as="button" className="relative">
-        <div>
+        <div className="notificationsButton">
           <Menu.Button className="relative flex items-center text-white hover:text-gray-300 focus:outline-none">
             <span className="sr-only">View wish list</span>
             <BiBell

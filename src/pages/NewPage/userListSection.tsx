@@ -35,7 +35,7 @@ const UserListSection = (props: Props) => {
                 {selected}
               </Button>
             )}
-            items={[{ name: "New", id: 1 }, { name: "Most Popular", id:2 }]}
+            items={[{ name: "All Types", id: 1 }, { name: "Breakfast", id:2 }, { name: "Appetizers", id:3 }, { name: "Baked Goods", id:4 }, { name: "Drinks", id:5 }, { name: "Dinner", id:6 }, { name: "Dessert", id:7 }]}
             renderItem={({ item, isActive, onClick }) => {
               return (
                 <div  
@@ -60,7 +60,7 @@ const UserListSection = (props: Props) => {
                 {selected}
               </Button>
             )}
-            items={[{ name: "New",id: 1 }, { name: "Most Popular", id:2 }]}
+            items={[{ name: "This Week",id: 1 }, { name: "This Month", id:2 }, { name: "This Year", id:3 }, { name: "All Time", id:4 }]}
             renderItem={({ item, isActive, onClick }) => {
               return (
                 <div

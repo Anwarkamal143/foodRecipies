@@ -51,7 +51,7 @@ const NotificationDrawer = (props: Props) => {
                   <img src="/images/profile-img.png" alt="lsjf-skfl" />
                 </div>
                 <div className="reaction-type">
-                  <img src="images/userfollow.svg" alt="userfollow.svg" />
+                  <img src="images/userfollow.png" alt="userfollow.svg" />
                 </div>
               </div>
               <div className="text-holder">
@@ -73,7 +73,7 @@ const NotificationDrawer = (props: Props) => {
                   <img src="/images/profile-img.png" alt="lsjf-skfl" />
                 </div>
                 <div className="reaction-type">
-                  <img src="images/userfollow.svg" alt="userfollow.svg" />
+                  <img src="images/userfollow.png" alt="userfollow.svg" />
                 </div>
               </div>
               <div className="text-holder">

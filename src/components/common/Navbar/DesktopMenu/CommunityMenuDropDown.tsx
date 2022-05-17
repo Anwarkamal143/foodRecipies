@@ -80,7 +80,7 @@ function CommunityMegaMenu() {
               <ul className="menuBoxItems">
                 <li>
                   <a href="#">
-                    <div className="icon"><img src="/images/nav-icon23.png" alt="" width={16} /></div>
+                    <div className="icon"><img src="/images/nav-icon23.png" alt="" width={19} /></div>
                     <div className="text">
                       <strong className="subtite">Exclusive Tutorials</strong>
                       <span className="subtext">Recipe and Tutorial Videos</span>
@@ -90,7 +90,7 @@ function CommunityMegaMenu() {
                 </li>
                 <li>
                   <a href="#">
-                    <div className="icon"><img src="/images/nav-icon24.png" alt="" width={14} /></div>
+                    <div className="icon"><img src="/images/nav-icon24.png" alt="" width={18} /></div>
                     <div className="text">
                       <strong className="subtite">Exclusive Recipes</strong>
                       <span className="subtext">View Exclusive Recipes</span>
@@ -100,7 +100,7 @@ function CommunityMegaMenu() {
                 </li>
                 <li>
                   <a href="#">
-                    <div className="icon"><img src="/images/nav-icon25.png" alt="" width={12} /></div>
+                    <div className="icon"><img src="/images/nav-icon25.png" alt="" width={17} /></div>
                     <div className="text">
                       <strong className="subtite">Weekly Newsletter</strong>
                       <span className="subtext">Personalized Reccomendations</span>
@@ -110,7 +110,7 @@ function CommunityMegaMenu() {
                 </li>
                 <li>
                   <a href="#">
-                    <div className="icon"><img src="/images/nav-icon26.png" alt="" width={12} /></div>
+                    <div className="icon"><img src="/images/nav-icon26.png" alt="" width={15} /></div>
                     <div className="text">
                       <strong className="subtite">Cooking Preferences</strong>
                       <span className="subtext">Customize Your Experience</span>
@@ -128,7 +128,7 @@ function CommunityMegaMenu() {
               <ul className="menuBoxItems">
                 <li>
                   <a href="#">
-                    <div className="icon"><img src="/images/nav-icon05.png" alt="" width={16} /></div>
+                    <div className="icon"><img src="/images/nav-icon05.png" alt="" width={17} /></div>
                     <div className="text">
                       <strong className="subtite">All Our Cooks</strong>
                       <span className="subtext">View All Online Cooks</span>
@@ -138,7 +138,7 @@ function CommunityMegaMenu() {
                 </li>
                 <li>
                   <a href="#">
-                    <div className="icon"><img src="/images/nav-icon22.png" alt="" width={14} /></div>
+                    <div className="icon"><img src="/images/nav-icon22.png" alt="" width={17} /></div>
                     <div className="text">
                       <strong className="subtite">Cook Collections</strong>
                       <span className="subtext">Specially Curated Recipes</span>
@@ -148,7 +148,7 @@ function CommunityMegaMenu() {
                 </li>
                 <li>
                   <a href="#">
-                    <div className="icon"><img src="/images/nav-icon02.png" alt="" width={14} /></div>
+                    <div className="icon"><img src="/images/nav-icon27.png" alt="" width={16} /></div>
                     <div className="text">
                       <strong className="subtite">Cook Products</strong>
                       <span className="subtext">What’re Your Cooks Using?</span>
@@ -158,7 +158,7 @@ function CommunityMegaMenu() {
                 </li>
                 <li>
                   <a href="#">
-                    <div className="icon"><img src="/images/nav-icon03.png" alt="" width={15} /></div>
+                    <div className="icon"><img src="/images/nav-icon28.png" alt="" width={16} /></div>
                     <div className="text">
                       <strong className="subtite">Cook Brands</strong>
                       <span className="subtext">Show Some Love</span>

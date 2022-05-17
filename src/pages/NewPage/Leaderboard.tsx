@@ -30,7 +30,7 @@ const Leaderboard = ({ data = [] }: Props) => {
                   {selected}
                 </Button>
               )}
-              items={[{ name: "New" }, { name: "Most Popular" }]}
+              items={[{ name: "Most Popular" }, { name: "Most Viewed" }, { name: "Most Liked" }, { name: "Most Trending" }]}
               renderItem={({ item, isActive, onClick }) => {
                 return (
                   <div
@@ -54,7 +54,7 @@ const Leaderboard = ({ data = [] }: Props) => {
                   {selected}
                 </Button>
               )}
-              items={[{ name: "New" }, { name: "Most Popular" }]}
+              items={[{ name: "This Week" }, { name: "This Month" }, { name: "This Year" }, { name: "All Time" }]}
               renderItem={({ item, isActive, onClick }) => {
                 return (
                   <div

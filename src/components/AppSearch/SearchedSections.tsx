@@ -1,4 +1,4 @@
-import { ArrowRight, ChevronRightIcon } from "@icons"
+import { ArrowRight, ChevronRightIcon, LinkArrowIcon } from "@icons"
 import React from "react"
 import styled from "styled-components"
 import { Button } from "../Button"
@@ -87,18 +87,27 @@ const SearchedRecipesAndCooks = (props: Props) => {
                 <img src="/images/side-dishes.svg" alt="side-dishes" />
               </div>
               <div className="itemTextbox">#Chicken</div>
+              <span className="itemArrow">
+                <LinkArrowIcon />
+              </span>
             </div>
             <div className="selection-category">
               <div className="image-hold">
                 <img src="/images/italy.png" alt="side-dishes" />
               </div>
               <div className="itemTextbox">#Gluten-Free</div>
+              <span className="itemArrow">
+                <LinkArrowIcon />
+              </span>
             </div>
             <div className="selection-category">
               <div className="image-hold">
                 <img src="/images/glutenFree.svg" alt="side-dishes" />
               </div>
               <div className="itemTextbox">#Gluten-Free</div>
+              <span className="itemArrow">
+                <LinkArrowIcon />
+              </span>
             </div>
           </div>
         </div>
@@ -247,6 +256,7 @@ export const SearchedSections = styled(SearchedRecipesAndCooks)`
       &:hover {
         background: #f3f5f8;
         padding: 5px;
+        border-radius: 6px;
 
         .itemTextbox {
           color: #ff6067;

@@ -75,7 +75,7 @@ const SidebarAnimation = ({ className, children }: Props) => {
             className="slider"
             initial={{ right: 0 }}
             animate={{
-              left: isMobile ? "0%" : tablets ? "70%" : "80%",
+              left: isMobile ? "0%" : tablets ? "70%" : "75%",
               position: "fixed",
             }}
             exit={{
@@ -102,17 +102,8 @@ const SidebarAnimation = ({ className, children }: Props) => {
   )
 }
 export const SidebarAnimations = styled(SidebarAnimation)`
-  .container {
-    padding: 50px 25px;
-    height: 100%;
-    max-width: 100%;
 
-    @media (max-width: 767px) {
-      padding: 25px;
-    }
-  }
-
-  &.slidebar_open {
+&:after {
     position: fixed;
     top: 0;
     right: 0;
@@ -122,6 +113,28 @@ export const SidebarAnimations = styled(SidebarAnimation)`
     height: 100%;
     z-index: 98;
     background: rgba(0, 0, 0, 0.7);
+    transition: all 0.4s ease 0.5s;
+    opacity: 0;
+    visibility: hidden;
+    content: '';
+}
+
+  &.slidebar_open {
+    &:after {
+      opacity: 1;
+      visibility: visible;
+      transition: all 0.4s ease;
+    }
+  }
+
+  .container {
+    padding: 50px 25px;
+    height: 100%;
+    max-width: 100%;
+
+    @media (max-width: 767px) {
+      padding: 25px;
+    }
   }
 
   .slider {

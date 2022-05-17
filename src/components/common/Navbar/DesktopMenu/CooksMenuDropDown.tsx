@@ -49,7 +49,7 @@ function CoocksMegaMenu() {
               <ul className="menuBoxItems">
                 <li>
                   <a href="#">
-                    <div className="icon"><img src="/images/nav-icon05.png" alt="" width={13} /></div>
+                    <div className="icon"><img src="/images/nav-icon05.png" alt="" width={19} /></div>
                     <div className="text">
                       <strong className="subtite">All Our Cooks</strong>
                       <span className="subtext">View All Online Cooks</span>
@@ -59,7 +59,7 @@ function CoocksMegaMenu() {
                 </li>
                 <li>
                   <a href="#">
-                    <div className="icon"><img src="/images/nav-icon02.png" alt="" width={12} /></div>
+                    <div className="icon"><img src="/images/nav-icon02.png" alt="" width={18} /></div>
                     <div className="text">
                       <strong className="subtite">Leaderboards</strong>
                       <span className="subtext">What’s trending? Find out now</span>
@@ -69,7 +69,7 @@ function CoocksMegaMenu() {
                 </li>
                 <li>
                   <a href="#">
-                    <div className="icon"><img src="/images/nav-icon22.png" alt="" width={14} /></div>
+                    <div className="icon"><img src="/images/nav-icon22.png" alt="" width={17} /></div>
                     <div className="text">
                       <strong className="subtite">Collections</strong>
                       <span className="subtext">Prefer to watch? Check these out</span>
@@ -79,7 +79,7 @@ function CoocksMegaMenu() {
                 </li>
                 <li>
                   <a href="#">
-                    <div className="icon"><img src="/images/nav-icon03.png" alt="" width={12} /></div>
+                    <div className="icon"><img src="/images/nav-icon03.png" alt="" width={15} /></div>
                     <div className="text">
                       <strong className="subtite">Video Tutorials</strong>
                       <span className="subtext">Prefer to watch? Check these out</span>
@@ -92,7 +92,7 @@ function CoocksMegaMenu() {
           </div>
           <div className="menuRightColumn">
             <div className="menuRightColumnHead">
-              <strong className="title">Top cooks this week <img src="/images/flame.png" alt="" width={11} /></strong>
+              <strong className="title">Top cooks this week <img src="/images/flame.png" alt="" width={11} /> <span className="iconArrow"><ArrowRight /></span></strong>
               <a href="#" className="buttonView">View All <span className="arrowIcon"><span className="arrowShort"><ChevronRightIcon /></span><span className="arrowLong"><ArrowRight /></span></span></a>
             </div>
             <div className="userlist">

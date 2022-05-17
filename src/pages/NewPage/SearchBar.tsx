@@ -1,12 +1,10 @@
 import { DropDown } from "@components"
 import {
   AngleRight,
-  Bell,
-  Calander,
-  DairyFree,
+  Bell, DairyFree,
+  DietIcon,
   GlutenFree,
-  NutFree,
-  Vegan,
+  NutFree, Vegan,
   Vegetarian
 } from "@icons"
 import React, { useRef, useState } from "react"
@@ -58,8 +56,8 @@ const SearchBar = (props: Props) => {
           button={selected => (
             <Button
               shape="circle"
-              iconLeft={<Calander />}
-              className="buttonFilter"
+              iconLeft={<DietIcon />}
+              className="buttonFilter dietButton"
               size="small"
               title="By Diet"
             >
@@ -67,6 +65,9 @@ const SearchBar = (props: Props) => {
             </Button>
           )}
           items={[
+            {
+              optionTitle: "Quick Find Recipes",
+            },
             { name: "Gluten-Free", icon: <GlutenFree /> },
             { name: "Vegan", icon: <Vegan /> },
             { name: "Vegetarian", icon: <Vegetarian /> },
@@ -84,6 +85,11 @@ const SearchBar = (props: Props) => {
                   onClick(item.name)
                 }}
               >
+                {item.optionTitle && (
+                  <span className="options-title">
+                    {item.optionTitle}
+                  </span>
+                )}
                 {item.icon}
                 {item.name}
                 {item.option && (
@@ -113,6 +119,9 @@ const SearchBar = (props: Props) => {
           )}
           items={[
             {
+              optionTitle: "Quick Find Cuisines",
+            },
+            {
               name: "Italian",
               icon: <img src="/images/italy.png" alt="side-dishes" />,
             },
@@ -133,10 +142,6 @@ const SearchBar = (props: Props) => {
               icon: <img src="/images/india.png" alt="side-dishes" />,
             },
             {
-              name: "Indian",
-              icon: <img src="/images/india.png" alt="side-dishes" />,
-            },
-            {
               option: "See all Cuisine",
             },
           ]}
@@ -146,6 +151,11 @@ const SearchBar = (props: Props) => {
                 className={`${isActive} item`}
                 onClick={() => onClick(item.name)}
               >
+                {item.optionTitle && (
+                  <span className="options-title">
+                    {item.optionTitle}
+                  </span>
+                )}
                 {item.icon}
                 {item.name}
                 {item.option && (

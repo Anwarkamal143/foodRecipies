@@ -50,7 +50,7 @@ const NavBar = ({
           }`}
         >
           <span className="img">
-            <img src={e.image} />
+            <img src={e.image} width={22}/>
           </span>
           <span>{e.category}</span>
         </div>

@@ -1,9 +1,10 @@
 import { Button } from "@components"
-import { AddCookIcon, AngleRight, LeftSliderArrow, RightSliderArrow } from "@icons"
+import { PlusIcon } from "@heroicons/react/outline"
+import { AngleRight, LeftSliderArrow, RightSliderArrow } from "@icons"
 import React, { useRef } from "react"
 import Slider from "react-slick"
-import styled from "styled-components"
 import { toast } from "src/components/toaster"
+import styled from "styled-components"
 
 type Props = {
   className?: string
@@ -67,7 +68,7 @@ const FollowUsers = ({ className, data = [], title, discription }: Props) => {
               </ul>
               <a className="recepiesCont" href="#">{e.Recipes} Recipes <AngleRight /></a>
             </div>
-            <Button onClick={()=> toast.follow('You followed Sam The Cooking Guy')}><AddCookIcon /> Follow Cook</Button>
+            <Button onClick={()=> toast.follow('You followed Sam The Cooking Guy')}>Follow Cook <PlusIcon /></Button>
           </div>
         </div>
       )

@@ -498,7 +498,7 @@ export const categoryData = [
 export const IngredientData = [
   {
     category: "Chicken",
-    image: "/images/Chicken2.svg",
+    image: "/images/Chicken2.png",
     data: [
       {
         id: "s",
@@ -560,7 +560,7 @@ export const IngredientData = [
   },
   {
     category: "Fish",
-    image: "/images/salmon.svg",
+    image: "/images/salmon.png",
     data: [
       {
         id: "sss",
@@ -639,17 +639,17 @@ export const IngredientData = [
 
   {
     category: "Pork",
-    image: "/images/Pork.svg",
+    image: "/images/Pork.png",
     data: [],
   },
   {
     category: "Pasta",
-    image: "/images/Pasta.svg",
+    image: "/images/Pasta.png",
     data: [],
   },
   {
     category: "Beef",
-    image: "/images/Beef.svg",
+    image: "/images/Beef.png",
     data: [
       {
         id: "ssss",

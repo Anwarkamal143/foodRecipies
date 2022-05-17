@@ -97,7 +97,10 @@ const Header = (props: Props) => {
                 </div>
                 <div className="option-type">
                   <label>Ingredient Search</label>
-                  <div className="field-wrap">
+                  <Select
+                    options={[{ value: "All Cooks", label: "All Cooks" }]}
+                  />
+                  <div className="field-wrap display-none">
                     <Input
                       value={searchText}
                       className="search_input"

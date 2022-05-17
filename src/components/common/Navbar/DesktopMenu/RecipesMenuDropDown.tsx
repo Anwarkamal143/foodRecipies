@@ -55,7 +55,7 @@ function RecipesMegaMenu() {
               <ul className="menuBoxItems">
                 <li>
                   <a href="#">
-                    <div className="icon"><img src="/images/nav-icon01.png" alt="" width={13} /></div>
+                    <div className="icon"><img src="/images/nav-icon01.png" alt="" width={16} /></div>
                     <div className="text">
                       <strong className="subtite">My Food Feed +</strong>
                       <span className="subtext">Curated For Easy Browsing</span>
@@ -65,7 +65,7 @@ function RecipesMegaMenu() {
                 </li>
                 <li>
                   <a href="#">
-                    <div className="icon"><img src="/images/nav-icon02.png" alt="" width={12} /></div>
+                    <div className="icon"><img src="/images/nav-icon02.png" alt="" width={17} /></div>
                     <div className="text">
                       <strong className="subtite">Recipe Leaderboards</strong>
                       <span className="subtext">What’s Trending Now?</span>
@@ -75,7 +75,7 @@ function RecipesMegaMenu() {
                 </li>
                 <li>
                   <a href="#">
-                    <div className="icon"><img src="/images/nav-icon03.png" alt="" width={11} /></div>
+                    <div className="icon"><img src="/images/nav-icon03.png" alt="" width={17} /></div>
                     <div className="text">
                       <strong className="subtite">Recipe Video Tutorials</strong>
                       <span className="subtext">Browse Cooking Videos</span>
@@ -90,7 +90,7 @@ function RecipesMegaMenu() {
               <ul className="menuBoxItems">
                 <li>
                   <a href="#">
-                    <div className="icon"><img src="/images/nav-icon04.png" alt="" width={12} /></div>
+                    <div className="icon"><img src="/images/nav-icon04.png" alt="" width={16} /></div>
                     <div className="text">
                       <strong className="subtite">My Favorite Recipes</strong>
                       <span className="subtext">Browse Saved Recipes</span>
@@ -100,7 +100,7 @@ function RecipesMegaMenu() {
                 </li>
                 <li>
                   <a href="#">
-                    <div className="icon"><img src="/images/nav-icon05.png" alt="" width={13} /></div>
+                    <div className="icon"><img src="/images/nav-icon05.png" alt="" width={17} /></div>
                     <div className="text">
                       <strong className="subtite">My Favorite Cooks</strong>
                       <span className="subtext">View Followed Cooks</span>
@@ -110,7 +110,7 @@ function RecipesMegaMenu() {
                 </li>
                 <li>
                   <a href="#">
-                    <div className="icon"><img src="/images/nav-icon06.png" alt="" width={12} /></div>
+                    <div className="icon"><img src="/images/nav-icon06.png" alt="" width={16} /></div>
                     <div className="text">
                       <strong className="subtite">My Shopping Lists</strong>
                       <span className="subtext">Ready to cook?</span>
@@ -129,35 +129,35 @@ function RecipesMegaMenu() {
                 <ul className="menuNavList">
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/icon-lg01.png" alt="" width={13} /></div>
+                      <div className="icon"><img src="/images/icon-lg01.png" alt="" width={16} /></div>
                       <div className="text">Appetizers</div>
                       <BsArrowRight className="arrow"/>
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/icon-lg07.png" alt="" width={12} /></div>
+                      <div className="icon"><img src="/images/icon-lg07.png" alt="" width={15} /></div>
                       <div className="text">Deserts</div>
                       <BsArrowRight className="arrow"/>
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/icon-lg02.png" alt="" width={16} /></div>
+                      <div className="icon"><img src="/images/icon-lg02.png" alt="" width={18} /></div>
                       <div className="text">Breakfast</div>
                       <BsArrowRight className="arrow"/>
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/icon-lg06.png" alt="" width={14} /></div>
+                      <div className="icon"><img src="/images/icon-lg06.png" alt="" width={16} /></div>
                       <div className="text">Dinner</div>
                       <BsArrowRight className="arrow"/>
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/icon-lg13.png" alt="" width={13} /></div>
+                      <div className="icon"><img src="/images/icon-lg13.png" alt="" width={16} /></div>
                       <div className="text">Baked Goods</div>
                       <BsArrowRight className="arrow"/>
                     </a>
@@ -166,35 +166,35 @@ function RecipesMegaMenu() {
                 <ul className="menuNavList visibleMobile">
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/icon-lg01.png" alt="" width={13} /></div>
+                      <div className="icon"><img src="/images/icon-lg01.png" alt="" width={16} /></div>
                       <div className="text">Appetizers</div>
                       <BsArrowRight className="arrow"/>
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/icon-lg07.png" alt="" width={12} /></div>
+                      <div className="icon"><img src="/images/icon-lg07.png" alt="" width={15} /></div>
                       <div className="text">Deserts</div>
                       <BsArrowRight className="arrow"/>
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/icon-lg02.png" alt="" width={16} /></div>
+                      <div className="icon"><img src="/images/icon-lg02.png" alt="" width={18} /></div>
                       <div className="text">Breakfast</div>
                       <BsArrowRight className="arrow"/>
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/icon-lg06.png" alt="" width={14} /></div>
+                      <div className="icon"><img src="/images/icon-lg06.png" alt="" width={16} /></div>
                       <div className="text">Dinner</div>
                       <BsArrowRight className="arrow"/>
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/icon-lg13.png" alt="" width={13} /></div>
+                      <div className="icon"><img src="/images/icon-lg13.png" alt="" width={16} /></div>
                       <div className="text">Baked Goods</div>
                       <BsArrowRight className="arrow"/>
                     </a>
@@ -207,35 +207,35 @@ function RecipesMegaMenu() {
                 <ul className="menuNavList">
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/nav-icon07.png" alt="" width={13} /></div>
+                      <div className="icon"><img src="/images/nav-icon07.png" alt="" width={15} /></div>
                       <div className="text">Beef</div>
                       <BsArrowRight className="arrow"/>
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/nav-icon08.png" alt="" width={14} /></div>
+                      <div className="icon"><img src="/images/nav-icon08.png" alt="" width={17} /></div>
                       <div className="text">Chicken</div>
                       <BsArrowRight className="arrow"/>
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/nav-icon09.png" alt="" width={13} /></div>
+                      <div className="icon"><img src="/images/nav-icon09.png" alt="" width={15} /></div>
                       <div className="text">Pasta</div>
                       <BsArrowRight className="arrow"/>
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/nav-icon10.png" alt="" width={13} /></div>
+                      <div className="icon"><img src="/images/nav-icon10.png" alt="" width={15} /></div>
                       <div className="text">Pork</div>
                       <BsArrowRight className="arrow"/>
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/nav-icon11.png" alt="" width={10} /></div>
+                      <div className="icon"><img src="/images/nav-icon11.png" alt="" width={12} /></div>
                       <div className="text">Fish</div>
                       <BsArrowRight className="arrow"/>
                     </a>
@@ -244,35 +244,35 @@ function RecipesMegaMenu() {
                 <ul className="menuNavList visibleMobile">
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/nav-icon07.png" alt="" width={13} /></div>
+                      <div className="icon"><img src="/images/nav-icon07.png" alt="" width={15} /></div>
                       <div className="text">Beef</div>
                       <BsArrowRight className="arrow"/>
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/nav-icon08.png" alt="" width={14} /></div>
+                      <div className="icon"><img src="/images/nav-icon08.png" alt="" width={17} /></div>
                       <div className="text">Chicken</div>
                       <BsArrowRight className="arrow"/>
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/nav-icon09.png" alt="" width={13} /></div>
+                      <div className="icon"><img src="/images/nav-icon09.png" alt="" width={15} /></div>
                       <div className="text">Pasta</div>
                       <BsArrowRight className="arrow"/>
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/nav-icon10.png" alt="" width={13} /></div>
+                      <div className="icon"><img src="/images/nav-icon10.png" alt="" width={15} /></div>
                       <div className="text">Pork</div>
                       <BsArrowRight className="arrow"/>
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/nav-icon11.png" alt="" width={10} /></div>
+                      <div className="icon"><img src="/images/nav-icon11.png" alt="" width={12} /></div>
                       <div className="text">Fish</div>
                       <BsArrowRight className="arrow"/>
                     </a>
@@ -441,35 +441,35 @@ function RecipesMegaMenu() {
                 <ul className="menuNavList">
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/nav-icon12.png" alt="" width={13} /></div>
+                      <div className="icon"><img src="/images/nav-icon12.png" alt="" width={15} /></div>
                       <div className="text">&#60; 30 Minutes</div>
                       <BsArrowRight className="arrow"/>
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/nav-icon13.png" alt="" width={13} /></div>
+                      <div className="icon"><img src="/images/nav-icon13.png" alt="" width={15} /></div>
                       <div className="text">&#60; 5 Ingredients</div>
                       <BsArrowRight className="arrow"/>
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/nav-icon14.png" alt="" width={13} /></div>
+                      <div className="icon"><img src="/images/nav-icon14.png" alt="" width={14} /></div>
                       <div className="text">Slow Cooker</div>
                       <BsArrowRight className="arrow"/>
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/nav-icon15.png" alt="" width={13} /></div>
+                      <div className="icon"><img src="/images/nav-icon15.png" alt="" width={15} /></div>
                       <div className="text">Easy Recipes</div>
                       <BsArrowRight className="arrow"/>
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/nav-icon16.png" alt="" width={14} /></div>
+                      <div className="icon"><img src="/images/nav-icon16.png" alt="" width={16} /></div>
                       <div className="text">Kid-Friendly</div>
                       <BsArrowRight className="arrow"/>
                     </a>
@@ -478,35 +478,35 @@ function RecipesMegaMenu() {
                 <ul className="menuNavList visibleMobile">
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/nav-icon12.png" alt="" width={13} /></div>
-                      <div className="text">30 Minutes or Less</div>
+                      <div className="icon"><img src="/images/nav-icon12.png" alt="" width={15} /></div>
+                      <div className="text">&#60; 30 Minutes</div>
                       <BsArrowRight className="arrow"/>
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/nav-icon13.png" alt="" width={13} /></div>
-                      <div className="text">5 Ingredients or Less</div>
+                      <div className="icon"><img src="/images/nav-icon13.png" alt="" width={15} /></div>
+                      <div className="text">&#60; 5 Ingredients</div>
                       <BsArrowRight className="arrow"/>
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/nav-icon14.png" alt="" width={13} /></div>
+                      <div className="icon"><img src="/images/nav-icon14.png" alt="" width={14} /></div>
                       <div className="text">Slow Cooker</div>
                       <BsArrowRight className="arrow"/>
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/nav-icon15.png" alt="" width={13} /></div>
+                      <div className="icon"><img src="/images/nav-icon15.png" alt="" width={15} /></div>
                       <div className="text">Easy Recipes</div>
                       <BsArrowRight className="arrow"/>
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/nav-icon16.png" alt="" width={14} /></div>
+                      <div className="icon"><img src="/images/nav-icon16.png" alt="" width={16} /></div>
                       <div className="text">Kid-Friendly</div>
                       <BsArrowRight className="arrow"/>
                     </a>
@@ -519,21 +519,21 @@ function RecipesMegaMenu() {
                 <ul className="menuNavList">
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/nav-icon17.png" alt="" width={13} /></div>
+                      <div className="icon"><img src="/images/nav-icon17.png" alt="" width={15} /></div>
                       <div className="text">Top Rated</div>
                       <BsArrowRight className="arrow"/>
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/nav-icon18.png" alt="" width={15} /></div>
+                      <div className="icon"><img src="/images/nav-icon18.png" alt="" width={16} /></div>
                       <div className="text">Recently Added</div>
                       <BsArrowRight className="arrow"/>
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/nav-icon19.png" alt="" width={14} /></div>
+                      <div className="icon"><img src="/images/nav-icon19.png" alt="" width={15} /></div>
                       <div className="text">Most Liked</div>
                       <BsArrowRight className="arrow"/>
                     </a>
@@ -547,7 +547,7 @@ function RecipesMegaMenu() {
                   </li>
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/nav-icon21.png" alt="" width={14} /></div>
+                      <div className="icon"><img src="/images/nav-icon21.png" alt="" width={15} /></div>
                       <div className="text">Featured</div>
                       <BsArrowRight className="arrow"/>
                     </a>
@@ -556,21 +556,21 @@ function RecipesMegaMenu() {
                 <ul className="menuNavList visibleMobile">
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/nav-icon17.png" alt="" width={13} /></div>
+                      <div className="icon"><img src="/images/nav-icon17.png" alt="" width={15} /></div>
                       <div className="text">Top Rated</div>
                       <BsArrowRight className="arrow"/>
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/nav-icon18.png" alt="" width={15} /></div>
+                      <div className="icon"><img src="/images/nav-icon18.png" alt="" width={16} /></div>
                       <div className="text">Recently Added</div>
                       <BsArrowRight className="arrow"/>
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/nav-icon19.png" alt="" width={14} /></div>
+                      <div className="icon"><img src="/images/nav-icon19.png" alt="" width={15} /></div>
                       <div className="text">Most Liked</div>
                       <BsArrowRight className="arrow"/>
                     </a>
@@ -584,7 +584,7 @@ function RecipesMegaMenu() {
                   </li>
                   <li>
                     <a href="#">
-                      <div className="icon"><img src="/images/nav-icon21.png" alt="" width={14} /></div>
+                      <div className="icon"><img src="/images/nav-icon21.png" alt="" width={15} /></div>
                       <div className="text">Featured</div>
                       <BsArrowRight className="arrow"/>
                     </a>

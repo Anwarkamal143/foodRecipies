@@ -77,7 +77,7 @@ function DesktopMenu() {
               <SearchIcon />
               <span className="text">Search...</span>
             </span>
-            <div className="relative text-white sm:hidden">
+            <div className="relative text-white sm:hidden notificationsButton">
               <BiBell
                 size="1.4rem"
                 aria-hidden="true"
