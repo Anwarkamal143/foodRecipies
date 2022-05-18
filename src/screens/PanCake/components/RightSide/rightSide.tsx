@@ -21,7 +21,7 @@ const RightSide = (props: Props) => {
   return (
     <div className="detailsRightColumns">
       <div className="detailsAsideWidget">
-        <strong className="title">Diet At a Glance</strong>
+        <strong className="title">Diet At a Glance <RightAngle /></strong>
         <div className="dietPlansList">
           {items.map(item => {
             return (
@@ -37,7 +37,7 @@ const RightSide = (props: Props) => {
         </div>
       </div>
       <div className="detailsAsideWidget">
-        <strong className="title">Cook Collections</strong>
+        <strong className="title">Cook Collections <RightAngle /></strong>
         <div className="collectionsList">
           <ItemCards
             icon={<RightAngle />}

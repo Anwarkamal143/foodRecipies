@@ -1,6 +1,6 @@
 import { Modal } from "@components"
 import { useOpenClose } from "@hooks"
-import { LongArrowLeftIcon } from "@icons"
+import { DownArrowIcon, ListIcon, LongArrowLeftIcon } from "@icons"
 import { classNames, setItemId } from "@utils"
 import { useEffect, useMemo, useState } from "react"
 import styled from "styled-components"
@@ -74,7 +74,7 @@ const IngredientsModal = ({
           title: (
             <span className="ingredientsModalTitle">
               Add to{" "}
-              <span onClick={() => setCurrentStep(2)}>{selectedItem}</span>
+              <span onClick={() => setCurrentStep(2)}><ListIcon className="listIcon"/> {selectedItem} <DownArrowIcon className="arrowIcon"/></span>
             </span>
           ),
         }

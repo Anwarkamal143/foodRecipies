@@ -23,7 +23,7 @@ const Review = (props: Props) => {
       </ul>
       <div className="makeRecipeBlock">
         <div className="img-holder">
-          <img src="/images/bbq.jpg" alt="" />
+          <img src="/images/post1.png" alt="" />
         </div>
         <div className="textbox">
           <div className="makeRecipeBlockHead">
@@ -40,7 +40,7 @@ const Review = (props: Props) => {
             <Input
               value={value}
               className="search_input"
-              placeholder="Smart Search Recipe & Cooks…"
+              placeholder="Add your notes! How was it?"
               onChange={e => {
                 setValue(e.target.value)
               }}

@@ -3046,6 +3046,22 @@ export function SignoutIcon(props: IconType) {
   )
 }
 
+export function ListIcon(props: IconType) {
+  const { width = 17, height = 13, fill = "currentColor", ...rest } = props
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 17 13"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...rest}
+    >
+      <path d="M0 0H11V2H0V0ZM0 4H11V6H0V4ZM0 8H7V10H0V8ZM15.299 5.292L10.999 9.583L9.707 8.292L8.293 9.707L10.999 12.411L16.711 6.708L15.299 5.292Z" fill="currentColor"/>
+    </svg>
+  )
+}
+
 type ImageProps = DetailedHTMLProps<
   ImgHTMLAttributes<HTMLImageElement>,
   HTMLImageElement

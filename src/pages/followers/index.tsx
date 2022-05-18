@@ -59,6 +59,64 @@ export default styled(PanCake)`
     }
   }
 
+  .organizedByList {
+    list-style: none;
+    padding: 0;
+    margin: 0 -7px 5px;
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
+    font-size: 12px;
+    line-height: 1.5;
+
+    @media (max-width: 767px) {
+      font-size: 10px;
+      margin: 0 -4px 12px;
+    }
+
+    li {
+      margin: 0 7px 15px;
+
+      @media (max-width: 767px) {
+        margin: 0 4px 8px;
+      }
+
+      &:first-child {
+        @media (max-width: 767px) {
+          width: calc(100% - 8px);
+          margin-bottom: 10px;
+        }
+      }
+
+      .title {
+        display: block;
+        color: #000;
+        opacity: 0.5;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+
+      a {
+        display: block;
+        background: #ffdedf;
+        color: #1E1E2D;
+        font-size: 11px;
+        padding: 5px 10px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        transition: all 0.25s ease;
+
+        @media (max-width: 767px) {
+          font-size: 9px;
+        }
+
+        &:hover {
+          background: #ffa3a7;
+        }
+      }
+    }
+  }
+
   .detailsLeftColumn {
     width: calc(100% - 310px);
 
@@ -232,11 +290,38 @@ export default styled(PanCake)`
         width: 24px;
         height: 24px;
         margin: 0 12px;
+        border-radius: 100%;
+        cursor: pointer;
+        transition: all 0.25s ease-in-out;
 
         @media (max-width: 767px) {
           margin: 0;
           width: 18px;
           heightL 18px;
+        }
+
+        path {
+          transition: all 0.25s ease-in-out;
+        }
+
+        &:hover {
+          path {
+            + path {
+              fill: #fff;
+            }
+          }
+        }
+
+        &.buttonMinus {
+          &:hover {
+            background: #FE585F;
+          }
+        }
+
+        &.buttonPlus {
+          &:hover {
+            background: #11C278;
+          }
         }
       }
 
@@ -416,7 +501,7 @@ export default styled(PanCake)`
           }
         }
 
-        &.active {
+        &:hover {
           background: #F9F9F9;
 
           &:before {
@@ -516,12 +601,36 @@ export default styled(PanCake)`
     }
 
     .title {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
       color: #324556;
       font-size: 14px;
       line-height: 1.5;
       margin: 0 0 12px;
+      cursor: pointer;
+      transition: all 0.25s ease-in-out;
+
+      svg {
+        opacity: 0;
+        position: relative;
+        left: 0;
+        transition: all 0.25s ease-in-out;
+
+        path {
+          stroke: #e0464d;
+        }
+      }
+
+      &:hover {
+        color: #e0464d;
+
+        svg {
+          opacity: 1;
+          left: 5px;
+        }
+      }
     }
 
     .pText {
@@ -625,7 +734,7 @@ export default styled(PanCake)`
       width: 100% !important;
       display: flex;
       align-items: center;
-      padding: 5px;
+      padding: 7px;
       position: relative;
       margin: 0 0 10px !important;
 
@@ -635,8 +744,8 @@ export default styled(PanCake)`
 
       img {
         width: 45px;
-        min-wuidth: 45px;
-        height: 50px;
+        min-width: 45px;
+        height: 45px;
         border-radius: 8px;
       }
 
@@ -682,7 +791,7 @@ export default styled(PanCake)`
     }
 
     .userProfileDetails {
-      padding: 0 35px 0 10px
+      padding: 0 25px 0 10px
     }
 
     .socialIcons {
@@ -711,6 +820,61 @@ export default styled(PanCake)`
 
     @media (max-width: 767px) {
       display: none;
+    }
+
+    .ingredientsCookHeader {
+      .person-details {
+        border: 0;
+        margin: 0 10px 0 0;
+      }
+
+      .userProfileName {
+        font-size: 13px;
+        color: #1E1E2D;
+        position: relative;
+        cursor: pointer;
+        transition: all 0.25s ease;
+
+        &:after {
+          position: absolute;
+          right: 0;
+          top: calc(50% - 3px);
+          width: 10px;
+          height: 10px;
+          font-weight: 400;
+          content: '';
+          opacity: 0;
+          transition: all 0.25s ease-in-out;
+          background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 5 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.03333 0.911331L4.62244 2.50045L3.02958 4.09331' stroke='%23e0464d' stroke-width='0.75' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3Cpath d='M4.62156 2.49956H0.378924' stroke='%23e0464d' stroke-width='0.75' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3C/svg%3E");
+          background-repeat: no-repeat;
+        }
+
+        &:hover {
+          color: #e0464d;
+
+          &:after {
+            right: -15px;
+            opacity: 1;
+          }
+        }
+      }
+
+      .userProfileTime {
+        font-size: 10px;
+        color: #A2A2A2;
+      }
+      
+      .ingredientsCookHeaderLeft {
+        .ingredientsCookHeaderButtons {
+          display: none;
+        }
+      }
+
+      .ingredientsCookHeaderRight {
+        .copyLinkButton {
+          display: none;
+        }
+      }
     }
   }
 
@@ -990,7 +1154,7 @@ export default styled(PanCake)`
         line-height: 1.5;
         color: #7B7B82;
         min-width: 105px;
-        padding: 5px 25px;
+        padding: 5px 15px 5px 20px;
         margin-left: auto;
 
         @media (max-width: 1023px) {
@@ -1008,7 +1172,8 @@ export default styled(PanCake)`
           color: #B6B6B6;
           margin: 0 0 0 10px;
           min-width: auto;
-          display: none;
+          position: relative;
+          top: -1px;
         }
 
         &:hover {
@@ -1160,7 +1325,14 @@ export default styled(PanCake)`
           font-size: 12px;
           line-height: 1.5;
           color: #424E66;
-          padding: 3px 0
+          padding: 5px 10px;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: all 0.25s ease-in-out;
+
+          &:hover {
+            background: #f8f8f8;
+          }
         }
       }
     }
@@ -1263,6 +1435,7 @@ export default styled(PanCake)`
           width: 20px;
           height: 20px;
           margin: 0 10px 0 0;
+          cursor: pointer;
 
           @media (max-width: 767px) {
             width: 16px;
@@ -1271,7 +1444,14 @@ export default styled(PanCake)`
 
           path {
             stroke: #1E1E2D;
-          } 
+            transition: all 0.25s ease-in-out;
+          }
+
+          &:hover {
+            path {
+              stroke: #e0464d;
+            }
+          }
         }
 
         .number {
@@ -1336,7 +1516,7 @@ export default styled(PanCake)`
     }
   }
 
-  .followersContainer {
+  .sectionDetailsContent {
     .postFeed {
       &.feedsWidget {
         border: 0;
@@ -1344,6 +1524,8 @@ export default styled(PanCake)`
         padding: 0;
 
         .ingredientsCookHeader {
+          justify-content: space-between;
+
           .person-details,
           .socialIcons {
             @media (max-width: 767px) {
@@ -1351,20 +1533,61 @@ export default styled(PanCake)`
               margin: 0;
             }
           }
+
+          .person-details {
+            @media (max-width: 767px) {
+              min-width: 150px;
+              margin: 0 25px 0 0;
+            }
+          }
           
           .userProfileImageWrap {
+            transition: all 0.25s ease;
+            cursor: pointer;
+            
             @media (max-width: 767px) {
               width: 22px;
               height: 22px;
               min-width: 22px;
             }
+
+            &:hover {
+              transform: scale(1.1);
+            }
           }
 
           .userProfileName {
+            position: relative;
+            cursor: pointer;
+            transition: all 0.25s ease;
+
             @media (max-width: 767px) {
               font-size: 12px;
               line-height: 1.4;
               margin: 0;
+            }
+
+            &:after {
+              position: absolute;
+              right: 0;
+              top: calc(50% - 3px);
+              width: 10px;
+              height: 10px;
+              font-weight: 400;
+              content: '';
+              opacity: 0;
+              transition: all 0.25s ease-in-out;
+              background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 5 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.03333 0.911331L4.62244 2.50045L3.02958 4.09331' stroke='%23e0464d' stroke-width='0.75' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3Cpath d='M4.62156 2.49956H0.378924' stroke='%23e0464d' stroke-width='0.75' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3C/svg%3E");
+              background-repeat: no-repeat;
+            }
+
+            &:hover {
+              color: #e0464d;
+
+              &:after {
+                right: -15px;
+                opacity: 1;
+              }
             }
           }
 
@@ -1377,11 +1600,9 @@ export default styled(PanCake)`
         }
       }
     }
+  }
 
-    .ingredientsCookHeader {
-      justify-content: space-between;
-    }
-
+  .followersContainer {
     .main-img {
       .heartIcon {
         @media (max-width: 767px) {
@@ -1528,9 +1749,47 @@ export default styled(PanCake)`
           font-size: 16px;
           line-height: 1.4;
           color: #1E1E2D;
+          position: relative;
+          cursor: pointer;
+          transition: all 0.25s ease-in-out;
 
           @media (max-width: 1023px) {
             font-size: 12px;
+          }
+
+          &:after {
+            position: absolute;
+            right: 0;
+            top: calc(50% - 4px);
+            width: 10px;
+            height: 10px;
+            font-weight: 400;
+            content: '';
+            opacity: 0;
+            transition: all 0.25s ease-in-out;
+            background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 5 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.03333 0.911331L4.62244 2.50045L3.02958 4.09331' stroke='%23e0464d' stroke-width='0.75' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3Cpath d='M4.62156 2.49956H0.378924' stroke='%23e0464d' stroke-width='0.75' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+
+            @media (max-width: 1023px) {
+              top: calc(50% - 3px);
+              width: 8px;
+              height: 8px;
+              background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 5 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.03333 0.911331L4.62244 2.50045L3.02958 4.09331' stroke='%23e0464d' stroke-width='0.75' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3Cpath d='M4.62156 2.49956H0.378924' stroke='%23e0464d' stroke-width='0.75' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3C/svg%3E");
+              background-repeat: no-repeat;
+            }
+          }
+
+          &:hover {
+            color: #e0464d;
+
+            &:after {
+              right: -15px;
+              opacity: 1;
+
+              @media (max-width: 1023px) {
+                right: -12px;
+              }
+            }
           }
         }
       }

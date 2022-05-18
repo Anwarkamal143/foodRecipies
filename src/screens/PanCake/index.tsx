@@ -16,10 +16,10 @@ const PanCakeScreen = (props: Props) => {
     <div className="ctn">
       <div className="followersContainer">
         <header className="sectionDetailsHeader">
-          <ul className="breadcrumbs">
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">BREAKFAST</a></li>
-            <li>PANCKAES</li>
+          <ul className="organizedByList">
+            <li><strong className="title">Organized By:</strong></li>
+            <li><a href="#">All Breakfast Categories</a></li>
+            <li><a href="#">All Breakfast Categories</a></li>
           </ul>
           <h1>Homemade Burger with American Cheese and Burrata</h1>
         </header>

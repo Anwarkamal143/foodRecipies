@@ -83,10 +83,6 @@ const VideosModal = ({
               X
             </span>
           </div>
-          <div className="profileInfo">
-            <img src={"/images/ingredientsImage.png"} alt="video" />
-            The Million Dollar Challenge
-          </div>
           <div className="tabs">
             <Button
               onClick={() => setCurrentStep("YouTube")}
@@ -108,6 +104,10 @@ const VideosModal = ({
             </Button>
           </div>
           {Components?.video}
+          <div className="profileInfo">
+            <img src={"/images/ingredientsImage.png"} alt="video" />
+            The Million Dollar Challenge
+          </div>
           <div className="userTextbox">
             <strong className="title">
               GoPro HERO 10 Black: The Million Dollar Challenge

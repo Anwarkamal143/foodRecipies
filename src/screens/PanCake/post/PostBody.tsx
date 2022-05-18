@@ -293,6 +293,13 @@ export default styled(PostBody)`
           height: 12px;
           display: inline-block;
           vertical-align: middle;
+          transition: all 0.25s ease;
+        }
+      }
+
+      &:hover {
+        svg {
+          transform: rotate(360deg);
         }
       }
     }

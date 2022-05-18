@@ -5334,9 +5334,26 @@ body {
 
       span {
         font-weight: 600;
-        margin: 0 0 0 6px;
+        margin: 0 0 0 10px;
         border-bottom: 1px solid #D8D8D8;
         cursor: pointer;
+        transition: all 0.25s ease-in-out;
+        display: flex;
+        align-items: center;
+
+        .listIcon {
+          margin: 0 10px 0 0;
+          position: relative;
+          top: 1px;
+        }
+
+        .arrowIcon {
+          margin: 0 0 0 8px;
+        }
+
+        &:hover {
+          color: #e0464d;
+        }
       }
 
       &.textCenter {
@@ -5541,10 +5558,9 @@ body {
 
     svg {
       position: absolute !important;
-      right: 5px !important;
+      right: 4px !important;
       left: auto !important;
-      top: 50% !important;
-      transform: translateY(-46%) !important;
+      top: calc(50% - 7px) !important;
       stroke-width: 3px !important;
 
       @media (max-width: 767px) {
@@ -5623,6 +5639,12 @@ body {
 
       @media (max-width: 767px) {
         font-size: 15px;
+      }
+
+      .listIcon {
+        position: relative;
+        top: 1px;
+        margin: 0 10px 0 0;
       }
     }
 
@@ -6100,6 +6122,16 @@ body {
         color: #292D32;
         font-size: 18px;
         line-height: 1;
+
+        &:after {
+          position: fixed;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          content: '';
+          z-index: -1;
+        }
       }
     }
 
@@ -6109,7 +6141,7 @@ body {
       font-size: 15px;
       line-height: 23px;
       color: #565656;
-      margin: 0 0 20px;
+      padding: 20px 0 0;
 
       img {
         width: 20px;
@@ -6461,7 +6493,7 @@ body {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          margin: 0 0 5px;
+          margin: 0 0 2px;
         }
 
         .ctn-barTitle {

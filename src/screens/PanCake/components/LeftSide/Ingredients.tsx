@@ -58,9 +58,9 @@ const Ingredients = (props: Props) => {
       <div className="ingredientsBlockHead">
         <h2>Ingredients</h2>
         <span className="inputNumbers">
-          <Minus onClick={() => setServing((val: number) => val - 1)} />{" "}
+          <Minus className="buttonMinus" onClick={() => setServing((val: number) => val - 1)} />{" "}
           <span className="numText">{serving} Servings</span>{" "}
-          <PlusBtn onClick={() => setServing((val: number) => val + 1)} />
+          <PlusBtn className="buttonPlus" onClick={() => setServing((val: number) => val + 1)} />
         </span>
         <div className="convertUnitsDropdownBox">
           <Button onClick={onDropDownOpen}>Convert Units</Button>

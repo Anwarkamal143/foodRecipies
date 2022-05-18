@@ -182,6 +182,11 @@ export default styled(Model)`
 
     .close {
       font-size: 25px;
+      // transition: all 0.24s ease-in-out;
+
+      // &:hover {
+      //   transform: rotate(360deg);
+      // }
     }
   }
 

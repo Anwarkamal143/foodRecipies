@@ -22,7 +22,7 @@ export const RecipesData = [
     rightDetails: [
       {
         _id: "1",
-        category: "category",
+        category: "Category",
         title: "Salads",
         icon: "/images/spoon.svg",
       },
@@ -40,13 +40,13 @@ export const RecipesData = [
       },
       {
         _id: "4",
-        category: "calories",
+        category: "Calories",
         title: "150 kcal",
         icon: "/images/spoon.svg",
       },
       {
         _id: "5",
-        category: "Cuisin",
+        category: "Cuisine",
         title: "india",
         icon: "/images/spoon.svg",
       },
@@ -71,7 +71,7 @@ export const RecipesData = [
     rightDetails: [
       {
         _id: "1",
-        category: "category",
+        category: "Category",
         title: "Salads",
         icon: "/images/spoon.svg",
       },
@@ -89,13 +89,13 @@ export const RecipesData = [
       },
       {
         _id: "4",
-        category: "calories",
+        category: "Calories",
         title: "150 kcal",
         icon: "/images/calories.svg",
       },
       {
         _id: "5",
-        category: "Cuisin",
+        category: "Cuisine",
         title: "india",
         icon: "/images/cuisine.svg",
       },

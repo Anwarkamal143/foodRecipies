@@ -1,5 +1,6 @@
-import { Icon, Image } from "@components"
-import { FacebookIcon, InstagramIcon, LinkIcon, TwitterIcon, YoutubeIcon } from "@icons"
+import { Button, Icon, Image } from "@components"
+import { PlusIcon } from "@heroicons/react/outline"
+import { FacebookIcon, InstagramIcon, LinkArrowIcon, LinkIcon, TwitterIcon, YoutubeIcon } from "@icons"
 import dayjs from "dayjs"
 import relativeTime from "dayjs/plugin/relativeTime"
 import styled from "styled-components"
@@ -19,18 +20,24 @@ function PostHeader(props: IMyFeedProps) {
 
   return (
     <div className={`${className} ingredientsCookHeader`}>
-      <div className="person-details">
-        <Image
-          className="post-headerimg userProfileImage"
-          src={creator.profileImage}
-        />
-        <div className="userProfileDetails">
-          <p className="userProfileName">
-            <strong>{creator.name}</strong>
-          </p>
-          <span className="userProfileTime">
-            {dayjs(createdAt).subtract(12, "hours").fromNow()}
-          </span>
+      <div className="ingredientsCookHeaderLeft">
+        <div className="person-details">
+          <Image
+            className="post-headerimg userProfileImage"
+            src={creator.profileImage}
+          />
+          <div className="userProfileDetails">
+            <p className="userProfileName">
+              <strong>{creator.name}</strong>
+            </p>
+            <span className="userProfileTime">
+              {dayjs(createdAt).subtract(12, "hours").fromNow()}
+            </span>
+          </div>
+        </div>
+        <div className="ingredientsCookHeaderButtons">
+          <Button className="followCook">Follow Cook <PlusIcon /></Button>
+          <Button className="viewWebsite">Visit Website <LinkArrowIcon /></Button>
         </div>
       </div>
       <div className="ingredientsCookHeaderRight">
@@ -63,13 +70,15 @@ export default styled(PostHeader)`
   line-height: 16px;
   margin: 0 0 15px;
 
-  @media (max-width: 767px) {
+  @media (max-width: 849px) {
     flex-flow row wrap;
   }
 
   .person-details {
     display: flex;
     align-items: center;
+    margin: 0 25px 0 0;
+    border-right: 1px solid rgba(0,0,0,0.1);
 
     @media (max-width: 767px) {
       width: 100%;
@@ -81,9 +90,87 @@ export default styled(PostHeader)`
     height: 3em;
   }
 
+  .ingredientsCookHeaderLeft {
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 849px) {
+      width: 100%;
+      margin: 0 0 15px;
+    }
+
+    .button.button-default.followCook,
+    .button.button-default.viewWebsite {
+      background: #e9f3fe;
+      border-radius: 6px;
+      color: #3072e7;
+      font-size: 11px;
+      line-height: 16px;
+      min-width: 130px;
+      padding: 6px 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+      @media (max-width: 767px) {
+        padding: 5px 10px;
+        font-size: 9px;
+      }
+
+      svg {
+        width: 12px;
+        height: 12px;
+        margin: 0 0 0 5px;
+        position: relative;
+        top: -2px;
+      }
+
+      &:hover {
+        color: #fff;
+        background: #3072e7;
+        border-color: #3072e7;
+      }
+    }
+
+    .button.button-default.viewWebsite {
+      background: #fff;
+      color: #1E1E2D;
+      box-shadow: none;
+
+      @media (max-width: 479px) {
+        margin: 5px 0 0;
+      }
+
+      svg {
+        width: 7px;
+        height: 7px;
+
+        path {
+          stroke: #1E1E2D;
+          transition: all 0.25s ease-in-out;
+        }
+      }
+
+      &:hover {
+        color: #fff;
+        background: #3072e7;
+        border-color: #3072e7;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+        svg {
+          path {
+            stroke: #fff;
+          }
+        }
+      }
+    }
+  }
+
   .ingredientsCookHeaderRight {
     display: flex;
     align-items: center;
+
+    @media (max-width: 849px) {
+      width: 100%;
+    }
     
     .copyLinkButton {
       display: none;

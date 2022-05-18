@@ -1,5 +1,6 @@
 import { Button } from "@components"
 import { LinkIcon } from "@heroicons/react/outline"
+import { ListIcon } from "@icons"
 import React from "react"
 
 type Props = {
@@ -21,7 +22,7 @@ const StepTwo = ({ setSelectedItem, setItemsModal, itemsData }: Props) => {
             }}
             key={e.id}
           >
-            <strong className="title">{e.list} <span className="linkIcon"><LinkIcon /></span></strong>
+            <strong className="title"><ListIcon className="listIcon"/> {e.list} <span className="linkIcon"><LinkIcon /></span></strong>
             <span className="itemNumbers">0 items</span>
           </span>
         ))}

@@ -19,7 +19,7 @@ const StepThree = ({ handleSave, handleClose }: Props) => {
           inputClasses="spacer"
           name="email"
           value={email}
-          placeholder="Johndoe_43@gmail.com"
+          placeholder="(Insert Today’s Date) Shopping List"
           // materialDesign
         />
       </div>

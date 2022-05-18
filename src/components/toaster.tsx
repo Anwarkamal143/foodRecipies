@@ -9,7 +9,7 @@ const ToasterContainer: React.FC<any> = props => {
   return (
     <ToastContainer
       className={`${className} mahad`}
-      position="bottom-right"
+      position="top-right"
       autoClose={5000}
       hideProgressBar
       newestOnTop
