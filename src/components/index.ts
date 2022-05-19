@@ -24,4 +24,6 @@ export * from "./StickyDropDown"
 export * from "./Model"
 export * from "./VideoPlay"
 export * from "./ShareWidget"
-export * from './AppSearch'
+export * from "./AppSearch"
+export * from "./Banner"
+export * from "./SocialCard"
