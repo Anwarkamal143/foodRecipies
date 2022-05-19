@@ -5463,11 +5463,37 @@ body {
     svg {
       font-size: 19px;
       line-height: 19px;
+      border-radius: 100%;
       cursor: pointer;
+      transition: all 0.25s ease-in-out;
 
       @media (max-width: 767px) {
         width: 18px;
         height: 18px;
+      }
+
+      path {
+        transition: all 0.25s ease-in-out;
+      }
+
+      &:hover {
+        path {
+          + path {
+            fill: #fff;
+          }
+        }
+      }
+
+      &.buttonMinus {
+        &:hover {
+          background: #FE585F;
+        }
+      }
+
+      &.buttonPlus {
+        &:hover {
+          background: #11C278;
+        }
       }
     }
 
@@ -5765,10 +5791,13 @@ body {
     }
 
     img {
-      width: 20px;
-      height: 20px;
+      width: 30px;
+      height: 30px;
+      min-width: 30px;
       border-radius: 100%;
       margin: 0 12px 0 0;
+      object-fit: cover;
+      object-position: center;
     }
   }
 
@@ -6353,8 +6382,16 @@ body {
     .modal-header {
       margin: 0 0 20px;
 
+      @media (max-width: 767px) {
+        margin: 0 -30px 20px;
+      }
+
       .modal-title {
         width: 100%;
+
+        @media (max-width: 767px) {
+          text-align: center;
+        }
       }
 
       .title-holder {
@@ -6375,7 +6412,7 @@ body {
 
     .modal-content {
       @media (max-width: 767px) {
-        padding: 25px;
+        padding: 25px 50px;
       }
     }
   }
@@ -6385,7 +6422,7 @@ body {
   overflow: hidden;
 
   .smartNutritionRow {
-    margin: 0;
+    margin: 0 0 15px;
   }
 
   .title {
@@ -6510,6 +6547,26 @@ body {
           }
         }
       }
+
+      &.firstItem,
+      &.secondItem {
+        .ctn-bar {
+          &:nth-child(2),
+          &:nth-child(3),
+          &:nth-child(4) {
+            width: 86%;
+            margin-left: auto;
+          }
+        }
+      }
+
+      &.secondItem {
+        .ctn-bar {
+          &:nth-child(4) {
+            width: 100%;
+          }
+        }
+      }
     }
   }
 
@@ -6517,7 +6574,8 @@ body {
     font-size: 8px;
     line-height: 1.5;
     color: #A6A6A6;
-    padding: 5px 0 10px;
+    padding: 0 0 10px;
+    margin: -10px 0 0;
 
     @media (max-width: 767px) {
       text-align: center;

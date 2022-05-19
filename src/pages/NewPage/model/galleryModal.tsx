@@ -1,5 +1,5 @@
 import { Modal, VideoPlayer } from "@components"
-import { AngleRight, LeftSliderArrow, RightSliderArrow } from "@icons"
+import { AngleRight, LeftSliderArrow, PlayIcon, RightSliderArrow } from "@icons"
 import classNames from "classnames"
 import React, { useRef } from "react"
 import Slider from "react-slick"
@@ -50,12 +50,15 @@ const MobileSwiperModal = ({
                   <span className="uesername"><a href="#">{item?.userName} <AngleRight /></a></span>
                   <span className="postby">{item?.postby}</span>
                 </div>
+                <div className="subscribeButton">
+                  <a href="#" className="btnSubscribe">
+                    Subscribe <PlayIcon/>
+                  </a>
+                </div>
               </div>
-              <div className="subscribeButton">
-                <a href="#" className="btnSubscribe">
-                  Subscribe
+              <a href="#" className="btnViewRecipe">
+                  View <span>This</span> Recipe <AngleRight /> 
                 </a>
-              </div>
             </div>
           </div>
         </>
@@ -288,6 +291,14 @@ export default styled(MobileSwiperModal)`
       }
     }
 
+    .textbox {
+      padding-right: 25px;
+
+      @media (max-width: 767px) {
+        padding-right: 0;
+      }
+    }
+
     .uesername {
       display: block;
       font-size: 16px;
@@ -303,7 +314,6 @@ export default styled(MobileSwiperModal)`
         display: inline-block;
         position: relative;
         transition: all 0.25s ease-in-out;
-        padding-right: 18px;
 
         svg {
           fill: #e0464d;
@@ -311,7 +321,7 @@ export default styled(MobileSwiperModal)`
           visibility: hidden;
           transition: all 0.25s ease-in-out;
           position: absolute;
-          right: 10px;
+          right: -5px;
           top: 52%;
           transform: translateY(-49%);
           margin: 0;
@@ -326,7 +336,11 @@ export default styled(MobileSwiperModal)`
           svg {
             opacity: 1;
             visibility: visible;
-            right: 0;
+            right: -15px;
+
+            @media (max-width: 767px) {
+              right: -10px;
+            }
           }
         }
       }
@@ -345,23 +359,75 @@ export default styled(MobileSwiperModal)`
   }
 
   .btnSubscribe {
-    height: 34px;
+    height: 28px;
+    min-width: 120px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background: #e0464d;
-    border-radius: 5px;
+    border-radius: 4px;
     color: #fff;
     font-size: 13px;
     line-height: 20px;
-    padding: 7px 30px;
+    padding: 4px 10px;
     transition: all 0.4s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.33);
 
     @media (max-width: 767px) {
       font-size: 11px;
       height: 26px;
       padding: 5px 10px;
+      display: none;
+    }
+
+    svg {
+      width: 10px;
+      height: 10px;
+      margin: 0 0 0 7px;
     }
 
     &:hover {
       background: #e02e36;
+    }
+  }
+
+  .btnViewRecipe {
+    height: 28px;
+    min-width: 106px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 5px;
+    color: #7B7B82;
+    font-size: 12px;
+    line-height: 20px;
+    padding: 4px 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.13);
+    transition: all 0.4s ease-in-out;
+
+    @media (max-width: 767px) {
+      font-size: 11px;
+      min-width: 94px;
+      height: 26px;
+      padding: 5px 10px;
+    }
+
+    svg {
+      width: 11px;
+      height: 11px;
+      margin: 0 -5px 0 5px;
+    }
+
+    span {
+      @media (max-width: 767px) {
+        display: none;
+      }
+    }
+
+    &:hover {
+      color: #fff;
+      background: #000;
     }
   }
 `

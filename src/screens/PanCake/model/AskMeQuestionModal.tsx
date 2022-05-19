@@ -39,8 +39,8 @@ const AskMeQuestionModal = ({ isOpen, className, onSave, onCancel }: Props) => {
     >
       <div className="askMeQuestionModalForm">
         <div className="profileInfo">
-          <span className="profile"><img src="images/ingredientsImage.png" alt="" /></span>
-          <p className="discription">Noodles with eggs and vegetables</p>
+          <span className="profile"><img src="/images/post1.png" alt="" /></span>
+          <p className="discription">Homemade Burger with American Cheese and Burrata</p>
         </div>
         <div className="askMeQuestionModalHolder">
           <Input

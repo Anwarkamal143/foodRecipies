@@ -1,5 +1,5 @@
 import { Button, Modal, VideoPlayer } from "@components"
-import { AngleRight } from "@icons"
+import { AngleRight, CrossIcon } from "@icons"
 import classNames from "classnames"
 import React, { useMemo, useState } from "react"
 import NoSSR from "react-no-ssr"
@@ -80,7 +80,7 @@ const VideosModal = ({
           <div className="modal-header">
             <strong className="modal-title">Watch Video Tutorial</strong>
             <span className="modalCloseButton" onClick={onClose}>
-              X
+              <CrossIcon/>
             </span>
           </div>
           <div className="tabs">

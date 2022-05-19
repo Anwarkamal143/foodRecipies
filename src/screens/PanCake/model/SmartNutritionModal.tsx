@@ -6,17 +6,25 @@ import React, { useEffect } from "react"
 import styled from "styled-components"
 type Props = {}
 const data = [
-  { bgcolor: "#6a1b9a", completed: 60, title: "Total Fat" },
-  { bgcolor: "#00695c", completed: 30, title: "Total Fat" },
-  { bgcolor: "#ef6c00", completed: 53, title: "Total Fat" },
-  { bgcolor: "#ef6c00", completed: 53, title: "Total Fat" },
+  { bgcolor: "#11C278", completed: 56, title: "Total Fat" },
+  { bgcolor: "#E8A96E", completed: 36, title: "Saturated" },
+  { bgcolor: "#EE7971", completed: 8, title: "Trans" },
+  { bgcolor: "#11C278", completed: 56, title: "Unsaturated" },
+  { bgcolor: "#11C278", completed: 56, title: "Cholesteral" },
+]
+const dataone = [
+  { bgcolor: "#11C278", completed: 56, title: "Total Carbs" },
+  { bgcolor: "#E8A96E", completed: 56, title: "Fiber" },
+  { bgcolor: "#EE7971", completed: 56, title: "Sugars" },
+  { bgcolor: "#11C278", completed: 56, title: "Proteins" },
+  { bgcolor: "#11C278", completed: 56, title: "Sodum" },
 ]
 const datatwo = [
-  { bgcolor: "#6a1b9a", completed: 60, title: "Total Fat" },
-  { bgcolor: "#00695c", completed: 30, title: "Total Fat" },
-  { bgcolor: "#ef6c00", completed: 53, title: "Total Fat" },
-  { bgcolor: "#ef6c00", completed: 53, title: "Total Fat" },
-  { bgcolor: "#ef6c00", completed: 53, title: "Total Fat" },
+  { bgcolor: "#EE7971", completed: 60, title: "Vitamin A" },
+  { bgcolor: "#E8A96E", completed: 30, title: "Iron" },
+  { bgcolor: "#EE7971", completed: 53, title: "Potassium" },
+  { bgcolor: "#E8A96E", completed: 53, title: "Thiamin (B1)" },
+  { bgcolor: "#11C278", completed: 53, title: "Vitamin B6" },
 ]
 const items = [
   { name: "Vegetarian", icon: <GlutenFree />, isTrue: true },
@@ -62,7 +70,7 @@ const SmartNutritionModal = ({
         <div className="smartNutritionRow">
           <strong className="title">Macronutrients <InfoIcon/></strong>
           <div className="progressStatus">
-            <div className="column">
+            <div className="column firstItem">
               {data.map((item, idx) => (
                 <ProgressBar
                   key={idx}
@@ -73,8 +81,8 @@ const SmartNutritionModal = ({
                 />
               ))}
             </div>
-            <div className="column">
-              {data.map((item, idx) => (
+            <div className="column secondItem">
+              {dataone.map((item, idx) => (
                 <ProgressBar
                   key={idx}
                   bgColor={item.bgcolor}

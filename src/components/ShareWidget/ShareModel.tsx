@@ -101,6 +101,7 @@ function SocialShareLinks({
               />
             )}
             <div className="shareRecipeBox">
+              <strong className="title">Homemade Burger with American Cheese and Burrata</strong>
               <div className="image-holder">
                 <img src="/images/share-image.png" alt="" />
               </div>
@@ -174,6 +175,12 @@ function SocialShareLinks({
         )}
         {page?.linkPage === "sms" && (
           <div className="smsLink shareFormElements">
+            <div className="shareRecipeDescription">
+              <strong className="title">Homemade Burger with American Cheese and Burrata</strong>
+              <div className="textbox">
+                <p>Credibly reinvent resource maximizing systems vis-a-vis value-added customer service. Authoritatively seize ...</p>
+              </div>
+            </div>
             <p className="label">
               Send a free text message with a link to this recipe.
             </p>
@@ -194,6 +201,12 @@ function SocialShareLinks({
         )}
         {page?.linkPage === "facebook" && (
           <div className="smsLink shareFormElements">
+            <div className="shareRecipeDescription">
+              <strong className="title">Homemade Burger with American Cheese and Burrata</strong>
+              <div className="textbox">
+                <p>Credibly reinvent resource maximizing systems vis-a-vis value-added customer service. Authoritatively seize ...</p>
+              </div>
+            </div>
             <p className="label">
               Send an email with a link to this recipe.
             </p>
@@ -231,6 +244,10 @@ export const ShareSocialLinks = styled(SocialShareLinks)`
     }
   }
 
+  .modal-content {
+    padding: 30px 40px;
+  }
+
   .shareRecipeBox {
     background: #fff;
     border: 1px solid #F2F3F5;
@@ -239,6 +256,14 @@ export const ShareSocialLinks = styled(SocialShareLinks)`
     padding: 12px;
     margin: 0 0 12px;
     display: none;
+
+    .title {
+      display: block;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #1E1E2D;
+      margin: 0 0 15px;
+    }
 
     .image-holder {
       overflow: hidden;
@@ -267,6 +292,29 @@ export const ShareSocialLinks = styled(SocialShareLinks)`
   .shareModal {
     .shareRecipeBox {
       display: block;
+    }
+  }
+
+  .shareRecipeDescription {
+    overflow: hidden;
+    margin: 0 0 25px;
+    
+    .title {
+      display: block;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #1E1E2D;
+      margin: 0 0 10px;
+    }
+
+    .textbox {
+      font-size: 12px;
+      line-height: 20px;
+      color: #1E1E2D;
+
+      p {
+        margin: 0;
+      }
     }
   }
   

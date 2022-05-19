@@ -53,8 +53,8 @@ const ModalforTiktok = ({
                 </div>
               </div>
               <div className="subscribeButton">
-                <a href="#" className="btnSubscribe">
-                  Follow
+                <a href="#" className="btnViewRecipe">
+                  View Recipe <AngleRight /> 
                 </a>
               </div>
             </div>
@@ -253,6 +253,7 @@ export default styled(ModalforTiktok)`
   .userHolder {
     display: flex;
     align-items: center;
+    padding-bottom: 4px;
   }
 
   .userInfo {
@@ -306,7 +307,6 @@ export default styled(ModalforTiktok)`
         display: inline-block;
         position: relative;
         transition: all 0.25s ease-in-out;
-        padding-right: 18px;
 
         svg {
           fill: #e0464d;
@@ -314,7 +314,7 @@ export default styled(ModalforTiktok)`
           visibility: hidden;
           transition: all 0.25s ease-in-out;
           position: absolute;
-          right: 10px;
+          right: -5px;
           top: 52%;
           transform: translateY(-49%);
           margin: 0;
@@ -329,7 +329,11 @@ export default styled(ModalforTiktok)`
           svg {
             opacity: 1;
             visibility: visible;
-            right: 0;
+            right: -15px;
+
+            @media (max-width: 767px) {
+              right: -11px;
+            }
           }
         }
       }
@@ -347,24 +351,37 @@ export default styled(ModalforTiktok)`
     }
   }
 
-  .btnSubscribe {
+  .btnViewRecipe {
     height: 30px;
-    background: #000;
+    min-width: 106px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
     border-radius: 5px;
-    color: #fff;
+    color: #7B7B82;
     font-size: 11px;
     line-height: 20px;
-    padding: 5px 30px;
+    padding: 5px 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.13);
     transition: all 0.4s ease-in-out;
 
     @media (max-width: 767px) {
       font-size: 11px;
+      min-width: 94px;
       height: 26px;
       padding: 5px 10px;
     }
 
+    svg {
+      width: 11px;
+      height: 11px;
+      margin: 0 -5px 0 5px;
+    }
+
     &:hover {
-      background: #e02e36;
+      color: #fff;
+      background: #000;
     }
   }
 `

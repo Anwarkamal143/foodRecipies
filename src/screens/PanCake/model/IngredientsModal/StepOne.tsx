@@ -53,9 +53,9 @@ const StepOne = (Props: Props) => {
           Chicken-Parmesan Bundles
         </span>
         <span className="inputNumbers">
-          <Minus onClick={() => setServing?.((val: number) => val - 1)} />{" "}
+          <Minus className="buttonMinus" onClick={() => setServing?.((val: number) => val - 1)} />{" "}
           <span className="numText">{serving} Servings</span>{" "}
-          <PlusBtn onClick={() => setServing?.((val: number) => val + 1)} />
+          <PlusBtn className="buttonPlus" onClick={() => setServing?.((val: number) => val + 1)} />
         </span>
       </div>
       <div className="ingredientsItems">

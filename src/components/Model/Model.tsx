@@ -1,4 +1,5 @@
 // import 'cropperjs/dist/cropper.css';
+import { CrossIcon } from "@icons"
 import classNames from "classnames"
 import React, { CSSProperties } from "react"
 import Modal from "react-modal"
@@ -87,7 +88,7 @@ const Model = ({
               aria-label="Close"
               onClick={onCloseHanlder}
             >
-              <span aria-hidden="true">&times;</span>
+              <CrossIcon/>
             </button>
           </div>
         )}
@@ -180,13 +181,14 @@ export default styled(Model)`
   .modal-header {
     margin: 0 0 10px;
 
-    .close {
+    .close,
+    .modalCloseButton {
       font-size: 25px;
-      // transition: all 0.24s ease-in-out;
+      transition: all 0.24s ease-in-out;
 
-      // &:hover {
-      //   transform: rotate(360deg);
-      // }
+      &:hover {
+        transform: rotate(360deg);
+      }
     }
   }
 
