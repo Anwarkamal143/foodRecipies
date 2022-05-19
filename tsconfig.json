@@ -29,6 +29,7 @@
       "@screens": ["src/screens"],
       "@animations": ["src/animations"],
       "@icons": ["src/assets/icons"],
+      "@lottie-animation/*": ["src/assets/lottieAnimation/*"],
       "@assets/*": ["src/assets/*"],
       "@pages/*": ["pages/*"],
       "@styled": ["src/styled"],
