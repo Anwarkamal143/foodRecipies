@@ -542,7 +542,7 @@ export default styled(PanCake)`
       }
 
       label {
-        pointer-events: none;
+        cursor: pointer;
       }
 
       svg {

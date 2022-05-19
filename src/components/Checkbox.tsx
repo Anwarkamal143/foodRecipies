@@ -84,12 +84,12 @@ const CheckBoxStyle = styled.div<{ h: number; w: number }>`
     &.bounce {
       --stroke: var(--tick);
       input {
-        &:checked {
-          --s: 11px;
-          & + svg {
-            animation: bounce 0.4s linear forwards 0.2s;
-          }
+        /* &:checked { */
+        --s: 11px;
+        & + svg {
+          animation: bounce 0.4s linear forwards 0.2s;
         }
+        /* } */
       }
       svg {
         --scale: 0;

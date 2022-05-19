@@ -1,10 +1,12 @@
 import {
+  CrossIcon,
   DairyFree,
   GlutenFree,
   NutFree,
   RightAngle,
+  TickIcon,
   Vegan,
-  Vegetarian
+  Vegetarian,
 } from "@icons"
 import React from "react"
 import ItemCards from "src/components/CooksCard"
@@ -21,7 +23,9 @@ const RightSide = (props: Props) => {
   return (
     <div className="detailsRightColumns">
       <div className="detailsAsideWidget">
-        <strong className="title">Diet At a Glance <RightAngle /></strong>
+        <strong className="title">
+          Diet At a Glance <RightAngle />
+        </strong>
         <div className="dietPlansList">
           {items.map(item => {
             return (
@@ -30,14 +34,22 @@ const RightSide = (props: Props) => {
                   {item.icon}
                   {item.name}
                 </div>
-                <span className="iconsStatus">{item.isTrue ? "Y" : "X"}</span>
+                <span className="iconsStatus">
+                  {item.isTrue ? (
+                    <TickIcon />
+                  ) : (
+                    <CrossIcon fill="#f00" width={6} />
+                  )}
+                </span>
               </div>
             )
           })}
         </div>
       </div>
       <div className="detailsAsideWidget">
-        <strong className="title">Cook Collections <RightAngle /></strong>
+        <strong className="title">
+          Cook Collections <RightAngle />
+        </strong>
         <div className="collectionsList">
           <ItemCards
             icon={<RightAngle />}
@@ -62,8 +74,8 @@ const RightSide = (props: Props) => {
       <div className="detailsAsideWidget textWidget">
         <strong className="title">Save This Recipe</strong>
         <p className="pText">
-          Save this recipe to make it later, share it with friends, or thank
-          the cook!
+          Save this recipe to make it later, share it with friends, or thank the
+          cook!
         </p>
         <span className="buttonSave">
           <svg

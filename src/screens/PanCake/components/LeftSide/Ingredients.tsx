@@ -37,7 +37,6 @@ const Ingredients = (props: Props) => {
             width={16}
             height={16}
             label={`${getUnitVal(item?.unit)} ${item?.unit} ${item?.label}`}
-            checked
             icon={<img src="images/chicken.svg" alt="" />}
           />
         ) : (
@@ -58,17 +57,29 @@ const Ingredients = (props: Props) => {
       <div className="ingredientsBlockHead">
         <h2>Ingredients</h2>
         <span className="inputNumbers">
-          <Minus className="buttonMinus" onClick={() => setServing((val: number) => val - 1)} />{" "}
+          <Minus
+            className="buttonMinus"
+            onClick={() => setServing((val: number) => val - 1)}
+          />{" "}
           <span className="numText">{serving} Servings</span>{" "}
-          <PlusBtn className="buttonPlus" onClick={() => setServing((val: number) => val + 1)} />
+          <PlusBtn
+            className="buttonPlus"
+            onClick={() => setServing((val: number) => val + 1)}
+          />
         </span>
         <div className="convertUnitsDropdownBox">
           <Button onClick={onDropDownOpen}>Convert Units</Button>
           {isDropDownOpen && (
             <span className="convertUnitsDropdown">
-              <span className="item active">Original <span className="icon"></span></span>
-              <span className="item">Metric <span className="icon"></span></span>
-              <span className="item">Imperial <span className="icon"></span></span>
+              <span className="item active">
+                Original <span className="icon"></span>
+              </span>
+              <span className="item">
+                Metric <span className="icon"></span>
+              </span>
+              <span className="item">
+                Imperial <span className="icon"></span>
+              </span>
             </span>
           )}
         </div>

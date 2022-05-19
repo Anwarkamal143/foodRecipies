@@ -1,6 +1,15 @@
 import { Modal, ProgressBar } from "@components"
 import { useOpenClose } from "@hooks"
-import { DairyFree, GlutenFree, InfoIcon, NutFree, Vegan, Vegetarian } from "@icons"
+import {
+  CrossIcon,
+  DairyFree,
+  GlutenFree,
+  InfoIcon,
+  NutFree,
+  TickIcon,
+  Vegan,
+  Vegetarian,
+} from "@icons"
 import classNames from "classnames"
 import React, { useEffect } from "react"
 import styled from "styled-components"
@@ -61,14 +70,20 @@ const SmartNutritionModal = ({
     <Modal
       className={classNames("smartNutritionModal")}
       isOpen={isOpenModel}
-      title={<span className="title-holder">Online Cook Smart Nutrition Calculator</span>}
+      title={
+        <span className="title-holder">
+          Online Cook Smart Nutrition Calculator
+        </span>
+      }
       showFooter={false}
       showHeader={true}
       onClose={handleClose}
     >
       <div className="smartNutritionContent">
         <div className="smartNutritionRow">
-          <strong className="title">Macronutrients <InfoIcon/></strong>
+          <strong className="title">
+            Macronutrients <InfoIcon />
+          </strong>
           <div className="progressStatus">
             <div className="column firstItem">
               {data.map((item, idx) => (
@@ -100,7 +115,13 @@ const SmartNutritionModal = ({
                       {item.icon}
                       {item.name}
                     </div>
-                    <span className="iconsStatus">{item.isTrue ? "Y" : "X"}</span>
+                    <span className="iconsStatus">
+                      {item.isTrue ? (
+                        <TickIcon />
+                      ) : (
+                        <CrossIcon fill="#f00" width={6} />
+                      )}
+                    </span>
                   </div>
                 )
               })}
@@ -108,7 +129,9 @@ const SmartNutritionModal = ({
           </div>
         </div>
         <div className="smartNutritionRow">
-          <strong className="title">Macronutrients <InfoIcon/></strong>
+          <strong className="title">
+            Macronutrients <InfoIcon />
+          </strong>
           <div className="progressStatus">
             <div className="column">
               {datatwo.map((item, idx) => (
