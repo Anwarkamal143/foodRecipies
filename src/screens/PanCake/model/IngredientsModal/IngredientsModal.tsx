@@ -63,7 +63,6 @@ const IngredientsModal = ({
     setCurrentStep(1)
     onSave?.(e)
   }
-  console.log("Item: ", Item)
 
   const Components = useMemo(() => {
     switch (currentStep) {
