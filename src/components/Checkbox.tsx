@@ -51,7 +51,7 @@ const CheckBoxStyle = styled.div<{ h: number; w: number }>`
       }
     }
     svg {
-      pointer-events: none;
+      /* pointer-events: none; */
       fill: none;
       stroke-width: 2px;
       stroke-linecap: round;
@@ -207,10 +207,14 @@ const checkbox = ({
   width = 21,
   height = 21,
   icon,
+  onClick,
   ...rest
 }: Props) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     onChange && onChange(e)
+  }
+  const handleClick = (e: any) => {
+    onClick && onClick(e)
   }
   const handleBlur = (e: any) => {
     onBlur && onBlur(e)
@@ -235,7 +239,7 @@ const checkbox = ({
         <input
           type="checkbox"
           name={name}
-          //   style={{ display: "none" }}
+          onClick={handleClick}
           onChange={handleChange}
           onBlur={handleBlur}
           defaultChecked={defaultChecked}

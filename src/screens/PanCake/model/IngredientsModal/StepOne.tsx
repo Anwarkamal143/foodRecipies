@@ -1,15 +1,14 @@
 import { Button, Checkbox } from "@components"
 import { Minus, PlusBtn } from "@icons"
-import { useCallback } from "react"
+import { useCallback, useState } from "react"
 
 type Props = {
   Item?: any[]
-  serving?: number
-  setServing?: (...args: any) => void
+  setSelectedItem?: (...args: any) => void
 }
-
 const StepOne = (Props: Props) => {
-  const { Item, serving, setServing } = Props
+  const [serving, setServing] = useState<number>(3)
+  const { Item, setSelectedItem } = Props
   const getUnitVal = useCallback(
     (unit: "Cup" | "tablespoon") => {
       switch (unit) {
@@ -23,28 +22,45 @@ const StepOne = (Props: Props) => {
     },
     [serving]
   )
+  const onAddOrRemoveItem = (item: any) => {
+    const itemIndex = Item?.findIndex(i => i.id === item?.id)
+    if (itemIndex !== -1) {
+      setSelectedItem?.((val: any) =>
+        val?.filter((v: any) => v.id !== item?.id)
+      )
+    } else {
+      setSelectedItem?.((val: any) => {
+        return [item, ...val]
+      })
+    }
+  }
   const getIngredients = useCallback(
-    (item: any) => {
-      return item?.unit === "Cup" ? (
-        <Checkbox
-          width={16}
-          height={16}
-          label={`${getUnitVal(item?.unit)} ${item?.unit} ${item?.name}`}
-          checked
-          icon={<img src="images/chicken.svg" alt="" />}
-        />
-      ) : (
-        <Checkbox
-          width={16}
-          height={16}
-          label={`${getUnitVal(item?.unit)} ${item?.unit} ${item?.name}`}
-          checked
-          icon={<img src="images/egg.svg" alt="" />}
-        />
+    (items: any) => {
+      return items?.map((item: any) =>
+        item?.unit === "Cup" ? (
+          <Checkbox
+            onClick={() => onAddOrRemoveItem(item)}
+            width={16}
+            height={16}
+            label={`${getUnitVal(item?.unit)} ${item?.unit} ${item?.label}`}
+            checked={Item?.some((selected: any) => selected?.id === item?.id)}
+            icon={<img src="images/chicken.svg" alt="" />}
+          />
+        ) : (
+          <Checkbox
+            onClick={() => onAddOrRemoveItem(item)}
+            width={16}
+            height={16}
+            label={`${getUnitVal(item?.unit)} ${item?.unit} ${item?.label}`}
+            checked={Item?.some((selected: any) => selected?.id === item?.id)}
+            icon={<img src="images/egg.svg" alt="" />}
+          />
+        )
       )
     },
     [Item]
   )
+  console.log("Item: ", Item)
   return (
     <div className="ingredientsModalContent">
       <div className="ingredientsModalHeader">
@@ -69,43 +85,9 @@ const StepOne = (Props: Props) => {
           <span className="ingredientsItemsTitle">Item to add</span>
           <span className="ingredientsItemsOption">Deselect all</span>
         </div>
-        <Checkbox
-          width={16}
-          height={16}
-          label="1 tablespoon honey"
-          checked
-          icon={<img src="images/egg.svg" width={16} alt="" />}
-        />
-        <Checkbox
-          width={16}
-          height={16}
-          label="02 (1.5 lb) boneless skinless chicken breasts"
-          checked
-          icon={<img src="images/imgFood.png" width={16} alt="" />}
-        />
-        <Checkbox
-          width={16}
-          height={16}
-          label="1 teaspoon cornstarch"
-          checked
-          icon={<img src="images/imgFood2.png" width={14} alt="" />}
-        />
-        <Checkbox
-          width={16}
-          height={16}
-          label="2 tablespoons avocado oil"
-          checked
-          icon={<img src="images/imgFood.png" width={14} alt="" />}
-        />
-        <Checkbox
-          width={16}
-          height={16}
-          label="1lb lean ground beef"
-          checked
-          icon={<img src="images/imgFood.png" width={14} alt="" />}
-        />
+        {getIngredients(Item)}
       </div>
-      <Button className="buttonGreen">Add 8 items</Button>
+      <Button className="buttonGreen">Add {Item?.length} items</Button>
     </div>
   )
 }

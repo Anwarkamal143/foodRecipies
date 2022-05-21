@@ -1,7 +1,8 @@
 import { Button, Checkbox } from "@components"
-import { useOpenClose } from "@hooks"
+import { useOnClickOutside, useOpenClose } from "@hooks"
 import { Minus, PencilIcon, PlusBtn } from "@icons"
-import { useCallback, useState } from "react"
+import classNames from "classnames"
+import { useCallback, useRef, useState } from "react"
 import IngredientsModal from "../../model/IngredientsModal/IngredientsModal"
 
 type Props = {}
@@ -12,9 +13,12 @@ const Item = [
   { id: "4", unit: "tablespoon", label: "honey" },
 ]
 const Ingredients = (props: Props) => {
-  const [isOpenModel, onOpenModel, onCloseModel] = useOpenClose()
-  const [isDropDownOpen, onDropDownOpen] = useOpenClose()
+  const ref = useRef(null)
+  const [selectedItem, setSelectedItem] = useState<any>([])
 
+  const [isOpenModel, onOpenModel, onCloseModel] = useOpenClose()
+  const [isDropDownOpen, onDropDownOpen, onDropDownClose] = useOpenClose()
+  const [selectedUnit, setSelectedUnit] = useState<number>(1)
   const [serving, setServing] = useState<number>(3)
   const getUnitVal = useCallback(
     (unit: "Cup" | "tablespoon") => {
@@ -29,55 +33,79 @@ const Ingredients = (props: Props) => {
     },
     [serving]
   )
+  const onAddOrRemoveItem = (item: any) => {
+    const itemIndex = selectedItem?.findIndex(i => i.id === item?.id)
+    if (itemIndex !== -1) {
+      setSelectedItem((val: any) => val?.filter((v: any) => v.id !== item?.id))
+    } else {
+      setSelectedItem((val: any) => {
+        return [item, ...val]
+      })
+    }
+  }
   const getIngredients = useCallback(
     (items: any) => {
       return items?.map((item: any) =>
         item?.unit === "Cup" ? (
           <Checkbox
+            onClick={() => onAddOrRemoveItem(item)}
             width={16}
             height={16}
             label={`${getUnitVal(item?.unit)} ${item?.unit} ${item?.label}`}
+            checked={selectedItem?.some(
+              (selected: any) => selected?.id === item?.id
+            )}
             icon={<img src="images/chicken.svg" alt="" />}
           />
         ) : (
           <Checkbox
+            onClick={() => onAddOrRemoveItem(item)}
             width={16}
             height={16}
             label={`${getUnitVal(item?.unit)} ${item?.unit} ${item?.label}`}
-            checked
+            checked={selectedItem?.some(
+              (selected: any) => selected?.id === item?.id
+            )}
             icon={<img src="images/egg.svg" alt="" />}
           />
         )
       )
     },
-    [Item, serving]
+    [Item, serving, selectedItem, onAddOrRemoveItem]
   )
+  useOnClickOutside(ref, () => {
+    onDropDownClose()
+  })
+  console.log("selectedItem: ", selectedItem)
   return (
     <div className="ingredientsBlock">
       <div className="ingredientsBlockHead">
         <h2>Ingredients</h2>
         <span className="inputNumbers">
-          <Minus
-            className="buttonMinus"
-            onClick={() => setServing((val: number) => val - 1)}
-          />{" "}
+          <Minus onClick={() => setServing((val: number) => val - 1)} />{" "}
           <span className="numText">{serving} Servings</span>{" "}
-          <PlusBtn
-            className="buttonPlus"
-            onClick={() => setServing((val: number) => val + 1)}
-          />
+          <PlusBtn onClick={() => setServing((val: number) => val + 1)} />
         </span>
         <div className="convertUnitsDropdownBox">
           <Button onClick={onDropDownOpen}>Convert Units</Button>
           {isDropDownOpen && (
-            <span className="convertUnitsDropdown">
-              <span className="item active">
+            <span ref={ref} className="convertUnitsDropdown">
+              <span
+                onClick={() => setSelectedUnit(1)}
+                className={classNames("item", { active: selectedUnit === 1 })}
+              >
                 Original <span className="icon"></span>
               </span>
-              <span className="item">
+              <span
+                onClick={() => setSelectedUnit(2)}
+                className={classNames("item", { active: selectedUnit === 2 })}
+              >
                 Metric <span className="icon"></span>
               </span>
-              <span className="item">
+              <span
+                onClick={() => setSelectedUnit(3)}
+                className={classNames("item", { active: selectedUnit === 3 })}
+              >
                 Imperial <span className="icon"></span>
               </span>
             </span>
@@ -105,9 +133,8 @@ const Ingredients = (props: Props) => {
         </div>
       </div>
       <IngredientsModal
-        Item={Item}
-        serving={serving}
-        setServing={setServing}
+        Item={selectedItem}
+        setSelected={setSelectedItem}
         isOpen={isOpenModel}
         onCancel={onCloseModel}
       />

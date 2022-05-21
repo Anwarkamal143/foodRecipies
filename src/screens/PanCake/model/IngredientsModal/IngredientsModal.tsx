@@ -11,10 +11,11 @@ import StepTwo from "./StepTwo"
 type Props = {
   isOpen?: boolean
   className?: string
-  serving?: number
+
   Item?: any
   onSave?: (...args: any) => void
-  setServing?: (...args: any) => void
+  setSelected?: (...args: any) => void
+
   onCancel?: (...args: any) => void
 }
 const itemsData = [
@@ -38,8 +39,7 @@ const IngredientsModal = ({
   onSave,
   onCancel,
   Item,
-  setServing,
-  serving,
+  setSelected,
 }: Props) => {
   const [isOpenModel, onOpenModel, onCloseModel] = useOpenClose()
   const [currentStep, setCurrentStep] = useState(1)
@@ -63,18 +63,21 @@ const IngredientsModal = ({
     setCurrentStep(1)
     onSave?.(e)
   }
+  console.log("Item: ", Item)
+
   const Components = useMemo(() => {
     switch (currentStep) {
       case 1:
         return {
           header: 1,
-          step: (
-            <StepOne Item={Item} setServing={setServing} serving={serving} />
-          ),
+          step: <StepOne Item={Item} setSelectedItem={setSelected} />,
           title: (
             <span className="ingredientsModalTitle">
               Add to{" "}
-              <span onClick={() => setCurrentStep(2)}><ListIcon className="listIcon"/> {selectedItem} <DownArrowIcon className="arrowIcon"/></span>
+              <span onClick={() => setCurrentStep(2)}>
+                <ListIcon className="listIcon" /> {selectedItem}{" "}
+                <DownArrowIcon className="arrowIcon" />
+              </span>
             </span>
           ),
         }
@@ -117,12 +120,10 @@ const IngredientsModal = ({
         }
       default:
         return {
-          step: (
-            <StepOne Item={Item} setServing={setServing} serving={serving} />
-          ),
+          step: <StepOne Item={Item} setSelectedItem={setSelected} />,
         }
     }
-  }, [currentStep as any])
+  }, [currentStep as any, Item])
   return (
     <Modal
       className={classNames("ingredientsModal")}

@@ -12,7 +12,6 @@ function ProfileDropDown() {
       <div
         className="flex"
         onClick={() => {
-          debugger
           dispatch(toggleSidebar({ isOpen: true, type: DRAWER.PROFILE }))
         }}
       >
