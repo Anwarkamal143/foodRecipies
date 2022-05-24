@@ -1,7 +1,7 @@
 import { Icon } from "@components"
 import classNames from "classnames"
 import React, { useMemo } from "react"
-import Flag from "react-flags"
+import { FlagIcon, FlagIconCode } from "react-flag-kit"
 import { BsArrowRight } from "react-icons/bs"
 import styled from "styled-components"
 import Button from "./../Button/Button"
@@ -12,7 +12,7 @@ interface Props {
   profileImage?: string
   title?: string
   subTitle?: string
-  countryFlag?: string
+  countryFlag?: FlagIconCode
   options?: {
     hasImage?: boolean
     hasFlag?: boolean
@@ -50,7 +50,7 @@ const Card = ({
       case "primary":
         return (
           <div className={classNames(className, "primary")}>
-            <img src={bgImage} alt="bgCardImage" />
+            <div className="red-color"></div>
             <div>
               <img src={profileImage} alt="profCardImage" />
             </div>
@@ -105,13 +105,7 @@ const Card = ({
             <img src={bgImage} alt="bgCardImage" />
             <div>
               {options?.hasFlag && (
-                <Flag
-                  name={countryFlag}
-                  format="png"
-                  pngSize={64}
-                  shiny={true}
-                  alt={`${countryFlag} Flag`}
-                />
+                <FlagIcon code={countryFlag as FlagIconCode} size={28} />
               )}
               {options?.hasImage && (
                 <img src={profileImage} alt="profCardImage" />
