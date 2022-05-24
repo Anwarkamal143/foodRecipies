@@ -80,29 +80,31 @@ const NewScreen1 = ({ className }: Props) => {
             />
           </span>
         </header>
-        <div className="five-columns">
-          {[10, 2].map((c, i) => (
-            <SocialCard
-              key={i}
-              type="secondary"
-              bgImage="/images/mock/post1.png"
-              date="05/28/22"
-              options={{ hasFlag: true }}
-              countryFlag={"IT"}
-              title="Pakistan"
-              subTitle="1.5k Recipes"
-            />
-          ))}
+        <div className="cards-frame">
+          <div className="five-columns">
+            {[10, 2].map((c, i) => (
+              <SocialCard
+                key={i}
+                type="secondary"
+                bgImage="/images/mock/post1.png"
+                date="05/28/22"
+                options={{ hasFlag: true }}
+                countryFlag={"IT"}
+                title="Pakistan"
+                subTitle="1.5k Recipes"
+              />
+            ))}
+          </div>
+          <Pagination
+            pageSize={countPerPage}
+            onChange={updatePage}
+            current={currentPage}
+            total={RecipesData.length}
+            showPrevNextJumpers={true}
+            nextIcon="Next"
+            prevIcon="Previous"
+          />
         </div>
-        <Pagination
-          pageSize={countPerPage}
-          onChange={updatePage}
-          current={currentPage}
-          total={RecipesData.length}
-          showPrevNextJumpers={true}
-          nextIcon="Next"
-          prevIcon="Previous"
-        />
       </div>
       <Footer />
     </div>
@@ -110,6 +112,10 @@ const NewScreen1 = ({ className }: Props) => {
 }
 
 export const MyNewScreen1 = styled(NewScreen1)`
+  .pb-80 {
+    padding-bottom: 80px;
+  }
+
   .sectionHeader {
     display: flex;
     align-items: center;
@@ -118,6 +124,16 @@ export const MyNewScreen1 = styled(NewScreen1)`
     border-bottom: 1px solid #e3e3e3;
     margin: -1px 2.5rem 40px;
     padding: 20px 0;
+
+    @media (max-width: 1279px) {
+      margin: -1px 0 40px;
+    }
+
+    @media (max-width: 767px) {
+      border: 0;
+      margin: 0;
+      padding: 0 0 22px;
+    }
   }
 
   .organizedByList {
@@ -130,10 +146,18 @@ export const MyNewScreen1 = styled(NewScreen1)`
       line-height: 1.5;
       color: #b1b1b1;
       text-transform: uppercase;
+
+      @media (max-width: 767px) {
+        font-size: 8px;
+      }
     }
 
     li {
       margin: 0 14px 0 0;
+
+      @media (max-width: 767px) {
+        margin: 0 8px 0 0;
+      }
 
       a {
         padding: 4px 15px;
@@ -146,6 +170,11 @@ export const MyNewScreen1 = styled(NewScreen1)`
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
         transition: all 0.25s ease-in-out;
 
+        @media (max-width: 767px) {
+          font-size: 7px;
+          padding: 2px 10px;
+        }
+
         &:hover {
           background: #ffb7be;
         }
@@ -157,17 +186,33 @@ export const MyNewScreen1 = styled(NewScreen1)`
     display: flex;
     align-items: center;
 
+    @media (max-width: 767px) {
+      width: auto;
+      display: flex !important;
+      margin: 0;
+    }
+
     .sortByFilterlbl {
       font-size: 10px;
       line-height: 1.5;
       color: #61616C;
       margin: 0 10px 0 0;
+
+      @media (max-width: 767px) {
+        font-size: 7px;
+      }
     }
 
     .button.button-sm.buttonFilter {
       font-size: 10px;
       line-height: 1.5;
       color: #61616C;
+
+      @media (max-width: 767px) {
+        font-size: 7px;
+        min-width: 85px;
+        padding: 3px 6px;
+      }
     }
 
     .sortByFilterDrop {
@@ -183,6 +228,12 @@ export const MyNewScreen1 = styled(NewScreen1)`
 
       @media (max-width: 1023px) {
         width: 100%;
+      }
+
+      @media (max-width: 767px) {
+        padding: 5px;
+        border-radius: 7px;
+        min-width: 110px;
       }
 
       .item {
@@ -231,8 +282,49 @@ export const MyNewScreen1 = styled(NewScreen1)`
     }
   }
 
+  .cards-frame {
+    padding: 0 4.5rem;
+
+    @media (max-width: 1279px) {
+      padding: 0 40px;
+    }
+
+    @media (max-width: 767px) {
+      padding: 0 10px;
+    }
+  }
+
   .five-columns {
     display: flex;
-    
+    flex-wrap: wrap;
+    margin: 0 -18px;
+
+    @media (max-width: 767px) {
+      margin: 0 -9px;
+    }
+
+    .card-secondary {
+      padding: 0 18px;
+      margin: 0 0 30px;
+      width: 20%;
+
+      @media (max-width: 1279px) {
+        width: 25%;
+      }
+
+      @media (max-width: 1023px) {
+        width: 33.333%;
+      }
+
+      @media (max-width: 767px) {
+        width: 50%;
+        margin: 0 0 20px;
+        padding: 0 9px;
+      }
+    }
+  }
+
+  .rc-pagination {
+    padding-top: 0;
   }
 `
