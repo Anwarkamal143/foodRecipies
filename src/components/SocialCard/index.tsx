@@ -50,6 +50,7 @@ const Card = ({
       case "primary":
         return (
           <div className={classNames(className, "primary")}>
+            <img src={bgImage} alt="bgCardImage" />
             <div className="red-color"></div>
             <div>
               <img src={profileImage} alt="profCardImage" />
@@ -102,7 +103,7 @@ const Card = ({
       case "secondary":
         return (
           <div className={classNames(className, "secondary")}>
-            <img src={bgImage} alt="bgCardImage" />
+            <div className="red-color"></div>
             <div>
               {options?.hasFlag && (
                 <FlagIcon code={countryFlag as FlagIconCode} size={28} />
