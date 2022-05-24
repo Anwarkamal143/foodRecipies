@@ -1,10 +1,8 @@
 import { Icon } from "@components"
 import classNames from "classnames"
 import React, { useMemo } from "react"
-import Flag from "react-flags"
-import { BsArrowRight } from "react-icons/bs"
+import { FlagIcon, FlagIconCode } from "react-flag-kit"
 import styled from "styled-components"
-import Button from "./../Button/Button"
 
 interface Props {
   className?: string
@@ -12,7 +10,7 @@ interface Props {
   profileImage?: string
   title?: string
   subTitle?: string
-  countryFlag?: string
+  countryFlag?: FlagIconCode
   options?: {
     hasImage?: boolean
     hasFlag?: boolean
@@ -51,15 +49,15 @@ const Card = ({
         return (
           <div className={classNames(className, "card-primary")}>
             <div className="card-primary-wrap">
-              <div className="image-holder">
-                <img src={bgImage} alt="bgCardImage" />
-              </div>
-              <div className="cook-profile-image">
+              <div className="red-color"></div>
+              <div>
                 <img src={profileImage} alt="profCardImage" />
               </div>
-              <div className="cook-details">
-                <strong className="cook-name">{title}</strong>
-                <span className="date">Member Since: {date}</span>
+              <span>
+                <strong>{title}</strong>
+              </span>
+              <span>Member Since: {date}</span>
+              <div>
                 <ul className="socialIcons">
                   <li>
                     <Icon className="socialIconsItem facebook">
@@ -83,53 +81,35 @@ const Card = ({
                   </li>
                 </ul>
               </div>
-              <div className="cook-history">
-                <div className="col-holder">
-                  <strong className="col-heading">Views</strong>
-                  <strong className="value">{footerValue?.views}</strong>
-                </div>
-                <div className="col-holder">
-                  <strong className="col-heading">Recipes</strong>
-                  <strong className="value">{footerValue?.recipies}</strong>
-                </div>
-                <div className="col-holder">
-                  <strong className="col-heading">Saves</strong>
-                  <strong className="value">{footerValue?.saves}</strong>
-                </div>
+              <div>
+                <span>
+                  <strong>Views</strong>
+                  {footerValue?.views}
+                </span>
+                <span>
+                  <strong>Recipes</strong>
+                  {footerValue?.recipies}
+                </span>
+
+                <span>
+                  <strong>Saves</strong>
+                  {footerValue?.saves}
+                </span>
               </div>
             </div>
           </div>
         )
       case "secondary":
         return (
-          <div className={classNames(className, "card-secondary")}>
-            <div className="card-secondary-wrap">
-              <img src={bgImage} alt="bgCardImage" />
-              <div>
-                {options?.hasFlag && (
-                  <Flag
-                    name={countryFlag}
-                    format="png"
-                    pngSize={64}
-                    shiny={true}
-                    alt={`${countryFlag} Flag`}
-                  />
-                )}
-                {options?.hasImage && (
-                  <img src={profileImage} alt="profCardImage" />
-                )}
-              </div>
-              <span>
-                <strong>{title}</strong>
-              </span>
-              <span>{subTitle}</span>
-              <Button
-                shape="circle"
-                size="small"
-                iconRight={<BsArrowRight className="arrow" />}
-              >
-                View All Recipes
-              </Button>
+          <div className={classNames(className, "secondary")}>
+            <img src={bgImage} alt="bgCardImage" />
+            <div>
+              {options?.hasFlag && (
+                <FlagIcon code={countryFlag as FlagIconCode} size={28} />
+              )}
+              {options?.hasImage && (
+                <img src={profileImage} alt="profCardImage" />
+              )}
             </div>
           </div>
         )
