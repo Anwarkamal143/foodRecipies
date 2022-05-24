@@ -23,7 +23,7 @@ PanCake.layout = {
 }
 export default styled(PanCake)`
   padding: 10px 0 0;
-  
+
   .followersContainer {
     max-width: 1200px;
     margin: 0 auto 100px;
@@ -62,11 +62,11 @@ export default styled(PanCake)`
   .organizedByList {
     list-style: none;
     padding: 0;
-    margin: 0 -7px 5px;
+    margin: 0 -4px 5px;
     display: flex;
     align-items: center;
     flex-flow: row wrap;
-    font-size: 12px;
+    font-size: 9px;
     line-height: 1.5;
 
     @media (max-width: 767px) {
@@ -75,7 +75,7 @@ export default styled(PanCake)`
     }
 
     li {
-      margin: 0 7px 15px;
+      margin: 0 4px 15px;
 
       @media (max-width: 767px) {
         margin: 0 4px 8px;
@@ -100,15 +100,12 @@ export default styled(PanCake)`
       a {
         display: block;
         background: #ffdedf;
-        color: #1E1E2D;
-        font-size: 11px;
+        color: #1e1e2d;
+        font-size: 9px;
         padding: 5px 10px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         transition: all 0.25s ease;
-
-        @media (max-width: 767px) {
-          font-size: 9px;
-        }
+        border-radius: 4px;
 
         &:hover {
           background: #ffa3a7;
@@ -132,7 +129,7 @@ export default styled(PanCake)`
       width: 100%;
     }
   }
-  
+
   .detailsRightColumns {
     width: 240px;
     min-width: 240px;
@@ -153,7 +150,7 @@ export default styled(PanCake)`
 
     .buttonGreen {
       color: #fff;
-      background: #11C278;
+      background: #11c278;
       border-radius: 60px;
       font-size: 13px;
       line-height: 18px;
@@ -189,12 +186,12 @@ export default styled(PanCake)`
 
     .buttonWhite {
       background: #fff;
-      border: 1px solid #EFEFEF;
+      border: 1px solid #efefef;
       box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05);
       border-radius: 27.5px;
       font-size: 12px;
       line-height: 1.5;
-      color: #7B7B82;
+      color: #7b7b82;
       min-width: 272px;
       padding: 7px 25px 9px;
       display: flex;
@@ -216,7 +213,7 @@ export default styled(PanCake)`
       svg {
         width: 12px;
         height: 12px;
-        color: #7B7B82;
+        color: #7b7b82;
         margin: 0 0 0 10px;
       }
 
@@ -234,7 +231,7 @@ export default styled(PanCake)`
       svg {
         width: 10px;
         height: 10px;
-        color: #7B7B82;
+        color: #7b7b82;
       }
     }
 
@@ -259,7 +256,7 @@ export default styled(PanCake)`
     h2 {
       font-size: 25px;
       line-height: 1.2;
-      color: #1E1E2D;
+      color: #1e1e2d;
       margin: 0 28px 0 0;
 
       @media (max-width: 1023px) {
@@ -280,7 +277,7 @@ export default styled(PanCake)`
       justify-content: space-between;
       font-size: 12px;
       line-height: 1.5;
-      color: #1E1E2D;
+      color: #1e1e2d;
 
       @media (max-width: 1023px) {
         margin: 0 20px 0 0;
@@ -297,7 +294,7 @@ export default styled(PanCake)`
         @media (max-width: 767px) {
           margin: 0;
           width: 18px;
-          heightL 18px;
+          height: 18px;
         }
 
         path {
@@ -314,13 +311,13 @@ export default styled(PanCake)`
 
         &.buttonMinus {
           &:hover {
-            background: #FE585F;
+            background: #fe585f;
           }
         }
 
         &.buttonPlus {
           &:hover {
-            background: #11C278;
+            background: #11c278;
           }
         }
       }
@@ -346,21 +343,21 @@ export default styled(PanCake)`
         box-shadow: 0 4px 28px -10px rgba(0, 0, 0, 0.2);
         border-radius: 10px;
         padding: 15px 20px;
-        border: 1px solid #EFEFEF;
+        border: 1px solid #efefef;
 
         .item {
           display: block;
           position: relative;
           font-size: 14px;
           line-height: 20px;
-          color: #4F4F4F;
+          color: #4f4f4f;
           padding: 8px 0;
           cursor: pointer;
 
           .icon {
             width: 14px;
             height: 14px;
-            border: 2px solid #E0E0E0;
+            border: 2px solid #e0e0e0;
             border-radius: 100%;
             display: block;
             position: absolute;
@@ -371,7 +368,7 @@ export default styled(PanCake)`
             &:after {
               width: 6px;
               height: 6px;
-              content: '';
+              content: "";
               position: absolute;
               left: 50%;
               top: 50%;
@@ -384,10 +381,10 @@ export default styled(PanCake)`
           &:hover,
           &.active {
             .icon {
-              border-color: #6FCF97;
+              border-color: #6fcf97;
 
               &:after {
-                background: #6FCF97;
+                background: #6fcf97;
               }
             }
           }
@@ -397,12 +394,12 @@ export default styled(PanCake)`
 
     .button.button-default {
       background: #fff;
-      border: 1px solid #EFEFEF;
+      border: 1px solid #efefef;
       box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05);
       border-radius: 27.5px;
       font-size: 12px;
       line-height: 1.5;
-      color: #7B7B82;
+      color: #7b7b82;
       min-width: 105px;
       padding: 5px 25px;
 
@@ -411,7 +408,7 @@ export default styled(PanCake)`
       }
 
       svg {
-        color: #B6B6B6;
+        color: #b6b6b6;
       }
 
       &:hover {
@@ -444,7 +441,7 @@ export default styled(PanCake)`
       line-height: 20px;
       font-wight: 400;
       color: rgba(1, 1, 1, 0.6);
-      border-bottom: 1px solid #E6E6E6;
+      border-bottom: 1px solid #e6e6e6;
       margin: 0 0 20px;
       padding: 0 0 10px;
     }
@@ -455,10 +452,10 @@ export default styled(PanCake)`
     padding: 0 0 10px;
 
     ol {
-	    counter-reset: item;
+      counter-reset: item;
       font-size: 12px;
       line-height: 28px;
-      color: #7B7B82;
+      color: #7b7b82;
       margin: 0 0 35px;
 
       @media (max-width: 767px) {
@@ -471,7 +468,7 @@ export default styled(PanCake)`
         padding: 15px 15px 15px 0;
         border-radius: 5px;
         margin: 0 0 5px;
-        
+
         &:before {
           font-size: 18px;
           line-height: 1.2;
@@ -480,7 +477,7 @@ export default styled(PanCake)`
           width: 40px;
           min-width: 40px;
           margin: 0 27px 0 0;
-          color: #1E1E2D;
+          color: #1e1e2d;
           background: #fff;
           content: counters(item, ".") " ";
           counter-increment: item;
@@ -490,7 +487,7 @@ export default styled(PanCake)`
           display: flex;
           align-items: center;
           justify-content: center;
-          border-right: 2px solid #11C278;
+          border-right: 2px solid #11c278;
 
           @media (max-width: 767px) {
             font-size: 12px;
@@ -502,10 +499,10 @@ export default styled(PanCake)`
         }
 
         &:hover {
-          background: #F9F9F9;
+          background: #f9f9f9;
 
           &:before {
-            background: #F9F9F9;
+            background: #f9f9f9;
           }
         }
       }
@@ -580,7 +577,7 @@ export default styled(PanCake)`
       .label-text {
         font-size: 12px;
         line-height: 1.5;
-        color: #1E1E2D;
+        color: #1e1e2d;
 
         @media (max-width: 767px) {
           font-size: 10px;
@@ -590,8 +587,8 @@ export default styled(PanCake)`
   }
 
   .detailsAsideWidget {
-    background: #FFFFFF;
-    border: 1px solid #E5E8EF;
+    background: #ffffff;
+    border: 1px solid #e5e8ef;
     border-radius: 10px;
     padding: 15px;
     margin: 0 0 20px;
@@ -637,7 +634,7 @@ export default styled(PanCake)`
       font-weight: 500;
       font-size: 10px;
       line-height: 15px;
-      color: #AAAAAA;
+      color: #aaaaaa;
       margin: 0 0 18px;
     }
 
@@ -653,26 +650,27 @@ export default styled(PanCake)`
       }
 
       .buttonSave {
-        cursor: pointer;background: #fff;
-        border: 1px solid #EFEFEF;
+        cursor: pointer;
+        background: #fff;
+        border: 1px solid #efefef;
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05);
         border-radius: 27.5px;
         font-size: 11px;
         line-height: 1.5;
-        color: #7B7B82;
+        color: #7b7b82;
         min-width: 110px;
         padding: 5px 20px;
         display: inline-flex;
         align-items: center;
 
         svg {
-          color: #B6B6B6;
+          color: #b6b6b6;
           width: 13px;
           height: 13px;
           margin: 0 10px 0 0;
 
           path {
-            fill: #D4D4D4;
+            fill: #d4d4d4;
           }
         }
 
@@ -713,19 +711,18 @@ export default styled(PanCake)`
         height: 28px;
         margin: 0 16px 0 0;
 
-        path {
-          fill: #CDCDCD;
+        path:not(.no-change) {
+          fill: #cdcdcd;
         }
 
         circle,
         line {
-          stroke: #CDCDCD;
+          stroke: #cdcdcd;
         }
       }
     }
 
     .iconsStatus {
-      
     }
   }
 
@@ -753,16 +750,16 @@ export default styled(PanCake)`
         padding: 0 25px 0 10px;
 
         .recipeTitle {
-          font-size: 9px;
-          line-height: 12px;
+          font-size: 11px;
+          line-height: 15px;
           margin: 0 0 3px;
         }
 
         .subTitle {
           font-size: 8px;
           line-height: 12px;
-          color: #A2A2A2;
-          display: block;
+          color: #a2a2a2;
+          display: none;
         }
 
         .icon {
@@ -784,23 +781,31 @@ export default styled(PanCake)`
       width: 40px;
       min-width: 40px;
       height: 40px;
+      overflow: visible;
+
+      &:hover {
+        .userProfileImage {
+          transform: scale(1.2);
+        }
+      }
 
       .userProfileImage {
         border-radius: 100%;
+        transition: all 0.4s ease;
       }
     }
 
     .userProfileDetails {
-      padding: 0 25px 0 10px
+      padding: 0 25px 0 10px;
     }
 
     .socialIcons {
       .socialIconsItem {
-        border-color: #E5E8EF;
+        border-color: #e5e8ef;
 
         svg {
           path {
-            fill: #BEBEBE;
+            fill: #bebebe;
           }
         }
 
@@ -830,7 +835,7 @@ export default styled(PanCake)`
 
       .userProfileName {
         font-size: 13px;
-        color: #1E1E2D;
+        color: #1e1e2d;
         position: relative;
         cursor: pointer;
         transition: all 0.25s ease;
@@ -842,7 +847,7 @@ export default styled(PanCake)`
           width: 10px;
           height: 10px;
           font-weight: 400;
-          content: '';
+          content: "";
           opacity: 0;
           transition: all 0.25s ease-in-out;
           background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 5 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.03333 0.911331L4.62244 2.50045L3.02958 4.09331' stroke='%23e0464d' stroke-width='0.75' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3Cpath d='M4.62156 2.49956H0.378924' stroke='%23e0464d' stroke-width='0.75' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3C/svg%3E");
@@ -861,9 +866,9 @@ export default styled(PanCake)`
 
       .userProfileTime {
         font-size: 10px;
-        color: #A2A2A2;
+        color: #a2a2a2;
       }
-      
+
       .ingredientsCookHeaderLeft {
         .ingredientsCookHeaderButtons {
           display: none;
@@ -884,7 +889,7 @@ export default styled(PanCake)`
     @media (max-width: 767px) {
       padding: 0;
     }
-    
+
     .ingredientsBlockHead {
       h2 {
         font-size: 36px;
@@ -919,7 +924,7 @@ export default styled(PanCake)`
       &.Carbs {
         .CircularProgressbar {
           .CircularProgressbar-text {
-            fill: #11C278;
+            fill: #11c278;
           }
         }
       }
@@ -927,7 +932,7 @@ export default styled(PanCake)`
       &.Fat {
         .CircularProgressbar {
           .CircularProgressbar-text {
-            fill: #FE585F;
+            fill: #fe585f;
           }
         }
       }
@@ -935,7 +940,7 @@ export default styled(PanCake)`
       &.Protein {
         .CircularProgressbar {
           .CircularProgressbar-text {
-            fill: #FEC745;
+            fill: #fec745;
           }
         }
       }
@@ -943,7 +948,7 @@ export default styled(PanCake)`
       &.Calories {
         .CircularProgressbar {
           .CircularProgressbar-text {
-            fill: #11C278;
+            fill: #11c278;
             display: none;
           }
         }
@@ -957,7 +962,7 @@ export default styled(PanCake)`
       line-height: 1.3;
       color: #030303;
       margin: 0 0 15px;
-      
+
       @media (max-width: 767px) {
         font-size: 10px;
         color: #979797;
@@ -969,7 +974,7 @@ export default styled(PanCake)`
       display: block;
       font-size: 13px;
       line-height: 20px;
-      color: #6F7774;
+      color: #6f7774;
       text-align: center;
       padding: 15px 0 0;
 
@@ -1019,9 +1024,9 @@ export default styled(PanCake)`
 
       a {
         display: block;
-        border: 1px solid #11C278;
+        border: 1px solid #11c278;
         border-radius: 20px;
-        color: #11C278;
+        color: #11c278;
         font-size: 13px;
         line-height: 20px;
         padding: 5px 15px;
@@ -1036,7 +1041,7 @@ export default styled(PanCake)`
 
         &:hover {
           color: #fff;
-          background: #11C278;
+          background: #11c278;
         }
       }
     }
@@ -1045,7 +1050,7 @@ export default styled(PanCake)`
   .makeRecipeBlock {
     padding: 30px;
     background: #fff;
-    border: 1px solid #E5E8EF;
+    border: 1px solid #e5e8ef;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     border-radius: 15px;
     display: flex;
@@ -1147,12 +1152,12 @@ export default styled(PanCake)`
 
       .button.button-default {
         background: #fff;
-        border: 1px solid #EFEFEF;
+        border: 1px solid #efefef;
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05);
         border-radius: 27.5px;
         font-size: 12px;
         line-height: 1.5;
-        color: #7B7B82;
+        color: #7b7b82;
         min-width: 105px;
         padding: 5px 15px 5px 20px;
         margin-left: auto;
@@ -1169,7 +1174,7 @@ export default styled(PanCake)`
         }
 
         svg {
-          color: #B6B6B6;
+          color: #b6b6b6;
           margin: 0 0 0 10px;
           min-width: auto;
           position: relative;
@@ -1182,7 +1187,7 @@ export default styled(PanCake)`
 
         &.buttonGreen {
           color: #fff;
-          background: #11C278;
+          background: #11c278;
           border-radius: 60px;
           font-size: 13px;
           line-height: 18px;
@@ -1190,7 +1195,7 @@ export default styled(PanCake)`
           min-width: 272px;
           display: none;
           align-items: center;
-          border-color: #11C278;
+          border-color: #11c278;
           justify-content: center;
           box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
 
@@ -1231,7 +1236,7 @@ export default styled(PanCake)`
         width: 34px;
         height: 34px;
         border-radius: 100%;
-        background: #7474A9;
+        background: #7474a9;
         color: #fff;
         display: flex;
         align-items: center;
@@ -1248,7 +1253,7 @@ export default styled(PanCake)`
         @media (max-width: 767px) {
           width: 28px;
           height: 28px;
-          background: #C4C4C4;
+          background: #c4c4c4;
         }
       }
 
@@ -1262,17 +1267,17 @@ export default styled(PanCake)`
         @media (max-width: 1023px) {
           margin: 0 20px 0 0;
         }
-        
+
         label {
           display: none;
         }
-        
+
         .form-control {
           width: 288px;
           font-size: 14px;
           line-height: 20px;
           padding: 8px 17px;
-          border-color: #E3E3E3;
+          border-color: #e3e3e3;
           border-radius: 20px;
           color: rgba(142, 142, 150, 0.6);
 
@@ -1301,7 +1306,7 @@ export default styled(PanCake)`
 
   .reviewPostItem {
     margin: 0 0 50px;
-    
+
     .profile {
       display: flex;
       align-items: center;
@@ -1311,7 +1316,7 @@ export default styled(PanCake)`
         border: 0;
         min-width: 50px;
         border: 0;
-        box-shadow: none; 
+        box-shadow: none;
       }
 
       .sortByFilterDrop {
@@ -1324,7 +1329,7 @@ export default styled(PanCake)`
         .item {
           font-size: 12px;
           line-height: 1.5;
-          color: #424E66;
+          color: #424e66;
           padding: 5px 10px;
           border-radius: 5px;
           cursor: pointer;
@@ -1346,7 +1351,7 @@ export default styled(PanCake)`
         display: block;
         font-size: 13px;
         line-height: 1.5;
-        color: #1E1E2D;
+        color: #1e1e2d;
       }
     }
 
@@ -1382,7 +1387,7 @@ export default styled(PanCake)`
         position: absolute;
         right: -5px;
         bottom: -5px;
-        background: #11C278;
+        background: #11c278;
         color: #fff;
         display: flex;
         align-items: center;
@@ -1423,12 +1428,16 @@ export default styled(PanCake)`
         align-items: center;
         font-size: 13px;
         line-height: 20px;
-        color: #1E1E2D;
+        color: #1e1e2d;
         cursor: pointer;
 
         @media (max-width: 767px) {
           font-size: 11px;
           line-height: 1.5;
+        }
+
+        &.comments {
+          display: none;
         }
 
         svg {
@@ -1443,7 +1452,7 @@ export default styled(PanCake)`
           }
 
           path {
-            stroke: #1E1E2D;
+            stroke: #1e1e2d;
             transition: all 0.25s ease-in-out;
           }
 
@@ -1478,7 +1487,7 @@ export default styled(PanCake)`
       font-size: 33px;
       line-height: 1.2;
       margin: 0 0 30px;
-      color: #1E1E2D;
+      color: #1e1e2d;
 
       @media (max-width: 1023px) {
         font-size: 28px;
@@ -1496,7 +1505,7 @@ export default styled(PanCake)`
 
   .sectionDetailsHeader {
     h1 {
-      color: #1E1E2D;
+      color: #1e1e2d;
       font-size: 36px;
       line-height: 1.3;
       margin: 0 0 20px;
@@ -1540,11 +1549,11 @@ export default styled(PanCake)`
               margin: 0 25px 0 0;
             }
           }
-          
+
           .userProfileImageWrap {
             transition: all 0.25s ease;
             cursor: pointer;
-            
+
             @media (max-width: 767px) {
               width: 22px;
               height: 22px;
@@ -1574,7 +1583,7 @@ export default styled(PanCake)`
               width: 10px;
               height: 10px;
               font-weight: 400;
-              content: '';
+              content: "";
               opacity: 0;
               transition: all 0.25s ease-in-out;
               background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 5 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.03333 0.911331L4.62244 2.50045L3.02958 4.09331' stroke='%23e0464d' stroke-width='0.75' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3Cpath d='M4.62156 2.49956H0.378924' stroke='%23e0464d' stroke-width='0.75' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3C/svg%3E");
@@ -1717,7 +1726,7 @@ export default styled(PanCake)`
           align-items: center;
           font-size: 15px;
           line-height: 1.4;
-          color: #7B7B82;
+          color: #7b7b82;
 
           @media (max-width: 1023px) {
             font-size: 12px;
@@ -1748,7 +1757,7 @@ export default styled(PanCake)`
           display: block;
           font-size: 16px;
           line-height: 1.4;
-          color: #1E1E2D;
+          color: #1e1e2d;
           position: relative;
           cursor: pointer;
           transition: all 0.25s ease-in-out;
@@ -1764,7 +1773,7 @@ export default styled(PanCake)`
             width: 10px;
             height: 10px;
             font-weight: 400;
-            content: '';
+            content: "";
             opacity: 0;
             transition: all 0.25s ease-in-out;
             background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 5 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.03333 0.911331L4.62244 2.50045L3.02958 4.09331' stroke='%23e0464d' stroke-width='0.75' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3Cpath d='M4.62156 2.49956H0.378924' stroke='%23e0464d' stroke-width='0.75' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3C/svg%3E");
@@ -1798,13 +1807,13 @@ export default styled(PanCake)`
     .card-Footer {
       font-size: 14px;
       line-height: 2;
-      color: #7B7B82;
+      color: #7b7b82;
 
       @media (max-width: 767px) {
         font-size: 10px;
         line-height: 18px;
       }
-      
+
       > div {
         padding: 30px 0 50px !important;
 

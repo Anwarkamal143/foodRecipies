@@ -17,7 +17,7 @@ const NotificationDrawer = (props: Props) => {
   const {
     className,
     filterOption = false,
-    title = "Smart Search",
+    title = "Notifications",
     onSearch,
     onClose,
     header = true,

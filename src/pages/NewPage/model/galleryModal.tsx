@@ -47,18 +47,22 @@ const MobileSwiperModal = ({
                   <img src={item?.profile} alt="video" />
                 </div>
                 <div className="textbox">
-                  <span className="uesername"><a href="#">{item?.userName} <AngleRight /></a></span>
+                  <span className="uesername">
+                    <a href="#">
+                      {item?.userName} <AngleRight />
+                    </a>
+                  </span>
                   <span className="postby">{item?.postby}</span>
                 </div>
                 <div className="subscribeButton">
                   <a href="#" className="btnSubscribe">
-                    Subscribe <PlayIcon/>
+                    Subscribe <PlayIcon />
                   </a>
                 </div>
               </div>
               <a href="#" className="btnViewRecipe">
-                  View <span>This</span> Recipe <AngleRight /> 
-                </a>
+                View<span>&nbsp;This</span>&nbsp;Recipe <AngleRight />
+              </a>
             </div>
           </div>
         </>
@@ -83,7 +87,9 @@ const MobileSwiperModal = ({
           )}
           {...rest}
         >
-          <span className="modalCloseButton" onClick={onClose}>X</span>
+          <span className="modalCloseButton" onClick={onClose}>
+            X
+          </span>
           <Slider draggable={true} ref={ref} {...settings}>
             {activeData()}
           </Slider>
@@ -131,7 +137,7 @@ export default styled(MobileSwiperModal)`
       left: 0;
       right: 0;
       bottom: 0;
-      content: '';
+      content: "";
     }
 
     &:hover {
@@ -371,7 +377,7 @@ export default styled(MobileSwiperModal)`
     line-height: 20px;
     padding: 4px 10px;
     transition: all 0.4s ease-in-out;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.33);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.33);
 
     @media (max-width: 767px) {
       font-size: 11px;
@@ -399,11 +405,11 @@ export default styled(MobileSwiperModal)`
     justify-content: center;
     background: #fff;
     border-radius: 5px;
-    color: #7B7B82;
+    color: #7b7b82;
     font-size: 12px;
     line-height: 20px;
     padding: 4px 15px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.13);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.13);
     transition: all 0.4s ease-in-out;
 
     @media (max-width: 767px) {
@@ -417,6 +423,7 @@ export default styled(MobileSwiperModal)`
       width: 11px;
       height: 11px;
       margin: 0 -5px 0 5px;
+      transition: all 0.4s ease-in-out;
     }
 
     span {
@@ -428,6 +435,10 @@ export default styled(MobileSwiperModal)`
     &:hover {
       color: #fff;
       background: #000;
+
+      svg {
+        margin: 0 -5px 0 10px;
+      }
     }
   }
 `

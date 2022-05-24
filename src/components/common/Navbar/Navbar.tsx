@@ -36,7 +36,7 @@ function NavBar() {
                     </Disclosure.Button>
                   </div>
                   <div className="flex-shrink-0 mx-auto lg:mx-0 siteLogo">
-                    <UnstyledLink href="/">
+                    <UnstyledLink href="/NewPage">
                       <img
                         className="mx-auto block h-10 w-auto md:h-[3.5rem]"
                         src="/images/cook-logo-white.png"
@@ -57,8 +57,18 @@ function NavBar() {
             <div className="recentBar">
               <div className="container">
                 <ul>
-                  <li>Sam The Cooking Guy just posted a new trending recipe! <a href="#" className="linkRecipe">View recipe now</a></li>
-                  <li>Browse personalized recipes via a custom feed  <a className="linkRecipe" href="#">Food Feed+</a></li>
+                  <li>
+                    Sam The Cooking Guy just posted a new trending recipe!{" "}
+                    <a href="/followers" className="linkRecipe">
+                      View recipe now
+                    </a>
+                  </li>
+                  <li>
+                    Browse personalized recipes via a custom feed{" "}
+                    <a className="linkRecipe" href="#">
+                      Food Feed+
+                    </a>
+                  </li>
                 </ul>
               </div>
             </div>

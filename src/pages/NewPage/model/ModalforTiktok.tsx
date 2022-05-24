@@ -48,13 +48,17 @@ const ModalforTiktok = ({
                   <img src={item?.profile} alt="video" />
                 </div>
                 <div className="textbox">
-                  <span className="uesername"><a href="#">{item?.userName} <AngleRight /></a></span>
+                  <span className="uesername">
+                    <a href="#">
+                      {item?.userName} <AngleRight />
+                    </a>
+                  </span>
                   <span className="postby">{item?.postby}</span>
                 </div>
               </div>
               <div className="subscribeButton">
                 <a href="#" className="btnViewRecipe">
-                  View Recipe <AngleRight /> 
+                  View Recipe <AngleRight />
                 </a>
               </div>
             </div>
@@ -127,7 +131,7 @@ export default styled(ModalforTiktok)`
       left: 0;
       right: 0;
       bottom: 0;
-      content: '';
+      content: "";
     }
 
     &:hover {
@@ -359,11 +363,11 @@ export default styled(ModalforTiktok)`
     justify-content: center;
     background: #fff;
     border-radius: 5px;
-    color: #7B7B82;
+    color: #7b7b82;
     font-size: 11px;
     line-height: 20px;
     padding: 5px 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.13);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.13);
     transition: all 0.4s ease-in-out;
 
     @media (max-width: 767px) {
@@ -377,11 +381,16 @@ export default styled(ModalforTiktok)`
       width: 11px;
       height: 11px;
       margin: 0 -5px 0 5px;
+      transition: all 0.4s ease-in-out;
     }
 
     &:hover {
       color: #fff;
       background: #000;
+
+      svg {
+        margin: 0 -5px 0 10px;
+      }
     }
   }
 `

@@ -117,9 +117,9 @@ const SmartNutritionModal = ({
                     </div>
                     <span className="iconsStatus">
                       {item.isTrue ? (
-                        <TickIcon />
+                        <TickIcon width={11} />
                       ) : (
-                        <CrossIcon fill="#f00" width={6} />
+                        <CrossIcon fill="#f00" width={9} />
                       )}
                     </span>
                   </div>

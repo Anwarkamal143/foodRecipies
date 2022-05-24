@@ -19,13 +19,17 @@ const StepThree = ({ handleSave, handleClose }: Props) => {
           inputClasses="spacer"
           name="email"
           value={email}
-          placeholder="(Insert Today’s Date) Shopping List"
+          placeholder="Shopping List Name"
           // materialDesign
         />
       </div>
       <div className="createListFormButtons">
-        <Button className="buttonOutlineGray" onClick={handleClose}>Cancel</Button>
-        <Button className="buttonGreen" onClick={() => handleSave?.(email)}>Create</Button>
+        <Button className="buttonOutlineGray" onClick={handleClose}>
+          Cancel
+        </Button>
+        <Button className="buttonGreen" onClick={() => handleSave?.(email)}>
+          Create
+        </Button>
       </div>
     </div>
   )

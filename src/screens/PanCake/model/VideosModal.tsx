@@ -80,8 +80,12 @@ const VideosModal = ({
           <div className="modal-header">
             <strong className="modal-title">Watch Video Tutorial</strong>
             <span className="modalCloseButton" onClick={onClose}>
-              <CrossIcon/>
+              <CrossIcon />
             </span>
+          </div>
+          <div className="profileInfo modal-profile">
+            <img src={"/images/ingredientsImage.png"} alt="video" />
+            The Million Dollar Challenge
           </div>
           <div className="tabs">
             <Button
@@ -104,10 +108,6 @@ const VideosModal = ({
             </Button>
           </div>
           {Components?.video}
-          <div className="profileInfo">
-            <img src={"/images/ingredientsImage.png"} alt="video" />
-            The Million Dollar Challenge
-          </div>
           <div className="userTextbox">
             <strong className="title">
               GoPro HERO 10 Black: The Million Dollar Challenge

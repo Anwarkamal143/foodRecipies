@@ -1343,6 +1343,10 @@ body {
 
     &:hover {
       box-shadow: 0 4px 4px rgba(255, 255, 255, 0.3);
+
+      .recipeTitle {
+        color: #ff6067;
+      }
     }
 
     .recipeItemImage {
@@ -1371,6 +1375,7 @@ body {
       line-height: 14px;
       margin: 0;
       color: #62626c;
+      transition: all 0.4s ease;
     }
 
     .rate-info {
@@ -2416,7 +2421,8 @@ body {
       height: 12px;
       margin: 0 0 0 5px;
       position: relative;
-      top: -2px;
+      top: -1px;
+      stroke-width: 3px;
     }
 
     &:hover {
@@ -2637,6 +2643,7 @@ body {
     display: flex;
     flex-flow: row wrap;
     margin: 0 -10px 25px;
+    justify-content: flex-start;
 
     @media (max-width: 767px) {
       display: none;
@@ -2660,7 +2667,7 @@ body {
           }
 
           path {
-            fill: #fff;
+            fill: #fff !important;
           }
         }
 
@@ -3767,6 +3774,10 @@ body {
     color: #000;
     font-weight: 700;
   }
+}
+
+.Toastify__toast-container--top-right {
+  top: 100px !important;
 }
 
 .breadcrumbs {
@@ -5579,7 +5590,7 @@ body {
     &:hover {
       .title,
       .itemNumbers {
-        color: #11c278;
+        color: #fe585f;
       }
     }
 
@@ -6101,6 +6112,10 @@ body {
       color: #565656;
       padding: 20px 0 0;
 
+      &.modal-profile {
+        padding: 0 0 20px;
+      }
+
       img {
         width: 20px;
         height: 20px;
@@ -6431,7 +6446,7 @@ body {
             height: 15px;
             margin: 0 10px 0 0;
 
-            path {
+            path:not(.no-change) {
               fill: #cdcdcd;
             }
 
