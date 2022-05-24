@@ -18,7 +18,9 @@ interface Props {
 const NewScreen4 = ({ className }: Props) => {
   const countPerPage = 10
   const [currentPage, setCurrentPage] = useState(1)
-  const [ingredientData, setIngredientData] = useState<any>(IngredientData)
+  const [ingredientData, setIngredientData] = useState<any>(
+    IngredientData?.[0]?.data
+  )
 
   const [collection, setCollection] = useState(
     cloneDeep(RecipesData.slice(0, countPerPage))

@@ -1,5 +1,5 @@
 import { LeftSliderArrow, RightSliderArrow } from "@icons"
-import React, { useRef } from "react"
+import { useRef } from "react"
 import Slider from "react-slick"
 import ItemCards from "src/components/CooksCard"
 import styled from "styled-components"
@@ -48,6 +48,7 @@ const settings = {
 }
 const SliderContent = ({ data, className, id, ...rest }: Props) => {
   const sliderRef = useRef(null)
+  console.log("data: ", data)
 
   const Content = () => {
     return data?.map((e: any) => {
