@@ -87,7 +87,7 @@ const NewScreen1 = ({ className }: Props) => {
             bgImage="/images/mock/post1.png"
             date="05/28/22"
             options={{ hasFlag: true }}
-            countryFlag={"PK"}
+            countryFlag={"IT"}
             title="Pakistan"
             subTitle="1.5k Recipes"
           />

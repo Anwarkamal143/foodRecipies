@@ -2,7 +2,9 @@ import { Icon } from "@components"
 import classNames from "classnames"
 import React, { useMemo } from "react"
 import { FlagIcon, FlagIconCode } from "react-flag-kit"
+import { BsArrowRight } from "react-icons/bs"
 import styled from "styled-components"
+import Button from "./../Button/Button"
 
 interface Props {
   className?: string
@@ -49,15 +51,15 @@ const Card = ({
         return (
           <div className={classNames(className, "card-primary")}>
             <div className="card-primary-wrap">
-              <div className="red-color"></div>
-              <div>
+              <div className="image-holder">
+                <img src={bgImage} alt="bgCardImage" />
+              </div>
+              <div className="cook-profile-image">
                 <img src={profileImage} alt="profCardImage" />
               </div>
-              <span>
-                <strong>{title}</strong>
-              </span>
-              <span>Member Since: {date}</span>
-              <div>
+              <div className="cook-details">
+                <strong className="cook-name">{title}</strong>
+                <span className="date">Member Since: {date}</span>
                 <ul className="socialIcons">
                   <li>
                     <Icon className="socialIconsItem facebook">
@@ -81,35 +83,49 @@ const Card = ({
                   </li>
                 </ul>
               </div>
-              <div>
-                <span>
-                  <strong>Views</strong>
-                  {footerValue?.views}
-                </span>
-                <span>
-                  <strong>Recipes</strong>
-                  {footerValue?.recipies}
-                </span>
-
-                <span>
-                  <strong>Saves</strong>
-                  {footerValue?.saves}
-                </span>
+              <div className="cook-history">
+                <div className="col-holder">
+                  <strong className="col-heading">Views</strong>
+                  <strong className="value">{footerValue?.views}</strong>
+                </div>
+                <div className="col-holder">
+                  <strong className="col-heading">Recipes</strong>
+                  <strong className="value">{footerValue?.recipies}</strong>
+                </div>
+                <div className="col-holder">
+                  <strong className="col-heading">Saves</strong>
+                  <strong className="value">{footerValue?.saves}</strong>
+                </div>
               </div>
             </div>
           </div>
         )
       case "secondary":
         return (
-          <div className={classNames(className, "secondary")}>
-            <img src={bgImage} alt="bgCardImage" />
-            <div>
-              {options?.hasFlag && (
-                <FlagIcon code={countryFlag as FlagIconCode} size={28} />
-              )}
-              {options?.hasImage && (
-                <img src={profileImage} alt="profCardImage" />
-              )}
+          <div className={classNames(className, "card-secondary")}>
+            <div className="card-secondary-wrap">
+              <div className="red-color"></div>
+              <div className="image-area">
+                {options?.hasFlag && (
+                  <div className="flag-holder">
+                    <FlagIcon code={countryFlag as FlagIconCode} />
+                  </div>
+                )}
+                {options?.hasImage && (
+                  <div className="recipie-image-holder">
+                    <img src={profileImage} alt="profCardImage" />
+                  </div>
+                )}
+              </div>
+              <strong className="name">{title}</strong>
+              <span className="sub-text">{subTitle}</span>
+              <Button
+                shape="circle"
+                size="small"
+                iconRight={<BsArrowRight className="arrow" />}
+              >
+                View All Recipes
+              </Button>
             </div>
           </div>
         )
