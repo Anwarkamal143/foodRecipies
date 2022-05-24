@@ -178,8 +178,8 @@ export const SocialCard = styled(Card)`
       padding: 6px 15px 14px;
       text-align: center;
 
-      @media (max-width: 767px) {
-        padding: 6px 15px 7px;
+      @media (max-width: 1279px) {
+        padding: 6px 10px 7px;
       }
     }
 
@@ -231,6 +231,10 @@ export const SocialCard = styled(Card)`
       border-top: 1px solid #f2f3f5;
       padding: 12px 15px;
 
+      @media (max-width: 1279px) {
+        padding: 12px 10px;
+      }
+
       .col-heading {
         display: block;
         font-size: 10px;
@@ -260,6 +264,104 @@ export const SocialCard = styled(Card)`
     .col-holder {
       padding: 0 6%;
       text-align: center;
+    }
+  }
+
+  .card-secondary-wrap {
+    background: #fff;
+    border: 1px solid #f9f9f9;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    position: relative;
+    padding: 30px 26px 26px;
+    text-align: center;
+
+    @media (max-width: 767px) {
+      padding: 23px 15px 20px;
+    }
+
+    .red-color {
+      background: #ff595f;
+      height: 7px;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      border-radius: 10px 10px 0 0;
+
+      @media (max-width: 767px) {
+        height: 5px;
+      }
+    }
+
+    .recipie-image-holder {
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      text-align: center;
+      margin: 0 auto 12px;
+
+      img {
+        display: inline-block;
+        max-height: 55px;
+      }
+    }
+
+    .name {
+      display: block;
+      font-size: 12px;
+      line-height: 1.5;
+      color: #3E3E3E;
+      margin: 0 0 1px;
+    }
+
+    .sub-text {
+      display: block;
+      font-size: 11px;
+      line-height: 1.5;
+      color: #999;
+      margin: 0 0 25px;
+
+      @media (max-width: 767px) {
+        margin-bottom: 17px;
+      }
+    }
+
+    .button.button-sm {
+      background: transparent;
+      border: 1px solid #E5E8EF;
+      font-weight: 400;
+      font-size: 9px;
+      line-height: 14px;
+      color: rgba(30, 30, 45, 0.7);
+
+      @media (max-width: 767px) {
+        min-width: 110px;
+        padding: 4px 10px;
+      }
+
+      .arrow {
+        font-size: 12px;
+        margin: 0 0 0 5px;
+        transition: all 0.4s ease-in-out;
+
+        @media (max-width: 767px) {
+          font-size: 10px;
+        }
+      }
+
+      &:hover {
+        color: #fff;
+        background: #ff6067;
+        border-color: #ff6067;
+
+        .arrow {
+          transform: translateX(4px);
+        }
+      }
     }
   }
 `

@@ -123,14 +123,18 @@ export const MyNewScreen = styled(NewScreen)`
     flex-wrap: wrap;
     margin: 0 -12px;
 
-    @media (max-width: 767px) {
-      margin: 0 -9px;
+    @media (max-width: 1279px) {
+      margin: 0 -8px;
     }
 
     .card-primary {
       padding: 0 12px;
       margin: 0 0 38px;
       width: 25%;
+
+      @media (max-width: 1279px) {
+        padding: 0 8px;
+      }
 
       @media (max-width: 1023px) {
         width: 33.333%;
@@ -139,7 +143,6 @@ export const MyNewScreen = styled(NewScreen)`
       @media (max-width: 767px) {
         width: 50%;
         margin: 0 0 25px;
-        padding: 0 9px;
       }
     }
   }
