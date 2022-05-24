@@ -1,5 +1,6 @@
+import { useOnClickOutside } from "@hooks"
 import { ArrowRight, CrossIcon, SearchIcon } from "@icons"
-import { useState } from "react"
+import { useRef, useState } from "react"
 import styled from "styled-components"
 import { Input } from "../Input"
 import { Select } from "../Select"
@@ -27,11 +28,15 @@ const Header = (props: Props) => {
     value,
     activeFocus,
   } = props
+  const ref = useRef(null)
   const [searchText, setSearchText] = useState("")
   const [filter, setFilter] = useState(false)
   const handleSearch = (searchTextt: string) => {
     onSearch?.(searchTextt)
   }
+  useOnClickOutside(ref, e => {
+    setFilter(false)
+  })
 
   return (
     <div className={className}>
@@ -82,7 +87,7 @@ const Header = (props: Props) => {
               <img src="/images/icon-filters.png" alt="Filters" />
             </Button>
             {filter && (
-              <div className="searchSiltersDropdown">
+              <div ref={ref} className="searchSiltersDropdown">
                 <div className="option-type">
                   <label>Recipe Type</label>
                   <Select
