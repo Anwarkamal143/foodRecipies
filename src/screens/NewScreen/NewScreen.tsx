@@ -9,6 +9,7 @@ import { useState } from "react"
 import Lottie from "react-lottie"
 import Footer from "src/pages/NewPage/footer/footer"
 import SearchBar from "src/pages/NewPage/SearchBar"
+import styled from "styled-components"
 
 interface Props {
   className?: string
@@ -40,17 +41,12 @@ const NewScreen = ({ className }: Props) => {
         title="All Online Cooks"
         subTitle="Explore recipes from across the world. Looking to make some homemade pasta? We have plenty of Italian recipes! Looking to challenge yourself and cook something new from another country? Check out a new cuisine below."
         lottieAnimation={
-          <Lottie
-            options={defaultOptions}
-            height={400}
-            width={400}
-            isClickToPauseDisabled={true}
-          />
+          <Lottie options={defaultOptions} isClickToPauseDisabled={true} />
         }
       />
       <SearchBar />
       <div>
-        {[1, 2].map((c, i) => (
+        {[10, 2].map((c, i) => (
           <SocialCard
             key={i}
             type="primary"
@@ -86,4 +82,4 @@ const NewScreen = ({ className }: Props) => {
   )
 }
 
-export const MyNewScreen = NewScreen
+export const MyNewScreen = styled(NewScreen)``
