@@ -144,7 +144,7 @@ export default styled(PostHeader)`
     }
 
     .button.button-default.viewWebsite {
-      background: #fff;
+      background: #f3f3f3;
       color: #1E1E2D;
       box-shadow: none;
 
@@ -192,7 +192,17 @@ export default styled(PostHeader)`
       color: #7B7B82;
       align-items: center;
       margin: 0 20px 0 0;
+      padding: 5px 15px 5px 5px;
+      border-radius: 20px;
       cursor: pointer;
+      transition: all 0.4s ease;
+
+      &:hover {
+        background: #f3f3f3;
+
+        .icon {
+        }
+      }
 
       .icon {
         width: 32px;
@@ -203,6 +213,7 @@ export default styled(PostHeader)`
         align-items: center;
         justify-content: center;
         border-radius: 100%;
+        transition: all 0.4s ease;
         margin: 0 10px 0 0;
       }
     }

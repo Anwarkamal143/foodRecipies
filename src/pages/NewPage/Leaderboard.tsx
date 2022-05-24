@@ -15,7 +15,9 @@ const Leaderboard = ({ data = [] }: Props) => {
         <header className="recipesSectionHeader">
           <div className="recipesSectionTitlebox">
             <strong className="recipesSectionTitle"> Recipe Leaderboard</strong>
-            <span className="recipesSectionText"><TimeIcon /> Ends in 10 Days 23 Hours 46 Minutes 26 Seconds</span>
+            <span className="recipesSectionText">
+              <TimeIcon /> Ends in 10 Days 23 Hours 46 Minutes 26 Seconds
+            </span>
           </div>
           <div className="leaderboardFilters">
             <DropDown
@@ -30,7 +32,12 @@ const Leaderboard = ({ data = [] }: Props) => {
                   {selected}
                 </Button>
               )}
-              items={[{ name: "Most Popular" }, { name: "Most Viewed" }, { name: "Most Liked" }, { name: "Most Trending" }]}
+              items={[
+                { name: "Most Popular" },
+                { name: "Most Viewed" },
+                { name: "Most Liked" },
+                { name: "Most Trending" },
+              ]}
               renderItem={({ item, isActive, onClick }) => {
                 return (
                   <div
@@ -54,7 +61,12 @@ const Leaderboard = ({ data = [] }: Props) => {
                   {selected}
                 </Button>
               )}
-              items={[{ name: "This Week" }, { name: "This Month" }, { name: "This Year" }, { name: "All Time" }]}
+              items={[
+                { name: "This Week" },
+                { name: "This Month" },
+                { name: "This Year" },
+                { name: "All Time" },
+              ]}
               renderItem={({ item, isActive, onClick }) => {
                 return (
                   <div

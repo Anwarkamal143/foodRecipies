@@ -1,5 +1,5 @@
 // import { Announcement } from 'assets/svgs';
-import { Button } from "@components"
+import { Button, Select } from "@components"
 import { PlusCircleIcon } from "@heroicons/react/outline"
 import { useOpenClose } from "@hooks"
 import {
@@ -9,7 +9,7 @@ import {
   MessageIcon,
   PhoneIcon,
   TelegramIcon,
-  TwitterIcon
+  TwitterIcon,
 } from "@icons"
 import { ReactElement, useEffect, useState } from "react"
 import styled from "styled-components"
@@ -100,15 +100,20 @@ function SocialShareLinks({
                 // materialDesign
               />
             )}
-            <div className="shareRecipeBox">
-              <strong className="title">Homemade Burger with American Cheese and Burrata</strong>
+            {/* <div className="shareRecipeBox">
+              <strong className="title">
+                Homemade Burger with American Cheese and Burrata
+              </strong>
               <div className="image-holder">
                 <img src="/images/share-image.png" alt="" />
               </div>
               <div className="textbox">
-                <p>Credibly reinvent resource maximizing systems vis-a-vis value-added customer service. Authoritatively seize ...</p>
+                <p>
+                  Credibly reinvent resource maximizing systems vis-a-vis
+                  value-added customer service. Authoritatively seize ...
+                </p>
               </div>
-            </div>
+            </div> */}
             <ul className="Social_icons">
               <li>
                 <Icon className="icon icon-link">
@@ -175,41 +180,55 @@ function SocialShareLinks({
         )}
         {page?.linkPage === "sms" && (
           <div className="smsLink shareFormElements">
-            <div className="shareRecipeDescription">
-              <strong className="title">Homemade Burger with American Cheese and Burrata</strong>
+            {/* <div className="shareRecipeDescription">
+              <strong className="title">
+                Homemade Burger with American Cheese and Burrata
+              </strong>
               <div className="textbox">
-                <p>Credibly reinvent resource maximizing systems vis-a-vis value-added customer service. Authoritatively seize ...</p>
+                <p>
+                  Credibly reinvent resource maximizing systems vis-a-vis
+                  value-added customer service. Authoritatively seize ...
+                </p>
               </div>
-            </div>
+            </div> */}
             <p className="label">
               Send a free text message with a link to this recipe.
             </p>
-            <Input
-              onChange={e => {
-                setEmail(e.target.value)
-              }}
-              error={error}
-              label="123-456-7890"
-              inputClasses="spacer"
-              type="tel"
-              value={email}
-              placeholder="123-456-7890"
-              // materialDesign
-            />
+            <div className="message-fields-wrap">
+              <Select
+                options={[{ value: "+1", label: "+1" }]}
+                placeholder={"+1"}
+              />
+              <Input
+                onChange={e => {
+                  setEmail(e.target.value)
+                }}
+                error={error}
+                label="123-456-7890"
+                inputClasses="spacer"
+                type="tel"
+                value={email}
+                placeholder="123-456-7890"
+                // materialDesign
+              />
+            </div>
             <Button className="buttonGreen">Send Recipe</Button>
           </div>
         )}
         {page?.linkPage === "facebook" && (
           <div className="smsLink shareFormElements">
-            <div className="shareRecipeDescription">
-              <strong className="title">Homemade Burger with American Cheese and Burrata</strong>
+            {/* <div className="shareRecipeDescription">
+              <strong className="title">
+                Homemade Burger with American Cheese and Burrata
+              </strong>
               <div className="textbox">
-                <p>Credibly reinvent resource maximizing systems vis-a-vis value-added customer service. Authoritatively seize ...</p>
+                <p>
+                  Credibly reinvent resource maximizing systems vis-a-vis
+                  value-added customer service. Authoritatively seize ...
+                </p>
               </div>
-            </div>
-            <p className="label">
-              Send an email with a link to this recipe.
-            </p>
+            </div> */}
+            <p className="label">Send an email with a link to this recipe.</p>
             <Input
               onChange={e => {
                 setEmail(e.target.value)
@@ -232,12 +251,12 @@ function SocialShareLinks({
 }
 export const ShareSocialLinks = styled(SocialShareLinks)`
   .modal-title {
-    color: #1E1E2D;
+    color: #1e1e2d;
   }
 
   .modal-header {
     margin: 0 0 15px;
-    
+
     .close {
       font-size: 30px;
       padding: 0.9rem 1rem;
@@ -250,7 +269,7 @@ export const ShareSocialLinks = styled(SocialShareLinks)`
 
   .shareRecipeBox {
     background: #fff;
-    border: 1px solid #F2F3F5;
+    border: 1px solid #f2f3f5;
     border-radius: 20px;
     overflow: hidden;
     padding: 12px;
@@ -261,7 +280,7 @@ export const ShareSocialLinks = styled(SocialShareLinks)`
       display: block;
       font-size: 14px;
       line-height: 1.5;
-      color: #1E1E2D;
+      color: #1e1e2d;
       margin: 0 0 15px;
     }
 
@@ -280,8 +299,9 @@ export const ShareSocialLinks = styled(SocialShareLinks)`
     .textbox {
       font-size: 12px;
       line-height: 20px;
-      color: #1E1E2D;
+      color: #888;
       padding: 10px 3px 5px;
+      font-size: 11px;
 
       p {
         margin: 0;
@@ -298,26 +318,26 @@ export const ShareSocialLinks = styled(SocialShareLinks)`
   .shareRecipeDescription {
     overflow: hidden;
     margin: 0 0 25px;
-    
+
     .title {
       display: block;
       font-size: 14px;
       line-height: 1.5;
-      color: #1E1E2D;
+      color: #1e1e2d;
       margin: 0 0 10px;
     }
 
     .textbox {
       font-size: 12px;
       line-height: 20px;
-      color: #1E1E2D;
+      color: #1e1e2d;
 
       p {
         margin: 0;
       }
     }
   }
-  
+
   .Social_icons {
     margin: 0 -9px;
 
@@ -328,6 +348,39 @@ export const ShareSocialLinks = styled(SocialShareLinks)`
     li {
       @media (max-width: 575px) {
         padding: 12px 14px;
+      }
+    }
+  }
+
+  .message-fields-wrap {
+    display: flex;
+
+    .default {
+      width: 63px;
+      margin-right: 10px;
+    }
+
+    .parent-input_wrapper {
+      flex-grow: 1;
+      flex-basis: 0;
+      min-width: 0;
+    }
+
+    .react-select__control {
+      min-height: 35px;
+
+      .react-select__indicators {
+        border: none;
+        width: 20px;
+        height: 33px;
+        padding: 0;
+      }
+
+      .react-select__indicator {
+        padding: 0;
+      }
+      .react-select__indicator-separator {
+        display: none;
       }
     }
   }
@@ -345,7 +398,7 @@ export const ShareSocialLinks = styled(SocialShareLinks)`
 
     .text-input {
       margin: 0 0 15px;
-      
+
       label {
         display: none;
       }
@@ -353,11 +406,11 @@ export const ShareSocialLinks = styled(SocialShareLinks)`
       .form-control {
         width: 100%;
         height: 36px;
-        border-color: #E5E8EF;
+        border-color: #e5e8ef;
         border-radius: 5px;
         font-size: 10px;
         line-height: 16px;
-        color: #929BAA;
+        color: #929baa;
         padding: 8px 15px;
       }
     }
@@ -365,7 +418,7 @@ export const ShareSocialLinks = styled(SocialShareLinks)`
     .buttonGreen {
       width: 100%;
       display: block;
-      background: #11C278;
+      background: #11c278;
       color: #fff;
       height: 32px;
       font-size: 10px;
