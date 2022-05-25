@@ -1,6 +1,5 @@
 import { DropDown, Input, PopOver } from "@components"
-import { FilterIcon } from "@heroicons/react/outline"
-import { DownArrowIcon, SearchIconAlt } from "@icons"
+import { DownArrowIcon, FilterIcon, SearchIconAlt } from "@icons"
 import classNames from "classnames"
 import { useRef, useState } from "react"
 import { useOnClickOutside } from "src/hooks/useClickOutside"
@@ -69,7 +68,7 @@ const SearchBar = (props: Props) => {
         )}
       </div>
       {options?.showSwitchBox && (
-        <span>
+        <span className="switcher-holder">
           Include Sub-Categories
           <SwitchBox />
         </span>
@@ -108,4 +107,63 @@ const SearchBar = (props: Props) => {
   )
 }
 
-export default styled(SearchBar)``
+export default styled(SearchBar)`
+  &.recipesFiltersForm {
+    padding: 0 !important;
+    width: 100%;
+  }
+
+  .switcher-holder {
+    font-size: 10px;
+    line-height: 12px;
+    color: #61616c;
+  }
+
+  .toggle-switch {
+    margin: 0 0 0 5px;
+
+    input[type="checkbox"] {
+      &:checked {
+        + .switcher {
+          background: #e0464d;
+
+          &:before {
+            left: 25px;
+          }
+        }
+      }
+    }
+
+    input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .switcher {
+      width: 40px;
+      height: 16px;
+      border-radius: 14px;
+      background: #d6d8e2;
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+
+      &:before {
+        width: 14px;
+        height: 14px;
+        background: #fff;
+        border-radius: 100%;
+        content: "";
+        position: absolute;
+        left: 1px;
+        top: 1px;
+        transition: all 0.4s ease;
+      }
+    }
+
+    .txt {
+      display: none;
+    }
+  }
+`
