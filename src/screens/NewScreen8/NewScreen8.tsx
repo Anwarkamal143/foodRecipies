@@ -82,9 +82,10 @@ const NewScreen8 = ({ className }: Props) => {
           </span>
         </header>
         <div className="cards-frame">
-          <div className="five-columns">
+          <div className="cards-row">
             {[10, 2].map((c, i) => (
               <Card
+                className="card-item"
                 key={i}
                 type="secondary"
                 cardImg="/images/cardImg.jpg"
@@ -110,4 +111,49 @@ const NewScreen8 = ({ className }: Props) => {
   )
 }
 
-export const MyNewScreen8 = styled(NewScreen8)``
+export const MyNewScreen8 = styled(NewScreen8)`
+  .pb-80 {
+    padding-bottom: 80px;
+  }
+
+  .cards-frame {
+    padding: 0 2rem;
+
+    @media (max-width: 1279px) {
+      padding: 0;
+    }
+  }
+
+  .cards-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -12px;
+
+    @media (max-width: 1279px) {
+      margin: 0 -8px;
+    }
+
+    .card-item {
+      padding: 0 12px;
+      margin: 0 0 38px;
+      width: 25%;
+
+      @media (max-width: 1279px) {
+        padding: 0 8px;
+      }
+
+      @media (max-width: 1023px) {
+        width: 33.333%;
+      }
+
+      @media (max-width: 767px) {
+        width: 50%;
+        margin: 0 0 25px;
+      }
+    }
+  }
+
+  .rc-pagination {
+    padding-top: 0;
+  }
+`
