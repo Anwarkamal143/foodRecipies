@@ -85,6 +85,7 @@ const NewScreen7 = ({ className }: Props) => {
             {[10, 2].map((c, i) => (
               <Card
                 key={i}
+                tag="Exclusive"
                 type="primary"
                 cardImg="/images/cardImg.jpg"
                 category="Global Goods Partners"
