@@ -95,19 +95,67 @@ const NewScreen5 = ({ className }: Props) => {
         <div className="more-categories">
           <div className="category-col">
             <h2>Other Breakfast Categories</h2>
-            <ul>
-              <li>Appetizers</li>
-              <li>Snacks</li>
-              <li>Salads</li>
-              <li>Soups, Stews, & Chili</li>
+            <ul className="categories-list">
+              <li>
+                <span>Appetizers</span>
+              </li>
+              <li>
+                <span>Snacks</span>
+              </li>
+              <li>
+                <span>Salads</span>
+              </li>
+              <li>
+                <span>Soups, Stews, & Chili</span>
+              </li>
+              <li>
+                <span>Sandwiches</span>
+              </li>
+              <li>
+                <span>Desserts</span>
+              </li>
+              <li>
+                <span>Baked Goods</span>
+              </li>
+              <li>
+                <span>Lunch</span>
+              </li>
+              <li>
+                <span>Barbecue</span>
+              </li>
             </ul>
           </div>
           <div className="category-col">
             <h2>More Recipes By Type</h2>
-            <li>Appetizers</li>
-            <li>Snacks</li>
-            <li>Salads</li>
-            <li>Soups, Stews, & Chili</li>
+            <ul className="categories-list category-type">
+              <li>
+                <span>Appetizers</span>
+              </li>
+              <li>
+                <span>Snacks</span>
+              </li>
+              <li>
+                <span>Salads</span>
+              </li>
+              <li>
+                <span>Soups, Stews, & Chili</span>
+              </li>
+              <li>
+                <span>Sandwiches</span>
+              </li>
+              <li>
+                <span>Desserts</span>
+              </li>
+              <li>
+                <span>Baked Goods</span>
+              </li>
+              <li>
+                <span>Lunch</span>
+              </li>
+              <li>
+                <span>Barbecue</span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -152,9 +200,87 @@ export const MyNewScreen5 = styled(NewScreen5)`
     flex-direction: row;
     flex-wrap: wrap;
     text-align: center;
+    justify-content: center;
+    padding: 30px 0 80px;
+
+    @media (max-width: 767px) {
+      padding: 20px 0 30px;
+    }
 
     .category-col {
       padding: 0 5%;
+      width: 50%;
+
+      @media (max-width: 1280px) {
+        padding: 0 3%;
+      }
+
+      @media (max-width: 1023px) {
+        padding: 0 5px;
+      }
+
+      @media (max-width: 767px) {
+        width: 100%;
+        padding: 0;
+        margin: 0 0 30px;
+      }
+    }
+
+    h2 {
+      font-size: 20px;
+      line-height: 26px;
+      margin: 0 0 15px;
+      font-weight: 500;
+    }
+  }
+
+  .categories-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &.category-type {
+      li {
+        span {
+          background: rgba(99, 146, 255, 0.18);
+
+          &:hover {
+            background: rgba(99, 146, 255, 1);
+          }
+        }
+      }
+    }
+
+    li {
+      margin: 0 7px 14px;
+
+      @media (max-width: 767px) {
+        margin: 0 4px 8px;
+      }
+
+      span {
+        padding: 4px 15px;
+        font-size: 10px;
+        line-height: 1.5;
+        color: #3e3e3e;
+        display: block;
+        border-radius: 4px;
+        background: #fde0e3;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+        transition: all 0.25s ease-in-out;
+        display: block;
+        cursor: pointer;
+
+        @media (max-width: 767px) {
+          font-size: 7px;
+          padding: 2px 10px;
+        }
+
+        &:hover {
+          background: #ffb7be;
+        }
+      }
     }
   }
 `
