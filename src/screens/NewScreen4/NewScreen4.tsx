@@ -83,18 +83,61 @@ const NewScreen4 = ({ className }: Props) => {
           />
         </span>
       </header>
-      <div>{Content(ingredientData)}</div>
-      <Pagination
-        pageSize={countPerPage}
-        onChange={updatePage}
-        current={currentPage}
-        total={RecipesData.length}
-        showPrevNextJumpers={true}
-        nextIcon="Next"
-        prevIcon="Previous"
-      />
+      <div className="cards-frame">
+        <div className="cards-row">{Content(ingredientData)}</div>
+        <Pagination
+          pageSize={countPerPage}
+          onChange={updatePage}
+          current={currentPage}
+          total={RecipesData.length}
+          showPrevNextJumpers={true}
+          nextIcon="Next"
+          prevIcon="Previous"
+        />
+      </div>
     </div>
   )
 }
 
-export const MyNewScreen4 = styled(NewScreen4)``
+export const MyNewScreen4 = styled(NewScreen4)`
+  .cards-frame {
+    padding: 0 4.5rem;
+
+    @media (max-width: 1279px) {
+      padding: 0 40px;
+    }
+
+    @media (max-width: 767px) {
+      padding: 0 10px 40px;
+    }
+
+    .cards-row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .recipesSectionCards {
+      width: 20%;
+      padding: 0 7px;
+      margin: 0 0 25px;
+
+      @media (max-width: 1439px) {
+        width: 25%;
+      }
+
+      @media (max-width: 1023px) {
+        width: 50%;
+      }
+    }
+
+    .recipeItem {
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  .rc-pagination {
+    padding: 0;
+  }
+`

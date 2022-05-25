@@ -38,8 +38,8 @@ const NewScreen6 = ({ className }: Props) => {
     <div className={classNames(className)}>
       <div className="container px-4 mx-auto sm:px-6 lg:px-8 pb-80">
         <Banner
-          title="Recipes By Ingredient"
-          subTitle="Explore recipes from across the world. Looking to make some homemade pasta? We have plenty of Italian recipes! Looking to challenge yourself and cook something new from another country? Check out a new cuisine below."
+          title="Recipes By Type"
+          subTitle="Browse recipes from your favorite cooks organized by type. Want to start your day off right? Check out popular breakfast recipes or end the night with some incredible dessert. Not sure what you want? Browse recipes via your Food Feed +"
           lottieAnimation={
             <Lottie options={defaultOptions} isClickToPauseDisabled={true} />
           }
