@@ -345,6 +345,62 @@ export const FavData = [
     high: 2,
   },
 ]
+export const FavData1 = [
+  {
+    id: "asdk",
+    image: "/images/veg.jpg",
+    title: "Organic Vegetable with Peas and  chicken Burrito",
+    fvrtBy: "By Emma Olivia",
+    time: "20 mins",
+    state: "Easy",
+    high: 2,
+  },
+  {
+    id: "assddddd",
+    image: "/images/veg.jpg",
+    title: "Organic Vegetable with Peas and  chicken Burrito",
+    fvrtBy: "By Emma Olivia",
+    time: "20 mins",
+    state: "Easy",
+    high: 2,
+  },
+  {
+    id: "asdk",
+    image: "/images/veg.jpg",
+    title: "Organic Vegetable with Peas and  chicken Burrito",
+    fvrtBy: "By Emma Olivia",
+    time: "20 mins",
+    state: "Easy",
+    high: 2,
+  },
+  {
+    id: "assddddd",
+    image: "/images/veg.jpg",
+    title: "Organic Vegetable with Peas and  chicken Burrito",
+    fvrtBy: "By Emma Olivia",
+    time: "20 mins",
+    state: "Easy",
+    high: 2,
+  },
+  {
+    id: "asdk",
+    image: "/images/veg.jpg",
+    title: "Organic Vegetable with Peas and  chicken Burrito",
+    fvrtBy: "By Emma Olivia",
+    time: "20 mins",
+    state: "Easy",
+    high: 2,
+  },
+  {
+    id: "assddddd",
+    image: "/images/veg.jpg",
+    title: "Organic Vegetable with Peas and  chicken Burrito",
+    fvrtBy: "By Emma Olivia",
+    time: "20 mins",
+    state: "Easy",
+    high: 2,
+  },
+]
 
 export const FavRecipeData = [
   {

@@ -1,22 +1,29 @@
 import { Button, DropDown } from "@components"
 import { Bell, Calander, TimeIcon } from "@icons"
 import { LeaderBoradCategoryData } from "data"
-import React from "react"
 import RecipesCard from "../../components/RecipiesCard"
 import LeaderBoradCategory from "./leaderBoradCategory"
 type Props = {
   data?: any
+  title?: string
+  description?: string
+  showCategory?: boolean
 }
 
-const Leaderboard = ({ data = [] }: Props) => {
+const Leaderboard = ({
+  data = [],
+  title = " Recipe Leaderboard",
+  description = " Ends in 10 Days 23 Hours 46 Minutes 26 Seconds",
+  showCategory = true,
+}: Props) => {
   return (
     <div className="leaderboardRecipesSection">
       <div className="recipesSection leaderboardRecipesBlock">
         <header className="recipesSectionHeader">
           <div className="recipesSectionTitlebox">
-            <strong className="recipesSectionTitle"> Recipe Leaderboard</strong>
+            <strong className="recipesSectionTitle"> {title}</strong>
             <span className="recipesSectionText">
-              <TimeIcon /> Ends in 10 Days 23 Hours 46 Minutes 26 Seconds
+              <TimeIcon /> {description}
             </span>
           </div>
           <div className="leaderboardFilters">
@@ -105,9 +112,11 @@ const Leaderboard = ({ data = [] }: Props) => {
           </div>
         </div>
       </div>
-      <div className="items">
-        <LeaderBoradCategory data={LeaderBoradCategoryData} />
-      </div>
+      {showCategory && (
+        <div className="items">
+          <LeaderBoradCategory data={LeaderBoradCategoryData} />
+        </div>
+      )}
     </div>
   )
 }
