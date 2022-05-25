@@ -7,8 +7,8 @@ import cloneDeep from "lodash/cloneDeep"
 import Pagination from "rc-pagination"
 import { useState } from "react"
 import Lottie from "react-lottie"
+import SearchBar from "src/components/SearchBar"
 import Footer from "src/pages/NewPage/footer/footer"
-import SearchBar from "src/pages/NewPage/SearchBar"
 import styled from "styled-components"
 
 interface Props {
@@ -45,7 +45,14 @@ const NewScreen = ({ className }: Props) => {
             <Lottie options={defaultOptions} isClickToPauseDisabled={true} />
           }
         />
-        <SearchBar />
+        <SearchBar
+          options={{
+            showSearchBar: true,
+            showSwitchBox: false,
+            showFilter: false,
+            showSortBy: true,
+          }}
+        />
         <div className="cards-frame">
           <div className="cards-row">
             {[10, 2].map((c, i) => (

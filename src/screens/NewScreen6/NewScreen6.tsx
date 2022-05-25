@@ -44,14 +44,27 @@ const NewScreen6 = ({ className }: Props) => {
             <Lottie options={defaultOptions} isClickToPauseDisabled={true} />
           }
         />
-        <SearchBar
-          options={{
-            showSearchBar: true,
-            showSwitchBox: true,
-            showFilter: true,
-            showSortBy: true,
-          }}
-        />
+        <div>
+          <header className="food-sectionHeader">
+            <ul className="organizedByList">
+              <li>
+                <strong className="title">Organized By:</strong>
+              </li>
+              <li>
+                <a href="#">Recipes By Cuisine</a>
+              </li>
+            </ul>
+          </header>
+          <SearchBar
+            options={{
+              showSearchBar: false,
+              showSwitchBox: true,
+              showFilter: false,
+              showSortBy: true,
+            }}
+          />
+        </div>
+
         <div className="cards-frame">
           <div className="five-columns">
             {[10, 2].map((c, i) => (

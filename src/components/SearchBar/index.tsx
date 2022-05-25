@@ -28,6 +28,7 @@ const SearchBar = (props: Props) => {
       showSortBy: true,
     },
   } = props
+  const [check, setCheck] = useState(false)
   const [searchText, setSearchText] = useState<any>("")
   const [isActiveFocus, setIsActiveFocus] = useState(false)
   const activeFocus = (e: any) => {
@@ -70,7 +71,13 @@ const SearchBar = (props: Props) => {
       {options?.showSwitchBox && (
         <span className="switcher-holder">
           Include Sub-Categories
-          <SwitchBox status={false} />
+          <SwitchBox
+            status={false}
+            value={check}
+            onChange={() => {
+              setCheck(!check)
+            }}
+          />
         </span>
       )}
 
