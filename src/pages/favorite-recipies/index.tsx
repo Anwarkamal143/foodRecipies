@@ -5,6 +5,7 @@ import { FavData } from "data"
 import cloneDeep from "lodash/cloneDeep"
 import Pagination from "rc-pagination"
 import React from "react"
+import SwitchBox from "src/components/SwitchBox"
 import styled from "styled-components"
 import RecipesCard from "../../components/RecipiesCard"
 import Button from "./../../components/Button/Button"
@@ -32,88 +33,91 @@ const Favorite = ({ className }: Props) => {
   return (
     <div className={`savedRecipesPage ${className}`}>
       {/* <PageLayoutWrapper className="savedRecipesWrapper" variant={"regular"}> */}
-        <div className="recipesContainer">
-          <ProfileSteps className="profile-header" />
-          <FilterSection className="recipesFiltersForm">
-            <div className="recipesFiltersbox">
-              <Input
-                type={"text"}
-                icon={<SearchIconAlt />}
-                placeholder="Search My Saved Recipes ..."
-              />
-              <PopOver
-                button={
-                  <Button
-                    shape="circle"
-                    iconLeft={<FilterIcon />}
-                    iconRight={<DownArrowIcon />}
-                    className="custom-button buttonFilter"
-                    size="small"
-                  >
-                    Filter
-                  </Button>
-                }
-              >
-                <FavoriteFilerForm />
-              </PopOver>
-            </div>
-            {/* <Filters></Filters> */}
-
-            <span className="sortBy sortByFilter">
-              <span className="sortByFilterlbl">Sort by</span>
-              <DropDown
-                button={selected => (
-                  <Button
-                    shape="circle"
-                    iconRight={<DownArrowIcon />}
-                    className="buttonFilter"
-                    size="small"
-                  >
-                    {selected}
-                  </Button>
-                )}
-                items={[{ name: "New" }, { name: "Most Popular" }]}
-                renderItem={({ item, isActive, onClick }) => {
-                  return (
-                    <div
-                      className={`${isActive} item`}
-                      onClick={() => onClick(item.name)}
-                    >
-                      {item.name}
-                    </div>
-                  )
-                }}
-              />
-            </span>
-          </FilterSection>
-          <div className="recipesSection">
-            <div className="recipesSectionHolder">
-              <RecipesCard data={collection} />
-            </div>
+      <div className="recipesContainer">
+        <ProfileSteps className="profile-header" />
+        <FilterSection className="recipesFiltersForm">
+          <div className="recipesFiltersbox">
+            <Input
+              type={"text"}
+              icon={<SearchIconAlt />}
+              placeholder="Search My Saved Recipes ..."
+            />
+            <PopOver
+              button={
+                <Button
+                  shape="circle"
+                  iconLeft={<FilterIcon />}
+                  iconRight={<DownArrowIcon />}
+                  className="custom-button buttonFilter"
+                  size="small"
+                >
+                  Filter
+                </Button>
+              }
+            >
+              <FavoriteFilerForm />
+            </PopOver>
           </div>
-          <Pagination
-            pageSize={countPerPage}
-            onChange={updatePage}
-            current={currentPage}
-            total={FavData.length}
-            showPrevNextJumpers={true}
-            nextIcon="Next"
-            prevIcon="Previous"
-          />
+          {/* <Filters></Filters> */}
+          <span>
+            Include Sub-Categories
+            <SwitchBox />
+          </span>
+          <span className="sortBy sortByFilter">
+            <span className="sortByFilterlbl">Sort by</span>
+            <DropDown
+              button={selected => (
+                <Button
+                  shape="circle"
+                  iconRight={<DownArrowIcon />}
+                  className="buttonFilter"
+                  size="small"
+                >
+                  {selected}
+                </Button>
+              )}
+              items={[{ name: "New" }, { name: "Most Popular" }]}
+              renderItem={({ item, isActive, onClick }) => {
+                return (
+                  <div
+                    className={`${isActive} item`}
+                    onClick={() => onClick(item.name)}
+                  >
+                    {item.name}
+                  </div>
+                )
+              }}
+            />
+          </span>
+        </FilterSection>
+        <div className="recipesSection">
+          <div className="recipesSectionHolder">
+            <RecipesCard data={collection} />
+          </div>
         </div>
+        <Pagination
+          pageSize={countPerPage}
+          onChange={updatePage}
+          current={currentPage}
+          total={FavData.length}
+          showPrevNextJumpers={true}
+          nextIcon="Next"
+          prevIcon="Previous"
+        />
+      </div>
       {/* </PageLayoutWrapper> */}
     </div>
   )
 }
 
-Favorite.layout  ={
+Favorite.layout = {
   layout: getPageLayout,
   props: {
-className:"savedRecipesWrapper", variant:"regular",
-sidebar:false
-  }
+    className: "savedRecipesWrapper",
+    variant: "regular",
+    sidebar: false,
+  },
 }
 export default styled(Favorite)`
   width: 100%;
 `
-

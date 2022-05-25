@@ -1,5 +1,4 @@
-import { Banner, Button, DropDown } from "@components"
-import { DownArrowIcon } from "@icons"
+import { Banner } from "@components"
 import CookAnimation from "@lottie-animation/cook.json"
 import { RecipesData } from "@redux/data"
 import classNames from "classnames"
@@ -7,6 +6,7 @@ import cloneDeep from "lodash/cloneDeep"
 import Pagination from "rc-pagination"
 import { useState } from "react"
 import Lottie from "react-lottie"
+import SearchBar from "src/components/SearchBar"
 import Footer from "src/pages/NewPage/footer/footer"
 import styled from "styled-components"
 import Card from "../NewScreen7/components/Card"
@@ -54,32 +54,14 @@ const NewScreen8 = ({ className }: Props) => {
               <a href="#">Recipes By Cuisine</a>
             </li>
           </ul>
-          <span className="sortBy sortByFilter">
-            <span className="sortByFilterlbl">Sort by</span>
-            <DropDown
-              button={selected => (
-                <Button
-                  shape="circle"
-                  iconRight={<DownArrowIcon />}
-                  className="buttonFilter"
-                  size="small"
-                >
-                  {selected}
-                </Button>
-              )}
-              items={[{ name: "Relevance" }, { name: "Relevance" }]}
-              renderItem={({ item, isActive, onClick }) => {
-                return (
-                  <div
-                    className={`${isActive} item`}
-                    onClick={() => onClick(item.name)}
-                  >
-                    {item.name}
-                  </div>
-                )
-              }}
-            />
-          </span>
+          <SearchBar
+            options={{
+              showSearchBar: true,
+              showSwitchBox: false,
+              showFilter: true,
+              showSortBy: true,
+            }}
+          />
         </header>
         <div className="cards-frame">
           <div className="cards-row">

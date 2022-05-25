@@ -1680,6 +1680,42 @@ export const LeftSliderArrow = (props: IconType) => {
     </svg>
   )
 }
+export const SearchIconNew = () => {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M9.33325 3.33333H13.3333"
+        stroke="#1E1E2D"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M9.33325 5.33333H11.3333"
+        stroke="#1E1E2D"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M13.9999 7.66667C13.9999 11.1667 11.1666 14 7.66659 14C4.16659 14 1.33325 11.1667 1.33325 7.66667C1.33325 4.16667 4.16659 1.33333 7.66659 1.33333"
+        stroke="#1E1E2D"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M14.6666 14.6667L13.3333 13.3333"
+        stroke="#1E1E2D"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
 export const RightSliderArrow = (props: IconType) => {
   return (
     <svg
