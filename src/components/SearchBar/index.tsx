@@ -71,7 +71,7 @@ const SearchBar = (props: Props) => {
       {options?.showSwitchBox && (
         <span>
           Include Sub-Categories
-          <SwitchBox />
+          <SwitchBox status={false} />
         </span>
       )}
 
