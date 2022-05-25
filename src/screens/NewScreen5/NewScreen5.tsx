@@ -151,5 +151,10 @@ export const MyNewScreen5 = styled(NewScreen5)`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    text-align: center;
+
+    .category-col {
+      padding: 0 5%;
+    }
   }
 `
