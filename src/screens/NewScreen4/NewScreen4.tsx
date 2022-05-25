@@ -8,7 +8,7 @@ import cloneDeep from "lodash/cloneDeep"
 import Pagination from "rc-pagination"
 import { useState } from "react"
 import Lottie from "react-lottie"
-import SliderContent from "src/components/SliderContent"
+import { Content } from "src/components/SliderContent"
 import styled from "styled-components"
 interface Props {
   className?: string
@@ -83,9 +83,7 @@ const NewScreen4 = ({ className }: Props) => {
           />
         </span>
       </header>
-      <div>
-        <SliderContent data={ingredientData} />
-      </div>
+      <div>{Content(ingredientData)}</div>
       <Pagination
         pageSize={countPerPage}
         onChange={updatePage}

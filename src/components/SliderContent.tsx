@@ -46,31 +46,30 @@ const settings = {
     },
   ],
 }
+export const Content = (data: any, id?: any) => {
+  return data?.map((e: any, index: number) => {
+    return (
+      <div className="recipesSectionCards" key={e.id}>
+        <ItemCards
+          image={e.image}
+          id={id || index}
+          fvrtBy={e.fvrtBy}
+          time={e.time}
+          state={e.state}
+          title={e.title}
+        />
+      </div>
+    )
+  })
+}
 const SliderContent = ({ data, className, id, ...rest }: Props) => {
   const sliderRef = useRef(null)
-  console.log("data: ", data)
 
-  const Content = () => {
-    return data?.map((e: any) => {
-      return (
-        <div className="recipesSectionCards" key={e.id}>
-          <ItemCards
-            image={e.image}
-            id={id}
-            fvrtBy={e.fvrtBy}
-            time={e.time}
-            state={e.state}
-            title={e.title}
-          />
-        </div>
-      )
-    })
-  }
   return (
     <div className={className}>
       <div className="recipesSectionHolder">
         <Slider ref={sliderRef} {...settings} {...rest}>
-          {Content()}
+          {Content(data, id)}
         </Slider>
       </div>
     </div>
