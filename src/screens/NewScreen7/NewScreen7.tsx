@@ -81,7 +81,7 @@ const NewScreen7 = ({ className }: Props) => {
           </span>
         </header>
         <div className="cards-frame">
-          <div className="five-columns">
+          <div className="cards-row">
             {[10, 2].map((c, i) => (
               <Card
                 key={i}

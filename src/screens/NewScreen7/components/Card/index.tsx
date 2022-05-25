@@ -33,26 +33,32 @@ const Card = (props: Props) => {
       case "primary":
         return (
           <React.Fragment>
-            <div>
+            <div className="card-image">
               <img src={cardImg} alt="card" />
               <span>{tag}</span>
             </div>
-            <span>{category}</span>
-            <h4>{title}</h4>
-            <span>${price}</span>
+            <div className="card-text-holder">
+              <span>{category}</span>
+              <h4>{title}</h4>
+              <span>${price}</span>
+            </div>
           </React.Fragment>
         )
       case "secondary":
         return (
           <React.Fragment>
-            <div>
+            <div className="card-image">
               <img src={cardImg} alt="card" />
               <PlayIcon />
             </div>
-            <h4>{title}</h4>
-            <div>
-              <img src={profImg} alt="card" />
-              <span>{category}</span>
+            <div className="card-text-holder">
+              <h4>{title}</h4>
+              <div className="user-profile">
+                <div className="img-profile">
+                  <img src={profImg} alt="card" />
+                </div>
+                <span className="category-name">{category}</span>
+              </div>
             </div>
           </React.Fragment>
         )
