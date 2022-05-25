@@ -4,15 +4,18 @@ import {
   Bell,
   Calander,
   FacebookIcon,
-  InstagramIcon, TimeIcon,
+  InstagramIcon,
+  TimeIcon,
   TwitterIcon,
-  YoutubeIcon
+  YoutubeIcon,
 } from "@icons"
 import { userList } from "data"
-import React from "react"
-type Props = {}
+type Props = {
+  title?: string
+}
 
 const UserListSection = (props: Props) => {
+  const { title = " Cook Leaderboard" } = props
   return (
     <div className="recipesSection leaderboardRecipesBlock">
       <header className="recipesSectionHeader">
@@ -35,11 +38,19 @@ const UserListSection = (props: Props) => {
                 {selected}
               </Button>
             )}
-            items={[{ name: "All Types", id: 1 }, { name: "Breakfast", id:2 }, { name: "Appetizers", id:3 }, { name: "Baked Goods", id:4 }, { name: "Drinks", id:5 }, { name: "Dinner", id:6 }, { name: "Dessert", id:7 }]}
+            items={[
+              { name: "All Types", id: 1 },
+              { name: "Breakfast", id: 2 },
+              { name: "Appetizers", id: 3 },
+              { name: "Baked Goods", id: 4 },
+              { name: "Drinks", id: 5 },
+              { name: "Dinner", id: 6 },
+              { name: "Dessert", id: 7 },
+            ]}
             renderItem={({ item, isActive, onClick }) => {
               return (
-                <div  
-                key={item.id}
+                <div
+                  key={item.id}
                   className={`${isActive} item`}
                   onClick={() => onClick(item.name)}
                 >
@@ -60,11 +71,16 @@ const UserListSection = (props: Props) => {
                 {selected}
               </Button>
             )}
-            items={[{ name: "This Week",id: 1 }, { name: "This Month", id:2 }, { name: "This Year", id:3 }, { name: "All Time", id:4 }]}
+            items={[
+              { name: "This Week", id: 1 },
+              { name: "This Month", id: 2 },
+              { name: "This Year", id: 3 },
+              { name: "All Time", id: 4 },
+            ]}
             renderItem={({ item, isActive, onClick }) => {
               return (
                 <div
-                key={item.id}
+                  key={item.id}
                   className={`${isActive} item`}
                   onClick={() => onClick(item.name)}
                 >
@@ -127,7 +143,9 @@ const UserListSection = (props: Props) => {
                   <img src={e.profile} alt="profile" />
                 </div>
                 <span className="cookname">{e.userName}</span>
-                <span className="iconArrow"><ArrowRight /></span>
+                <span className="iconArrow">
+                  <ArrowRight />
+                </span>
               </div>
             )
           })}
