@@ -1,15 +1,17 @@
 import { Banner } from "@components"
+import { useOnClickOutside, useOpenClose } from "@hooks"
 import CookAnimation from "@lottie-animation/cook.json"
 import { RecipesData } from "@redux/data"
 import classNames from "classnames"
 import cloneDeep from "lodash/cloneDeep"
 import Pagination from "rc-pagination"
-import { useState } from "react"
+import { useRef, useState } from "react"
 import Lottie from "react-lottie"
 import SearchBar from "src/components/SearchBar"
 import Footer from "src/pages/NewPage/footer/footer"
 import styled from "styled-components"
 import Card from "../NewScreen7/components/Card"
+import VideosModal from "../PanCake/model/VideosModal"
 
 interface Props {
   className?: string
@@ -17,10 +19,12 @@ interface Props {
 
 const NewScreen8 = ({ className }: Props) => {
   const countPerPage = 10
+  const [isOpen, onOpen, onClose] = useOpenClose()
   const [currentPage, setCurrentPage] = useState(1)
   const [collection, setCollection] = useState(
     cloneDeep(RecipesData.slice(0, countPerPage))
   )
+  const ref = useRef(null)
   const updatePage = (p: any) => {
     setCurrentPage(p)
     const to = countPerPage * p
@@ -35,6 +39,9 @@ const NewScreen8 = ({ className }: Props) => {
       preserveAspectRatio: "xMidYMid slice",
     },
   }
+  useOnClickOutside(ref, () => {
+    onClose()
+  })
   return (
     <div className={classNames(className)}>
       <div className="container px-4 mx-auto sm:px-6 lg:px-8 pb-80">
@@ -67,6 +74,9 @@ const NewScreen8 = ({ className }: Props) => {
           <div className="cards-row">
             {[10, 2].map((c, i) => (
               <Card
+                onClick={() => {
+                  onOpen()
+                }}
                 className="card-item"
                 key={i}
                 type="secondary"
@@ -77,6 +87,12 @@ const NewScreen8 = ({ className }: Props) => {
               />
             ))}
           </div>
+          <VideosModal
+            ref={ref}
+            isOpen={isOpen}
+            onClose={onClose}
+            showHeader={false}
+          />
           <Pagination
             pageSize={countPerPage}
             onChange={updatePage}
