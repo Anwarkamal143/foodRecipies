@@ -294,6 +294,29 @@ export const SocialCard = styled(Card)`
       }
     }
 
+    .flag-holder {
+      width: 45px;
+      height: 45px;
+      margin: 0 auto 22px;
+      border-radius: 100%;
+      overflow: hidden;
+
+      @media (max-width: 767px) {
+        width: 35px;
+        height: 35px;
+        margin-bottom: 17px;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 100%;
+      }
+    }
+
     .recipie-image-holder {
       width: 55px;
       height: 55px;
