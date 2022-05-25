@@ -171,7 +171,7 @@ export default styled(Sidebar)`
     li {
       @media (max-width: 767px) {
         min-width: 20%;
-        padding: 5px 0;
+        padding: 3px 0 0;
       }
 
       + li {
