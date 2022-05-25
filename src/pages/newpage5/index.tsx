@@ -10,7 +10,7 @@ const NewPage1 = () => {
 NewPage1.layout = {
   layout: getPageLayout,
   props: {
-    sidebar: false,
+    sidebar: true,
   },
 }
 export default NewPage1

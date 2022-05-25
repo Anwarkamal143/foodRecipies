@@ -1,9 +1,8 @@
 import { Banner } from "@components"
 import CookAnimation from "@lottie-animation/cook.json"
 import { categoryData, FavData, FavData1, FavRecipeData, ourCooks } from "data"
-import Lottie from "react-lottie"
-
 import { useEffect, useState } from "react"
+import Lottie from "react-lottie"
 import ItemContent from "src/components/ItemContent"
 import NavBar from "src/components/NavBar"
 import SliderContent from "src/components/SliderContent"
@@ -46,20 +45,19 @@ const NewScreen5 = ({ className }: Props) => {
               <Lottie options={defaultOptions} isClickToPauseDisabled={true} />
             }
           />
-          <header className="sectionDetailsHeader">
+          <header className="food-sectionHeader">
             <ul className="organizedByList">
               <li>
                 <strong className="title">Organized By:</strong>
               </li>
               <li>
-                <a href="#">Recipes By Course</a>
-                <a href="#">All Breakfast Categories</a>
+                <a href="#">Recipes By Cuisine</a>
               </li>
             </ul>
           </header>
         </div>
         <div className="recipesSection no-slider">
-          <SliderNav rightIcon={false} title="Featured Recipes" />
+          <SliderNav rightIcon={false} title="Trending Breakfast Recipes" />
           <ItemContent data={FavRecipeData} />
         </div>
 
@@ -94,8 +92,8 @@ const NewScreen5 = ({ className }: Props) => {
           data={ourCooks}
         />
         <UserListSection title="Top Breakfast Cooks" />
-        <div>
-          <div>
+        <div className="more-categories">
+          <div className="category-col">
             <h2>Other Breakfast Categories</h2>
             <ul>
               <li>Appetizers</li>
@@ -104,7 +102,7 @@ const NewScreen5 = ({ className }: Props) => {
               <li>Soups, Stews, & Chili</li>
             </ul>
           </div>
-          <div>
+          <div className="category-col">
             <h2>More Recipes By Type</h2>
             <li>Appetizers</li>
             <li>Snacks</li>
@@ -118,4 +116,40 @@ const NewScreen5 = ({ className }: Props) => {
   )
 }
 
-export const MyNewScreen5 = styled(NewScreen5)``
+export const MyNewScreen5 = styled(NewScreen5)`
+  .banner-area {
+    margin: 0;
+
+    &:after {
+      display: none;
+    }
+  }
+
+  .recipesSection {
+    margin: 0 0 40px;
+  }
+
+  .food-sectionHeader {
+    margin: -1px 0 0;
+  }
+
+  .recipesSectionHeader {
+    .favorite-head {
+      width: auto;
+    }
+  }
+
+  .class {
+    .recipesSectionHeader {
+      .favorite-head {
+        width: 100%;
+      }
+    }
+  }
+
+  .more-categories {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+`

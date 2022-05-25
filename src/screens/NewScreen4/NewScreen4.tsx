@@ -9,7 +9,6 @@ import Pagination from "rc-pagination"
 import { useState } from "react"
 import Lottie from "react-lottie"
 import SliderContent from "src/components/SliderContent"
-import Footer from "src/pages/NewPage/footer/footer"
 import styled from "styled-components"
 interface Props {
   className?: string
@@ -48,7 +47,7 @@ const NewScreen4 = ({ className }: Props) => {
           <Lottie options={defaultOptions} isClickToPauseDisabled={true} />
         }
       />
-      <header className="sectionDetailsHeader">
+      <header className="food-sectionHeader">
         <ul className="organizedByList">
           <li>
             <strong className="title">Organized By:</strong>
@@ -96,7 +95,6 @@ const NewScreen4 = ({ className }: Props) => {
         nextIcon="Next"
         prevIcon="Previous"
       />
-      <Footer />
     </div>
   )
 }
