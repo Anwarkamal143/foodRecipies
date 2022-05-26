@@ -87,6 +87,25 @@ export const MyNewScreen7 = styled(NewScreen7)`
     padding-bottom: 80px;
   }
 
+  .banner-area {
+    &:after {
+      left: 0;
+      right: 0;
+    }
+  }
+
+  .recipesFiltersForm {
+    padding: 40px 2rem !important;
+
+    @media (max-width: 1279px) {
+      padding: 40px 20px !important;
+    }
+
+    @media (max-width: 767px) {
+      padding: 20px 10px !important;
+    }
+  }
+
   .cards-frame {
     padding: 0 2rem;
 

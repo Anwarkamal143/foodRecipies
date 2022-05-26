@@ -99,8 +99,32 @@ export const MyNewScreen6 = styled(NewScreen6)`
     padding-bottom: 80px;
   }
 
-  .recipesFiltersForm {
-    width: auto !important;
+  .food-sectionHeader {
+    @media (max-width: 767px) {
+      flex-wrap: wrap;
+    }
+
+    .recipesFiltersForm {
+      width: auto !important;
+
+      @media (max-width: 767px) {
+        width: 100% !important;
+        padding: 20px 0 0 !important;
+      }
+
+      .sortByFilter {
+        @media (max-width: 767px) {
+          width: auto;
+          display: flex !important;
+          margin: 0;
+        }
+      }
+
+      .sortByFilterlbl {
+        margin: 0 10px 0 0;
+        width: auto;
+      }
+    }
 
     .recipesFiltersbox {
       display: none;

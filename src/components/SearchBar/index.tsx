@@ -117,7 +117,9 @@ const SearchBar = (props: Props) => {
 export default styled(SearchBar)`
   &.recipesFiltersForm {
     padding: 0 !important;
-    width: 100%;
+    width: auto;
+    flex-grow: 1;
+    flex-basis: 0;
   }
 
   .switcher-holder {

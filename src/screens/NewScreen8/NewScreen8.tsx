@@ -122,6 +122,11 @@ export const MyNewScreen8 = styled(NewScreen8)`
     }
   }
 
+  .food-sectionHeader {
+    @media (max-width: 767px) {
+      flex-wrap: wrap;
+    }
+  }
   .cards-row {
     display: flex;
     flex-wrap: wrap;
