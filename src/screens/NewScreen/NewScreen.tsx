@@ -96,20 +96,17 @@ const NewScreen = ({ className }: Props) => {
 export const MyNewScreen = styled(NewScreen)`
   .pb-80 {
     padding-bottom: 80px;
-  }
 
-  .pageFiltersSearch {
-    padding-left: 4rem;
-    padding-right: 4rem;
+    .recipesFiltersForm {
+      padding: 40px 4rem !important;
 
-    @media (max-width: 1279px) {
-      padding-left: 20px;
-      padding-right: 20px;
-    }
+      @media (max-width: 1279px) {
+        padding: 40px 20px !important;
+      }
 
-    @media (max-width: 767px) {
-      padding-left: 10px;
-      padding-right: 10px;
+      @media (max-width: 767px) {
+        padding: 20px 10px !important;
+      }
     }
   }
 
@@ -121,7 +118,7 @@ export const MyNewScreen = styled(NewScreen)`
     }
 
     @media (max-width: 767px) {
-      padding: 0 10px;
+      padding: 0 10px 30px;
     }
   }
 

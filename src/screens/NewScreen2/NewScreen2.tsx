@@ -98,23 +98,15 @@ export const MyNewScreen2 = styled(NewScreen2)`
     }
   }
 
-  .pageFiltersSearch {
-    padding-left: 2rem;
-    padding-right: 2rem;
+  .recipesFiltersForm {
+    padding: 40px 2rem !important;
 
     @media (max-width: 1279px) {
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-
-    @media (max-width: 1023px) {
-      padding-left: 0;
-      padding-right: 0;
+      padding: 40px 20px !important;
     }
 
     @media (max-width: 767px) {
-      padding-left: 0;
-      padding-right: 0;
+      padding: 20px 10px !important;
     }
   }
 
@@ -130,7 +122,7 @@ export const MyNewScreen2 = styled(NewScreen2)`
     }
 
     @media (max-width: 767px) {
-      padding: 0 10px;
+      padding: 0 10px 30px;
     }
   }
 

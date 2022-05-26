@@ -72,8 +72,25 @@ const NewScreen4 = ({ className }: Props) => {
 }
 
 export const MyNewScreen4 = styled(NewScreen4)`
+  .banner-area:after {
+    left: 0;
+    right: 0;
+  }
+
+  .recipesFiltersForm {
+    padding: 30px 2rem !important;
+
+    @media (max-width: 1279px) {
+      padding: 30px 20px !important;
+    }
+
+    @media (max-width: 767px) {
+      padding: 20px 10px !important;
+    }
+  }
+
   .cards-frame {
-    padding: 0 4.5rem;
+    padding: 0 3.5rem;
 
     @media (max-width: 1279px) {
       padding: 0 40px;

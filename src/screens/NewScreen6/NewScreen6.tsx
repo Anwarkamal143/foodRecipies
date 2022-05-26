@@ -54,15 +54,15 @@ const NewScreen6 = ({ className }: Props) => {
                 <a href="#">Recipes By Cuisine</a>
               </li>
             </ul>
+            <SearchBar
+              options={{
+                showSearchBar: false,
+                showSwitchBox: true,
+                showFilter: false,
+                showSortBy: true,
+              }}
+            />
           </header>
-          <SearchBar
-            options={{
-              showSearchBar: false,
-              showSwitchBox: true,
-              showFilter: false,
-              showSortBy: true,
-            }}
-          />
         </div>
 
         <div className="cards-frame">
@@ -97,6 +97,14 @@ const NewScreen6 = ({ className }: Props) => {
 export const MyNewScreen6 = styled(NewScreen6)`
   .pb-80 {
     padding-bottom: 80px;
+  }
+
+  .recipesFiltersForm {
+    width: auto !important;
+
+    .recipesFiltersbox {
+      display: none;
+    }
   }
 
   .cards-frame {

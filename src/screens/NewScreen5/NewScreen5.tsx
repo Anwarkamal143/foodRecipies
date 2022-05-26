@@ -175,6 +175,14 @@ export const MyNewScreen5 = styled(NewScreen5)`
 
   .recipesSection {
     margin: 0 0 40px;
+
+    @media (max-width: 767px) {
+      margin: 0;
+    }
+  }
+
+  .recipesCategoriesSlider {
+    margin: 0;
   }
 
   .food-sectionHeader {

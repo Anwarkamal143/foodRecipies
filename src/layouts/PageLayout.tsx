@@ -1,4 +1,11 @@
-import { cloneElement, ComponentType, DetailedHTMLProps, HtmlHTMLAttributes, ReactElement, ReactNode } from "react"
+import {
+  cloneElement,
+  ComponentType,
+  DetailedHTMLProps,
+  HtmlHTMLAttributes,
+  ReactElement,
+  ReactNode,
+} from "react"
 import NoSSR from "react-no-ssr"
 import styled, { css } from "styled-components"
 
@@ -158,4 +165,11 @@ export function Page(props: PageLayoutType) {
     </PageLayoutWrapper>
   )
 }
-export const getPageLayout = (page: ReactElement | ReactNode | ComponentType, props?:Record<string,any>) => <Page nossr {...(props || {})}>{cloneElement(page as any, {...(props || {})})}</Page>
+export const getPageLayout = (
+  page: ReactElement | ReactNode | ComponentType,
+  props?: Record<string, any>
+) => (
+  <Page nossr {...(props || {})}>
+    {cloneElement(page as any, { ...(props || {}) })}
+  </Page>
+)

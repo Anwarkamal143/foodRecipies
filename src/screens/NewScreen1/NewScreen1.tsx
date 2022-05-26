@@ -195,7 +195,7 @@ export const MyNewScreen1 = styled(NewScreen1)`
     .sortByFilterlbl {
       font-size: 10px;
       line-height: 1.5;
-      color: #61616C;
+      color: #61616c;
       margin: 0 10px 0 0;
 
       @media (max-width: 767px) {
@@ -206,7 +206,7 @@ export const MyNewScreen1 = styled(NewScreen1)`
     .button.button-sm.buttonFilter {
       font-size: 10px;
       line-height: 1.5;
-      color: #61616C;
+      color: #61616c;
 
       @media (max-width: 767px) {
         font-size: 7px;
@@ -290,7 +290,7 @@ export const MyNewScreen1 = styled(NewScreen1)`
     }
 
     @media (max-width: 767px) {
-      padding: 0 10px;
+      padding: 0 10px 30px;
     }
   }
 

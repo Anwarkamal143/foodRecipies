@@ -124,6 +124,7 @@ export default styled(SearchBar)`
     font-size: 10px;
     line-height: 12px;
     color: #61616c;
+    margin: 0 20px 0 0;
   }
 
   .toggle-switch {
