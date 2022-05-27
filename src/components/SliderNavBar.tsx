@@ -4,9 +4,10 @@ import {
   LeftSliderArrow,
   RightSliderArrow,
 } from "@icons"
-import React, { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import Slider from "react-slick"
 import styled from "styled-components"
+import SearchBar from "./SearchBar"
 type Props = {
   data?: any
   className?: string
@@ -16,6 +17,7 @@ type Props = {
   isNavBar?: boolean
   rightIcon?: boolean
   header?: boolean
+  searchBar?: boolean
   handleSilderData?: any
   rightIconTitle?: string
 }
@@ -47,6 +49,7 @@ const SliderNav = ({
   data = [],
   title,
   header = true,
+  searchBar = false,
   discription,
   rightIcon = true,
   rightIconTitle = "View All Breakfast",
@@ -110,6 +113,18 @@ const SliderNav = ({
               </span>
             )}
           </div>
+          {searchBar && (
+            <SearchBar
+              sortBy={[{ name: "Monthly" }]}
+              placeholder="Search ..."
+              options={{
+                showSearchBar: true,
+                showSwitchBox: false,
+                showFilter: false,
+                showSortBy: true,
+              }}
+            />
+          )}
         </header>
       )}
 

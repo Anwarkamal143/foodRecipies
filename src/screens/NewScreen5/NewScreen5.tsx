@@ -76,7 +76,9 @@ const NewScreen5 = ({ className }: Props) => {
           data={FavData1}
         />
         <div className="recipesSection">
+          <div></div>
           <SliderNav
+            searchBar={true}
             rightIconTitle={`View All ${id}`}
             title="Explore Breakfast Recipes"
             data={categoryData}
