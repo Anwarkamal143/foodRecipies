@@ -124,7 +124,7 @@ export const MyNewScreen1 = styled(NewScreen1)`
 
     .title {
       display: block;
-      font-size: 14px;
+      font-size: 12px;
       line-height: 1.5;
       color: #b1b1b1;
       text-transform: uppercase;

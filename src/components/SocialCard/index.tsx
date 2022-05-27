@@ -120,7 +120,9 @@ const Card = ({
                   </div>
                 )}
               </div>
-              <strong className="name">{title}</strong>
+              <strong className="name">
+                {title} <RightAngle />
+              </strong>
               <span className="sub-text">{subTitle}</span>
               <Button
                 shape="circle"
@@ -205,6 +207,7 @@ export const SocialCard = styled(Card)`
       font-size: 16px;
       line-height: 20px;
       display: block;
+      padding: 0 0 0 11px;
       margin: 0 0 3px;
       font-weight: 700;
       transition: all 0.4s ease;
@@ -322,6 +325,10 @@ export const SocialCard = styled(Card)`
 
     &:hover {
       box-shadow: 0px 3px 6px rgba(30, 30, 45, 0.25);
+
+      .name {
+        color: #e0464d;
+      }
     }
 
     .red-color {
@@ -383,6 +390,28 @@ export const SocialCard = styled(Card)`
       line-height: 1.5;
       color: #3e3e3e;
       margin: 0 0 1px;
+      cursor: pointer;
+      padding: 0 0 0 11px;
+
+      svg {
+        display: inline-block;
+        vertical-align: middle;
+        transition: all 0.4s ease;
+        opacity: 0;
+        visibility: hidden;
+
+        path {
+          stroke: #e0464d;
+        }
+      }
+
+      &:hover {
+        svg {
+          opacity: 1;
+          visibility: visible;
+          margin: 0 -5px 0 5px;
+        }
+      }
     }
 
     .sub-text {
@@ -391,9 +420,15 @@ export const SocialCard = styled(Card)`
       line-height: 1.5;
       color: #999;
       margin: 0 0 25px;
+      cursor: pointer;
+      transition: all 0.4s ease;
 
       @media (max-width: 767px) {
         margin-bottom: 17px;
+      }
+
+      &:hover {
+        color: #e0464d;
       }
     }
 
