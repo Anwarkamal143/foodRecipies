@@ -148,25 +148,28 @@ export const MyNewScreen3 = styled(NewScreen3)`
     }
   }
 
+  .food-sectionHeader {
+    @media (max-width: 767px) {
+      flex-wrap: wrap;
+    }
+  }
+
+  .organizedByList {
+    @media (max-width: 767px) {
+      width: 100%;
+      margin: 0 0 10px;
+    }
+  }
+
   .sortByFilter {
     display: flex;
     align-items: center;
-
-    @media (max-width: 767px) {
-      width: auto;
-      display: flex !important;
-      margin: 0;
-    }
 
     .sortByFilterlbl {
       font-size: 10px;
       line-height: 1.5;
       color: #61616c;
       margin: 0 10px 0 0;
-
-      @media (max-width: 767px) {
-        font-size: 7px;
-      }
     }
 
     .button.button-sm.buttonFilter {
@@ -175,7 +178,6 @@ export const MyNewScreen3 = styled(NewScreen3)`
       color: #61616c;
 
       @media (max-width: 767px) {
-        font-size: 7px;
         min-width: 85px;
         padding: 3px 6px;
       }

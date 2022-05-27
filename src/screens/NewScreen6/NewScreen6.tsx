@@ -115,6 +115,8 @@ export const MyNewScreen6 = styled(NewScreen6)`
         width: 100% !important;
         padding: 20px 0 0 !important;
         justify-content: space-between;
+        flex-grow: inherit;
+        flex-basis: inherit;
       }
 
       .sortByFilter {

@@ -125,6 +125,19 @@ export const MyNewScreen8 = styled(NewScreen8)`
       flex-wrap: wrap;
     }
   }
+
+  .organizedByList {
+    @media (max-width: 767px) {
+      width: 100%;
+      margin: 0 0 10px;
+    }
+  }
+
+  .sortByFilter {
+    display: flex;
+    align-items: center;
+  }
+
   .cards-row {
     display: flex;
     flex-wrap: wrap;

@@ -88,6 +88,11 @@ const NewScreen7 = ({ className }: Props) => {
 export const MyNewScreen7 = styled(NewScreen7)`
   .pb-80 {
     padding-bottom: 80px;
+
+    @media (max-width: 767px) {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 
   .banner-area {

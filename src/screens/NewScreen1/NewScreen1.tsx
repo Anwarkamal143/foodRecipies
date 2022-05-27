@@ -117,12 +117,18 @@ export const MyNewScreen1 = styled(NewScreen1)`
       border: 0;
       margin: 0;
       padding: 0 0 22px;
+      flex-wrap: wrap;
     }
   }
 
   .organizedByList {
     display: flex;
     align-items: center;
+
+    @media (max-width: 767px) {
+      width: 100%;
+      margin: 0 0 5px;
+    }
 
     .title {
       display: block;
