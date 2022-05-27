@@ -6657,6 +6657,14 @@ body {
         &:hover {
           background: #ffb7be;
         }
+
+        &.course {
+          background: #e0e9ff;
+
+          &:hover {
+            background: #b8caf7;
+          }
+        }
       }
     }
   }

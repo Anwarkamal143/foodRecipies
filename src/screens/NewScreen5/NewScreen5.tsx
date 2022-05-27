@@ -1,6 +1,6 @@
 import { Banner } from "@components"
 import CookAnimation from "@lottie-animation/cook.json"
-import { categoryData, FavData, FavData1, FavRecipeData, ourCooks } from "data"
+import { categoryData, FavData, FavData1, FavRecipeData } from "data"
 import { useEffect, useState } from "react"
 import Lottie from "react-lottie"
 import ItemContent from "src/components/ItemContent"
@@ -9,7 +9,6 @@ import SliderContent from "src/components/SliderContent"
 import SliderNav from "src/components/SliderNavBar"
 import Footer from "src/pages/NewPage/footer/footer"
 import Leaderboard from "src/pages/NewPage/Leaderboard"
-import OurTiktoker from "src/pages/NewPage/OurTiktoker"
 import UserListSection from "src/pages/NewPage/userListSection"
 import styled from "styled-components"
 
@@ -51,6 +50,11 @@ const NewScreen5 = ({ className }: Props) => {
                 <strong className="title">Organized By:</strong>
               </li>
               <li>
+                <a href="#" className="course">
+                  Recipes By Course
+                </a>
+              </li>
+              <li>
                 <a href="#">Recipes By Cuisine</a>
               </li>
             </ul>
@@ -85,12 +89,6 @@ const NewScreen5 = ({ className }: Props) => {
           />
           <ItemContent data={data} id={id} />
         </div>
-
-        <OurTiktoker
-          discription="A recipe is a set of instructions that describes how to prepare or make something."
-          title={"Our Cooks on Tiktok"}
-          data={ourCooks}
-        />
         <UserListSection title="Top Breakfast Cooks" />
         <div className="more-categories">
           <div className="category-col">
@@ -166,7 +164,7 @@ const NewScreen5 = ({ className }: Props) => {
 
 export const MyNewScreen5 = styled(NewScreen5)`
   .banner-area {
-    margin: 0;
+    margin: 20px 0 0;
 
     &:after {
       display: none;
@@ -181,8 +179,10 @@ export const MyNewScreen5 = styled(NewScreen5)`
     }
   }
 
-  .recipesCategoriesSlider {
-    margin: 0;
+  .no-slider {
+    .recipesCategoriesSlider {
+      margin: 0;
+    }
   }
 
   .food-sectionHeader {

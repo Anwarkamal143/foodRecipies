@@ -5,7 +5,6 @@ import { FavData } from "data"
 import cloneDeep from "lodash/cloneDeep"
 import Pagination from "rc-pagination"
 import React from "react"
-import SwitchBox from "src/components/SwitchBox"
 import styled from "styled-components"
 import RecipesCard from "../../components/RecipiesCard"
 import Button from "./../../components/Button/Button"
@@ -59,10 +58,10 @@ const Favorite = ({ className }: Props) => {
             </PopOver>
           </div>
           {/* <Filters></Filters> */}
-          <span>
+          {/* <span>
             Include Sub-Categories
             <SwitchBox />
-          </span>
+          </span> */}
           <span className="sortBy sortByFilter">
             <span className="sortByFilterlbl">Sort by</span>
             <DropDown
@@ -115,7 +114,7 @@ Favorite.layout = {
   props: {
     className: "savedRecipesWrapper",
     variant: "regular",
-    sidebar: false,
+    sidebar: true,
   },
 }
 export default styled(Favorite)`
