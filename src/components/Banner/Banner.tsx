@@ -114,6 +114,12 @@ export const Banner = styled(BannerCard)`
       @media (max-width: 767px) {
         width: 80px;
       }
+
+      img {
+        width: 100%;
+        height: auto;
+        vertical-align: top;
+      }
     }
   }
 `

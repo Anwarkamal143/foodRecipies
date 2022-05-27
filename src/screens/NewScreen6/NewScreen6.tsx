@@ -5,7 +5,6 @@ import classNames from "classnames"
 import cloneDeep from "lodash/cloneDeep"
 import Pagination from "rc-pagination"
 import { useState } from "react"
-import Lottie from "react-lottie"
 import SearchBar from "src/components/SearchBar"
 import Footer from "src/pages/NewPage/footer/footer"
 import styled from "styled-components"
@@ -40,9 +39,7 @@ const NewScreen6 = ({ className }: Props) => {
         <Banner
           title="Recipes By Type"
           subTitle="Browse recipes from your favorite cooks organized by type. Want to start your day off right? Check out popular breakfast recipes or end the night with some incredible dessert. Not sure what you want? Browse recipes via your Food Feed +"
-          lottieAnimation={
-            <Lottie options={defaultOptions} isClickToPauseDisabled={true} />
-          }
+          lottieAnimation={<img src="/images/banner-image.png" />}
         />
         <div>
           <header className="food-sectionHeader">
@@ -155,28 +152,19 @@ export const MyNewScreen6 = styled(NewScreen6)`
     display: flex;
     flex-wrap: wrap;
     margin: 0 -18px;
+    justify-content: center;
 
     @media (max-width: 767px) {
       margin: 0 -9px;
     }
 
     .card-secondary {
-      padding: 0 18px;
-      margin: 0 0 30px;
-      width: 20%;
-
-      @media (max-width: 1279px) {
-        width: 25%;
-      }
-
-      @media (max-width: 1023px) {
-        width: 33.333%;
-      }
+      margin: 0 18px 30px;
+      width: 188px;
 
       @media (max-width: 767px) {
-        width: 50%;
-        margin: 0 0 20px;
-        padding: 0 9px;
+        width: 147px;
+        margin: 0 9px 20px;
       }
     }
   }

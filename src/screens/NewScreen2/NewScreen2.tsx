@@ -6,7 +6,6 @@ import classNames from "classnames"
 import cloneDeep from "lodash/cloneDeep"
 import Pagination from "rc-pagination"
 import { useState } from "react"
-import Lottie from "react-lottie"
 import SearchBar from "src/components/SearchBar"
 import styled from "styled-components"
 
@@ -37,11 +36,9 @@ const NewScreen2 = ({ className }: Props) => {
   return (
     <div className={classNames(className)}>
       <Banner
-        title="My Followed Cooks"
-        subTitle="Online Cook is the only platform where you can follow and stay up-to-date with your favorite cooks. Explore their recipes, collections, products, and check out their social media.  View Suggested Cooks + "
-        lottieAnimation={
-          <Lottie options={defaultOptions} isClickToPauseDisabled={true} />
-        }
+        title="Your Favorite Cooks"
+        subTitle="Online Cook is the only platform where you can follow and stay up-to-date with your favorite cooks. Explore their recipes, collections, products, and check out their social media.  View Suggested Cooks +  "
+        lottieAnimation={<img src="/images/banner-image1.png" />}
       />
       <SearchBar
         sortBy={[
@@ -138,6 +135,7 @@ export const MyNewScreen2 = styled(NewScreen2)`
   .cards-row {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     margin: 0 -12px;
 
     @media (max-width: 1279px) {
@@ -145,22 +143,16 @@ export const MyNewScreen2 = styled(NewScreen2)`
     }
 
     .card-primary {
-      padding: 0 12px;
-      margin: 0 0 38px;
-      width: 25%;
+      margin: 0 12px 38px;
+      width: 228px;
 
       @media (max-width: 1279px) {
-        padding: 0 8px;
-      }
-
-      @media (max-width: 1023px) {
-        width: 33.333%;
+        margin: 0 8px 38px;
       }
 
       @media (max-width: 767px) {
-        width: 50%;
-        margin: 0 0 25px;
-        padding: 0 9px;
+        width: 153px;
+        margin: 0 8px 25px;
       }
     }
   }

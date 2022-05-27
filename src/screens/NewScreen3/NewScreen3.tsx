@@ -6,7 +6,6 @@ import classNames from "classnames"
 import cloneDeep from "lodash/cloneDeep"
 import Pagination from "rc-pagination"
 import { useState } from "react"
-import Lottie from "react-lottie"
 import Footer from "src/pages/NewPage/footer/footer"
 import styled from "styled-components"
 
@@ -40,9 +39,7 @@ const NewScreen3 = ({ className }: Props) => {
         <Banner
           title="Recipes By Ingredient"
           subTitle="Explore recipes from across the world. Looking to make some homemade pasta? We have plenty of Italian recipes! Looking to challenge yourself and cook something new from another country? Check out a new cuisine below."
-          lottieAnimation={
-            <Lottie options={defaultOptions} isClickToPauseDisabled={true} />
-          }
+          lottieAnimation={<img src="/images/banner-image.png" />}
         />
         <header className="food-sectionHeader">
           <ul className="organizedByList">
@@ -66,7 +63,11 @@ const NewScreen3 = ({ className }: Props) => {
                   {selected}
                 </Button>
               )}
-              items={[{ name: "Relevance" }, { name: "Relevance" }]}
+              items={[
+                { name: "Most Popular" },
+                { name: "Most Recipes" },
+                { name: "Alphabetical" },
+              ]}
               renderItem={({ item, isActive, onClick }) => {
                 return (
                   <div
@@ -130,28 +131,19 @@ export const MyNewScreen3 = styled(NewScreen3)`
     display: flex;
     flex-wrap: wrap;
     margin: 0 -18px;
+    justify-content: center;
 
     @media (max-width: 767px) {
       margin: 0 -9px;
     }
 
     .card-secondary {
-      padding: 0 18px;
-      margin: 0 0 30px;
-      width: 20%;
-
-      @media (max-width: 1279px) {
-        width: 25%;
-      }
-
-      @media (max-width: 1023px) {
-        width: 33.333%;
-      }
+      margin: 0 18px 30px;
+      width: 188px;
 
       @media (max-width: 767px) {
-        width: 50%;
-        margin: 0 0 20px;
-        padding: 0 9px;
+        width: 147px;
+        margin: 0 9px 20px;
       }
     }
   }

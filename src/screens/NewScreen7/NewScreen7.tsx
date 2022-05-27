@@ -5,7 +5,6 @@ import classNames from "classnames"
 import cloneDeep from "lodash/cloneDeep"
 import Pagination from "rc-pagination"
 import { useState } from "react"
-import Lottie from "react-lottie"
 import SearchBar from "src/components/SearchBar"
 import styled from "styled-components"
 import Card from "./components/Card"
@@ -40,9 +39,7 @@ const NewScreen7 = ({ className }: Props) => {
         <Banner
           title="Your Saved Products"
           subTitle="Save products from your favorite cooks to purchase them later - whether it be a cookbook or a special salt brand. No saved products yet? Check out your followed cooks or browse all cooks"
-          lottieAnimation={
-            <Lottie options={defaultOptions} isClickToPauseDisabled={true} />
-          }
+          lottieAnimation={<img src="/images/banner-image.png" />}
         />
         <SearchBar
           sortBy={[
@@ -130,21 +127,16 @@ export const MyNewScreen7 = styled(NewScreen7)`
     }
 
     .card-item {
-      padding: 0 12px;
-      margin: 0 0 38px;
-      width: 25%;
+      margin: 0 12px 38px;
+      width: 211px;
 
       @media (max-width: 1279px) {
-        padding: 0 8px;
-      }
-
-      @media (max-width: 1023px) {
-        width: 33.333%;
+        margin: 0 8px 38px;
       }
 
       @media (max-width: 767px) {
-        width: 50%;
-        margin: 0 0 25px;
+        width: 147px;
+        margin: 0 8px 25px;
       }
     }
   }

@@ -2,7 +2,6 @@ import { Banner } from "@components"
 import CookAnimation from "@lottie-animation/cook.json"
 import { categoryData, FavData, FavData1, FavRecipeData } from "data"
 import { useEffect, useState } from "react"
-import Lottie from "react-lottie"
 import ItemContent from "src/components/ItemContent"
 import NavBar from "src/components/NavBar"
 import SliderContent from "src/components/SliderContent"
@@ -40,9 +39,7 @@ const NewScreen5 = ({ className }: Props) => {
           <Banner
             title="Breakfast & Brunch Recipes"
             subTitle="Looking for quick and easy breakfast recipes or planning on a leisurely brunch? Start your day off right with clever takes on French Toast and scrambled eggs, plus healthy mornign ideas with granola or sweet potatoes. View All Breakfast Recipes"
-            lottieAnimation={
-              <Lottie options={defaultOptions} isClickToPauseDisabled={true} />
-            }
+            lottieAnimation={<img src="/images/banner-image.png" />}
           />
           <header className="food-sectionHeader">
             <ul className="organizedByList">
@@ -75,8 +72,7 @@ const NewScreen5 = ({ className }: Props) => {
           description="Ends in 10 Days 23 Hours 46 Minutes 26 Seconds"
           data={FavData1}
         />
-        <div className="recipesSection">
-          <div></div>
+        <div className="recipesSection feed-area">
           <SliderNav
             searchBar={true}
             rightIconTitle={`View All ${id}`}
@@ -173,6 +169,10 @@ export const MyNewScreen5 = styled(NewScreen5)`
     }
   }
 
+  .recipesFiltersForm {
+    justify-content: flex-end;
+  }
+
   .recipesSection {
     margin: 0 0 40px;
 
@@ -192,6 +192,8 @@ export const MyNewScreen5 = styled(NewScreen5)`
   }
 
   .recipesSectionHeader {
+    flex-wrap: wrap;
+
     .favorite-head {
       width: auto;
     }

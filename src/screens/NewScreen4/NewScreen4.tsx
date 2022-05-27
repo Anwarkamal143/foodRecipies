@@ -6,7 +6,6 @@ import { IngredientData } from "data"
 import cloneDeep from "lodash/cloneDeep"
 import Pagination from "rc-pagination"
 import { useState } from "react"
-import Lottie from "react-lottie"
 import SearchBar from "src/components/SearchBar"
 import { Content } from "src/components/SliderContent"
 import styled from "styled-components"
@@ -43,11 +42,15 @@ const NewScreen4 = ({ className }: Props) => {
       <Banner
         title="All Online Cooks"
         subTitle="Explore recipes from across the world. Looking to make some homemade pasta? We have plenty of Italian recipes! Looking to challenge yourself and cook something new from another country? Check out a new cuisine below."
-        lottieAnimation={
-          <Lottie options={defaultOptions} isClickToPauseDisabled={true} />
-        }
+        lottieAnimation={<img src="/images/banner-image.png" />}
       />
       <SearchBar
+        sortBy={[
+          { name: "Recently Saved" },
+          { name: "Alphabetical" },
+          { name: "Most Saves" },
+          { name: "Trending" },
+        ]}
         options={{
           showSearchBar: true,
           showSwitchBox: false,
@@ -104,19 +107,15 @@ export const MyNewScreen4 = styled(NewScreen4)`
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
+      justify-content: center;
     }
 
     .recipesSectionCards {
-      width: 20%;
-      padding: 0 7px;
-      margin: 0 0 25px;
+      width: 185px;
+      margin: 0 7px 25px;
 
-      @media (max-width: 1439px) {
-        width: 25%;
-      }
-
-      @media (max-width: 1023px) {
-        width: 50%;
+      @media (max-width: 767px) {
+        width: 147px;
       }
     }
 
