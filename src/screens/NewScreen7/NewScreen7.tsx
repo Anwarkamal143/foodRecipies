@@ -121,6 +121,7 @@ export const MyNewScreen7 = styled(NewScreen7)`
     display: flex;
     flex-wrap: wrap;
     margin: 0 -12px;
+    justify-content: center;
 
     @media (max-width: 1279px) {
       margin: 0 -8px;
