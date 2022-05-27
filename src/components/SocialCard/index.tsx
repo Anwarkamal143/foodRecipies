@@ -1,4 +1,5 @@
 import { Icon } from "@components"
+import { RightAngle } from "@icons"
 import classNames from "classnames"
 import React, { useMemo } from "react"
 import { FlagIcon, FlagIconCode } from "react-flag-kit"
@@ -58,7 +59,9 @@ const Card = ({
                 <img src={profileImage} alt="profCardImage" />
               </div>
               <div className="cook-details">
-                <strong className="cook-name">{title}</strong>
+                <strong className="cook-name">
+                  {title} <RightAngle />
+                </strong>
                 <span className="date">Member Since: {date}</span>
                 <ul className="socialIcons">
                   <li>
@@ -138,10 +141,19 @@ const Card = ({
 
 export const SocialCard = styled(Card)`
   .card-primary-wrap {
-    box-shadow: 0 3px 6px rgba(30, 30, 45, 0.25);
     border: 1px solid #f2f3f5;
     border-radius: 10px;
     overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 0px 3px 6px rgba(30, 30, 45, 0.05);
+
+    &:hover {
+      box-shadow: 0px 3px 6px rgba(30, 30, 45, 0.25);
+
+      .cook-name {
+        color: #e0464d;
+      }
+    }
 
     .image-holder {
       position: relative;
@@ -160,11 +172,16 @@ export const SocialCard = styled(Card)`
       margin: -26px auto 0;
       position: relative;
       z-index: 2;
+      transition: all 0.4s ease;
 
       @media (max-width: 767px) {
         width: 37px;
         height: 37px;
         margin: -18px auto 0;
+      }
+
+      &:hover {
+        transform: scale(1.08);
       }
 
       img {
@@ -190,11 +207,33 @@ export const SocialCard = styled(Card)`
       display: block;
       margin: 0 0 3px;
       font-weight: 700;
+      transition: all 0.4s ease;
+      cursor: pointer;
 
       @media (max-width: 767px) {
         font-size: 12px;
         line-height: 15px;
         margin: 0;
+      }
+
+      svg {
+        display: inline-block;
+        vertical-align: middle;
+        transition: all 0.4s ease;
+        opacity: 0;
+        visibility: hidden;
+
+        path {
+          stroke: #e0464d;
+        }
+      }
+
+      &:hover {
+        svg {
+          opacity: 1;
+          visibility: visible;
+          margin: 0 -5px 0 5px;
+        }
       }
     }
 
@@ -270,14 +309,19 @@ export const SocialCard = styled(Card)`
   .card-secondary-wrap {
     background: #fff;
     border: 1px solid #f9f9f9;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     position: relative;
     padding: 30px 26px 26px;
     text-align: center;
+    transition: all 0.4s ease;
+    box-shadow: 0px 3px 6px rgba(30, 30, 45, 0.05);
 
     @media (max-width: 767px) {
       padding: 23px 15px 20px;
+    }
+
+    &:hover {
+      box-shadow: 0px 3px 6px rgba(30, 30, 45, 0.25);
     }
 
     .red-color {
@@ -337,7 +381,7 @@ export const SocialCard = styled(Card)`
       display: block;
       font-size: 12px;
       line-height: 1.5;
-      color: #3E3E3E;
+      color: #3e3e3e;
       margin: 0 0 1px;
     }
 
@@ -355,7 +399,7 @@ export const SocialCard = styled(Card)`
 
     .button.button-sm {
       background: transparent;
-      border: 1px solid #E5E8EF;
+      border: 1px solid #e5e8ef;
       font-weight: 400;
       font-size: 9px;
       line-height: 14px;

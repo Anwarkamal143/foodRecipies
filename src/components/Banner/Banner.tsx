@@ -27,12 +27,12 @@ const BannerCard = ({ className, title, subTitle, lottieAnimation }: Props) => {
 
 export const Banner = styled(BannerCard)`
   .banner-area {
-    margin: 0 2rem;
+    margin: 20px 2rem 0;
     padding: 0 0 35px;
     position: relative;
 
     @media (max-width: 1279px) {
-      margin: 0;
+      margin: 20px 0 0;
     }
 
     @media (max-width: 767px) {
@@ -66,11 +66,12 @@ export const Banner = styled(BannerCard)`
     align-items: center;
     justify-content: space-between;
     background: #2d4558;
-    color: #fff;
+    color: rgba(255, 255, 255, 0.7);
     padding: 15px 9% 0 4%;
     font-size: 13px;
     line-height: 20px;
     border-radius: 20px;
+    border: 1px solid #f2f3f5;
 
     @media (max-width: 1279px) {
       padding: 15px 5% 0;
@@ -89,6 +90,7 @@ export const Banner = styled(BannerCard)`
       line-height: 38px;
       margin: 0 0 5px;
       font-weight: 500;
+      color: #fff;
 
       @media (max-width: 767px) {
         font-size: 15px;
