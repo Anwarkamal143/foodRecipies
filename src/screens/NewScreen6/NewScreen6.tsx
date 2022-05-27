@@ -106,10 +106,12 @@ export const MyNewScreen6 = styled(NewScreen6)`
 
     .recipesFiltersForm {
       width: auto !important;
+      justify-content: flex-end;
 
       @media (max-width: 767px) {
         width: 100% !important;
         padding: 20px 0 0 !important;
+        justify-content: space-between;
       }
 
       .sortByFilter {

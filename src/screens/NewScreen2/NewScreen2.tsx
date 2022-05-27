@@ -37,7 +37,7 @@ const NewScreen2 = ({ className }: Props) => {
   return (
     <div className={classNames(className)}>
       <Banner
-        title="Your Favorite Cooks"
+        title="My Followed Cooks"
         subTitle="Online Cook is the only platform where you can follow and stay up-to-date with your favorite cooks. Explore their recipes, collections, products, and check out their social media.  View Suggested Cooks + "
         lottieAnimation={
           <Lottie options={defaultOptions} isClickToPauseDisabled={true} />

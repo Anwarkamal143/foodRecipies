@@ -121,7 +121,7 @@ export default styled(SearchBar)`
     flex-grow: 1;
     flex-basis: 0;
     position: relative;
-    z-index: 2;
+    z-index: 9;
 
     .form-control {
       font-size: 12px;
