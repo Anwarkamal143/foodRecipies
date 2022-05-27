@@ -45,6 +45,12 @@ const NewScreen7 = ({ className }: Props) => {
           }
         />
         <SearchBar
+          sortBy={[
+            { name: "Recently Saved" },
+            { name: "Alphabetical" },
+            { name: "Most Popular" },
+          ]}
+          placeholder="Search My Saved Products..."
           options={{
             showSearchBar: true,
             showSwitchBox: false,

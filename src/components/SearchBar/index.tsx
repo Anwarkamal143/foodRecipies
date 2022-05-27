@@ -10,6 +10,8 @@ import SwitchBox from "../SwitchBox"
 import Button from "./../../components/Button/Button"
 type Props = {
   className?: string
+  placeholder?: string
+  sortBy?: any[]
   options?: {
     showSearchBar?: boolean
     showSwitchBox?: boolean
@@ -20,7 +22,9 @@ type Props = {
 
 const SearchBar = (props: Props) => {
   const {
+    sortBy = [{ name: "New" }, { name: "Most Popular" }],
     className,
+    placeholder = "Search My Saved Recipes ...",
     options = {
       showSearchBar: true,
       showSwitchBox: true,
@@ -29,11 +33,6 @@ const SearchBar = (props: Props) => {
     },
   } = props
   const [check, setCheck] = useState(false)
-  const [searchText, setSearchText] = useState<any>("")
-  const [isActiveFocus, setIsActiveFocus] = useState(false)
-  const activeFocus = (e: any) => {
-    setIsActiveFocus(e)
-  }
   const ref = useRef()
   const [isModalOpen, setModalOpen] = useState(false)
   useOnClickOutside(ref, e => {
@@ -47,7 +46,7 @@ const SearchBar = (props: Props) => {
           <Input
             type={"text"}
             icon={<SearchIconAlt />}
-            placeholder="Search My Saved Recipes ..."
+            placeholder={placeholder}
           />
         )}
         {options?.showFilter && (
@@ -97,7 +96,7 @@ const SearchBar = (props: Props) => {
               {selected}
             </Button>
           )}
-          items={[{ name: "New" }, { name: "Most Popular" }]}
+          items={sortBy}
           renderItem={({ item, isActive, onClick }) => {
             return (
               <div

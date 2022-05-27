@@ -54,6 +54,11 @@ const NewScreen1 = ({ className }: Props) => {
             </li>
           </ul>
           <SearchBar
+            sortBy={[
+              { name: "Most Recipes" },
+              { name: "Most Follows" },
+              { name: "Alphabetical" },
+            ]}
             options={{
               showSearchBar: false,
               showSwitchBox: false,

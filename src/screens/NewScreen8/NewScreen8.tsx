@@ -62,6 +62,7 @@ const NewScreen8 = ({ className }: Props) => {
             </li>
           </ul>
           <SearchBar
+            placeholder="Search Video Tutorials..."
             options={{
               showSearchBar: true,
               showSwitchBox: false,

@@ -44,6 +44,15 @@ const NewScreen2 = ({ className }: Props) => {
         }
       />
       <SearchBar
+        sortBy={[
+          { name: "Featured" },
+          { name: "Most Recipes" },
+          { name: "Most Follows" },
+          { name: " Most Saves" },
+          { name: "Recently Joined" },
+          { name: "Alphabetical" },
+        ]}
+        placeholder="Search My Followed Cooks..."
         options={{
           showSearchBar: true,
           showSwitchBox: false,
