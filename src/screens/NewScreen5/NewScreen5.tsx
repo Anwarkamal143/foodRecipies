@@ -171,13 +171,21 @@ export const MyNewScreen5 = styled(NewScreen5)`
 
   .recipesFiltersForm {
     justify-content: flex-end;
+
+    @media (max-width: 1023px) {
+      width: 100%;
+      flex-grow: inherit;
+      flex-basis: inherit;
+      justify-content: space-between;
+      padding: 10px 0 0 !important;
+    }
   }
 
   .recipesSection {
     margin: 0 0 40px;
 
     @media (max-width: 767px) {
-      margin: 0;
+      margin: 0 0 20px;
     }
   }
 
