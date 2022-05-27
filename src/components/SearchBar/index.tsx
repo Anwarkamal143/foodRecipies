@@ -3,11 +3,12 @@ import { DownArrowIcon, FilterIcon, SearchIconAlt } from "@icons"
 import classNames from "classnames"
 import { useRef, useState } from "react"
 import { useOnClickOutside } from "src/hooks/useClickOutside"
-import PostSliderForm from "src/screens/MyFeeds/components/PostsFilters/PostSliderForm"
+import FavoriteFilerForm from "src/pages/favorite-recipies/favoritePageFilter"
 import { FilterSection } from "src/screens/MyFeeds/myfeeds.styled"
 import styled from "styled-components"
 import SwitchBox from "../SwitchBox"
 import Button from "./../../components/Button/Button"
+
 type Props = {
   className?: string
   placeholder?: string
@@ -63,7 +64,7 @@ const SearchBar = (props: Props) => {
               </Button>
             }
           >
-            <PostSliderForm />
+            <FavoriteFilerForm />
           </PopOver>
         )}
       </div>
