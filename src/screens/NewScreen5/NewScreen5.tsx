@@ -37,8 +37,16 @@ const NewScreen5 = ({ className }: Props) => {
         <div className="recipesSection">
           {/* <AppSearch toggleSideBar={true} /> */}
           <Banner
-            title="Breakfast & Brunch Recipes"
-            subTitle="Looking for quick and easy breakfast recipes or planning on a leisurely brunch? Start your day off right with clever takes on French Toast and scrambled eggs, plus healthy mornign ideas with granola or sweet potatoes. View All Breakfast Recipes"
+            title={<span>Breakfast & Brunch Recipes</span>}
+            subTitle={
+              <span>
+                Looking for quick and easy breakfast recipes or planning on a
+                leisurely brunch? Start your day off right with clever takes on
+                French Toast and scrambled eggs, plus healthy mornign ideas with
+                granola or sweet potatoes.
+                <strong>View All Breakfast Recipes</strong>
+              </span>
+            }
             lottieAnimation={<img src="/images/banner-image.png" />}
           />
           <header className="food-sectionHeader">

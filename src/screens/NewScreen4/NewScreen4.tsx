@@ -40,8 +40,15 @@ const NewScreen4 = ({ className }: Props) => {
   return (
     <div className={classNames(className)}>
       <Banner
-        title="All Online Cooks"
-        subTitle="Explore recipes from across the world. Looking to make some homemade pasta? We have plenty of Italian recipes! Looking to challenge yourself and cook something new from another country? Check out a new cuisine below."
+        title={<span>Your Favorite Recipes</span>}
+        subTitle={
+          <span>
+            Online Cook was built from the ground-up to help you save, view, and
+            discover recipes from your favorite cooks. Filter and sort your
+            saved recipes or explore new ones via your{" "}
+            <strong>Food Feed +</strong>
+          </span>
+        }
         lottieAnimation={<img src="/images/banner-image.png" />}
       />
       <SearchBar

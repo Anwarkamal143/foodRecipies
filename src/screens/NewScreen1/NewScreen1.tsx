@@ -37,8 +37,15 @@ const NewScreen1 = ({ className }: Props) => {
     <div className={classNames(className)}>
       <div className="container px-4 mx-auto sm:px-6 lg:px-8 pb-80">
         <Banner
-          title="Recipes By Cuisine"
-          subTitle="Explore recipes from across the world. Looking to make some homemade pasta? We have plenty of Italian recipes! Looking to challenge yourself and cook something new from another country? Check out a new cuisine below."
+          title={<span>Recipes By Cuisine</span>}
+          subTitle={
+            <span>
+              Explore recipes from across the world. Looking to make some
+              homemade pasta? We have plenty of <strong>>Italian recipes!</strong> Looking to
+              challenge yourself and cook something new from another country?
+              Check out a new cuisine below.
+            </span>
+          }
           lottieAnimation={<img src="/images/banner-image.png" />}
         />
         <header className="sectionHeader">

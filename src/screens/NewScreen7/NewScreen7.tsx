@@ -37,8 +37,15 @@ const NewScreen7 = ({ className }: Props) => {
     <div className={classNames(className)}>
       <div className="container px-4 mx-auto sm:px-6 lg:px-8 pb-80">
         <Banner
-          title="Your Saved Products"
-          subTitle="Save products from your favorite cooks to purchase them later - whether it be a cookbook or a special salt brand. No saved products yet? Check out your followed cooks or browse all cooks"
+          title={<span>Your Saved Products</span>}
+          subTitle={
+            <span>
+              Save products from your favorite cooks to purchase them later -
+              whether it be a cookbook or a special salt brand. No saved
+              products yet? Check out your <strong>followed cooks</strong> or{" "}
+              <strong>browse all cooks</strong>
+            </span>
+          }
           lottieAnimation={<img src="/images/banner-image.png" />}
         />
         <SearchBar

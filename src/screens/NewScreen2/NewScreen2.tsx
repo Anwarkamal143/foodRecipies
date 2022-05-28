@@ -36,8 +36,15 @@ const NewScreen2 = ({ className }: Props) => {
   return (
     <div className={classNames(className)}>
       <Banner
-        title="Your Favorite Cooks"
-        subTitle="Online Cook is the only platform where you can follow and stay up-to-date with your favorite cooks. Explore their recipes, collections, products, and check out their social media.  View Suggested Cooks +  "
+        title={<span>Your Favorite Cooks</span>}
+        subTitle={
+          <span>
+            Online Cook is the only platform where you can follow and stay
+            up-to-date with your favorite cooks. Explore their recipes,
+            collections, products, and check out their social media.
+            <strong>View Suggested Cooks +</strong>
+          </span>
+        }
         lottieAnimation={<img src="/images/banner-image1.png" />}
       />
       <SearchBar
