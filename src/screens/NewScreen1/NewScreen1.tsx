@@ -41,9 +41,10 @@ const NewScreen1 = ({ className }: Props) => {
           subTitle={
             <span>
               Explore recipes from across the world. Looking to make some
-              homemade pasta? We have plenty of <strong>>Italian recipes!</strong> Looking to
-              challenge yourself and cook something new from another country?
-              Check out a new cuisine below.
+              homemade pasta? We have plenty of{" "}
+              <strong>Italian recipes!</strong> Looking to challenge yourself
+              and cook something new from another country? Check out a new
+              cuisine below.
             </span>
           }
           lottieAnimation={<img src="/images/banner-image.png" />}

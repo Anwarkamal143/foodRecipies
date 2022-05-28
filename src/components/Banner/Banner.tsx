@@ -93,13 +93,39 @@ export const Banner = styled(BannerCard)`
       color: #fff;
 
       @media (max-width: 767px) {
-        font-size: 15px;
+        font-size: 13px;
         line-height: 24px;
+      }
+
+      .banner-icon {
+        width: 32px;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 0 0 10px;
+
+        @media (max-width: 767px) {
+          width: 20px;
+          margin: 0 0 0 5px;
+        }
+      }
+    }
+
+    strong {
+      color: #fff;
+    }
+
+    .link {
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.4s ease;
+
+      &:hover {
+        color: #ff595f;
       }
     }
 
     .text-holder {
-      width: calc(100% - 200px);
+      width: calc(100% - 190px);
       padding: 0 0 30px;
 
       @media (max-width: 767px) {
