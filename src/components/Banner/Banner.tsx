@@ -1,12 +1,12 @@
 import classNames from "classnames"
-import { ReactNode } from "react"
+import { ReactElement, ReactNode } from "react"
 import styled from "styled-components"
 import { BannerWrapper } from "./Banner.styled"
 
 interface Props {
   className?: string
-  title?: string
-  subTitle?: string
+  title?: string | ReactNode | ReactElement
+  subTitle?: string | ReactNode | ReactElement
   lottieAnimation?: ReactNode
 }
 const BannerCard = ({ className, title, subTitle, lottieAnimation }: Props) => {

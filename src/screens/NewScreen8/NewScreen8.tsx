@@ -1,6 +1,5 @@
 import { Banner } from "@components"
 import { useOnClickOutside, useOpenClose } from "@hooks"
-import CookAnimation from "@lottie-animation/cook.json"
 import { RecipesData } from "@redux/data"
 import classNames from "classnames"
 import { ourCooks } from "data"
@@ -31,14 +30,6 @@ const NewScreen8 = ({ className }: Props) => {
     const from = to - countPerPage
     setCollection(cloneDeep(RecipesData.slice(from, to)))
   }
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: CookAnimation,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  }
   useOnClickOutside(ref, () => {
     onClose()
   })
@@ -46,8 +37,22 @@ const NewScreen8 = ({ className }: Props) => {
     <div className={classNames(className)}>
       <div className="container px-4 mx-auto sm:px-6 lg:px-8 pb-80">
         <Banner
-          title="Recipe Video Tutorials"
-          subTitle="Browse recipes from your favorite cooks organized by type. Want to start your day off right? Check out popular breakfast recipes or end the night with some incredible dessert. Not sure what you want? Browse recipes via your Food Feed +"
+          title={<p>Recipe Video Tutorials</p>}
+          subTitle={
+            <p>
+              Browse recipes from your favorite cooks organized by type. Want to
+              start your day off right? Check out popular breakfast recipes or
+              end the night with some{" "}
+              <strong
+                onClick={e => {
+                  console.log("mahad")
+                }}
+              >
+                incredible dessert.
+              </strong>{" "}
+              Not sure what you want? Browse recipes via your Food Feed +
+            </p>
+          }
           lottieAnimation={<img src="/images/banner-image.png" />}
         />
         <header className="food-sectionHeader">
