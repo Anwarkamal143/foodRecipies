@@ -3,21 +3,22 @@ import { useOnClickOutside, useOpenClose } from "@hooks"
 import CookAnimation from "@lottie-animation/cook.json"
 import { RecipesData } from "@redux/data"
 import classNames from "classnames"
+import { ourCooks } from "data"
 import cloneDeep from "lodash/cloneDeep"
 import Pagination from "rc-pagination"
 import { useRef, useState } from "react"
 import SearchBar from "src/components/SearchBar"
 import Footer from "src/pages/NewPage/footer/footer"
+import MobileSwiperModal from "src/pages/NewPage/model/galleryModal"
 import styled from "styled-components"
 import Card from "../NewScreen7/components/Card"
-import VideosModal from "../PanCake/model/VideosModal"
-
 interface Props {
   className?: string
 }
 
 const NewScreen8 = ({ className }: Props) => {
   const countPerPage = 10
+  const [activeSlide, setActiveSlide] = useState(0)
   const [isOpen, onOpen, onClose] = useOpenClose()
   const [currentPage, setCurrentPage] = useState(1)
   const [collection, setCollection] = useState(
@@ -85,12 +86,18 @@ const NewScreen8 = ({ className }: Props) => {
               />
             ))}
           </div>
-          <VideosModal
+          <MobileSwiperModal
+            isOpen={isOpen}
+            items={ourCooks}
+            onClose={onClose}
+            currentSlideIndex={activeSlide}
+          />
+          {/* <VideosModal
             ref={ref}
             isOpen={isOpen}
             onClose={onClose}
             showHeader={false}
-          />
+          /> */}
           <Pagination
             pageSize={countPerPage}
             onChange={updatePage}
