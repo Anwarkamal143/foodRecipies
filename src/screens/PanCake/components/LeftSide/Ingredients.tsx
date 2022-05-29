@@ -83,7 +83,6 @@ const Ingredients = (props: Props) => {
   useOnClickOutside(ref, () => {
     onDropDownClose()
   })
-  console.log("selectedItem: ", selectedItem)
   return (
     <div className="ingredientsBlock">
       <div className="ingredientsBlockHead">
@@ -144,10 +143,12 @@ const Ingredients = (props: Props) => {
         </div>
       </div>
       <IngredientsModal
+        setServing={setServing}
         Item={selectedItem}
         setSelected={setSelectedItem}
         isOpen={isOpenModel}
         onCancel={onCloseModel}
+        serving={serving}
       />
     </div>
   )

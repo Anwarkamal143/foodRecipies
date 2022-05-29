@@ -11,12 +11,13 @@ import StepTwo from "./StepTwo"
 type Props = {
   isOpen?: boolean
   className?: string
-
+  serving?: any
   Item?: any
   onSave?: (...args: any) => void
   setSelected?: (...args: any) => void
 
   onCancel?: (...args: any) => void
+  setServing?: (...args: any) => void
 }
 const itemsData = [
   {
@@ -36,6 +37,8 @@ const itemsData = [
 const IngredientsModal = ({
   isOpen,
   className,
+  setServing,
+  serving,
   onSave,
   onCancel,
   Item,
@@ -69,7 +72,14 @@ const IngredientsModal = ({
       case 1:
         return {
           header: 1,
-          step: <StepOne Item={Item} setSelectedItem={setSelected} />,
+          step: (
+            <StepOne
+              Item={Item}
+              setSelectedItem={setSelected}
+              setServing={setServing}
+              serving={serving}
+            />
+          ),
           title: (
             <span className="ingredientsModalTitle">
               Add to{" "}
@@ -119,10 +129,17 @@ const IngredientsModal = ({
         }
       default:
         return {
-          step: <StepOne Item={Item} setSelectedItem={setSelected} />,
+          step: (
+            <StepOne
+              Item={Item}
+              setSelectedItem={setSelected}
+              setServing={setServing}
+              serving={serving}
+            />
+          ),
         }
     }
-  }, [currentStep as any, Item])
+  }, [currentStep as any, Item, serving])
   return (
     <Modal
       className={classNames("ingredientsModal")}

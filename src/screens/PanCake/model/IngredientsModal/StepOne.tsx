@@ -1,14 +1,15 @@
 import { Button, Checkbox } from "@components"
 import { Minus, PlusBtn } from "@icons"
-import { Fragment, useCallback, useState } from "react"
+import { Fragment, useCallback } from "react"
 
 type Props = {
   Item?: any[]
   setSelectedItem?: (...args: any) => void
+  setServing?: (...args: any) => void
+  serving?: number
 }
 const StepOne = (Props: Props) => {
-  const [serving, setServing] = useState<number>(3)
-  const { Item, setSelectedItem } = Props
+  const { Item, setSelectedItem, setServing, serving = 0 } = Props
   const getUnitVal = useCallback(
     (unit: "Cup" | "tablespoon") => {
       switch (unit) {
@@ -58,7 +59,7 @@ const StepOne = (Props: Props) => {
         )
       )
     },
-    [Item]
+    [Item, serving]
   )
 
   return (
@@ -72,7 +73,7 @@ const StepOne = (Props: Props) => {
           <Minus
             className="buttonMinus"
             onClick={() => setServing?.((val: number) => val - 1)}
-          />{" "}
+          />
           <span className="numText">{serving} Servings</span>{" "}
           <PlusBtn
             className="buttonPlus"
