@@ -1,6 +1,6 @@
 import { Button, Checkbox } from "@components"
 import { Minus, PlusBtn } from "@icons"
-import { useCallback, useState } from "react"
+import { Fragment, useCallback, useState } from "react"
 
 type Props = {
   Item?: any[]
@@ -60,7 +60,7 @@ const StepOne = (Props: Props) => {
     },
     [Item]
   )
-  console.log("Item: ", Item)
+
   return (
     <div className="ingredientsModalContent">
       <div className="ingredientsModalHeader">
@@ -83,9 +83,26 @@ const StepOne = (Props: Props) => {
       <div className="ingredientsItems">
         <div className="options">
           <span className="ingredientsItemsTitle">Item to add</span>
-          <span className="ingredientsItemsOption">Deselect all</span>
+          <span
+            className="ingredientsItemsOption"
+            onClick={() => {
+              setSelectedItem?.([])
+            }}
+          >
+            Deselect all
+          </span>
         </div>
-        {getIngredients(Item)}
+        {!!Item?.length ? (
+          getIngredients(Item)
+        ) : (
+          <Fragment>
+            <img src="/images/Ilustration.png" alt="Ilustration" />
+            <h4>No Ingredients Added</h4>
+            <span>
+              Add an ingredient(s) to your shopping list from the recipe page
+            </span>
+          </Fragment>
+        )}
       </div>
       <Button className="buttonGreen">Add {Item?.length} items</Button>
     </div>

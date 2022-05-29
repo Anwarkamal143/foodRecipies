@@ -1,5 +1,6 @@
 import { SidebarAnimations } from "@animations"
-import { useAppSelector } from "@hooks"
+import { useAppDispatch, useAppSelector } from "@hooks"
+import { toggleSidebar } from "@reducers"
 import { DRAWER } from "@utils/enums"
 import { Fragment, useMemo, useState } from "react"
 import styled from "styled-components"
@@ -28,15 +29,19 @@ const AppSearchC = ({ toggleSideBar }: { toggleSideBar?: any }) => {
 }
 
 const Drawers = () => {
+  const dispatch = useAppDispatch()
   const DrawerType = useAppSelector(state => state.sidebar.type)
   const GetDrawer = useMemo(() => {
+    const onClose = () => {
+      dispatch(toggleSidebar({ isOpen: false, type: DrawerType }))
+    }
     switch (DrawerType) {
       case DRAWER.SEARCH:
-        return <AppSearchC />
+        return <AppSearchC toggleSideBar={onClose} />
       case DRAWER.PROFILE:
-        return <ProfileDrawerC />
+        return <ProfileDrawerC onClose={onClose} />
       case DRAWER.NOTIFICATION:
-        return <NotificationDrawerC />
+        return <NotificationDrawerC onClose={onClose} />
       default:
         break
     }

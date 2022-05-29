@@ -2,7 +2,8 @@ import { Scrollbar } from "@components"
 import { useAppSelector, useOnClickOutside } from "@hooks"
 import { toggleSidebar } from "@reducers"
 import { useAppDispatch } from "@redux/hooks"
-import { AnimatePresence, motion, useCycle } from "framer-motion"
+import classNames from "classnames"
+import { AnimatePresence, motion } from "framer-motion"
 import { cloneElement, ReactElement, useEffect, useRef } from "react"
 import { useMediaQuery } from "react-responsive"
 import styled from "styled-components"
@@ -39,7 +40,6 @@ const sideVariants = {
 //   { name: "Contact", to: "#", id: 4 }
 // ];
 const SidebarAnimation = ({ className, children }: Props) => {
-  const [open, cycleOpen] = useCycle(false, true)
   const isOpen = useAppSelector(state => state.sidebar.isOpen)
   const DrawerType = useAppSelector(state => state.sidebar.type)
 
@@ -52,24 +52,22 @@ const SidebarAnimation = ({ className, children }: Props) => {
     toggleSideBar()
   })
   const toggleSideBar = () => {
-    cycleOpen(0)
     dispatch(toggleSidebar({ isOpen: false, type: DrawerType }))
   }
   useEffect(() => {
     if (isOpen) {
       const width = document.body.clientWidth
       document.body.style.overflow = "hidden"
-      cycleOpen()
     }
   }, [isOpen])
   return (
-    <div className={className + `${open ? " slidebar_open" : ""}`}>
+    <div className={classNames(className, { slidebar_open: isOpen })}>
       <AnimatePresence
         onExitComplete={() => {
           document.body.style.overflow = "visible"
         }}
       >
-        {open && (
+        {isOpen && (
           <motion.aside
             ref={ref}
             className="slider"

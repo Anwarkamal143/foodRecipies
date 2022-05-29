@@ -7,11 +7,16 @@ import IngredientsModal from "../../model/IngredientsModal/IngredientsModal"
 
 type Props = {}
 const Item = [
-  { id: "1", unit: "Cup", label: "reduced-sodium soy sauce" },
-  { id: "2", unit: "Cup", label: "reduced-sodium soy sauce" },
-  { id: "3", unit: "tablespoon", label: "honey" },
-  { id: "4", unit: "tablespoon", label: "honey" },
+  { id: "1", unit: "Cup", label: "reduced-sodium soy sauce", type: "gravy" },
+  { id: "2", unit: "Cup", label: "reduced-sodium soy sauce", type: "gravy" },
+  { id: "3", unit: "tablespoon", label: "honey", type: "gravy" },
+  { id: "4", unit: "tablespoon", label: "honey", type: "gravy" },
+  { id: "5", unit: "Cup", label: "reduced-sodium soy sauce", type: "chicken" },
+  { id: "6", unit: "Cup", label: "reduced-sodium soy sauce", type: "chicken" },
+  { id: "7", unit: "tablespoon", label: "honey", type: "chicken" },
+  { id: "8", unit: "tablespoon", label: "honey", type: "chicken" },
 ]
+
 const Ingredients = (props: Props) => {
   const ref = useRef(null)
   const [selectedItem, setSelectedItem] = useState<any>([])
@@ -44,31 +49,33 @@ const Ingredients = (props: Props) => {
     }
   }
   const getIngredients = useCallback(
-    (items: any) => {
-      return items?.map((item: any) =>
-        item?.unit === "Cup" ? (
-          <Checkbox
-            onClick={() => onAddOrRemoveItem(item)}
-            width={16}
-            height={16}
-            label={`${getUnitVal(item?.unit)} ${item?.unit} ${item?.label}`}
-            checked={selectedItem?.some(
-              (selected: any) => selected?.id === item?.id
-            )}
-            icon={<img src="images/chicken.svg" alt="" />}
-          />
-        ) : (
-          <Checkbox
-            onClick={() => onAddOrRemoveItem(item)}
-            width={16}
-            height={16}
-            label={`${getUnitVal(item?.unit)} ${item?.unit} ${item?.label}`}
-            checked={selectedItem?.some(
-              (selected: any) => selected?.id === item?.id
-            )}
-            icon={<img src="images/egg.svg" alt="" />}
-          />
-        )
+    (items: any, type: string) => {
+      return items?.map(
+        (item: any) =>
+          type === item?.type &&
+          (item?.unit === "Cup" ? (
+            <Checkbox
+              onClick={() => onAddOrRemoveItem(item)}
+              width={16}
+              height={16}
+              label={`${getUnitVal(item?.unit)} ${item?.unit} ${item?.label}`}
+              checked={selectedItem?.some(
+                (selected: any) => selected?.id === item?.id
+              )}
+              icon={<img src="images/chicken.svg" alt="" />}
+            />
+          ) : (
+            <Checkbox
+              onClick={() => onAddOrRemoveItem(item)}
+              width={16}
+              height={16}
+              label={`${getUnitVal(item?.unit)} ${item?.unit} ${item?.label}`}
+              checked={selectedItem?.some(
+                (selected: any) => selected?.id === item?.id
+              )}
+              icon={<img src="images/egg.svg" alt="" />}
+            />
+          ))
       )
     },
     [Item, serving, selectedItem, onAddOrRemoveItem]
@@ -115,12 +122,16 @@ const Ingredients = (props: Props) => {
       <div className="ingredientsBody">
         <div className="ingredientsItemsHolder">
           <strong className="title">For the Gravy</strong>
-          <div className="ingredientsItems">{getIngredients(Item)}</div>
+          <div className="ingredientsItems">
+            {getIngredients(Item, "gravy")}
+          </div>
         </div>
         <div className="ingredientsItemsHolder">
           <strong className="title">For the Chicken</strong>
           <div className="ingredientsItems">
-            <div className="ingredientsItems">{getIngredients(Item)}</div>
+            <div className="ingredientsItems">
+              {getIngredients(Item, "chicken")}
+            </div>
           </div>
           <Button
             className="buttonGreen"
