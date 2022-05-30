@@ -1,25 +1,33 @@
-import { Input } from "@components"
+import { useOpenClose } from "@hooks"
 import { CameraIcon, DownArrowIcon, InstagramLineIcon } from "@icons"
-import React, { useState } from "react"
+import { useState } from "react"
+import ReviewLikeModal from "../model/ReviewModal/ReviewLikeModal"
 import Button from "./../../../components/Button/Button"
 import ReviewOnPost from "./ReviewOnPost"
 
 type Props = {}
 
 const Review = (props: Props) => {
-  const [value, setValue] = useState("")
   const [isShow, setIsShow] = useState(false)
-
+  const [open, onOpen, onClose] = useOpenClose()
   return (
     <div className="ingredientsBlock recipeTagsBlock">
       <div className="ingredientsBlockHead">
         <h2>Recipe Tags</h2>
       </div>
       <ul className="recipeTagsList">
-        <li><a href="#">Main Dishes</a></li>
-        <li><a href="#">Low Sugar</a></li>
-        <li><a href="#">Low Carb</a></li>
-        <li><a href="#">Diet</a></li>
+        <li>
+          <a href="#">Main Dishes</a>
+        </li>
+        <li>
+          <a href="#">Low Sugar</a>
+        </li>
+        <li>
+          <a href="#">Low Carb</a>
+        </li>
+        <li>
+          <a href="#">Diet</a>
+        </li>
       </ul>
       <div className="makeRecipeBlock">
         <div className="img-holder">
@@ -37,21 +45,17 @@ const Review = (props: Props) => {
           </div>
           <div className="makeRecipeForm">
             <span className="icon">R</span>
-            <Input
-              value={value}
-              className="search_input"
-              placeholder="Add your notes! How was it?"
-              onChange={e => {
-                setValue(e.target.value)
+            <span onClick={() => onOpen()}>Add your notes! How was it?</span>
+            <CameraIcon
+              onClick={() => {
+                onOpen()
               }}
-              type="text"
-              materialDesign
             />
-            <CameraIcon />
           </div>
         </div>
       </div>
       {isShow && <ReviewOnPost />}
+      <ReviewLikeModal isOpen={open} onCancel={onClose} />
     </div>
   )
 }

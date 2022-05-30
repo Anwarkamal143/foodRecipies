@@ -18,6 +18,7 @@ interface inputProfile
   hasIcon?: boolean
   hasLabel?: boolean
   isLoading?: boolean
+  setInputFocus?: Function
   disableFloatingLabel?: boolean
   limit?: number
   validations?: {
@@ -51,6 +52,7 @@ function FocusInput(props: inputProfile, ref: Ref<any>) {
     activeFocus,
     hasLimit = true,
     autofocus,
+    setInputFocus,
     ...rest
   } = props
   const [value, setValue] = useState<string>(props.value || "")
@@ -75,6 +77,7 @@ function FocusInput(props: inputProfile, ref: Ref<any>) {
 
   const inputFocused = () => {
     setFocus(true)
+    setInputFocus?.()
   }
   activeFocus?.(focus)
 
