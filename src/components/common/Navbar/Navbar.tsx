@@ -2,13 +2,17 @@
 import { AppSearch, UnstyledLink } from "@components"
 import { Disclosure } from "@headlessui/react"
 import { XIcon } from "@heroicons/react/outline"
-import React from "react"
+import { useAppDispatch, useAppSelector } from "@hooks"
+import { setUser } from "@redux/reducers"
 import { RiMenu4Fill } from "react-icons/ri"
 import styled from "styled-components"
 import DesktopMenu from "./DesktopMenu"
 import MobileMenu from "./MobileMenu"
 
 function NavBar() {
+  const user = useAppSelector(state => state.user)
+  const dispatch = useAppDispatch()
+
   return (
     <>
       <Disclosure as="nav" className="fixed z-50 w-full">
@@ -65,7 +69,13 @@ function NavBar() {
                   </li>
                   <li>
                     Browse personalized recipes via a custom feed{" "}
-                    <a className="linkRecipe" href="#">
+                    <a
+                      className="linkRecipe"
+                      href="#"
+                      onClick={() => {
+                        dispatch(setUser({ ...user, role: "cook" }))
+                      }}
+                    >
                       Food Feed+
                     </a>
                   </li>
