@@ -20,7 +20,6 @@
       "@utils": ["src/utils"],
       "@utils/*": ["src/utils/*"],
       "@routes/*": ["src/routes/*"],
-
       "@lib/*": ["src/lib/*"],
       "@hooks": ["src/hooks"],
       "@components": ["src/components"],
